@@ -1,0 +1,276 @@
+.intro {
+	margin-bottom: 0;
+}
+.intro .container {
+	position: relative;
+	padding: calc(6 * var(--gap-md)) calc(6 * var(--gap-md)) calc(6 * var(--gap-md)) calc(6 * var(--gap-md));
+}
+.intro .title {
+	text-align: left;
+}
+.intro .intro-content {
+	position: static;
+}
+.intro .intro-link {
+	font-weight: 500;
+	position: relative;
+	overflow: hidden;
+}
+.intro .title {
+	font-size: 3.5rem;
+	margin-bottom: calc(4 * var(--gap-md));
+	font-weight: 600;
+}
+.intro .container-bullets {
+	margin: 0 auto calc(5 * var(--gap-md));
+	width: 100%;
+	position: relative;
+	transform:  translateY(0%);
+	text-align: left;
+}
+.intro .bullets {
+	display: block;
+	border-radius: 0;
+	font-weight: 500;
+}
+.intro .bullets > .bullet-item {
+	padding: 0;
+	display: flex;
+	align-items: center;
+	text-align: left;
+}
+.intro .bullet-item-inner {
+	display: flex;
+	align-items: center;
+	align-items: flex-start;
+}
+.intro .bullets > .bullet-item:not(:last-child) {
+	border-right: 0 solid transparent;
+	margin-bottom: calc(1.5 * var(--gap-md));
+}
+.intro .bullet-item svg {
+	margin-right: calc(1 * var(--gap-md));
+	width: 1.5em;
+	min-width: 1.5em;
+	max-width: 1.5em;
+	height: 1.5em;
+	min-height: 1.5em;
+	max-height: 1.5em;
+}
+
+
+.intro .container-form .question{
+	margin: calc(-2 * var(--gap-md)) 0 0 0;
+}
+.intro .question-fields {
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex-direction: column;
+	max-width: 300px;
+}
+.intro .question--1 .question-fields  {
+	flex-direction: row;
+}
+.intro .field .field-title {
+	font-weight: 600;
+	text-align: left;
+}
+.intro .field .field-content {
+	border-radius: 0.25rem;
+	background: var(--theme-white);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 calc(1 * var(--gap-md)) 0 0;
+}
+.intro .question-fields > .field {
+	margin: 0 0 calc(1.5 * var(--gap-md)) 0;
+}
+.intro .question--1 .question-fields > .field {
+	margin: 0 calc(1.5 * var(--gap-md)) 0 0;
+}
+.intro .question-fields > .field.field--rules {
+	font-size: calc(1rem - 8px);
+	margin-bottom: 0;
+	text-align: center;
+}
+.intro .question-fields > .field > .field-content {
+	position: relative;
+	border: 1px solid var(--theme-white);
+}
+.intro .question-fields > .field > .field-content.error {
+	border: 1px solid var(--theme-dunger);
+}
+.intro .question-fields > .field > .field-content input {
+	color: var(--theme-black) !important;
+	flex-grow: 1;
+	min-width: 1px;
+	background: transparent;
+	padding: 0.6rem 0.75rem;
+	border: 1px solid transparent;
+	font-size: calc(1rem - 2px);
+	height: 48.59px;
+}
+.intro .question-fields > .field > .field-content input::placeholde {
+	color: #8F90A6;
+	font-size: calc(1rem - 2px);
+}
+.intro .question-fields > .field > .field-content svg {
+	fill: #8F90A6;
+}
+.intro .question-fields > .submit {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	margin-top: calc(1.5 * var(--gap-md));
+}
+.intro .question--1 .question-fields > .submit {
+	margin-top: 0;
+}
+.intro .question-fields > .submit button,
+.intro .question-fields > .submit a {
+	pointer-events: none;
+	opacity: 1;
+	width: 100%;
+	max-width: calc(100% - 40px);
+	padding: 0.6rem 2rem;
+}
+.intro .question--1 .question-fields > .submit button,
+.intro .question--1 .question-fields > .submit a {
+	width: initial;
+	max-width: 100%;
+}
+.intro .question--3 .question-fields > .submit button,
+.intro .question--3 .question-fields > .submit a {
+	padding: 0.75rem 3rem;
+}
+.intro .question--2,
+.intro .question--3 {
+	display: none;
+}
+
+@media screen and (max-width: 991px) {
+	.intro .title {
+		margin-bottom: calc(2 * var(--gap-md));
+	}
+	.intro .container-bullets {
+		margin-bottom: calc(2 * var(--gap-md));
+	}
+	.intro .bullets > .bullet-item:not(:last-child) {
+		margin-bottom: calc(.75 * var(--gap-md));
+	}
+	.intro .title {
+	    line-height: 1.2 !important;
+	}
+	.intro .bullet-item svg {
+		margin-top: calc(0.25 * var(--gap-md));
+		width: 1.25em;
+		min-width: 1.25em;
+		max-width: 1.25em;
+		height: 1.25em;
+		min-height: 1.25em;
+		max-height: 1.25em;
+	}
+	.intro .question-fields > .field ,
+	.intro .question--1 .question-fields > .field {
+		margin: 0 0 calc(1 * var(--gap-md)) 0;
+	}
+}
+@media screen and (max-width: 991px) and (min-height: 670px) {
+	.intro .title {
+		margin-bottom: calc(3 * var(--gap-md));
+	}
+	.intro .container-bullets {
+		margin-bottom: calc(4 * var(--gap-md));
+	}
+	.intro .bullets > .bullet-item:not(:last-child) {
+		margin-bottom: calc(1.5 * var(--gap-md));
+	}
+	.intro .title {
+	    line-height: 1.4 !important;
+	}
+	.intro .question-fields > .field ,
+	.intro .question--1 .question-fields > .field {
+		margin: 0 0 calc(1.5 * var(--gap-md)) 0;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.intro .title {
+		font-size: 3rem;
+	}
+}
+@media screen and (max-width: 991px) {
+	main {
+		min-height: 100vh;
+	    min-height: calc(var(--vh, 1vh) * 100);
+	    display: flex;
+	    flex-direction: column;
+	}
+	#intro-slot {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+	.intro {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+	.intro .container {
+		flex-grow: 1;
+		width: 100%;
+		max-width: 100%;
+		border-radius: 0;
+		padding: calc(4 * var(--gap-md)) calc(1.5 * var(--gap-md));
+		text-align: center;
+	}
+	.intro-content {
+		max-width: 400px;
+		margin: 0 auto;
+	}
+	.intro .title {
+		font-size: 1.95rem;
+		line-height: 1.4;
+		text-align: center;
+	}
+	.intro .bullets {
+		max-width: 260px;
+		margin: 0 auto;
+	}
+	.intro .intro-link {
+		width: 100%;
+		max-width: 260px;
+	}
+
+
+	.intro .container-form {
+		max-width: 260px;
+		margin: 0 auto;
+	}
+	.intro .container-form .question-1 {
+		margin: calc(-1 * var(--gap-md)) 0 0 0;
+	}
+	.intro .container-form .question{
+		margin: 0;
+	}
+	.intro .question-fields {
+		width: 100%;
+		max-width: 100%;
+	}
+	.intro .question--1 .question-fields {
+		flex-direction: column;
+	}
+	/*.intro .question--1 .question-fields > .field {
+		margin: 0 0 calc(1.5 * var(--gap-md)) 0;
+	}*/
+	.intro .question--1 .question-fields > .submit button,
+	.intro .question--1 .question-fields > .submit a ,
+	.intro .question-fields > .submit button, 
+	.intro .question-fields > .submit a {
+		width: 100%;
+		max-width: 100%;
+		padding: 0.75rem 3rem;
+	}
+}

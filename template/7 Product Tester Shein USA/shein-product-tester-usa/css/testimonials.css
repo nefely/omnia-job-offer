@@ -1,0 +1,92 @@
+#testimonials {
+	position: relative;
+}
+#testimonials .title {
+	text-align: center;
+	width: 100%;
+}
+#testimonials .slide {
+	margin: 0 15px;
+	border-radius: 25px;
+	padding: 20px;
+	border: 1px solid #23303E;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#testimonials .container {
+	position: static;
+}
+#testimonials .slide .ava img {
+	border-radius: 1000px;
+}
+#testimonials .slide .name {
+	padding: 10px 0 5px 0;
+	font-family: 'Playfair Display', serif;
+	font-size: calc(1rem + 1px);
+}
+#testimonials .slide .rating {
+	padding: 0 0 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#testimonials .slide .text {
+	text-align: center;
+	font-size: calc(1rem - 6px);
+}
+#testimonials .slider {
+	width: calc(100% + 30px);
+	margin-left: -15px;
+}
+#testimonials .slick-track {
+	display: flex !important;
+	align-items: stretch;
+}
+#testimonials .slide {
+	height: initial !important;
+}
+
+@media screen and (max-width: 991px) {
+	#testimonials .slider {
+		width: 100%;
+		margin-left:0;
+	}
+	#testimonials .slide {
+		margin: 0 10px;
+	}
+
+	.slick-dots {
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.slick-dots > li:not(:last-child){
+		margin-right: 8px;
+	}
+	.slick-dots button {
+		width: 12px;
+		max-width: 12px;
+		min-width: 12px;
+		height: 12px;
+		max-height: 12px;
+		min-height: 12px;
+		border-radius: 50%;
+		border: 0px;
+		text-indent: -9999px;
+		overflow:hidden;
+	}
+	.slick-dots li.slick-active button {
+		background: #23303E;
+	}
+	.slick-dots li button {
+		background: #D9D9D9;
+	}
+}
+
+
+.text p {
+    min-height: 100px;  /* Або яка вам потрібна мінімальна висота */
+}
