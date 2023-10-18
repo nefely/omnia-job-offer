@@ -21,6 +21,7 @@ header .container {
 }
 header .header-logo img {
 	max-width: 100%;
+    max-height: 45px;
 }
 
 @media screen and (max-width: 991px) {
@@ -33,7 +34,8 @@ header .header-logo img {
 		text-align: center;
 	}
 	header .header-logo img {
-		max-width: 250px;
+		max-width: 100%;
+        max-height: 35px;
 	}
 	header .header-nav {
 		display: none;

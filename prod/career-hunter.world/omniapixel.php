@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/javascript');
 
 $CampaignKey = 'eu55s9x513j14qby9xzs';
-$url = "https://track.cloackandtrackit.com/track.php?key=".$CampaignKey;
+$url = "https://track.career-hunter.world/track.php?key=".$CampaignKey;
 $headers = @get_headers($url, 1);
 
 $domain = @parse_url(@$headers['Location'], PHP_URL_HOST);
