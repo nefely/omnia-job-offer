@@ -38,7 +38,7 @@
 #jobs .list .item .icon {
 	padding: calc(0.5 * var(--gap));
 	border-radius: calc(0.5 * var(--gap));
-	background: #23303E;
+	background: #FFC731;
 	display: flex;
 	justify-content: center;
 	align-items: center;
