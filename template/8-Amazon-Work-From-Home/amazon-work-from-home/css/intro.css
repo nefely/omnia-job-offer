@@ -23,7 +23,7 @@
 }
 @media screen and (max-width: 991px) {
 	#intro .figure {
-		width: 80%;
+		width: 75%;
 		height: 70%;
 	}
 	#intro .figure img{
