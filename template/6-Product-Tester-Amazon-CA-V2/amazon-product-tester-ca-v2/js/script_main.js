@@ -10,7 +10,12 @@ if ($("input[name=phone]").length > 0) {
   $("input[name=phone]").mask('(000) 000-0000');
 }
 if ($("input[name=zip]").length > 0) {
-  $("input[name=zip]").mask('00000');
+    $("input[name=zip]").mask("A0A 0A0", {
+        'translation': {
+            A: { pattern: /[A-Za-z0-9]/ },
+            0: { pattern: /[A-Za-z0-9]/ }
+        }
+    });
 }
 
 $('.slider').slick({
@@ -44,7 +49,7 @@ $(window).resize(checkWindowSize);
 
 // .form-step--1
     isZipValid = () => {
-        if ($("input[name=zip]").val().length == 5) {
+        if ($("input[name=zip]").val().length == 7) {
             return true
         } else {
             return false
@@ -69,7 +74,9 @@ $(window).resize(checkWindowSize);
         }
     })
     $("input[name=zip]").on("input" , function(){
-        if ($(this).val().length == 5) {
+        let currentValue = $(this).val().toUpperCase();
+        $(this).val(currentValue);
+        if ($(this).val().length == 7) {
             $(this).removeClass("error")
         }
     })
