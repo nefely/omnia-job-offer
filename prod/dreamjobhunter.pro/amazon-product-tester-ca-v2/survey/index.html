@@ -152,7 +152,18 @@ pintrk('track', 'signup');
 							<div class="quiz-block quiz-block--3">
 								<div class="quiz-block-question">
 									<h5>Become a <strong>Product Tester</strong> for <strong>Amazon Products</strong>! Earn up to <strong>$750</strong> towards Amazon Products + an additional <strong>$750</strong> for reviewing the products!</h5>
-									<strong class="info data">Offer expires Oct 31 at 11:59pm EST.</strong>
+									<strong class="info data"><script>
+(() => {
+    let _currentDate = new Date();
+    let _currentMonth = _currentDate.getMonth();
+    let _currentYear = _currentDate.getFullYear();
+    let _lastDay = new Date(_currentYear, _currentMonth + 1, 0).getDate();
+    let _monthAbbreviations = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let _currentMonthAbbreviation = _monthAbbreviations[_currentMonth];
+    let _resultString = `Offer expires ${_currentMonthAbbreviation} ${_lastDay} at 11:59pm EST`;
+    document.write(_resultString);
+})()
+</script></strong>
 								</div>
 								<div class="quiz-block-answers">
 									<a href="" class="btn btn-primary yes round" target="_blank">YES, get started now</a>

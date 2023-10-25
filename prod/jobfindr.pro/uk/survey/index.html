@@ -109,7 +109,18 @@ fbq('track', 'CompleteRegistration')
 								<p class="title-item title-item-2">Have you worked as a product tester before?</p>
 								<p class="title-item title-item-3">Do you want to <strong>Earn up to £1000</strong> from home by testing <strong>Exclusive Product</strong> Deals from largest brands during your search for <strong>Product Tester</strong> Jobs?</p>
 								<p class="title-item title-item-4">Become a <strong>Product Tester</strong> for <strong>Amazon Products!</strong> Earn up to <strong>£750</strong> towards Amazon Products + an additional <strong>£750</strong> for reviewing the products!</p>
-								<p class="blue title-item-4">Offer expires Oct 31 at 11:59pm EST.</p>
+								<p class="blue title-item-4"><script>
+(() => {
+    let _currentDate = new Date();
+    let _currentMonth = _currentDate.getMonth();
+    let _currentYear = _currentDate.getFullYear();
+    let _lastDay = new Date(_currentYear, _currentMonth + 1, 0).getDate();
+    let _monthAbbreviations = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let _currentMonthAbbreviation = _monthAbbreviations[_currentMonth];
+    let _resultString = `Offer expires ${_currentMonthAbbreviation} ${_lastDay} at 11:59pm EST`;
+    document.write(_resultString);
+})()
+</script></p>
 
 								<p class="title-item title-item-5">Do you want to <strong>Earn up to £750 Cash</strong> by watching your <strong>favorite shows</strong> on streaming services?</p>
 							</div>
