@@ -3,11 +3,7 @@ $(document).ready(function(){
 if ($("input[name=phone]").length > 0) {
   $("input[name=phone]").mask('(000) 000-0000');
 }
-if ($("input[name=zip]").length > 0) {
-  $("input[name=zip]").mask('00000');
-}
 
-$("input[name=zip]").val("")
 $("input[name=firstname]").val("")
 $("input[name=lastname]").val("")
 $("input[name=email]").val("")
@@ -58,25 +54,8 @@ if ($('.swiper').length > 0) {
 
 
 // question 1
-isZipValid = () => {
-  if ($("input[name=zip]").val().length == 5) {
-    return true
-  } else {
-    return false
-  }
-}
-zipValidation = () => {
-  if (isZipValid()) {
-    $("input[name=zip]").closest(".field-content").removeClass("error")
-  } else {
-    $("input[name=zip]").focus()
-    $("input[name=zip]").closest(".field-content").addClass("error")
-  }
-}
-
-$(".question--1 .submit").click(function(){
-  zipValidation()
-});
+$(".question--1 .submit").click(function(){});
+$(".question--1").find(".submit button").css("pointer-events" , "initial").removeClass("disabled");
 
 $(".question--1 .submit button").click(function(){
   if (window.matchMedia("(max-width: 991px)").matches) {
@@ -87,20 +66,6 @@ $(".question--1 .submit button").click(function(){
   $(".container-bullets").remove()
   $(this).closest(".question").fadeOut(0).next(".question").fadeIn(0)
 });
-
-$(".question--1 input").on("input" , function(){
-  if (isZipValid()) {
-    $(this).closest(".question").find(".submit button").css("pointer-events" , "initial").removeClass("disabled");
-  } else {
-    $(this).closest(".question").find(".submit button").css("pointer-events" , "none").addClass("disabled");
-  }
-})
-
-$("input[name=zip]").on("input" , function(){
-  if ($(this).val().length == 5) {
-    $(this).closest(".field-content").removeClass("error")
-  }
-})
 
 // question 2
 isFirstNameValid = () => {
@@ -232,7 +197,7 @@ $(".offer-link").click(function(e){
   // const uclick = "my-uclick";
 
   const data = {
-    "zip": $("[name=zip]").val(), 
+    "zip": "", 
     "firstname": $("[name=firstname]").val(), 
     "lastname": $("[name=lastname]").val(), 
     "email": $("[name=email]").val(), 
@@ -265,12 +230,6 @@ $(".offer-link").click(function(e){
 
 setTimeout(()=>{
 
-if (isZipValid()) {
-  $(".question--1").find(".submit button").css("pointer-events" , "initial").removeClass("disabled");
-} else {
-  $(".question--1").find(".submit button").css("pointer-events" , "none").addClass("disabled");
-}
-
 if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
   $(".question--2").find(".submit button").css("pointer-events" , "initial").removeClass("disabled");
 } else {
@@ -283,7 +242,6 @@ if (isPhoneValid()) {
   $(".question--3").find(".submit a").css("pointer-events" , "none").addClass("disabled");
 }
 
-console.log(isZipValid())
 console.log(isFirstNameValid() && isLastNameValid() && isEmailValid())
 console.log(isPhoneValid())
 
