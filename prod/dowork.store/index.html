@@ -4,28 +4,27 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CareerHunter - Online Platform for Job Seekers</title>
-	<link rel="shortcut icon" type="image/png" href="img/fav-1.png"/>
+	<title>DoWork - Online Platform for Job Seekers</title>
+	<link rel="shortcut icon" type="image/png" href="img/fav-2.png"/>
     <meta name="theme-color" content="rgb(0,48,173)"/>
 
-	<meta name="description" content="Explore comprehensive career guides, expert advice, and tailored job recommendations at CareerHunter. Empower your career journey and find your true passion with our professional resources.">
+	<meta name="description" content="Explore comprehensive career guides, expert advice, and tailored job recommendations at DoWork. Empower your career journey and find your true passion with our professional resources.">
 	<meta name="keywords" content="career, job search, dream job, career advice, job recommendations, career guides, professional resources, start a career, find your passion">
-	<meta property="og:title" content="CareerHunter - Online Platform for Job Seekers">
-	<meta property="og:description" content="Explore comprehensive career guides, expert advice, and tailored job recommendations at CareerHunter. Empower your career journey and find your true passion with our professional resources.">
+	<meta property="og:title" content="DoWork - Online Platform for Job Seekers">
+	<meta property="og:description" content="Explore comprehensive career guides, expert advice, and tailored job recommendations at DoWork. Empower your career journey and find your true passion with our professional resources.">
 	<meta property="og:image" content="img/default_d.png">
 
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mask.js"></script>
 	<script type="text/javascript" src="js/clickapi.js"></script>
+	<script type="text/javascript" src="js/swiper.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/form.script.js"></script>
 
 	<script type="text/javascript">
 		let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 	</script>
-
-	<script type="text/javascript" src="js/jquery.mask.js"></script>
-	<script type="text/javascript" src="js/swiper.js"></script>
-	<script type="text/javascript" src="js/script_general.js"></script>
-	<script type="text/javascript" src="js/script_main.js"></script>
 
 	<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -40,18 +39,37 @@
 	<link rel="stylesheet" href="css/all.css">
 
 <!-- Meta Pixel Code -->
+
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '847597723498854');
-fbq('track', 'PageView');
+
+ !function(f,b,e,v,n,t,s)
+
+ {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+
+ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
+ if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+
+ n.queue=[];t=b.createElement(e);t.async=!0;
+
+ t.src=v;s=b.getElementsByTagName(e)[0];
+
+ s.parentNode.insertBefore(t,s)}(window, document,'script',
+
+ 'https://connect.facebook.net/en_US/fbevents.js');
+
+ fbq('init', '689422235907457');
+
+ fbq('track', 'PageView');
+
 </script>
+
+<noscript><img height="1" width="1" style="display:none"
+
+ src="https://www.facebook.com/tr?id=689422235907457&ev=PageView&noscript=1"
+
+/></noscript>
+
 <!-- End Meta Pixel Code -->
 
 </head>
@@ -65,7 +83,7 @@ fbq('track', 'PageView');
 	<header>
 		<div class="container">
 			<div class="header-logo">
-				<img src="img/header-logo-1.svg" alt="">
+				<img src="img/logo-129803712983asd.png" alt="">
 			</div>
 			<ul class="header-nav">
 				<li><a href="intro">Jobs</a></li>
@@ -132,7 +150,7 @@ fbq('track', 'PageView');
 									</div>
 								</div>
 								<div class="submit">
-									<button class="btn" tabindex="-1">Apply Now</button>
+									<button class="btn disabled">Apply Now</button>
 								</div>
 							</div>
 						</div>
@@ -166,7 +184,7 @@ fbq('track', 'PageView');
 									</div>
 								</div>
 								<div class="submit">
-									<button class="btn" tabindex="-1">Continue</button>
+									<button class="btn disabled">Continue</button>
 								</div>
 							</div>
 						</div>
@@ -187,7 +205,70 @@ fbq('track', 'PageView');
 									<p>By clicking "Submit", I agree to email marketing, <a href="terms-of-use/" target="_blank">Terms &amp; Conditions</a> including mandatory arbitration, <a href="privacy-policy/" target="_blank">Privacy Policy</a> and site visit recordation by TrustedForm and Jornaya</p>
 								</div>
 								<div class="submit">
-									<a class="btn offer-link" tabindex="-1">Submit</a>
+									<a class="btn disabled offer-link">Submit</a>
+								</div>
+							</div>
+						</div>
+						<div class="question question--4">
+							<img src="img/ok-budge.png" alt="" class="ok-budge">
+							<h2>Welcome!</h2>
+							<p>Please take the short survey to receive the best job options as a <strong>Producer Tester</strong>.</p>
+						</div>
+
+						<div class="question question--5">
+							<div class="dots">
+								<div class="dot-item dot-item-1 active"></div>
+								<div class="dot-item dot-item-2"></div>
+								<div class="dot-item dot-item-3"></div>
+							</div>
+							<div class="titles">
+								<p class="title-item title-item-1">Are you currently employed?</p>
+								<p class="title-item title-item-2">Have you worked as a product tester before?</p>
+								<p class="title-item title-item-3">Do you want to <strong>Earn up to $1000</strong> from home by testing <strong>Exclusive Product</strong> Deals from largest brands during your search for <strong>Product Tester</strong> Jobs?</p>
+								<p class="title-item title-item-4">Become a <strong>Product Tester</strong> for <strong>Amazon Products!</strong> Earn up to <strong>$750</strong> towards Amazon Products + an additional <strong>$750</strong> for reviewing the products!</p>
+								<p class="blue title-item-4">Offer expires Oct 31 at 11:59pm EST.</p>
+
+								<p class="title-item title-item-5">Do you want to <strong>Earn up to $750 Cash</strong> by watching your <strong>favorite shows</strong> on streaming services?</p>
+							</div>
+							<div class="answers">
+								<div class="answers-container answers-container-1">
+									<button class="btn next">Yes</button>
+									<button class="btn next">No</button>
+
+									<button class="btn back" disabled style="opacity: 0;">Back</button>
+								</div>
+								<div class="answers-container answers-container-2">
+									<button class="btn next">Yes</button>
+									<button class="btn next">No</button>
+
+									<button class="btn back">Back</button>
+								</div>
+								<div class="answers-container answers-container-3">
+									<a class="btn next yes" target="_blank">YES, learn more</a>
+									<a class="btn next no">NO, proceed further</a>
+
+									<a class="btn next offer_3" style="padding: 0; margin: 0; opacity: 0; visibility: 0; display: none !important;"></a>
+
+									<button class="btn back">Back</button>
+								</div>
+
+								<div class="answers-container answers-container-4">
+
+									<a class="btn next yes" target="_blank">YES, get started now</a>
+									<a class="btn next no">NO, proceed further</a>
+
+									<a class="btn next offer_4" style="padding: 0; margin: 0; opacity: 0; visibility: 0; display: none !important;"></a>
+
+									<button class="btn back">Back</button>
+								</div>
+
+								<div class="answers-container answers-container-5">
+									<a class="btn next yes" target="_blank">YES, start earning</a>
+									<a class="btn next no">NO, proceed further</a>
+
+									<a class="btn next offer_5" style="padding: 0; margin: 0; opacity: 0; visibility: 0; display: none !important;"></a>
+
+									<button class="btn back">Back</button>
 								</div>
 							</div>
 						</div>
@@ -252,8 +333,8 @@ fbq('track', 'PageView');
 	<div class="container">
 		<h3 class="title">About us</h3>
 		<div class="content col-12 offset-0 col-lg-8 offset-lg-2">
-			<p>Welcome to CareerHunter, the ultimate online platform for job seekers who are looking to jumpstart or transform their careers! Our mission is to empower you with the tools, resources, and guidance needed to find the perfect job that aligns with your skills, experience, and passion.</p>
-			<p>At CareerHunter, we understand that searching for a new job can be challenging and time-consuming. That's why we've made it our top priority to simplify the process and provide you with a seamless, user-friendly experience. We're committed to helping you navigate the competitive job market and connecting you with top employers from various industries.</p>
+			<p>Welcome to DoWork, the ultimate online platform for job seekers who are looking to jumpstart or transform their careers! Our mission is to empower you with the tools, resources, and guidance needed to find the perfect job that aligns with your skills, experience, and passion.</p>
+			<p>At DoWork, we understand that searching for a new job can be challenging and time-consuming. That's why we've made it our top priority to simplify the process and provide you with a seamless, user-friendly experience. We're committed to helping you navigate the competitive job market and connecting you with top employers from various industries.</p>
 		</div>
 		<div class="result bg">
 			<h2>315 645</h2>
@@ -304,7 +385,7 @@ fbq('track', 'PageView');
     				<div class="quote">
     					<img src="img/quote-left 1.svg" alt="">
     				</div>
-    				<p>"CareerHunter was a game-changer for me during my job hunt. Their personalized recommendations led me to an ideal role, and their expert advice transformed my resume and interview skills. This platform boosted my confidence and helped me excel in the competitive job market. I highly recommend CareerHunter for anyone seeking career growth!"</p>
+    				<p>"DoWork was a game-changer for me during my job hunt. Their personalized recommendations led me to an ideal role, and their expert advice transformed my resume and interview skills. This platform boosted my confidence and helped me excel in the competitive job market. I highly recommend DoWork for anyone seeking career growth!"</p>
     				<h6 class="author">
     					<img src="img/quote-left 1.svg" alt="">
     					<span>Linda Ren</span>
@@ -364,9 +445,9 @@ fbq('track', 'PageView');
 		<div class="row">
 			<div class="col-12 col-md-4  footer-about">
 				<div class="footer-logo">
-					<img src="img/header-logo-1.svg">
+					<img src="img/logo-129803712983asd.png" alt="">
 				</div>
-				<p>CareerHunter is a job search engine. We are not an agent or representative of any Employer. Registered trademarks are the property of their respective owners who do not sponsor or endorse this website.</p>
+				<p>DoWork is a job search engine. We are not an agent or representative of any Employer. Registered trademarks are the property of their respective owners who do not sponsor or endorse this website.</p>
 				<p>Jobs are not applicable to everyone</p>
 			</div>
 			<div class="col-12 col-md-3 offset-md-2 footer-general">
