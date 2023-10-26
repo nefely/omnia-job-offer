@@ -9,14 +9,6 @@ $("input[name=phone]").val("")
 if ($("input[name=phone]").length > 0) {
   $("input[name=phone]").mask('(000) 000-0000');
 }
-if ($("input[name=zip]").length > 0) {
-    $("input[name=zip]").mask("A0A 0A0", {
-        'translation': {
-            A: { pattern: /[A-Za-z0-9]/ },
-            0: { pattern: /[A-Za-z0-9]/ }
-        }
-    });
-}
 
 $('.slider').slick({
 	arrows: false,
@@ -48,38 +40,9 @@ $(window).resize(checkWindowSize);
 // validation
 
 // .form-step--1
-    isZipValid = () => {
-        if ($("input[name=zip]").val().length == 7) {
-            return true
-        } else {
-            return false
-        }
-    }
-    zipValidation = () => {
-        if (isZipValid()) {
-            $("input[name=zip]").removeClass("error")
-        } else {
-            $("input[name=zip]").focus()
-            $("input[name=zip]").addClass("error")
-        }
-    }
-    $(".form-step--1 .submit-question").click(function(){
-        zipValidation()
-    });
-    $(".form-step--1 input").on("input" , function(){
-        if (isZipValid()) {
-            $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
-        } else {
-            $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
-        }
-    })
-    $("input[name=zip]").on("input" , function(){
-        let currentValue = $(this).val().toUpperCase();
-        $(this).val(currentValue);
-        if ($(this).val().length == 7) {
-            $(this).removeClass("error")
-        }
-    })
+    $(".form-step--1 .submit-question").click(function(){});
+    $(".form-step--1").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
+    
 
 // .form-step--2
     isFirstNameValid = () => {
@@ -242,7 +205,7 @@ $(".form-step--3 .btn-next").click(function(e){
     const uclick = $("[name=uclick]").val();
 
     const data = {
-        "zip": $("[name=zip]").val(), 
+        "zip": "", 
         "firstname": $("[name=firstname]").val(), 
         "lastname": $("[name=lastname]").val(), 
         "email": $("[name=email]").val(), 
@@ -273,12 +236,6 @@ $(".form-step--3 .btn-next").click(function(e){
 // const uclick = "my_uclick_here";
 
 setTimeout(()=>{
-
-if (isZipValid()) {
-  $(".form-step--1").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
-} else {
-  $(".form-step--1").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
-}
 
 if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
   $(".form-step--2").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
