@@ -1,7 +1,7 @@
 <?php
 
-    $CampaignKey='uf30kflg2ncm0r4ciw9x';	
-    $CampaignLink='https://track.startacareerztoday.com/track.php?key='.$CampaignKey;
+    $CampaignKey='ib6e3y0emwbgy26va9qn';	
+    $CampaignLink='https://track.startworktoday.net/track.php?key='.$CampaignKey;
     $ApiKey='10000013adee86ee9f777ada9fb323e24fccaf3';
 
     $getClick = new getClick($CampaignLink, $ApiKey);

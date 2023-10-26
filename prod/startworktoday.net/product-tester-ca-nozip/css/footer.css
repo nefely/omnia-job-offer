@@ -33,7 +33,8 @@ footer .footer-logo {
 	text-align: center;
 }
 footer .footer-logo img {
-	width: 80px;
+	max-height: 45px;
+	max-width: 100%;
 }
 footer .footer-about {
 	font-size: calc(1rem - 6px);
@@ -55,7 +56,8 @@ footer .footer-about >p:not(:last-child) {
 		margin-bottom: 0;
 	}
 	footer .footer-logo img {
-		width: 80px;
+		max-height: 38px;
+        max-width: 100%;
 	}
 	footer .footer-general,
 	footer .title {
