@@ -1,6 +1,6 @@
 <?php
 
-    $CampaignKey='u83wniqe4jpvzn5ayw6z';	
+    $CampaignKey='tdtzjgnojavi66lz7g0d';	
     $CampaignLink='https://track.dreamjobfinder.pro/track.php?key='.$CampaignKey;
     $ApiKey='10000013adee86ee9f777ada9fb323e24fccaf3';
 
