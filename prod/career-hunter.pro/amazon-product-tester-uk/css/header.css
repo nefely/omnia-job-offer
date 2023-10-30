@@ -34,7 +34,7 @@ header .mob {
 @media screen and (max-width: 991px) {
 	header {
 		padding: 5px 0;
-		background: #2D2B2B;
+		background: #ECECEC;
 	}
 	header .logo img {
 		max-height: 38px;
