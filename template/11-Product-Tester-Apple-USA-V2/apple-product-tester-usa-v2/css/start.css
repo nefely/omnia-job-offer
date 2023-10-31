@@ -1,16 +1,16 @@
 #start {
 	padding-top: 0;
 	padding-bottom: 0;
-	overflow: hidden;
 }
 #start .row {
-	background: #FFC731;
+	background: var(--theme-secondary);
 	border-radius: 25px;
 	flex-direction: column;
 	position: relative;
 	justify-content: center;
 	align-items: center;
-	padding: 100px 120px 100px 120px;
+	padding: 120px 120px 30px 120px;
+	color: var(--theme-white);
 	overflow: hidden;
 }
 #start .figure  {
@@ -27,14 +27,14 @@
 	width: auto;
 	height: 100%;
 	top: 0;
-	right: 0;
+	left: 0;
 }
 #start .figure .right{
 	position: absolute;
 	width: auto;
-	height: 100%;
-	top: 0;
-	left: 0;
+	height: 70%;
+	bottom: 0;
+	right: 0;
 }
 #start .figure.figure--desktop {
 	display: block;
@@ -47,17 +47,11 @@
 	z-index: 2;
 }
 #start .title {
-	margin-bottom: 60px;
+	margin-bottom: 80px;
 }
 #start .title h2 {
 	margin-bottom: 10px;
 	font-weight: 600;
-}
-#start .title img {
-	margin-bottom: 15px;
-}
-#start .title p {
-	max-width: 500px;
 }
 #start .logos {
 	margin-top: 60px;
@@ -71,20 +65,25 @@
 	margin: 0 10px;
 }
 #start .logos img {
-	max-width: 100%
+	max-width: 100%;
 }
 #start .start-subscribe {
 	margin-top: auto;
 	margin-bottom: auto;
 }
-#start .start-subscribe .btn {
-	background: var(--theme-white);
+#start .start-subscribe a {
+    color: var(--theme-primary-dark);
+    background-color: #FFC731;
+    border-color: #FFC731;
+    box-shadow: 0 0 0 0 rgba(255, 199, 49, 0.15);
 }
-
+#start .start-subscribe a:hover {
+    box-shadow: 0 0 0 6px rgba(255, 199, 49, 0.15);
+}
 @media screen and (max-width: 991px) {
 	#start .row {
 		border-radius: 0;
-		padding: 70px 15px 30px 15px;
+		padding: 50px 15px 30px 15px;
 	}
 	#start .title {
 		margin-bottom: 40px;
@@ -96,7 +95,7 @@
 		display: block;
 	}
 	#start .row > *{
-		max-width: 280px
+		max-width: 300px
 	}
 	#start .row .logos {
 		max-width: 3750px;
@@ -107,37 +106,18 @@
 	#start .logos {
 	    margin-top: 130px;
 	}
-	#start .figure {
-		overflow: hidden;
-		position: initial;
-		display: flex;
-		justify-content: center;
-		width: calc(100% + 30px);
-		max-width: calc(100% + 30px) !important;
-		margin-left: -15px;
-		margin-bottom: -30px;
-		align-items: center;
-		margin-top: 15px;
-	}
 	#start .figure .left{
-		position: relative;
+		position: absolute;
 		width: auto;
 		height: 60%;
-		max-width: 300px;
-		top: initial;
-		bottom: 0%;
-		left: 50%;
-		transform: translateX(-50%);
+		top: 20%;
+		left: 0;
 	}
 	#start .figure .right{
 		position: absolute;
 		width: auto;
-		height: 68%;
-		top: 0;
-		left: initial;
+		height: 52%;
+		bottom: 0;
 		right: 0;
-	}
-	#start .title img {
-		margin-bottom: 30px;
 	}
 }
