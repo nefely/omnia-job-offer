@@ -7,7 +7,13 @@ $("input[name=phone]").val("")
 
 
 if ($("input[name=phone]").length > 0) {
-  $("input[name=phone]").mask('(000) 000-0000');
+  $('input[name=phone]').mask('04XX XXX XXX', { 
+    'translation': {
+        0: { pattern: /[0]/ },
+        4: { pattern: /[4-5]/ },
+        X: { pattern: /[0-9]/ }
+    }
+ });
 }
 if ($("input[name=zip]").length > 0) {
   $("input[name=zip]").mask('00000');
@@ -155,7 +161,7 @@ $(window).resize(checkWindowSize);
 
 // .form-step--3
     isPhoneValid = () => {
-        if ($("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10) {
+        if ( $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10 && (/^04/.test($("input[name=phone]").val()) || /^05/.test($("input[name=phone]").val())) ) {
             return true
         } else {
             return false
@@ -182,7 +188,7 @@ $(window).resize(checkWindowSize);
         }
     })
     $("input[name=phone]").on("input" , function(){
-        if ($("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10) {
+        if ( $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10 && (/^04/.test($("input[name=phone]").val()) || /^05/.test($("input[name=phone]").val())) ) {
             $(this).removeClass("error")
         }
     })
@@ -239,7 +245,7 @@ $(".form-step--3 .btn-next").click(function(e){
         "firstname": $("[name=firstname]").val(), 
         "lastname": $("[name=lastname]").val(), 
         "email": $("[name=email]").val(), 
-        "phone": $("[name=phone]").val(), 
+        "phone": $("[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , ""), 
         "offer_type": $("[name=offer_type]").val(), 
         "offer_url": window.location.href.split('?')[0], 
         "click_id": clickid
