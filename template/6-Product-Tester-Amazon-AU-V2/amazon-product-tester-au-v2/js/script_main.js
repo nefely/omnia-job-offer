@@ -7,16 +7,7 @@ $("input[name=phone]").val("")
 
 
 if ($("input[name=phone]").length > 0) {
-  $('input[name=phone]').mask('04XX XXX XXX', { 
-    'translation': {
-        0: { pattern: /[0]/ },
-        4: { pattern: /[4-5]/ },
-        X: { pattern: /[0-9]/ }
-    }
- });
-}
-if ($("input[name=zip]").length > 0) {
-  $("input[name=zip]").mask('00000');
+  $('input[name=phone]').mask('000000000000')
 }
 
 $('.slider').slick({
@@ -49,36 +40,10 @@ $(window).resize(checkWindowSize);
 // validation
 
 // .form-step--1
-    isZipValid = () => {
-        if ($("input[name=zip]").val().length == 5) {
-            return true
-        } else {
-            return false
-        }
-    }
-    zipValidation = () => {
-        if (isZipValid()) {
-            $("input[name=zip]").removeClass("error")
-        } else {
-            $("input[name=zip]").focus()
-            $("input[name=zip]").addClass("error")
-        }
-    }
-    $(".form-step--1 .submit-question").click(function(){
-        zipValidation()
-    });
-    $(".form-step--1 input").on("input" , function(){
-        if (isZipValid()) {
-            $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
-        } else {
-            $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
-        }
-    })
-    $("input[name=zip]").on("input" , function(){
-        if ($(this).val().length == 5) {
-            $(this).removeClass("error")
-        }
-    })
+    
+    $(".form-step--1 .submit-question").click(function(){});
+    $(".form-step--1").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
+    
 
 // .form-step--2
     isFirstNameValid = () => {
@@ -161,7 +126,7 @@ $(window).resize(checkWindowSize);
 
 // .form-step--3
     isPhoneValid = () => {
-        if ( $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10 && (/^04/.test($("input[name=phone]").val()) || /^05/.test($("input[name=phone]").val())) ) {
+        if ( $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length >= 9 ) {
             return true
         } else {
             return false
@@ -188,7 +153,7 @@ $(window).resize(checkWindowSize);
         }
     })
     $("input[name=phone]").on("input" , function(){
-        if ( $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10 && (/^04/.test($("input[name=phone]").val()) || /^05/.test($("input[name=phone]").val())) ) {
+        if ( $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length >= 9 ) {
             $(this).removeClass("error")
         }
     })
@@ -241,7 +206,7 @@ $(".form-step--3 .btn-next").click(function(e){
     const uclick = $("[name=uclick]").val();
 
     const data = {
-        "zip": $("[name=zip]").val(), 
+        "zip": "", 
         "firstname": $("[name=firstname]").val(), 
         "lastname": $("[name=lastname]").val(), 
         "email": $("[name=email]").val(), 
@@ -272,12 +237,6 @@ $(".form-step--3 .btn-next").click(function(e){
 // const uclick = "my_uclick_here";
 
 setTimeout(()=>{
-
-if (isZipValid()) {
-  $(".form-step--1").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
-} else {
-  $(".form-step--1").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
-}
 
 if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
   $(".form-step--2").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
