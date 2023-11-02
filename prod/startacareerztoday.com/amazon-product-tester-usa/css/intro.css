@@ -2,6 +2,7 @@
 	flex-grow: 1;
 	padding: 15vh 0;
 	position: relative;
+    overflow-x: hidden;
 }
 #intro .figure {
 	position: absolute;
@@ -9,6 +10,7 @@
 	right: -5%;
 	width: 45%;
 	height: 70%;
+    display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
 	z-index: -1;
