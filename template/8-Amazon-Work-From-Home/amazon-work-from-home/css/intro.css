@@ -2,7 +2,7 @@
 	flex-grow: 1;
 	padding: 15vh 0;
 	position: relative;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 #intro .figure {
 	position: absolute;
