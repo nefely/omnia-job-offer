@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/javascript');
 $clickid = "optional";
 if(isset($_GET['key']) || isset($_GET['uclick'])) {
-    $url = "https://track.dreamjobhunter.pro/track.php?{$_SERVER['QUERY_STRING']}";
+    $url = "https://track.work-hunter.com/track.php?{$_SERVER['QUERY_STRING']}";
     $headers = get_headers($url, 1);
     $domain = parse_url(is_array($headers['Location'])?$headers['Location'][0]:$headers['Location'], PHP_URL_HOST);
     if($domain != null) {
