@@ -1,0 +1,155 @@
+.intro[data-angle="default"] .container {
+	min-height: 64.5vh;
+}
+.intro:not([data-angle="default"]) .container {
+	min-height: 62.5vh;
+}
+@media screen and (max-width: 991px) {
+	.intro.bg-non .container {
+		background-image: none !important;
+	}
+}
+@media screen and (max-width: 991px) and (max-device-height: 670px) {
+	.intro .container {
+		background-image: none !important;
+	}
+}
+
+/*pt*/
+.intro > .container {
+	background-color: rgba(38,28,36,1);
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	transition: 0.3s;
+}
+
+.intro > .container.active {
+	background-color: rgba(237,236,238,1);
+}
+.intro .container:after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("../img/gt_d.png");
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: 80% bottom;
+	opacity: 1;
+	transition: 0.3s;
+}
+.intro .container * {
+	position: relative;
+	z-index: 2;
+}
+.intro .title {
+	color: rgba(255,255,255,1);
+}
+.intro .title span {
+	color: rgba(255,199,49,1);
+}
+.intro .bullet-item p {
+	color:rgba(255,255,255,1);
+}
+.intro .bullet-item svg {
+	fill: rgba(255,199,49,1);
+}
+.intro .intro-link,
+.intro .question-fields > .submit button,
+.intro .question-fields > .submit a {
+	background: rgba(255,199,49,1);
+	color: rgba(255,255,255,1);
+	box-shadow: 0 0 0 2px rgba(255,199,49,0.25);
+}
+.intro .question-fields > .submit button,
+.intro .question-fields > .submit a {
+	background: rgba(255,199,49,1);
+	color: rgba(0,0,0,1);
+	box-shadow: 0 0 0 2px rgba(255,199,49,0.25);
+}
+.intro .intro-link:hover,
+.intro .question-fields > .submit button:hover,
+.intro .question-fields > .submit a:hover {
+	box-shadow: 0 0 0 7px rgba(255,199,49,0.25);
+}
+.intro .question-fields > .submit button:hover,
+.intro .question-fields > .submit a:hover {
+	box-shadow: 0 0 0 7px rgba(255,199,49,0.25);
+}
+.intro .field .field-title,
+.intro .question-fields > .field.field--rules {
+	color: rgba(255,255,255,1);
+}
+.intro .question-fields > .field.field--rules a {
+	color: rgba(255,199,49,1);
+}
+@media screen and (max-width: 991px) {
+	/*.intro .container {
+		background-image: url("../img/pt_m.png");
+		background-size: auto 40vh;
+		background-repeat: no-repeat;
+		background-position: center 101%;
+	}*/
+	/*.intro .container {
+		background-image: url("../img/pt_m.png");
+		background-size: auto 34vh;
+		background-repeat: no-repeat;
+		background-position: center 101%;
+	}*/
+	.intro .container:after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url("../img/gt_m.png");
+		background-size: auto 34vh;
+		background-repeat: no-repeat;
+		background-position: center 101%;
+	}
+}
+/*@media screen and (max-width: 991px) and (min-height: 670px) {
+	.intro .container {
+		background-image: url("../img/pt_m.png");
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+	}
+	.intro .container {}
+}*/
+/*pt*/
+
+/*button effect*/
+/*light line*/
+.intro .intro-link.ll:after {
+	content: "";
+    display: block;
+    width: 1rem;
+    height: 100%;
+    background: rgba(255,255,255,1);
+    opacity: .9;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    z-index: 1;
+    transform: rotate(45deg) scale(2);
+    animation: 3s linear 0s infinite normal animation-blink;
+}
+@keyframes animation-blink {
+    0% {
+        left: -100%;
+    }
+    100%,
+    20% {
+        left: 100%;
+        margin-left: 5rem;
+    }
+}
+
+
