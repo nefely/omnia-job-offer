@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/javascript');
 $clickid = "optional";
 if(isset($_GET['key']) || isset($_GET['uclick'])) {
-    $url = "https://track.jobfindr.pro/track.php?{$_SERVER['QUERY_STRING']}";
+    $url = "https://track.thejobfindr.com/track.php?{$_SERVER['QUERY_STRING']}";
     $headers = @get_headers($url, 1);
     if(@is_array($headers['Location']))
     {
