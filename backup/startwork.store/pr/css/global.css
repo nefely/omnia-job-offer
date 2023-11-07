@@ -1,0 +1,167 @@
+:root {
+	--theme-black: rgba(0,0,0,1);
+	--theme-gray: rgba(51,51,51,1);
+	--theme-silver: rgba(112,115,138,1);
+	--theme-light: rgba(238,241,244,1);
+	--theme-white: rgba(255,255,255,1);
+
+	--theme-primary: rgba(0,48,173,1);
+	--theme-primary-0_5: rgba(0,48,173,0.5);
+	--theme-primary-0_08: rgba(0,48,173,0.08);
+
+	--theme-secondary: rgba(1,240,192,1);
+	--theme-secondary-0_13: rgba(1,240,192,0.13);
+	--theme-secondary-hover: rgba(1,180,132,1);
+	
+	--theme-alert: rgba(255,199,49,1);
+	--theme-dunger: rgba(255,20,20,1);
+	--theme-dunger-hover: rgba(205,10,10,1);
+
+	--gap-md: 10px;
+	--shadow-lg: 0px 3px 12px rgba(1, 13, 130, 0.12);
+}
+html {
+	font-size: 18px;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+	font-size: inherit;
+	font-weight: 400;
+	position: relative;
+	color: var(--theme-black);
+}
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+.row > * {
+	padding-left: 0;
+	padding-right: 0;
+}
+.container--np {
+	padding: 0;
+}
+.title {
+	margin-bottom: calc(2 * var(--gap-md));
+	text-align: center;
+	font-weight: 500;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , p , ul {
+	margin-bottom: 0;
+	padding: 0;
+}
+section	{
+	margin: 0 0 80px 0;
+}
+.bg {
+    padding-top: calc(6 * var(--gap-md));
+    padding-bottom: calc(6 * var(--gap-md));
+}
+.radius-md {
+    border-radius: calc(3 * var(--gap-md));
+}
+@media screen and (max-width: 767px) {
+	section	{
+		margin: 0 0 40px 0;
+	}
+	.bg {
+	    padding-top: calc(3 * var(--gap-md));
+	    padding-bottom: calc(3 * var(--gap-md));
+	}
+	.radius-md {
+	    border-radius: var(--gap-md);
+	}
+}
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+	padding-left: 0;
+	padding-right: 0;
+}
+.btn-green {
+	background: var(--theme-secondary);
+	color: var(--theme-black);
+	border: 1px solid var(--theme-secondary);
+}
+.btn-green:hover {
+	background: var(--theme-secondary-hover);
+	color: var(--theme-white);
+	border: 1px solid var(--theme-secondary-hover);
+}
+.btn-error {
+	background: var(--theme-dunger);
+	color: var(--theme-black);
+	border: 1px solid var(--theme-dunger);
+}
+.btn-error:hover {
+	background: var(--theme-dunger-hover);
+	color: var(--theme-white);
+	border: 1px solid var(--theme-dunger-hover);
+}
+.btn-empty {
+	background: transparent;
+	color: var(--theme-black);
+	border: 1px solid var(--theme-black);
+}
+.btn-empty:hover {
+	background: var(--theme-black);
+	color: var(--theme-white);
+	border: 1px solid var(--theme-black);
+}
+.btn-white {
+	background: var(--theme-white);
+	color: var(--theme-black);
+	border: 1px solid var(--theme-white);
+}
+.btn-white:hover {
+	background: var(--theme-black);
+	color: var(--theme-white);
+	border: 1px solid var(--theme-black);
+}
+.btn:focus {
+	box-shadow: 0 0 0 0.2rem transparent !important;
+}
+:focus-visible {
+    outline: none;
+}
+
+.full-height {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+
+.desk-br {
+	display: initial;
+}
+.mob-br {
+	display: none;
+}
+	@media screen and (max-width: 991px)  {
+		.desk-br {
+			display: none;
+		}
+		.mob-br {
+			display: initial;
+	}
+}
+.btn-group-lg>.btn, .btn-lg {
+    padding: 0.75rem 3rem;
+}
+
+.intro input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px var(--theme-white) inset !important; /* Change the color to whatever you want */
+  -webkit-text-fill-color: var(--theme-black) !important; /* Change the text color to whatever you want */
+}
+
+.btn {
+	font-weight: 500;
+}
+
+.titles .blue {
+	margin-top: 20px;
+	font-weight: 900;
+	color: var(--theme-primary);
+	margin-bottom: -10px;
+}
+
+.title-item-4 {
+	display: none;
+}
