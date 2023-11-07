@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>DreamJobHunter - Online Platform for Job Seekers</title>
-    <meta name="theme-color" content="#2D2B2B"/>
+	<title>Career Hunter - Online Platform for Job Seekers</title>
+    <meta name="theme-color" content="#f1f1f1"/>
 	<link rel="shortcut icon" type="image/png" href="../media/fav.png"/>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 
@@ -22,60 +22,8 @@ window.getURLParameter = (sUrl, sParam) => {
 }
 </script>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '799738728826938', {
-  em: `${window.getURLParameter(window.location.href, 'email')}`,
-  fn: `${window.getURLParameter(window.location.href, 'firstname')}`,
-  ln: `${window.getURLParameter(window.location.href, 'lastname')}`,
-  pg: `44${window.getURLParameter(window.location.href, 'telephone')}`
-});
-fbq('track', 'CompleteRegistration')
-</script>
-<!-- End Meta Pixel Code -->
-
-<!-- Tiktop Pixel Code -->
-<!-- <script>
-		!function (w, d, t) {
-		  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
-)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-		
-		  ttq.load('CJQU8RJC77U5TJETOUQ0');
-			ttq.identify({
-			    email: `${window.getURLParameter(window.location.href, 'email')}`,
-			    phone_number: `+44${window.getURLParameter(window.location.href, 'telephone')}`
-			})
-		}(window, document, 'ttq');
-
-ttq.track('CompleteRegistration');
-</script> -->
-<!-- End Tiktop Pixel Code -->
-
-
-<!-- Pinterest  Pixel Code -->
-<!-- <script>
-!function(e){if(!window.pintrk){window.pintrk = function () {
-window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
-  n=window.pintrk;n.queue=[],n.version="3.0";var
-  t=document.createElement("script");t.async=!0,t.src=e;var
-  r=document.getElementsByTagName("script")[0];
-  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
-pintrk('load', '2612906424300', {em: window.getURLParameter(window.location.href, 'email')});
-pintrk('track', 'signup');
-</script> -->
-<!-- End Pinterest Pixel Code -->
-
-
 <!-- Snap Pixel Code -->
-<!-- <script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', 'bf0dccf7-b5ce-4654-b217-f09d298b1d45', { 'user_email': window.getURLParameter(window.location.href, 'email'), 'user_phone_number': `44${window.getURLParameter(window.location.href, 'telephone')}` }); snaptr('track', 'SIGN_UP'); </script> -->
+<script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', 'c57e3968-ea61-4c58-b6ad-481fea436fc2', { 'user_email': window.getURLParameter(window.location.href, 'email'), 'user_phone_number': `44${window.getURLParameter(window.location.href, 'telephone')}` }); snaptr('track', 'SIGN_UP'); </script>
 <!-- End Snap Pixel Code -->
 
 </head>
