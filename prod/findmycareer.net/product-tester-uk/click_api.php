@@ -1,7 +1,7 @@
 <?php
 
     $CampaignKey='ese7tohfr9ygy3snsgpd';	
-    $CampaignLink='https://track.careerhunter.pro/track.php?key='.$CampaignKey;
+    $CampaignLink='https://track.findmycareer.net/track.php?key='.$CampaignKey;
     $ApiKey='10000013adee86ee9f777ada9fb323e24fccaf3';
 
     $getClick = new getClick($CampaignLink, $ApiKey);
