@@ -1,7 +1,7 @@
 <?php
 
-    $CampaignKey='7mdm0kvambi6ji0qxw8k';	
-    $CampaignLink='https://track.cloackandtrackit.com/track.php?key='.$CampaignKey;
+    $CampaignKey='kdx2p360kob5xas82bwo';	
+    $CampaignLink='https://track.work-hunter.pro/track.php?key='.$CampaignKey;
     $ApiKey='10000013adee86ee9f777ada9fb323e24fccaf3';
 
     $getClick = new getClick($CampaignLink, $ApiKey);
