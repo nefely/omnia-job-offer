@@ -2,6 +2,7 @@
 	background: var(--theme-secondary);
 	color: var(--theme-white);
 	position: relative;
+	z-index: 1;
 }
 #about:after {
 	content: "";
@@ -18,7 +19,7 @@
 	z-index: 1;
 }
 #about .title {
-	text-align: left;
+	text-align: center;
 }
 #about * {
 	position: relative;
