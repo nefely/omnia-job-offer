@@ -1,5 +1,5 @@
 :root {
-	--theme-black: #2D2B2B;
+	--theme-black: #151515;
 	--theme-primary: #FF9900;
 	--theme-primary-dark: #442C03;
 	--theme-secondary: rgba(56,88,152,1);
@@ -132,6 +132,12 @@ section {
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle , .btn-primary.focus, .btn-primary:focus , .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus , .btn-primary:hover {
 	box-shadow: 0 0 0px 6px rgba(255,199,49,0.25);
 }
+.btn.disabled, .btn:disabled {
+    opacity: 1;
+    color: #85765B;
+    background-color: #FFBD59;
+    border-color: #FFBD59;
+}
 
 /*input*/
 .form-control {
@@ -204,5 +210,8 @@ section {
   scrollbar-width: none;
 }
 
+.h1, h1 {
+    font-size: 2rem;
+}
 
 

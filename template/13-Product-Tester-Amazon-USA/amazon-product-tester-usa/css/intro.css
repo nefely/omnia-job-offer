@@ -70,7 +70,7 @@
 	align-items: center;
 	flex-direction: column;
 	max-width: 100%;
-	width: 535px;
+	width: 735px;
 }
 
 #intro .form .main-title {
@@ -78,28 +78,29 @@
 	margin-bottom: 40px;
 }
 #intro .form .main-title h1 {
-	font-weight: 600;
-	line-height: 1.6
+	font-weight: 500;
+	line-height: 1.4
 }
 #intro .form .main-title h1 img {
-	height: 2.5rem;
+	height: 2.2rem;
 	transform: translateY(6px);
 }
 #intro .form .main-title h1 span {
 	color: #5AB4DC
 }
+#intro .form .main-title h1 ~ p {
+    margin-top: 10px;
+    font-style: italic;
+}
 #intro .form .bullets {
 	width: 100%;
 	margin-bottom: 30px;
-}
-#intro .form .bullets ul {
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #intro .form .bullets ul li {
-	width: 50%;
+    width: auto;
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
@@ -208,13 +209,18 @@
 	#intro {
 	    padding: calc(2.25 * var(--gap)) 0;
 	}
+    #intro .form .main-title {
+		margin-bottom: 20px;
+	}
+    #intro .form .main-title h1 {
+        font-size: 1.45rem;
+    }
 	#intro .form .main-title h1 img {
-		height: 1.8rem;
+		height: 1.45rem;
 		transform: translateY(3px);
 	}
 	#intro .form .bullets ul {
 		flex-direction: column;
-		max-width: 253px;
 		margin: 0 auto;
 	}
 	#intro .form .bullets ul li {
@@ -237,16 +243,9 @@
 	#intro .form .form-step .submit-question button {
 		min-width: 240px;
 	}
-	#intro .form .main-title {
-		margin-bottom: 20px;
-	}
-	#intro .form .main-title h1 {
-		font-size: 1.8rem
-	}
 	#intro .form .bullets {
 		margin-bottom: 10px;
 	}
-
 	#intro .form .form-step,
 	#intro .form .form-step--lg {
 		max-width: 285px;
@@ -300,7 +299,7 @@
 	font-weight: 700;
 }
 #intro .quiz-block-question .info {
-	margin-top: 30px;
+	margin-top: 20px;
 	display: block;
 }
 #intro .quiz-block-answers > *:not(:last-child) {
@@ -355,6 +354,9 @@
 #intro .quiz-dots ul li.active {
 	background: var(--theme-primary);
 }
+#intro .quiz-dots ul li.green {
+	background: #40B756;
+}
 
 
 
@@ -394,4 +396,21 @@
     border-color: rgba(255,199,49,0.15);
     color: rgba(123,97,40,1);
     font-weight: normal
+}
+
+.tags {
+    text-align: center;
+}
+.tags p {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 9px 15px;
+    background: #CFDDFB;
+    border-radius: 50px;
+    font-size: 15px;
+    line-height: 1;
+}
+.tezis {
+    margin-top: 35px;
+    font-style: italic;
 }

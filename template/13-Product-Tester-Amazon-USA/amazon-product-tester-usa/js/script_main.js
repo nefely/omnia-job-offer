@@ -13,33 +13,6 @@ if ($("input[name=zip]").length > 0) {
   $("input[name=zip]").mask('00000');
 }
 
-$('.slider').slick({
-	arrows: false,
-	infinite: false,
-	variableWidth: false,
-	slidesToShow: 3,
-	responsive: [{
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 1,
-        centerMode: true,
-        centerPadding: '40px',
-      }
-    }]
-});
-
-function checkWindowSize() {
-    if ($(window).width() <= 991) {
-        $('.container--slider').removeClass('container');
-        $('.container--start').removeClass('container');
-    } else {
-        $('.container--slider').addClass('container');
-        $('.container--start').addClass('container');
-    }
-}
-checkWindowSize();
-$(window).resize(checkWindowSize);
-	
 // validation
 
 // .form-step--1
