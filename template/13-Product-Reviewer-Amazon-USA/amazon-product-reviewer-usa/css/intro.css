@@ -3,6 +3,8 @@
 	padding: 15vh 0;
 	position: relative;
     overflow-x: hidden;
+    position: relative;
+    z-index: 2;
 }
 #intro .figure {
 	position: absolute;
@@ -43,7 +45,7 @@
 	#intro .figure .figure-mob{
 		display: flex;
 		max-width: 100%;
-		max-height:17vh;
+		max-height:20vh;
 		object-fit: contain;
 		object-position: center;
 	}
@@ -86,15 +88,29 @@
 	transform: translateY(6px);
 }
 #intro .form .main-title h1 span {
-	color: #5AB4DC
+	font-weight: bold;
+    position: relative;
+}
+#intro .form .main-title h1 span:after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 52px;
+    height: 4px;
+    background: var(--theme-primary);
+}
+#intro .form .main-title h1 strong {
+    color: var(--theme-primary);
 }
 #intro .form .main-title h1 ~ p {
-    margin-top: 10px;
+    margin-top: 20px;
+    font-weight: 500;
     font-style: italic;
 }
+
 #intro .form .bullets {
 	width: 100%;
-	margin-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,6 +165,7 @@
 #intro .form .form-step {
 	width: 100%;
 	max-width: 285px;
+    margin-top: 30px;
 }
 #intro .form .form-step--lg {
 	max-width: 480px;
@@ -161,7 +178,7 @@
 }
 #intro .form .form-step > .submit-question a,
 #intro .form .form-step > .submit-question button {
-	min-width: 240px
+	min-width: 240px;
 }
 .submit-question a,
 .submit-question button {
@@ -208,24 +225,34 @@
 @media screen and (max-width: 991px) {
 	#intro {
 	    padding: calc(2.25 * var(--gap)) 0;
+        margin-bottom: -35px;
 	}
     #intro .form .main-title {
 		margin-bottom: 20px;
 	}
     #intro .form .main-title h1 {
-        font-size: 1.45rem;
+        font-size: 1.34rem;
+        line-height: 1.416;
     }
 	#intro .form .main-title h1 img {
-		height: 1.45rem;
+		height: 1.34rem;
 		transform: translateY(3px);
 	}
+    #intro .form .main-title h1 span:after {
+        bottom: 2px;
+        width: 35px;
+        height: 2px;
+        background: var(--theme-primary);
+    }
+    #intro .form .main-title h1 ~ p {
+        font-size: 15px;
+    }
 	#intro .form .bullets ul {
 		flex-direction: column;
 		margin: 0 auto;
 	}
 	#intro .form .bullets ul li {
 		width: 100%;
-		margin-bottom: 7px;
 	}
 	#intro .form .form-element-width-button {
 		flex-direction: column;
@@ -236,15 +263,17 @@
 	#intro .form-element-width-button .form-element-container {
 		margin-right: 0;
 	}
+    #intro .form .form-step {
+        margin-top: 20px;
+    }
 	#intro .form .form-step .submit-question {
 		margin-top: 20px;
+        width: 100%;
 	}
 	#intro .form .form-step .submit-question a,
 	#intro .form .form-step .submit-question button {
 		min-width: 240px;
-	}
-	#intro .form .bullets {
-		margin-bottom: 10px;
+        width: 100%;
 	}
 	#intro .form .form-step,
 	#intro .form .form-step--lg {
@@ -278,6 +307,12 @@
 	line-height: 2
 }
 
+#intro .form .bullets ul img {
+	margin-right: 10px;
+	height: 1rem;
+	margin-top: 2px;
+}
+
 
 
 
@@ -295,11 +330,19 @@
 #intro .quiz-block-question h5 {
 	font-weight: 400;
 }
+#intro .quiz-block-question h3 {
+	font-weight: 400;
+}
+@media screen and (max-width: 991px) {
+    #intro .quiz-block-question h3 {
+        font-size: 24px;
+    }
+}
 #intro .quiz-block-question strong {
 	font-weight: 700;
 }
 #intro .quiz-block-question .info {
-	margin-top: 20px;
+	margin-top: 30px;
 	display: block;
 }
 #intro .quiz-block-answers > *:not(:last-child) {
@@ -314,7 +357,7 @@
 }
 .quiz-block-answers a,
 .quiz-block-answers button {
-	font-size: 1.125rem !important;
+	font-size: 1.2rem !important;
 	padding-left: calc(0.75* var(--gap)) !important;
 	padding-right: calc(0.75* var(--gap)) !important;
 }

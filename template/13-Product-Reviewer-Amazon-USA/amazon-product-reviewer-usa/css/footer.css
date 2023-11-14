@@ -1,4 +1,6 @@
 footer {
+    background: var(--theme-primary);
+    padding-top: 40vh;
     color: var(--theme-white);
     text-align: center;
 }
