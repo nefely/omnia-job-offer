@@ -179,7 +179,9 @@ $(".quiz-block--7 a").click(function(e){
                 $(".popup").addClass("second")
                 setTimeout(()=>{
                     $(".popup .second-text").addClass("active")
-                    window.location.href = $(".quiz-block--7 a").attr("href")
+                    setTimeout(()=>{
+                        window.location.href = $(".quiz-block--7 a").attr("href")
+                    },1000)
                 },600)
             },300)
         }, 3000);
