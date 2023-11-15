@@ -45,7 +45,7 @@
 }
 #about .stat h2 {
 	font-weight: 600;
-	color: var(--theme-primary);
+	color: var(--theme-yellow);
 	margin-bottom: calc(0.5 * var(--gap));
 }
 @media screen and (max-width: 991px) {

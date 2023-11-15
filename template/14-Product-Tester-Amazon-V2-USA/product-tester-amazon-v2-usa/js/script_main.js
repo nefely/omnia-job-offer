@@ -24,6 +24,7 @@ $('.slider').slick({
         slidesToShow: 1,
         centerMode: true,
         centerPadding: '40px',
+        dots: true
       }
     }]
 });

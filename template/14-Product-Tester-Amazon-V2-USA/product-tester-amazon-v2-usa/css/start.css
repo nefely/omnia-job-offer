@@ -32,8 +32,8 @@
 #start .figure .right{
 	position: absolute;
 	width: auto;
-	height: 100%;
-	top: 0;
+	height: 80%;
+	bottom: 0;
 	right: 0;
 }
 #start .figure.figure--desktop {
@@ -71,7 +71,10 @@
 	margin-top: auto;
 	margin-bottom: auto;
 }
-
+#start .start-subscribe a {
+    background-color: var(--theme-yellow);
+    border-color: var(--theme-yellow);
+}
 @media screen and (max-width: 991px) {
 	#start .row {
 		border-radius: 0;
@@ -90,7 +93,7 @@
 		max-width: 300px
 	}
 	#start .row .logos {
-		max-width: 3750px;
+		max-width: 375px;
 	}
 	#start .title p {
 		font-weight: 300;
@@ -102,14 +105,14 @@
 		position: absolute;
 		width: auto;
 		height: 60%;
-		top: 20%;
+		top: 30%;
 		left: 0;
 	}
 	#start .figure .right{
 		position: absolute;
 		width: auto;
-		height: 68%;
-		top: 32%;
+		height: 52%;
+		bottom: 0%;
 		right: 0;
 	}
 }

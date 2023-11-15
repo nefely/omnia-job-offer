@@ -55,7 +55,24 @@
 	margin-bottom: 40px;
 }
 #intro .form .main-title h1 {
-	font-weight: 600
+	font-weight: 400
+}
+#intro .form .main-title h1 span {
+    position: relative;
+	font-weight: 700 !important;
+}
+#intro .form .main-title h1 span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 88px;
+    height: 6px;
+    background: var(--theme-primary);
+}
+#intro .form .main-title h1 strong {
+    color: #5AB4DC;
 }
 #intro .form .bullets {
 	width: 100%;
@@ -177,6 +194,11 @@
 	#intro {
 	    padding: calc(2.25 * var(--gap)) 0;
 	}
+    #intro .form .main-title h1 span:after {
+        bottom: 3px;
+        width: 40px;
+        height: 4px;
+    }
 	#intro .form .bullets ul {
 		flex-direction: column;
 		max-width: 253px;
@@ -195,6 +217,12 @@
 	#intro .form-element-width-button .form-element-container {
 		margin-right: 0;
 	}
+    #intro .form .form-step {
+        margin-top: 30px;
+    }
+    #intro .form .form-step--1 {
+        margin-top: 10px;
+    }
 	#intro .form .form-step .submit-question {
 		margin-top: 20px;
 	}
@@ -203,7 +231,7 @@
 		min-width: 240px;
 	}
 	#intro .form .main-title {
-		margin-bottom: 20px;
+		margin-bottom: 30px;
 	}
 	#intro .form .main-title h1 {
 		font-size: 1.8rem
@@ -359,4 +387,56 @@
     border-color: rgba(255,199,49,0.15);
     color: rgba(123,97,40,1);
     font-weight: normal
+}
+
+
+
+
+
+#intro .figure {
+	position: absolute;
+	bottom: 0;
+	right: -5%;
+	width: 45%;
+	height: 70%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	z-index: -1;
+}
+.figure-mob {
+	display: none;
+}
+.figure-desk {
+	display: flex;
+}
+#intro .figure img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+@media screen and (max-width: 991px) {
+	#intro .figure {
+		right: auto;
+		width: 100%;
+		height: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		top: initial;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+	}
+	#intro .figure .figure-mob{
+		display: flex;
+		max-width: 100%;
+		max-height:17vh;
+		object-fit: contain;
+		object-position: center;
+	}
+	.figure-desk {
+		display: none;
+	}
 }

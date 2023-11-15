@@ -38,7 +38,7 @@
 #jobs .list .item .icon {
 	padding: calc(0.5 * var(--gap));
 	border-radius: calc(0.5 * var(--gap));
-	background: var(--theme-primary);
+	background: var(--theme-yellow);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -62,6 +62,9 @@
 	#jobs .container-small > div{
 		width: 100%;
 	}
+    #jobs .container-small .img {
+        margin-top: 15px;
+    }
 	#jobs .img {
 		order: 2;
 	}

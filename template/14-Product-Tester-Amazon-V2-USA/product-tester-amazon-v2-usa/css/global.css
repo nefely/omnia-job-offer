@@ -1,6 +1,7 @@
 :root {
 	--theme-black: rgba(21,21,21,1);
-	--theme-primary: rgba(255,199,49,1);
+	--theme-primary: #FF9900;
+    --theme-yellow: #FFC731;
 	--theme-primary-dark: rgba(83,57,0,1);
 	--theme-secondary: rgba(56,88,152,1);
 	--theme-info: rgba(0,48,173,1);
@@ -107,6 +108,11 @@ section {
 	font-size: 1rem;
 	line-height: 1.2;
 }
+.btn.disabled, .btn:disabled {
+    opacity: 1;
+    background-color: #FFBD59 !important;
+    border-color: #FFBD59 !important;
+}
 .btn.round {
 	border-radius: 1000px;
 }
@@ -203,6 +209,8 @@ section {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
 
 
 
