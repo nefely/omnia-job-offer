@@ -32,8 +32,6 @@ form_final_link = () => {
 $(".quiz-block--1 .quiz-block-answers a").click(function(e){
     e.preventDefault()
 
-    $(".popup .container").fadeIn(300)
-
     $('.quiz-dots ul li').removeClass("active")
     $('.quiz-dots ul li:eq(0)').addClass("active")
     $('.quiz-dots ul li:eq(1)').addClass("active")
@@ -171,6 +169,21 @@ $(".quiz-block--7 a").click(function(e){
         lastClickTime = currentTime;
         console.log("click 7q")
         fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event8=1&cnv_status=q7click`, { mode: 'no-cors'});
+
+        $(".popup").fadeIn(300)
+        $(".popup .first-text").addClass("active")
+        setTimeout(() => {
+            $(".popup .first-text").fadeOut(300)
+            setTimeout(()=>{
+                $(".popup .second-text").fadeIn(300)
+                $(".popup").addClass("second")
+                setTimeout(()=>{
+                    $(".popup .second-text").addClass("active")
+                    window.location.href = $(".quiz-block--7 a").attr("href")
+                },600)
+            },300)
+        }, 3000);
+
     }
 })
 
@@ -253,7 +266,21 @@ $(".quiz-block--2 .quiz-block-back button").click(function(){
 })
 $(".quiz-block--3 .quiz-block-back button").click(function(){
     $('.quiz-dots ul li').removeClass("active")
+    $('.quiz-dots ul li:eq(0)').addClass("active")
     $('.quiz-dots ul li:eq(1)').addClass("active")
+})
+$(".quiz-block--4 .quiz-block-back button").click(function(){
+    $('.quiz-dots ul li').removeClass("active")
+    $('.quiz-dots ul li:eq(0)').addClass("active")
+    $('.quiz-dots ul li:eq(1)').addClass("active")
+    $('.quiz-dots ul li:eq(2)').addClass("active")
+})
+$(".quiz-block--5 .quiz-block-back button").click(function(){
+    $('.quiz-dots ul li').removeClass("active")
+    $('.quiz-dots ul li:eq(0)').addClass("active")
+    $('.quiz-dots ul li:eq(1)').addClass("active")
+    $('.quiz-dots ul li:eq(2)').addClass("active")
+    $('.quiz-dots ul li:eq(3)').addClass("active")
 })
 
 })
