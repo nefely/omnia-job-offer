@@ -1,7 +1,7 @@
 <?php
 
-    $CampaignKey='7mdm0kvambi6ji0qxw8k';	
-    $CampaignLink='https://track.cloackandtrackit.com/track.php?key='.$CampaignKey;
+    $CampaignKey='ovfgx0mv3vhdfvmakzi8';	
+    $CampaignLink='https://track.earnoppcenter.com/track.php?key='.$CampaignKey;
     $ApiKey='10000013adee86ee9f777ada9fb323e24fccaf3';
 
     $getClick = new getClick($CampaignLink, $ApiKey);
