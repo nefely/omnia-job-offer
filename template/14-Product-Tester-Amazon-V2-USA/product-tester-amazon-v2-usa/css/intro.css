@@ -276,11 +276,12 @@
 
 
 #intro .quiz {
-
+    width: 100%;
+	max-width: 500px;
 }
 #intro .quiz .quiz-container {
 	width: 100%;
-	max-width: 645px;
+	max-width: 500px;
 	text-align: center;
 }
 #intro .quiz-block-question {
@@ -326,6 +327,8 @@
 #intro .quiz-block--1 {
 	display: block;
 }
+#intro .quiz-block--6 {
+}
 
 
 #intro .quiz-dots {
@@ -338,7 +341,7 @@
 	align-items: center;
 }
 #intro .quiz-dots ul li {
-	width: 95px;
+	width: calc(100% / 5);
 	height: 5px;
 	background: #D0D0D0;
 	border-radius: 1000px;
@@ -348,6 +351,10 @@
 #intro .quiz-dots ul li.active {
 	background: var(--theme-primary);
 }
+#intro .quiz-dots ul li.green {
+    background: #01F0C0;
+}
+
 
 
 
@@ -357,7 +364,7 @@
 
 @media screen and (max-width: 991px) {
 	#intro .quiz-block-question h5 {
-		font-size: 1rem;
+		font-size: 1.2rem;
 		line-height: 1.5
 	}
 	/*#intro:after {
@@ -439,4 +446,96 @@
 	.figure-desk {
 		display: none;
 	}
+}
+
+
+.quiz-block--7 h2 {
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.quiz-block--7 h5 {
+    margin-bottom: 30px;
+}
+.quiz-block--7 .blue-text {
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #0030AD;
+    line-height: 1.7;
+}
+.quiz-block--7 .timer {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-block--7 .timer .dot {
+    margin: 0 10px;
+}
+.quiz-block--7 .timer .dot {
+    margin-top: -10px;
+}
+.quiz-block--7 .timer .dot,
+.quiz-block--7 .timer .sec,
+.quiz-block--7 .timer .min {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1;
+}
+.quiz-block--7 .timer .cell,
+.quiz-block--7 .timer .sec,
+.quiz-block--7 .timer .min {
+    width: 50px;
+    text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+    .quiz-block--7 h2 {
+        font-size: 32px;
+    }
+    .quiz-block--6 h5 {
+        font-size: 21px !important;
+    }
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: var(--theme-black);
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    text-align: center;
+    display: none;
+}
+.popup .container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10001;
+    top: 0;
+    left: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    flex-direction: column;
+}
+.popup h2{
+    font-size: 38px;
+    line-height: 57px;
+    font-weight: 700;
+}
+.first-text {
+    color: var(--theme-yellow);
+}
+.second-text {
+    color: var(--theme-yellow);
+}
+@media screen and (max-width: 991px) {
+    .popup h2{
+        font-size: 28px;
+        line-height: 42px;
+        font-weight: 700;
+    }
 }
