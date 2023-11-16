@@ -20,7 +20,14 @@ header .container {
 	align-items: center;
 }
 header .header-logo img {
+	max-height: 45px;
 	max-width: 100%;
+}
+header.desk {
+	display: initial;
+}
+header .mob {
+	display: none;
 }
 
 @media screen and (max-width: 991px) {
@@ -33,9 +40,16 @@ header .header-logo img {
 		text-align: center;
 	}
 	header .header-logo img {
-		max-width: 250px;
+		max-height: 38px;
+		max-width: 100%;
 	}
 	header .header-nav {
 		display: none;
+	}
+    header .desk {
+		display: none;
+	}
+	header .mob {
+		display: initial;
 	}
 }
