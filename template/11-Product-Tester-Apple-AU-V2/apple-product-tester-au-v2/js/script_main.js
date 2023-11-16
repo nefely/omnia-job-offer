@@ -7,7 +7,7 @@ $("input[name=phone]").val("")
 
 
 if ($("input[name=phone]").length > 0) {
-    $("input[name=phone]").mask('00000000000');
+    $("input[name=phone]").mask('000000000000');
 }
 
 $('.slider').slick({
@@ -125,7 +125,7 @@ $(window).resize(checkWindowSize);
 
 // .form-step--3
     isPhoneValid = () => {
-        if ($("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10 || $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 11) {
+        if ( $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length >= 9 ) {
             return true
         } else {
             return false
@@ -152,7 +152,7 @@ $(window).resize(checkWindowSize);
         }
     })
     $("input[name=phone]").on("input" , function(){
-        if ($("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10 || $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 11) {
+        if ( $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length >= 9 ) {
             $(this).removeClass("error")
         }
     })
