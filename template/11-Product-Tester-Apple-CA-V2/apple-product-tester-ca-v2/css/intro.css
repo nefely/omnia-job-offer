@@ -192,10 +192,9 @@
 #intro .form-element-container--icon .form-control {
 	padding-right: calc(1* var(--gap) + 30px);
 }
-
-#intro .form-element-container--icon .form-control[name="phone"] {
+/* #intro .form-element-container--icon .form-control[name="phone"] {
 	padding-left: calc(1* var(--gap) + 59px);
-}
+} */
 
 #intro .form-step .rules {
 	font-size: calc(1rem - 6px);
