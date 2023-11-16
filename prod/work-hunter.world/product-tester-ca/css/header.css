@@ -20,6 +20,7 @@ header .container {
 	align-items: center;
 }
 header .header-logo img {
+	max-height: 45px;
 	max-width: 100%;
 }
 
@@ -33,7 +34,8 @@ header .header-logo img {
 		text-align: center;
 	}
 	header .header-logo img {
-		max-width: 250px;
+		max-height: 38px;
+		max-width: 100%;
 	}
 	header .header-nav {
 		display: none;
