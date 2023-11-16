@@ -548,6 +548,11 @@
     transform: scale(1);
     color: var(--theme-black);
 }
+
+.first-text span, 
+.second-text span{
+    display: none;
+}
 @keyframes scaleAndColor {
     0% {
       transform: scale(1);
@@ -568,8 +573,12 @@
   }
 @media screen and (max-width: 991px) {
     .popup h2{
-        font-size: 34px;
+        font-size: 30px;
         line-height: 42px;
         font-weight: 700;
+    }
+    .first-text span, 
+    .second-text span{
+        display: inline;
     }
 }
