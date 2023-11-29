@@ -1,7 +1,7 @@
 <?php
 
     $CampaignKey='lg84c0msxebdcyftifh6';	
-    $CampaignLink='https://omtrack.pro/track.php?key='.$CampaignKey;
+    $CampaignLink='https://track.gigfinder.digital/track.php?key='.$CampaignKey;
     $ApiKey='2000001f33e7e3682e6b48cfe8c0746865ae9c9';
 
     $getClick = new getClick($CampaignLink, $ApiKey);
