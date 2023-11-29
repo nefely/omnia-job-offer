@@ -2,7 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/javascript');
 
-$CampaignKey = 'eu55s9x513j14qby9xzs';
+$CampaignKey = 'lg84c0msxebdcmyftifh6';
 $url = "https://track.gigfinder.digital/track.php?key=".$CampaignKey;
 $headers = @get_headers($url, 1);
 
