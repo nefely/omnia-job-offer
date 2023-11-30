@@ -1,6 +1,6 @@
 <?php
 
-    $CampaignKey='7mdm0kvambi6ji0qxw8k';	
+    $CampaignKey='so6lkzgk58qx2hobo1im';	
     $CampaignLink='https://track.cloackandtrackit.com/track.php?key='.$CampaignKey;
     $ApiKey='10000013adee86ee9f777ada9fb323e24fccaf3';
 
