@@ -62,8 +62,8 @@ $(".quiz-block--2 .quiz-block-answers a").click(function(e){
     $('.quiz-block--4 a.no').attr("href" , ``)
     $('.quiz-block--5 a.no').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=2`)
 
-    $('.quiz-block--3 a.yes').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=3`)
-    $('.quiz-block--4 a.yes').attr("href" , `../1000-earning-opportunity/?uclick=${uclick}`)
+    $('.quiz-block--3 a.yes').attr("href" , `../1000-earning-opportunity/?uclick=${uclick}`)
+    $('.quiz-block--4 a.yes').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=3`)
     $('.quiz-block--5 a.yes').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=4`)
 
     window.offer_link_1 = $('.quiz-block--3 a.yes').attr("href")
