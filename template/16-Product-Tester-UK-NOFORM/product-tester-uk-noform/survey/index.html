@@ -60,9 +60,6 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '761129538560044', {
   em: `${window.getURLParameter(window.location.href, 'email')}`,
-  fn: `${window.getURLParameter(window.location.href, 'firstname')}`,
-  ln: `${window.getURLParameter(window.location.href, 'lastname')}`,
-  pg: `44${window.getURLParameter(window.location.href, 'telephone')}`
 });
 fbq('track', 'CompleteRegistration')
 </script> -->
@@ -76,8 +73,7 @@ fbq('track', 'CompleteRegistration')
 		
 		  ttq.load('CJQU8RJC77U5TJETOUQ0');
 			ttq.identify({
-			    email: `${window.getURLParameter(window.location.href, 'email')}`,
-			    phone_number: `+44${window.getURLParameter(window.location.href, 'telephone')}`
+			    email: `${window.getURLParameter(window.location.href, 'email')}`
 			})
 		}(window, document, 'ttq');
 
@@ -101,7 +97,7 @@ pintrk('track', 'signup');
 
 
 <!-- Snap Pixel Code -->
-<script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', '1ca60c74-adf4-44fc-b034-d65a08c7a520', { 'user_email': window.getURLParameter(window.location.href, 'email'), 'user_phone_number': `44${window.getURLParameter(window.location.href, 'telephone')}` }); snaptr('track', 'SIGN_UP'); </script>
+<!-- <script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', '1ca60c74-adf4-44fc-b034-d65a08c7a520', { 'user_email': window.getURLParameter(window.location.href, 'email') }); snaptr('track', 'SIGN_UP'); </script> -->
 <!-- End Snap Pixel Code -->
 
 
