@@ -796,9 +796,8 @@
             },1500)
 
             setTimeout(()=>{
-                 $("#to_offer_btn_1").attr("href" ,`${$("#to_offer_btn_1").attr("href")}${$("#to_offer_btn_1").attr("href").includes("?") ? "&" : "?"}zippost=${getURLParameter(window.location.href , "zippost")}&email=${getURLParameter(window.location.href , "email")}&firstname=${getURLParameter(window.location.href , "firstname")}&lastname=${getURLParameter(window.location.href , "lastname")}&telephone=${getURLParameter(window.location.href , "telephone")}` )
-
-                 $("#to_offer_btn_2").attr("href" ,`${$("#to_offer_btn_2").attr("href")}${$("#to_offer_btn_2").attr("href").includes("?") ? "&" : "?"}zippost=${getURLParameter(window.location.href , "zippost")}&email=${getURLParameter(window.location.href , "email")}&firstname=${getURLParameter(window.location.href , "firstname")}&lastname=${getURLParameter(window.location.href , "lastname")}&telephone=${getURLParameter(window.location.href , "telephone")}` )
+                 $("#to_offer_btn_1").attr("href" ,`${$("#to_offer_btn_1").attr("href")}${$("#to_offer_btn_1").attr("href").includes("?") ? "&" : "?"}email=${getURLParameter(window.location.href , "email")}` )
+                 $("#to_offer_btn_2").attr("href" ,`${$("#to_offer_btn_2").attr("href")}${$("#to_offer_btn_2").attr("href").includes("?") ? "&" : "?"}email=${getURLParameter(window.location.href , "email")}` )
             },1000)
         })
     </script>
