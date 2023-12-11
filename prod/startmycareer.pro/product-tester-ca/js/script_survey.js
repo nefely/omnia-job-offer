@@ -2,12 +2,7 @@ $(document).ready(function(){
 
 const clickid = window.getURLParameter(window.location.href, 'clickid');
 const uclick = window.getURLParameter(window.location.href, 'uclick');
-
 const email = window.getURLParameter(window.location.href, 'email');
-const firstname = window.getURLParameter(window.location.href, 'firstname');
-const lastname = window.getURLParameter(window.location.href, 'lastname');
-const telephone = window.getURLParameter(window.location.href, 'telephone');
-const zip = window.getURLParameter(window.location.href, 'zip');
 
 $(".question--4").delay(3600).fadeOut(300)
 $(".question--5").delay(3900).fadeIn(300)
@@ -17,18 +12,14 @@ form_final_link = () => {
   console.log(clickid)
   console.log(uclick)
   console.log(email)
-  console.log(firstname)
-  console.log(lastname)
-  console.log(telephone)
-  console.log(zip)
 
-  $(".answers-container-3 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
-  $(".answers-container-4 a.yes").attr("href" ,`${window.offer_link_2}${window.offer_link_2.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
-  $(".answers-container-5 a.yes").attr("href" ,`${window.offer_link_3}${window.offer_link_3.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
+  $(".answers-container-3 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}email=${email}` )
+  $(".answers-container-4 a.yes").attr("href" ,`${window.offer_link_2}${window.offer_link_2.includes("?") ? "&" : "?"}email=${email}` )
+  $(".answers-container-5 a.yes").attr("href" ,`${window.offer_link_3}${window.offer_link_3.includes("?") ? "&" : "?"}email=${email}` )
 
   $(".answers-container-3 a.no").attr("href" ,`` )
   $(".answers-container-4 a.no").attr("href" ,`` )
-  $(".answers-container-5 a.no").attr("href" ,`${window.offer_link_no_3}${window.offer_link_no_3.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
+  $(".answers-container-5 a.no").attr("href" ,`${window.offer_link_no_3}${window.offer_link_no_3.includes("?") ? "&" : "?"}email=${email}` )
 }
 
 $(".answers-container-1 .btn.next").click(function(){
