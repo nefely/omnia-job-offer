@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FindMyCareer - Online Platform for Job Seekers</title>
+    <meta name="theme-color" content="#ECECEC"/>
+	<link rel="shortcut icon" type="image/png" href="../media/fav.png"/>
+	<script type="text/javascript" src="../js/jquery.js"></script>
+
+
+<script type="text/javascript">
+window.getURLParameter = (sUrl, sParam) => {
+    let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
+    let sURLVariables = sPageURL.split('&');
+    for (let i = 0; i < sURLVariables.length; i++) {
+        let sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+        }
+    }
+}
+</script>
+
+<!-- Meta Pixel Code -->
+<!-- <script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '761129538560044', {
+  em: `${window.getURLParameter(window.location.href, 'email')}`,
+});
+fbq('track', 'CompleteRegistration')
+</script> -->
+<!-- End Meta Pixel Code -->
+
+<!-- Tiktop Pixel Code -->
+<!-- <script>
+		!function (w, d, t) {
+		  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
+)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+		
+		  ttq.load('CJQU8RJC77U5TJETOUQ0');
+			ttq.identify({
+			    email: `${window.getURLParameter(window.location.href, 'email')}`
+			})
+		}(window, document, 'ttq');
+
+ttq.track('CompleteRegistration');
+</script> -->
+<!-- End Tiktop Pixel Code -->
+
+
+<!-- Pinterest  Pixel Code -->
+<!-- <script>
+!function(e){if(!window.pintrk){window.pintrk = function () {
+window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+  n=window.pintrk;n.queue=[],n.version="3.0";var
+  t=document.createElement("script");t.async=!0,t.src=e;var
+  r=document.getElementsByTagName("script")[0];
+  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+pintrk('load', '2612906424300', {em: window.getURLParameter(window.location.href, 'email')});
+pintrk('track', 'signup');
+</script> -->
+<!-- End Pinterest Pixel Code -->
+
+
+<!-- Snap Pixel Code -->
+<!-- <script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', '1ca60c74-adf4-44fc-b034-d65a08c7a520', { 'user_email': window.getURLParameter(window.location.href, 'email') }); snaptr('track', 'SIGN_UP'); </script> -->
+<!-- End Snap Pixel Code -->
+
+</head>
+<body>
+<!-- preloader --><style>.preloader{position:fixed;width:100vw;height:100vh;background:#fff;z-index:1000;left:0;top:0;}</style><div class="preloader"></div>
+
+
+<div class="screen">
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="logo">
+					<img src="../media/logo.svg" alt="" class="desk">
+					<img src="../media/logo.svg" alt="" class="mob">
+				</div>
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#jobs">Jobs</a></li>
+					<li><a href="#testimonials">Testimonials</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<section id="intro">
+		<div class="container">
+			<div class="row">
+				<div class="thx">
+					<div class="thx-container">
+						<div class="thx-budge">
+							<img src="../media/thx-budge.png" alt="">
+						</div>
+						<div class="thx-title">
+							<h3>Welcome!</h3>
+						</div>
+						<div class="thx-text">
+							<p>Please take the short survey to receive the best job options as a <strong>Amazon Product Tester</strong>.</p>
+						</div>
+					</div>
+				</div>
+				<div class="quiz">
+					<div class="quiz-container">
+						<div class="quiz-dots">
+							<ul>
+								<li class="active"></li>
+								<li></li>
+								<li></li>
+							</ul>
+						</div>
+						<div class="quiz-blocks">
+							<div class="quiz-block quiz-block--1">
+								<div class="quiz-block-question">
+									<h5>Are you currently employed?</h5>
+								</div>
+								<div class="quiz-block-answers">
+									<a href="" class="btn btn-primary yes round">Yes</a>
+									<a href="" class="btn btn-primary no round">No</a>
+								</div>
+								<!-- <div class="quiz-block-back">
+									<button class="btn btn-transparent">Back</button>
+								</div> -->
+							</div>
+							<div class="quiz-block quiz-block--2">
+								<div class="quiz-block-question">
+									<h5>Have you worked at Amazon before?</h5>
+								</div>
+								<div class="quiz-block-answers">
+									<a href="" class="btn btn-primary yes round">Yes</a>
+									<a href="" class="btn btn-primary no round">No</a>
+								</div>
+								<div class="quiz-block-back">
+									<button class="btn btn-transparent">Back</button>
+								</div>
+							</div>
+							<div class="quiz-block quiz-block--3">
+								<div class="quiz-block-question">
+									<h5>Become a <strong>Product Tester</strong> for <strong>Amazon Products</strong>! Earn up to <strong>£750</strong> towards Amazon Products + an additional <strong>£750</strong> for reviewing the products!</h5>
+									<strong class="info data"><script>
+(() => {
+    let _currentDate = new Date();
+    let _currentMonth = _currentDate.getMonth();
+    let _currentYear = _currentDate.getFullYear();
+    let _lastDay = new Date(_currentYear, _currentMonth + 1, 0).getDate();
+    let _monthAbbreviations = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let _currentMonthAbbreviation = _monthAbbreviations[_currentMonth];
+    let _resultString = `Offer expires ${_currentMonthAbbreviation} ${_lastDay} at 11:59pm EST`;
+    document.write(_resultString);
+})()
+</script></strong>
+								</div>
+								<div class="quiz-block-answers">
+									<a href="" class="btn btn-primary yes round" target="_blank">YES, get started now</a>
+									<a href="" class="btn btn-primary no round opacity">NO, proceed further</a>
+								</div>
+								<div class="quiz-block-back">
+									<button class="btn btn-transparent">Back</button>
+								</div>
+							</div>
+							<div class="quiz-block quiz-block--4">
+								<div class="quiz-block-question">
+									<h5>Do you want to <strong>Earn up to £1000 from home</strong> by testing <strong>Exclusive Product Deals</strong> from today's largest brands during your search for <strong>Amazon Product Tester</strong> Job? </h5>
+								</div>
+								<div class="quiz-block-answers">
+									<a href="" class="btn btn-primary yes round" target="_blank">YES, learn more</a>
+									<a href="" class="btn btn-primary no round opacity">NO, proceed further</a>
+								</div>
+								<div class="quiz-block-back">
+									<button class="btn btn-transparent">Back</button>
+								</div>
+							</div>
+							<div class="quiz-block quiz-block--5">
+								<div class="quiz-block-question">
+									<h5>Do you want to <strong>Earn up to £750 Cash</strong> by watching your <strong>favorite shows</strong> on streaming services?</h5>
+								</div>
+								<div class="quiz-block-answers">
+									<a href="" class="btn btn-primary yes round" target="_blank">YES, start earning</a>
+									<a href="" class="btn btn-primary no round opacity" target="_blank">NO, proceed further</a>
+								</div>
+								<div class="quiz-block-back">
+									<button class="btn btn-transparent">Back</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="figure">
+			<img src="../media/figure-girl.png">
+		</div>
+	</section>
+</div>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/fontawersome.css">
+<link rel="stylesheet" href="../css/bootstrap-reboot.min.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/global.css">
+
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/intro.css">
+<link rel="stylesheet" href="../css/about.css">
+<link rel="stylesheet" href="../css/jobs.css">
+<link rel="stylesheet" href="../css/testimonials.css">
+<link rel="stylesheet" href="../css/start.css">
+<link rel="stylesheet" href="../css/footer.css">
+
+<script type="text/javascript" src="../js/script_general.js"></script>
+<script type="text/javascript" src="../js/script_survey.js"></script>
+
+<style>
+#intro {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#intro .container {
+	margin-top: -50px;
+}
+#intro .quiz {
+	display: none;
+}
+#intro .thx {
+	display: flex;
+}
+#intro .figure {
+	display: none !important;
+}
+</style>
+
+</body>
+</html>
