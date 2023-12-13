@@ -455,8 +455,11 @@
     margin-bottom: 30px;
 }
 .quiz-block--7 h5,
-.quiz-block--8 h5 {
+.quiz-block--8 p {
     margin-bottom: 30px;
+}
+.quiz-block--8 p {
+    margin-top: 26px;
 }
 .quiz-block--7 .blue-text {
     margin-bottom: 30px;
@@ -490,13 +493,21 @@
     text-align: center;
 }
 
+
 @media screen and (max-width: 991px) {
+    .quiz-block--7 {
+        padding-top: 40px;
+    }
     .quiz-block--7 h2,
-    .quiz-block--8 h5 {
+    .quiz-block--8 h2 {
         font-size: 32px;
     }
     .quiz-block--6 h5 {
         font-size: 21px !important;
+    }
+    .quiz-block--7 h5 ,
+    .quiz-block--8 h5 {
+        font-size: 1.1rem !important;
     }
 }
 
