@@ -449,11 +449,13 @@
 }
 
 
-.quiz-block--7 h2 {
+.quiz-block--7 h2,
+.quiz-block--8 h2 {
     font-weight: 700;
     margin-bottom: 30px;
 }
-.quiz-block--7 h5 {
+.quiz-block--7 h5,
+.quiz-block--8 h5 {
     margin-bottom: 30px;
 }
 .quiz-block--7 .blue-text {
@@ -489,7 +491,8 @@
 }
 
 @media screen and (max-width: 991px) {
-    .quiz-block--7 h2 {
+    .quiz-block--7 h2,
+    .quiz-block--8 h5 {
         font-size: 32px;
     }
     .quiz-block--6 h5 {
@@ -573,8 +576,8 @@
   }
 @media screen and (max-width: 991px) {
     .popup h2{
-        font-size: 30px;
-        line-height: 42px;
+        font-size: 28px;
+        line-height: 38px;
         font-weight: 700;
     }
     .first-text span, 

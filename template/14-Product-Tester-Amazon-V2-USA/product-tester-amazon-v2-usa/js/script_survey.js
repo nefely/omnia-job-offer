@@ -14,6 +14,8 @@ setTimeout(()=> {
     $("#intro .quiz").delay(300).fadeIn(300)
 }, 3000)
 
+$(".firstname").text(firstname)
+
 form_final_link = () => {
     // console.log(window.offer_link)
 
@@ -25,7 +27,8 @@ form_final_link = () => {
     console.log(telephone)
     console.log(zip)
 
-    $(".quiz-block--7 a").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
+    // $(".quiz-block--7 a").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
+    $(".quiz-block--8 a").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
 }
 	
 // quiz flow
@@ -54,8 +57,10 @@ $(".quiz-block--2 .quiz-block-answers a").click(function(e){
         $(this).closest(".quiz-block").next(".quiz-block").fadeIn(standart_time)
     }, standart_time)
 
-    $('.quiz-block--7 a').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=1`)
-    window.offer_link_1 = $('.quiz-block--7 a').attr("href")
+    // $('.quiz-block--7 a').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=1`)
+    $('.quiz-block--8 a').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=1`)
+    // window.offer_link_1 = $('.quiz-block--7 a').attr("href")
+    window.offer_link_1 = $('.quiz-block--8 a').attr("href")
     form_final_link()
 
 })
@@ -124,6 +129,15 @@ $(".quiz-block--5 .quiz-block-answers a").click(function(e){
     },standart_time)
 })
 
+$(".quiz-block--7 .btn-box a").click(function(e){
+    e.preventDefault()
+
+    $(this).closest(".quiz-block").fadeOut(standart_time)
+    setTimeout(()=>{
+        $(this).closest(".quiz-block").next(".quiz-block").fadeIn(standart_time)
+    }, standart_time)
+})
+
 
 var timer;
 
@@ -141,7 +155,6 @@ function startTimer() {
     displayTime(timeInSeconds);
     if (timeInSeconds <= 0) {
       clearInterval(timer);
-      alert("Час минув!");
     }
   }, 1000);
 }
@@ -158,7 +171,7 @@ function pad(number) {
 
 let lastClickTime = 0;
 
-$(".quiz-block--7 a").click(function(e){
+$(".quiz-block--8 a").click(function(e){
     e.preventDefault()
     const currentTime = new Date().getTime();
     if (currentTime - lastClickTime < 5000) {
@@ -167,8 +180,8 @@ $(".quiz-block--7 a").click(function(e){
         return false;
     } else {
         lastClickTime = currentTime;
-        console.log("click 7q")
-        fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event8=1&cnv_status=q7click`, { mode: 'no-cors'});
+        console.log("click 8q")
+        fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event8=1&cnv_status=q8click`, { mode: 'no-cors'});
 
         $(".popup").fadeIn(300)
         $(".popup .first-text").addClass("active")
@@ -180,7 +193,7 @@ $(".quiz-block--7 a").click(function(e){
                 setTimeout(()=>{
                     $(".popup .second-text").addClass("active")
                     setTimeout(()=>{
-                        window.location.href = $(".quiz-block--7 a").attr("href")
+                        window.location.href = $(".quiz-block--8 a").attr("href")
                     },1000)
                 },600)
             },300)
