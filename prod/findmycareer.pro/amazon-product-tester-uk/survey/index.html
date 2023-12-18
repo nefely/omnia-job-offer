@@ -34,6 +34,9 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '711812030347434', {
   em: `${window.getURLParameter(window.location.href, 'email')}`,
+  fn: `${window.getURLParameter(window.location.href, 'firstname')}`,
+  ln: `${window.getURLParameter(window.location.href, 'lastname')}`,
+  pg: `44${window.getURLParameter(window.location.href, 'telephone')}`
 });
 fbq('track', 'CompleteRegistration')
 </script>
