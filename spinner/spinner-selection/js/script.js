@@ -32,10 +32,10 @@ $(".congratulation .btn-submit").click(function() {
       })
       .catch((e) => console.log(`Failed to register facebook lead with clickid: ${clickid}. Reason: ${e.message}`));
 
-      fetch(`https://track.shop-shop.today/track.php?cnv_id=${clickid}`, {
+      fetch(`https://track.cloackandtrackit.com/track.php?cnv_id=${clickid}`, {
 	  mode: 'no-cors'
       })
-      .then(() => { window.location.href = `https://track.shop-shop.today/click.php?lp=1&email=${email}&to_offer=${offer_number}` })
+      .then(() => { window.location.href = `https://track.cloackandtrackit.com/click.php?lp=1&email=${email}&to_offer=${offer_number}` })
       .catch((e) => console.log(`Failed to send Binom lead with clickid: ${clickid}. Reason: ${e.message}`));
     }
 });
