@@ -91,16 +91,16 @@
 	transform: rotate(0deg);
 }
 .roulette-circle > .spinner[data-roll="0"] {
-	transform: rotate(-30deg);
+	transform: rotate(-60deg);
 }
 .roulette-circle > .spinner[data-roll="1"] {
-	transform: rotate(3720deg);
+	transform: rotate(3690deg);
 }
 .roulette-circle > .spinner[data-roll="2"] {
-	transform: rotate(7200deg);
+	transform: rotate(7170deg);
 }
 .roulette-circle > .spinner[data-roll="3"] {
-	transform: rotate(10860deg);
+	transform: rotate(10830deg);
 }
 .roulette-circle > .spin-button {
 	position: absolute;
