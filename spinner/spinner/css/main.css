@@ -201,6 +201,7 @@
 }
 .main-bottom .image .card {
 	margin-top: 80px;
+    width: 220px;
 	margin-bottom: 0;
 	transform: scale(0.75 , 0.75);
 	z-index: -1;
