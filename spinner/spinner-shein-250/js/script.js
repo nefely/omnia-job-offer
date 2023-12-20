@@ -21,7 +21,7 @@ $(".congratulation .btn-submit").click(function() {
       fetch(`https://track.cloackandtrackit.com/track.php?cnv_id=${clickid}`, {
 	  mode: 'no-cors'
       })
-      .then(() => { window.location.href = `https://track.cloackandtrackit.com/click.php?lp=1&email=${$("input[name='email']").val()}` })
+      .then(() => { window.location.href = `https://track.cloackandtrackit.com/track.php?lp=1&email=${$("input[name='email']").val()}` })
       .catch((e) => console.log(`Failed to send Binom lead with clickid: ${clickid}. Reason: ${e.message}`));
     }
 });
