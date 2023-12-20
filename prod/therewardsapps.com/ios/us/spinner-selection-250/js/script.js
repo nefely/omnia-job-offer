@@ -32,10 +32,10 @@ $(".congratulation .btn-submit").click(function() {
       })
       .catch((e) => console.log(`Failed to register facebook lead with clickid: ${clickid}. Reason: ${e.message}`));
 
-      fetch(`https://track.therewardsapps.com/track.php?cnv_id=${clickid}`, {
+      fetch(`https://${chousen_track_domain}/track.php?cnv_id=${clickid}`, {
 	  mode: 'no-cors'
       })
-      .then(() => { window.location.href = `https://track.therewardsapps.com/track.php?lp=1&email=${email}&to_offer=${offer_number}` })
+      .then(() => { window.location.href = `https://${chousen_track_domain}/track.php?lp=1&email=${email}&to_offer=${offer_number}` })
       .catch((e) => console.log(`Failed to send Binom lead with clickid: ${clickid}. Reason: ${e.message}`));
     }
 });
