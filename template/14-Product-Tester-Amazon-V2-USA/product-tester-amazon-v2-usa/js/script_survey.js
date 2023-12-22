@@ -28,7 +28,9 @@ form_final_link = () => {
     console.log(zip)
 
     // $(".quiz-block--7 a").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
-    $(".quiz-block--8 a").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
+    // $(".quiz-block--8 a").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
+
+    $(".quiz-block--8 a").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}prepop=first_name|${firstname}|last_name|${lastname}|email|${email}|phone|${telephone}` )
 }
 	
 // quiz flow
