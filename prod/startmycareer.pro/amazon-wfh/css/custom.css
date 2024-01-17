@@ -28,7 +28,7 @@
 	fill: #FD7903
 }
 .text {
-    font-size: 60px;
+    font-size: 52px;
     line-height: 1.3;
     font-weight: 700;
     margin: 0 auto;
@@ -126,7 +126,7 @@
         height: 21px;
     }
     .text {
-        font-size: 34px;
+        font-size: 32px;
     }
     /* .text p span.underline:after {
         height: 5px;
