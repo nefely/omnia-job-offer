@@ -15,7 +15,7 @@ $(document).ready(function(){
     }, 3000)
     
     form_final_link = () => {
-        $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
+        $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zip=${zip}&email=${email}&first_name=${firstname}&last_name=${lastname}&phone=${telephone}` )
     }
         
     // quiz flow
