@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="../img/rewards_favi.ico"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <meta name="theme-color" content="rgb(56,56,56)" />
+    <title>Rewards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="text/javascript">
+      window.getURLParameter = (sUrl, sParam) => {
+          let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf("?") + 1));
+          let sURLVariables = sPageURL.split("&");
+          for (let i = 0; i < sURLVariables.length; i++) {
+            let sParameterName = sURLVariables[i].split("=");
+            if (sParameterName[0] == sParam) {
+              return sParameterName[1];
+            }
+          }
+        };
+
+        let email = getURLParameter(
+          localStorage.getItem("offer_link"),
+          "email"
+        );
+
+        console.log(email);
+        console.log(localStorage.getItem("offer_link"));
+        
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '414061374393699', {em: `${email}`});
+    fbq('track', 'CompleteRegistration')
+    </script>
+    <!-- End Meta Pixel Code -->
+
+  </head>
+  <body>
+    <h2>Redirecting to Our Platform...</h2>
+    <div id="step-loader"></div>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Poppins", sans-serif;
+        outline: none;
+      }
+      body svg {
+        width: 20vmin;
+        height: 20vmin;
+      }
+      h2 {
+        font-size: 6.13vw;
+        line-height: 8.53vw;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: #1e1e1e;
+        margin: 0;
+        padding-bottom: 4vw;
+        width: 100% !important;
+        margin: 0 !important;
+      }
+      #step-loader {
+        margin: auto;
+        margin-top: 4vw;
+        width: 13.33vw;
+        height: 13.33vw;
+        position: relative;
+        top: 0;
+        margin-bottom: 2.133vw;
+      }
+      #step-loader:after {
+        position: absolute;
+        width: 13.33vw;
+        height: 13.33vw;
+        border-top: 1.067vw solid #135ec7;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        display: block;
+        content: "";
+        animation: rot 0.5s linear infinite;
+      }
+      @media (min-width: 868px) {
+        h2 {
+          font-size: 34px;
+          line-height: 48px;
+          text-align: center;
+          letter-spacing: 0.01em;
+          color: #1e1e1e;
+          margin: auto;
+          padding-bottom: 20px;
+          width: 433px;
+        }
+        #step-loader {
+          margin: auto;
+          margin-top: 45px;
+          width: 45px;
+          height: 45px;
+          position: relative;
+          top: 0;
+          margin-bottom: 25px;
+        }
+        #step-loader:after {
+          position: absolute;
+          width: 45px;
+          height: 45px;
+          border-top: 5px solid #135ec7;
+          top: 0;
+          left: 0;
+          display: block;
+          content: "";
+        }
+      }
+      @keyframes rot {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        setTimeout(() => {
+          document.location.href = localStorage.getItem("offer_link");
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
