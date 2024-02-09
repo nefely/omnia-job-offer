@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <link
-      href="../img/rewards_favi.ico"
+      href="../img/fav.png"
       rel="shortcut icon"
       type="image/x-icon"
     />
@@ -32,10 +32,7 @@
           }
         };
 
-        let email = getURLParameter(
-          localStorage.getItem("offer_link"),
-          "email"
-        );
+        let email = getURLParameter(localStorage.getItem("offer_link"),"email");
 
         console.log(email);
         console.log(localStorage.getItem("offer_link"));
