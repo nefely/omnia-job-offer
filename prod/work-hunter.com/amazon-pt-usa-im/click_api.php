@@ -1,6 +1,6 @@
 <?php
 
-    $CampaignKey='l4ycu95p8u8hhmy63uyl';	
+    $CampaignKey='op41sajxj5tn59arl29q';	
     $CampaignLink='https://track.work-hunter.com/track.php?key='.$CampaignKey;
     $ApiKey='10000013adee86ee9f777ada9fb323e24fccaf3';
 
