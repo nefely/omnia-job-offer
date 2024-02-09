@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/global.css" />
 
-    <script type='text/javascript'>
+   <script type='text/javascript'>
       function _getURLParameter(name) {
           return decodeURI(
             (RegExp(name + '=' + '(.*?)(&|$)').exec(location.search)||[,null])[1] || ''
@@ -28,11 +28,11 @@
       }
 
       var nameOfGetParamWithCampaignKey = 'key';
-      var campkey =  "krjvb506bwbpzhvc9ox0";
+      var campkey = _getURLParameter( nameOfGetParamWithCampaignKey ) ? _getURLParameter( nameOfGetParamWithCampaignKey ) : "krjvb506bwbpzhvc9ox0";
       var binom_domain = 'https://track.giftfinds.pro/';
 
       var script = document.createElement('script');
-      script.src = binom_domain+'track.php?key='+campkey+'&lp_type=pixel&'+window.location.search.substring(1);
+      script.src = binom_domain+'click.php?key='+campkey+'&lp_type=pixel&'+window.location.search.substring(1);
       script.onload = function () {
           window.lp_pixel_wait_flag = false;
           if (document.readyState !== 'loading') {
@@ -63,7 +63,7 @@
               }
           }
       }
-  </script>
+    </script>
 
 <!-- Meta Pixel Code -->
 <script>
