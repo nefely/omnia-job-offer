@@ -1,6 +1,6 @@
 :root {
 	--theme-black: #151515;
-	--theme-primary: #FF9900;
+	--theme-primary: #2A71DC;
 	--theme-primary-dark: #442C03;
 	--theme-secondary: rgba(56,88,152,1);
 	--theme-info: rgba(0,48,173,1);
@@ -116,11 +116,11 @@ section {
 	border-radius: 1000px;
 }
 .btn.btn-lg {
-	padding: calc(1.25 * var(--gap)) calc(2.5* var(--gap));
-	font-size: 1.2rem;
+	padding: calc(1 * var(--gap)) calc(2 * var(--gap));
+	font-size: 1rem;
 }
 .btn.btn-primary {
-    color: var(--theme-primary-dark);
+    color: var(--theme-white);
     background-color: var(--theme-primary);
     border-color: var(--theme-primary);
 }
@@ -130,18 +130,18 @@ section {
     border-color: transparent;
 }
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-	color: var(--theme-primary-dark);
+	color: var(--theme-white);
     background-color: var(--theme-primary);
     border-color: var(--theme-primary);
 }
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle , .btn-primary.focus, .btn-primary:focus , .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus , .btn-primary:hover {
-	box-shadow: 0 0 0px 6px rgba(255,199,49,0.25);
+	box-shadow: 0 0 0px 6px rgba(42, 113, 220 ,0.25);
 }
 .btn.disabled, .btn:disabled {
     opacity: 1;
-    color: #85765B;
-    background-color: #FFBD59;
-    border-color: #FFBD59;
+    color: var(--theme-white);
+    background-color: rgba(122, 173, 255, 1);
+    border-color: rgba(122, 173, 255, 1);
 }
 
 /*input*/
