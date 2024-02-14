@@ -3210,5 +3210,10 @@ a {
 
 
 .lvl-rewards-logo img {
-  width: 130px;
+  width: 225px;
+}
+@media screen and (max-width: 991px) {
+    .lvl-rewards-logo img {
+        width: 150px;
+    }
 }

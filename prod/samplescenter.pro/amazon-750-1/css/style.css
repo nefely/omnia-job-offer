@@ -985,7 +985,7 @@ p {
     width: 100%;
   }
   #cid-main-container .lvl-rewards-logo img {
-    padding: 16px 0;
+    padding: 2px 0;
   }
   #cid-main-container .lvl-rewards-logo hr {
     border: 1px solid #2d394c;
@@ -1494,10 +1494,6 @@ div p#pr-lg-disclaimer {
   width: 100%;
   padding-top: 3vw;
   padding-bottom: 23vw;
-}
-#lg-info-detailed a {
-    color: #939393;
-    text-decoration: underline !important;
 }
 #pr-lg-info-detailed p {
   font-style: italic;
@@ -3210,5 +3206,14 @@ a {
 
 
 .lvl-rewards-logo img {
-  width: 130px;
+  width: 120px;
+}
+
+@media screen and (max-width: 500px) {
+    .lvl-rewards-logo img {
+        width: 100px;
+    }
+    .top-cid-container .lvl-rewards-logo {
+        padding: 2px 0 0 0;
+    }
 }
