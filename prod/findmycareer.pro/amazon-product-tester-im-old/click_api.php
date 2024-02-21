@@ -1,6 +1,6 @@
 <?php
 
-    $CampaignKey='l6allobsv5l3ujuenqo5';	
+    $CampaignKey='cnbbc5vaagst9yhgl8mv';	
     $CampaignLink='https://track.findmycareer.pro/track.php?key='.$CampaignKey;
     $ApiKey='10000013adee86ee9f777ada9fb323e24fccaf3';
 
