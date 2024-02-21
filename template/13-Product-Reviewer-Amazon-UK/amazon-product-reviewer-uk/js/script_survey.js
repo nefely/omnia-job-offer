@@ -7,7 +7,6 @@ const email = window.getURLParameter(window.location.href, 'email');
 const firstname = window.getURLParameter(window.location.href, 'firstname');
 const lastname = window.getURLParameter(window.location.href, 'lastname');
 const telephone = window.getURLParameter(window.location.href, 'telephone');
-const zip = window.getURLParameter(window.location.href, 'zip');
 
 setTimeout(()=> {
     $("#intro .thx").fadeOut(300)
@@ -15,7 +14,7 @@ setTimeout(()=> {
 }, 3000)
 
 form_final_link = () => {
-    $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
+    $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
 }
 	
 // quiz flow
