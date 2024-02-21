@@ -30,6 +30,13 @@
 	object-position: center;
 }
 @media screen and (max-width: 991px) {
+    #intro .form {
+        padding-top: 0;
+        transition: 0.3s;
+    }
+    #intro .form.pt {
+        margin-top: 60px;
+    }
 	#intro .figure {
 		right: auto;
 		width: 100%;

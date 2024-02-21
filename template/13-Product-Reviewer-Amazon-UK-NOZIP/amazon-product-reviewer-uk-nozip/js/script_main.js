@@ -149,6 +149,7 @@ $(".form-step--1").find(".submit-question button").css("pointer-events" , "initi
 $(".form-step--1 .btn-next").click(function(e){
     $(this).closest(".form-step").fadeOut(standart_time)
     $("#intro .bullets").fadeOut(standart_time)
+    $('#intro .form').removeClass("pt")
     if ($(window).innerWidth() < 991) {
         $("#intro .figure").fadeOut(standart_time)
     }
