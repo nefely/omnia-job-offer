@@ -1,0 +1,460 @@
+#intro {
+	flex-grow: 1;
+	padding: 15vh 0;
+	position: relative;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 2;
+}
+#intro .figure {
+	position: absolute;
+	bottom: 0;
+	right: -5%;
+	width: 45%;
+	height: 70%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	z-index: -1;
+}
+.figure-mob {
+	display: none;
+}
+.figure-desk {
+	display: flex;
+}
+#intro .figure img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+@media screen and (max-width: 991px) {
+	#intro .figure {
+		right: auto;
+		width: 100%;
+		height: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		top: initial;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+	}
+	#intro .figure .figure-mob{
+		display: flex;
+		max-width: 100%;
+		max-height:20vh;
+		object-fit: contain;
+		object-position: center;
+	}
+	.figure-desk {
+		display: none;
+	}
+}
+#intro .form {
+	display: block;
+}
+#intro .thx {
+	display: none;
+}
+#intro .quiz {
+	display: none;
+}
+#intro .row {
+	justify-content: center;
+	align-items: center;
+}
+#intro .form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	max-width: 100%;
+	width: 735px;
+}
+
+#intro .form .main-title {
+	text-align: center;
+	margin-bottom: 40px;
+}
+#intro .form .main-title h1 {
+	font-weight: 500;
+	line-height: 1.4
+}
+#intro .form .main-title h1 img {
+	height: 2.2rem;
+	transform: translateY(6px);
+}
+#intro .form .main-title h1 span {
+	font-weight: bold;
+    position: relative;
+}
+#intro .form .main-title h1 span:after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 52px;
+    height: 4px;
+    background: var(--theme-primary);
+}
+#intro .form .main-title h1 strong {
+    color: var(--theme-primary);
+}
+#intro .form .main-title h1 ~ p {
+    margin-top: 20px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+#intro .form .bullets {
+	width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#intro .form .bullets ul li {
+    width: auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-bottom: 10px;
+}
+#intro .form .bullets ul img {
+	margin-right: 10px;
+	aspect-ratio: 1/1;
+	height: 1.25rem;
+	margin-top: 2px;
+	display: inline-block;
+}
+
+/*form*/
+#intro .form .form-row {
+	display: flex;
+	flex-direction: column;
+}
+#intro .form .form-element-width-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#intro .form .form-element-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+#intro .form .form-element-container .input-icon-container {
+	position: absolute;
+	right: calc(0.5* var(--gap)); 
+	width: 30px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#intro .form .form-element-container .input-icon-container svg {
+	fill: var(--theme-gray);
+	transition: 0.3s;
+}
+#intro .form .form-element-container input.error ~ .input-icon-container svg {
+	fill: var(--theme-dunger);
+}
+#intro .form .form-step {
+	width: 100%;
+	max-width: 285px;
+    margin-top: 30px;
+}
+#intro .form .form-step--lg {
+	max-width: 480px;
+}
+#intro .form .form-step > .submit-question {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 25px;
+}
+#intro .form .form-step > .submit-question a,
+#intro .form .form-step > .submit-question button {
+	min-width: 240px;
+}
+.submit-question a,
+.submit-question button {
+	pointer-events: none;
+}
+#intro .form-row {
+	width: 100%;
+	margin-bottom: 15px;
+}
+#intro .form-row .form-row-title {
+	margin-bottom: 5px;
+}
+#intro .form-row .form-element {
+	width: 100%;
+}
+#intro .form-element-width-button .form-element-container {
+	margin-right: 15px;
+	flex-grow: 1;
+}
+#intro .form-element-width-button .form-element-container input {
+	flex-grow: 1;
+}
+#intro .form-element-container--icon .form-control {
+	padding-right: calc(1* var(--gap) + 30px);
+}
+
+#intro .form-step .rules {
+	font-size: calc(1rem - 6px);
+	text-align: center;
+	margin-top: 25px;
+}
+#intro .form-step .rules a {
+	color: var(--theme-primary);
+}
+
+#intro .form-step {
+	display: none;
+}
+#intro .form-step--1 {
+	display: block;
+}
+
+
+@media screen and (max-width: 991px) {
+	#intro {
+	    padding: calc(2.25 * var(--gap)) 0;
+        margin-bottom: -35px;
+	}
+    #intro .form .main-title {
+		margin-bottom: 20px;
+	}
+    #intro .form .main-title h1 {
+        font-size: 1.34rem;
+        line-height: 1.416;
+    }
+	#intro .form .main-title h1 img {
+		height: 1.34rem;
+		transform: translateY(3px);
+	}
+    #intro .form .main-title h1 span:after {
+        bottom: 2px;
+        width: 35px;
+        height: 2px;
+        background: var(--theme-primary);
+    }
+    #intro .form .main-title h1 ~ p {
+        font-size: 15px;
+    }
+	#intro .form .bullets ul {
+		flex-direction: column;
+		margin: 0 auto;
+	}
+	#intro .form .bullets ul li {
+		width: 100%;
+	}
+	#intro .form .form-element-width-button {
+		flex-direction: column;
+	}
+	#intro .form .form-element-container {
+		width: 100%;
+	}
+	#intro .form-element-width-button .form-element-container {
+		margin-right: 0;
+	}
+    #intro .form .form-step {
+        margin-top: 20px;
+    }
+	#intro .form .form-step .submit-question {
+		margin-top: 20px;
+        width: 100%;
+	}
+	#intro .form .form-step .submit-question a,
+	#intro .form .form-step .submit-question button {
+		min-width: 240px;
+        width: 100%;
+	}
+	#intro .form .form-step,
+	#intro .form .form-step--lg {
+		max-width: 285px;
+	}
+}
+
+@media screen and (max-height: 620px) {
+	#intro .figure {
+		display: none !important;
+	}
+}
+
+
+#intro .thx {
+	padding: 40px 0;
+}
+#intro .thx .thx-container {
+	width: 100%;
+	max-width: 320px;
+	text-align: center;
+}
+#intro .thx .thx-title {
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+#intro .thx .thx-title h3 {
+	font-weight: 600;
+}
+#intro .thx .thx-text p {
+	line-height: 2
+}
+
+#intro .form .bullets ul img {
+	margin-right: 10px;
+	height: 1rem;
+	margin-top: 2px;
+}
+
+
+
+
+#intro .quiz {
+
+}
+#intro .quiz .quiz-container {
+	width: 100%;
+	max-width: 645px;
+	text-align: center;
+}
+#intro .quiz-block-question {
+	margin-bottom: 30px;	
+}
+#intro .quiz-block-question h5 {
+	font-weight: 400;
+}
+#intro .quiz-block-question h3 {
+	font-weight: 400;
+}
+@media screen and (max-width: 991px) {
+    #intro .quiz-block-question h3 {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+}
+#intro .quiz-block-question strong {
+	font-weight: 700;
+}
+#intro .quiz-block-question .info {
+	margin-top: 30px;
+	display: block;
+}
+#intro .quiz-block-answers > *:not(:last-child) {
+	margin-bottom: 15px;
+}
+#intro .quiz-block-back {
+	margin-top: 30px;
+}
+#intro .quiz-block-back button {
+	padding: 0 !important;
+	font-weight: 400;
+}
+.quiz-block-answers a,
+.quiz-block-answers button {
+	font-size: 1.2rem !important;
+	padding-left: calc(0.75* var(--gap)) !important;
+	padding-right: calc(0.75* var(--gap)) !important;
+}
+#intro .quiz-block-answers {
+	max-width: 270px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+
+#intro .quiz-block {
+	display: none;
+}
+#intro .quiz-block--1 {
+	display: block;
+}
+
+
+#intro .quiz-dots {
+	margin-bottom: 30px;
+}
+#intro .quiz-dots ul {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#intro .quiz-dots ul li {
+	width: 95px;
+	height: 5px;
+	background: #D0D0D0;
+	border-radius: 1000px;
+	margin: 0 4px;
+	transition: 0.3s;
+}
+#intro .quiz-dots ul li.active {
+	background: var(--theme-primary);
+}
+#intro .quiz-dots ul li.green {
+	background: #40B756;
+}
+
+
+
+/*#intro .form .main-title h1 .primary {
+    color: #f542f5;
+}*/
+
+@media screen and (max-width: 991px) {
+	#intro .quiz-block-question h5 {
+		font-size: 1rem;
+		line-height: 1.5
+	}
+	/*#intro:after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+	    padding: calc(3 * var(--gap)) 0;
+	    background: url(../media/bg2.png);
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    background-position: right center;
+	    z-index: -1;
+	    opacity: 0.5
+	}*/
+}
+
+
+.quiz-block--3 .btn.btn-primary.no,
+.quiz-block--4 .btn.btn-primary.no,
+.quiz-block--5 .btn.btn-primary.no {
+	color: var(--theme-primary-dark);
+    background-color: rgba(255,199,49,0.15);
+    border-color: rgba(255,199,49,0.15);
+    color: rgba(123,97,40,1);
+    font-weight: normal
+}
+
+.tags {
+    text-align: center;
+}
+.tags p {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 9px 15px;
+    background: #CFDDFB;
+    border-radius: 50px;
+    font-size: 15px;
+    line-height: 1;
+}
+.tezis {
+    margin-top: 35px;
+    font-style: italic;
+}
