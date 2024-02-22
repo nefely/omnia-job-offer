@@ -1,11 +1,11 @@
 footer {
     background: var(--theme-primary);
     padding-top: 40vh;
-    color: var(--theme-white);
+    color: var(--theme-black);
     text-align: center;
 }
 footer a {
-    color: var(--theme-white);
+    color: var(--theme-black);
     text-decoration: none !important;
 }
 footer a:hover {

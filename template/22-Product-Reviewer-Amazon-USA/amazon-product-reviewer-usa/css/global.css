@@ -115,10 +115,6 @@ section {
 .btn.round {
 	border-radius: 1000px;
 }
-.btn.btn-lg {
-	padding: calc(1.25 * var(--gap)) calc(2.5* var(--gap));
-	font-size: 1.2rem;
-}
 .btn.btn-primary {
     color: var(--theme-primary-dark);
     background-color: var(--theme-primary);

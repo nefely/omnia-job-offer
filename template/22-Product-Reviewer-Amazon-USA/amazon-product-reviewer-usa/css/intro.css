@@ -80,7 +80,7 @@
 	margin-bottom: 40px;
 }
 #intro .form .main-title h1 {
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 1.4
 }
 #intro .form .main-title h1 img {
@@ -231,7 +231,7 @@
 		margin-bottom: 20px;
 	}
     #intro .form .main-title h1 {
-        font-size: 1.34rem;
+        font-size: 1.65rem;
         line-height: 1.416;
     }
 	#intro .form .main-title h1 img {
@@ -239,9 +239,9 @@
 		transform: translateY(3px);
 	}
     #intro .form .main-title h1 span:after {
-        bottom: 2px;
+        bottom: 1px;
         width: 35px;
-        height: 2px;
+        height: 4px;
         background: var(--theme-primary);
     }
     #intro .form .main-title h1 ~ p {
@@ -279,6 +279,9 @@
 	#intro .form .form-step--lg {
 		max-width: 285px;
 	}
+    #intro .form .bullets ul img {
+        margin-top: 0;
+    }
 }
 
 @media screen and (max-height: 620px) {
@@ -304,16 +307,9 @@
 	font-weight: 600;
 }
 #intro .thx .thx-text p {
-	line-height: 2
+	line-height: 2;
+    font-size: 1.25rem;
 }
-
-#intro .form .bullets ul img {
-	margin-right: 10px;
-	height: 1rem;
-	margin-top: 2px;
-}
-
-
 
 
 #intro .quiz {
@@ -410,9 +406,13 @@
 
 @media screen and (max-width: 991px) {
 	#intro .quiz-block-question h5 {
-		font-size: 1rem;
+		font-size: 1.375rem;
 		line-height: 1.5
 	}
+    #intro .thx .thx-text p {
+        font-size: 1.375rem;
+		line-height: 1.25
+    }
 	/*#intro:after {
 		content: "";
 		display: block;
