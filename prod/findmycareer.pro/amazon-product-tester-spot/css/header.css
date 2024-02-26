@@ -1,6 +1,11 @@
 header {
 	padding: 10px 0;
 	background: var(--theme-white);
+    text-align: center;
+}
+header .row {
+    justify-content: center;
+    align-items: center;
 }
 header .logo img {
 	max-height: 45px;
@@ -33,7 +38,6 @@ header .mob {
 }
 @media screen and (max-width: 991px) {
 	header {
-		padding: 5px 0;
 		background: #ededed;
 	}
 	header .logo img {

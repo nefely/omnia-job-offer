@@ -1,119 +1,119 @@
 $(document).ready(function(){
 
-    const clickid = window.getURLParameter(window.location.href, 'clickid');
-    const uclick = window.getURLParameter(window.location.href, 'uclick');
-    
-    const email = window.getURLParameter(window.location.href, 'email');
-    const firstname = window.getURLParameter(window.location.href, 'firstname');
-    const lastname = window.getURLParameter(window.location.href, 'lastname');
-    const telephone = window.getURLParameter(window.location.href, 'telephone');
-    const zip = window.getURLParameter(window.location.href, 'zip');
-    
-    setTimeout(()=> {
-        $("#intro .thx").fadeOut(300)
-        $("#intro .quiz").delay(300).fadeIn(300)
-    }, 3000)
-    
-    form_final_link = () => {
-        $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zip=${zip}&email=${email}&first_name=${firstname}&last_name=${lastname}&phone=${telephone}` )
-    }
-        
-    // quiz flow
-    $(".quiz-block--1 .quiz-block-answers a").click(function(e){
-        e.preventDefault()
-    
-        $('.quiz-dots ul li').removeClass("active")
-        $('.quiz-dots ul li:eq(1)').addClass("active")
-    
-        $(this).closest(".quiz-block").fadeOut(standart_time)
+const clickid = window.getURLParameter(window.location.href, 'clickid');
+const uclick = window.getURLParameter(window.location.href, 'uclick');
+
+const email = window.getURLParameter(window.location.href, 'email');
+const firstname = window.getURLParameter(window.location.href, 'firstname');
+const lastname = window.getURLParameter(window.location.href, 'lastname');
+const telephone = window.getURLParameter(window.location.href, 'telephone');
+const zip = window.getURLParameter(window.location.href, 'zip');
+
+setTimeout(()=> {
+    $("#intro .thx").fadeOut(300)
+    $("#intro .quiz").delay(300).fadeIn(300)
+}, 3000)
+
+form_final_link = () => {
+    $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
+}
+	
+// quiz flow
+$(".quiz-block--1 .quiz-block-answers a").click(function(e){
+    e.preventDefault()
+
+    $('.quiz-dots ul li').removeClass("active")
+    $('.quiz-dots ul li:eq(1)').addClass("active")
+
+    $(this).closest(".quiz-block").fadeOut(standart_time)
+    setTimeout(()=>{
+        $(this).closest(".quiz-block").next(".quiz-block").fadeIn(standart_time)
+    }, standart_time)
+})
+$(".quiz-block--2 .quiz-block-answers a").click(function(e){
+    e.preventDefault()
+
+    $('.quiz-dots ul li').removeClass("active")
+    $('.quiz-dots ul li:eq(2)').addClass("active")
+
+    $(this).closest(".quiz-block").fadeOut(standart_time)
+    setTimeout(()=>{
+        $(this).closest(".quiz-block").next(".quiz-block").fadeIn(standart_time)
+    }, standart_time)
+})
+$(".quiz-block--3 .quiz-block-answers a").click(function(e){
+    e.preventDefault()
+    $(this).closest(".quiz-block").css("opacity" , '0')
+
+    $('.quiz-block--4 a.yes').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=1`)
+
+    window.offer_link_1 = $('.quiz-block--4 a.yes').attr("href")
+
+    form_final_link()
+
+    console.log("hide")
+
+    $('.quiz-dots ul li').removeClass("active")
+    setTimeout(()=>{
+        $('.quiz-dots ul li:eq(0)').addClass("green")
         setTimeout(()=>{
-            $(this).closest(".quiz-block").next(".quiz-block").fadeIn(standart_time)
-        }, standart_time)
-    })
-    $(".quiz-block--2 .quiz-block-answers a").click(function(e){
-        e.preventDefault()
-    
-        $('.quiz-dots ul li').removeClass("active")
-        $('.quiz-dots ul li:eq(2)').addClass("active")
-    
-        $(this).closest(".quiz-block").fadeOut(standart_time)
-        setTimeout(()=>{
-            $(this).closest(".quiz-block").next(".quiz-block").fadeIn(standart_time)
-        }, standart_time)
-    })
-    $(".quiz-block--3 .quiz-block-answers a").click(function(e){
-        e.preventDefault()
-        $(this).closest(".quiz-block").css("opacity" , '0')
-    
-        $('.quiz-block--4 a.yes').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=1`)
-    
-        window.offer_link_1 = $('.quiz-block--4 a.yes').attr("href")
-    
-        form_final_link()
-    
-        console.log("hide")
-    
-        $('.quiz-dots ul li').removeClass("active")
-        setTimeout(()=>{
-            $('.quiz-dots ul li:eq(0)').addClass("green")
+            $('.quiz-dots ul li:eq(1)').addClass("green")
             setTimeout(()=>{
-                $('.quiz-dots ul li:eq(1)').addClass("green")
+                $('.quiz-dots ul li:eq(2)').addClass("green")
                 setTimeout(()=>{
-                    $('.quiz-dots ul li:eq(2)').addClass("green")
+                    $('.quiz-dots').fadeOut(300)
                     setTimeout(()=>{
-                        $('.quiz-dots').fadeOut(300)
+                        $(this).closest(".quiz-block").fadeOut(standart_time)
                         setTimeout(()=>{
-                            $(this).closest(".quiz-block").fadeOut(standart_time)
-                            setTimeout(()=>{
-                                $(this).closest(".quiz-block").css("opacity" , '1')
-                                $(this).closest(".quiz-block").next(".quiz-block").fadeIn(standart_time)
-                            }, standart_time)
-                        },300)
-                    },500)
+                            $(this).closest(".quiz-block").css("opacity" , '1')
+                            $(this).closest(".quiz-block").next(".quiz-block").fadeIn(standart_time)
+                        }, standart_time)
+                    },300)
                 },500)
             },500)
         },500)
-        
-      
-    })
+    },500)
     
-    let lastClickTime = 0;
-    
-    $(".quiz-block--4 .quiz-block-answers a.yes").click(function(e){
-        const currentTime = new Date().getTime();
-        if (currentTime - lastClickTime < 5000) {
-            console.log("Too soon! Wait for 5 seconds between clicks.");
-            e.preventDefault();
-            return false;
-        } else {
-            lastClickTime = currentTime;
-            console.log("click 3 yes")
-            fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event8=1&cnv_status=q4yes`, { mode: 'no-cors'});
-        }
-    })
-    
-    
-    // back
-    $(".quiz-block .quiz-block-back button").click(function(){
-        $(this).closest(".quiz-block").fadeOut(standart_time)
-        setTimeout(()=>{
-            $(this).closest(".quiz-block").prev(".quiz-block").fadeIn(standart_time)
-        }, standart_time)
-    })
-    
-    
-    $(".quiz-block--2 .quiz-block-back button").click(function(){
-        $('.quiz-dots ul li').removeClass("active")
-        $('.quiz-dots ul li:eq(0)').addClass("active")
-    })
-    $(".quiz-block--3 .quiz-block-back button").click(function(){
-        $('.quiz-dots ul li').removeClass("active")
-        $('.quiz-dots ul li:eq(1)').addClass("active")
-    })
-    $(".quiz-block--4 .quiz-block-back button").click(function(){
-        $('.quiz-dots').fadeIn(300)
-        $('.quiz-dots ul li').removeClass("active").removeClass("green")
-        $('.quiz-dots ul li:eq(2)').addClass("active")
-    })
-    
-    })
+  
+})
+
+let lastClickTime = 0;
+
+$(".quiz-block--4 .quiz-block-answers a.yes").click(function(e){
+    const currentTime = new Date().getTime();
+    if (currentTime - lastClickTime < 5000) {
+        console.log("Too soon! Wait for 5 seconds between clicks.");
+        e.preventDefault();
+        return false;
+    } else {
+        lastClickTime = currentTime;
+        console.log("click 3 yes")
+        fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event8=1&cnv_status=q4yes`, { mode: 'no-cors'});
+    }
+})
+
+
+// back
+$(".quiz-block .quiz-block-back button").click(function(){
+    $(this).closest(".quiz-block").fadeOut(standart_time)
+    setTimeout(()=>{
+        $(this).closest(".quiz-block").prev(".quiz-block").fadeIn(standart_time)
+    }, standart_time)
+})
+
+
+$(".quiz-block--2 .quiz-block-back button").click(function(){
+    $('.quiz-dots ul li').removeClass("active")
+    $('.quiz-dots ul li:eq(0)').addClass("active")
+})
+$(".quiz-block--3 .quiz-block-back button").click(function(){
+    $('.quiz-dots ul li').removeClass("active")
+    $('.quiz-dots ul li:eq(1)').addClass("active")
+})
+$(".quiz-block--4 .quiz-block-back button").click(function(){
+    $('.quiz-dots').fadeIn(300)
+    $('.quiz-dots ul li').removeClass("active").removeClass("green")
+    $('.quiz-dots ul li:eq(2)').addClass("active")
+})
+
+})
