@@ -68,7 +68,7 @@
                         </li>
                     </ul>
                     <div class="step-button">
-                        <a href="https://track.mygiftscenter.pro/track.php?lp=1" class="btn btn-secondary btn-fat">CONTINUE</a>
+                        <a href="https://track.mygiftscenter.pro/track.php?lp=1" class="btn btn-secondary btn-fat" id="btf">CONTINUE</a>
                     </div>
                 </div>
             </div>
@@ -161,6 +161,23 @@
 
     </div>
 </footer>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    let isLinkClickable = true;
+    $("#btf").click(function(e) {
+        e.preventDefault();
+        if (isLinkClickable) {
+            isLinkClickable = false;
+            
+            fbq('track', 'CompleteRegistration');
+
+            setTimeout(() => {window.location.href = $(this).attr("href");}, 500);
+            setTimeout(() => {isLinkClickable = true; }, 5000);
+        }
+    });
+});  
+</script>
     
 </body>
 </html>
