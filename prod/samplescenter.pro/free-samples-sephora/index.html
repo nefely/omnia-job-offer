@@ -169,9 +169,6 @@ $(document).ready(function () {
         e.preventDefault();
         if (isLinkClickable) {
             isLinkClickable = false;
-            
-            fbq('track', 'CompleteRegistration');
-
             setTimeout(() => {window.location.href = $(this).attr("href");}, 500);
             setTimeout(() => {isLinkClickable = true; }, 5000);
         }
