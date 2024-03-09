@@ -23,7 +23,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	background: #EBDCDA;
+	background: rgba(235,220,218,1);
 	line-height: 1;
 }
 body * {
@@ -49,8 +49,8 @@ table {
 :root {
 	--theme-black: rgba(37,37,37,1);
 	--theme-white: rgba(255,255,255,1);
-	--theme-primary: rgba(231,185,178,1);
-	--theme-secondary: rgba(240,87,107,1);
+	--theme-primary: rgba(250,99,56,1);
+	--theme-secondary: rgba(250,99,56,1);
 	--theme-green: rgba(78,255,49,1);
 }
 html {
@@ -108,6 +108,7 @@ strong	{
 	z-index: 2;
 }
 .screen .img img {
+	width: 300px;
 	margin: 0 auto;
 	display: block;
 }
@@ -121,6 +122,9 @@ strong	{
 	color: var(--theme-white);
 	text-align: center;
 	overflow: hidden;
+}
+.graybox * {
+	z-index: 2;
 }
 
 .container {
@@ -251,7 +255,7 @@ h3 {
 .btn.btn-secondary:hover  {
 	background: var(--theme-secondary); 
 	color: var(--theme-white);
-	box-shadow:  0 0 4px 8px rgba(240,87,107,0.25);
+	box-shadow:  0 0 4px 8px rgba(250,99,56,0.25);
 }
 .btn.btn-fat {
 	font-weight: 900;
@@ -287,7 +291,9 @@ h3 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transform: translateX(-50%) translateY(30%);
+	transform: translateX(0%) translateY(0%);
+	border-bottom-left-radius: 2rem;
+	overflow: hidden;
 }
 
 
@@ -316,7 +322,8 @@ footer .rules a {
 	padding: 0.5rem 0;
 }
 .screen .img img {
-	width: 284px;
+	width: 240px;
+	max-width: 100%;
 }
 .graybox {
 	padding: 3.25rem 1.25rem 1.25rem 1.25rem;
