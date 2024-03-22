@@ -148,6 +148,9 @@ if ($("input[name=zip]").length > 0) {
     });
 
     $(".form-step--3 input").on("input" , function(){
+        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}zip=${$("[name=zip]").val()}&firstname=${$("[name=firstname]").val()}&lastname=${$("[name=lastname]").val()}&email=${$("[name=email]").val()}&phone=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+        $("#btf").attr("href" , final_link)
+
         if (isPhoneValid()) {
             $(this).closest(".form-step").find(".submit-question a").css("pointer-events" , "initial").removeClass("disabled");
         } else {
@@ -174,11 +177,12 @@ if ($("input[name=zip]").length > 0) {
 
 
 // main flow
-
-
+window.final_link = ""
+window.final_link__no_params = ""
 
 // form flow
 $(".form-step--1 .btn-next").click(function(e){
+    window.final_link__no_params = $("#btf").attr("href");
     $(this).closest(".form-step").fadeOut(standart_time)
     $("#intro .bullets").fadeOut(standart_time)
     if ($(window).innerWidth() < 991) {
@@ -193,11 +197,6 @@ $(".form-step--2 .btn-next").click(function(e){
     setTimeout(()=>{
         $(this).closest(".form-step").next(".form-step").fadeIn(standart_time)
     }, standart_time)
-
-    window.offer_link_1 = $('.quiz-block--3 a.yes').attr("href")
-    window.offer_link_2 = $('.quiz-block--4 a.yes').attr("href")
-    window.offer_link_3 = $('.quiz-block--5 a.yes').attr("href")
-    window.offer_link_no_3 = $('.quiz-block--5 a.no').attr("href")
 })
 $(".form-step--3 .btn-next").click(function(e){
     
