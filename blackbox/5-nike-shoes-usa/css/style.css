@@ -285,7 +285,7 @@ h3 {
 	color: var(--theme-white);
 }
 .btn.btn-secondary {
-	background: var(--theme-secondary); 
+	background: var(--theme-primary); 
 	color: var(--theme-white);
 }
 .btn.btn-primary:hover,
