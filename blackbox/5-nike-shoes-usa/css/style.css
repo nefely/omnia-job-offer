@@ -23,7 +23,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	background: rgba(21,64,50,1);
+	background: #fff;
 	line-height: 1;
 }
 body * {
@@ -49,8 +49,8 @@ table {
 :root {
 	--theme-black: rgba(10,10,10,1);
 	--theme-white: rgba(255,255,255,1);
-	--theme-primary: rgba(255,188,13,1);
-	--theme-secondary:  rgba(255,0,0,1);
+	--theme-primary: #F00;
+	--theme-secondary:  #000;
 	--theme-green: rgba(21,64,50,1);
 }
 html {
@@ -116,7 +116,7 @@ strong	{
 	min-height: 440px;
 	position: relative;
 	z-index: 1;
-	background: var(--theme-white);
+	background: #E7E7E7;
 	border-radius: 2rem;
 	padding: 4.5rem 2rem 2rem 2rem;
 	color: var(--theme-black);
@@ -138,6 +138,19 @@ strong	{
 	justify-content: center;
 	align-items: flex-start;
 }
+.question .button.button--column {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.question .button.button--column button {
+    width: 100%;
+}
 
 .graybox-progress {
 	display: flex;
@@ -154,18 +167,18 @@ strong	{
 	height: 32px;
 	border-radius: 1000px;
 	border: 2px solid var(--theme-black);
-	background: var(--theme-white);
+	background: rgba(255,255,255,0);
 	color: var(--theme-black);
 	font-size: 14px;
 	position: relative;
 	transition: 0.3s;
 }
 .graybox-progress li.checked {
-	background: var(--theme-white);
+	background:  rgba(255,255,255,0);
 }
 .graybox-progress li.green {
-	background: var(--theme-green);
-	border: 2px solid var(--theme-green);
+	background: var(--theme-primary);
+	border: 2px solid var(--theme-primary);
 }
 .graybox-progress li:not(:last-child) {
 	margin-right: 20px;
@@ -183,7 +196,7 @@ strong	{
 	opacity: 1;
 }
 .graybox-progress li:not(:last-child).green:after {
-	background: var(--theme-green);
+	background: var(--theme-primary);
 }
 .graybox-progress li .icon  {
 	display: none;
@@ -228,6 +241,10 @@ h3 {
 
 .question .button > button:not(:last-child) {
 	margin-right: 1rem;
+}
+.question .button.button--column > button:not(:last-child) {
+	margin-right: 0rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -275,7 +292,7 @@ h3 {
 .btn.btn-secondary:hover  {
 	background: var(--theme-secondary); 
 	color: var(--theme-white);
-	box-shadow:  0 0 4px 8px rgba(255,0,0,0.25);
+	box-shadow:  0 0 2px 4px rgba(0,0,0,0.25);
 }
 .btn.btn-fat {
 	font-weight: 900;
@@ -321,13 +338,14 @@ footer {
 	padding: 4rem 0 1rem;
 	font-size: 10px;
 	line-height: 15px;
+    color: var(--theme-black);
 }
 footer .rules {
 	text-align: center;
 	margin-top: 1.5rem;
 }
 footer .rules a {
-	color: var(--theme-цршеу);
+	color: var(--theme-black);
 	text-decoration: none;
 }
 
@@ -342,7 +360,7 @@ footer .rules a {
 	padding: 0.5rem 0;
 }
 .screen .img img {
-	width: 293px;
+	width: 188px;
 	max-width: 100%;
 }
 .graybox {
@@ -357,7 +375,9 @@ h3 {
 	font-size: 18px;
 	line-height: 25px;
 }
-
+.btn {
+    padding: 10px 20px;
+}
 .question-title {
 	font-size: 20px;
 	line-height: 26px;
@@ -373,11 +393,14 @@ h3 {
 }
 .question .button > button:not(:last-child) {
 	margin-right: 0;
-	margin-bottom: 1rem;
+	margin-bottom: 0.75rem;
+}
+.question .button.button--column > button:not(:last-child) {
+	margin-bottom: 0.75rem;
 }
 .graybox-progress {
-	margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
+	margin-top: 1.25rem;
+	margin-bottom: 1.25rem;
 }
 .graybox-top .step-button a {
 		width: 100%;
