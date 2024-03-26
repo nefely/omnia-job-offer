@@ -148,7 +148,7 @@ if ($("input[name=zip]").length > 0) {
     });
 
     $(".form-step--3 input").on("input" , function(){
-        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
         $("#btf").attr("href" , final_link)
 
         if (isPhoneValid()) {
@@ -199,8 +199,9 @@ $(".form-step--2 .btn-next").click(function(e){
     }, standart_time)
 })
 $(".form-step--3 .btn-next").click(function(e){
-    $(this).css("display","none").css("visibility","hidden")
     
+    $(this).css("display","none").css("visibility","hidden")
+
     // uncommit on prod
     const clickid = $("[name=click_id]").val();
     const uclick = $("[name=uclick]").val();
