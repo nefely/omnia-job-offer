@@ -201,10 +201,6 @@ $(".form-step--2 .btn-next").click(function(e){
 $(".form-step--3 .btn-next").click(function(e){
     $(this).css("display","none").css("visibility","hidden")
     
-    // uncommit on prod
-    const clickid = $("[name=click_id]").val();
-    const uclick = $("[name=uclick]").val();
-
     const data = {
         "zip": $("[name=zip]").val(), 
         "firstname": $("[name=firstname]").val(), 
@@ -213,24 +209,25 @@ $(".form-step--3 .btn-next").click(function(e){
         "phone": $("[name=phone]").val(), 
         "offer_type": $("[name=offer_type]").val(), 
         "offer_url": window.location.href.split('?')[0], 
-        "click_id": clickid
+        "click_id": rtkClickID
     };
 
     // uncommit on prod
- 
+    fetch(`https://omniapostback.com/postback?type=СompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
+    .then(r => {
+        console.log("successfully registered: " + rtkClickID);
         fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
         .then(rr => {
-            console.log("successfully registered lead in Data API: " + clickid)
+            console.log("successfully registered lead in Data API: " + rtkClickID)
             setTimeout(()=>{
                 $(this).css("display","block").css("visibility","visible")
                 // window.location.href = `survey/?zip=${data.zip}&firstname=${data.firstname}&lastname=${data.lastname}&email=${data.email}&telephone=${data.phone.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
             }, standart_time)
         })
-        .catch(ed => console.log("error during registration lead in Data API: " + ed));});
-
-// conmit on prod
-// const clickid = "my_click_id_here";
-// const uclick = "my_uclick_here";
+        .catch(ed => console.log("error during registration lead in Data API: " + ed));
+	})
+    .catch(e => console.log("error during registration lead: " + e));
+});
 
 setTimeout(()=>{
 

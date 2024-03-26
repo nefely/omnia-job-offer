@@ -91,7 +91,6 @@ $(".quiz-block--4 .quiz-block-answers a.yes").click(function(e){
     } else {
         lastClickTime = currentTime;
         console.log("click 3 yes")
-        fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event8=1&cnv_status=q4yes`, { mode: 'no-cors'});
     }
 })
 
