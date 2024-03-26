@@ -148,7 +148,7 @@ if ($("input[name=zip]").length > 0) {
     });
 
     $(".form-step--3 input").on("input" , function(){
-        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}zip=${$("[name=zip]").val()}&firstname=${$("[name=firstname]").val()}&lastname=${$("[name=lastname]").val()}&email=${$("[name=email]").val()}&phone=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
         $("#btf").attr("href" , final_link)
 
         if (isPhoneValid()) {

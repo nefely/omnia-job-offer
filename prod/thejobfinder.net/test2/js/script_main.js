@@ -199,9 +199,9 @@ $(".form-step--2 .btn-next").click(function(e){
     }, standart_time)
 })
 $(".form-step--3 .btn-next").click(function(e){
-    
+    e.preventDefault();
     $(this).css("display","none").css("visibility","hidden")
-
+    
     // uncommit on prod
     const clickid = $("[name=click_id]").val();
     const uclick = $("[name=uclick]").val();
@@ -224,7 +224,7 @@ $(".form-step--3 .btn-next").click(function(e){
             console.log("successfully registered lead in Data API: " + clickid)
             setTimeout(()=>{
                 $(this).css("display","block").css("visibility","visible")
-                // window.location.href = `survey/?zip=${data.zip}&firstname=${data.firstname}&lastname=${data.lastname}&email=${data.email}&telephone=${data.phone.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+                window.location.href = `survey/?zip=${data.zip}&firstname=${data.firstname}&lastname=${data.lastname}&email=${data.email}&telephone=${data.phone.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
             }, standart_time)
         })
         .catch(ed => console.log("error during registration lead in Data API: " + ed));});
