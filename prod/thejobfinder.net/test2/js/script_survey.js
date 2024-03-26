@@ -15,7 +15,7 @@ setTimeout(()=> {
 }, 3000)
 
 form_final_link = () => {
-    // $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}zippost=${zip}&email=${email}&firstname=${firstname}&lastname=${lastname}&telephone=${telephone}` )
+    $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}sub12=${zip}&sub13=${email}&sub14=${firstname}&sub15=${lastname}&sub16=${telephone}` )
 }
 	
 // quiz flow
@@ -45,7 +45,7 @@ $(".quiz-block--3 .quiz-block-answers a").click(function(e){
     e.preventDefault()
     $(this).closest(".quiz-block").css("opacity" , '0')
 
-   // $('.quiz-block--4 a.yes').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=1`)
+   $('.quiz-block--4 a.yes').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=1`)
 
     window.offer_link_1 = $('.quiz-block--4 a.yes').attr("href")
 
