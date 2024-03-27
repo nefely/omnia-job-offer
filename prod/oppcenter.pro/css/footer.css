@@ -40,6 +40,10 @@ footer a:hover {
     justify-content: center;
     align-items: center;
 }
+footer .logo img {
+	max-height: 45px;
+	max-width: 100%;
+}
 @media screen and (max-width: 991px) {
     .footer-top .row {
         justify-content: center;
@@ -54,4 +58,8 @@ footer a:hover {
         margin-right: 0px;
         margin-bottom: 10px;
     }
+    footer .logo img {
+		max-height: 38px;
+		max-width: 100%;
+	}
 }
