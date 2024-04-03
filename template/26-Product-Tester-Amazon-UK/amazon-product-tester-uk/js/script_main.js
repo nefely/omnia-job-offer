@@ -144,6 +144,10 @@ $(window).resize(checkWindowSize);
     });
 
     $(".form-step--3 input").on("input" , function(){
+
+        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+        $("#btf").attr("data-href" , final_link)
+
         if (isPhoneValid()) {
             $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
         } else {
@@ -171,10 +175,13 @@ $(window).resize(checkWindowSize);
 
 // main flow
 
-
+window.final_link = ""
+window.final_link__no_params = ""
 
 // form flow
 $(".form-step--1 .btn-next").click(function(e){
+    window.final_link__no_params = $("#btf").attr("data-href");
+
     $(this).closest(".form-step").fadeOut(standart_time)
     $("#intro .bullets").fadeOut(standart_time)
     if ($(window).innerWidth() < 991) {
@@ -211,19 +218,21 @@ $(".form-step--3 .btn-next").click(function(e){
         "phone": $("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "").replaceAll("+", ""), 
         "offer_type": $("[name=offer_type]").val(), 
         "offer_url": window.location.href.split('?')[0], 
-        "click_id": clickid
+        "click_id": rtkClickID
     };
 
     // uncommit on prod
-    fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&payout=0&cnv_status=registration`, { mode: 'no-cors'})
+    fetch(`https://omniapostback.com/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
+    // fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&payout=0&cnv_status=registration`, { mode: 'no-cors'})
     .then(r => {
-        console.log("successfully registered: " + clickid);
+        console.log("successfully registered: " + rtkClickID);
         fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
         .then(rr => {
-            console.log("successfully registered lead in Data API: " + clickid)
+            console.log("successfully registered lead in Data API: " + rtkClickID)
             setTimeout(()=>{
                 $(this).css("display","block").css("visibility","visible")
-                window.location.href = `survey/?clickid=${clickid}&uclick=${uclick}&zip=${data.zip}&firstname=${data.firstname}&lastname=${data.lastname}&email=${data.email}&telephone=${data.phone.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+                window.location.href = $(".form-step--3 .btn-next").attr('data-href');
+                // window.location.href = `survey/?clickid=${rtkClickID}&uclick=${uclick}&zip=${data.zip}&firstname=${data.firstname}&lastname=${data.lastname}&email=${data.email}&telephone=${data.phone.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
             }, standart_time)
         })
         .catch(ed => console.log("error during registration lead in Data API: " + ed));})
@@ -247,6 +256,10 @@ if (isPhoneValid()) {
 } else {
   $(".form-step--3").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
 }
+
+final_link__no_params = $("#btf").attr("data-href");
+final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+$("#btf").attr("data-href" , final_link)
 
 }, 1500)
 
