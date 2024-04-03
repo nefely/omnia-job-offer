@@ -104,7 +104,7 @@ $(".answers-container-5 .btn.back").click(function(){
 let lastClickTime = 0;
 
 $('.answers-container-3 a.no').click(function(e){
-        fetch(`https://omniatrackroi.com/track.php?cnv_id=${rtkClickID__}&event9=1&cnv_status=q3no`, { mode: 'no-cors'});
+        fetch(`https://omniapostback.com/postback?clickid=${rtkClickID__}&event9=1&cnv_status=q3no`, { mode: 'no-cors'});
 	 	// fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event9=1&cnv_status=q3no`, { mode: 'no-cors'});
 });
 
@@ -116,13 +116,13 @@ $('.answers-container-3 a.yes').click(function(e){
         return false;
     } else {
         lastClickTime = currentTime;
-            fetch(`https://omniatrackroi.com/track.php?cnv_id=${rtkClickID__}&event8=1&cnv_status=q3yes`, { mode: 'no-cors'});
+            fetch(`https://omniapostback.com/postback?clickid=${rtkClickID__}&event8=1&cnv_status=q3yes`, { mode: 'no-cors'});
 		    // fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event8=1&cnv_status=q3yes`, { mode: 'no-cors'});
     }
 });
 
 $('.answers-container-4 a.no').click(function(e){
-        fetch(`https://omniatrackroi.com/track.php?cnv_id=${rtkClickID__}&event6=1&cnv_status=q4no`, { mode: 'no-cors'});
+        fetch(`https://omniapostback.com/postback?clickid=${rtkClickID__}&event6=1&cnv_status=q4no`, { mode: 'no-cors'});
 		// fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event6=1&cnv_status=q4no`, { mode: 'no-cors'});
 });
 
@@ -134,7 +134,7 @@ $('.answers-container-4 a.yes').click(function(e){
         return false;
     } else {
         lastClickTime = currentTime;
-        fetch(`https://omniatrackroi.com/track.php?cnv_id=${rtkClickID__}&event5=1&cnv_status=q4yes`, { mode: 'no-cors'});
+        fetch(`https://omniapostback.com/postback?clickid=${rtkClickID__}&event5=1&cnv_status=q4yes`, { mode: 'no-cors'});
         // fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event5=1&cnv_status=q4yes`, { mode: 'no-cors'});
     }
 });
@@ -147,7 +147,7 @@ $('.answers-container-5 a.no').click(function(e){
         return false;
     } else {
         lastClickTime = currentTime;
-        fetch(`https://omniatrackroi.com/track.php?cnv_id=${rtkClickID__}&event10=1&cnv_status=q5no`, { mode: 'no-cors'});
+        fetch(`https://omniapostback.com/postback?clickid=${rtkClickID__}&event10=1&cnv_status=q5no`, { mode: 'no-cors'});
         // fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event10=1&cnv_status=q5no`, { mode: 'no-cors'});
     }
 });
@@ -160,7 +160,7 @@ $('.answers-container-5 a.yes').click(function(e){
         return false;
     } else {
         lastClickTime = currentTime;
-        fetch(`https://omniatrackroi.com/track.php?cnv_id=${rtkClickID__}&event7=1&cnv_status=q5yes`, { mode: 'no-cors'});
+        fetch(`https://omniapostback.com/postback?clickid=${rtkClickID__}&event7=1&cnv_status=q5yes`, { mode: 'no-cors'});
         // fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&event7=1&cnv_status=q5yes`, { mode: 'no-cors'});
     }
 });
