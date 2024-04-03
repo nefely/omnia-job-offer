@@ -51,7 +51,8 @@ if ($('.swiper').length > 0) {
   });
 }
 
-
+window.final_link = ""
+window.final_link__no_params = ""
 
 // question 1
 $(".question--1 .submit").click(function(){});
@@ -114,11 +115,14 @@ emailValidation = () => {
     $("input[name=email]").closest(".field-content").addClass("error")
   }
 }
+$(".question--1 .submit").click(function(){
+    window.final_link__no_params = $("#btf").attr("href");
+})
 
 $(".question--2 .submit").click(function(){
-  emailValidation()
-  lastNameValidation()
-  firstNameValidation()
+    emailValidation()
+    lastNameValidation()
+    firstNameValidation()
 });
 
 $(".question--2 .submit button").click(function(){
@@ -171,6 +175,10 @@ $(".question--3 .submit").click(function(){
 });
 
 $(".question--3 input").on("input" , function(){
+
+    window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+    $("#btf").attr("href" , final_link)
+
   if (isPhoneValid()) {
     $(this).closest(".question").find(".submit a").css("pointer-events" , "initial").removeClass("disabled");
   } else {
@@ -203,21 +211,22 @@ $(".offer-link").click(function(e){
     "phone": $("[name=phone]").val(), 
     "offer_type": $("[name=offer_type]").val(), 
     "offer_url": window.location.href.split('?')[0], 
-    "click_id": clickid
+    "click_id": rtkClickID
   };
   console.log(data)
 
   // uncomment on prod
-  fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&payout=0&cnv_status=registration`, { mode: 'no-cors'})
+  fetch(`https://omniapostback.com/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
+//   fetch(`https://omniatrackroi.com/track.php?cnv_id=${rtkClickID}&payout=0&cnv_status=registration`, { mode: 'no-cors'})
     .then(r => {
-      console.log("successfully registered: " + clickid);
+      console.log("successfully registered: " + rtkClickID);
       fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
         .then(rr => {
-          console.log("successfully registered lead in Data API: " + clickid)
+          console.log("successfully registered lead in Data API: " + rtkClickID)
           
           setTimeout(()=>{
               $(".offer-link").css("display","block").css("visibility","visible")
-              window.location.href = `survey/?clickid=${clickid}&uclick=${uclick}&zip=${data.zip}&firstname=${data.firstname}&lastname=${data.lastname}&email=${data.email}&telephone=${data.phone.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+              window.location.href = $(".question--3 #btf").attr('href');
           },300)
 
         })
@@ -243,6 +252,11 @@ if (isPhoneValid()) {
 
 console.log(isFirstNameValid() && isLastNameValid() && isEmailValid())
 console.log(isPhoneValid())
+
+final_link__no_params = $("#btf").attr("href");
+final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+$("#btf").attr("href" , final_link)
+
 
 }, 1500)
 
