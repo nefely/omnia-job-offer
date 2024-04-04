@@ -58,11 +58,11 @@ $(".answers-container-2 .btn.next").click(function(){
 
 	$('.answers-container-3 a.no').attr("href" , ``)
 	$('.answers-container-4 a.no').attr("href" , ``)
-	$('.answers-container-5 a.no').attr("href" , `https://omniapostback.com/click?to_offer=2`)
+	$('.answers-container-5 a.no').attr("href" , `https://omniapostback.com/click/2`)
 
 	$('.answers-container-3 a.yes').attr("href" , `../1000-earning-opportunity/`)
-	$('.answers-container-4 a.yes').attr("href" , `https://omniapostback.com/click?to_offer=3`)
-	$('.answers-container-5 a.yes').attr("href" , `https://omniapostback.com/click?to_offer=4`)
+	$('.answers-container-4 a.yes').attr("href" , `https://omniapostback.com/click/3`)
+	$('.answers-container-5 a.yes').attr("href" , `https://omniapostback.com/click/4`)
 
 	window.offer_link_1 = $('.answers-container-3 a.yes').attr("href")
 	window.offer_link_2 = $('.answers-container-4 a.yes').attr("href")

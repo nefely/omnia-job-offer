@@ -70,11 +70,11 @@ $(".quiz-block--2 .quiz-block-answers a").click(function(e){
 
     $('.quiz-block--3 a.no').attr("href" , ``)
     $('.quiz-block--4 a.no').attr("href" , ``)
-    $('.quiz-block--5 a.no').attr("href" , `https://omniapostback.com/click?&to_offer=2`)
+    $('.quiz-block--5 a.no').attr("href" , `https://track.work-hunter.com/click/2`)
 
-    $('.quiz-block--3 a.yes').attr("href" , `https://omniapostback.com/click?to_offer=3`)
+    $('.quiz-block--3 a.yes').attr("href" , `https://track.work-hunter.com/click/3`)
     $('.quiz-block--4 a.yes').attr("href" , `../1000-earning-opportunity/`)
-    $('.quiz-block--5 a.yes').attr("href" , `https://omniapostback.com/click?to_offer=4`)
+    $('.quiz-block--5 a.yes').attr("href" , `https://track.work-hunter.com/click/4`)
 
     window.offer_link_1 = $('.quiz-block--3 a.yes').attr("href")
     window.offer_link_2 = $('.quiz-block--4 a.yes').attr("href")
