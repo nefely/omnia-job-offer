@@ -216,8 +216,7 @@ $(".offer-link").click(function(e){
   console.log(data)
 
   // uncomment on prod
-  fetch(`https://omniapostback.com/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
-//   fetch(`https://omniatrackroi.com/track.php?cnv_id=${rtkClickID}&payout=0&cnv_status=registration`, { mode: 'no-cors'})
+  fetch(`https://track.work-hunter.com/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
     .then(r => {
       console.log("successfully registered: " + rtkClickID);
       fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
