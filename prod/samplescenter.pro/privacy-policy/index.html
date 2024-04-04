@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Privacy Policy</title>
-    <meta name="theme-color" content="rgba(56,88,152,1)"/>
+    <title> - Privacy Policy</title>
+    <link rel="shortcut icon" type="image/png" href="../img/fav.png"/>
+    <meta name="theme-color" content="rgb(56,56,56)"/>
 </head>
-<body style="color: #151515">
+<body>
+    <!-- preloader -->
+    <style>.preloader{position:fixed;width:100vw;height:100vh;background:#fff;z-index:1000;left:0;top:0;}</style>
+    <div class="preloader"></div>
+
     <main>
         <div class="wrapper">
             <div class="main_link">
-                <a href="../../"><h4>Home Page</h4></a>
+                <a href="../"><h4>Home Page</h4></a>
             </div>
             <div class="title">
                 <h2>Privacy Policy</h2>
@@ -67,7 +72,7 @@
         </div> 
     </main>
 
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/global.css">
 
     <style>
         main{
@@ -106,12 +111,7 @@
         }
     </style>
 
-    <script src="../../js/jquery-3.6.4.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            window.domain = window.location.hostname;
-            $(".domain").text(domain)
-        })
-    </script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
