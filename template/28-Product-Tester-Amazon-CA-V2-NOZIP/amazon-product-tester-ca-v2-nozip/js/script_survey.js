@@ -23,17 +23,6 @@ setTimeout(()=> {
 }, 3000)
 
 form_final_link = () => {
-    // console.log(window.offer_link)
-
-    console.log(clickid)
-    console.log(uclick)
-    console.log(email)
-    console.log(firstname)
-    console.log(lastname)
-    console.log(telephone)
-    console.log(zip)
-
-
     $(".quiz-block--3 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
     $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_2}${window.offer_link_2.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
     $(".quiz-block--5 a.yes").attr("href" ,`${window.offer_link_3}${window.offer_link_3.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
@@ -68,11 +57,11 @@ $(".quiz-block--2 .quiz-block-answers a").click(function(e){
 
     $('.quiz-block--3 a.no').attr("href" , ``)
     $('.quiz-block--4 a.no').attr("href" , ``)
-    $('.quiz-block--5 a.no').attr("href" , `https://omniapostback.com/click/2`)
+    $('.quiz-block--5 a.no').attr("href" , `https://track.work-hunter.com/click/2`)
 
-    $('.quiz-block--3 a.yes').attr("href" , `https://omniapostback.com/click/3`)
+    $('.quiz-block--3 a.yes').attr("href" , `https://track.work-hunter.com/click/3`)
     $('.quiz-block--4 a.yes').attr("href" , `../1000-earning-opportunity/`)
-    $('.quiz-block--5 a.yes').attr("href" , `https://omniapostback.com/click/4`)
+    $('.quiz-block--5 a.yes').attr("href" , `https://track.work-hunter.com/click/4`)
 
     window.offer_link_1 = $('.quiz-block--3 a.yes').attr("href")
     window.offer_link_2 = $('.quiz-block--4 a.yes').attr("href")
@@ -98,7 +87,7 @@ $(".quiz-block--3 .quiz-block-answers a.yes").click(function(e){
 })
 $(".quiz-block--3 .quiz-block-answers a.no").click(function(e){
     e.preventDefault()
-    fetch(`https://omniapostback.com/postback?clickid=${rtkClickID__}&event9=1&cnv_status=q3no`, { mode: 'no-cors'})
+    fetch(`https://track.work-hunter.com/postback?clickid=${rtkClickID__}&event9=1&cnv_status=q3no`, { mode: 'no-cors'})
     $(this).closest(".quiz-block").fadeOut(standart_time)
     setTimeout(()=>{
         $(this).closest(".quiz-block").next(".quiz-block").fadeIn(standart_time)
@@ -113,12 +102,12 @@ $(".quiz-block--4 .quiz-block-answers a.yes").click(function(e){
     } else {
         lastClickTime = currentTime;
         console.log("click 4 yes")
-        fetch(`https://omniapostback.com/postback?clickid=${rtkClickID__}&event5=1&cnv_status=q4yes`, { mode: 'no-cors'})
+        fetch(`https://track.work-hunter.com/postback?clickid=${rtkClickID__}&event5=1&cnv_status=q4yes`, { mode: 'no-cors'})
     }
 })
 $(".quiz-block--4 .quiz-block-answers a.no").click(function(e){
     e.preventDefault()
-    fetch(`https://omniapostback.com/postback?clickid=${rtkClickID__}&event6=1&cnv_status=q4no`, { mode: 'no-cors'})
+    fetch(`https://track.work-hunter.com/postback?clickid=${rtkClickID__}&event6=1&cnv_status=q4no`, { mode: 'no-cors'})
     $(this).closest(".quiz-block").fadeOut(standart_time)
     setTimeout(()=>{
         $(this).closest(".quiz-block").next(".quiz-block").fadeIn(standart_time)
@@ -133,7 +122,7 @@ $(".quiz-block--5 .quiz-block-answers a.yes").click(function(e){
     } else {
         lastClickTime = currentTime;
         console.log("click 5 yes")
-        fetch(`https://omniapostback.com/postback?clickid=${rtkClickID__}&event7=1&cnv_status=q5yes`, { mode: 'no-cors'})
+        fetch(`https://track.work-hunter.com/postback?clickid=${rtkClickID__}&event7=1&cnv_status=q5yes`, { mode: 'no-cors'})
     }
 })
 $(".quiz-block--5 .quiz-block-answers a.no").click(function(e){
@@ -145,7 +134,7 @@ $(".quiz-block--5 .quiz-block-answers a.no").click(function(e){
     } else {
         lastClickTime = currentTime;
         console.log("click 5 no")
-        fetch(`https://omniapostback.com/postback?clickid=${rtkClickID__}&event10=1&cnv_status=q5no`, { mode: 'no-cors'})
+        fetch(`https://track.work-hunter.com/postback?clickid=${rtkClickID__}&event10=1&cnv_status=q5no`, { mode: 'no-cors'})
     }
 })
 
