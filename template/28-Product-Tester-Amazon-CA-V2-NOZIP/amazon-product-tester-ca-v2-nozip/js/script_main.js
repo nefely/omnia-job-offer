@@ -245,6 +245,11 @@ $(".form-step--3 .btn-next").click(function(e){
 
 setTimeout(()=>{
 
+$("input[name=firstname]").val("")
+$("input[name=lastname]").val("")
+$("input[name=email]").val("")
+$("input[name=phone]").val("")
+
 if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
   $(".form-step--2").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
 } else {

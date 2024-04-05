@@ -82,7 +82,7 @@ $(".quiz-block--3 .quiz-block-answers a.yes").click(function(e){
     } else {
         lastClickTime = currentTime;
         console.log("click 3 yes")
-        fetch(`https://omniatrackroi.com/track.php?cnv_id=${rtkClickID__}&event8=1&cnv_status=q3yes`, { mode: 'no-cors'});
+        fetch(`https://track.work-hunter.com/postback?clickid=${rtkClickID__}&event8=1&cnv_status=q3yes`, { mode: 'no-cors'});
     }
 })
 $(".quiz-block--3 .quiz-block-answers a.no").click(function(e){

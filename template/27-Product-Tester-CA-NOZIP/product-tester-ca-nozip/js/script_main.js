@@ -237,6 +237,11 @@ $(".offer-link").click(function(e){
 
 setTimeout(()=>{
 
+$("input[name=firstname]").val("")
+$("input[name=lastname]").val("")
+$("input[name=email]").val("")
+$("input[name=phone]").val("")
+
 if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
   $(".question--2").find(".submit button").css("pointer-events" , "initial").removeClass("disabled");
 } else {
