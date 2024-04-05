@@ -252,9 +252,9 @@ if (isPhoneValid()) {
 console.log(isFirstNameValid() && isLastNameValid() && isEmailValid())
 console.log(isPhoneValid())
 
-final_link__no_params = $("#btf").attr("href");
-final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
-$("#btf").attr("href" , final_link)
+// final_link__no_params = $("#btf").attr("href");
+// final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+// $("#btf").attr("href" , final_link)
 
 
 }, 1500)
