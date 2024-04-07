@@ -40,9 +40,14 @@ form_final_link = () => {
     $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_2}${window.offer_link_2.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
     $(".quiz-block--5 a.yes").attr("href" ,`${window.offer_link_3}${window.offer_link_3.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
 
+    // $(".quiz-block--3 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}` )
+    // $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_2}${window.offer_link_2.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}` )
+    // $(".quiz-block--5 a.yes").attr("href" ,`${window.offer_link_3}${window.offer_link_3.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}` )
+
     $(".quiz-block--3 a.no").attr("href" ,`` )
     $(".quiz-block--4 a.no").attr("href" ,`` )
     $(".quiz-block--5 a.no").attr("href" ,`${window.offer_link_no_3}${window.offer_link_no_3.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
+    // $(".quiz-block--5 a.no").attr("href" ,`${window.offer_link_no_3}${window.offer_link_no_3.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}` )
 }
 	
 // quiz flow

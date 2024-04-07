@@ -203,7 +203,7 @@ $(".form-step--2 .btn-next").click(function(e){
     window.offer_link_no_3 = $('.quiz-block--5 a.no').attr("href")
 })
 $(".form-step--3 .btn-next").click(function(e){
-    
+    e.preventDefault()
     $(this).css("display","none").css("visibility","hidden")
 
     // uncommit on prod
