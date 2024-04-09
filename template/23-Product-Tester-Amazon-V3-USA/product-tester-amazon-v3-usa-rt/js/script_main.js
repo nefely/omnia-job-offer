@@ -4,6 +4,7 @@ $("input[name=firstname]").val("")
 $("input[name=lastname]").val("")
 $("input[name=email]").val("")
 $("input[name=phone]").val("")
+$("input[name=zip]").val("")
 
 
 if ($("input[name=phone]").length > 0) {
@@ -175,6 +176,10 @@ $(window).resize(checkWindowSize);
     });
 
     $(".form-step--3 input").on("input" , function(){
+
+        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+        $("#btf").attr("data-href" , final_link)
+        
         if (isPhoneValid()) {
             $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
         } else {
@@ -201,11 +206,13 @@ $(window).resize(checkWindowSize);
 
 
 // main flow
-
-
+window.final_link = ""
+window.final_link__no_params = ""
 
 // form flow
 $(".form-step--1 .btn-next").click(function(e){
+    window.final_link__no_params = $("#btf").attr("data-href");
+
     $(this).closest(".form-step").fadeOut(standart_time)
     $("#intro .bullets").fadeOut(standart_time)
     if ($(window).innerWidth() < 991) {
@@ -226,13 +233,10 @@ $(".form-step--2 .btn-next").click(function(e){
     window.offer_link_3 = $('.quiz-block--5 a.yes').attr("href")
     window.offer_link_no_3 = $('.quiz-block--5 a.no').attr("href")
 })
-$(".form-step--3 .btn-next").click(function(e){
-    
-    $(this).css("display","none").css("visibility","hidden")
 
-    // uncommit on prod
-    const clickid = $("[name=click_id]").val();
-    const uclick = $("[name=uclick]").val();
+$(".form-step--3 .btn-next").click(function(e){
+    e.preventDefault();
+    $(this).css("display","none").css("visibility","hidden")
 
     const data = {
         "postal": $("[name=zip]").val(), 
@@ -242,24 +246,24 @@ $(".form-step--3 .btn-next").click(function(e){
         "phone": $("[name=phone]").val(), 
         "offer_type": $("[name=offer_type]").val(), 
         "offer_url": window.location.href.split('?')[0], 
-        "click_id": clickid
+        "click_id": rtkClickID
     };
 
     // uncommit on prod
-    fetch(`https://omniatrackroi.com/track.php?cnv_id=${clickid}&payout=0&cnv_status=registration`, { mode: 'no-cors'})
+    fetch(`https://omniatrackroi.com/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
     .then(r => {
-        console.log("successfully registered: " + clickid);
+        console.log("successfully registered: " + rtkClickID);
         fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
         .then(rr => {
-            console.log("successfully registered lead in Data API: " + clickid)
+            console.log("successfully registered lead in Data API: " + rtkClickID)
             setTimeout(()=>{
                 $(this).css("display","block").css("visibility","visible")
-                window.location.href = `survey/?clickid=${clickid}&uclick=${uclick}&postal=${data.postal}&firstname=${data.firstname}&lastname=${data.lastname}&email=${data.email}&phone=${data.phone.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+                window.location.href = $(".form-step--3 .btn-next").attr('data-href');
             }, standart_time)
         })
-        .catch(ed => console.log("error during registration lead in Data API: " + ed));})
+        .catch(ed => { window.location.href = $(".form-step--3 .btn-next").attr('href') });
+    })
     .catch(e => console.log("error during registration lead: " + e));
-
 })
 
 // conmit on prod
@@ -268,24 +272,30 @@ $(".form-step--3 .btn-next").click(function(e){
 
 setTimeout(()=>{
 
-if (isZipValid()) {
-  $(".form-step--1").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
-} else {
-  $(".form-step--1").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
-}
+    $("input[name=firstname]").val("")
+    $("input[name=lastname]").val("")
+    $("input[name=email]").val("")
+    $("input[name=phone]").val("")
+    $("input[name=zip]").val("")
 
-if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
-  $(".form-step--2").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
-} else {
-  $(".form-step--2").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
-}
 
-if (isPhoneValid()) {
-  $(".form-step--3").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
-} else {
-  $(".form-step--3").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
-}
+    if (isZipValid()) {
+      $(".form-step--1").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
+    } else {
+      $(".form-step--1").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
+    }
 
+    if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
+      $(".form-step--2").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
+    } else {
+      $(".form-step--2").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
+    }
+
+    if (isPhoneValid()) {
+      $(".form-step--3").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
+    } else {
+      $(".form-step--3").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
+    }
 }, 1500)
 
 
