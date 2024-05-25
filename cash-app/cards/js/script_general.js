@@ -36,24 +36,31 @@ $('.boxes .box:not(.clicked)').click(function(){
         $(this).addClass("clicked")
         if(clickCount < 3) {
             if (clickCount == 1) {
-                $(this).addClass("empty")
+                // $(this).addClass("empty")
+                setTimeout(()=>{
+                    $(this).find("img").attr("src" , "img/empty.png")
+                },200)
+
                 canClick = false
                 setTimeout(()=>{
                     $('.popup').fadeIn(300)
                 },1000)
             }
             if (clickCount == 2) {
-
-                $(this).addClass("win")
-                $('video').each(function() {
-                    this.play();
-                });
+                // $(this).addClass("win")
+                setTimeout(()=>{
+                    $(this).find("img").attr("src" , "img/win.png")
+                    $('video').each(function() {
+                        this.play();
+                    });
+                },200)
                 setTimeout(()=>{
                     $('.video').fadeOut(300);
                 },7000);
                 setTimeout(()=>{
+                    $('.screen--comment').fadeOut(300)
                     LastSlideShow()
-                },1500)
+                },2000)
             }
         }
     }
@@ -70,8 +77,10 @@ $('.popup button').click(function(){
 let LastSlideShow = () => {
     $('.slide-1').css("position" , "absolute").fadeOut(300)
     $('.slide-2').css('position' , "relative").fadeIn(300)
+    $(".logo img").attr("src" , "img/banner.png").css("width" , "155px").css("margin-bottom" , "-25px")
     setTimeout(()=>{
         $('.content-1').fadeOut(300)
+        $('.banner img').fadeOut(300)
         setTimeout(()=>{
             $('.content-2').fadeIn(300)
         },300)
