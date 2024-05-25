@@ -41,44 +41,7 @@ ul {
 	margin-left: 0;
 	margin-right: 0;
 }
-.btn {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	font-size: 1.3rem;
-	font-weight: 700px;
-	background: var(--theme-black);
-	color: var(--theme-white) !important;
-    padding: 16px 30px 14px 30px;
-    border-radius: var(--b-rad-sm);
-    text-decoration: none !important;
-    border: 0;
-    box-shadow: 0 0 0 #000; 
-	text-align: center;
-} 
-.btn-lg {
-	font-size: 1.55rem;
-    padding: 16px 30px 14px 30px;
-}
-.btn-round {
-    border-radius: 1000px;
-}
-.btn-red {
-	background: var(--theme-red);
-	color: var(--theme-white);
-	width: 100%;
-	max-width: 300px;
-}
-.btn-green {
-	background: var(--theme-green);
-	color: var(--theme-white);
-	width: 100%;
-	max-width: 240px;
-}
-.btn-green:disabled {
-	opacity: 0.5;
-}
+
 .screen {
 	min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
@@ -92,48 +55,4 @@ ul {
 }
 .screen.screen--black {
 	background: var(--theme-black);
-}
-.screen.screen--comment {
-	min-height: 0;
-    min-height: calc(var(--vh, 1vh) * 0);
-}
-.final-bottom-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column
-}
-
-
-
-
-
-.btn-animation {
-	transition: 0.3s;
-	position: relative;
-	overflow: hidden;
-}
-.btn-animation:after {
-	content: "";
-    display: block;
-    width: 1rem;
-    height: 100%;
-    background: rgba(255,255,255,1);
-    opacity: .5;
-    position: absolute;
-    left: -100%;
-    top: 0;
-    z-index: 1;
-    transform: rotate(45deg) scale(2);
-    animation: 3s linear 0s infinite normal animation-blink;
-}
-@keyframes animation-blink {
-    0% {
-        left: -100%;
-    }
-    100%,
-    20% {
-        left: 100%;
-        margin-left: 5rem;
-    }
 }
