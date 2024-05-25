@@ -7,7 +7,7 @@ gulp.task('serve', function() {
     server: {
       baseDir: "./"
     },
-    // online: true,
+    online: true,
     // tunnel: true,
     // tunnel: "nefely",
     // logLevel: "debug"
@@ -17,4 +17,5 @@ gulp.task('serve', function() {
   gulp.watch("./**/*.css").on("change", reload);
   gulp.watch("./**/*.js").on("change", reload);
 
+  /*http://localhost:3000/*/ 
 });

@@ -17,7 +17,7 @@ html {
     }
 }
 body {
-	font-family: "Red Hat Display", sans-serif;
+	font-family: "Roboto", sans-serif;
 	font-size: inherit;
 	font-weight: 400;
 	position: relative;
@@ -142,7 +142,7 @@ header .logo img {
 	margin-bottom: 10px;
 }
 .content h2 strong {
-	font-weight: 600;
+	font-weight: 700;
 }
 .content > p:not(:last-child) {
 	margin-bottom: 5px;

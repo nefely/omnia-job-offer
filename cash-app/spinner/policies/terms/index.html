@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>LevelShopping - Terms of Use</title>
-    <!-- фавікон -->
-    <link rel="shortcut icon" type="image/png" href="../img/fav.png"/>
-    <meta name="theme-color" content="#34C98E"/>
+    <title>Terms of Use</title>
+    <meta name="theme-color" content="rgba(56,88,152,1)"/>
 </head>
 <body>
     <main>
         <div class="wrapper">
             <div class="main_link">
-                <a href="../"><h4>Home Page</h4></a>
+                <a href="../../"><h4>Home Page</h4></a>
             </div>
             <div class="title">
                 <h2>Terms of Use</h2>
@@ -97,11 +95,11 @@
         </div> 
     </main>
 
-    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../../css/global.css">
 
     <style>
         body {
-            background: var(--theme-white);
+            background: #fff;
         }
         main{
             margin: 40px 0;
@@ -139,8 +137,12 @@
         }
     </style>
 
-    <!-- стилі розбиті на файли по блокам -->
-    <script src="../js/jquery-3.6.4.min.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="../../js/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            window.domain = window.location.hostname;
+            $(".domain").text(domain)
+        })
+    </script>
 </body>
 </html>
