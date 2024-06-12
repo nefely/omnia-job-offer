@@ -38,10 +38,10 @@ header .mob {
 }
 @media screen and (max-width: 991px) {
 	header {
-		background: #2D2B2B;
+		background: #ededed;
 	}
 	header .logo img {
-		max-height: 38px;
+		max-height: 45px;
 		max-width: 100%;
 	}
 	header .row {
