@@ -404,18 +404,80 @@
 	background: #40B756;
 }*/
 
+.quiz-dots {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 20px 30px;
+}
+.quiz-dots .circle {
+	border-radius: 100px;
+	aspect-ratio: 1/1;
+	width: 48px;
+	border: 2px solid #AFAFAF;
+	margin: 0 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+}
+.quiz-dots .circle p {
+	padding-top: 1px;
+	aspect-ratio: 1/1;
+	width: 40px;
+	border-radius: 1000px;
+	background: rgba(0,0,0,0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	line-height: 1;
+	font-weight: 700;
+	color: #AFAFAF;
+	transition: 0.3s;
+}
+.quiz-dots .line {
+	flex-grow: 1;
+	height: 2px;
+	background: #AFAFAF;
+	border-radius: 1000px;
+	transition: 0.3s;
+}
+.quiz-dots .circle.passed {
+	border: 2px solid var(--theme-secondary);
+}
+.quiz-dots .circle.passed p {
+	color: var(--theme-secondary);
+}
+.quiz-dots .circle.active {
+	border: 2px solid var(--theme-secondary);
+}
+.quiz-dots .circle.active p {
+	color: var(--theme-white);
+	background: var(--theme-secondary);
+}
+.quiz-dots .circle.passed + .line {
+	background: var(--theme-secondary);
+}
+
+
 
 
 /*#intro .form .main-title h1 .primary {
     color: #f542f5;
 }*/
 
-@media screen and (max-width: 991px) {
-	#intro .quiz-block-question h5 {
-		font-size: 1rem;
-		line-height: 1.5
-	}
+#intro .quiz-block-question h5 {
+	font-size: 20PX;
+	line-height: 1.2;
 }
+
+/*@media screen and (max-width: 991px) {
+	#intro .quiz-block-question h5 {
+		font-size: 20PX;
+		line-height: 1.2;
+	}
+}*/
 
 .tags {
     text-align: center;
@@ -423,11 +485,13 @@
 .tags p {
     display: inline-block;
     margin-bottom: 20px;
-    padding: 9px 15px;
-    background: #CFDDFB;
+    padding: 16px 24px;
+    background: var(--theme-secondary);
+    color: var(--theme-white);
     border-radius: 50px;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1;
+    font-weight: 700;
 }
 .tezis {
     margin-top: 35px;
@@ -436,7 +500,8 @@
 
 .slug {
 	font-style: italic;
-	margin-top: 20px;
+	margin: 20px auto 0;
+	max-width: 297px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
