@@ -408,7 +408,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0 20px 30px;
+	margin: 0 auto 30px;
+	width: 305px;
 }
 .quiz-dots .circle {
 	border-radius: 100px;
