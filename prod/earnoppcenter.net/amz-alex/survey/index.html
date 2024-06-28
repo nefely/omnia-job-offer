@@ -32,11 +32,11 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '304903739349726', {
-  em: `${window.getURLParameter(window.location.href, 'email')}`,
-  fn: `${window.getURLParameter(window.location.href, 'firstname')}`,
-  ln: `${window.getURLParameter(window.location.href, 'lastname')}`,
-  pg: `1${window.getURLParameter(window.location.href, 'telephone')}`
+fbq('init', '799738728826938', {
+  em: `${window.getURLParameter(window.location.href, 'sub15')}`,
+  fn: `${window.getURLParameter(window.location.href, 'sub13')}`,
+  ln: `${window.getURLParameter(window.location.href, 'sub14')}`,
+  pg: `1${window.getURLParameter(window.location.href, 'sub16')}`
 }); 
 fbq('track', 'CompleteRegistration')
 </script>
@@ -53,7 +53,7 @@ fbq('track', 'CompleteRegistration')
 			<div class="row">
 				<div class="logo">
 					<img src="../media/logo.svg" alt="" class="desk">
-					<img src="../media/logo-white.svg" alt="" class="mob">
+					<img src="../media/logo.svg" alt="" class="mob">
 				</div>
 			</div>
 		</div>
@@ -70,18 +70,24 @@ fbq('track', 'CompleteRegistration')
 							<h3>Welcome!</h3>
 						</div>
 						<div class="thx-text">
-							<p>Start with a short survey to receive the best earning opportunity for <strong>Amazon</strong>.</p>
+							<p>Start with a short survey to recieve the best earning oppotunity for Amazon</p>
 						</div>
 					</div>
 				</div>
 				<div class="quiz">
 					<div class="quiz-container">
 						<div class="quiz-dots">
-							<ul>
-								<li class="active"></li>
-								<li></li>
-								<li></li>
-							</ul>
+							<div class="circle">
+								<p>1</p>
+							</div>
+							<div class="line"></div>
+							<div class="circle">
+								<p>2</p>
+							</div>
+							<div class="line"></div>
+							<div class="circle">
+								<p>3</p>
+							</div>
 						</div>
 						<div class="quiz-blocks">
 							<div class="quiz-block quiz-block--1">
@@ -89,24 +95,32 @@ fbq('track', 'CompleteRegistration')
 									<h5>Have you ever submitted a <strong>product review?</strong></h5>
 								</div>
 								<div class="quiz-block-answers">
-									<a href="" class="btn btn-primary yes round">Yes</a>
-									<a href="" class="btn btn-primary no round">No</a>
+									<a href="" class="btn btn-secondary yes">Yes</a>
+									<a href="" class="btn btn-secondary no">No</a>
 								</div>
-								<!-- <div class="quiz-block-back">
-									<button class="btn btn-transparent">Back</button>
-								</div> -->
+								<!-- <button class="btn btn-transparent">
+									<svg xmlns="http://www.w3.org/2000/svg" width="19" height="14" viewBox="0 0 19 14" fill="none">
+										<path d="M18.6428 7L2.35711 7M2.35711 7L8.25366 13M2.35711 7L8.25366 0.999999" stroke="#221F1F" stroke-opacity="0.4" stroke-width="2"/>
+									</svg>
+									<p>Back</p>
+								</button> -->
 							</div>
 							<div class="quiz-block quiz-block--2">
 								<div class="quiz-block-question">
 									<h5>How much <strong>free time</strong> do you have every day?</h5>
 								</div>
 								<div class="quiz-block-answers">
-									<a href="" class="btn btn-primary h1-3 round">1 to 3 hours</a>
-									<a href="" class="btn btn-primary h3-5 round">3 to 5 hours </a>
-									<a href="" class="btn btn-primary h5-8 round">5 to 8 hours</a>
+									<a href="" class="btn btn-secondary h1-3">1 to 3 hours</a>
+									<a href="" class="btn btn-secondary h3-5">3 to 5 hours </a>
+									<a href="" class="btn btn-secondary h5-8">5 to 8 hours</a>
 								</div>
 								<div class="quiz-block-back">
-									<button class="btn btn-transparent">Back</button>
+									<button class="btn btn-transparent">
+										<svg xmlns="http://www.w3.org/2000/svg" width="19" height="14" viewBox="0 0 19 14" fill="none">
+											<path d="M18.6428 7L2.35711 7M2.35711 7L8.25366 13M2.35711 7L8.25366 0.999999" stroke="#221F1F" stroke-opacity="0.4" stroke-width="2"/>
+										</svg>
+										<p>Back</p>
+									</button>
 								</div>
 							</div>
 							<div class="quiz-block quiz-block--3">
@@ -114,12 +128,17 @@ fbq('track', 'CompleteRegistration')
                                     <h5>About how many times per month you order at <strong>Amazon?</strong></h5>
 								</div>
 								<div class="quiz-block-answers">
-									<a href="" class="btn btn-primary round"><3</a>
-									<a href="" class="btn btn-primary round">3-7</a>
-									<a href="" class="btn btn-primary round">7+</a>
+									<a href="" class="btn btn-secondary"><3</a>
+									<a href="" class="btn btn-secondary">3-7</a>
+									<a href="" class="btn btn-secondary">7+</a>
 								</div>
 								<div class="quiz-block-back">
-									<button class="btn btn-transparent">Back</button>
+									<button class="btn btn-transparent">
+										<svg xmlns="http://www.w3.org/2000/svg" width="19" height="14" viewBox="0 0 19 14" fill="none">
+											<path d="M18.6428 7L2.35711 7M2.35711 7L8.25366 13M2.35711 7L8.25366 0.999999" stroke="#221F1F" stroke-opacity="0.4" stroke-width="2"/>
+										</svg>
+										<p>Back</p>
+									</button>
 								</div>
 							</div>
 							<div class="quiz-block quiz-block--4">
@@ -128,7 +147,13 @@ fbq('track', 'CompleteRegistration')
                                 </div>
 								<div class="quiz-block-question">
                                     <h3>Earn up to <strong>$750</strong> towards <strong>Amazon Products</strong> + and additional <strong>$750</strong> for reviewing the products!</h3>
-                                    <p class="tezis">Shop.Play.GetRewarded</p>
+			                        <div class="slug">
+			                        	<p class="word">Shop</p>
+			                        	<img src="../media/arrow.png" alt="" class="arrow">
+			                        	<p class="word">Play</p>
+			                        	<img src="../media/arrow.png" alt="" class="arrow">
+			                        	<p class="word">Get Rewarded</p>
+			                        </div>
 									<strong class="info data">
                                         <script>
                                         (() => {
@@ -145,16 +170,13 @@ fbq('track', 'CompleteRegistration')
                                     </strong>
 								</div>
 								<div class="quiz-block-answers">
-									<a href="https://track.earnoppcenter.pro/click" class="btn btn-primary yes round" target="_blank">YES, get started now</a>
+									<a href="https://track.earnoppcenter.net/click" class="btn btn-primary yes" target="_blank">YES, Get Started Now</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="figure">
-			<img src="../media/figure-girl.png">
 		</div>
 	</section>
 </div>
@@ -168,6 +190,7 @@ fbq('track', 'CompleteRegistration')
 <link rel="stylesheet" href="../css/bootstrap-reboot.min.css">
 <link rel="stylesheet" href="../css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/amazon-ember.css">
 
 <link rel="stylesheet" href="../css/header.css">
 <link rel="stylesheet" href="../css/intro.css">
@@ -180,11 +203,9 @@ fbq('track', 'CompleteRegistration')
 #intro {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
     margin-bottom: 0;
-}
-#intro .container {
-	margin-top: -50px;
+    padding-top: 50px;
 }
 #intro .quiz {
 	display: none;
@@ -194,6 +215,10 @@ fbq('track', 'CompleteRegistration')
 }
 #intro .figure {
 	display: none !important;
+}
+body {
+	background: var(--theme-secondary);
+	transition: 0.3s;
 }
 </style>
 
