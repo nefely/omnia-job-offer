@@ -264,13 +264,9 @@
       width: 70px
     }
   }
-  /* ----- Sweet-alert START */
   .sweet-overlay {
     display: block;
     background-color: black;
-    /* IE8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
-    /* IE8 */
     background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
     left: 0;
