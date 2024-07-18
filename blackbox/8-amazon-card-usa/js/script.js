@@ -44,6 +44,7 @@ $('.circles .circle:eq(4)').addClass("passed")
 $('.step-1 .title > *').css("opacity" , "0");
 $('.step-1 .title .analyzing , .step-1 .title .analyzing > *').css("opacity" , "1");
 $(".quiz , .card-image").fadeOut(0);
+$(".whitebox-1").addClass("transparentbox");
 
 setTimeout(()=>{
     $('.circles .circle:eq(0)').addClass("checked")
@@ -64,7 +65,9 @@ setTimeout(()=>{
 setTimeout(()=>{
     
 $(".step-1").fadeOut(300)
-$(".circles").fadeOut(30);
+$(".circles").fadeOut(300);
+$(".whitebox-1").addClass("nopaddingbox")
+
 setTimeout(()=>{
     $(".step-2").fadeIn(300)
     $(".bg").css("opacity" , "1")

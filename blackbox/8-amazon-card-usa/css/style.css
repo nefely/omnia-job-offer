@@ -49,16 +49,18 @@ table {
 :root {
     --black: #000;
     --gray: #ECECEC;
-    --silver: #DBDBDB;
+    --silver: #E3E6E6;
+    --metalic: #5E5E5E;
     --chrome: #7E7777;
     --white: #fff;
     --yellow-light: #FFFFF4;
     --yellow: #FFED24;
     --peach: #FEBAB7;
+    --blue: #3897F0;
     --orange: #F5A623;
     --pink: #FDE3E7;
     --brick: #C44A01;
-    --red: #E10504;
+    --amazon: #FF9900;
     --green: rgba(78,255,49,1);
 }
 html {
@@ -70,12 +72,12 @@ html {
     }
 }
 body {
-	font-family: Helvetica, sans-serif;
+	font-family: 'Amazon Ember', sans-serif;
 	font-size: inherit;
 	font-weight: 400;
 	position: relative;
 	line-height: 1.4;
-	background: var(--yellow-light);
+	background: var(--silver);
     color: var(--black);
 }
 body * {
@@ -96,14 +98,26 @@ strong	{
     align-items: center;
 }
 
+.whitebox {
+    padding: 20px;
+    background: var(--white);
+    border-radius: 16px;
+}
+.transparentbox {
+    padding: 20px;
+    background: transparent;
+}
+.nopaddingbox {
+    padding: 0px;
+    transition: all 0.3s linear;
+}
 
-
-.red {
-    color: var(--red);
+.amazon {
+    color: var(--amazon);
 }
 .container-sm {
     max-width: calc(100% - 30px);
-    width: 597px;
+    width: 637px;
 }
 .title {
     position: relative;
@@ -114,6 +128,11 @@ strong	{
     line-height: 40px;
     text-align: center;
 }
+.title .text-logo svg {
+    width: 117.5px;
+    height: auto;
+    margin-bottom: -16px;
+}
 .title p {
     font-size: 20px;
     line-height: 24px;
@@ -123,7 +142,8 @@ strong	{
 }
 
 .title .alert { 
-    background: var(--gray);
+    /* background: var(--gray); */
+    color: var(--metalic);
     font-size: 14px;
     line-height: 24px;
     text-align: center;
@@ -150,15 +170,19 @@ strong	{
         font-size: 24px;
         line-height: 32px;
     } 
+    .title .text-logo svg {
+        width: 90.59px;
+        margin-bottom: -13px;
+    }
     .title p {
         font-size: 16px;
         line-height: 24px;
     }
     .title .alert { 
-        width: calc(100% + 30px);
-        margin-left: -15px;
+        /* width: calc(100% + 30px); */
+        /* margin-left: -15px; */
         font-size: 12px;
-        font-weight: 700;
+        /* font-weight: 700; */
         line-height: 18px;
     }
 }
@@ -178,12 +202,12 @@ strong	{
     width: 32px;
     min-height: 32px;
     height: 32px;
-    border-radius: 1000px;
+    border-radius: 4px;
     border: 1px solid var(--silver);
     margin-right: 12px;
     position: relative;
     transition: all 0.3s linear;
-    background: var(--yellow-light);
+    background: var(--white);
 }
 .circles > .circle:not(:last-child):after {
     content: "";
@@ -213,8 +237,9 @@ strong	{
     transition: all 0.3s linear;
 }
 .circles .circle.active {
-    background: var(--peach);
-    border: 1px solid var(--peach);
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    color: var(--white);
 }
 .circles .circle.checked:after {
     background: var(--green);
@@ -222,6 +247,7 @@ strong	{
 .circles .circle.checked {
     background: var(--green);
     border: 1px solid var(--green);
+    color: var(--black);
 }
 .circles .circle.passed .text {
     opacity: 0;
@@ -237,7 +263,7 @@ strong	{
 }
 
 .product-name {
-    letter-spacing: 0.18em;
+    /* letter-spacing: 0.18em; */
 }
 
 
@@ -275,10 +301,10 @@ strong	{
     min-height: 48px;
     border: 0px solid #000;
     padding: 12px 12px;
-    border-radius: 4px;
-    background: var(--black);
+    border-radius: 16px;
+    background: var(--amazon);
     transition: all 0.3s linear;
-    color: var(--white);
+    color: var(--black);
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
@@ -288,8 +314,8 @@ strong	{
     flex-grow: 1;
 }
 .btn:hover {
-    background: var(--yellow);
-    color: var(--black);
+    background: var(--black);
+    color: var(--white);
 }
 .question-answers .btn:not(:last-child) {
     margin-right: 24px;
@@ -369,7 +395,7 @@ strong	{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--yellow-light);
+    background: var(--white);
     min-width: 32px;
     width: 32px;
     min-height: 32px;
@@ -381,8 +407,9 @@ strong	{
     transition: all 0.3s linear;
 }
 .list-item.active .circle span {
-    background: var(--peach);
-    border: 1px solid var(--peach);
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    color: var(--white);
 }
 .list-item:not(:last-child) .circle:after {
     content: "";
@@ -409,7 +436,8 @@ strong	{
 	position: relative;
 }
 .link a.active{
-    background: var(--peach);
+    background: var(--black);
+    color: var(--white);
     transform: scale(1.05,1.05);
 }
 .link a.blink:after {
