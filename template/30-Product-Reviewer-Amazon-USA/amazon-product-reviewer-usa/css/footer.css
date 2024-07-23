@@ -52,6 +52,10 @@ footer .row-text {
     text-align: left;
     margin-bottom: 40px;
 }
+footer .logo img {
+	max-height: 45px;
+	max-width: 100%;
+}
 @media screen and (max-width: 991px) {
     .footer-top .row {
         justify-content: center;
@@ -65,5 +69,9 @@ footer .row-text {
     .footer-top ul > li:not(:last-child) {
         margin-right: 0px;
         margin-bottom: 10px;
+    }
+    footer .logo img {
+        max-height: 38px;
+        max-width: 100%;
     }
 }
