@@ -1,12 +1,12 @@
 footer {
     background: var(--theme-primary);
-    padding-top: 40vh;
-    color: var(--theme-white);
+    color: var(--theme-black);
     text-align: center;
 }
 footer a {
-    color: var(--theme-white);
+    color: var(--theme-black);
     text-decoration: none !important;
+    font-size: 16px;
 }
 footer a:hover {
     color: var(--theme-black);
@@ -39,6 +39,18 @@ footer a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.footer-bottom .row p {
+    font-size: 16px;
+}
+footer .row-text {
+    margin-top: 10px;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    margin-bottom: 40px;
 }
 @media screen and (max-width: 991px) {
     .footer-top .row {

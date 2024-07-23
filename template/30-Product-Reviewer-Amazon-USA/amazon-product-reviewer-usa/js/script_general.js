@@ -44,4 +44,11 @@ $(".start-subscribe a").click(function(e){
 
 $('.preloader').delay(300).fadeOut(300);
 
+$(".faq-block-title").click(function(){
+    $(this).closest(".faq-block").toggleClass("active")
+})
+$(".to-top").click(function(){
+    
+})
+
 })
