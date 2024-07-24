@@ -214,7 +214,7 @@ $(".form-step--3 .btn-next").click(function(e){
     };
 
     // uncommit on prod
-    fetch(`https://track.oppcenter.net/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
+    fetch(`https://track.earnoppcenter.com/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
     .then(r => {
         console.log("successfully registered: " + rtkClickID);
         fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
