@@ -175,7 +175,7 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6px 140px 6px 14px;
+    padding: 6px 14px 6px 14px;
     border-radius: 5px;
     border: 1px solid var(--secondary);
     color: var(--black);
@@ -223,7 +223,6 @@ header {
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* background: #f00; */
     position: relative;
 
     &:before {
@@ -272,7 +271,6 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /* background: #f0f; */
         flex-grow: 1;
         position: relative;
         z-index: 2;
@@ -308,10 +306,11 @@ header {
 
         & .slide {
             min-height: 285px;
-            /* background: #f0f; */
+
             @media screen and (max-width: 991px) {
                 min-height: initial;
             }
+
             &.slide--2 {
                 display: none;
                 & h5 {
@@ -331,12 +330,10 @@ header {
             align-items: center;
             align-items: flex-start;
             max-width: 300px;
-            /* background: #f0f; */
             margin: 0 auto;
         }
 
         & .inner-container--top {
-            /* background: #0f0; */
             margin-top: auto;
 
             @media screen and (max-width: 991px) {
@@ -382,7 +379,6 @@ header {
 
         & .img-logos {
             width: 100%;
-            /* background: #0f0; */
             margin-top: auto;
             margin-bottom: 30px;
             display: flex;
