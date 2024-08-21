@@ -52,8 +52,11 @@ footer .row-text {
     text-align: left;
     margin-bottom: 40px;
 }
+footer .logo {
+    line-height: initial;
+}
 footer .logo img {
-    max-height: 35px;
+    max-height: 30px;
     max-width: 100%;
 }
 @media screen and (max-width: 991px) {
@@ -71,7 +74,7 @@ footer .logo img {
         margin-bottom: 10px;
     }
     footer .logo img {
-        max-height: 26px;
+        max-height: 20px;
         max-width: 100%;
     }
 }
