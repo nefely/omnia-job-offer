@@ -265,6 +265,12 @@ header .logo img {
     .float-button {
         position: fixed;
     } 
+    .float-button.atbottom .btn {
+        background: #fff;
+        color: var(--secondary) !important;
+        border: 1px solid var(--secondary);
+        transition: 0.3s;
+    }
     .float-button .container {
         width: 100%;
         max-width: 100%;
