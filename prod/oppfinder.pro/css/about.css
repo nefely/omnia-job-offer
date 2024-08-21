@@ -1,7 +1,6 @@
 .about {
     background: var(--theme-secondary);
     position: relative;
-    margin-top: -20px;
 }
 .about .container {
     display: flex;
@@ -113,7 +112,7 @@
     border: 1px solid var(--theme-black);
 }
 
-.about:after {
+/* .about:after {
     content: "";
     display: block;
     position: absolute;
@@ -142,7 +141,7 @@
         background-repeat: no-repeat;
         background-position: center bottom;
     }
-}
+} */
 
 @media screen and (max-width: 991px) {
     .about .container {

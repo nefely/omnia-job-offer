@@ -37,6 +37,7 @@
 	font-weight: 500;
 	line-height: 1;
 	font-size: 30px;
+    margin-bottom: 5px;
 }
 /*#intro .form .main-title h1 img {
 	height: 2.2rem;
@@ -57,6 +58,8 @@
 }
 #intro .form .main-title h1 strong {
     color: var(--theme-primary);
+    font-weight: bold;
+    font-size: 1.3em;
 }
 #intro .form .main-title h1 ~ p {
     margin-top: 20px;
@@ -308,9 +311,6 @@
 
 
 
-#intro .quiz {
-
-}
 #intro .quiz .quiz-container {
 	width: 100%;
 	max-width: 645px;
