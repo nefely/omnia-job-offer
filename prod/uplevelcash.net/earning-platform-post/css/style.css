@@ -10,6 +10,16 @@
     --semi-white: #dcdcdc;
     --gap: 10px;
 }
+a {
+    color: var(--secondary);
+    text-decoration: none !important;
+    transition: 0.3s;
+    font-weight: bold;
+}
+a:hover {
+    color: var(--secondary-dark);
+}
+
 html {
 	font-size: 18px;
 }
@@ -270,6 +280,7 @@ footer a {
     color: var(--theme-white);
     text-decoration: none !important;
     font-size: 16px;
+    font-weight: 400;
 }
 footer a:hover {
     color: var(--theme-black);
