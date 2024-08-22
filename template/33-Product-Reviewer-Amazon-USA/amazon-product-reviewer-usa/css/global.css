@@ -1,9 +1,9 @@
 :root {
 	--theme-black: #151515;
-	--theme-primary: #FF9900;
-	--theme-primary-dark: #442C03;
-	--theme-secondary: rgba(56,88,152,1);
-	--theme-info: rgba(0,48,173,1);
+	--theme-primary: #3586FF;
+	--theme-primary-dark: #0051CB;
+	--theme-secondary: #FF9900;
+	--theme-info: #442C03;
 	--theme-dunger: rgba(255,20,20,1);
 	--theme-gray: rgba(156,156,156,1);
 	--theme-gray-light: rgba(206,212,218,1);
@@ -120,9 +120,9 @@ section {
 	font-size: 1.2rem;
 }
 .btn.btn-primary {
-    color: var(--theme-primary-dark);
-    background-color: var(--theme-primary);
-    border-color: var(--theme-primary);
+    color: var(--theme-white);
+    background-color: var(--theme-secondary);
+    border-color: var(--theme-secondary);
 }
 .btn.btn-transparent {
 	color: var(--theme-gray);
@@ -130,16 +130,16 @@ section {
     border-color: transparent;
 }
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-	color: var(--theme-primary-dark);
-    background-color: var(--theme-primary);
-    border-color: var(--theme-primary);
+	color: var(--theme-white);
+    background-color: var(--theme-secondary);
+    border-color: var(--theme-secondary);
 }
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle , .btn-primary.focus, .btn-primary:focus , .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus , .btn-primary:hover {
 	box-shadow: 0 0 0px 6px rgba(255,199,49,0.25);
 }
 .btn.disabled, .btn:disabled {
     opacity: 1;
-    color: #85765B;
+    color: var(--theme-white);
     background-color: #FFBD59;
     border-color: #FFBD59;
 }
@@ -152,7 +152,7 @@ section {
     font-size: 1rem;
     line-height: 1.2;
     background-color: var(--theme-semiwhite);
-    border: 1px solid var(--theme-primary);
+    border: 1px solid var(--theme-secondary);
     border-radius: calc(0.5 * var(--gap));
     color: var(--theme-black);
     font-weight: 400;
@@ -170,7 +170,7 @@ section {
 .form-control:focus {
 	color: var(--theme-black);
 	background-color: var(--theme-semiwhite);
-	border: 1px solid var(--theme-primary);
+	border: 1px solid var(--theme-secondary);
 	outline: 0;
 	box-shadow: 0 0 0 0 rgba(0,0,0,0)
 }
@@ -219,4 +219,44 @@ section {
     font-size: 2rem;
 }
 
+.container {
+    width: calc(100% - 30px);
+    padding-left: 0;
+    padding-right: 0;
+}
+@media (min-width: 576px) {
+    .container {
+        max-width:576px
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width:768px
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        max-width:992px
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width:1370px
+    }
+}
 
+
+.desk-hide {
+    display: none;
+}
+.mob-hide {
+    display: block;
+}
+@media screen and (max-width: 991px) {
+    .desk-hide {
+        display: block;
+    }
+    .mob-hide {
+        display: none;
+    }
+}

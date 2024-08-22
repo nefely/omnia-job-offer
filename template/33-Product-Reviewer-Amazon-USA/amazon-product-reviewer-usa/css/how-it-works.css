@@ -1,3 +1,6 @@
+.how-it-works {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
 .how-it-works .title h2 {
     font-size: 64px;
     font-weight: 600;
@@ -9,9 +12,18 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
+.how-it-works .card-item {
+    background: #F7F7F7;
+    padding: 16px;
+    border-radius: 24px;
+    transition: 0.3s;
+}
+.how-it-works .card-item:hover {
+    background: #FFE7C2;
+}
 .how-it-works .card-item .img {
     width: 100%;
-    aspect-ratio: 300/150;
+    aspect-ratio: 382/292;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -26,7 +38,7 @@
     font-weight: 700;
     line-height: 28px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .how-it-works .card-item p {
     font-size: 20px;
@@ -53,9 +65,9 @@
         margin-bottom: 0;
     }
     .how-it-works .title h2 {
-        font-size: 2rem;
-        line-height: 1.4;
-        margin-bottom: 10px;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 48px;
     }
     .how-it-works .cards {
         display: grid;
@@ -63,11 +75,31 @@
         gap: 15px;
     }
     .how-it-works .card-item {
-        max-width: 340px;
+        max-width: 375px;
         margin: 0 auto;
+        display: flex;
+        border-radius: 16px;
+        padding: 10px;
+    }
+    .how-it-works .card-item h3 {
+        text-align: left;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+    .how-it-works .card-item p {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
     }
     .how-it-works .card-item .img {
         aspect-ratio: initial;
+        width: 130px;
+        min-width: 130px;
+        justify-content: center;
+        align-items: center;
+        margin-right: 7px;
     }
 }
 

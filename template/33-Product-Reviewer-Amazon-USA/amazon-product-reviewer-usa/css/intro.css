@@ -6,52 +6,8 @@
     position: relative;
     z-index: 2;
 }
-#intro .figure {
-	position: absolute;
-	bottom: 0;
-	right: -5%;
-	width: 45%;
-	height: 70%;
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-	z-index: -1;
-}
-.figure-mob {
-	display: none;
-}
-.figure-desk {
-	display: flex;
-}
-#intro .figure img {
-	max-width: 100%;
-	max-height: 100%;
-	object-fit: contain;
-	object-position: center;
-}
-@media screen and (max-width: 991px) {
-	#intro .figure {
-		right: auto;
-		width: 100%;
-		height: 100%;
-		left: 50%;
-		transform: translateX(-50%);
-		top: initial;
-		bottom: 0;
-		display: flex;
-		justify-content: center;
-		align-items: flex-end;
-	}
-	#intro .figure .figure-mob{
-		display: flex;
-		max-width: 100%;
-		max-height:20vh;
-		object-fit: contain;
-		object-position: center;
-	}
-	.figure-desk {
-		display: none;
-	}
+#intro .container {
+    position: relative;
 }
 #intro .form {
 	display: block;
@@ -115,17 +71,27 @@
     justify-content: center;
     align-items: center;
 }
+#intro .form .bullets ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+}
 #intro .form .bullets ul li {
     width: auto;
 	display: flex;
+    margin-left: auto;
+    margin-right: auto;
 	justify-content: flex-start;
-	align-items: flex-start;
-	margin-bottom: 10px;
+	align-items: center;
+}
+#intro .form .bullets ul li:nth-child(3) {
+    grid-column: 1 / span 2; /* Займає обидва стовпці, вирівнюється по центру */
 }
 #intro .form .bullets ul img {
 	margin-right: 10px;
 	aspect-ratio: 1/1;
-	height: 1.25rem;
+	height: 40px;
 	margin-top: 2px;
 	display: inline-block;
 }
@@ -164,11 +130,18 @@
 }
 #intro .form .form-step {
 	width: 100%;
-	max-width: 285px;
+	max-width: 325px;
     margin-top: 30px;
+    background: #F7F7F7;
+    border: 1px solid #DCDCDC;
+    padding: 20px;
+    border-radius: 24px;
 }
 #intro .form .form-step--lg {
-	max-width: 480px;
+	max-width: 600px;
+}
+#intro .form .form-step--lg .form-row {
+    margin-bottom: 0;
 }
 #intro .form .form-step > .submit-question {
 	display: flex;
@@ -179,6 +152,7 @@
 #intro .form .form-step > .submit-question a,
 #intro .form .form-step > .submit-question button {
 	min-width: 240px;
+    width: 100%;
 }
 .submit-question a,
 .submit-question button {
@@ -225,13 +199,12 @@
 @media screen and (max-width: 991px) {
 	#intro {
 	    padding: calc(2.25 * var(--gap)) 0;
-        margin-bottom: -35px;
 	}
     #intro .form .main-title {
 		margin-bottom: 20px;
 	}
     #intro .form .main-title h1 {
-        font-size: 1.34rem;
+        font-size: 1.5rem;
         line-height: 1.416;
     }
 	#intro .form .main-title h1 img {
@@ -248,12 +221,16 @@
         font-size: 15px;
     }
 	#intro .form .bullets ul {
-		flex-direction: column;
-		margin: 0 auto;
+        /* flex-wrap: wrap; */
+        margin: 0 auto;
+        grid-template-columns: repeat(1, 1fr);
 	}
 	#intro .form .bullets ul li {
 		width: 100%;
 	}
+    #intro .form .bullets ul li:nth-child(3) {
+        grid-column: initial
+    }
 	#intro .form .form-element-width-button {
 		flex-direction: column;
 	}
@@ -265,6 +242,7 @@
 	}
     #intro .form .form-step {
         margin-top: 20px;
+        border-radius: 16px;
     }
 	#intro .form .form-step .submit-question {
 		margin-top: 20px;
@@ -277,13 +255,7 @@
 	}
 	#intro .form .form-step,
 	#intro .form .form-step--lg {
-		max-width: 285px;
-	}
-}
-
-@media screen and (max-height: 620px) {
-	#intro .figure {
-		display: none !important;
+		max-width: 375px;
 	}
 }
 
@@ -309,16 +281,19 @@
 
 #intro .form .bullets ul img {
 	margin-right: 10px;
-	height: 1rem;
+	height: 40px;
 	margin-top: 2px;
 }
-
-
-
-
-#intro .quiz {
-
+@media screen and (max-width: 991px) {
+    #intro .form .bullets ul img {
+        height: 30px;
+        margin-bottom: -2px;
+    }
 }
+
+
+
+
 #intro .quiz .quiz-container {
 	width: 100%;
 	max-width: 645px;
@@ -359,8 +334,16 @@
 .quiz-block-answers a,
 .quiz-block-answers button {
 	font-size: 1.2rem !important;
+    line-height: 1.2rem !important;
 	padding-left: calc(0.75* var(--gap)) !important;
 	padding-right: calc(0.75* var(--gap)) !important;
+}
+@media screen and (max-width: 991px) {
+    .quiz-block-answers a,
+    .quiz-block-answers button {
+        font-size: 1.2rem !important;
+        line-height: 1.44rem !important;
+    } 
 }
 #intro .quiz-block-answers {
 	max-width: 270px;
