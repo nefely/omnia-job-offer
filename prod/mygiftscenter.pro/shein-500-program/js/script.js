@@ -99,6 +99,24 @@ setTimeout(()=>{
 })
 
 
+// uncommit on prod
+$(".link a").click(function(e){
+e.preventDefault()
+$(this).css("display","none").css("visibility","hidden")
+fetch(`https://track.mygiftscenter.pro/postback?status=other&type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
+.then(r => {
+    console.log("successfully registered: " + rtkClickID);
+    setTimeout(()=>{
+        $(this).css("display","flex").css("visibility","visible")
+        window.location.href = $(".link a").attr('href');
+    }, 300)
+})
+.catch(e => console.log("error during registration lead: " + e));
+
+})
+
+
+
 // test
 // $(".step-1").fadeOut(0)
 // $(".step-2").fadeIn(0)
