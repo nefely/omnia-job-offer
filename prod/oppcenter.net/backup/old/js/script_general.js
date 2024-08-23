@@ -44,34 +44,4 @@ $(".start-subscribe a").click(function(e){
 
 $('.preloader').delay(300).fadeOut(300);
 
-$("header a").click(function(e){
-    e.preventDefault();
-    var full_url = this.href;
-    var parts = full_url.split("#");
-    var trgt = parts[1];
-    var target_offset = $("#"+trgt).offset();
-    var target_top = target_offset.top;
-    $('html, body').animate({scrollTop:target_top}, 1500);
-});
-
-$(".start-subscribe a").click(function(e){
-    e.preventDefault();
-    var full_url = this.href;
-    var parts = full_url.split("#");
-    var trgt = parts[1];
-    var target_offset = $("#"+trgt).offset();
-    var target_top = target_offset.top;
-    $('html, body').animate({scrollTop:target_top}, 1500);
-})
-
-$('.preloader').delay(300).fadeOut(300);
-
-$(".faq-block-title").click(function(){
-    $(this).closest(".faq-block").toggleClass("active")
-})
-$(".to-top").click(function () {
-    $("html, body").animate({ scrollTop: 0 }, "slow");
-    return false;
-});
-
 })
