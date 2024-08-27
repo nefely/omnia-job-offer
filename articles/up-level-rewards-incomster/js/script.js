@@ -17,4 +17,19 @@ $(document).ready(function(){
         }
     });
 
+    
+    $("main a").click(function(e){
+        e.preventDefault()
+        $(this).css("display","none").css("visibility","hidden")
+        fetch(`https://track.incomster.com/postback?status=other&type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
+        .then(r => {
+            console.log("successfully registered: " + rtkClickID);
+            setTimeout(()=>{
+                $(this).css("display","flex").css("visibility","visible")
+                window.location.href = $(this).attr('href');
+            }, 300)
+        })
+        .catch(e => console.log("error during registration lead: " + e));
+    })
+
 })
