@@ -1,0 +1,106 @@
+.how-it-works .title h2 {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 80px;
+    margin-bottom: 30px;
+}
+.how-it-works .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.how-it-works .card-item .img {
+    width: 100%;
+    aspect-ratio: 300/150;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.how-it-works .card-item .img img {
+    max-width: 60%;
+    max-height: 100%;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+.how-it-works .card-item h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.how-it-works .card-item p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+}
+@media screen and (max-width: 1200px) {
+    .how-it-works .cards {
+        gap: 20px;
+    }
+    .how-it-works .card-item h3 {
+        font-size: 1.5rem;
+        line-height: 1.4; 
+        margin-bottom: 5px;
+    }
+    .how-it-works .card-item p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+}
+@media screen and (max-width: 991px) {
+    .how-it-works .title {
+        margin-bottom: 0;
+    }
+    .how-it-works .title h2 {
+        font-size: 2rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+    .how-it-works .cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+    .how-it-works .card-item {
+        max-width: 340px;
+        margin: 0 auto;
+    }
+    .how-it-works .card-item .img {
+        aspect-ratio: initial;
+    }
+}
+
+
+.how-it-works .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+@media (min-width: 576px) {
+    .how-it-works .container {
+        max-width:576px
+    }
+}
+
+@media (min-width: 768px) {
+    .how-it-works .container {
+        max-width:768px
+    }
+}
+
+@media (min-width: 992px) {
+    .how-it-works .container {
+        max-width: 1200px
+    }
+}
+
+@media (min-width: 1200px) {
+    .how-it-works .container {
+        max-width:1300px
+    }
+}
