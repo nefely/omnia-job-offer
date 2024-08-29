@@ -1,0 +1,99 @@
+footer {
+    background: #3897F0;
+    padding-top: 40vh;
+    color: var(--theme-black);
+    text-align: center;
+    position: relative;
+    margin-top: -20px;
+}
+
+footer:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: calc(100% - 576px);
+    top: 0;
+    transform: translateX(0%) translateY(-232px);
+    height: 380px;   
+    width: 676px;
+    background: url(../media/figure-box.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+@media screen and (max-width: 991px) {
+    footer:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%) translateY(-116px);
+        height: 190px;   
+        width: 338px;
+        background: url(../media/figure-box.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+    }
+}
+
+footer a {
+    color: var(--theme-black);
+    text-decoration: none !important;
+}
+footer a:hover {
+    color: var(--theme-black);
+}
+.footer-top {
+    padding: 30px 0;
+}
+.footer-top .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-top ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+.footer-top ul > li:not(:last-child) {
+    margin-right: 40px;
+}
+.footer-bottom {
+    padding: 10px 0;
+    text-align: center;
+}
+.footer-bottom .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .logo img {
+    max-height: 45px;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+    .footer-top .row {
+        justify-content: center;
+        flex-direction: column;
+    }
+    .footer-top ul {
+        margin-left: 0;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    .footer-top ul > li:not(:last-child) {
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+    footer .logo img {
+        max-height: 38px;
+        max-width: 100%;
+    }
+}
