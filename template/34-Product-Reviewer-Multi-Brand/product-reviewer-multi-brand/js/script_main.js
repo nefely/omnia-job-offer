@@ -190,6 +190,7 @@ $(".form-step--1 .btn-next").click(function(e){
     }
     setTimeout(()=>{
         $(this).closest(".form-step").next(".form-step").fadeIn(standart_time)
+        $("footer").addClass("no-after")
     }, standart_time)
 })
 $(".form-step--2 .btn-next").click(function(e){

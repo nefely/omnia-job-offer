@@ -1,8 +1,11 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
 :root {
-	--theme-black: #221F1F;
-	--theme-primary: rgba(255,153,0,1);
+	--theme-black: rgb(34, 31, 31);
+	--theme-primary: rgba(56,108,240,1);
 	--theme-primary-dark: rgba(68,44,3,1);
-	--theme-secondary: rgba(56,151,240,1);
+	--theme-secondary: rgb(255, 170, 0);
+	--theme-secondary-dark: rgb(109, 68, 6);
 	--theme-info: rgba(0,48,173,1);
 	--theme-dunger: rgba(255,20,20,1);
 	--theme-gray: rgba(156,156,156,1);
@@ -20,7 +23,7 @@ html {
     }
 }
 body {
-	font-family: 'Amazon Ember', sans-serif;
+    font-family: 'SF Pro Display', sans-serif;
 	font-size: inherit;
 	font-weight: 400;
 	position: relative;
@@ -148,7 +151,7 @@ section {
     border-color: var(--theme-primary);
 }
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle , .btn-primary.focus, .btn-primary:focus , .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus , .btn-primary:hover {
-	box-shadow: 0 0 0px 6px rgba(255,199,49,0.25);
+	box-shadow: 0 0 0px 6px rgba(56,108,240,0.25);
 }
 .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
 	color: var(--theme-white);
@@ -156,14 +159,14 @@ section {
     border-color: var(--theme-secondary);
 }
 .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle , .btn-secondary.focus, .btn-secondary:focus , .btn-secondary:not(:disabled):not(.disabled).active:focus, .btn-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-secondary.dropdown-toggle:focus , .btn-secondary:hover {
-	box-shadow: 0 0 0px 6px rgba(56,151,240,0.25);
+	box-shadow: 0 0 0px 6px rgba(56,108,240,0.25);
 }
 
 .btn.disabled, .btn:disabled {
     opacity: 1;
     color: rgba(255,255,255,1);
-    background-color: #F8D094;
-    border-color: #F8D094;
+    background-color: #A8BEF4;
+    border-color: #A8BEF4;
 }
 
 /*input*/
@@ -220,7 +223,7 @@ section {
 	color: var(--theme-secondary)
 }
 .info {
-	color: var(--theme-secondary)
+	color: var(--theme-primary)
 }
 
 

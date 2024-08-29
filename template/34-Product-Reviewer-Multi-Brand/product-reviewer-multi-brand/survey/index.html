@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>EarnOppCenter - Online Platform with Best Opportunities</title>
+	<title>BrandHub</title>
     <meta name="theme-color" content="#2D2B2B"/>
 	<link rel="shortcut icon" type="image/png" href="../media/fav.png"/>
 	<script type="text/javascript" src="../js/jquery.js"></script>
@@ -124,6 +124,10 @@ pintrk('track', 'signup');
 							<div class="circle">
 								<p>3</p>
 							</div>
+                            <div class="line"></div>
+							<div class="circle">
+								<p>4</p>
+							</div>
 						</div>
 						<div class="quiz-blocks">
 							<div class="quiz-block quiz-block--1">
@@ -131,24 +135,18 @@ pintrk('track', 'signup');
 									<h5>Have you ever submitted a <strong>product review?</strong></h5>
 								</div>
 								<div class="quiz-block-answers">
-									<a href="" class="btn btn-secondary yes">Yes</a>
-									<a href="" class="btn btn-secondary no">No</a>
+									<a href="" class="btn btn-primary yes">Yes</a>
+									<a href="" class="btn btn-primary no">No</a>
 								</div>
-								<!-- <button class="btn btn-transparent">
-									<svg xmlns="http://www.w3.org/2000/svg" width="19" height="14" viewBox="0 0 19 14" fill="none">
-										<path d="M18.6428 7L2.35711 7M2.35711 7L8.25366 13M2.35711 7L8.25366 0.999999" stroke="#221F1F" stroke-opacity="0.4" stroke-width="2"/>
-									</svg>
-									<p>Back</p>
-								</button> -->
 							</div>
 							<div class="quiz-block quiz-block--2">
 								<div class="quiz-block-question">
 									<h5>How much <strong>free time</strong> do you have every day?</h5>
 								</div>
 								<div class="quiz-block-answers">
-									<a href="" class="btn btn-secondary h1-3">1 to 3 hours</a>
-									<a href="" class="btn btn-secondary h3-5">3 to 5 hours </a>
-									<a href="" class="btn btn-secondary h5-8">5 to 8 hours</a>
+									<a href="" class="btn btn-primary h1-3">1 to 3 hours</a>
+									<a href="" class="btn btn-primary h3-5">3 to 5 hours </a>
+									<a href="" class="btn btn-primary h5-8">5 to 8 hours</a>
 								</div>
 								<div class="quiz-block-back">
 									<button class="btn btn-transparent">
@@ -164,9 +162,9 @@ pintrk('track', 'signup');
                                     <h5>About how many times per month you order at <strong>Amazon?</strong></h5>
 								</div>
 								<div class="quiz-block-answers">
-									<a href="" class="btn btn-secondary"><3</a>
-									<a href="" class="btn btn-secondary">3-7</a>
-									<a href="" class="btn btn-secondary">7+</a>
+									<a href="" class="btn btn-primary"><3</a>
+									<a href="" class="btn btn-primary">3-7</a>
+									<a href="" class="btn btn-primary">7+</a>
 								</div>
 								<div class="quiz-block-back">
 									<button class="btn btn-transparent">
@@ -177,12 +175,47 @@ pintrk('track', 'signup');
 									</button>
 								</div>
 							</div>
-							<div class="quiz-block quiz-block--4">
+                            <div class="quiz-block quiz-block--4">
+								<div class="quiz-block-question">
+                                    <h5>About how many times per month you order at <strong>Amazon?</strong></h5>
+								</div>
+								<div class="quiz-block-answers">
+									<a href="" class="btn btn-primary" data-offer="offer_link__1" data-offer-name="SHEIN">Clothes</a>
+									<a href="" class="btn btn-primary" data-offer="offer_link__2" data-offer-name="Amazon">Home Appliances</a>
+									<a href="" class="btn btn-primary" data-offer="offer_link__3" data-offer-name="Walmart">Groceries</a>
+									<a href="" class="btn btn-primary" data-offer="offer_link__4" data-offer-name="Sephora">Cosmetics</a>
+								</div>
+								<div class="quiz-block-back">
+									<button class="btn btn-transparent">
+										<svg xmlns="http://www.w3.org/2000/svg" width="19" height="14" viewBox="0 0 19 14" fill="none">
+											<path d="M18.6428 7L2.35711 7M2.35711 7L8.25366 13M2.35711 7L8.25366 0.999999" stroke="#221F1F" stroke-opacity="0.4" stroke-width="2"/>
+										</svg>
+										<p>Back</p>
+									</button>
+								</div>
+							</div>
+
+                            <div class="quiz-block quiz-loader">
+                                <p><i>We analyze your responses to select <br> the best offer for you</i></p>
+                                <div class="loader-images">
+                                    <img src="../media/things.png" alt="">
+                                    <img src="../media/things.png" alt="">
+                                    <img src="../media/things.png" alt="">
+                                </div>
+                            </div>
+
+							<div class="quiz-block quiz-block--5">
+                                <div class="card">
+                                    <img src="../media/SHEIN.png" alt="" data-offer="offer_link__1">
+                                    <img src="../media/Amazon.png" alt="" data-offer="offer_link__2">
+                                    <img src="../media/Walmart.png" alt="" data-offer="offer_link__3">
+                                    <img src="../media/Sephora.png" alt="" data-offer="offer_link__4">
+                                </div>
                                 <div class="tags">
                                     <p>Best Fit for You 🔥</p>
                                 </div>
 								<div class="quiz-block-question">
-                                    <h3>Earn up to <strong>$750</strong> towards <strong>Amazon Products</strong> + and additional <strong>$750</strong> for reviewing the products!</h3>
+                                    <h3>Earn up to <strong>$750</strong> towards <strong class="offer_name"></strong> Products + and additional <strong>$750</strong> for reviewing the products!</h3>
 			                        <div class="slug">
 			                        	<p class="word">Shop</p>
 			                        	<img src="../media/arrow.png" alt="" class="arrow">
@@ -206,7 +239,10 @@ pintrk('track', 'signup');
                                     </strong>
 								</div>
 								<div class="quiz-block-answers">
-									<a href="https://omniapostback.com/click" class="btn btn-primary yes" target="_blank">YES, Get Started Now</a>
+									<a href="https://omniapostback.com/click/1" class="btn btn-primary yes" data-offer="offer_link__1" target="_blank">YES, Get Started Now</a>
+									<a href="https://omniapostback.com/click/2" class="btn btn-primary yes" data-offer="offer_link__2" target="_blank">YES, Get Started Now</a>
+									<a href="https://omniapostback.com/click/3" class="btn btn-primary yes" data-offer="offer_link__3" target="_blank">YES, Get Started Now</a>
+									<a href="https://omniapostback.com/click/3" class="btn btn-primary yes" data-offer="offer_link__4" target="_blank">YES, Get Started Now</a>
 								</div>
 							</div>
 						</div>
@@ -243,9 +279,6 @@ pintrk('track', 'signup');
     margin-bottom: 0;
     padding-top: 50px;
 }
-#intro .container {
-	/*margin-top: -50px;*/
-}
 #intro .quiz {
 	display: none;
 }
@@ -256,7 +289,7 @@ pintrk('track', 'signup');
 	display: none !important;
 }
 body {
-	background: var(--theme-secondary);
+	background: var(--theme-primary);
 	transition: 0.3s;
 }
 </style>
