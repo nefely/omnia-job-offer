@@ -17,19 +17,36 @@ $(document).ready(function(){
         }
     });
 
+
+    let rtkClickID = ""
+    setTimeout(()=>{
+        const urlParams = new URLSearchParams(window.location.search);
+        const rtkcid = urlParams.get('rtkcid');
+        rtkClickID = rtkcid
+    },1000)
     
+
+    let time_delay_active = false;
     $("main a").click(function(e){
+
+        if (!time_delay_active) {
+        time_delay_active = true
+        setTimeout(()=>{
+            time_delay_active = false
+        },5000)
         e.preventDefault()
-        $(this).css("display","none").css("visibility","hidden")
+        // $(this).css("display","none").css("visibility","hidden")
         fetch(`https://track.thesmartyshopper.com/postback?status=other&type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
         .then(r => {
             console.log("successfully registered: " + rtkClickID);
             setTimeout(()=>{
-                $(this).css("display","flex").css("visibility","visible")
                 window.location.href = $(this).attr('href');
             }, 300)
         })
         .catch(e => console.log("error during registration lead: " + e));
+
+        }
+
     })
 
 })
