@@ -331,34 +331,10 @@ strong	{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
-.card > img {
+.card img {
     max-width: 100%;
     width: 250px;
-}
-.card .checkmark {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(calc(-50% + 110px) , -50%);
-    line-height: 0;
-}
-.card .checkmark img {
-    width: 90px;
-    height: 90px;
-    border-radius: 1000px;
-}
-.card .checkmark .bg {
-    position: absolute;
-    display: block;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    left: 5px;
-    top: 5px;
-    background: #444;
-    border-radius: 1000px;
-    opacity: 1;
 }
 .link {
     display: flex;
@@ -425,21 +401,18 @@ strong	{
 .step-2 {
     display: none;
 }
-.step-3 {
-    display: none;
-}
 
-.link .btn , .submit-link .btn {
+.link a {
     transition: all 0.3s linear;
     transform: scale(1,1);
 	overflow: hidden;
 	position: relative;
 }
-.link .btn.active , .submit-link .btn.active{
+.link a.active{
     background: var(--peach);
     transform: scale(1.05,1.05);
 }
-.link .btn.blink:after , .submit-link .btn.blink:after {
+.link a.blink:after {
 	content: "";
     display: block;
     width: 1rem;
@@ -520,65 +493,4 @@ footer .rules a {
     .bg .mob{
         display: block;
     }
-}
-
-.step-3 {
-    text-align: center;
-}
-.top-disclaimer {
-    margin-top: -1.5rem;
-    margin-bottom: 1.5rem;
-    background: var(--peach);
-    position: relative;
-    padding: 5px 10px;
-    text-align: center;
-    font-weight: bold;
-    font-size: calc(1rem + 4px);
-}
-.top-disclaimer:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background: var(--peach);
-    width: 3200vw;
-    margin-left: -100vw;
-    z-index: -1;
-}
-
-.step-3 .card {
-    margin-bottom: 2rem;
-}
-.step-3 .title {
-    margin-bottom: 1rem;
-}
-
-.step-3 .email-container {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-}
-.step-3 .email-container input {
-    width: 100%;
-    max-width: 345px;
-    min-height: 48px;
-    display: flex;
-    padding: 0 1rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-.step-3 .email-container input.error {
-    border: 1px solid #f22;
-    color: #f22;
-}
-.step-3 .email-container input::placeholder {
-    font-size: 1rem;
-}
-.step-3 .description {
-    font-size: calc(12px);
-    margin-bottom: 1rem;
-    color: #888;
 }

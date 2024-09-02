@@ -82,12 +82,16 @@ setTimeout(()=>{
     },1200)
     setTimeout(()=>{
         $('.list-item').removeClass("active")
-        $('.link .btn').addClass("active")
+        $('.list-item:eq(3)').addClass("active")
     },1600)
     setTimeout(()=>{
-        $('.link .btn').removeClass("active")
-        $('.link .btn').addClass("blink")
+        $('.list-item').removeClass("active")
+        $('.link a').addClass("active")
     },2000)
+    setTimeout(()=>{
+        $('.link a').removeClass("active")
+        $('.link a').addClass("blink")
+    },2400)
 },300)
 
 },2400)
@@ -95,76 +99,28 @@ setTimeout(()=>{
 })
 
 
-$(".step-2 button").click(function(){
-    $(".step-2").fadeOut(300)
+// uncommit on prod
+$(".link a").click(function(e){
+e.preventDefault()
+$(this).css("display","none").css("visibility","hidden")
+fetch(`https://track.mygiftscenter.pro/postback?status=other&type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
+.then(r => {
+    console.log("successfully registered: " + rtkClickID);
     setTimeout(()=>{
-        $(".step-3").fadeIn(300)
-        $(".step-3 .card").fadeIn(300)
-    },300)
+        $(this).css("display","flex").css("visibility","visible")
+        window.location.href = $(".link a").attr('href');
+    }, 300)
+})
+.catch(e => console.log("error during registration lead: " + e));
+
 })
 
 
-let offer_link = "";
-let final_link = "";
-
-setTimeout(() => {
-    offer_link = $('#offer_link').attr("href");
-}, 2000);
-
-$(".email").on("input", function() {
-    final_link = `${offer_link}${offer_link.includes("?") ? "&" : "?"}sub15=${$("[name=email]").val()}`;
-    $("#offer_link").attr("href", final_link);
-});
-
-$("input[name=email]").on("input", function() {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test($("input[name=email]").val())) {
-        $("input[name=email]").removeClass("error");
-    }
-});
-
-let clickAllowed = true;
-
-$("#offer_link").on("click", function(e) {
-    if (!clickAllowed) {
-        e.preventDefault(); 
-        return;
-    }
-
-    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test($("input[name=email]").val())) {
-        e.preventDefault();
-        $("input[name=email]").addClass("error");
-        return;
-    } else {
-        e.preventDefault()
-        fetch(`https://track.mygiftscenter.pro/postback?status=other&type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
-        .then(r => {
-            console.log("successfully registered: " + rtkClickID);
-            setTimeout(()=>{
-                window.location.href = $("#offer_link").attr('href');
-            }, 300)
-        })
-        .catch(e => console.log("error during registration lead: " + e));
-    }
-
-    clickAllowed = false;
-    setTimeout(() => {
-        clickAllowed = true; 
-    }, 5000);
-});
 
 // test
 // $(".step-1").fadeOut(0)
 // $(".step-2").fadeIn(0)
 // $(".quiz , .card-image , .circles").fadeOut(0);
-
-// $(".step-2").fadeOut(0)
-// $(".step-1").fadeOut(0)
-// $(".card-image").fadeOut(0)
-// $(".step-3 .card").fadeIn(0)
-// $(".quiz").fadeOut(0)
-// $(".circles").fadeOut(0)
-// $(".step-3").fadeIn(0)
-
 
 
 

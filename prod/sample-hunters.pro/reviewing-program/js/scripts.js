@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+    $("input[name=email]").val("")
+
     window.domain = window.location.hostname;
     $(".domain").text(domain)
     $(".mailto").attr("href" , `mailto:contact@${domain}`)
@@ -16,19 +19,63 @@ $(document).ready(function(){
     $("#step-4 .button-skin-default").click(function(){
         $("#step-4").addClass("hidden")
     })
-
-
-    $(".link-offer").click(function(e){
-        e.preventDefault()
-        $(this).css("display","none").css("visibility","hidden")
-        fetch(`https://track.sample-hunters.pro/postback?status=other&type=CompleteRegistration&clickid=${rtkClickID}&sum=0`, { mode: 'no-cors'})
-        .then(r => {
-            console.log("successfully registered: " + rtkClickID);
-            setTimeout(()=>{
-                $(this).css("display","flex").css("visibility","visible")
-                window.location.href = $(this).attr('href');
-            }, 500)
-        })
-        .catch(e => console.log("error during registration lead: " + e));
+    $("#step-5 .button-skin-default").click(function(){
+        $("#step-5").addClass("hidden")
     })
+
+
+    let offer_link = "";
+    let final_link = "";
+
+    setTimeout(() => {
+        offer_link = $('.cvt-c1234tcwe-element-body').attr("href");
+    }, 2000);
+
+    $(".email").on("input", function() {
+        final_link = `${offer_link}${offer_link.includes("?") ? "&" : "?"}sub15=${$("[name=email]").val()}`;
+        $(".cvt-c1234tcwe-element-body").attr("href", final_link);
+    });
+
+    $("input[name=email]").on("input", function() {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test($("input[name=email]").val())) {
+            $("input[name=email]").removeClass("error");
+        }
+    });
+
+    let clickAllowed = true;
+
+    $(".cvt-c1234tcwe-element-body").on("click", function(e) {
+        if (!clickAllowed) {
+            e.preventDefault(); 
+            return;
+        }
+    
+        if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test($("input[name=email]").val())) {
+            e.preventDefault();
+            $("input[name=email]").addClass("error");
+            return;
+        } else {
+            e.preventDefault()
+            $(this).css("display","none").css("visibility","hidden")
+            fetch(`https://track.sample-hunters.pro/postback?status=other&type=CompleteRegistration&clickid=${rtkClickID}&sum=0`, { mode: 'no-cors'})
+            .then(r => {
+                console.log("successfully registered: " + rtkClickID);
+                setTimeout(()=>{
+                    $(this).css("display","flex").css("visibility","visible")
+                    window.location.href = $(this).attr('href');
+                }, 500)
+            })
+            .catch(e => console.log("error during registration lead: " + e));
+        }
+    
+        clickAllowed = false;
+        setTimeout(() => {
+            clickAllowed = true; 
+        }, 5000);
+    });
+
+
+
+    
+
 })
