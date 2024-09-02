@@ -152,13 +152,13 @@ $("#offer_link").on("click", function(e) {
 // $(".step-2").fadeIn(0)
 // $(".quiz , .card-image , .circles").fadeOut(0);
 
-$(".step-2").fadeOut(0)
-$(".step-1").fadeOut(0)
-$(".card-image").fadeOut(0)
-$(".step-3 .card").fadeIn(0)
-$(".quiz").fadeOut(0)
-$(".circles").fadeOut(0)
-$(".step-3").fadeIn(0)
+// $(".step-2").fadeOut(0)
+// $(".step-1").fadeOut(0)
+// $(".card-image").fadeOut(0)
+// $(".step-3 .card").fadeIn(0)
+// $(".quiz").fadeOut(0)
+// $(".circles").fadeOut(0)
+// $(".step-3").fadeIn(0)
 
 
 
