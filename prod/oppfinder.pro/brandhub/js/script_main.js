@@ -7,10 +7,10 @@ $("input[name=phone]").val("")
 
 
 if ($("input[name=phone]").length > 0) {
-  $("input[name=phone]").mask('(000) 000-0000');
+    $("input[name=phone]").mask('(000) 000-0000');
 }
 if ($("input[name=zip]").length > 0) {
-  $("input[name=zip]").mask('00000');
+    $("input[name=zip]").mask('00000');
 }
 
 // validation
@@ -202,7 +202,7 @@ $(".form-step--2 .btn-next").click(function(e){
 $(".form-step--3 .btn-next").click(function(e){
     e.preventDefault();
     $(this).css("display","none").css("visibility","hidden")
-	
+    
     const data = {
         "zip": $("[name=zip]").val(), 
         "firstname": $("[name=firstname]").val(), 
@@ -215,40 +215,35 @@ $(".form-step--3 .btn-next").click(function(e){
     };
 
     // uncommit on prod
-    fetch(`https://track.oppfinder.pro/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
-    .then(r => {
-        console.log("successfully registered: " + rtkClickID);
-        fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
-        .then(rr => {
-            console.log("successfully registered lead in Data API: " + rtkClickID)
-            setTimeout(()=>{
-                $(this).css("display","block").css("visibility","visible")
-                window.location.href = $(".form-step--3 .btn-next").attr('href');
-            }, standart_time)
-        })
-        .catch(ed => { window.location.href = $(".form-step--3 .btn-next").attr('href') });
-	})
-    .catch(e => console.log("error during registration lead: " + e));
+    fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
+    .then(rr => {
+        console.log("successfully registered lead in Data API: " + rtkClickID)
+        setTimeout(()=>{
+            $(this).css("display","block").css("visibility","visible")
+            window.location.href = $(".form-step--3 .btn-next").attr('href');
+        }, standart_time)
+    })
+    .catch(ed => { window.location.href = $(".form-step--3 .btn-next").attr('href') });
 });
 
 setTimeout(()=>{
 
 if (isZipValid()) {
-  $(".form-step--1").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
+    $(".form-step--1").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
 } else {
-  $(".form-step--1").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
+    $(".form-step--1").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
 }
 
 if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
-  $(".form-step--2").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
+    $(".form-step--2").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
 } else {
-  $(".form-step--2").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
+    $(".form-step--2").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
 }
 
 if (isPhoneValid()) {
-  $(".form-step--3").find(".submit-question a").css("pointer-events" , "initial").removeClass("disabled");
+    $(".form-step--3").find(".submit-question a").css("pointer-events" , "initial").removeClass("disabled");
 } else {
-  $(".form-step--3").find(".submit-question a").css("pointer-events" , "none").addClass("disabled");
+    $(".form-step--3").find(".submit-question a").css("pointer-events" , "none").addClass("disabled");
 }
 
 }, 1500)

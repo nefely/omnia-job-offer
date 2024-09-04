@@ -90,11 +90,6 @@ $(".quiz-block--4 .quiz-block-answers a").click(function(e){
     window.offer_link_3 = $('.quiz-block--5 a.yes[data-offer="offer_link__3"]').attr("href")
     window.offer_link_4 = $('.quiz-block--5 a.yes[data-offer="offer_link__4"]').attr("href")
 
-    console.log(offer_link_1)
-    console.log(offer_link_2)
-    console.log(offer_link_3)
-    console.log(offer_link_4)
-
     form_final_link()
 
     $('.quiz-dots .circle').removeClass("active")

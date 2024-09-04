@@ -31,7 +31,7 @@ form_final_link = () => {
     $(".quiz-block--5 a.yes[data-offer='offer_link__3']").attr("href" ,`${window.offer_link_3}${window.offer_link_3.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub12=${sub12}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
     $(".quiz-block--5 a.yes[data-offer='offer_link__4']").attr("href" ,`${window.offer_link_4}${window.offer_link_4.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub12=${sub12}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
 }
-	
+    
 // quiz flow
 $(".quiz-block--1 .quiz-block-answers a").click(function(e){
     e.preventDefault()
@@ -85,17 +85,10 @@ $(".quiz-block--4 .quiz-block-answers a").click(function(e){
 
     $('.quiz-dots .circle:eq(3)').addClass("passed")
 
-//    $('.quiz-block--5 a.yes').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=1`)
-
     window.offer_link_1 = $('.quiz-block--5 a.yes[data-offer="offer_link__1"]').attr("href")
     window.offer_link_2 = $('.quiz-block--5 a.yes[data-offer="offer_link__2"]').attr("href")
     window.offer_link_3 = $('.quiz-block--5 a.yes[data-offer="offer_link__3"]').attr("href")
     window.offer_link_4 = $('.quiz-block--5 a.yes[data-offer="offer_link__4"]').attr("href")
-
-    console.log(offer_link_1)
-    console.log(offer_link_2)
-    console.log(offer_link_3)
-    console.log(offer_link_4)
 
     form_final_link()
 

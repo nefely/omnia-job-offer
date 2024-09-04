@@ -1,0 +1,122 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	background: #fff;
+	line-height: 1;
+}
+body * {
+    box-sizing: border-box;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+:root {
+    --black: #000;
+    --white: #fff;
+    --primary: rgb(255, 153, 0);
+    --orimary-light: #FDECD1;
+    --secondary: #3498db;
+
+}
+html {
+	font-size: 20px;
+}
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 16px;
+    }
+}
+body {
+	font-family: 'SF Pro Display', sans-serif;
+	font-size: inherit;
+	font-weight: 400;
+	position: relative;
+	line-height: 1.3125;
+	background: var(--yellow-light);
+    color: var(--black);
+}
+body * {
+	line-height: inherit;
+	box-sizing: border-box;
+	outline: none;
+}
+strong	{
+	font-weight: 700;
+}
+.screen {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 500px;
+    width: calc(100% - 22px);
+}
+
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+}
+.title {
+    margin: 5px auto; 
+    text-align: center;
+}
+.primary {
+    color: var(--primary);
+}
+p {
+    margin-bottom: 5px;
+}
+.card {
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 17.5px;
+}
+.card img {
+    max-width: 100%;
+}
