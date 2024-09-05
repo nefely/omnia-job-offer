@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $('.preloader').delay(300).fadeOut(300);
 
     $("input[name=email]").val("")
 
@@ -6,34 +7,88 @@ $(document).ready(function(){
     $(".domain").text(domain)
     $(".mailto").attr("href" , `mailto:contact@${domain}`)
 
+    const now = new Date();
+    window.currentYear = now.getFullYear();
+    $(".year").text(currentYear)
 
-    $("#step-1 .button-skin-default").click(function(){
-        $("#step-1").addClass("hidden")
+    // quiz
+    $(".question-1 .btn").click(function(){
+        $(".question-1").fadeOut(300)
+        setTimeout(()=>{
+            $(".question-2").fadeIn(300)
+        },300)
     })
-    $("#step-2 .button-skin-default").click(function(){
-        $("#step-2").addClass("hidden")
+    $(".question-2 .btn").click(function(){
+        $(".question-2").fadeOut(300)
+        setTimeout(()=>{
+            $(".question-3").fadeIn(300)
+        },300)
     })
-    $("#step-3 .button-skin-default").click(function(){
-        $("#step-3").addClass("hidden")
+    $(".question-3 .btn").click(function(){
+        $(".question-3").fadeOut(300)
+        setTimeout(()=>{
+            $(".question-4").fadeIn(300)
+        },300)
     })
-    $("#step-4 .button-skin-default").click(function(){
-        $("#step-4").addClass("hidden")
-    })
-    $("#step-5 .button-skin-default").click(function(){
-        $("#step-5").addClass("hidden")
+    $(".question-4 .btn").click(function(){
+        $(".quiz").fadeOut(300)
+        setTimeout(()=>{
+            $(".spinner").fadeIn(300)
+        },300)
     })
 
+    // spinner
+    let firstPpinDone = false
+    let try_count = 2
+    $(".spinner-button .btn").on("click" , function(){
+        $(".spinner-button .btn").addClass("btn-disabled")
+        if (!firstPpinDone) {
+            firstPpinDone = true
+            try_count = 1
+            $(".conter").text(try_count)
+            $(".spinner-container .spinner-circle img").attr("data-roll" , "1")
+
+            setTimeout(()=>{
+                $(".spinner-popup-1").fadeIn(300)
+                $(".spinner-button .btn").removeClass("btn-disabled")
+            },6300)
+        }
+    });
+
+    $(".spinner-popup-1 .btn").on("click" , function(){
+        try_count = 0
+        $(".spinner-button .btn").addClass("btn-disabled")
+        $(".conter").text(try_count)
+        $(".spinner-popup-1").fadeOut(300)
+        setTimeout(()=>{
+            $(".spinner-container .spinner-circle img").attr("data-roll" , "2")
+        },300)
+        setTimeout(function(){
+            $(".spinner-button .btn").removeClass("btn-disabled")
+            $(".spinner-popup-2").fadeIn(300)
+        },6600)
+    })
+
+
+    $(".spinner-popup-2 .btn").on("click" , function(){
+        $(".spinner").fadeOut(300)
+        setTimeout(function(){
+            $(".form").fadeIn(300)
+        },300)
+    })
+
+    // form
 
     let offer_link = "";
     let final_link = "";
 
     setTimeout(() => {
-        offer_link = $('.cvt-c1234tcwe-element-body').attr("href");
+        offer_link = $('#offer').attr("href");
     }, 2000);
 
     $(".email").on("input", function() {
         final_link = `${offer_link}${offer_link.includes("?") ? "&" : "?"}sub15=${$("[name=email]").val()}`;
-        $(".cvt-c1234tcwe-element-body").attr("href", final_link);
+        $("#offer").attr("href", final_link);
     });
 
     $("input[name=email]").on("input", function() {
@@ -44,7 +99,7 @@ $(document).ready(function(){
 
     let clickAllowed = true;
 
-    $(".cvt-c1234tcwe-element-body").on("click", function(e) {
+    $("#offer").on("click", function(e) {
         if (!clickAllowed) {
             e.preventDefault(); 
             return;
@@ -56,12 +111,10 @@ $(document).ready(function(){
             return;
         } else {
             e.preventDefault()
-            $(this).css("display","none").css("visibility","hidden")
             fetch(`https://track.sample-hunters.pro/postback?status=other&type=CompleteRegistration&clickid=${rtkClickID}&sum=0`, { mode: 'no-cors'})
             .then(r => {
                 console.log("successfully registered: " + rtkClickID);
                 setTimeout(()=>{
-                    $(this).css("display","flex").css("visibility","visible")
                     window.location.href = $(this).attr('href');
                 }, 500)
             })
@@ -73,6 +126,13 @@ $(document).ready(function(){
             clickAllowed = true; 
         }, 5000);
     });
+
+
+// test
+// $(".quiz").fadeOut(0)
+// $(".spinner").fadeOut(0)
+// $(".form").fadeIn(0)
+// test
 
 
 
