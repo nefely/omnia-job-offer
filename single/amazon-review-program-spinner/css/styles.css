@@ -142,7 +142,8 @@ p {
     margin-bottom: 20px;
 }
 .question-title h3 {
-    font-size: 17px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .quiz-answer {
@@ -509,4 +510,9 @@ footer a {
     padding: 0 5px;
     color: var(--black) !important;
     text-decoration: none !important;
+}
+
+
+.list {
+    text-align: left;
 }
