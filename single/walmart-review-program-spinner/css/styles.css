@@ -49,10 +49,10 @@ table {
 :root {
     --black: #000;
     --white: #fff;
-    --primary: #E970DD;
+    --primary: #0284FF;
     --primary-light: #FDECD1;
-    --secondary: #E970DD;
-    --secondary-dark: #c750bb;
+    --secondary: #0284FF;
+    --secondary-dark: #0062dd;
     --green: #ABFF78;
     --danger: #DF0000;
     --gray: #979797;
@@ -376,7 +376,7 @@ p {
 }
 .form .top-banner {
     padding: 10px 20px;
-    background: #FFB5F8;
+    background: #B7B5FF;
     width: calc(100% + 20px);
     margin-left: -10px;
     text-align: center;
