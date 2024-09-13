@@ -2,23 +2,20 @@
 	flex-grow: 1;
 	padding: 15vh 0;
 	position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
     z-index: 2;
 }
 #intro .figure {
 	position: absolute;
-	bottom: 0;
-	right: -5%;
-	width: 45%;
+	bottom: -15%;
+	right: -0%;
+	width: 55%;
 	height: 70%;
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
 	z-index: -1;
-}
-.figure-mob {
-	display: none;
 }
 .figure-desk {
 	display: flex;
@@ -32,25 +29,15 @@
 @media screen and (max-width: 991px) {
 	#intro .figure {
 		right: auto;
-		width: 100%;
-		height: 100%;
-		left: 50%;
-		transform: translateX(-50%);
+		width: 47.5%;
+		height: 47.5%;
+		right: -7.5%;
+		transform: translateY(32.5%);
 		top: initial;
 		bottom: 0;
 		display: flex;
 		justify-content: center;
 		align-items: flex-end;
-	}
-	#intro .figure .figure-mob{
-		display: flex;
-		max-width: 100%;
-		max-height:20vh;
-		object-fit: contain;
-		object-position: center;
-	}
-	.figure-desk {
-		display: none;
 	}
 }
 #intro .form {
@@ -90,8 +77,9 @@
 #intro .form .main-title h1 span {
 	font-weight: bold;
     position: relative;
+    letter-spacing: 1px;
 }
-#intro .form .main-title h1 span:after {
+/* #intro .form .main-title h1 span:after {
     content: "";
     position: absolute;
     bottom: 4px;
@@ -99,7 +87,7 @@
     width: 52px;
     height: 4px;
     background: var(--theme-primary);
-}
+} */
 #intro .form .main-title h1 strong {
     color: var(--theme-primary);
 }
@@ -225,13 +213,12 @@
 @media screen and (max-width: 991px) {
 	#intro {
 	    padding: calc(2.25 * var(--gap)) 0;
-        margin-bottom: -35px;
 	}
     #intro .form .main-title {
 		margin-bottom: 20px;
 	}
     #intro .form .main-title h1 {
-        font-size: 1.34rem;
+        font-size: 1.5rem;
         line-height: 1.416;
     }
 	#intro .form .main-title h1 img {
@@ -313,12 +300,6 @@
 	margin-top: 2px;
 }
 
-
-
-
-#intro .quiz {
-
-}
 #intro .quiz .quiz-container {
 	width: 100%;
 	max-width: 645px;
