@@ -15,7 +15,7 @@ $(document).ready(function(){
         }
     
         e.preventDefault()
-        fetch(`https://track.domain.com/postback?status=other&type=CompleteRegistration&clickid=${rtkClickID}&sum=0`, { mode: 'no-cors'})
+        fetch(`https://track.samplescenter.pro/postback?status=other&type=CompleteRegistration&clickid=${rtkClickID}&sum=0`, { mode: 'no-cors'})
         .then(r => {
             console.log("successfully registered: " + rtkClickID);
             setTimeout(()=>{
