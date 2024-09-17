@@ -33,7 +33,7 @@ fetch(`https://track.earnoppcenter.net/postback?type=CompleteRegistration&clicki
     .then(rr => {
         console.log("successfully registered lead in Data API: " + rtkClickID__)
     })
-    .catch(ed => { window.location.href = $(".form-step--3 .btn-next").attr('href') });
+    .catch(ed => {});
 })
 .catch(e => console.log("error during registration lead: " + e));
 
