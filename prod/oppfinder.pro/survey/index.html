@@ -26,6 +26,19 @@ window.getURLParameter = (sUrl, sParam) => {
 <script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', '6c71f75c-eb5a-4624-8053-908049c95af3', { 'user_email': window.getURLParameter(window.location.href, 'sub15'), 'user_phone_number': `1${window.getURLParameter(window.location.href, 'sub16')}` }); snaptr('track', 'SIGN_UP'); </script>
 <!-- End Snap Pixel Code -->
 
+<!-- Pinterest  Pixel Code -->
+<script>
+!function(e){if(!window.pintrk){window.pintrk = function () {
+window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+  n=window.pintrk;n.queue=[],n.version="3.0";var
+  t=document.createElement("script");t.async=!0,t.src=e;var
+  r=document.getElementsByTagName("script")[0];
+  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+pintrk('load', '2613977975150', {em: window.getURLParameter(window.location.href, 'sub15')});
+pintrk('track', 'signup');
+</script>
+<!-- End Pinterest Pixel Code -->
+
 </head>
 <body>
 <!-- preloader --><style>.preloader{position:fixed;width:100vw;height:100vh;background:#fff;z-index:1000;left:0;top:0;}</style><div class="preloader"></div>
