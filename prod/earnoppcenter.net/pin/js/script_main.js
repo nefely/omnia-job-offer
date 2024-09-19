@@ -210,20 +210,20 @@ $(".form-step--3 .btn-next").click(function(e){
     }, standart_time)
 });
 
-let isButtonLocked = false;
-$(".form-step--3 .btn-next").click(function(e) {
-    e.preventDefault();
-    if (isButtonLocked) {return;}
-    isButtonLocked = true;
-    $(this).css("display", "none").css("visibility", "hidden");
-    setTimeout(() => {
-        $(this).css("display", "flex").css("visibility", "visible");
-        window.location.href = $(".form-step--3 .btn-next").attr('href');
-        setTimeout(() => {
-            isButtonLocked = false;
-        }, 5000); 
-    }, standart_time);
-});
+// let isButtonLocked = false;
+// $(".form-step--3 .btn-next").click(function(e) {
+//     e.preventDefault();
+//     if (isButtonLocked) {return;}
+//     isButtonLocked = true;
+//     $(this).css("display", "none").css("visibility", "hidden");
+//     setTimeout(() => {
+//         $(this).css("display", "flex").css("visibility", "visible");
+//         window.location.href = $(".form-step--3 .btn-next").attr('href');
+//         setTimeout(() => {
+//             isButtonLocked = false;
+//         }, 5000); 
+//     }, standart_time);
+// });
 
 setTimeout(()=>{
 
