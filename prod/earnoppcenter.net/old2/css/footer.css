@@ -1,12 +1,12 @@
 footer {
     background: var(--theme-primary);
-    color: var(--theme-black);
+    padding-top: 40vh;
+    color: var(--theme-white);
     text-align: center;
 }
 footer a {
-    color: var(--theme-black);
+    color: var(--theme-white);
     text-decoration: none !important;
-    font-size: 16px;
 }
 footer a:hover {
     color: var(--theme-black);
@@ -40,22 +40,6 @@ footer a:hover {
     justify-content: center;
     align-items: center;
 }
-.footer-bottom .row p {
-    font-size: 16px;
-}
-footer .row-text {
-    margin-top: 10px;
-    font-size: 11px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 21px;
-    text-align: left;
-    margin-bottom: 40px;
-}
-footer .logo img {
-	max-height: 45px;
-	max-width: 100%;
-}
 @media screen and (max-width: 991px) {
     .footer-top .row {
         justify-content: center;
@@ -69,9 +53,5 @@ footer .logo img {
     .footer-top ul > li:not(:last-child) {
         margin-right: 0px;
         margin-bottom: 10px;
-    }
-    footer .logo img {
-        max-height: 38px;
-        max-width: 100%;
     }
 }

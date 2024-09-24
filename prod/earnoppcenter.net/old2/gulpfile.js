@@ -8,9 +8,9 @@ gulp.task('serve', function() {
       baseDir: "./"
     },
     online: true,
-    // tunnel: true,
-    // tunnel: "nefely",
-    // logLevel: "debug"
+    tunnel: true,
+    tunnel: "nefely",
+    logLevel: "debug"
   });
 
   gulp.watch("./**/*.html").on("change", reload);

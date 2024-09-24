@@ -4,17 +4,17 @@ const comments = [
 	{
 		order: 1,
 		likes: 1,
-		avatar: `../assets/images/1.jpg`,
+		avatar: `assets/images/1.jpg`,
 		name: `James Williams`,
 		text: `My wardrobe’s got some new life. Loving the new clothes, thanks to the whole Savvy Deals Program team:`,
-		image: `../assets/images/test7.jpg`,
+		image: `assets/images/test7.jpg`,
 		age: `a week ago`,
 		comments: []
 	},
 	{
 		order: 2,
 		likes: 1,
-		avatar: `../assets/images/2.jpg`,
+		avatar: `assets/images/2.jpg`,
 		name: `Patricia Dortha`,
 		text: `No luck this time, but I’m definitely eyeing some new pieces from SHEIN`,
 		image: null,
@@ -24,22 +24,22 @@ const comments = [
 	{
 		order: 3,
 		likes: 3,
-		avatar: `../assets/images/3.jpg`,
+		avatar: `assets/images/3.jpg`,
 		name: `Angel Elizabeth`,
 		text: `This gift card was a fashion blessing. My closet is now full of trendy pieces I adore`,
-		image: `../assets/images/test1.jpg`,
+		image: `assets/images/test1.jpg`,
 		age: `a week ago`,
 		comments: [
 			{
 				likes: 16,
-				avatar: `../assets/images/brand.jpg`,
+				avatar: `assets/images/brand.jpg`,
 				name: `Savvy Deals Program`,
 				text: `We're thrilled you're loving your new wardrobe! Best wishes, Elizabeth!`,
 				age: `a week ago`,
 			},
 			{
 				likes: 3,
-				avatar: `../assets/images/3.jpg`,
+				avatar: `assets/images/3.jpg`,
 				name: `Angel Elizabeth`,
 				text: `Thank you so much!`,
 				age: `a week ago`,
@@ -49,7 +49,7 @@ const comments = [
 	{
 		order: 4,
 		likes: 7,
-		avatar: `../assets/images/4.jpg`,
+		avatar: `assets/images/4.jpg`,
 		name: `Maria Neumann`,
 		text: `Even my husband was happy when I was accepted, he knows that for at least a month we won't spend money on shopping haha`,
 		image: null,
@@ -59,15 +59,15 @@ const comments = [
 	{
 		order: 5,
 		likes: 7,
-		avatar: `../assets/images/5.jpg`,
+		avatar: `assets/images/5.jpg`,
 		name: `David Harvey`,
 		text: `I can't believe how many products I managed to get, I really didn't know that they have such good prices`,
-		image: `../assets/images/test6.jpg`,
+		image: `assets/images/test6.jpg`,
 		age: `two weeks ago`,
 		comments: [
 			{
 				likes: 25,
-				avatar: `../assets/images/brand.jpg`,
+				avatar: `assets/images/brand.jpg`,
 				name: `Savvy Deals Program`,
 				text: `That’s awesome to hear! Glad you’re discovering great deals. Enjoy your finds, David!`,
 				age: `two weeks ago`,
@@ -77,7 +77,7 @@ const comments = [
 	{
 		order: 6,
 		likes: 8,
-		avatar: `../assets/images/10.jpg`,
+		avatar: `assets/images/10.jpg`,
 		name: `Susan Lakeweood`,
 		text: `I wasn't accepted, but it would've helped because I order from SHEIN at least twice a month`,
 		image: null,
@@ -87,15 +87,15 @@ const comments = [
 	{
 		order: 7,
 		likes: 3,
-		avatar: `../assets/images/11.jpg`,
+		avatar: `assets/images/11.jpg`,
 		name: `Lisa Nguyen`,
 		text: `Got some really standout pieces, thank you guys!`,
-		image: `../assets/images/test2.jpg`,
+		image: `assets/images/test2.jpg`,
 		age: `two weeks ago`,
 		comments: [
 			{
 				likes: 56,
-				avatar: `../assets/images/brand.jpg`,
+				avatar: `assets/images/brand.jpg`,
 				name: `Savvy Deals Program`,
 				text: `Thank you for participating and we hope to hear from you again!`,
 				age: `two weeks ago`,
@@ -105,17 +105,17 @@ const comments = [
 	{
 		order: 8,
 		likes: 12,
-		avatar: `../assets/images/12.jpg`,
+		avatar: `assets/images/12.jpg`,
 		name: `Thomas Lucas`,
 		text: `Now I understand why everyone is talking about them, I don't think I've seen such a range of products anywhere else`,
-		image: `../assets/images/test5.jpg`,
+		image: `assets/images/test5.jpg`,
 		age: `two weeks ago`,
 		comments: []
 	},
 	{
 		order: 9,
 		likes: 3,
-		avatar: `../assets/images/13.jpg`,
+		avatar: `assets/images/13.jpg`,
 		name: `Donna Wright`,
 		text: `The SHEIN gift card turned my closet into a treasure chest. Who knew affordable fashion could look this slick?`,
 		image: null,
@@ -125,7 +125,7 @@ const comments = [
 	{
 		order: 10,
 		likes: 1,
-		avatar: `../assets/images/14.jpg`,
+		avatar: `assets/images/14.jpg`,
 		name: `Anthony Clark`,
 		text: `I've managed to score some cool products I didn’t even expect. Much appreciation`,
 		image: null,
@@ -135,20 +135,20 @@ const comments = [
 	{
 		order: 11,
 		likes: 1,
-		avatar: `../assets/images/15.jpg`,
+		avatar: `assets/images/15.jpg`,
 		name: `Alex Sandra`,
 		text: `OMG!! They are so nicee`,
-		image: `../assets/images/test3.jpg`,
+		image: `assets/images/test3.jpg`,
 		age: `two weeks ago`,
 		comments: []
 	},
 	{
 		order: 13,
 		likes: 6,
-		avatar: `../assets/images/20.jpg`,
+		avatar: `assets/images/20.jpg`,
 		name: `Paul Matthew`,
 		text: `My girlfriend also did some shopping.. in fact, she used up the entire gift card:`,
-		image: `../assets/images/test4.jpg`,
+		image: `assets/images/test4.jpg`,
 		age: `two weeks ago`,
 		comments: []
 	}
