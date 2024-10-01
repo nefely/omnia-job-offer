@@ -18,6 +18,7 @@ $(document).ready(function () {
             $("input[name=email]").addClass("error");
         }
     };
+    
 
     $("input[name=email]").on("input", function () {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test($("input[name=email]").val())) {
@@ -66,10 +67,13 @@ $("#subbtn").click(function (e) {
 
 
 
-    $("#s-btn , #ft-cwall .info-btn , #lg-getstarted , #ft-offer-types .info-btn").click(function(){
+    $("#s-btn").click(function(){
         $("#f-header").fadeOut(300)
         setTimeout(()=>{
             $("#cid-header , #cid-main-container").fadeIn(300)
         },300)
     })
+    
+
+    
 });
