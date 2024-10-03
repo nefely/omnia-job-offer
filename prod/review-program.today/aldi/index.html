@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>Get Your Aldi Gift Card and Boost Your Savings!</title>
+    <title>Get $750 To ALDI!</title>
 
-        <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="stylesheet" href="css/styles.css?v=34c287br9e8">
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/scripts.js"></script>
 
-        <link rel="icon" type="image/png" href="assets/img/fav-icon.png" sizes="16x16" />
+    <script>
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    </script>
 
-        <link rel="stylesheet" href="assets/css/fbcomments.css" />
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
-
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-        <script src="assets/js/jquery-3.6.4.min.js"></script>
-        <script src="assets/js/fbcomments.js"></script>
-        <script src="assets/js/script.js"></script>
-
-        <script type="text/javascript" src="https://track.review-program.today/track.js?rtkcmpid=66ec11a2cd74902122f5413a"></script>
+    <script type="text/javascript" src="https://track.review-program.today/track.js?rtkcmpid=66ec11a2cd74902122f5413a"></script>
 
     <!-- Meta Pixel Code -->
     <script>
@@ -40,715 +37,172 @@
     </script>
     <!-- End Meta Pixel Code -->
 
-    </head>
+</head>
+<body>
 
-    <body>
-        <div class="page-content mx-auto" id="page-content">
-            <div class="sticky-container1">
-                <div class="timer text-center" id="timer">
-                    <div class="timer-text" id="timer1">
-                        YOUR PLACE IS SECURED FOR
-                        <span id="timer-count" style="color: #cccccc; font-weight: bold;"></span>
-                    </div>
-                    <div class="timer-text d-none" id="timer-done">
-                        YOUR PLACE IS NO LONGER RESERVED, BUT YOU CAN STILL TRY...
-                    </div>
-                </div>
+<style>.preloader{position:fixed;width:100vw;height:100vh;background:#fff;z-index:1000;left:0;top:0;}</style>
+<div class="preloader" ></div>
+
+<div class="screen">
+    <div class="container">
+        <div class="quiz">
+            <div class="title">
+                <h1><span class="primary">ALDI</span> REVIEW<br>PROGRAM</h1>
             </div>
-            <header>
-                <div class="header-content d-flex justify-content-between align-items-center" id="header-content">
-                    <div class="ml-3">
-                        <span href="">
-                            <img src="assets/img/logo.png" alt="logo" style="width: 80%; height: auto; max-width: 380px;" />
-                        </span>
-                    </div>
+            <div class="content">
+                <p>Are you interested in testing <strong>ALDI</strong> products? If so, you may qualify to participate in our product review program.</p>
 
-                    <i class="material-icons mr-3 faq-modal-icon" style="font-size: 2rem; text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3), 0px 0px 10px rgba(0, 0, 0, 0.2); cursor: pointer;">
-                        help
-                    </i>
-                    <div class="modal-overlay" id="faqModal">
-                        <div class="modal-content">
-                            <span class="close-icon" id="closeModal">&times;</span>
-                            <div class="text-left pb-3" style="font-size: 1.4rem; font-weight: bold;">
-                                Frequently Asked Questions
-                            </div>
-                            <div class="faq-list">
-                                <div class="faq1-question faq-question" style="margin-top: 10px;">
-                                    <div class="d-flex justify-content-between align-items-center" style="cursor: pointer;" onclick="toggleDescription1()">
-                                        <div class="faq text-left mr-2" style="color: rgb(73, 73, 73);">
-                                            WHAT ARE THE PARTICIPATION REQUIREMENTS?
-                                        </div>
-                                        <i class="material-icons m-0" style="font-size: 1.25rem; color: rgb(189, 189, 189);" id="closeFAQ1">
-                                            add
-                                        </i>
-                                    </div>
-                                    <div class="faq-description text-left" style="text-align: justify; font-size: 1.05rem; display: block; overflow: hidden; height: 0;" id="faq1Description">
-                                        You must be over 18 years old and live in the US.
-                                    </div>
-                                </div>
-                                <div class="faq2-question faq-question" style="margin-top: 20px;">
-                                    <div class="d-flex justify-content-between align-items-center" style="cursor: pointer;" onclick="toggleDescription2()">
-                                        <div class="faq text-left mr-2" style="color: rgb(73, 73, 73);">
-                                            WHAT CAN I GET FROM THIS PROGRAM?
-                                        </div>
-                                        <i class="material-icons m-0" style="font-size: 1.25rem; color: rgb(189, 189, 189);" id="closeFAQ2">
-                                            add
-                                        </i>
-                                    </div>
-                                    <div class="faq-description text-left" style="text-align: justify; font-size: 1.05rem; display: block; overflow: hidden; height: 0;" id="faq2Description">
-                                        By participating in the Shop Smart Program, you can receive a $750 Aldi gift card. The gift card allows you to purchase a wide variety of groceries and household items at any Aldi store, helping you
-                                        save on your everyday essentials.
-                                    </div>
-                                </div>
-                                <div class="faq3-question faq-question" style="margin-top: 20px;">
-                                    <div class="d-flex justify-content-between align-items-center" style="cursor: pointer;" onclick="toggleDescription2()">
-                                        <div class="faq text-left mr-2" style="color: rgb(73, 73, 73);">
-                                            WHAT HAPPENS IF I APPLY WITHOUT MEETING THE REQUIREMENTS?
-                                        </div>
-                                        <i class="material-icons m-0" style="font-size: 1.25rem; color: rgb(189, 189, 189);" id="closeFAQ3">
-                                            add
-                                        </i>
-                                    </div>
-                                    <div class="faq-description text-left" style="text-align: justify; font-size: 1.05rem; display: block; overflow: hidden; height: 0;" id="faq3Description">
-                                        Our team reviews applications daily. Applicants who do not meet the requirements will not be accepted, but we will reach out to them as soon as they become eligible to participate.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <p>Simply answer the poll questions provided below. If
+                    you meet the program requirements, you 'll be eligible
+                    to receive up to <strong>$750</strong> to review <strong>ALDI products.</strong></p>
+
+                <p>To ensure fairness for all candidates, please answer
+                    the questions quickly and honestly!</p>
+            </div>
+            <div class="card">
+                <img src="img/card.png" alt="">
+            </div>
+
+            <div class="quiz">
+                <div class="question question-1">
+                    <div class="question-title">
+                        <h3><strong class="">Question 1/4:</strong> Are you familiar with the
+                            different product lines offered by ALDI,
+                            such as home & kitchen, grocery, and self care?</h3>
+                    </div>
+                    <div class="quiz-answer">
+                        <button class="btn btn-secondary btn-lg">Yes</button>
+                        <button class="btn btn-secondary btn-lg">No</button>
                     </div>
                 </div>
-            </header>
-            <div class="page mx-auto mt-4">
-                <div class="before-quiz" id="before-quiz">
-                    <div class="page-title">
-                        Exciting times! You are one of the first to join the Shop Smart Program!
+                <div class="question question-2">
+                    <div class="question-title">
+                        <h3><strong class="">Question 2/4:</strong>  Do you have a preferred product category from ALDI that you'd like to test and review?</h3>
                     </div>
-
-                    <p class="pt-3">
-                        Answer 3 simple questions about your shopping routine, and get a
-                        <mark>$750 ALDI Gift Card</mark>. Don't miss out on this fantastic offer!
-                    </p>
-
-                    <p>Excited to get more from your shopping? Click on the <mark>START</mark> button below.</p>
-
-                    <p>You will have exactly <strong>3 minutes</strong> to secure your reward.</p>
-
-                    <div class="d-flex justify-content-center" style="margin-top: 40px;">
-                        <img src="assets/img/image.png" alt="Product" class="main-image" />
-                    </div>
-
-                    <div class="sticky-container" style="margin-bottom: 100px;">
-                        <div class="start-quiz-button mx-auto text-center mt-5" id="start-quiz-button">
-                            START
-                        </div>
+                    <div class="quiz-answer"> 
+                        <button class="btn btn-secondary btn-lg">Yes</button>
+                        <button class="btn btn-secondary btn-lg">No</button>
                     </div>
                 </div>
-
-                <div class="start-quiz d-none" id="start-quiz" style="margin-bottom: 200px;">
-                    <div id="question-counter" class="question-counter">
-                        <mark>Question <span class="question-counter-number" id="question-counter-number" style="margin-right: 1px;">-</span><span class="question-numbers" style="margin-top: 10px; margin-left: 1px;">/ 3</span></mark>
+                <div class="question question-3">
+                    <div class="question-title">
+                        <h3><strong class="">Question 3/4:</strong>  Are you open to trying new or different ALDI products that you haven 't tried before?</h3>
                     </div>
-
-                    <div id="quiz-models"></div>
-                </div>
-
-                <div class="unaccepted mx-auto d-none" id="unaccepted" style="margin-bottom: 300px;">
-                    <div class="unaccepted-modal d-block mx-auto" style="margin-top: 80px;">
-                        <div class="unaccepted-modal-title text-center mb-2">
-                            We're sorry
-                        </div>
-
-                        <div class="unaccepted-modal-text">
-                            Based on your quiz answers, you are not suitable for the requirements of this program. If you think you made a mistake and want to retake the quiz, click the button below:
-                        </div>
-
-                        <div class="unaccepted-modal-button mx-auto text-center" id="start-again" style="margin-top: 25px; margin-bottom: 10px;">
-                            TRY AGAIN
-                        </div>
+                    <div class="quiz-answer">
+                        <button class="btn btn-secondary btn-lg">Yes</button>
+                        <button class="btn btn-secondary btn-lg">No</button>
                     </div>
                 </div>
-
-                <div class="after-quiz d-none" id="after-quiz" style="margin-bottom: 200px;">
-                    <div class="loading-title">
-                        <mark>Thanks for your time!</mark>
+                <div class="question question-4">
+                    <div class="question-title">
+                        <h3><strong class="">Question 4/4:</strong> Are you from the United States?</h3>
                     </div>
-
-                    <div class="loading-subtitle">
-                        Please wait a few seconds while we process your responses.
-                    </div>
-
-                    <div class="container loading-container p-0" style="margin-top: 30px;">
-                        <div class="row justify-content-between mt-3" style="min-height: 36px;">
-                            <div class="col-9 loading-container-text-col my-auto" id="loading11">Validating your answers..</div>
-                            <div class="col-3 d-flex justify-content-end my-auto" id="loading12"></div>
-                        </div>
-
-                        <div class="row justify-content-between mt-3" style="min-height: 36px;">
-                            <div class="col-9 loading-container-text-col my-auto" id="loading21">Verifying eligibility..</div>
-                            <div class="col-3 d-flex justify-content-end my-auto" id="loading22"></div>
-                        </div>
-
-                        <div class="row justify-content-between mt-3" style="min-height: 36px;">
-                            <div class="col-9 loading-container-text-col my-auto" id="loading31">21 gift cards left..</div>
-                            <div class="col-3 d-flex justify-content-end my-auto" id="loading32"></div>
-                        </div>
-
-                        <div class="row justify-content-between mt-3" style="min-height: 36px;">
-                            <div class="col-9 loading-container-text-col my-auto" id="loading41">Securing your spot, hurry up..</div>
-                            <div class="col-3 d-flex justify-content-end my-auto" id="loading42"></div>
-                        </div>
+                    <div class="quiz-answer">
+                        <button class="btn btn-secondary btn-lg">Yes</button>
+                        <button class="btn btn-secondary btn-lg">No</button>
                     </div>
                 </div>
-
-                <div class="final-page d-none" style="margin-bottom: 200px;" id="final-page">
-                    <div class="final-page-title">
-                        <mark>Congratulations!</mark>
-                    </div>
-
-                    <p class="pt-3">
-                        Exciting news! Our stock is limited, but your place has been secured. Claim your reward by following the steps below and receive your
-                        <strong>$750 Aldi gift card</strong>!
-                    </p>
-
-                    <div class="d-flex justify-content-center" style="margin-top: 40px;">
-                        <img src="assets/img/final-image.png" alt="Product" class="main-image" />
-                    </div>
-
-                    <ol class="final-page-list mx-auto mt-5" style="padding: 10px 18px !important;">
-                        <li style="font-weight: bold;">
-                            <div style="font-weight: normal;">
-                                Confirm your delivery details (click the "CONTINUE" button): Let us know where we should send your exclusive <mark>$750 Aldi Gift Card</mark>. Answer our sponsored questions and provide your delivery address.
-                            </div>
-                        </li>
-
-                        <div class="footer-divider mt-3 mb-3"></div>
-
-                        <li style="font-weight: bold;">
-                            <div style="font-weight: normal;"><strong> Unlock your DOUBLE reward: </strong> Complete <strong> our sponsored deals</strong>. Each deal that you complete will increase your reward.</div>
-                        </li>
-
-                        <div class="footer-divider mt-3 mb-3"></div>
-
-                        <li style="font-weight: bold;">
-                            <div style="font-weight: normal;">Prepare for the reveal: Your <strong>$750 Aldi Gift Card</strong> will be delivered to your home. We guarantee delivery in just 5 days.</div>
-                        </li>
-
-                        <div class="footer-divider mt-3 mb-3"></div>
-
-                        <li style="font-weight: bold;">
-                            <div style="font-weight: normal;">Don't forget to <strong>confirm</strong> your participation by <strong>email</strong>!</div>
-                        </li>
-                    </ol>
-
-                    <div class="sticky-container" style="margin-bottom: 100px;">
-                        <a class="start-quiz-button mx-auto text-center mt-5" href="https://track.review-program.today/click" id="offer" style="display: flex; justify-content: center; align-items: center;">CONTINUE</a>
-                    </div>
-                </div>
-
-                <div class="comments">
-                    <p class="others-say">
-                        Read what others say about our program:
-                    </p>
-                    <div class="sorting-box">
-                        <p>0 Comments</p>
-                        <div class="inner-sorting-box">
-                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-notch" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                <path
-                                    fill="#a6adb7"
-                                    d="M288 39.056v16.659c0 10.804 7.281 20.159 17.686 23.066C383.204 100.434 440 171.518 440 256c0 101.689-82.295 184-184 184-101.689 0-184-82.295-184-184 0-84.47 56.786-155.564 134.312-177.219C216.719 75.874 224 66.517 224 55.712V39.064c0-15.709-14.834-27.153-30.046-23.234C86.603 43.482 7.394 141.206 8.003 257.332c.72 137.052 111.477 246.956 248.531 246.667C393.255 503.711 504 392.788 504 256c0-115.633-79.14-212.779-186.211-240.236C302.678 11.889 288 23.456 288 39.056z"
-                                ></path>
-                            </svg>
-                            <span>Sort by</span>
-                            <div class="sort">
-                                <button>
-                                    <span>Newest</span>
-                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sort" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                                        <path
-                                            fill="#374151"
-                                            d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
-                                        ></path>
-                                    </svg>
-                                </button>
-                                <div class="dropdown-sort">
-                                    <button data-sort="top">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                            <path
-                                                fill="#374151"
-                                                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                            ></path>
-                                        </svg>
-                                        <span>Top</span>
-                                    </button>
-
-                                    <button data-sort="newest" class="selected">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                            <path
-                                                fill="#374151"
-                                                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                            ></path>
-                                        </svg>
-                                        <span>Newest</span>
-                                    </button>
-                                    <button data-sort="oldest">
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                            <path
-                                                fill="#374151"
-                                                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                            ></path>
-                                        </svg>
-                                        <span>Oldest</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="add-comment">
-                        <img src="assets/images/user.jpg" alt="User" />
-                        <textarea placeholder="Add a comment..."></textarea>
-                        <div class="comment-button-box">
-                            <div class="comment-button-left">
-                                <input id="checkbox" type="checkbox" name="checkbox" />
-                                <label for="checkbox">Also post on Facebook</label>
-
-                                <p>Write <span class="keys-left">6</span> more characters to post on Facebook</p>
-                            </div>
-
-                            <div class="comment-button-right">
-                                <button disabled class="disabled">
-                                    Sign up to post
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="main-comments"></div>
-                    <br>
-                    <button class="load-more">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle-notch" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <path
-                                fill="#fff"
-                                d="M288 39.056v16.659c0 10.804 7.281 20.159 17.686 23.066C383.204 100.434 440 171.518 440 256c0 101.689-82.295 184-184 184-101.689 0-184-82.295-184-184 0-84.47 56.786-155.564 134.312-177.219C216.719 75.874 224 66.517 224 55.712V39.064c0-15.709-14.834-27.153-30.046-23.234C86.603 43.482 7.394 141.206 8.003 257.332c.72 137.052 111.477 246.956 248.531 246.667C393.255 503.711 504 392.788 504 256c0-115.633-79.14-212.779-186.211-240.236C302.678 11.889 288 23.456 288 39.056z"
-                                class
-                            ></path>
-                        </svg>
-                        <span>Load 5 more comments</span>
-                    </button>
-
-                </div>
-
-                <br><br><br>
-
-                <div class="footer-divider mb-3"></div>
-
-                <div class="links-part d-flex justify-content-center align-items-center mb-3">
-                    <img src="assets/img/links-image.png" alt="links" class="links-image mr-1" />
-                    <div class="links-image-text ml-1">LEGAL LINKS</div>
-                </div>
-
-                <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center">
-                    <a href="terms-of-use/" style="margin: 6px;" class="links mx-0 mx-lg-2 my-2 my-lg-0" target="_blank">Terms and Conditions</a>
-                    <a href="privacy-policy/" style="margin-left: 3px; margin-right: 3px;" class="links mx-0 mx-lg-2 my-2 my-lg-0" target="_blank">Privacy Policy</a>
-                </div>
-                <div class="trade-names mx-auto mt-4">
-                    <p class="text-center">
-                        Trade names or rights associated with all trademarks on this website are the property of their respective owners and are not associated with this promotion. This offer ends at the end of 2024.
-                    </p>
-                    <p class="text-center">
-                        This website is not part of the Facebook website or of Facebook Inc. <br />
-                        Furthermore, this website is not endorsed in any way by Facebook. Facebook is a trademark of Facebook, Inc.
-                    </p>
-                </div>
-
-                <div class="footer d-flex align-items-center justify-content-between flex-row mb-2">
-                    <div class="footer-content pr-2 pr-md-0 text-center">
-                        <p class="mb-0">
-                            &copy; <span class="year"></span> —
-                            <span class="footer-page-link domain"></span>
-                            . All rights reserved.
-                        </p>
-                    </div>
-
-                    <div class="footer-content-logo pl-2 pl-md-0 text-right">
-                        <img src="assets/img/logo-small.png" alt="logo" style="width: 80%; height: auto; max-width: 65px;" />
-                    </div>
-                </div>
+                
             </div>
         </div>
 
-        <!-- Histats.com  START  (aync)-->
+        <div class="spinner">
+            <div class="title">
+                <h1><span class="secondary">CONGRATS!</span><br>YOU QUALIFY!</h1>
+            </div>
 
-        <script type="text/javascript">
-            let index = 0;
-            let quiz = [
-                {
-                    question: "Do you live in the United States?",
-                    description: "We are looking for participants from the US only",
-                    answer: ["Yes", "No"],
-                },
-                {
-                    question: "How often do you shop at Aldi?",
-                    answer: ["Daily", "Weekly", "Monthly", "Never"],
-                },
-                {
-                    question: "How do you usually discover deals and promotions at Aldi?",
-                    answer: ["Store flyers", "Social media", "Mobile app", "Friends/Family"],
-                },
-            ];
+            <div class="content center">
+                <p style="margin-bottom: 20px; margin-top: 40px;"><i>Follow the steps below to claim your reward:</i></p>
+                <div class="list">
+                    <p>1. Click the link below and answer questions.</p>
+                    <p>2. Enter your email and basic info for reward delivery.</p>
+                    <p>3. Complete recommended deals (the more you complete the more you earn).</p>
+                    <p>4. <strong>Claim $750</strong> To Spend At <strong>ALDI!</strong></p>
+                </div>
+            </div>
 
-            document.addEventListener("DOMContentLoaded", function () {
-                var modal = document.getElementById("faqModal");
-                var modalIcon = document.querySelector(".faq-modal-icon");
-                var closeModal = document.getElementById("closeModal");
+            <div class="btn-container">
+                <button class="btn btn-secondary btn-lg">
+                    <span>Claim now</span>
+                    <svg width="49" height="28" viewBox="0 0 49 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1.71429" y="1" width="46.2857" height="26" rx="13" stroke="white" stroke-width="2"/>
+                        <path d="M16.7143 14H33M33 14L27.1035 8M33 14L27.1035 20" stroke="white" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+            
 
-                modal.style.display = "none";
+            <div class="comment">
+                <p>What others have been saying:</p>
+                <img src="img/comment.png" alt="">
+            </div>
+            
+        </div>
 
-                modalIcon.addEventListener("click", function () {
-                    modal.style.display = "flex";
-                    requestAnimationFrame(() => {
-                        modal.classList.add("show");
+        <div class="form">
+            <div class="top-banner">
+                <strong>$750 for ALDI has been secured for you</strong>
+                <div class="border-1"></div>
+                <div class="border-2"></div>
+                <div class="border-3"></div>
+            </div>
+            <div class="card">
+                <img src="img/card-last.png" alt="">
+            </div>
+            <div class="input-container">
+                <p>Sign up to get started:</p>
+                <!-- input here -->
 
-                        var description = document.getElementById(`faq1Description`);
 
-                        description.classList.add("mt-2");
-                        document.getElementById(`closeFAQ1`).textContent = "close";
-                        expand(description);
-                    });
-                });
-
-                closeModal.addEventListener("click", function () {
-                    modal.classList.remove("show");
-                    modal.addEventListener(
-                        "transitionend",
-                        function () {
-                            if (!modal.classList.contains("show")) {
-                                modal.style.display = "none";
-                            }
-                        },
-                        { once: true }
-                    );
-                });
-
-                window.addEventListener("click", function (event) {
-                    if (event.target == modal) {
-                        modal.classList.remove("show");
-                        modal.addEventListener(
-                            "transitionend",
-                            function () {
-                                if (!modal.classList.contains("show")) {
-                                    modal.style.display = "none";
-                                }
-                            },
-                            { once: true }
-                        );
-                    }
-                });
-            });
-
-            function setupFaqToggle(faqNumber) {
-                document.addEventListener("click", function (event) {
-                    var description = document.getElementById(`faq${faqNumber}Description`);
-                    var closeIcon = document.getElementById(`closeFAQ${faqNumber}`);
-                    var faqQuestion = document.querySelector(`.faq${faqNumber}-question`);
-
-                    if (!faqQuestion.contains(event.target) && description.style.height !== "0px" && description.style.height !== "") {
-                        collapse(description);
-                        description.classList.remove("mt-2");
-                        closeIcon.textContent = "add";
-                    }
-                });
-
-                function toggleDescription() {
-                    var description = document.getElementById(`faq${faqNumber}Description`);
-                    var closeIcon = document.getElementById(`closeFAQ${faqNumber}`);
-
-                    if (description.style.height === "0px" || description.style.height === "") {
-                        expand(description);
-                        description.classList.add("mt-2");
-                        closeIcon.textContent = "close";
-                    } else {
-                        collapse(description);
-                        description.classList.remove("mt-2");
-                        closeIcon.textContent = "add";
-                    }
-                }
-
-                document.querySelector(`.faq${faqNumber}-question .d-flex`).setAttribute("onclick", `toggleDescription${faqNumber}()`);
-                window[`toggleDescription${faqNumber}`] = toggleDescription;
-            }
-
-            function expand(element) {
-                var height = element.scrollHeight + "px";
-                element.style.height = height;
-            }
-
-            function collapse(element) {
-                element.style.height = "0";
-            }
-
-            setupFaqToggle(1);
-            setupFaqToggle(2);
-            setupFaqToggle(3);
-
-            let timerInterval;
-            let timerStarted = false;
-
-            const quizModels = document.getElementById("quiz-models");
-
-            // const answersToRetakeQuiz = {
-            //     0: 1,
-            //     1: 3,
-            //     2: -1,
-            // };
-
-            const showLoadingLine = (loadingId, animationId, delay) => {
-                return new Promise((res) => {
-                    setTimeout(function () {
-                        document.getElementById(loadingId).style.fontWeight = "bold";
-                        document.getElementById(loadingId).style.color = "black";
-
-                        var animationPlayer = document.createElement("lottie-player");
-                        animationPlayer.src = "assets/img/lot.json";
-                        animationPlayer.id = "animation-player";
-                        animationPlayer.autoplay = true;
-                        animationPlayer.loop = false;
-                        animationPlayer.classList.add("quiz-animation");
-                        animationPlayer.speed = 0.5;
-                        animationPlayer.style.width = "35px";
-                        animationPlayer.style.height = "35px";
-                        var animationElement = document.getElementById(animationId);
-                        animationElement.appendChild(animationPlayer);
-                        res();
-                    }, delay);
-                });
-            };
-
-            async function updateLoadingTextAndAnimation() {
-                var loadingIds = ["loading11", "loading21", "loading31", "loading41"];
-                var animationIds = ["loading12", "loading22", "loading32", "loading42"];
-
-                for (var i = 0; i < loadingIds.length; i++) {
-                    var loadingId = loadingIds[i];
-                    var animationId = animationIds[i];
-                    await showLoadingLine(loadingId, animationId, 2000);
-                }
-
-                setTimeout(finalPage, 2000);
-            }
-
-            const onFinish = () => {
-                document.getElementById("page-content").scrollIntoView({ behavior: "smooth" });
-
-                const startQuiz = $("#start-quiz");
-                const afterQuiz = $("#after-quiz");
-
-                startQuiz.fadeOut(500, () => {
-                    startQuiz.addClass("d-none");
-                    afterQuiz.removeClass("d-none");
-                    afterQuiz.fadeOut(0);
-                    afterQuiz.fadeIn(800);
-                });
-
-                updateLoadingTextAndAnimation();
-            };
-
-            function finalPage() {
-                const finalPage = $("#final-page");
-                const afterQuiz = $("#after-quiz");
-
-                afterQuiz.fadeOut(500, () => {
-                    afterQuiz.addClass("d-none");
-                    finalPage.removeClass("d-none");
-                    finalPage.fadeOut(0);
-                    finalPage.fadeIn(800);
-                });
-            }
-
-            const addClickListeners = () => {
-                const heights = quiz.reduce((heights, _, i) => {
-                    const qObject = document.getElementById(`quiz-${i}`);
-                    const qHeight = qObject.offsetHeight;
-                    return [...heights, qHeight];
-                }, []);
-
-                quiz.forEach((question, i) => {
-                    const isLast = i === quiz.length - 1;
-                    const qObject = document.getElementById(`quiz-${i}`);
-
-                    const onNext = () => {
-                        const questionCounterNumber = document.getElementById("question-counter-number");
-
-                        if (i < 2) {
-                            questionCounterNumber.innerHTML = i + 2;
-                        }
-
-                        const moveHeight = heights.slice(0, i + 1).reduce((h, c) => h + c, 0);
-
-                        $(`.quiz-model`).css({ transform: `translateY(-${moveHeight}px)` });
-                        $(`#quiz-${i}`).css({ opacity: 0 });
-
-                        if (!isLast) {
-                            const next = document.getElementById(`quiz-blocker-${i + 1}`);
-                            next.classList.add(`d-none`);
-                        } else {
-                            onFinish();
-                        }
-                    };
-
-                    question.answer.forEach((ans, ansI) => {
-                        const ob = document.getElementById(`ans-${i}-${ansI}`);
-
-                        ob.addEventListener("click", () => {
-                            // const wrong = answersToRetakeQuiz[i] === ansI;
-
-                            // if (wrong) {
-                            //     document.getElementById("page-content").scrollIntoView({ behavior: "smooth" });
-
-                            //     const startQuiz = $("#start-quiz");
-                            //     const unaccepted = $("#unaccepted");
-
-                            //     startQuiz.fadeOut(250, () => {
-                            //         startQuiz.addClass("d-none");
-                            //         unaccepted.removeClass("d-none");
-                            //         unaccepted.fadeIn(300);
-                            //     });
-
-                            //     return;
-                            // }
-
-                            onNext();
-                        });
-                    });
-                });
-            };
-
-            const initQuiz = () => {
-                quizModels.innerHTML = ``;
-
-                let innerHTML = ``;
-
-                quiz.forEach((quizQuestion, i) => {
-                    const isPassed = i < index;
-
-                    const { question, description, answer } = quizQuestion;
-
-                    let answers = ``;
-
-                    answer.forEach(
-                        (ans, ansIndex) =>
-                            (answers += `
-                        <div id="ans-${i}-${ansIndex}" class="quiz-answer mx-auto" id="quiz-answer">
-                            ${ans}
-                        </div>
-                    `)
-                    );
-
-                    innerHTML += `
-                        <div id="quiz-${i}" class="quiz-model pt-3 pb-5 position-relative ${isPassed ? "d-none" : "d-block"}">
-                            ${i === 0 ? "" : `<div id="quiz-blocker-${i}" class="position-absolute" style="top: 0; left: 0; right: 0; bottom: 0; opacity: 0.8; background-color: #fff;"></div>`}
-                            
-                            <div class="quiz-question" id="quiz-question">
-                                ${question}
-                            </div>
-                            
-                            <div
-                                class="quiz-question-description mt-1 ${description ? "" : "d-none"}"
-                                id="quiz-question-description"
-                            >
-                                ${description}
-                            </div>
-                            <div
-                                class="mx-auto text-center"
-                                style="margin-top: 40px"
-                                id="quiz-answers"
-                            >
-                                ${answers}
+                <div class="form-row">
+                    <div class="form-row-title">
+                        <strong>Email</strong>
+                    </div>
+                    <div class="form-element">
+                        <div class="form-element-container">
+                            <input type="text" name="email" class="form-control email" placeholder="example@gmail.com" autocapitalize="off">
+                            <div class="input-icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><g clip-path="url(#clip0_931_200)"><path d="M15.5511 12.9962L13.541 15.013C12.7259 15.831 11.2917 15.8486 10.459 15.013L8.44887 12.9962L1.22937 20.2391C1.4981 20.3634 1.7944 20.4375 2.1094 20.4375H21.8907C22.2057 20.4375 22.5019 20.3635 22.7705 20.2391L15.5511 12.9962Z" fill="#9F9FA0" fill-opacity="0.4"></path><path d="M21.8907 3.5625H2.10943C1.79443 3.5625 1.49813 3.63666 1.22949 3.76092L8.94404 11.5011C8.94455 11.5016 8.94516 11.5017 8.94568 11.5022C8.9462 11.5027 8.94629 11.5034 8.94629 11.5034L11.4547 14.0201C11.7211 14.2866 12.2791 14.2866 12.5455 14.0201L15.0534 11.5038C15.0534 11.5038 15.054 11.5027 15.0545 11.5022C15.0545 11.5022 15.0556 11.5016 15.0562 11.5011L22.7705 3.76088C22.5019 3.63656 22.2057 3.5625 21.8907 3.5625Z" fill="#9F9FA0" fill-opacity="0.4"></path><path d="M0.224344 4.74432C0.0853125 5.02548 0 5.33757 0 5.67189V18.3281C0 18.6624 0.0852187 18.9745 0.224297 19.2557L7.45631 12.0002L0.224344 4.74432Z" fill="#9F9FA0" fill-opacity="0.4"></path><path d="M23.7756 4.7442L16.5437 12.0002L23.7756 19.2558C23.9147 18.9746 24 18.6625 24 18.3281V5.67186C24 5.33745 23.9147 5.02536 23.7756 4.7442Z" fill="#9F9FA0" fill-opacity="0.4"></path></g><defs><clipPath id="clip0_931_200"><rect width="24" height="24" fill="white"></rect></clipPath></defs></svg>
                             </div>
                         </div>
-                    `;
-                });
+                    </div>
+                    <div class="disclaimer">
+                        <p class="gray center">We use email to notify you once you qualify <br> for the reward. Opt out anytime.</p>
+                    </div>
+                    <div class="btn-container">
+                        <a class="btn btn-secondary btn-lg" id="offer" href="https://track.review-program.today/click">
+                            <span>Continue</span>
+                            <svg width="49" height="28" viewBox="0 0 49 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1.71429" y="1" width="46.2857" height="26" rx="13" stroke="white" stroke-width="2"/>
+                                <path d="M16.7143 14H33M33 14L27.1035 8M33 14L27.1035 20" stroke="white" stroke-width="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
-                quizModels.innerHTML = innerHTML;
-                addClickListeners();
-            };
+            </div>
 
-            function startQuiz() {
-                const startQuiz = $(`#start-quiz`);
-                const beforeQuiz = $(`#before-quiz`);
-                const counter = $(`#question-counter-number`);
+            
+        </div>
+    </div>
+</div>
 
-                document.getElementById("page-content").scrollIntoView({ behavior: "smooth" });
-
-                startTimer(3);
-
-                beforeQuiz.fadeOut(250, () => {
-                    beforeQuiz.addClass(`d-none`);
-                    startQuiz.removeClass(`d-none`);
-                    startQuiz.fadeOut(0);
-                    initQuiz();
-                    startQuiz.fadeIn(650);
-                });
-
-                counter.text(`1`);
-            }
-
-            const resetQuizPositions = () => {
-                for (var i = 0; i < quiz.length; i++) {
-                    const showblocker = i !== 0;
-                    $(`.quiz-model`).css({ transform: `translateY(0px)` });
-                    $(`#quiz-${i}`).css({ opacity: 1 });
-                    $(`#quiz-blocker-${i}`).removeClass(`d-none`);
-                }
-            };
-
-            function restartQuiz() {
-                const timer = $(`#timer`);
-                const startQuiz = $(`#start-quiz`);
-                const unaccepted = $(`#unaccepted`);
-                const counter = $(`#question-counter-number`);
-
-                index = 0;
-                counter.text(`1`);
-                timer[0].scrollIntoView({ behavior: "smooth" });
-                resetQuizPositions();
-
-                unaccepted.fadeOut(500, () => {
-                    unaccepted.addClass("d-none");
-                    startQuiz.fadeOut(0);
-                    startQuiz.removeClass(`d-none`);
-                    startQuiz.fadeIn(500);
-                });
-            }
-
-            document.getElementById("start-again").addEventListener("click", restartQuiz);
-            document.getElementById("start-quiz-button").addEventListener("click", startQuiz);
-
-            function startTimer(minutes) {
-                if (timerStarted) {
-                    return;
-                }
-
-                let time = minutes * 60;
-
-                const updateTimer = () => {
-                    let minutes = Math.floor(time / 60);
-                    let seconds = time % 60;
-                    document.getElementById("timer-count").textContent = `0${minutes}:${seconds}`;
-                    time--;
-
-                    if (time < 0) {
-                        clearInterval(timerInterval);
-                        document.getElementById("timer1").classList.add("d-none");
-                        document.getElementById("timer-done").classList.remove("d-none");
-                    }
-                };
-
-                document.getElementById("timer").classList.add("shown");
-                updateTimer();
-
-                timerInterval = setInterval(updateTimer, 1000);
-                timerStarted = true;
-            }
-        </script>
-    </body>
+<footer>
+    <div class="container">
+        <div class="rules">
+            <a href="terms-of-use/" target="_blank">Terms and conditions</a> | 
+            <a href="privacy-policy/" target="_blank">Privacy Policy</a>
+        </div>
+        <div class="center">
+            <span class="domain"></span>
+        </div>
+        <div class="reserved">
+            <p>All Rights Reserved © <span class="year"></span></p>
+        </div>
+        <div class="footer-disclaimer">
+            <p>This Review Program is not sponsored by Facebook or ALDI.</p>
+        </div>
+    </div>
+</footer>
+</body>
 </html>
