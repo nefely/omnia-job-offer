@@ -1,0 +1,259 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html {
+    font-size: 16px;
+}
+body {
+    font-family: "Roboto", serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+* {
+    font: inherit
+}
+
+
+:root {
+    --primary-hover: #1675f0; 
+    --primary: #3897F0; 
+    --secondary: #FFD420;
+    --success: rgb(0, 142, 142);
+    --black: #000000;
+    --dark: #151515;
+    --gray: #B5B5C3;
+    --white: #ffffff;
+}
+
+.container {
+    width: min(400px , calc(100% - 30px));
+    margin: 0 auto;
+}
+.center {
+    text-align: center;
+}
+.secondary {
+    color: var(--secondary);
+}
+.white {
+    color: var(--white);
+}
+.gray {
+    color: var(--gray);
+}
+.fw500 {
+    font-weight: 500;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+h1 {
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 36.33px;
+}
+.screen {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    flex-direction: column;
+}
+strong {
+    font-weight: 700;
+}
+.hero {
+    background: var(--dark);
+    padding: 15px 0;
+}
+.hero h1 {
+    padding: 0 0 15px 0;
+}
+.hero .card {
+    padding: 0 0 15px 0;
+}
+.hero p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+}
+
+.quiz {
+    padding: 15px 0 145px;
+}
+.quiz h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32.81px;
+    margin-bottom: 15px;
+}
+.quiz .answers {
+    display: grid;
+    grid-template-columns: repeat(2 , 2fr);
+    grid-gap: 10px
+}
+.quiz .answers a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 63px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 34.8px;
+    background: var(--primary);
+    color: var(--white) !important;
+    transition: 0.3s;
+}
+.quiz .answers a:hover {
+    background: var(--primary-hover);
+}
+
+.disclaimer {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.63px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+.disclaimer p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+
+footer {
+    padding: 30px 0;
+    background: var(--dark);
+    color: var(--white) !important;
+}
+footer a {
+    color: var(--white) !important;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.09px;
+}
+footer .rules {
+    margin-bottom: 15px;
+}
+footer .rules a {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+footer .advert {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    text-transform: lowercase;
+}
+
+
+
+
+
+/* progress */
+.progress {
+    position: relative;
+    margin: 30px auto 20px;
+    max-width: 1960px;
+    width: 100%;
+}
+.ProgressBar--progressBarWithPercentage--sXqX2 {
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+}
+.ProgressBar--progressBarWithPercentage--sXqX2>div {
+    padding: 0 30px;
+}
+.ProgressBar--progressBarWrapper--RgNZD {
+    background-color: #f2f2f2;
+    border-radius: 0;
+    height: 2px;
+}
+.ProgressBar--progressBarWithPercentage--sXqX2>div>div {
+    left: -30px;
+    position: relative;
+    width: calc(100% + 60px);
+}
+.ProgressBar--progressBar--mHTf2 {
+    background-color: #008e8e;
+    border-radius: 5px;
+    height: 100%;
+    transition: width .6s ease;
+}
+.ProgressBar--progressBarWithPercentage--sXqX2>div>div>div {
+    background-color: #008e8e;
+}
+
+.ProgressBar--progressBarWithPercentage--sXqX2 h4 {
+    background-color: var(--color1, #fff);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(71,71,71,.25);
+    color: #008e8e;
+    font-size: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    line-height: 24px;
+    margin-left: -30px;
+    margin-top: -24px;
+    min-width: 62px;
+    opacity: 1;
+    padding: 8px 16px;
+    position: relative;
+    transition: all .5s ease;
+    width: fit-content;
+}
+@media (max-width: 575px) {
+    .ProgressBar--progressBarWithPercentage--sXqX2 h4 {
+        box-shadow: 0 4px 8px rgba(71,71,71,.25);
+        margin-top: -18px;
+        padding: 4px 8px;
+    }
+}
+
