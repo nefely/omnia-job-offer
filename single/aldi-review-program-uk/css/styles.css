@@ -191,7 +191,9 @@ p {
 
 .spinner {
     display: none;
-    
+}
+.spinner .card {
+    margin-top: 40px;
 }
 .screen .container {
     position: relative;
