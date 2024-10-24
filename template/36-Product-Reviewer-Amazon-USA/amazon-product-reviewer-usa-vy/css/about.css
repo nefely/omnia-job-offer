@@ -1,0 +1,207 @@
+.about {
+    padding-top: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    position: relative;
+}
+.about .container {
+    background: var(--theme-primary);
+    padding: 80px;
+    border-radius: 24px;
+    color: var(--theme-white);
+    overflow: hidden;
+}
+
+.about .container .row {
+    align-items: stretch;
+}
+.about .content-column {
+    padding-right: 44px;
+    width: 40%;
+}
+.about .image-column {
+    padding-left: 44px;
+    width: 60%;
+    font-size: 16px;
+    position: relative;
+}
+.about .image-column > .img {
+    margin-bottom: 43px;
+    position: relative;
+    z-index: 2;
+}
+.about .image-column > .img img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    position: relative;
+    height: 305px;
+    z-index: 2;
+    border-radius: 40px;
+}
+.about .image-column .figure {
+    position: absolute;
+    top: -84px;
+    width: 400px;
+    left: 10%;
+    z-index: 1;
+}
+.about .image-column p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.about button {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+}
+.about .btn p {
+    font-weight: 700 !important;
+}
+.about .image-column button {
+    display: none;
+}
+.about .content-column button {
+    display: flex;
+}
+@media screen and (max-width: 991px) {
+    .about .image-column button {
+        display: flex;
+    }
+    .about .content-column button {
+        display: none;
+    }
+}
+.about .content-column h2 {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 80px;
+    margin-bottom: 20px;
+}
+.about .content-column h5 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+.about .content-column > p {
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.about .btn p {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1440px) {
+    .about .image-column .figure {
+        position: absolute;
+        top: -84px;
+        width: 300px;
+        left: 10%;
+        z-index: 1;
+    }
+}
+@media screen and (max-width: 991px) {
+    .about .container {
+        padding: 32px 17px;
+        border-radius: 16px;
+    }
+    .about .content-column {
+        padding-right: 0px;
+        width: 100%;
+    }
+    .about .image-column {
+        padding-left: 0px;
+        width: 100%;
+    }
+    .about .image-column > .img {
+        height: 320px;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 20px;
+    }
+    .about .image-column > .img img {
+        height: 310px;
+        border: 3px solid #fff
+    }
+    .about .image-column > p{
+        margin-bottom: 25px;
+    }
+    .about .content-column h2 {
+        text-align: center;
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 15px;
+    }
+    .about .content-column h5 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .about .content-column > p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .about .btn p {
+        font-size: 20px;
+    }
+    .about .image-column .figure {
+        display: none;
+    }
+}
+
+.about .container {
+    position: relative;
+    z-index: 2;
+}
+.about .container--figure {
+    background: transparent !important;
+    padding: 0;
+    margin: 0 auto;
+    height: 50vh;
+    width: 100%;
+    object-fit: contain;
+    object-position: left bottom;
+    left: 50%;
+    transform: translateX(calc(-96px - 50%));
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.about .container--figure .figure-desk {
+    height: inherit;
+    display: initial;
+}
+.about .container--figure .figure-mob {
+    display: none;
+}
+@media screen and (max-width: 1200px) {
+    .about .container--figure {
+        transform: translateX(calc(-156px - 50%));
+    }
+}
+@media screen and (max-width: 991px) {
+    .about .container {
+        margin-top: 70px;
+    }
+    .about .container--figure {
+        margin-top: 0;
+        bottom: calc(100% - 7px);
+        transform: translateX(calc(-50%));
+        height: 50vh;
+        width: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .about .container--figure .figure-desk {
+        display: none;
+    }
+    .about .container--figure .figure-mob {
+        display: initial;
+    }
+}
