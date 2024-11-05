@@ -1,0 +1,118 @@
+.how-it-works .container .row {
+    background: var(--theme-pink);
+    /* padding: 48px; */
+    max-width: 862px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+.how-it-works .main {
+    padding: 48px;
+}
+.how-it-works .main .title {
+    text-align: left;
+    text-transform: uppercase;
+}
+.how-it-works .main .list {
+    margin-bottom: 30px;
+}
+.how-it-works .main .list-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.how-it-works .main .list-item .item-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.how-it-works .main .list-item .item-img img {
+    width: 56px;
+    min-width: 56px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.how-it-works .main .list-item .item-img .item-title {
+    display: none;
+}
+.how-it-works .main .list-item:not(:last-child) {
+    margin-bottom: 30px;
+}
+.how-it-works .main .list-item .item-title {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.how-it-works .main .list-item .item-content {
+    color: var(--theme-dark);
+    font-size: 14px;
+    line-height: 20px;
+}
+.how-it-works .main .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.how-it-works .banner {
+    padding: 48px 15px;
+    color: var(--theme-white);
+    background: var(--theme-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    writing-mode: vertical-rl;
+    text-orientation: left;
+}
+.how-it-works .banner p {
+    margin: 30px 0;
+    line-height: 1;
+}
+
+
+@media screen and (max-width: 767px) {
+    .how-it-works .container .row {
+        flex-direction: column;
+    }
+    .how-it-works .main .title {
+        text-align: center;
+    }
+    .how-it-works .banner {
+        order: 1;
+        align-items: center;
+        writing-mode: initial;
+        padding: 10px 30px;
+    }
+    .how-it-works .banner p {
+        padding: 0 20px;
+        margin: 0;
+    }
+    .how-it-works .main {
+        padding: 32px 16px;
+        order: 2;
+    }
+    .how-it-works .main .list-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .how-it-works .main .list-item .item-info .item-title {
+        display: none;
+    }
+    .how-it-works .main .list-item .item-img {
+        margin-bottom: 20px;
+    }
+    .how-it-works .main .list-item .item-img .item-title {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .how-it-works .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
