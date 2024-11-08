@@ -1,0 +1,213 @@
+.hero {
+    padding-top: 0;
+    background: url("../img/hero-desk.png");
+    background-size: cover;
+    background-position: top left;
+    flex-grow: 1;
+    padding-bottom: 120px;
+}
+.hero > .container > .row {
+    flex-direction: column;
+}
+.hero .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.hero .logo img {
+    height: 35px;
+}
+.hero .main-title {
+    max-width: 500px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+.hero .main-title h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: center;
+}
+
+
+.hero .line {
+    margin: 0 auto 30px;
+    max-width: 864px;
+}
+.hero .line .line-mob {
+    display: none;
+}
+.hero .line .product-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero .line .product-card img {
+    width: 111px;
+    transform: translateY(-50%);
+    margin-bottom: -35px;
+}
+
+.hero .quiz-block {
+    text-align: center;
+}
+.hero .quiz-block .quiz-title {
+    margin-bottom: 20px;
+}
+.hero .quiz-block .quiz-title h6 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+}
+.hero .quiz-block .quiz-step-circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.hero .quiz-block .quiz-step-circles .circle {
+    width: 32px;
+    min-width: 32px;
+    aspect-ratio: 1/1;
+    border: 1px solid var(--theme-black);
+    background: var(--theme-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1000px;
+    position: relative;
+    transition: all 0.3s linear;
+}
+.hero .quiz-block .quiz-step-circles .circle.active {
+    background: var(--theme-pink);
+}
+.hero .quiz-block .quiz-step-circles .circle:not(:last-child) {
+    margin-right: 12px;
+}
+.hero .quiz-block .quiz-step-circles .circle:not(:last-child):after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 100%;
+    top: calc(50% - 0.5px);
+    width: 12px;
+    height: 1px;
+    background: var(--theme-black);
+}
+.hero .quiz-block .quiz-step-circles .circle * {
+    line-height: 0;
+}
+.hero .question {
+    max-width: 416px;
+    margin: 0 auto;
+    display: none;
+}
+.hero .question-1 {
+    display: block;
+}   
+
+.hero .question .question-title {
+    margin-bottom: 20px;
+}
+.hero .question .question-title h4 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+.hero .question .question-answers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero .question .question-answers button {
+    margin-bottom: 10px;
+}
+
+.hero .form {
+    max-width: 362px;
+    margin: 0 auto;
+    display: none;
+}
+.hero .form .success-rate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.hero .form .success-rate p {
+    background: var(--theme-success);
+    color: var(--theme-white);
+    padding: 3px 24px;
+    border-radius: 1000px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+}
+.hero .form .form-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.hero .form .form-title h3 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+}
+.hero .form .input-container {
+    margin-bottom: 10px;
+}
+.hero .form a {
+    width: 100%;
+    max-width: 100%;
+}
+.hero .form .click-rules {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+}
+@media screen and (max-width: 767px) {
+    .hero {
+        background: url("../img/hero-mob.png");
+        background-size: cover;
+        background-position: top left;
+    }
+    .hero .logo {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+    .hero .logo img {
+        height: 25px;
+    }
+    .hero .main-title {
+        margin-bottom: 15px;
+    }
+    .hero .line {
+        margin: 0 auto 15px;
+    }
+    .hero .quiz-block .quiz-title {
+        margin-bottom: 15px;
+    }
+    .hero .quiz-block .quiz-step-circles {
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .hero .line img {
+        width: calc(100% + 30px);
+        max-width: calc(100% + 30px);
+        transform: translateX(-15px);
+    }
+    .hero .line .line-desk {
+        display: none;
+    }
+    .hero .line .line-mob {
+        display: block;
+    }
+    .hero .question .question-title h4 {
+        font-size: 17px;
+    }
+}
