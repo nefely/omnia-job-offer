@@ -185,9 +185,7 @@ $(".form-step--1 .btn-next").click(function(e){
     window.final_link__no_params = $("#btf").attr("href");
     $(this).closest(".form-step").fadeOut(standart_time)
     $("#intro .bullets").fadeOut(standart_time)
-    if ($(window).innerWidth() < 991) {
-        $("#intro .figure").fadeOut(standart_time)
-    }
+    $("#intro .figure").fadeOut(standart_time)
     setTimeout(()=>{
         $(".form-step--2").fadeIn(standart_time)
     }, standart_time)
