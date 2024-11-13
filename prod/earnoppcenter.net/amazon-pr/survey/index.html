@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Rewardory - Online Platform with Best Opportunities</title>
+	<title>EarnOppCenter - Online Platform with Best Opportunities</title>
     <meta name="theme-color" content="#2D2B2B"/>
 	<link rel="shortcut icon" type="image/png" href="../media/fav.png"/>
 	<script type="text/javascript" src="../js/jquery.js"></script>
@@ -22,22 +22,24 @@ window.getURLParameter = (sUrl, sParam) => {
 }
 </script>
 
-<!-- Tiktop Pixel Code -->
+<!-- Meta Pixel Code -->
 <script>
-		!function (w, d, t) {
-		  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
-)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-		
-		  ttq.load('CSPHPEJC77UF5CI69H80');
-			ttq.identify({
-			    email: `${window.getURLParameter(window.location.href, 'sub15')}`,
-			    phone_number: `+1${window.getURLParameter(window.location.href, 'sub16')}`
-			})
-		}(window, document, 'ttq');
-
-        ttq.track('CompleteRegistration');
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '799738728826938', {
+  em: `${window.getURLParameter(window.location.href, 'sub15')}`,
+  fn: `${window.getURLParameter(window.location.href, 'sub13')}`,
+  ln: `${window.getURLParameter(window.location.href, 'sub14')}`,
+  pg: `1${window.getURLParameter(window.location.href, 'sub16')}`
+}); 
 </script>
-<!-- End Tiktop Pixel Code -->
+<!-- End Meta Pixel Code -->
 
 </head>
 <body>
@@ -49,8 +51,8 @@ window.getURLParameter = (sUrl, sParam) => {
 		<div class="container">
 			<div class="row">
 				<div class="logo">
-					<img src="../media/logo.png" alt="" class="desk">
-					<img src="../media/logo-white.png" alt="" class="mob">
+					<img src="../media/logo.svg" alt="" class="desk">
+					<img src="../media/logo-white.svg" alt="" class="mob">
 				</div>
 			</div>
 		</div>
@@ -67,7 +69,7 @@ window.getURLParameter = (sUrl, sParam) => {
 							<h3>Welcome!</h3>
 						</div>
 						<div class="thx-text">
-							<p>Start with a short survey to receive the best earning opportunity for <strong>SHEIN</strong>.</p>
+							<p>Start with a short survey to receive the best earning opportunity for <strong>Amazon</strong>.</p>
 						</div>
 					</div>
 				</div>
@@ -108,7 +110,7 @@ window.getURLParameter = (sUrl, sParam) => {
 							</div>
 							<div class="quiz-block quiz-block--3">
 								<div class="quiz-block-question">
-                                    <h5>About how many times per month you order at <strong>SHEIN?</strong></h5>
+                                    <h5>About how many times per month you order at <strong>Amazon?</strong></h5>
 								</div>
 								<div class="quiz-block-answers">
 									<a href="" class="btn btn-primary round"><3</a>
@@ -124,8 +126,8 @@ window.getURLParameter = (sUrl, sParam) => {
                                     <p>Best Fit for You 🔥</p>
                                 </div>
 								<div class="quiz-block-question">
-                                    <h3>Earn up to <strong>$750</strong> towards <strong>SHEIN</strong> Products + and additional <strong>$750</strong> for reviewing the products!</h3>
-                                    <!-- <p class="tezis">Shop.Play.GetRewarded</p> -->
+                                    <h3>Earn up to <strong>$750</strong> towards <strong>Amazon Products</strong> + and additional <strong>$750</strong> for reviewing the products!</h3>
+                                    <p class="tezis">Shop.Play.GetRewarded</p>
 									<strong class="info data">
                                         <script>
                                         (() => {
@@ -142,16 +144,13 @@ window.getURLParameter = (sUrl, sParam) => {
                                     </strong>
 								</div>
 								<div class="quiz-block-answers">
-									<a href="https://track.rewardory.com/click" class="btn btn-primary yes round" target="_blank">YES, get started now</a>
+									<a href="https://track.earnoppcenter.net/click" class="btn btn-primary yes round" target="_blank">YES, get started now</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="figure">
-			<img src="../media/figure-girl.png">
 		</div>
 	</section>
 </div>
