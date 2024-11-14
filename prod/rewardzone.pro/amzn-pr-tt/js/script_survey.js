@@ -27,16 +27,20 @@ const data = {
 };
 console.log(data)
 // uncommit on prod
+if (localStorage.getItem(window.location.href.split("?")[0]) !== window.getURLParameter(window.location.href, 'clickid')) {
 fetch(`https://track.rewardzone.pro/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
 .then(r => {
     console.log("successfully registered: " + rtkClickID__);
     fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
     .then(rr => {
         console.log("successfully registered lead in Data API: " + rtkClickID__)
+        localStorage.setItem(window.location.href.split("?")[0] , window.getURLParameter(window.location.href, 'clickid'))
     })
     .catch(ed => {});
 })
 .catch(e => console.log("error during registration lead: " + e));
+
+}
 
 setTimeout(()=> {
     $("#intro .thx").fadeOut(300)
