@@ -25,19 +25,6 @@ const data = {
     "click_id": rtkClickID__
 };
 
-// uncommit on prod
-fetch(`https://track.earnoppcenter.net/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
-.then(r => {
-    console.log("successfully registered: " + rtkClickID__);
-    fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
-    .then(rr => {
-        console.log("successfully registered lead in Data API: " + rtkClickID__)
-    })
-    .catch(ed => {});
-})
-.catch(e => console.log("error during registration lead: " + e));
-
-
 setTimeout(()=> {
     $("#intro .thx").fadeOut(300)
     $("#intro .quiz").delay(300).fadeIn(300)
@@ -113,7 +100,21 @@ $(".quiz-block--4 .quiz-block-answers a.yes").click(function(e){
         e.preventDefault();
         return false;
     } else {
+        e.preventDefault();
         lastClickTime = currentTime;
+
+        // uncommit on prod
+        fetch(`https://track.earnoppcenter.net/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
+        .then(r => {
+            console.log("successfully registered: " + rtkClickID__);
+            fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
+            .then(rr => {
+                console.log("successfully registered lead in Data API: " + rtkClickID__)
+                window.location.href = $(".quiz-block--4 .quiz-block-answers a.yes").attr("href")
+            })
+            .catch(ed => {});
+        })
+        .catch(e => console.log("error during registration lead: " + e));
         console.log("click 3 yes")
     }
 })
