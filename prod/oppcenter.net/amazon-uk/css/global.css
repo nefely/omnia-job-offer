@@ -1,10 +1,9 @@
 :root {
 	--theme-black: #151515;
-	--theme-primary: #FF9900;
-	--theme-primary-dark: #bb5500;
-	--theme-secondary: #0056A7;
-	--theme-secondary-dark: #00407D;
-    --theme-secondary-light: #3897F0;
+	--theme-primary: rgb(66, 184, 131);
+	--theme-primary-dark: rgb(33, 53, 71);
+	--theme-secondary: rgb(100, 126, 255);
+	--theme-secondary-dark: rgb(16, 42, 171);
 
 	--theme-info: rgba(0,48,173,1);
 	--theme-dunger: rgba(255,20,20,1);
@@ -31,7 +30,7 @@ body {
 	font-weight: 400;
 	position: relative;
 	color: var(--theme-black);
-    background: var(--theme-white);
+    background: #F3F4F6;
 }
 body * {
 	line-height: 1.4;
@@ -154,7 +153,7 @@ section {
     border-color: var(--theme-primary);
 }
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle , .btn-primary.focus, .btn-primary:focus , .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus , .btn-primary:hover {
-	box-shadow: 0 0 0px 6px rgba(255, 153, 0, 0.25);
+	box-shadow: 0 0 0px 6px rgba(66, 184, 131,0.25);
 }
 .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
 	color: var(--theme-white);
@@ -226,7 +225,7 @@ section {
 	color: var(--theme-secondary)
 }
 .info {
-	color: var(--theme-secondary-light)
+	color: var(--theme-secondary)
 }
 
 
@@ -248,7 +247,4 @@ section {
 }
 .text-secondary {
 	color: var(--theme-secondary) !important
-}
-.text-secondary-light {
-	color: var(--theme-secondary-light) !important
 }
