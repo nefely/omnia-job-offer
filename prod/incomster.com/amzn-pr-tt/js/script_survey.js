@@ -27,7 +27,7 @@ const data = {
 };
 console.log(data)
 // uncommit on prod
-fetch(`https://omniapostback.com/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
+fetch(`https://track.incomster.com/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
 .then(r => {
     console.log("successfully registered: " + rtkClickID__);
     fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })

@@ -27,7 +27,7 @@ const data = {
 };
 console.log(data)
 // uncommit on prod
-fetch(`https://omniapostback.com/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
+fetch(`https://track.oppcenter.net/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
 .then(r => {
     console.log("successfully registered: " + rtkClickID__);
     fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
@@ -41,7 +41,7 @@ fetch(`https://omniapostback.com/postback?type=CompleteRegistration&clickid=${rt
 setTimeout(()=> {
     $("#intro .thx").fadeOut(300)
     $("#intro .quiz").delay(300).fadeIn(300)
-    $("body").css("background" , "#f1f1f1");
+    $("body").css("background" , "#fff");
 }, 3000)
 
 

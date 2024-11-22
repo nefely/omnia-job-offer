@@ -42,8 +42,8 @@
     min-width: 300px;
 }
 #intro .form .form-right {
-    max-width: 362px;
-    padding: 46px 32px;
+    max-width: 372px;
+    padding: 46px 24px;
     background: var(--theme-white);
     border-radius: 16px;
 }
@@ -239,7 +239,7 @@
 	}
     #intro .form .form-right {
         margin-top: 24px;
-        padding: 24px 20px;
+        padding: 24px 16px;
     }
 	#intro .form .main-title h1 img {
 		height: 1.34rem;

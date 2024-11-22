@@ -2,20 +2,10 @@
 #intro {
 	flex-grow: 1;
 	padding: 12vh 0;
+	position: relative;
     overflow-x: hidden;
     position: relative;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-#intro .container {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-#intro .container .row {
-    flex-grow: 1;
 }
 #intro .form {
 	display: block;
@@ -32,40 +22,44 @@
 }
 #intro .form {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	flex-direction: row;
+	flex-direction: column;
 	max-width: 100%;
 	width: 735px;
 }
-#intro .form .form-left {
-    min-width: 300px;
-}
-#intro .form .form-right {
-    max-width: 362px;
-    padding: 46px 32px;
-    background: var(--theme-white);
-    border-radius: 16px;
-}
 
 #intro .form .main-title {
-	text-align: left;
+	text-align: center;
 	margin-bottom: 40px;
 }
 #intro .form .main-title h1 {
 	font-weight: 500;
 	line-height: 1;
-	font-size: 32px;
-    margin-bottom: 10px;
+	font-size: 30px;
+    margin-bottom: 5px;
 }
+/*#intro .form .main-title h1 img {
+	height: 2.2rem;
+	transform: translateY(6px);
+}*/
 #intro .form .main-title h1 span {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 56px;
-    text-transform: lowercase;
+	font-weight: bold;
+    position: relative;
+}
+#intro .form .main-title h1 span:after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 52px;
+    height: 4px;
+    background: var(--theme-primary);
 }
 #intro .form .main-title h1 strong {
     color: var(--theme-primary);
+	font-weight: bold;
+    font-size: 1.3em;
 }
 #intro .form .main-title h1 ~ p {
     margin-top: 20px;
@@ -89,7 +83,7 @@
 #intro .form .bullets ul img {
 	margin-right: 10px;
 	aspect-ratio: 1/1;
-	height: 18px;
+	height: 1.25rem;
 	margin-top: 2px;
 	display: inline-block;
 }
@@ -227,20 +221,13 @@
 	    padding: 30px 0;
         /*margin-bottom: -35px;*/
 	}
-    #intro .container ,
-    #intro .container .row {
-        flex-grow: initial;
-    }
-    #intro .form {
-        flex-direction: column;
-    }
     #intro .form .main-title {
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 	}
-    #intro .form .form-right {
-        margin-top: 24px;
-        padding: 24px 20px;
-    }
+   /* #intro .form .main-title h1 {
+        font-size: 1.34rem;
+        line-height: 1.416;
+    }*/
 	#intro .form .main-title h1 img {
 		height: 1.34rem;
 		transform: translateY(3px);
@@ -251,6 +238,9 @@
         height: 2px;
         background: var(--theme-primary);
     }
+    /*#intro .form .main-title h1 ~ p {
+        font-size: 15px;
+    }*/
 	#intro .form .bullets ul {
 		flex-direction: column;
 		margin: 0 auto;
@@ -277,7 +267,7 @@
 	}
 	#intro .form .form-step,
 	#intro .form .form-step--lg {
-		max-width: 300px;
+		max-width: 285px;
 	}
 }
 
@@ -334,7 +324,6 @@
 }
 #intro .quiz-block-question h3 {
 	font-weight: 400;
-    margin-bottom: 32px;
 }
 @media screen and (max-width: 991px) {
     #intro .quiz-block-question h3 {
@@ -389,6 +378,31 @@
 #intro .quiz-block--1 {
 	display: block;
 }
+
+
+/*#intro .quiz-dots {
+	margin-bottom: 30px;
+}
+#intro .quiz-dots ul {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#intro .quiz-dots ul li {
+	width: 95px;
+	height: 5px;
+	background: #D0D0D0;
+	border-radius: 1000px;
+	margin: 0 4px;
+	transition: 0.3s;
+}
+#intro .quiz-dots ul li.active {
+	background: var(--theme-primary);
+}
+#intro .quiz-dots ul li.green {
+	background: #40B756;
+}*/
 
 .quiz-dots {
 	display: flex;
@@ -450,10 +464,21 @@
 
 
 
+/*#intro .form .main-title h1 .primary {
+    color: #f542f5;
+}*/
+
 #intro .quiz-block-question h5 {
 	font-size: 20PX;
 	line-height: 1.2;
 }
+
+/*@media screen and (max-width: 991px) {
+	#intro .quiz-block-question h5 {
+		font-size: 20PX;
+		line-height: 1.2;
+	}
+}*/
 
 .tags {
     text-align: center;
@@ -461,9 +486,9 @@
 .tags p {
     display: inline-block;
     margin-bottom: 20px;
-    padding: 16px 24px;
-    background: var(--theme-secondary);
-    color: var(--theme-white);
+    padding: 10px 20px;
+    background: rgb(121, 216, 243);
+    color: var(--theme-secondary);
     border-radius: 50px;
     font-size: 20px;
     line-height: 1;
@@ -476,7 +501,7 @@
 
 .slug {
 	font-style: italic;
-	margin: 0px auto 32px;
+	margin: 20px auto 0;
 	max-width: 297px;
 	display: flex;
 	align-items: center;

@@ -25,23 +25,29 @@ const data = {
     "offer_url": window.location.href.split('?')[0].replace("/survey/" , "").replace("/survey" , ""), 
     "click_id": rtkClickID__
 };
-console.log(data)
+
 // uncommit on prod
-fetch(`https://omniapostback.com/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
-.then(r => {
-    console.log("successfully registered: " + rtkClickID__);
-    fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
-    .then(rr => {
-        console.log("successfully registered lead in Data API: " + rtkClickID__)
+if (localStorage.getItem(window.location.href.split("?")[0]) !== window.getURLParameter(window.location.href, 'clickid')) {
+    fetch(`https://track.oppcenter.net/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
+    .then(r => {
+        console.log("successfully registered: " + rtkClickID__);
+        fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
+        .then(rr => {
+            console.log("successfully registered lead in Data API: " + rtkClickID__)
+            localStorage.setItem(window.location.href.split("?")[0] , window.getURLParameter(window.location.href, 'clickid'))
+        })
+        .catch(ed => {});
     })
-    .catch(ed => {});
-})
-.catch(e => console.log("error during registration lead: " + e));
+    .catch(e => console.log("error during registration lead: " + e));
+    
+}
+
+    
 
 setTimeout(()=> {
     $("#intro .thx").fadeOut(300)
     $("#intro .quiz").delay(300).fadeIn(300)
-    $("body").css("background" , "#f1f1f1");
+    $("body").css("background" , "#fff");
 }, 3000)
 
 
