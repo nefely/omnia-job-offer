@@ -1,7 +1,7 @@
 :root {
 	--theme-black: #151515;
-	--theme-primary: rgb(227, 114, 246);
-	--theme-primary-dark: rgb(64, 13, 59);
+	--theme-primary: rgb(100, 166, 250);
+	--theme-primary-dark: #06234a;
 	--theme-secondary: #F69972;
 	--theme-info: rgba(0,48,173,1);
 	--theme-dunger: rgba(255,20,20,1);
@@ -134,13 +134,13 @@ section {
     border-color: var(--theme-primary);
 }
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle , .btn-primary.focus, .btn-primary:focus , .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus , .btn-primary:hover {
-	box-shadow: 0 0 0px 6px rgb(227, 114, 246, 0.15);
+	box-shadow: 0 0 0px 6px rgb(100, 166, 250, 0.15);
 }
 .btn.disabled, .btn:disabled {
     opacity: 1;
-    color: rgb(154, 103, 159);
-    background-color: rgb(241, 184, 250);
-    border-color: rgb(241, 184, 250);
+    color: rgb(100, 166, 250);
+    background-color: rgb(177, 210, 252);
+    border-color: rgb(177, 210, 252);
 }
 
 /*input*/
