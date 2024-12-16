@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <link rel="shortcut icon" type="image/png" href="img/fav.png">
+    <link rel="shortcut icon" type="image/png" href="">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.6.4.min.js"></script>
     <script src="js/script.js"></script>
@@ -27,6 +27,9 @@
     fbq('init', '1286836392659079');
     fbq('track', 'PageView');
     </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1286836392659079&ev=PageView&noscript=1"
+    /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
 <body>
@@ -44,7 +47,7 @@
             <div class="step-1">
                 <div class="title">
                     <h2>Join this new testing program and earn <strong class="amazon">$750</strong> for <strong class="amazon">Amazon
-                    </strong> + <strong class="amazon">$100</strong> by submitting a review!</h2>
+                    </strong> + <strong class="amazon">$750</strong> by submitting a review!</h2>
                     <p>Complete a quick survey to apply</p>
                     <div class="alert">
                         <span>IMPORTANT: To ensure fairness for all candidates, please answer the questions honestly!</span>
@@ -190,7 +193,7 @@
 
 <footer>
     <div class="container">
-        <p>To access samples, deals, giveaways, coupons, sweepstakes, or any other offers ("Deals") through the links available on Review Program  you may be required to share your personal information, respond to survey questions, and agree to be contacted by our marketing partners. Review Program does not guarantee the availability of Deal(s) facilitated through our website or that they will meet your requirements since they are offered as well as monitored by third parties and are provided on the website for convenience purposes only. <br>
+        <p>To access samples, deals, giveaways, coupons, sweepstakes, or any other offers ("Deals") through the links available on UplevelRewards you may be required to share your personal information, respond to survey questions, and agree to be contacted by our marketing partners. UplevelRewards does not guarantee the availability of Deal(s) facilitated through our website or that they will meet your requirements since they are offered as well as monitored by third parties and are provided on the website for convenience purposes only. <br>
             We shall not be liable for the unavailability of any Deals, for any reasons, including but not limited to, third-party terms and conditions associated with such Deals, change in qualification criteria related to such Deals, denial of service, communication lapses, or any other reasons due to which the Deals become unavailable. We may receive compensation, at no cost to you, when you participate in the third-party offers available on our website. All third-party names (including company and service names), graphics, and logos used here are trademarks or registered trademarks of such third parties. Use of them here does not imply any affiliation with or endorsement by such third-parties.</p>
             <div class="rules">
                 <a href="policies/privacy/" target="_blank">Privacy policy</a> | <a href="policies/terms/" target="_blank">Terms of Use</a>
@@ -207,12 +210,10 @@ $(document).ready(function () {
         if (isLinkClickable) {
             isLinkClickable = false;
             
-            fetch(`https://track.review-program.pro/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
-            .then(r => {
-                window.location.href = $(this).attr("href")
-            })
-            .catch(e => console.log("error during registration lead: " + e));
-            setTimeout(() => { isLinkClickable = true; }, 5000);
+            fbq('track', 'CompleteRegistration');
+
+            setTimeout(() => {window.location.href = $(this).attr("href");}, 500);
+            setTimeout(() => {isLinkClickable = true; }, 5000);
         }
     });
 });  

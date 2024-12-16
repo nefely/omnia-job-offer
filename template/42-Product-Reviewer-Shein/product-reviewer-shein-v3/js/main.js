@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".faq-block-title").click(function(){
-        $(this).closest(".faq-block").toggleClass("active")
+    $(".question .card .title").click(function(){
+        $(this).closest(".card").toggleClass("active")
     })
     $(".to-top").click(function () {
         $("html, body").animate({ scrollTop: 0 }, 300);
