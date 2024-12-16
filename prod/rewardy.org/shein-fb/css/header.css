@@ -37,9 +37,6 @@ header .mob {
 	display: none;
 }
 @media screen and (max-width: 991px) {
-	header {
-		background: #2D2B2B;
-	}
 	header .logo img {
 		max-height: 38px;
 		max-width: 100%;
