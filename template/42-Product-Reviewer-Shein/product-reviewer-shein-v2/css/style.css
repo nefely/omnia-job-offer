@@ -211,6 +211,9 @@ header .container {
 }
 header .container img {
     max-height: 35px;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto;
 }
 @media screen and (max-width: 991px) {
     header .container img {
@@ -538,6 +541,9 @@ footer {
 }
 footer .container img {
     max-height: 35px;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto;
     margin-bottom: 1.75rem;
 }
 footer .container nav {
