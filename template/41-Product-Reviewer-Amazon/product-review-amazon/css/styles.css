@@ -145,8 +145,8 @@ header .container {
     border-bottom-right-radius: 0.5rem;
 }
 header img {
-    width: auto;
-    max-width: 100%;
+    width: auto !important;
+    max-width: 100% !important;
     margin: 0 auto;
     max-height: 30px;
 }
