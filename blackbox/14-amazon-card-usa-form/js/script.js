@@ -285,7 +285,9 @@ $('.question-8 .btn').click(function(e){
                 fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
                 .then(rr => {
                     console.log("successfully registered lead in Data API: " + rtkClickID)
-                    window.location.href = `${offer_start_link}${offer_start_link.includes("?") ? "&" : "?"}sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+                    setTimeout(()=>{
+                        window.location.href = `${offer_start_link}${offer_start_link.includes("?") ? "&" : "?"}sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
+                    },500)
                 })
                 .catch(ed => {});
             })
