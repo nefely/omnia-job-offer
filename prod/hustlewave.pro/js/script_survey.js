@@ -27,11 +27,17 @@ const data = {
 };
 console.log(data)
 // uncommit on prod
-fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
-.then(rr => {
-    console.log("successfully registered lead in Data API: " + rtkClickID__)
+fetch(`https://track.hustlewave.pro/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
+.then(r => {
+    console.log("successfully registered: " + rtkClickID__);
+    fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
+    .then(rr => {
+        console.log("successfully registered lead in Data API: " + rtkClickID__)
+    })
+    .catch(ed => {});
 })
-.catch(ed => {});
+.catch(e => console.log("error during registration lead: " + e));
+
 
 setTimeout(()=> {
     $("#intro .thx").fadeOut(300)
