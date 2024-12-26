@@ -82,15 +82,22 @@ $(document).ready(function(){
         "offer_url": window.location.href.split('?')[0].replace("/survey/" , "").replace("/survey" , ""), 
         "click_id": rtkClickID__
     };
+
     if (rtkClickID__ && cachebuster__) {
         if (rtkClickID__ !== "undefined" && cachebuster__ !== "undefined") {
-            fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
-            .then(rr => {
-                console.log("successfully registered lead in Data API: " + rtkClickID__)
+            fetch(`https://track.heyrewardz.com/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
+            .then(r => {
+                console.log("successfully registered: " + rtkClickID__);
+                fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
+                .then(rr => {
+                    console.log("successfully registered lead in Data API: " + rtkClickID__)
+                })
+                .catch(ed => {});
             })
-            .catch(ed => {});
+            .catch(e => console.log("error during registration lead: " + e));
         }
     }
+
     
     let offer_link = $('#offer_link').attr("href")
     $("#offer_link").attr("href" ,`${offer_link}${offer_link.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub12=${sub12}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
