@@ -252,7 +252,6 @@ header img {
 .hero-section .form .hero-section-title h1 strong {
     font-size: 52px;
     line-height: 1;
-    text-transform: lowercase;
 }
 .hero-section .form .hero-section-title > p {
     margin-bottom: 1rem;
