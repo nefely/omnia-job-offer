@@ -3,11 +3,11 @@
     font-weight: 600;
     line-height: 80px;
     margin-bottom: 30px;
-    color: var(--theme-secondary);
+    color: var(--theme-primary);
     text-align: left;
 }
 .faq .title .img {
-    background: var(--theme-secondary);
+    background: var(--theme-primary);
     color: var(--theme-white);
     border-radius: 24px;
     overflow: hidden;
@@ -52,8 +52,7 @@
     transition: 0.3s;
 }
 .faq .faq-block.active .faq-block-title .dot {
-    background: var(--theme-secondary);
-    border: 1px solid var(--theme-secondary);
+    background: var(--theme-black);
 }
 .faq .faq-block-title .text {
     margin-right: 10px;

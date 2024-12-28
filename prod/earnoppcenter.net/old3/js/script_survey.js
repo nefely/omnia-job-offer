@@ -38,15 +38,11 @@ fetch(`https://track.earnoppcenter.net/postback?type=CompleteRegistration&clicki
 })
 .catch(e => console.log("error during registration lead: " + e));
 
+
 setTimeout(()=> {
     $("#intro .thx").fadeOut(300)
     $("#intro .quiz").delay(300).fadeIn(300)
-    $("body").css("background" , "#F3F4F6");
 }, 3000)
-
-
-$('.quiz-dots .circle').removeClass("active")
-$('.quiz-dots .circle:eq(0)').addClass("active")
 
 form_final_link = () => {
     $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub12=${sub12}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
@@ -56,9 +52,8 @@ form_final_link = () => {
 $(".quiz-block--1 .quiz-block-answers a").click(function(e){
     e.preventDefault()
 
-    $('.quiz-dots .circle').removeClass("active")
-    $('.quiz-dots .circle:eq(1)').addClass("active")
-    $('.quiz-dots .circle:eq(0)').addClass("passed")
+    $('.quiz-dots ul li').removeClass("active")
+    $('.quiz-dots ul li:eq(1)').addClass("active")
 
     $(this).closest(".quiz-block").fadeOut(standart_time)
     setTimeout(()=>{
@@ -68,9 +63,8 @@ $(".quiz-block--1 .quiz-block-answers a").click(function(e){
 $(".quiz-block--2 .quiz-block-answers a").click(function(e){
     e.preventDefault()
 
-    $('.quiz-dots .circle').removeClass("active")
-    $('.quiz-dots .circle:eq(2)').addClass("active")
-    $('.quiz-dots .circle:eq(1)').addClass("passed")
+    $('.quiz-dots ul li').removeClass("active")
+    $('.quiz-dots ul li:eq(2)').addClass("active")
 
     $(this).closest(".quiz-block").fadeOut(standart_time)
     setTimeout(()=>{
@@ -81,8 +75,6 @@ $(".quiz-block--3 .quiz-block-answers a").click(function(e){
     e.preventDefault()
     $(this).closest(".quiz-block").css("opacity" , '0')
 
-    $('.quiz-dots .circle:eq(2)').addClass("passed")
-
 //    $('.quiz-block--4 a.yes').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=1`)
 
     window.offer_link_1 = $('.quiz-block--4 a.yes').attr("href")
@@ -91,13 +83,13 @@ $(".quiz-block--3 .quiz-block-answers a").click(function(e){
 
     console.log("hide")
 
-     $('.quiz-dots .circle').removeClass("active")
+    $('.quiz-dots ul li').removeClass("active")
     setTimeout(()=>{
-        $('.quiz-dots .circle:eq(0)').addClass("active")
+        $('.quiz-dots ul li:eq(0)').addClass("green")
         setTimeout(()=>{
-            $('.quiz-dots .circle:eq(1)').addClass("active")
+            $('.quiz-dots ul li:eq(1)').addClass("green")
             setTimeout(()=>{
-                $('.quiz-dots .circle:eq(2)').addClass("active")
+                $('.quiz-dots ul li:eq(2)').addClass("green")
                 setTimeout(()=>{
                     $('.quiz-dots').fadeOut(300)
                     setTimeout(()=>{
@@ -140,20 +132,17 @@ $(".quiz-block .quiz-block-back button").click(function(){
 
 
 $(".quiz-block--2 .quiz-block-back button").click(function(){
-    $('.quiz-dots .circle').removeClass("active").removeClass("passed")
-    $('.quiz-dots .circle:eq(0)').addClass("active")
+    $('.quiz-dots ul li').removeClass("active")
+    $('.quiz-dots ul li:eq(0)').addClass("active")
 })
 $(".quiz-block--3 .quiz-block-back button").click(function(){
-    $('.quiz-dots .circle').removeClass("active").removeClass("passed")
-    $('.quiz-dots .circle:eq(0)').addClass("passed")
-    $('.quiz-dots .circle:eq(1)').addClass("active")
+    $('.quiz-dots ul li').removeClass("active")
+    $('.quiz-dots ul li:eq(1)').addClass("active")
 })
 $(".quiz-block--4 .quiz-block-back button").click(function(){
     $('.quiz-dots').fadeIn(300)
-    $('.quiz-dots .circle').removeClass("active").removeClass("passed")
-    $('.quiz-dots .circle:eq(0)').addClass("passed")
-    $('.quiz-dots .circle:eq(1)').addClass("passed")
-    $('.quiz-dots .circle:eq(2)').addClass("active")
+    $('.quiz-dots ul li').removeClass("active").removeClass("green")
+    $('.quiz-dots ul li:eq(2)').addClass("active")
 })
 
 })

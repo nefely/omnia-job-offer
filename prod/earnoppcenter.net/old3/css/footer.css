@@ -1,10 +1,10 @@
 footer {
-    background: var(--theme-secondary);
+    background: var(--theme-primary);
     color: var(--theme-black);
     text-align: center;
 }
 footer a {
-    color: var(--theme-white);
+    color: var(--theme-black);
     text-decoration: none !important;
     font-size: 16px;
 }
@@ -12,7 +12,7 @@ footer a:hover {
     color: var(--theme-black);
 }
 .footer-top {
-    background: var(--theme-secondary);
+    background: var(--theme-primary);
     padding: 30px 0;
 }
 .footer-top .row {
@@ -31,7 +31,7 @@ footer a:hover {
     margin-right: 40px;
 }
 .footer-bottom {
-    background: var(--theme-secondary-dark);
+    background: #C67A08;
     padding: 10px 0;
     text-align: center;
 }
@@ -53,8 +53,8 @@ footer .row-text {
     margin-bottom: 40px;
 }
 footer .logo img {
-    max-height: 35px;
-    max-width: 100%;
+	max-height: 45px;
+	max-width: 100%;
 }
 @media screen and (max-width: 991px) {
     .footer-top .row {
@@ -71,7 +71,7 @@ footer .logo img {
         margin-bottom: 10px;
     }
     footer .logo img {
-        max-height: 26px;
+        max-height: 38px;
         max-width: 100%;
     }
 }
