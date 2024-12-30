@@ -74,8 +74,6 @@ $(".quiz-block--3 .quiz-block-answers a").click(function(e){
     e.preventDefault()
     $(this).closest(".quiz-block").css("opacity" , '0')
 
-//    $('.quiz-block--4 a.yes').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=1`)
-
     window.offer_link_1 = $('.quiz-block--4 a.yes').attr("href")
 
     form_final_link()

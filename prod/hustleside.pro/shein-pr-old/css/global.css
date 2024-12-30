@@ -1,8 +1,8 @@
 :root {
 	--theme-black: #151515;
-	--theme-primary: rgb(0, 128, 128);
-	--theme-primary-dark: rgb(0, 88, 88);
-	--theme-secondary: #D3D3D3;
+	--theme-primary: rgb(227, 114, 246);
+	--theme-primary-dark: rgb(64, 13, 59);
+	--theme-secondary: #F69972;
 	--theme-info: rgba(0,48,173,1);
 	--theme-dunger: rgba(255,20,20,1);
 	--theme-gray: rgba(156,156,156,1);
@@ -119,7 +119,7 @@ section {
 	font-size: 1.2rem;
 }
 .btn.btn-primary {
-    color: var(--theme-white);
+    color: var(--theme-primary-dark);
     background-color: var(--theme-primary);
     border-color: var(--theme-primary);
 }
@@ -134,13 +134,13 @@ section {
     border-color: var(--theme-primary);
 }
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle , .btn-primary.focus, .btn-primary:focus , .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus , .btn-primary:hover {
-	box-shadow: 0 0 0px 6px rgb(0, 128, 128, 0.15);
+	box-shadow: 0 0 0px 6px rgb(227, 114, 246, 0.15);
 }
 .btn.disabled, .btn:disabled {
     opacity: 1;
-    color: rgb(255, 255, 255);
-    background-color: rgb(137, 201, 201);
-    border-color: rgb(137, 201, 201);
+    color: rgb(154, 103, 159);
+    background-color: rgb(241, 184, 250);
+    border-color: rgb(241, 184, 250);
 }
 
 /*input*/
