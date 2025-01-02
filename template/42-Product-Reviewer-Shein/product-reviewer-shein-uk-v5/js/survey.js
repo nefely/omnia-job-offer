@@ -61,7 +61,6 @@ $(document).ready(function(){
         },300)
     })
     
-    const sub12 = window.getURLParameter(window.location.href, 'sub12');
     const sub13 = window.getURLParameter(window.location.href, 'sub13');
     const sub14 = window.getURLParameter(window.location.href, 'sub14');
     const sub15 = window.getURLParameter(window.location.href, 'sub15');
@@ -73,7 +72,7 @@ $(document).ready(function(){
     const cachebuster__ = window.getURLParameter(window.location.href, 'rtkck');
     
     const data = {
-        "zip": sub12, 
+        "zip": "", 
         "firstname": sub13, 
         "lastname": sub14, 
         "email": sub15, 
@@ -98,7 +97,7 @@ $(document).ready(function(){
     }
     
     let offer_link = $('#offer_link').attr("href")
-    $("#offer_link").attr("href" ,`${offer_link}${offer_link.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub12=${sub12}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
+    $("#offer_link").attr("href" ,`${offer_link}${offer_link.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub12=&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
     
     
     })

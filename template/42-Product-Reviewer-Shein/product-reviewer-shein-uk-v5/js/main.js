@@ -9,14 +9,10 @@ $(document).ready(function(){
 
 
     if ($("input[name=phone]").length > 0) {
-        $("input[name=phone]").mask('(000) 000-0000');
-    }
-    if ($("input[name=zip]").length > 0) {
-        $("input[name=zip]").mask('00000');
+        $("input[name=phone]").mask('00000000000');
     }
 
     setTimeout(()=>{
-        $("input[name=zip]").val("")
         $("input[name=firstname]").val("")
         $("input[name=lastname]").val("")
         $("input[name=email]").val("")
@@ -25,37 +21,14 @@ $(document).ready(function(){
 
 
     // form question 1
-    isZipValid = () => {
-        if ($("input[name=zip]").val().length == 5) {
-            return true
-        } else {
-            return false
-        }
-    }
-    zipValidation = () => {
-        if (isZipValid()) {
-            $("input[name=zip]").removeClass("is-invalid")
-        } else {
-            $("input[name=zip]").focus()
-            $("input[name=zip]").addClass("is-invalid")
-        }
-    }
-    $("input[name=zip]").on("input change" , function(){
-        if (isZipValid()) {
-            $("input[name=zip]").removeClass("is-invalid")
-        }
-    })
     $(".hero-form .form-step-1 .btn[type=submit]").click(function(){
-        zipValidation()
-        if (isZipValid()) {
-            $("html, body").animate({ scrollTop: 0 }, 300);
-            $(".hero-form .form-step-1").fadeOut(300)
-            $('.hero .hero-list').fadeOut(300)
-            setTimeout(()=>{
-                $(".hero-form .form-step-2").fadeIn(300)
-                $("input[name=firstname]").focus()
-            },300)
-        }
+        $("html, body").animate({ scrollTop: 0 }, 300);
+        $(".hero-form .form-step-1").fadeOut(300)
+        $('.hero .hero-list').fadeOut(300)
+        setTimeout(()=>{
+            $(".hero-form .form-step-2").fadeIn(300)
+            $("input[name=firstname]").focus()
+        },300)
     });
 
     // form question 2
@@ -139,7 +112,7 @@ $(document).ready(function(){
 
     // form question 3
     isPhoneValid = () => {
-        if ($("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10) {
+        if ($("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10 || $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 11) {
             return true
         } else {
             return false
@@ -173,7 +146,7 @@ $(document).ready(function(){
             if (isPhoneValid()) {
                 $("html, body").animate({ scrollTop: 0 }, 300);
                 $("input[name=phone]").blur()
-                window.location.href = `${$(this).attr("href")}${$(this).attr("href").includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}&offer_type=Product Reviewer`
+                window.location.href = `${$(this).attr("href")}${$(this).attr("href").includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}&offer_type=Product Reviewer`
             }
         }
         

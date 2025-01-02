@@ -152,7 +152,7 @@ input {
     border-radius: 0.35rem !important;
 }
 input::placeholder {
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 .screen {
@@ -259,19 +259,19 @@ label {
 
 
 header .container {
-    padding: 10px 0; 
+    padding: 7px 0; 
 }
 footer .logo img ,
 header .logo img {
     width: auto !important;
     max-width: 100% !important;
     margin: 0 auto;
-    max-height: 35px;
+    max-height: 45px;
 }
 @media screen and (max-width: 991px) {
     footer .logo img ,
     header .logo img {
-        max-height: 25px;
+        max-height: 35px;
     }
 }
 
@@ -754,4 +754,14 @@ footer .copy {
         margin-bottom: 3rem;
         font-size: 12px;
     }
+}
+
+.icon-input {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-input input {
+    padding-left: 73px !important;
 }
