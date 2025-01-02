@@ -148,6 +148,9 @@ if ($("input[name=zip]").length > 0) {
     });
 
     $(".form-step--3 input").on("input" , function(){
+        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}&offer_type=${$("[name=offer_type]").val()}`
+        $("#btf").attr("href" , final_link)
+
         if (isPhoneValid()) {
             $(this).closest(".form-step").find(".submit-question a").css("pointer-events" , "initial").removeClass("disabled");
         } else {
@@ -162,8 +165,24 @@ if ($("input[name=zip]").length > 0) {
 
 
 
+
+// test
+// $("#intro .form").fadeOut(0)
+// $("section:not(#intro)").fadeOut(0)
+// $("footer").fadeOut(0)
+// $("#intro .thx").fadeOut(0)
+// $("#intro .quiz").fadeIn(0)
+
+
+
+
+// main flow
+window.final_link = ""
+window.final_link__no_params = ""
+
 // form flow
 $(".form-step--1 .btn-next").click(function(e){
+    window.final_link__no_params = $("#btf").attr("href");
     $(this).closest(".form-step").fadeOut(standart_time)
     $("#intro .bullets").fadeOut(standart_time)
     if ($(window).innerWidth() < 991) {
@@ -179,22 +198,13 @@ $(".form-step--2 .btn-next").click(function(e){
         $(this).closest(".form-step").next(".form-step").fadeIn(standart_time)
     }, standart_time)
 })
-
-let lastClickTime = 0;
 $(".form-step--3 .btn-next").click(function(e){
-    const currentTime = new Date().getTime();
     e.preventDefault();
-
-    if (currentTime - lastClickTime < 5000) {
-        return false;
-    } else {
-        if (isPhoneValid()) {
-            $("html, body").animate({ scrollTop: 0 }, 300);
-            $("input[name=phone]").blur()
-            window.location.href = `${$(this).attr("href")}${$(this).attr("href").includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}&offer_type=Product Reviewer`
-        }
-    }
-    
+    $(this).css("display","none").css("visibility","hidden")
+    setTimeout(()=>{
+        $(this).css("display","flex").css("visibility","visible")
+        window.location.href = $(".form-step--3 .btn-next").attr('href');
+    }, standart_time)
 });
 
 setTimeout(()=>{
