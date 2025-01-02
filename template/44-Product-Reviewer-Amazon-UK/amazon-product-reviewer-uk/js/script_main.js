@@ -7,45 +7,14 @@ $("input[name=phone]").val("")
 
 
 if ($("input[name=phone]").length > 0) {
-  $("input[name=phone]").mask('(000) 000-0000');
-}
-if ($("input[name=zip]").length > 0) {
-  $("input[name=zip]").mask('00000');
+    $("input[name=phone]").mask('00000000000');
 }
 
 // validation
 
 // .form-step--1
-    isZipValid = () => {
-        if ($("input[name=zip]").val().length == 5) {
-            return true
-        } else {
-            return false
-        }
-    }
-    zipValidation = () => {
-        if (isZipValid()) {
-            $("input[name=zip]").removeClass("error")
-        } else {
-            $("input[name=zip]").focus()
-            $("input[name=zip]").addClass("error")
-        }
-    }
     $(".form-step--1 .submit-question").click(function(){
-        zipValidation()
     });
-    $(".form-step--1 input").on("input" , function(){
-        if (isZipValid()) {
-            $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
-        } else {
-            $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
-        }
-    })
-    $("input[name=zip]").on("input" , function(){
-        if ($(this).val().length == 5) {
-            $(this).removeClass("error")
-        }
-    })
 
 // .form-step--2
     isFirstNameValid = () => {
@@ -128,7 +97,7 @@ if ($("input[name=zip]").length > 0) {
 
 // .form-step--3
     isPhoneValid = () => {
-        if ($("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10) {
+        if ($("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10 || $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 11) {
             return true
         } else {
             return false
@@ -148,7 +117,7 @@ if ($("input[name=zip]").length > 0) {
     });
 
     $(".form-step--3 input").on("input" , function(){
-        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}&offer_type=${$("[name=offer_type]").val()}`
+        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}&offer_type=${$("[name=offer_type]").val()}`
         $("#btf").attr("href" , final_link)
 
         if (isPhoneValid()) {
@@ -158,7 +127,7 @@ if ($("input[name=zip]").length > 0) {
         }
     })
     $("input[name=phone]").on("input" , function(){
-        if ($("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10) {
+        if ($("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10 || $("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 11) {
             $(this).removeClass("error")
         }
     })
@@ -202,18 +171,12 @@ $(".form-step--3 .btn-next").click(function(e){
     e.preventDefault();
     $(this).css("display","none").css("visibility","hidden")
     setTimeout(()=>{
-        $(this).css("display","block").css("visibility","visible")
+        $(this).css("display","flex").css("visibility","visible")
         window.location.href = $(".form-step--3 .btn-next").attr('href');
     }, standart_time)
 });
 
 setTimeout(()=>{
-
-if (isZipValid()) {
-  $(".form-step--1").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
-} else {
-  $(".form-step--1").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
-}
 
 if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
   $(".form-step--2").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");

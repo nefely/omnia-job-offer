@@ -1,9 +1,5 @@
 $(document).ready(function(){
 
-const clickid = window.getURLParameter(window.location.href, 'clickid');
-const uclick = window.getURLParameter(window.location.href, 'uclick');
-
-const sub12 = window.getURLParameter(window.location.href, 'sub12');
 const sub13 = window.getURLParameter(window.location.href, 'sub13');
 const sub14 = window.getURLParameter(window.location.href, 'sub14');
 const sub15 = window.getURLParameter(window.location.href, 'sub15');
@@ -14,9 +10,8 @@ const offer_type = window.getURLParameter(window.location.href, 'offer_type');
 const rtkClickID__ = window.getURLParameter(window.location.href, 'clickid');
 const cachebuster__ = window.getURLParameter(window.location.href, 'rtkck');
 
-
 const data = {
-    "zip": sub12, 
+    "zip": "", 
     "firstname": sub13, 
     "lastname": sub14, 
     "email": sub15, 
@@ -49,7 +44,7 @@ $('.quiz-dots .circle').removeClass("active")
 $('.quiz-dots .circle:eq(0)').addClass("active")
 
 form_final_link = () => {
-    $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub12=${sub12}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
+    $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub12=&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
 }
 	
 // quiz flow
@@ -82,8 +77,6 @@ $(".quiz-block--3 .quiz-block-answers a").click(function(e){
     $(this).closest(".quiz-block").css("opacity" , '0')
 
     $('.quiz-dots .circle:eq(2)').addClass("passed")
-
-//    $('.quiz-block--4 a.yes').attr("href" , `https://track.${domain}/track.php?lp=1&uclick=${uclick}&to_offer=1`)
 
     window.offer_link_1 = $('.quiz-block--4 a.yes').attr("href")
 
