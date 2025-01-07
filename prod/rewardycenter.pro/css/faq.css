@@ -52,7 +52,8 @@
     transition: 0.3s;
 }
 .faq .faq-block.active .faq-block-title .dot {
-    background: var(--theme-black);
+    background: var(--theme-secondary);
+    border: 1px solid var(--theme-secondary);
 }
 .faq .faq-block-title .text {
     margin-right: 10px;

@@ -1,9 +1,14 @@
 header {
 	padding: 10px 0;
 	background: var(--theme-white);
+    text-align: center;
+}
+header .row {
+    justify-content: center;
+    align-items: center;
 }
 header .logo img {
-	max-height: 45px;
+	max-height: 55px;
 	max-width: 100%;
 }
 header ul {
@@ -33,11 +38,10 @@ header .mob {
 }
 @media screen and (max-width: 991px) {
 	header {
-		padding: 5px 0;
-		background: #2D2B2B;
+		background: #fff;
 	}
 	header .logo img {
-		max-height: 38px;
+		max-height: 45px;
 		max-width: 100%;
 	}
 	header .row {

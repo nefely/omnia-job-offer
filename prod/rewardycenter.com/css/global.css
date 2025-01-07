@@ -1,8 +1,8 @@
 :root {
-	--theme-black: #2D2B2B;
-	--theme-primary: #FF9900;
-	--theme-primary-dark: #442C03;
-	--theme-secondary: rgba(56,88,152,1);
+	--theme-black: #151515;
+	--theme-primary: rgb(227, 114, 246);
+	--theme-primary-dark: rgb(64, 13, 59);
+	--theme-secondary: #F69972;
 	--theme-info: rgba(0,48,173,1);
 	--theme-dunger: rgba(255,20,20,1);
 	--theme-gray: rgba(156,156,156,1);
@@ -13,6 +13,11 @@
 }
 html {
 	font-size: 18px;
+}
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 16px;
+    }
 }
 body {
 	font-family: 'Poppins', sans-serif;
@@ -111,7 +116,6 @@ section {
 	border-radius: 1000px;
 }
 .btn.btn-lg {
-	padding: calc(1.25 * var(--gap)) calc(2.5* var(--gap));
 	font-size: 1.2rem;
 }
 .btn.btn-primary {
@@ -130,7 +134,13 @@ section {
     border-color: var(--theme-primary);
 }
 .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle , .btn-primary.focus, .btn-primary:focus , .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus , .btn-primary:hover {
-	box-shadow: 0 0 0px 6px rgba(255,199,49,0.25);
+	box-shadow: 0 0 0px 6px rgb(227, 114, 246, 0.15);
+}
+.btn.disabled, .btn:disabled {
+    opacity: 1;
+    color: rgb(154, 103, 159);
+    background-color: rgb(241, 184, 250);
+    border-color: rgb(241, 184, 250);
 }
 
 /*input*/
@@ -174,12 +184,12 @@ section {
 @media screen and (max-width: 991px) {
 	.btn , .btn:active , .btn:hover , .btn.focus, .btn:focus ,
 	.form-control {
-		padding-top: calc(0.75 * var(--gap));
-		padding-bottom: calc(0.75 * var(--gap));
+		padding-top: calc(0.85 * var(--gap));
+		padding-bottom: calc(0.85 * var(--gap));
 	}
 	.btn.btn-lg,
 	.btn.btn-lg-mobile {
-		padding: calc(1 * var(--gap)) calc(2.5* var(--gap));
+		padding: calc(0.85 * var(--gap)) calc(2.5* var(--gap));
 		font-size: 1.2rem;
 	}
 }
@@ -204,5 +214,8 @@ section {
   scrollbar-width: none;
 }
 
+.h1, h1 {
+    font-size: 2rem;
+}
 
 

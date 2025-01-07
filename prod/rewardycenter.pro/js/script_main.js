@@ -202,7 +202,7 @@ $(".form-step--3 .btn-next").click(function(e){
     e.preventDefault();
     $(this).css("display","none").css("visibility","hidden")
     setTimeout(()=>{
-        $(this).css("display","block").css("visibility","visible")
+        $(this).css("display","flex").css("visibility","visible")
         window.location.href = $(".form-step--3 .btn-next").attr('href');
     }, standart_time)
 });

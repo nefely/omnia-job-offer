@@ -9,40 +9,43 @@ $("input[name=phone]").val("")
 if ($("input[name=phone]").length > 0) {
   $("input[name=phone]").mask('(000) 000-0000');
 }
-
-$('.slider').slick({
-	arrows: false,
-	infinite: false,
-	variableWidth: false,
-	slidesToShow: 3,
-	responsive: [{
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 1,
-        centerMode: true,
-        centerPadding: '40px',
-      }
-    }]
-});
-
-function checkWindowSize() {
-    if ($(window).width() <= 991) {
-        $('.container--slider').removeClass('container');
-        $('.container--start').removeClass('container');
-    } else {
-        $('.container--slider').addClass('container');
-        $('.container--start').addClass('container');
-    }
+if ($("input[name=zip]").length > 0) {
+  $("input[name=zip]").mask('00000');
 }
-checkWindowSize();
-$(window).resize(checkWindowSize);
-	
+
 // validation
 
 // .form-step--1
-    $(".form-step--1 .submit-question").click(function(){});
-    $(".form-step--1").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
-    
+    isZipValid = () => {
+        if ($("input[name=zip]").val().length == 5) {
+            return true
+        } else {
+            return false
+        }
+    }
+    zipValidation = () => {
+        if (isZipValid()) {
+            $("input[name=zip]").removeClass("error")
+        } else {
+            $("input[name=zip]").focus()
+            $("input[name=zip]").addClass("error")
+        }
+    }
+    $(".form-step--1 .submit-question").click(function(){
+        zipValidation()
+    });
+    $(".form-step--1 input").on("input" , function(){
+        if (isZipValid()) {
+            $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
+        } else {
+            $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
+        }
+    })
+    $("input[name=zip]").on("input" , function(){
+        if ($(this).val().length == 5) {
+            $(this).removeClass("error")
+        }
+    })
 
 // .form-step--2
     isFirstNameValid = () => {
@@ -145,14 +148,13 @@ $(window).resize(checkWindowSize);
     });
 
     $(".form-step--3 input").on("input" , function(){
-
-        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
-        $("#btf").attr("data-href" , final_link)
+        window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}&offer_type=${$("[name=offer_type]").val()}`
+        $("#btf").attr("href" , final_link)
 
         if (isPhoneValid()) {
-            $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
+            $(this).closest(".form-step").find(".submit-question a").css("pointer-events" , "initial").removeClass("disabled");
         } else {
-            $(this).closest(".form-step").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
+            $(this).closest(".form-step").find(".submit-question a").css("pointer-events" , "none").addClass("disabled");
         }
     })
     $("input[name=phone]").on("input" , function(){
@@ -178,11 +180,9 @@ $(window).resize(checkWindowSize);
 window.final_link = ""
 window.final_link__no_params = ""
 
-
 // form flow
 $(".form-step--1 .btn-next").click(function(e){
-    window.final_link__no_params = $("#btf").attr("data-href");
-    
+    window.final_link__no_params = $("#btf").attr("href");
     $(this).closest(".form-step").fadeOut(standart_time)
     $("#intro .bullets").fadeOut(standart_time)
     if ($(window).innerWidth() < 991) {
@@ -197,59 +197,23 @@ $(".form-step--2 .btn-next").click(function(e){
     setTimeout(()=>{
         $(this).closest(".form-step").next(".form-step").fadeIn(standart_time)
     }, standart_time)
-
-    window.offer_link_1 = $('.quiz-block--3 a.yes').attr("href")
-    window.offer_link_2 = $('.quiz-block--4 a.yes').attr("href")
-    window.offer_link_3 = $('.quiz-block--5 a.yes').attr("href")
-    window.offer_link_no_3 = $('.quiz-block--5 a.no').attr("href")
 })
 $(".form-step--3 .btn-next").click(function(e){
-    e.preventDefault()
+    e.preventDefault();
     $(this).css("display","none").css("visibility","hidden")
-
-    // uncommit on prod
-    const clickid = $("[name=click_id]").val();
-    const uclick = $("[name=uclick]").val();
-
-    const data = {
-        "zip": "", 
-        "firstname": $("[name=firstname]").val(), 
-        "lastname": $("[name=lastname]").val(), 
-        "email": $("[name=email]").val(), 
-        "phone": $("[name=phone]").val(), 
-        "offer_type": $("[name=offer_type]").val(), 
-        "offer_url": window.location.href.split('?')[0], 
-        "click_id": rtkClickID
-    };
-
-    // uncommit on prod
-    // fetch(`https://track.work-hunter.com/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
-    fetch(`https://track.work-hunter.com/preclick?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
-    .then(r => {
-        console.log("successfully registered: " + rtkClickID);
-        fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })
-        .then(rr => {
-            console.log("successfully registered lead in Data API: " + rtkClickID)
-            setTimeout(()=>{
-                $(this).css("display","block").css("visibility","visible")
-                window.location.href = $(".form-step--3 .btn-next").attr('data-href');
-                // window.location.href = `survey/?clickid=${rtkClickID}&uclick=${uclick}&zip=${data.zip}&firstname=${data.firstname}&lastname=${data.lastname}&email=${data.email}&telephone=${data.phone.replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
-            }, standart_time)
-        })
-        .catch(ed => console.log("error during registration lead in Data API: " + ed));})
-    .catch(e => console.log("error during registration lead: " + e));
-})
-
-// conmit on prod
-// const clickid = "my_click_id_here";
-// const uclick = "my_uclick_here";
+    setTimeout(()=>{
+        $(this).css("display","block").css("visibility","visible")
+        window.location.href = $(".form-step--3 .btn-next").attr('href');
+    }, standart_time)
+});
 
 setTimeout(()=>{
 
-$("input[name=firstname]").val("")
-$("input[name=lastname]").val("")
-$("input[name=email]").val("")
-$("input[name=phone]").val("")
+if (isZipValid()) {
+  $(".form-step--1").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
+} else {
+  $(".form-step--1").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
+}
 
 if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
   $(".form-step--2").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
@@ -258,14 +222,10 @@ if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
 }
 
 if (isPhoneValid()) {
-  $(".form-step--3").find(".submit-question button").css("pointer-events" , "initial").removeClass("disabled");
+  $(".form-step--3").find(".submit-question a").css("pointer-events" , "initial").removeClass("disabled");
 } else {
-  $(".form-step--3").find(".submit-question button").css("pointer-events" , "none").addClass("disabled");
+  $(".form-step--3").find(".submit-question a").css("pointer-events" , "none").addClass("disabled");
 }
-
-// final_link__no_params = $("#btf").attr("data-href");
-// final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
-// $("#btf").attr("data-href" , final_link)
 
 }, 1500)
 
