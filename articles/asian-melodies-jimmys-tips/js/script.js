@@ -43,8 +43,6 @@ $(document).ready(function(){
         const buttonOffset = button.offset().top;
         const windowBottom = $(window).scrollTop();
 
-        console.log(buttonOffset)
-
         if (!isFixed && windowBottom >= buttonOffset) {
             isFixed = true; 
             const currentBottom = $(window).height() - buttonOffset;
