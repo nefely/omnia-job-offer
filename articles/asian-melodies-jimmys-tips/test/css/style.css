@@ -315,14 +315,19 @@ footer .copy p {
     margin-top: -1px;
 }
 
-.sticky-container {
+.relative-container,
+.fixed-container {
     width: 100%;
     margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.sticky-btn {
+.fixed-container {
+    margin-top: 0;
+}
+.relative-btn,
+.fixed-btn {
     color: #3E2909 !important;
     background: var(--alert);
     font-family: Montserrat;
@@ -343,19 +348,21 @@ footer .copy p {
     margin: 0 auto;
     transition: bottom 2.5s ease , color .3s ease , background .3s ease;
 }
-.sticky-btn:hover {
-    background: var(--alert-dark);
-    color: #fff !important;
-}
-.sticky-true {
+.fixed-btn {
     position: fixed;
     border-radius: 0;
     max-width: 100%;
+    z-index: 10000;
+}
+.relative-btn:hover,
+.fixed-btn:hover {
+    background: var(--alert-dark);
+    color: #fff !important;
 }
 @media screen and (max-width: 991px) {
-    .sticky-btn {
+    .relative-btn,
+    .fixed-btn {
         height: 56px;
-        font-family: Montserrat;
         font-size: 14px;
         line-height: 24px;
     }
