@@ -80,6 +80,10 @@ body {
 	background: var(--silver);
     color: var(--black);
 }
+input,
+input::placeholder {
+	font-family: 'Amazon Ember', sans-serif;
+}
 body * {
 	line-height: inherit;
 	box-sizing: border-box;
@@ -642,4 +646,13 @@ input {
 }
 .form-element-container--icon .form-control {
 	padding-right: calc(1rem + 30px);
+}
+.form-element-container--flag .form-control {
+	padding-left: calc(1rem + 57px);
+}
+
+@media screen and (max-width: 991px) {
+    .form-element-container--flag .form-control {
+        padding-left: calc(1rem + 54px);
+    }
 }
