@@ -60,4 +60,17 @@ $(document).ready(function(){
 
     fixed_button()
 
+    $("a.tracklink").click(function(e){
+        e.preventDefault()
+        fetch(`https://track.jimmys.tips/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
+        .then(r => {
+            console.log("successfully registered: " + rtkClickID);
+            window.location.href = $(this).attr("href")
+        })
+        .catch(e => console.log("error during registration lead: " + e));
+    })
+    
+
+
+
 })    
