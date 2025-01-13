@@ -242,7 +242,7 @@ $('.question-8 .btn').click(function(e){
                 "click_id": rtkClickID
             };
 
-            fetch(`https://omniapostback.com/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
+            fetch(`https://track.hustlewave.pro/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
             .then(r => {
                 console.log("successfully registered: " + rtkClickID);
                 fetch("https://data.omniatrackroi.com/api/leads", { method: "POST", mode: "no-cors", body: JSON.stringify(data) })

@@ -36,25 +36,28 @@ $(document).ready(function(){
         },
     });
 
+    let isFixed = false;
 
-    let toggleButton = () => {
-        const relativeContainer = $('.relative-container');
-        const fixedContainer = $('.fixed-container');
-        const containerTop = relativeContainer.offset().top;
-        const containerBottom = containerTop + relativeContainer.outerHeight();
-        const windowTop = $(window).scrollTop();
-        const windowBottom = windowTop + $(window).height();
-        if (containerBottom > windowTop && containerTop < windowBottom) {
-            fixedContainer.hide();
-        } else {
-            fixedContainer.show();
+    let fixed_button = () => {
+        const button = $('.sticky-btn');
+        const buttonOffset = button.offset().top;
+        const windowBottom = $(window).scrollTop();
+
+        if (!isFixed && windowBottom >= buttonOffset) {
+            isFixed = true; 
+            const currentBottom = $(window).height() - buttonOffset;
+            button.css('bottom', currentBottom + 'px');
+            button.addClass('sticky-true');
+            setTimeout(() => {
+                button.css('bottom', '0');
+            }, 10);
         }
     }
-
+    
     $(window).on('scroll', function () {
-        toggleButton()
+        fixed_button()
     });
 
-    toggleButton()
+    fixed_button()
 
 })    
