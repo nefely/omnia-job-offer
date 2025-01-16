@@ -1,7 +1,9 @@
 :root {
     --primary: #003366;
     --primary-dark: #062C53;
-    --secondary: #C20017;
+    --secondary: #2D6A33;
+    --secondary-dark: #223324;
+    --secondary-light: #00FF8A;
     --info: #386CF0;
     --alert: #FF9700;
     --alert-dark: #F2610B;
@@ -113,8 +115,8 @@ strong {
 
 
 header {
-    background: var(--primary);
-    border-bottom: 8px solid var(--secondary);
+    background: var(--secondary);
+    border-bottom: 8px solid var(--secondary-light);
     padding: 16px 0;
 }
 header .row {
@@ -143,8 +145,8 @@ header .row {
 
 
 footer {
-    background: var(--primary);
-    border-top: 8px solid var(--secondary);
+    background: var(--secondary);
+    border-top: 8px solid var(--secondary-light);
     color: #fff;
     font-size: 16px;
     margin-bottom: 60px;
@@ -164,7 +166,7 @@ footer .rules nav a {
     text-decoration: none !important;
 }
 footer .copy {
-    background: var(--primary-dark);
+    background: var(--secondary-dark);
     padding: 0.5rem 0;
 }
 footer .copy p {
