@@ -4,8 +4,34 @@
 	padding: 12vh 0;
 	position: relative;
     overflow-x: hidden;
+    overflow-y: hidden;
     position: relative;
     z-index: 2;
+}
+#intro .container {
+    position: relative;
+    z-index: 2;
+}
+#intro .mob-mb {
+    position: absolute;
+    display: none;
+}
+@media screen and (max-width: 991px) {
+    #intro .mob-mb {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        z-index: -1;
+        bottom: -30px;
+    }
+    .survey #intro .mob-mb {
+        bottom: 0px;
+    }
+    #intro .mob-mb img {
+        width: 180px;
+        transform: rotate(-45deg);
+    }
 }
 #intro .form {
 	display: block;
@@ -15,6 +41,7 @@
 }
 #intro .quiz {
 	display: none;
+    position: relative;
 }
 #intro .row {
 	justify-content: center;
@@ -27,6 +54,7 @@
 	flex-direction: column;
 	max-width: 100%;
 	width: 735px;
+    position: relative;
 }
 
 #intro .form .main-title {
@@ -280,7 +308,7 @@
 
 
 #intro .thx {
-	padding: 40px 0;
+	padding: 0 0 40px;
 }
 #intro .thx .thx-container {
 	width: 100%;
@@ -310,7 +338,8 @@
 
 
 #intro .quiz {
-
+    width: 100%;
+	max-width: 645px;
 }
 #intro .quiz .quiz-container {
 	width: 100%;
@@ -357,6 +386,7 @@
 	padding-bottom: 0;
 	border-radius: 1000px;
 	border: 1px solid #9F9FA0;
+    background: #fff;
 	font-weight: 400;
 	min-height: 40px;
 }
@@ -507,4 +537,39 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.form .mb1 {
+    position: absolute;
+    left: 0;
+    transform: translateX(calc(-100% + 100px));
+    top: 100px;
+}
+.form .mb2 {
+    position: absolute;
+    right: 0;
+    transform: translateX(calc(100% - 100px));
+    top: 100px;
+}
+
+.quiz .mb1 {
+    position: absolute;
+    left: 0;
+    transform: translateX(calc(-100% + 25px));
+    top: 100px;
+}
+.quiz .mb2 {
+    position: absolute;
+    right: 0;
+    transform: translateX(calc(100% - 25px));
+    top: 100px;
+}
+
+@media screen and (max-width: 991px) {
+    .form .mb1,
+    .form .mb2,
+    .quiz .mb1,
+    .quiz .mb2 {
+        display: none;
+    }
 }
