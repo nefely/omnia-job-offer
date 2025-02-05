@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <title>Hustleside</title>
+
+    <link rel="icon" href="img/fav.png">
+
+    <script type="text/javascript">
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	</script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.1/lottie.min.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/main.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <script type="text/javascript" src="https://omniapostback.com/track.js?rtkcmpid=65efa334b2e18b000158470a"></script>
+
+    <!-- Meta Pixel Code -->
+    <!-- <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '799738728826938');
+    fbq('track', 'PageView');
+    </script> -->
+    <!-- End Meta Pixel Code -->
+    
+    
+    <!-- Tiktop Pixel Code -->
+    <!-- <script>
+            !function (w, d, t) {
+              w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
+    )ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+            
+              ttq.load('CJQU8RJC77U5TJETOUQ0');
+              ttq.page();
+            }(window, document, 'ttq');
+    </script> -->
+    <!-- End Tiktop Pixel Code -->
+    
+    
+    <!-- Pinterest  Pixel Code -->
+    <!-- <script>
+    !function(e){if(!window.pintrk){window.pintrk = function () {
+    window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+      n=window.pintrk;n.queue=[],n.version="3.0";var
+      t=document.createElement("script");t.async=!0,t.src=e;var
+      r=document.getElementsByTagName("script")[0];
+      r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+    pintrk('load', '2612906424300', {em: '<user_email_address>'});
+    pintrk('page');
+    </script> -->
+    <!-- End Pinterest Pixel Code -->
+    
+    
+    <!-- Snap  Pixel Code -->
+    <!-- <script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', 'bf0dccf7-b5ce-4654-b217-f09d298b1d45', { 'user_email': '__INSERT_USER_EMAIL__' }); snaptr('track', 'PAGE_VIEW'); </script> -->
+    <!-- End Snap Pixel Code -->
+
+
+</head>
+<body>
+
+<div class="screen">
+    <header>
+        <div class="container">
+            <div class="row">
+                <img src="img/logo.svg" alt="logo" class="logo">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="hero-inner">
+                    <div class="hero-title">
+                        <h1>Earn Money for <strong>SHEIN.</strong><br>Bonus Available<br>for <strong>Share Feedback.</strong></h1>
+                    </div>
+                    <div class="hero-list">
+                        <ul>
+                            <li>
+                                <img src="img/check.svg" alt="">
+                                <p>Suitable for all skill levels</p>
+                            </li>
+                            <li>
+                                <img src="img/check.svg" alt="">
+                                <p>Manage tasks in your spare time</p>
+                            </li>
+                            <li>
+                                <img src="img/check.svg" alt="">
+                                <p>Weekly payouts available</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hero-form">
+                        <div class="hero-question" data-question="1">
+                            <div class="form-group">
+                                <label for="zip">ZIP</label>
+                                <div class="input-group">
+                                    <input type="text" name="zip" class="form-control" placeholder="In what zipcode?" maxlength="5">
+                                    <span class="input-group-text"><i class="fa-solid fa-earth-americas"></i></span>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-primary col-12">Start Now</button>
+                            </div>
+                        </div>
+                        <div class="hero-question" data-question="2">
+                            <div class="form-group">
+                                <label for="firstname">First Name</label>
+                                <div class="input-group">
+                                    <input type="text" name="firstname" class="form-control" placeholder="John">
+                                    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Last Name</label>
+                                <div class="input-group">
+                                    <input type="text" name="lastname" class="form-control" placeholder="Doe">
+                                    <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <div class="input-group">
+                                    <input type="email" name="email" class="form-control" placeholder="example@mail.com">
+                                    <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-primary col-12">Continue</button>
+                            </div>
+                        </div>
+                        <div class="hero-question" data-question="3">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <div class="input-group">
+                                    <input type="phone" name="phone" class="form-control" placeholder="(000) 000-0000" autocomplete="off" maxlength="10">
+                                    <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <a class="btn btn-primary" href="survey/">Submit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<section class="about-us">
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                <h5>Explore HustleSide – Your Ultimate Destination for Unlocking Lucrative Income Streams.</h5>
+                <p>At HustleSide, we are dedicated to offering top-tier earning opportunities, expert insights, and exclusive deals designed to empower our community. Begin your journey with us today and take the first step toward a more successful and financially rewarding future.</p>
+                <button class="btn btn-white to-top">Get Started Today!</button>
+            </div>
+            <div class="img">
+                <img src="img/au-img.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works">
+    <div class="container">
+        <div class="row">
+            <div class="title">
+                <h2 class="h1">How It Works</h2>
+            </div>
+
+            <div class="content">
+                <div class="content-card">
+                    <div class="img">
+                        <div id="lottie-container-1"></div>
+                    </div>
+                    <div class="text">
+                        <h6>Sign Up for Free</h6>
+                        <p>Join HustleSide today by creating your free account and gaining instant access to exclusive opportunities on our platform.</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="img">
+                        <div id="lottie-container-2"></div>
+                    </div>
+                    <div class="text">
+                        <h6>Explore Income Opportunities</h6>
+                        <p>Discover a diverse range of earning possibilities customized to suit various skills, interests, and experience levels.</p>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <div class="img">
+                        <div id="lottie-container-3"></div>
+                    </div>
+                    <div class="text">
+                        <h6>Boost Your Earnings</h6>
+                        <p>Explore new opportunities and unlock your income potential today.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <div class="container">
+        <div class="row">
+            <div class="title">
+                <h2 class="h1">Frequently Asked Questions</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container--filled">
+        <div class="row">
+            <div class="img">
+                <img src="img/faq-img.png" alt="">
+            </div>
+            <div class="content">
+
+                <div class="faq-question active">
+                    <div class="visible">
+                        <h6>What is HustleSide?</h6>
+                        <div class="figure">
+                            <img src="img/pos.svg" alt="+">
+                            <img src="img/cons.svg" alt="-">
+                        </div>
+                    </div>
+                    <div class="hidden">
+                        <p>HustleSide is an innovative platform dedicated to helping individuals discover and excel in various income-generating opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="faq-question">
+                    <div class="visible">
+                        <h6>Is there a cost to join HustleSide?</h6>
+                        <div class="figure">
+                            <img src="img/pos.svg" alt="+">
+                            <img src="img/cons.svg" alt="-">
+                        </div>
+                    </div>
+                    <div class="hidden">
+                        <p>Not at all! Signing up is completely free, providing you with access to exclusive earning opportunities and a thriving community to support you on your journey.</p>
+                    </div>
+                </div>
+
+                <div class="faq-question">
+                    <div class="visible">
+                        <h6>Do I need prior experience to get started?</h6>
+                        <div class="figure">
+                            <img src="img/pos.svg" alt="+">
+                            <img src="img/cons.svg" alt="-">
+                        </div>
+                    </div>
+                    <div class="hidden">
+                        <p>No experience? No problem! Our programs cater to all skill levels, offering clear guidance to help both beginners and seasoned professionals achieve success.</p>
+                    </div>
+                </div>
+
+                <div class="faq-question">
+                    <div class="visible">
+                        <h6>How quickly can I start earning?</h6>
+                        <div class="figure">
+                            <img src="img/pos.svg" alt="+">
+                            <img src="img/cons.svg" alt="-">
+                        </div>
+                    </div>
+                    <div class="hidden">
+                        <p>Your earning potential depends on the opportunity you choose and how soon you take action. Some options allow you to start generating income right away, while others may require some time and effort.</p>
+                    </div>
+                </div>
+
+                <div class="faq-question">
+                    <div class="visible">
+                        <h6>Is there a deadline to participate?</h6>
+                        <div class="figure">
+                            <img src="img/pos.svg" alt="+">
+                            <img src="img/cons.svg" alt="-">
+                        </div>
+                    </div>
+                    <div class="hidden">
+                        <p>No strict deadlines! You can explore and engage with these opportunities at your own pace, making it easy to integrate them into your lifestyle.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="footer-nav">
+                <img src="img/logo.svg" alt="logo" class="logo">
+                <nav>
+                    <a href="privacy-policy/" target="_blank">Privacy Policy</a>
+                    <a href="terms-of-use/" target="_blank">Terms and Conditions</a>
+                    <a href="" class="mailto">Contact Us</a>
+                </nav>
+            </div>
+            <div class="footer-decription">
+                <p>By accessing samples, promotions, giveaways, coupons, sweepstakes, or other special offers ("Deals") through links provided on UplevelRewards, you may be required to share personal information, complete surveys, and agree to receive communications from our marketing partners. Please note that UplevelRewards does not control or guarantee the availability, suitability, or fulfillment of any listed Deals, as they are managed by third-party providers and offered for your convenience.</p>
+                <p>We are not liable for the unavailability of any Deals due to changes in third-party terms, modifications to eligibility criteria, service interruptions, communication issues, or other circumstances that may impact access. Additionally, we may receive compensation at no cost to you when you engage with third-party offers featured on our platform. All trademarks, including company names, logos, and service marks, belong to their respective owners, and their presence on our platform does not imply any affiliation with or endorsement by them.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container container--filled">
+        <div class="row">
+            <p>Copyright © <script>var currentYear = new Date().getFullYear();document.write(currentYear);</script> <span class="domain"></span></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
