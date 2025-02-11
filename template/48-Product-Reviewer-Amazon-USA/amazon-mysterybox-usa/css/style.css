@@ -283,7 +283,7 @@ header .limited-offer {
     margin-bottom: 1rem;
 }
 .hero .reviews .stars {
-    color: var(--primary);
+    color: var(--secondary);
 }
 .hero .reviews p {
     margin-left: 10px;
@@ -299,7 +299,7 @@ header .limited-offer {
     margin-bottom: 1rem;
     text-transform: uppercase;
     background: var(--secondary);
-    color: var(--primary);
+    color: var(--black);
     font-weight: 700;
     text-align: center;
 }
