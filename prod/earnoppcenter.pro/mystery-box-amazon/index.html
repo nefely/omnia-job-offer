@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>EarnOppCenter </title>
+
+    <link rel="icon" href="img/fav.png">
+
+    <script type="text/javascript">
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery.mask.js"></script>
+
+    <script src="js/global.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript" src="https://track.earnoppcenter.pro/track.js?rtkcmpid=67adc4ee78d3c34e765991ca"></script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '304903739349726');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+
+    <div class="screen">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="logo">
+                        <img src="img/logo.svg" alt="" class="logo">
+                    </div>
+                </div>
+            </div>
+
+            <div class="limited-offer">
+                <strong>Limited Spots, only 2 left</strong>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="inner">
+                        <h1>Earn $750 <strong class="primary">Amazon</strong> Mystery Box</h1>
+                        <p class="main-subtitle">plus <span class="primary">$750</span> for reviews</p>
+                        <div class="reviews">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>4.9 reviewers rate</p>
+                        </div>
+                        <div class="alert-box">
+                            <p>Join product reviewing platform</p>
+                        </div>
+                        <div class="list">
+                            <div>
+                                <img src="img/check.svg" alt="">
+                                <p>No experience required</p>
+                            </div>
+                            <div>
+                                <img src="img/check.svg" alt="">
+                                <p>Complete in your spare time</p>
+                            </div>
+                            <div>
+                                <img src="img/check.svg" alt="">
+                                <p>Get Paid out in as little as a week</p>
+                            </div>
+                        </div>
+                        <div class="form">
+                            <div class="question" data-question="1">
+                                <div class="form-group">
+                                    <label for="zip">ZIP</label>
+                                    <input type="text" name="zip" class="form-control" id="zip" placeholder="In what zipcode?" maxlength="5">
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary btn-banner">
+                                        <p>Start Now</p>
+                                        <div class="banner">
+                                            <p>Only in USA</p>
+                                            <img src="img/flag-usa.png" alt="">
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="question" data-question="2">
+                                <div class="form-group">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="example@gmail.com">
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">Continue</button>
+                                </div>
+                            </div>
+                            <div class="question" data-question="3">
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="phone" name="phone" class="form-control" id="phone" placeholder="(000) 000-0000" autocomplete="off" maxlength="14">
+                                </div>
+                                <div class="rules">
+                                    <p>By clicking "Submit", I agree to email marketing, <a href="terms-of-use/" target="_blank">Terms &amp;  <br>Conditions</a> including mandatory arbitration, <a href="privacy-policy/" target="_blank">Privacy Policy</a></p>
+                                </div>
+                                <div class="btn-group">
+                                    <a type="button" class="btn btn-primary" href="survey/">Submit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="requirements">
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h2 class="h1">is for you,<span><br></span>if you are</h2>
+                </div>
+                <div class="list">
+                    <div>
+                        <h6>01</h6>
+                        <p>Stay-at-home moms</p>
+                    </div>
+                    <div>
+                        <h6>02</h6>
+                        <p>Looking for side hustle</p>
+                    </div>
+                    <div>
+                        <h6>03</h6>
+                        <p>Likes Amazon shopping</p>
+                    </div>
+                    <div>
+                        <h6>04</h6>
+                        <p>Wanna be product reviewer</p>
+                    </div>
+                    <div>
+                        <h6>05</h6>
+                        <p>Have free time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                    <div class="title">
+                        <h2 class="h1">About platform</h2>
+                    </div>
+                    <p>Welcome to EarnOppCenter , your ultimate hub for discovering lucrative income opportunities. We are dedicated to empowering individuals across the United States by providing the essential tools, resources, and guidance needed to unlock various earning potential.</p>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary to-top">Start Now</button>
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="img/about-img.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h2 class="h1">How It Works</h2>
+                </div>
+                <div class="content">
+                    <div class="item">
+                        <div class="number">
+                            <div class="inner">
+                                <h6>01</h6>
+                                <span class="circle"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h5>Sign Up</h5>
+                            <p>Get started by creating your free EarnOppCenter  account and unlock access to exclusive earning opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="number">
+                            <div class="inner">
+                                <h6>02</h6>
+                                <span class="circle"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h5>Explore & Start earning</h5>
+                            <p>Discover a variety of income streams. Take action, dive into new opportunities, and maximize your earning potential with EarnOppCenter .</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="number">
+                            <div class="inner">
+                                <h6>03</h6>
+                                <span class="circle"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h5>Get your first income</h5>
+                            <p>Score your reward and bonuses everyday and keep Amazon products for yourself</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq">
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h2 class="h1">Frequently Asked Questions</h2>
+                </div>
+                <div class="content">
+                    <div class="item active">
+                        <div class="visible">
+                            <span class="circle"></span>
+                            <h6>What is EarnOppCenter ?</h6>
+                            <div class="figure">
+                                <img src="img/pros.svg" alt="">
+                                <img src="img/cons.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="hidden">
+                            <p>EarnOppCenter  is a dynamic platform designed to help individuals discover and excel in various income-generating opportunities. Our mission is to connect people with the tools and resources they need to achieve financial growth.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="visible">
+                            <span class="circle"></span>
+                            <h6>Is there a cost to join EarnOppCenter ?</h6>
+                            <div class="figure">
+                                <img src="img/pros.svg" alt="">
+                                <img src="img/cons.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="hidden">
+                            <p>No, signing up for EarnOppCenter  is completely free. We offer unlimited access to exclusive earning opportunities and a supportive community to guide you on your journey.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="visible">
+                            <span class="circle"></span>
+                            <h6>Do I need prior experience to get started?</h6>
+                            <div class="figure">
+                                <img src="img/pros.svg" alt="">
+                                <img src="img/cons.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="hidden">
+                            <p>Not at all! EarnOppCenter  caters to everyone—from complete beginners to experienced professionals. Our step-by-step guidance ensures that you can start earning, regardless of your background or expertise.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="visible">
+                            <span class="circle"></span>
+                            <h6>How soon can I start making money?</h6>
+                            <div class="figure">
+                                <img src="img/pros.svg" alt="">
+                                <img src="img/cons.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="hidden">
+                            <p>The timeline for earning depends on the type of opportunity you choose. Some options allow you to start generating income right away, while others may require time to build momentum.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="visible">
+                            <span class="circle"></span>
+                            <h6>Are there any time restrictions?</h6>
+                            <div class="figure">
+                                <img src="img/pros.svg" alt="">
+                                <img src="img/cons.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="hidden">
+                            <p>No, you have complete flexibility. Whether you prefer working part-time, full-time, or on your own schedule, EarnOppCenter  provides opportunities that adapt to your lifestyle.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row row-top">
+                <div class="inner">
+                    <div class="description">
+                        <p>To access samples, deals, giveaways, coupons, sweepstakes, or any other offers ("Deals") through the links available on UplevelRewards you may be required to share your personal information, respond to survey questions, and agree to be contacted by our marketing partners. UplevelRewards does not guarantee the availability of Deal(s) facilitated through our website or that they will meet your requirements since they are offered as well as monitored by third parties and are provided on the website for convenience purposes only.</p>
+                        <p>We shall not be liable for the unavailability of any Deals, for any reasons, including but not limited to, third-party terms and conditions associated with such Deals, change in qualification criteria related to such Deals, denial of service, communication lapses, or any other reasons due to which the Deals become unavailable. We may receive compensation, at no cost to you, when you participate in the third- party offers available on our website. All third-party names (including company and service names), graphics, and logos used here are trademarks or registered trademarks of such third parties. Use of them here does not imply any affiliation with or endorsement by such third- parties.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row--middle">
+                <div class="inner">
+                    <div class="logo">
+                        <img src="img/logo.svg" alt="">
+                    </div>
+                    <nav>
+                        <a href="privacy-policy/">Privacy Policy</a>
+                        <a href="terms-of-use/">Terms and Conditions</a>
+                        <a href="" class="mailto">Contact Us</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row row-copy">
+                    <p>Copyright © <script>var currentYear = new Date().getFullYear();document.write(currentYear);</script> <span class="domain"></span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>
