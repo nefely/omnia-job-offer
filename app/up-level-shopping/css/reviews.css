@@ -1,0 +1,326 @@
+.reviews {
+	margin-top: 66px;
+	padding-top: 34px;
+	padding-bottom: 19px;
+	position: relative;
+	background-image: url(../img/reviews-figure.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center right;
+}
+.reviews:after {
+	content: "";
+	position: absolute;
+	display: block;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+	height: 1px;
+	background: var(--theme-gray-lighter);
+}
+.reviews:before {
+	content: "";
+	position: absolute;
+	display: block;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	height: 1px;
+	background: var(--theme-gray-lighter);
+}
+
+.reviews:after,
+.reviews:before {
+	width: calc(100% - 30px);
+}
+@media (min-width: 576px) {
+	.reviews:after,
+	.reviews:before {
+	    max-width:540px
+	}
+}
+
+@media (min-width: 768px) {
+	.reviews:after,
+	.reviews:before {
+	    max-width:720px
+	}
+}
+
+@media (min-width: 992px) {
+	.reviews:after,
+	.reviews:before {
+	    max-width:960px
+	}
+}
+
+@media (min-width: 1200px) {
+	.reviews:after,
+	.reviews:before {
+	    max-width:1280px
+	}
+}
+
+.reviews .container .row {
+	justify-content: flex-end;
+	align-items: stretch;
+	width: calc(100% + 14px);
+	margin-left: -7px;
+}
+
+.reviews .block {
+	width: calc( (100% - 60px) / 3.5);  
+	margin-left: 7px;
+	margin-right: 7px;
+	min-height: 100px;
+	margin-bottom: 15px;
+}
+.reviews .block.ranking {
+	flex-grow: 1;
+}
+
+
+.reviews .block.ranking > h2  {
+	margin-bottom: 10px;
+	line-height: 1;
+	font-weight: 700;
+}
+.ranking-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.ranking-container .left-column {
+	text-align: center;
+}
+.ranking-container .left-column h5 {
+	font-weight: 700;
+	font-size: 71px;
+	line-height: 1;
+}
+.ranking-container .left-column p {
+	color: var(--theme-black);
+	opacity: 0.6;
+}
+.ranking-container .right-column {
+	flex-grow: 1;
+	padding: 0 40px;
+}
+.ranking-container .right-column .star-row {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	line-height: 0;
+}
+.ranking-container .right-column .stars {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 64px;
+}
+.ranking-container .right-column .stars img {
+	width: 12px;
+	height: 12px;
+	display: block;
+}
+.ranking-container .right-column .stars > li:not(:last-child) {
+	margin-right: 1px;
+}
+.ranking-container .right-column .line {
+	margin-left: 14px;
+	border-radius: 1000px;
+	height: 3px;
+	background: var(--theme-gray-lighter);
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	overflow: hidden;
+}
+.ranking-container .right-column .line .fill {
+	border-radius: 1000px;
+	flex-grow: 1;
+	background: var(--theme-black-light);
+}
+.ranking-container .right-column .line .fill-5 {
+	width: 85.3%;
+}
+.ranking-container .right-column .line .fill-4 {
+	width: 7.3%;
+}
+.ranking-container .right-column .line .fill-3 {
+	width: 4.4%;
+}
+
+.reviews .review {
+	background: var(--theme-gray-lightest);
+	border-radius: var(--b-rad-sm);
+	padding: 15px 15px 30px 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.reviews .review .review-title {
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+.reviews .review .review-author {
+	color: var(--theme-black);
+	opacity: 0.6;
+	font-style: italic;
+}
+.reviews .review .review-rating ul {
+	padding: 5px 0 10px 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.reviews .review .review-rating ul > li {
+
+}
+.reviews .review .review-rating ul > li img {
+	width: 19px;
+	height: 19px;
+}
+.reviews .review .review-rating ul > li:not(:last-child) {
+	margin-right: 2px;
+}
+
+
+
+.slider-review {
+	width: 100%;
+	padding-left: 5px;
+}
+.reviews .slider-review .block {
+	margin: 0;
+}
+
+.reviews .slick-track {
+	display: flex !important;
+	align-items: stretch;
+}
+.reviews .slick-track .slick-slide {
+	display: flex;
+	height: auto;
+	margin-right: 5px;
+}
+.reviews .slick-track .slick-slide > div {
+	width: 100%;
+}
+.reviews .slick-track .slick-slide .review {
+	height: 100%;
+}
+
+
+.row-review {
+	display: none;
+}
+
+.reviews .container-fluid {
+	max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+}
+
+
+.row-review .slick-dots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 12px;
+}
+.row-review .slick-dots > li:not(:last-child) {
+	margin-right: 8px;
+}
+.row-review .custom-dots {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.row-review .slick-dots > li button {
+	border: 1px solid var(--theme-white);
+	background: var(--theme-gray-lighter);
+	width: 10px;
+	height: 10px;
+	padding: 0;
+	margin: 0;
+	border-radius: 1000px;
+	transition: 0.3s;
+}
+.row-review .slick-dots > li.slick-active button {
+	border: 1px solid var(--theme-black);
+	background: var(--theme-black);
+}
+
+
+@media screen and (max-width: 991px) {
+	.reviews {
+		background: transparent;
+	}
+	.reviews .container .row {
+		width: 100%;
+		margin: 0 auto;
+	}
+	.row-ranking {
+		max-width: 400px;
+	}
+	.row-ranking .review {
+		display: none;
+	}
+	.row-review {
+		display: flex;
+	}
+	.reviews .row-ranking .block {
+		margin: 0 0 30px 0;
+	}
+	.ranking-container .left-column h5 {
+		font-size: 57px;
+	}
+	.ranking-container .right-column {
+		padding: 0 20px;
+	}
+	.ranking-container .right-column .stars {
+		width: 49px;
+	}
+	.ranking-container .right-column > ul > li:not(:last-child) {
+		margin-bottom: 1px;
+	}
+	.ranking-container .right-column .stars img {
+		width: 9px;
+		height: auto
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.reviews {
+		margin-top: 12px;
+	}
+	.slider-review {
+		padding-left: 0;
+	}
+	.reviews .container .row-review {
+		width: 100vw;
+		margin-left: -15px;
+	}
+	.slider-review .slick-list {
+		padding-left: 15px !important;
+	}
+	.slider-review .slick-slide {
+		width: 340px;
+	}
+	.reviews .review .review-rating ul > li img {
+		width: 14px;
+		height: auto;
+	}
+}
+
+.reviews .container .row-review {
+	overflow: hidden;
+}

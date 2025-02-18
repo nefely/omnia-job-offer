@@ -1,0 +1,105 @@
+.started {
+	margin: 40px auto;
+	color: var(--theme-white);
+	position: relative;
+	z-index: 2;
+}
+.started-container {
+	border-radius: var(--b-rad-lg);
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	position: relative;
+	width: 100%;
+	background-color: #000;
+	overflow: hidden;
+	background-image: url("../img/started-bg-d.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top right;
+	max-width: 1090px;
+	margin: 0 auto;
+}
+.started-container .left-column {
+	width: 62.5%;
+	padding: 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+.started-container .left-column h1 {
+	font-weight: 700;
+	margin-bottom: 16px;
+	line-height: 1;
+	font-size: 48px;
+}
+.started-container .left-column p {
+	margin-bottom: 21px;
+	line-height: 1.55;
+	font-size: 18px;
+}
+.started-container .left-column a img {
+	width: 204.5px;
+}
+.started-container .right-column {
+	width: 37.5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.started-container .right-column img {
+	padding: 30px 0;
+	max-width: 100%;
+	max-height: 100%;
+	margin-bottom: -40px;
+	margin-top: -0px;
+}
+
+.started-container .left-column .mob-img {
+	display: none;
+	max-width: 100%;
+}
+.started-container .left-column .mob-img img {
+	max-width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+	.started .container{
+		width: 100%;
+		max-width: 100%;
+		padding: 0;
+
+	}
+	.started-container {
+		border-radius: 0;
+		background-image: url("../img/started-bg-m.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: top right;
+	}
+	.started-container .left-column .mob-img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.started-container .right-column {
+		display: none;
+	}
+	.started-container .left-column {
+		max-width: 400px;
+		margin: 0 auto;
+		width: 100%;
+		padding: 60px 35px 40px;
+	}
+	.started-container .left-column .started-link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin-top: 10px;
+	}
+	.started-container .left-column p {
+		margin-bottom: 0;
+	}
+}
