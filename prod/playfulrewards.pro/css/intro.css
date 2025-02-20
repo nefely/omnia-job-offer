@@ -1,0 +1,224 @@
+.screen-intro {
+	background-color: #212121;
+	display: flex;
+	flex-direction: column;
+	color: var(--theme-white);
+}
+.intro {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+.intro-img {
+	flex-grow: 1;
+	background-image: url(../img/intro.png);
+	background-size: 74% auto;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+.intro-content {
+    /* backdrop-filter: blur(34px);
+	-webkit-backdrop-filter: blur(34px); */
+	position: relative;
+}
+.intro-content .app-load {
+	position: absolute;
+	display: none;
+	padding: 10px;
+	top: 22px;
+	right: 5px;
+	z-index: 2;
+}
+.intro-content .app-load svg path {
+	transform: 0.3s;
+}
+.intro-content .app-load:hover svg path {
+	stroke: #007bff;
+}
+.intro-content:after {
+	content: "";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	-webkit-backdrop-filter: blur(80px);
+	backdrop-filter: blur(80px);
+	background: rgba(33,33,33,0.5);
+}
+
+.intro-content-img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-image: url(../img/intro-bottom.png);
+	background-size: 74% auto;
+	background-repeat: no-repeat;
+	background-position: center top;
+	z-index: 1;
+}
+.intro-content .container {
+	position: relative;
+	z-index: 2;
+	text-align: center;
+}
+
+.intro-content .container .row {
+	flex-direction: column;
+}
+
+.intro-icon {
+	margin-top: -60px;
+	margin-bottom: 1rem;
+}
+.intro-icon img {
+	width: 120px;
+    border-radius: 16px;
+}
+
+.intro-title {
+	margin-bottom: 1rem;
+}
+.intro-title h3 {
+	letter-spacing: -0.7px;
+	font-weight: 600;
+	margin-bottom: 4px;
+}
+.intro-title p {
+	opacity: 0.5;
+	letter-spacing: -0.7px;
+}
+
+.intro-button {
+	margin-bottom: 1rem;
+}
+.intro-button .btn{
+	width: 315px;
+	font-size: 1.2rem;
+	line-height: 1;
+	font-weight: 700;
+	padding: 16px 24px;
+	letter-spacing: 2px;
+	border-radius: var(--b-rad-md);
+}
+
+.intro-stats {
+	margin-bottom: 10px;
+}
+.intro-stats ul {
+	margin: 0 auto;
+	max-width: 320px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+.intro-stats > ul {
+	align-items: stretch;
+}
+.intro-stats > ul > li {
+	width: 90px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+}
+.intro-stats > ul > li:nth-child(2):before{
+	content: "";
+	height: calc(100% - 26px);
+	width: 1px;
+	background: var(--theme-gray);
+	left: -12px;
+	top: 13px;
+	position: absolute;
+	display: block;
+}
+.intro-stats > ul > li:nth-child(2):after{
+	content: "";
+	height: calc(100% - 26px);
+	width: 1px;
+	background: var(--theme-gray);
+	right: -12px;
+	top: 13px;
+	position: absolute;
+	display: block;
+}
+.intro-stats > ul > li:not(:last-child) {
+	margin-right: 25px;
+}
+.stats-rating img{
+	width: 14px;
+	display: block;
+}
+.stats-rating li:not(:last-child) {
+	margin-right: 2px;
+}
+.stats-top {
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 1.2;
+	opacity: 0.72;
+	color: var(--theme-white);
+}
+.stats-main {
+	margin: 7px 0;
+	opacity: 0.6;
+	font-size: 22px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.stats-bottom {
+	font-size: 12px;
+	line-height: 1.2;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #EBEBF5;
+	opacity: 0.6;
+}
+
+.btn-down {
+	background: transparent;
+	display: block;
+	padding: 0;
+	border-radius: 0;
+	margin: 20px auto;
+	position: relative;
+	z-index: 2;
+	transition: 0.3s;
+}
+.btn-down:hover svg {
+	transform: translateY(10px);
+}
+.btn-down svg , 
+.btn-down svg path {
+	transition: 0.3s;
+}
+.btn-down:hover svg path {
+	stroke: var(--theme-blue)
+}
+
+
+@media screen and (max-width: 991px) {
+	.intro-img {
+		background-image: url(../img/intro-mob.png);
+		background-size: 130% auto;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+	}
+	.intro-content-img {
+		background-image: url(../img/intro-bottom-mob.png);
+		background-size: 130% auto;
+		background-position: center top;
+	}
+	.btn-down {
+		margin: 15px auto;
+	}
+	.intro-content .app-load {
+		display: block;
+	}
+}
