@@ -1,0 +1,60 @@
+#container p {
+    text-align: justify;
+}
+
+
+
+#widget-container-my6 {
+
+    /*
+        position: absolute;
+    */
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.ver-preview-text {
+    float: left;
+    margin-right: 200px;
+}
+
+.ver-widget-container {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 150px !important;
+    margin-left: 20px !important;
+}
+
+.ver-paragraph {
+    display: none;
+}
+
+.textOnly-widget-container {
+    margin-left: 0px !important;
+}
+
+.disabled-cover-my6 {
+    position: absolute;
+    width: 555px;
+    height: 200px;
+    z-index: 9999;
+}
+
+#my6-widget {
+
+    /*
+         position: absolute;
+    */
+    width: 100%;
+    height: 100%;
+
+}
+
+#preview_text {
+    font-size: 12px;
+}
+
+
+
