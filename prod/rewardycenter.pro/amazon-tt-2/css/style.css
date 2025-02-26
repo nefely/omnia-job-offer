@@ -4,19 +4,19 @@
 	--dark: #888;
 	--white: #ffffff;
 
-	--primary: #0f64a5;
-	--primary-dark: rgb(10, 65, 108);
-    --primary-light: #eef5fa;
+	--primary: #0f69ad;
+	--primary-dark: rgb(11, 75, 124);
+    --primary-light: #e5f2fc;
 
-	--secondary: #fb9e11;
-	--secondary-dark: #422802;
-	--secondary-light: #f5d19b;
+	--secondary: #f99a0b;
+	--secondary-dark: #2f1d02;
+	--secondary-light: #eec88e;
 
-    --info: #229cf9;
-    --danger: #ea2f13;
-    --success: #05e277;
-    --success-dark: #03713c;
-    --success-light: #cff9e5;
+    --info: #1a9bfe;
+    --danger: #fd573d;
+    --success: #04c869;
+    --success-dark: #048546;
+    --success-light: #cdfae4;
 }
 html {
     font-size: 18px;
@@ -197,8 +197,8 @@ header {
     background: transparent;
 }
 header .container {
-    padding: 5px 0 7px;
-    background: var(--primary);
+    padding: 3px 0 4px;
+    background: var(--primary-light);
     border-bottom-left-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem;
 }
@@ -206,11 +206,11 @@ header img {
     width: auto;
     max-width: 100%;
     margin: 0 auto;
-    max-height: 45px;
+    max-height: 50px;
 }
 @media screen and (max-width: 991px) {
     header img {
-        max-height: 35px;
+        max-height: 40px;
     }
 }
 
@@ -714,7 +714,7 @@ footer .logo img {
     width: auto;
     max-width: 100%;
     margin: 0 auto;
-    max-height: 45px;
+    max-height: 50px;
 }
 footer a {
     color: var(--primary) !important;
@@ -759,7 +759,7 @@ footer .footer-bottom * {
         padding: 1.75rem 0;
     }
     footer .logo img {
-        max-height: 35px;
+        max-height: 40px;
     }
     footer .description {
         margin-bottom: 1.25rem;
