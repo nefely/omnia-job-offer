@@ -198,7 +198,7 @@ header {
 }
 header .container {
     padding: 10px 0 12px;
-    background: var(--primary);
+    background: var(--primary-light);
     border-bottom-left-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem;
 }
@@ -206,11 +206,14 @@ header img {
     width: auto;
     max-width: 100%;
     margin: 0 auto;
-    max-height: 35px;
+    max-height: 45px;
 }
 @media screen and (max-width: 991px) {
+    header .container {
+        padding: 4px 0 6px;
+    }
     header img {
-        max-height: 25px;
+        max-height: 35px;
     }
 }
 
@@ -684,7 +687,7 @@ footer .logo img {
     width: auto;
     max-width: 100%;
     margin: 0 auto;
-    max-height: 35px;
+    max-height: 45px;
 }
 footer a {
     color: var(--primary) !important;
@@ -729,7 +732,7 @@ footer .footer-bottom * {
         padding: 1.75rem 0;
     }
     footer .logo img {
-        max-height: 25px;
+        max-height: 35px;
     }
     footer .description {
         margin-bottom: 1.25rem;
