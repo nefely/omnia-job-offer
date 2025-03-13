@@ -15,18 +15,5 @@ $(document).ready(function(){
             }
         }
     }
-
-
-
-    function getQueryParam(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
-    }
-
-    const modelValue = getQueryParam('model') || '1';
-    const basePath = "https://cloackandtrackit.com/nefely/omnia-job-offer/parse/peel-exploit-white/img/model/";
-
-    document.getElementById("img_1").src = `${basePath}${modelValue}/1.png`;
-    document.getElementById("img_2").src = `${basePath}${modelValue}/2.png`;
     
 })    
