@@ -357,8 +357,8 @@
 }
 @media screen and (max-width: 991px) {
     #intro .quiz-block-question h3 {
-        font-size: 20px;
-        line-height: 1.5;
+        font-size: 26px;
+        line-height: 1.3;
     }
 }
 #intro .quiz-block-question strong {

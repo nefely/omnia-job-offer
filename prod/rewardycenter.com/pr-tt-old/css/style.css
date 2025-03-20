@@ -236,10 +236,7 @@ label {
 
 
 header .container {
-    padding: 2px 0; 
-    background: var(--primary);
-    border-bottom-right-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    padding: 10px 0; 
 }
 footer .logo img ,
 header .logo img {
@@ -260,7 +257,7 @@ header .limited-offer {
 @media screen and (max-width: 991px) {
     footer .logo img ,
     header .logo img {
-        max-height: 45px;
+        max-height: 35px;
     }
 }
 
@@ -286,7 +283,7 @@ header .limited-offer {
     margin-bottom: 1.25rem;
 }
 .hero .reviews .stars {
-    color: var(--secondary);
+    color: var(--primary);
 }
 .hero .reviews p {
     margin-left: 10px;
