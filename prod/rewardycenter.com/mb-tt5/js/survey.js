@@ -1,83 +1,9 @@
 $(document).ready(function(){
 
-    setTimeout(()=>{
-        $(".welcome").fadeOut(300)
-        setTimeout(()=>{
-            $('header').css("opacity" , "1")
-            $('.progress').css("opacity" , "1")
-            $('.quiz').fadeIn(300)
-            $("body").css("background-color" , "#fff")
-        },300)
-    },3000)
-    
-    $(".question[data-question='1'] .answers .btn").click(function(){
-        $(".progress .line-container:eq(0)").addClass("active")
-        $(".question[data-question='1']").fadeOut(300)
-        setTimeout(()=>{
-            $(".progress .circle-container:eq(1)").addClass("active")
-            $(".question[data-question='2']").fadeIn(300)
-        },300)
-    })
+    $("body").css("background-color" , "#fff")
+    $('header').css("opacity" , "1")
+    $(".congratulation").fadeIn(300)
 
-    
-    $(".question[data-question='2'] .answers .btn").click(function(){
-        $(".progress .line-container:eq(1)").addClass("active")
-        $(".question[data-question='2']").fadeOut(300)
-        setTimeout(()=>{
-            $(".progress .circle-container:eq(2)").addClass("active")
-            $(".question[data-question='3']").fadeIn(300)
-        },300)
-    })
-
-    $(".question[data-question='2'] .back button").click(function(){
-        $(".progress .circle-container:eq(1)").removeClass("active")
-        $(".question[data-question='2']").fadeOut(300)
-        setTimeout(()=>{
-            $(".progress .line-container:eq(0)").removeClass("active")
-            $(".question[data-question='1']").fadeIn(300)
-        },300)
-    })
-
-    $(".question[data-question='3'] .answers .btn").click(function(){
-        $(".question[data-question='3']").fadeOut(300)
-        $('.quiz').fadeOut(300)
-        setTimeout(()=>{
-            $('.analizer').fadeIn(300)
-            setTimeout(()=>{
-                $(".progress .circle-container:eq(0)").addClass("checked")
-                setTimeout(()=>{
-                    $(".progress .line-container:eq(0)").addClass("checked")
-                    setTimeout(()=>{
-                        $(".progress .circle-container:eq(1)").addClass("checked")
-                        setTimeout(()=>{
-                            $(".progress .line-container:eq(1)").addClass("checked")
-                            setTimeout(()=>{
-                                $(".progress .circle-container:eq(2)").addClass("checked")
-                                setTimeout(()=>{
-                                    $(".progress").css("opacity" , "0")
-                                    $(".analizer").fadeOut(300)
-                                    $(".quiz").fadeOut(300)
-                                    setTimeout(()=>{
-                                        $(".progress").css("margin-bottom", "0")
-                                        $(".congratulation").fadeIn(300)
-                                    },300)
-                                },1500)
-                            },300)
-                        },300)
-                    },300)
-                },300)
-            },300)
-        },300)
-    })
-
-    $(".question[data-question='3'] .back button").click(function(){
-        $(".progress .circle-container:eq(2)").removeClass("active")
-        $(".question[data-question='3']").fadeOut(300)
-        setTimeout(()=>{
-            $(".progress .line-container:eq(1)").removeClass("active")
-            $(".question[data-question='2']").fadeIn(300)
-        },300)
-    })
     
     const sub12 = window.getURLParameter(window.location.href, 'sub12');
     const sub13 = window.getURLParameter(window.location.href, 'sub13');

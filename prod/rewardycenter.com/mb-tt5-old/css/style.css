@@ -1,19 +1,20 @@
 :root {
-	--black: #221F1F;
-    --light: #C1C1C1;
+	--black: #181616;
+    --light: #dfdfdf;
 	--white: #ffffff;
 
-	--primary: rgb(0, 31, 235);
-	--primary-dark: #0520d0;
+	--primary: rgb(0, 34, 228);
+	--primary-dark: #0410c9;
+	--primary-light: rgb(0, 34, 228, 0.075);
 
-	--secondary: #FFA800;
-	--secondary-light: #FFF3DD;
+	--secondary: #ffae0c;
+	--secondary-light: #fff4df;
 
-    --info: #1193f6;
-    --info-light: #d7eeff;
-    --info-dark: #015a9e;
-    --danger: #f9573e;
-    --success: #02c366;
+    --info: #0c91f7;
+    --info-light: #d5e8f7;
+    --info-dark: #025594;
+    --danger: #fa5036;
+    --success: #02b960;
 }
 html {
     font-size: 18px;
@@ -118,7 +119,7 @@ ul, li {
     --bs-btn-hover-color: var(--white);
     --bs-btn-hover-bg: var(--primary-dark);
     --bs-btn-hover-border-color: var(--primary-dark);
-    --bs-btn-focus-shadow-rgb: 0, 31, 235;
+    --bs-btn-focus-shadow-rgb: 0, 34, 228;
     --bs-btn-active-color: var(--white);
     --bs-btn-active-bg: var(--primary-dark);
     --bs-btn-active-border-color: var(--primary-dark);
@@ -236,10 +237,7 @@ label {
 
 
 header .container {
-    padding: 2px 0; 
-    background: var(--primary);
-    border-bottom-right-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    padding: 10px 0; 
 }
 footer .logo img ,
 header .logo img {
@@ -260,7 +258,7 @@ header .limited-offer {
 @media screen and (max-width: 991px) {
     footer .logo img ,
     header .logo img {
-        max-height: 45px;
+        max-height: 35px;
     }
 }
 
@@ -275,7 +273,14 @@ header .limited-offer {
 }
 .hero h1  {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 50px;
+    line-height: 58px;
+}
+.hero h1 strong {
+    text-transform: lowercase;
+    font-size: 1.425em;
+    font-weight: 700;
 }
 .hero .reviews {
     font-size: 14px;
@@ -294,8 +299,11 @@ header .limited-offer {
     color: #3B3B3B;
 }
 .hero .list {
-    width: max-content;
+    width: 100%;
     margin: 0 auto 1.5rem;
+    background: var(--primary-light);
+    padding: 10px 10px;
+    border-radius: 0.5rem;
 }
 .hero .list div {
     display: flex;
@@ -304,14 +312,12 @@ header .limited-offer {
 }
 .hero .list div:not(:last-child) {
     margin-bottom: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #dee2e6;
 }
 .hero .list p {
     margin-bottom: 0;
 }
 .hero .list img {
-    margin-right: 10px;
+    margin-right: 5px;
     width: 1rem;
     min-width: 1rem;
     aspect-ratio: 1/1;
@@ -327,6 +333,10 @@ header .limited-offer {
 @media screen and (max-width: 991px) {
     .hero {
         padding: 2rem 0 3rem;
+    }
+    .hero h1  {
+        font-size: 46px;
+        line-height: 52px;
     }
 }
 
