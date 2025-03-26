@@ -1,19 +1,19 @@
 :root {
-	--black: #221F1F;
-    --light: #C1C1C1;
+	--black: #1e1c1c;
+    --light: #c5c5c5;
 	--white: #ffffff;
 
-	--primary: rgb(0, 31, 235);
-	--primary-dark: #0520d0;
+	--primary: rgb(2, 32, 225);
+	--primary-dark: #031dc6;
 
-	--secondary: #FFA800;
-	--secondary-light: #FFF3DD;
+	--secondary: #feac06;
+	--secondary-light: #fef4e2;
 
-    --info: #1193f6;
-    --info-light: #d7eeff;
-    --info-dark: #015a9e;
-    --danger: #f9573e;
-    --success: #02c366;
+    --info: #0c8ff3;
+    --info-light: #def1ff;
+    --info-dark: #005799;
+    --danger: #fa533a;
+    --success: #01c767;
 }
 html {
     font-size: 18px;
@@ -118,7 +118,7 @@ ul, li {
     --bs-btn-hover-color: var(--white);
     --bs-btn-hover-bg: var(--primary-dark);
     --bs-btn-hover-border-color: var(--primary-dark);
-    --bs-btn-focus-shadow-rgb: 0, 31, 235;
+    --bs-btn-focus-shadow-rgb: 2, 32, 225;
     --bs-btn-active-color: var(--white);
     --bs-btn-active-bg: var(--primary-dark);
     --bs-btn-active-border-color: var(--primary-dark);
@@ -236,7 +236,7 @@ label {
 
 
 header .container {
-    padding: 2px 0; 
+    padding: 5px 0; 
     background: var(--primary);
     border-bottom-right-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
@@ -260,7 +260,7 @@ header .limited-offer {
 @media screen and (max-width: 991px) {
     footer .logo img ,
     header .logo img {
-        max-height: 45px;
+        max-height: 46px;
     }
 }
 
@@ -286,7 +286,7 @@ header .limited-offer {
     margin-bottom: 1.25rem;
 }
 .hero .reviews .stars {
-    color: var(--secondary);
+    color: var(--primary);
 }
 .hero .reviews p {
     margin-left: 10px;
