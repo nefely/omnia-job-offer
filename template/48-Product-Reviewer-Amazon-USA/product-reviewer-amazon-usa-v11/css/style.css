@@ -3,17 +3,17 @@
     --light: #C1C1C1;
 	--white: #ffffff;
 
-	--primary: rgb(3, 34, 235);
-	--primary-dark: #031cc0;
+	--primary: rgb(1, 30, 221);
+	--primary-dark: #00159d;
 
-	--secondary: #e89b00;
-	--secondary-light: #fef4e0;
+	--secondary: #e89e09;
+	--secondary-light: #f8f1e2;
 
-    --info: #0e97ff;
-    --info-light: #d6ebfb;
-    --info-dark: #005799;
-    --danger: #fc5339;
-    --success: #03b760;
+    --info: #0790f9;
+    --info-light: #d0e6f7;
+    --info-dark: #02508d;
+    --danger: #f6452a;
+    --success: #03a054;
 }
 html {
     font-size: 18px;
@@ -118,7 +118,7 @@ ul, li {
     --bs-btn-hover-color: var(--white);
     --bs-btn-hover-bg: var(--primary-dark);
     --bs-btn-hover-border-color: var(--primary-dark);
-    --bs-btn-focus-shadow-rgb: 3, 34, 235;
+    --bs-btn-focus-shadow-rgb: 1, 30, 221;
     --bs-btn-active-color: var(--white);
     --bs-btn-active-bg: var(--primary-dark);
     --bs-btn-active-border-color: var(--primary-dark);
@@ -373,9 +373,9 @@ header .limited-offer {
     .requirements .title .h1 {
         margin-bottom: 0;
     }
-    .requirements .title .h1 span {
+    /* .requirements .title .h1 span {
         display: none;
-    }
+    } */
     .requirements .row {
         display: grid;
         grid-template-columns: 1fr;

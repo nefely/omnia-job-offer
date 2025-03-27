@@ -1,19 +1,19 @@
 :root {
-	--black: #221F1F;
-    --light: #C1C1C1;
+	--black: #100f0f;
+    --light: #d3d1d1;
 	--white: #ffffff;
 
-	--primary: rgb(3, 34, 235);
-	--primary-dark: #031cc0;
+	--primary: #0321e8;
+	--primary-dark: #0019ba;
 
-	--secondary: #e89b00;
-	--secondary-light: #fef4e0;
+	--secondary: #feaa01;
+	--secondary-light: #fcf4e6;
 
-    --info: #0e97ff;
-    --info-light: #d6ebfb;
-    --info-dark: #005799;
-    --danger: #fc5339;
-    --success: #03b760;
+    --info: #0687e9;
+    --info-light: #e0eff9;
+    --info-dark: #00518f;
+    --danger: #fc4f35;
+    --success: #00b75f;
 }
 html {
     font-size: 18px;
@@ -118,7 +118,7 @@ ul, li {
     --bs-btn-hover-color: var(--white);
     --bs-btn-hover-bg: var(--primary-dark);
     --bs-btn-hover-border-color: var(--primary-dark);
-    --bs-btn-focus-shadow-rgb: 3, 34, 235;
+    --bs-btn-focus-shadow-rgb: 3, 33, 232;
     --bs-btn-active-color: var(--white);
     --bs-btn-active-bg: var(--primary-dark);
     --bs-btn-active-border-color: var(--primary-dark);
@@ -236,7 +236,10 @@ label {
 
 
 header .container {
-    padding: 10px 0; 
+    padding: 5px 0; 
+    background: var(--primary);
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
 footer .logo img ,
 header .logo img {
@@ -257,7 +260,7 @@ header .limited-offer {
 @media screen and (max-width: 991px) {
     footer .logo img ,
     header .logo img {
-        max-height: 35px;
+        max-height: 46px;
     }
 }
 
