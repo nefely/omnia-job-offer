@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>RewardyCenter</title>
+
+    <link rel="icon" href="../img/fav.png">
+
+    <script type="text/javascript">
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/jquery.mask.js"></script>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/survey.js"></script>
+
+    <script type="text/javascript">
+        window.getURLParameter = (sUrl, sParam) => {
+            let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
+            let sURLVariables = sPageURL.split('&');
+            for (let i = 0; i < sURLVariables.length; i++) {
+                let sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam) {
+                    return sParameterName[1];
+                }
+            }
+        }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '799738728826938', {
+        em: `${window.getURLParameter(window.location.href, 'sub15')}`,
+        fn: `${window.getURLParameter(window.location.href, 'sub13')}`,
+        ln: `${window.getURLParameter(window.location.href, 'sub14')}`,
+        pg: `1${window.getURLParameter(window.location.href, 'sub16')}`
+    }); 
+    fbq('track', 'CompleteRegistration')
+    </script>
+    <!-- End Meta Pixel Code -->
+    
+    <!-- Tiktop Pixel Code -->
+    <!-- <script>
+            !function (w, d, t) {
+                w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
+    )ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+            
+                ttq.load('CJQU8RJC77U5TJETOUQ0');
+                ttq.identify({
+                    email: `${window.getURLParameter(window.location.href, 'sub15')}`,
+                    phone_number: `+1${window.getURLParameter(window.location.href, 'sub16')}`
+                })
+            }(window, document, 'ttq');
+    
+    ttq.track('CompleteRegistration');
+    </script> -->
+    <!-- End Tiktop Pixel Code -->
+    
+    
+    <!-- Pinterest  Pixel Code -->
+    <!-- <script>
+    !function(e){if(!window.pintrk){window.pintrk = function () {
+    window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+        n=window.pintrk;n.queue=[],n.version="3.0";var
+        t=document.createElement("script");t.async=!0,t.src=e;var
+        r=document.getElementsByTagName("script")[0];
+        r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+    pintrk('load', '2612906424300', {em: window.getURLParameter(window.location.href, 'sub15')});
+    pintrk('track', 'signup');
+    </script> -->
+    <!-- End Pinterest Pixel Code -->
+    
+    
+    <!-- Snap Pixel Code -->
+    <!-- <script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', 'bf0dccf7-b5ce-4654-b217-f09d298b1d45', { 'user_email': window.getURLParameter(window.location.href, 'sub15'), 'user_phone_number': `1${window.getURLParameter(window.location.href, 'sub16')}` }); snaptr('track', 'SIGN_UP'); </script> -->
+    <!-- End Snap Pixel Code -->
+
+</head>
+<body style="background-color: var(--secondary-light)" class="survey">
+
+    <div class="screen">
+        <header style="opacity: 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="logo">
+                        <img src="../img/logo.png" alt="" class="logo">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="inner">
+                        <div class="progress" style="opacity: 0;">
+                            <div class="row">
+                                <div class="progress-container">
+                                    <div class="progress-inner">
+                                        <div class="circle-container active"><p class="circle"><span>1</span></p></div>
+                                        <div class="line-container">
+                                            <div class="line"></div>
+                                            <div class="line-green"></div>
+                                        </div>
+                                        <div class="circle-container"><p class="circle"><span>2</span></p></div>
+                                        <div class="line-container">
+                                            <div class="line"></div>
+                                            <div class="line-green"></div>
+                                        </div>
+                                        <div class="circle-container"><p class="circle"><span>3</span></p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="welcome">
+                            <div class="img">
+                                <img src="../img/welcome-img.png" alt="">
+                            </div>
+                            <h1>Welcome!</h1>
+                            <p>Start with a short survey to recieve the best earning opportunity for <strong class="primary">Amazon</strong></p>
+                        </div>
+                        <div class="quiz">
+                            <div class="question" data-question="1">
+                                <div class="title">
+                                    <h5>Have you ever submitted <br> a <strong class="secondary">product review?</strong></h5>
+                                </div>
+                                <div class="answers">
+                                    <button type="button" class="btn btn-primary">Yes</button>
+                                    <button type="button" class="btn btn-primary">No</button>
+                                </div>
+                            </div>
+                            <div class="question" data-question="2">
+                                <div class="title">
+                                    <h5>How much <strong class="secondary">free time</strong><br> do you have every day?</h5>
+                                </div>
+                                <div class="answers">
+                                    <button type="button" class="btn btn-primary">1 to 3 hours</button>
+                                    <button type="button" class="btn btn-primary">3 to 5 hours</button>
+                                    <button type="button" class="btn btn-primary">5 to 8 hours</button>
+                                </div>
+                            </div>
+                            <div class="question" data-question="3">
+                                <div class="title">
+                                    <h5>About how many times per <br>  month you order at <strong class="secondary">Amazon?</strong></h5>
+                                </div>
+                                <div class="answers">
+                                    <button type="button" class="btn btn-primary"><3</button>
+                                    <button type="button" class="btn btn-primary">3-7</button>
+                                    <button type="button" class="btn btn-primary">7+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="analizer">
+                            <p><i>We analyze your responses</i></p>
+                        </div>
+                        <div class="congratulation">
+                            <div class="tags">
+                                <p>Best Fit for You</p>
+                            </div>
+                            <h2>Earn up to <strong class="secondary">$750</strong> towards <strong class="secondary">Amazon Products</strong> + and additional <strong class="secondary">$750</strong> for reviewing the products!</h2>
+                            <strong class="info data">
+                                <script>
+                                (() => {
+                                    let _currentDate = new Date();
+                                    let _currentMonth = _currentDate.getMonth();
+                                    let _currentYear = _currentDate.getFullYear();
+                                    let _lastDay = new Date(_currentYear, _currentMonth + 1, 0).getDate();
+                                    let _monthAbbreviations = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                                    let _currentMonthAbbreviation = _monthAbbreviations[_currentMonth];
+                                    let _resultString = `Offer expires ${_currentMonthAbbreviation} ${_lastDay} at 11:59pm EST`;
+                                    document.write(_resultString);
+                                })()
+                                </script>
+                            </strong>
+
+                            <strong class="info hurryup">Sign up on platform now until it expires</strong>
+                            <div class="btn-group">
+                                <button href="" class="btn btn-primary">YES, Get Started Now</button>
+                            </div>
+                        </div>
+
+                        <div class="filler">
+                            <h1>Your <strong class="primary">amazon</strong> journey with bonuses </h1>
+                        </div>
+
+                        <div class="form">
+                            <div class="question" data-question="1">
+                                <div class="form-group">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="example@gmail.com">
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">Continue</button>
+                                </div>
+                            </div>
+                            <div class="question" data-question="2">
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="phone" name="phone" class="form-control" id="phone" placeholder="(000) 000-0000" autocomplete="off" maxlength="14">
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">ZIP</label>
+                                    <input type="text" name="zip" class="form-control" id="zip" placeholder="In what zipcode?" maxlength="5">
+                                </div>
+                                <div class="rules">
+                                    <p>By clicking "Submit", I agree to email marketing, <a href="../terms-of-use/" target="_blank">Terms &amp;  <br>Conditions</a> including mandatory arbitration, <a href="../privacy-policy/" target="_blank">Privacy Policy</a></p>
+                                </div>
+                                <div class="btn-group btn-group-offer">
+                                    <a type="button" id="offer_link" class="btn btn-primary" href="">Submit</a>
+                                </div>
+                                <div class="btn-group btn-group-loader">
+                                    <div class="loading-gif">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="56" height="56" style="shape-rendering: auto; display: block; background: transparent;" xmlns:xlink="http://www.w3.org/1999/xlink"><g><circle stroke-dasharray="164.93361431346415 56.97787143782138" r="35" stroke-width="10" stroke="#021fe1" fill="none" cy="50" cx="50">
+                                            <animateTransform keyTimes="0;1" values="0 50 50;360 50 50" dur="1s" repeatCount="indefinite" type="rotate" attributeName="transform"></animateTransform>
+                                          </circle><g></g></g></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
