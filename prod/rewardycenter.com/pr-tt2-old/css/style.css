@@ -1,19 +1,20 @@
 :root {
-	--black: #110f0f;
-    --light: #C3C3C3;
+	--black: #221F1F;
+    --light: #C1C1C1;
 	--white: #ffffff;
 
-	--primary: rgb(2, 31, 225);
-	--primary-dark: #001bcb;
+	--primary: rgb(0, 31, 235);
+	--primary-dark: #0520d0;
+	--primary-light: rgb(0, 31, 235, 0.075);
 
-	--secondary: #eb9d00;
-	--secondary-light: #fbf2e0;
+	--secondary: #FFA800;
+	--secondary-light: #FFF3DD;
 
-    --info: #0894fe;
-    --info-light: #d5e8f6;
-    --info-dark: #004f8c;
-    --danger: #fd4c31;
-    --success: #02a857;
+    --info: #1193f6;
+    --info-light: #d7eeff;
+    --info-dark: #015a9e;
+    --danger: #f9573e;
+    --success: #02c366;
 }
 html {
     font-size: 18px;
@@ -118,7 +119,7 @@ ul, li {
     --bs-btn-hover-color: var(--white);
     --bs-btn-hover-bg: var(--primary-dark);
     --bs-btn-hover-border-color: var(--primary-dark);
-    --bs-btn-focus-shadow-rgb: 2, 31, 225;
+    --bs-btn-focus-shadow-rgb: 0, 31, 235;
     --bs-btn-active-color: var(--white);
     --bs-btn-active-bg: var(--primary-dark);
     --bs-btn-active-border-color: var(--primary-dark);
@@ -273,6 +274,13 @@ header .limited-offer {
 .hero h1  {
     text-align: center;
     margin-bottom: 1rem;
+    font-size: 50px;
+    line-height: 58px;
+}
+.hero h1 strong {
+    text-transform: lowercase;
+    font-size: 1.425em;
+    font-weight: 700;
 }
 .hero .reviews {
     font-size: 14px;
@@ -283,7 +291,7 @@ header .limited-offer {
     margin-bottom: 1.25rem;
 }
 .hero .reviews .stars {
-    color: var(--primary);
+    color: var(--secondary);
 }
 .hero .reviews p {
     margin-left: 10px;
@@ -291,8 +299,11 @@ header .limited-offer {
     color: #3B3B3B;
 }
 .hero .list {
-    width: max-content;
+    width: 100%;
     margin: 0 auto 1.5rem;
+    background: var(--primary-light);
+    padding: 10px 10px;
+    border-radius: 0.5rem;
 }
 .hero .list div {
     display: flex;
@@ -301,14 +312,12 @@ header .limited-offer {
 }
 .hero .list div:not(:last-child) {
     margin-bottom: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #dee2e6;
 }
 .hero .list p {
     margin-bottom: 0;
 }
 .hero .list img {
-    margin-right: 10px;
+    margin-right: 5px;
     width: 1rem;
     min-width: 1rem;
     aspect-ratio: 1/1;
@@ -324,6 +333,10 @@ header .limited-offer {
 @media screen and (max-width: 991px) {
     .hero {
         padding: 2rem 0 3rem;
+    }
+    .hero h1  {
+        font-size: 46px;
+        line-height: 52px;
     }
 }
 
@@ -345,7 +358,7 @@ header .limited-offer {
 }
 .requirements .list {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 24px;
 }
 .requirements .list div {
