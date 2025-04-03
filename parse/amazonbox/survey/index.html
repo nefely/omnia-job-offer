@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="../img/favicon.webp" type="image/x-icon"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"/>
+        <meta name="theme-color" content="#2E3633"/>
+        <title>SamplesHunterUSA</title>
+        <link rel="stylesheet" href="../css/loader.css">
+        <link rel="stylesheet" href="../css/index-personalized-v1.css?v=1.1">
+        <link rel="stylesheet" href="../css/fspubartkostprelander.css">
+
+        <script src="../js/jquery-3.6.4.min.js"></script>
+        <script src="../js/survey.js"></script>
+
+        <style type="text/css">
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 300;
+                src: url(/cf-fonts/s/poppins/5.0.11/latin/300/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 300;
+                src: url(/cf-fonts/s/poppins/5.0.11/latin-ext/300/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 300;
+                src: url(/cf-fonts/s/poppins/5.0.11/devanagari/300/normal.woff2);
+                unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/s/poppins/5.0.11/latin/400/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/s/poppins/5.0.11/latin-ext/400/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/s/poppins/5.0.11/devanagari/400/normal.woff2);
+                unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/s/poppins/5.0.11/latin-ext/500/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/s/poppins/5.0.11/latin/500/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/s/poppins/5.0.11/devanagari/500/normal.woff2);
+                unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 600;
+                src: url(/cf-fonts/s/poppins/5.0.11/devanagari/600/normal.woff2);
+                unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 600;
+                src: url(/cf-fonts/s/poppins/5.0.11/latin/600/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 600;
+                src: url(/cf-fonts/s/poppins/5.0.11/latin-ext/600/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/s/poppins/5.0.11/latin/700/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/s/poppins/5.0.11/latin-ext/700/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/s/poppins/5.0.11/devanagari/700/normal.woff2);
+                unicode-range: U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/v/open-sans/5.0.20/vietnamese/wght/normal.woff2);
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/v/open-sans/5.0.20/greek-ext/wght/normal.woff2);
+                unicode-range: U+1F00-1FFF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/v/open-sans/5.0.20/cyrillic/wght/normal.woff2);
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/v/open-sans/5.0.20/latin/wght/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/v/open-sans/5.0.20/cyrillic-ext/wght/normal.woff2);
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/v/open-sans/5.0.20/latin-ext/wght/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/v/open-sans/5.0.20/greek/wght/normal.woff2);
+                unicode-range: U+0370-03FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/v/open-sans/5.0.20/hebrew/wght/normal.woff2);
+                unicode-range: U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/v/open-sans/5.0.20/latin/wght/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/v/open-sans/5.0.20/cyrillic/wght/normal.woff2);
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/v/open-sans/5.0.20/latin-ext/wght/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/v/open-sans/5.0.20/hebrew/wght/normal.woff2);
+                unicode-range: U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/v/open-sans/5.0.20/vietnamese/wght/normal.woff2);
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/v/open-sans/5.0.20/greek/wght/normal.woff2);
+                unicode-range: U+0370-03FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/v/open-sans/5.0.20/greek-ext/wght/normal.woff2);
+                unicode-range: U+1F00-1FFF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/v/open-sans/5.0.20/cyrillic-ext/wght/normal.woff2);
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                src: url(/cf-fonts/v/open-sans/5.0.20/latin-ext/wght/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                src: url(/cf-fonts/v/open-sans/5.0.20/cyrillic-ext/wght/normal.woff2);
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                src: url(/cf-fonts/v/open-sans/5.0.20/greek-ext/wght/normal.woff2);
+                unicode-range: U+1F00-1FFF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                src: url(/cf-fonts/v/open-sans/5.0.20/latin/wght/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                src: url(/cf-fonts/v/open-sans/5.0.20/hebrew/wght/normal.woff2);
+                unicode-range: U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                src: url(/cf-fonts/v/open-sans/5.0.20/greek/wght/normal.woff2);
+                unicode-range: U+0370-03FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                src: url(/cf-fonts/v/open-sans/5.0.20/vietnamese/wght/normal.woff2);
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 600;
+                src: url(/cf-fonts/v/open-sans/5.0.20/cyrillic/wght/normal.woff2);
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/v/open-sans/5.0.20/cyrillic-ext/wght/normal.woff2);
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/v/open-sans/5.0.20/vietnamese/wght/normal.woff2);
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/v/open-sans/5.0.20/greek/wght/normal.woff2);
+                unicode-range: U+0370-03FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/v/open-sans/5.0.20/latin-ext/wght/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/v/open-sans/5.0.20/cyrillic/wght/normal.woff2);
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/v/open-sans/5.0.20/greek-ext/wght/normal.woff2);
+                unicode-range: U+1F00-1FFF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/v/open-sans/5.0.20/hebrew/wght/normal.woff2);
+                unicode-range: U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/v/open-sans/5.0.20/latin/wght/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/s/roboto/5.0.11/latin/400/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/s/roboto/5.0.11/greek/400/normal.woff2);
+                unicode-range: U+0370-03FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/400/normal.woff2);
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/s/roboto/5.0.11/cyrillic/400/normal.woff2);
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/s/roboto/5.0.11/greek-ext/400/normal.woff2);
+                unicode-range: U+1F00-1FFF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/s/roboto/5.0.11/latin-ext/400/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 400;
+                src: url(/cf-fonts/s/roboto/5.0.11/vietnamese/400/normal.woff2);
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/s/roboto/5.0.11/vietnamese/500/normal.woff2);
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/s/roboto/5.0.11/greek/500/normal.woff2);
+                unicode-range: U+0370-03FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/s/roboto/5.0.11/cyrillic/500/normal.woff2);
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/s/roboto/5.0.11/latin/500/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/s/roboto/5.0.11/latin-ext/500/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/s/roboto/5.0.11/greek-ext/500/normal.woff2);
+                unicode-range: U+1F00-1FFF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500;
+                src: url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/500/normal.woff2);
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/s/roboto/5.0.11/vietnamese/700/normal.woff2);
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/s/roboto/5.0.11/greek/700/normal.woff2);
+                unicode-range: U+0370-03FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/s/roboto/5.0.11/latin/700/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/700/normal.woff2);
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/s/roboto/5.0.11/cyrillic/700/normal.woff2);
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/s/roboto/5.0.11/greek-ext/700/normal.woff2);
+                unicode-range: U+1F00-1FFF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 700;
+                src: url(/cf-fonts/s/roboto/5.0.11/latin-ext/700/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 900;
+                src: url(/cf-fonts/s/roboto/5.0.11/cyrillic-ext/900/normal.woff2);
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 900;
+                src: url(/cf-fonts/s/roboto/5.0.11/latin/900/normal.woff2);
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 900;
+                src: url(/cf-fonts/s/roboto/5.0.11/greek-ext/900/normal.woff2);
+                unicode-range: U+1F00-1FFF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 900;
+                src: url(/cf-fonts/s/roboto/5.0.11/latin-ext/900/normal.woff2);
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 900;
+                src: url(/cf-fonts/s/roboto/5.0.11/vietnamese/900/normal.woff2);
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 900;
+                src: url(/cf-fonts/s/roboto/5.0.11/cyrillic/900/normal.woff2);
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 900;
+                src: url(/cf-fonts/s/roboto/5.0.11/greek/900/normal.woff2);
+                unicode-range: U+0370-03FF;
+                font-display: swap;
+            }
+        </style>
+        <img src="https://sampleshunterusa.com/event/image.png?sessionId=866c77d1-d01a-412a-971d-3b0b941b13a7&eventType=page-ab&eventName=imp&eventValue=FSPU-Social-Prelander-3stepreg&eventData=lo4bc" style="width: 0px;position: absolute;"/>
+        <img src="https://gls.cap-cloud.co/identify/session?id=866c77d1-d01a-412a-971d-3b0b941b13a7" style="width: 0px;position: absolute;"/>
+        <style>
+            sup {
+                vertical-align: top;
+                line-height: 1;
+            }
+
+            .main .email-checker {
+                cursor: default;
+            }
+
+            .main .email-checker > span {
+                cursor: pointer;
+            }
+
+            .prelander-screen2 {
+                background: #FFC836 url(/images/dynamic-flow/mcdonalds/bgshine-mcdonalds.png) top center no-repeat;
+                background-size: contain;
+            }
+
+            .theme-bgcolor {
+                background: #BD0017;
+                z-index: 1;
+            }
+
+            header {
+                background: unset;
+                z-index: 2;
+            }
+
+            .progress-box {
+                position: relative;
+                z-index: 1;
+            }
+
+            .prelander-screen2 span.brandnametxt {
+                color: #BD0017;
+            }
+
+            .prelanderproductimg img {
+                width: 100%;
+            }
+
+            .groceryimg.productimg img {
+                width: 100%;
+            }
+
+            /*Cta processing text - start*/
+            .ctaprocessing button#entersweep {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .ctaprocessing button#entersweep::after {
+                display: none
+            }
+
+            .ctaprocessing .cta-inner {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .ctaprocessing .ctaspinner {
+                display: grid;
+                place-items: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: 4px solid rgba(0,0,0,0);
+                background: conic-gradient(from 180deg at 50% 50%,rgba(82,0,255,0) 0deg,#fff 360deg) border-box;
+                -webkit-mask: linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+                -webkit-mask-composite: destination-out;
+                mask-composite: exclude;
+                animation: spin 2s infinite linear;
+                margin-right: 15px
+            }
+
+            @keyframes spin {
+                to {
+                    -webkit-transform: rotate(1turn);
+                    transform: rotate(1turn);
+                }
+            }
+
+            @-webkit-keyframes spin {
+                to {
+                    -webkit-transform: rotate(1turn);
+                    transform: rotate(1turn);
+                }
+            }
+
+            /*Cta processing text - end*/
+        </style>
+    </head>
+    <body class="questionprelander fspubartkostprelander Gift Box" style="">
+        <main>
+            <!-- prelander section -->
+            <div class="prelander-wrapper" id="prelanderSection">
+                <div class="prelander-screen2">
+                    <header>
+                        <div class=" logo-inner">
+                            <div class="logo">
+                                <img src="../img/logo-dark-domain.svg" alt="">
+                            </div>
+                        </div>
+                    </header>
+                    <div class="prelandertitle">
+                        <p>
+                            <span class="prelanderheadtitlestart brandnametxt">Free</span>
+                            <span class="brandnametxt brand">Gift Box</span>
+                            <span class="prelanderheadtitleend">Available Now! </span>
+                        </p>
+                    </div>
+                    <section class="quest-wrap">
+                        <div class="question-section" id="questionsection">
+                            <div class="prelanderproductimg">
+                                <img src="../img/giftbox_collage_5.webp">
+                            </div>
+                            <ul class="questionlisting">
+                                <li class="active-element" data-count=''>
+                                    <div class="questionwrap">
+                                        <div class="slidebox active slide-next slide-in-right" data-index='1'>
+                                            <h3 class="questiontitle">
+                                                Have you received <span class="singulartxt">a</span>
+                                                <span class="brandnametxt">Free Gift Box</span>
+                                                before?
+                                            </h3>
+                                            <div class="optionslist">
+                                                <div class="optiongrp">
+                                                    <button class="optionbtn" data-value="Yes">Yes</button>
+                                                </div>
+                                                <div class="optiongrp">
+                                                    <button class="optionbtn" data-value="No">No</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slidebox transition-screen" data-index='2'>
+                                            <h3 class="questiontitle"></h3>
+                                            <div class="optionslist">
+                                                Preparing your <span class="loadingtextstart freesamples">Free</span>
+                                                <span class="brandnametxt">Gift Box</span>
+                                                <span class="loadingtextend freesamples">Samples...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- prelander ends -->
+            <!-- lander section -->
+            <div class="main" id="landerSection" style="display: none;">
+                <header>
+                    <div class=" logo-inner">
+                        <div class="logo">
+                            <img src="../img/logo-light.svg" alt="">
+                        </div>
+                        <div class="header-progress-bar">
+                            <div class="progressbar">
+                                <div class="progress-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="bg theme-bgcolor"></div>
+                <div class="body-text padding-0">
+                    <div class="offer250">
+                        <div class="box-360">
+                            <div class="progress-box">
+                                <span style="width: 33.3%"></span>
+                            </div>
+                            <div class="personalize-text-box">
+                                <h1>
+                                    Get Your <span class="landerheadtitlestart">Free </span>
+                                    Gift Box<span class="landerheadtitleend"></span>
+                                    !
+                                </h1>
+                                <div class="groceryimg productimg">
+                                    <img src="../img/giftbox_collage_5.webp">
+                                </div>
+                                <img src="../images/personalized-flow/personaliz-img-left-arrow.png" alt="" class="box-left-arrow arrow-animation bounce"/>
+                                <img src="../images/personalized-flow/personaliz-img-right-arrow.png" alt="" class="box-right-arrow arrow-animation bounce"/>
+                                <span class="img-copy">*Images used are for representation purposes only.</span>
+                            </div>
+                            <div class="enter-sweep-box form-bg">
+                                <div class="offer-entry-form">
+                                    <form method="post" id="landerform" onsubmit="register.emailValidate(event)" autocomplete="off">
+                                        <h2 class="claimentry">Confirm your email address</h2>
+                                        <input autocomplete="false" name="hidden" type="text" style="display:none;"/>
+                                        <input autofocus="true" type="email" name="emailAddress" class="entersweeps xverify_email " data-trackable data-tname="email" id="entersweeps" placeholder="Enter Email Address" onchange="this.classList.remove('error');" onblur="this.placeholder = 'Enter Email Address';" oninput="this.classList.remove('error');" data-xverify="true" data-autosuggest="true"/>
+                                        <p class="email-checker">
+                                            Did you mean: <span class="suggt"></span>
+                                        </p>
+                                        <input name="hasUserInfo" type="hidden" value="1"/>
+                                        <button id="entersweep" name="next" type="submit" value="profile" class="playtowin cta" data-trackable data-tname="email-submit">
+                                            <div class="cta-inner">Continue
+        
+            
+            
+              
+            
+                                      
+
+      </div>
+                                        </button>
+                                    </form>
+                                    <div class="email-diclaimer" id="cta-disclaimer">
+                                        By clicking 'Continue', I agree to receive relevant emails from Freesamplesprousa. I also agree to the <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>
+                                        which includes details on the collection and use of my personal data, and the <a href="/terms-and-conditions.html" target="_blank">Terms of Use</a>
+                                        which includes a mandatory arbitration provision. Eligibility of the gift card reward is subject to completion of <a onclick="footercontent.openModal('program-info')" class="program-btn">Program Requirements</a>
+                                        .
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- lander ends -->
+        </main>
+        <footer>
+            <div class="footer-disclaimer-section">
+                <h6>
+                    To access samples, deals, giveaways, coupons, sweepstakes, or any other offers ("Deals") through the links available on <a href="https://sampleshunterusa.com" target="_blank">sampleshunterusa.com</a>
+                    you may be required to share your personal information, respond to survey questions, and agree to be contacted by our marketing partners. <a href="https://sampleshunterusa.com" target="_blank">sampleshunterusa.com</a>
+                    does not guarantee the availability of Deal(s) facilitated through our website or that they will meet your requirements since they are offered as well as monitored by third parties and are provided on the website for convenience purposes only.
+      
+                </h6>
+                <h6>We shall not be liable for the unavailability of any Deals, for any reasons, including but not limited to, third-party terms and conditions associated with such Deals, change in qualification criteria related to such Deals, denial of service, communication lapses, or any other reasons due to which the Deals become unavailable. We may receive compensation, at no cost to you, when you participate in the third-party offers available on our website.
+      </h6>
+                <h6>All third-party names (including company and service names), graphics, and logos used here are trademarks or registered trademarks of such third parties. Use of them here does not imply any affiliation with or endorsement by such third-parties.
+    
+    </h6>
+            </div>
+            <div class="footer-links">
+                <div class="f-links">
+                    <ul>
+                        <li>
+                            <a href="https://sampleshunterusa.com/privacy-policy.html#CA" target="_blank">CA Consumers</a>
+                        </li>
+                        <li>
+                            <a href="https://sampleshunterusa.com/terms-and-conditions.html" target="_blank">Terms &amp;Conditions</a>
+                        </li>
+                        <li>
+                            <a href="https://sampleshunterusa.com/privacy-policy.html" target="_blank">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="https://sampleshunterusa.com/support.html" target="_blank">Support</a>
+                        </li>
+                        <li>
+                            <a href="https://sampleshunterusa.com/unsub.html" target="_blank">Unsubscribe</a>
+                        </li>
+                        <li>
+                            <a href="https://privacyportal.onetrust.com/webform/9778300d-e8e2-4455-a4ff-488f60a54302/b92d6edd-43ea-438d-a69e-2c9f9d05f236" class="onetrustfooterlink" target="_blank">Do Not Sell or Share My Personal Information</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript" src="https://sampleshunterusa.com/js/config.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/leadgen.js"></script>
+        <script type="text/javascript" src="js/lander.js"></script>
+        <script type="text/javascript" src="js/dynamic-flowv1.js"></script>
+        <script type="text/javascript" src="js/register.js"></script>
+        <script type="text/javascript" src="js/dynamic-disclaimer.js"></script>
+        
+    </body>
+</html>
