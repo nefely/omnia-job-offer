@@ -1,0 +1,525 @@
+<html lang="en"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="style.css">
+    <title>Get Free!</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '799738728826938');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+    
+    
+    <!-- Tiktop Pixel Code -->
+    <!-- <script>
+            !function (w, d, t) {
+                w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
+    )ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+            
+                ttq.load('CJQU8RJC77U5TJETOUQ0');
+                ttq.page();
+            }(window, document, 'ttq');
+    </script> -->
+    <!-- End Tiktop Pixel Code -->
+    
+    
+    <!-- Pinterest  Pixel Code -->
+    <!-- <script>
+    !function(e){if(!window.pintrk){window.pintrk = function () {
+    window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+        n=window.pintrk;n.queue=[],n.version="3.0";var
+        t=document.createElement("script");t.async=!0,t.src=e;var
+        r=document.getElementsByTagName("script")[0];
+        r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+    pintrk('load', '2612906424300', {em: '<user_email_address>'});
+    pintrk('page');
+    </script> -->
+    <!-- End Pinterest Pixel Code -->
+    
+    
+    <!-- Snap  Pixel Code -->
+    <!-- <script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', 'bf0dccf7-b5ce-4654-b217-f09d298b1d45', { 'user_email': '__INSERT_USER_EMAIL__' }); snaptr('track', 'PAGE_VIEW'); </script> -->
+    <!-- End Snap Pixel Code -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+    .btn {
+        height: auto;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        padding: 14px 0;
+        font-size: 34px;
+        letter-spacing: 1.5px;
+        margin: 0 0 10px 0;
+        width: 100%;
+        max-width: 370px;
+        font-weight: 900;
+        border-radius: 50px;
+        background: linear-gradient(150deg, #23b424, #02fd03);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+        text-shadow: -0.5px 0.5px 1px rgba(0, 0, 0, 0.5);
+        text-transform: uppercase;
+        border-width: 1px 2px 3px 2px;
+        border-style: solid;
+        border-color: #4a5dff;
+        border-top-color: #047c34;
+        border-right-color: #e95929;
+        border-left-color: #e95929;
+        text-decoration: none;
+    }
+
+    .btn {
+        animation: 1s ease-out 1s 1 pulse;
+        -webkit-animation: 1s ease-out 1s 1 pulse;
+        -moz-animation: 1s ease-out 1s 1 pulse;
+    }
+
+    .btn:hover,
+    .btn:focus,
+    .btn:active,
+    .btn:active:hover,
+    .btn:active:focus,
+    .btn:hover:focus {
+        background: linear-gradient(150deg, #1b971b, #08db09);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+        border-width: 1px 2px 3px 2px;
+        border-style: solid;
+        border-color: #4a5dff;
+        border-top-color: #047c34;
+        border-right-color: #e95929;
+        border-left-color: #e95929;
+        color: #ffffff;
+        outline: none;
+    }
+
+    button .button-submit {
+        margin-top: 30px;
+    }
+
+    .landing-wrap .btn-main {
+        margin: 15px 0 10px 0;
+    }
+
+
+    .btn-blue-qa {
+        min-width: 120px;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        margin: 30px 25px;
+        font-size: 140%;
+        font-weight: 600;
+        transition: 0.5s;
+    }
+
+    .btn-blue-qa {
+        border: 5px solid #3498db;
+        color: #3498db;
+    }
+
+    .btn-blue-qa:hover {
+        background-color: #258cd1;
+        border: 5px solid #4aa3df;
+        color: #ecf0f1;
+        cursor: pointer;
+    }
+
+
+    @import url(bootstrap.min.css);
+
+
+    .content {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+    }
+
+    .content__item {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .button {
+        pointer-events: auto;
+        cursor: pointer;
+        background: #e7e7e7;
+        border: none;
+        padding: 2.5rem 5rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        color: #ACB277;
+        font-size: 2.5em;
+        text-shadow: -0.5px 2px 1px rgba(0, 0, 0, .5);
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+    }
+
+    .button::before,
+    .button::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .button--hati {
+        border-radius: 50%;
+        overflow: hidden;
+        border-width: 1px 2px 3px 2px;
+        border-style: solid;
+        border-color: #4a5dff;
+        border-top-color: #047c34;
+        border-right-color: #e95929;
+        border-left-color: #e95929;
+        background: none;
+        font-family: aktiv-grotesk-extended, sans-serif;
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    .button--hati:hover {
+        background: none;
+        text-decoration: none;
+    }
+
+    .button--hati::before {
+        animation: rotateIt 10s linear infinite;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAUElEQVQoU3VPSQ4AMQiS/z/aBiMNNDNeXEBQoDL66dkG52/hzlmsSqMKrAVCoOXuxR3TFVSIIJmzsFvGOMlust3iivmQd/6+3/NlN4paIOEADPIUD/MQvy0AAAAASUVORK5CYII=);
+        content: '';
+        width: 300%;
+        height: 300%;
+        top: -100%;
+        left: -100%;
+        z-index: -1;
+        opacity: 0;
+        transform-origin: 50% 50%;
+        transition: opacity 0.3s;
+    }
+
+    @keyframes rotateIt {
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+
+    .button--hati::before {
+        opacity: 0.5;
+    }
+
+    .button--hati span {
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+    </style>
+
+    <style>
+    .block-btn {
+        display: flex;
+        align-items: center;
+        column-gap: 25px;
+    }
+    .btn {
+        height: auto;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        padding: 14px 0 12px;
+        font-size: 28px;
+        letter-spacing: 1.5px;
+        margin: 25px 0 10px 0;
+        width: 100%;
+        max-width: 370px;
+        font-weight: 900;
+        border-radius: 50px;
+        background: linear-gradient(150deg, #23b424, #02fd03);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+        color: #ffffff;
+        text-shadow: -0.5px 0.5px 1px rgba(0, 0, 0, 0.5);
+        text-transform: uppercase;
+        /*border-width: 1px 2px 3px 2px;
+        border-style: solid;
+        border-color: #4a5dff;
+        border-top-color: #047c34;
+        border-right-color: #e95929;
+        border-left-color: #e95929;*/
+        text-decoration: none;
+    }
+
+
+
+    .btn {
+        animation: 1s ease-out 1s 1 pulse;
+        -webkit-animation: 1s ease-out 1s 1 pulse;
+        -moz-animation: 1s ease-out 1s 1 pulse;
+    }
+
+    .btn:hover,
+    .btn:focus,
+    .btn:active,
+    .btn:active:hover,
+    .btn:active:focus,
+    .btn:hover:focus {
+        background: linear-gradient(150deg, #1b971b, #08db09);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+        /*border-width: 1px 2px 3px 2px;
+        border-style: solid;
+        border-color: #4a5dff;
+        border-top-color: #047c34;
+        border-right-color: #e95929;
+        border-left-color: #e95929;*/
+        color: #ffffff;
+        outline: none;
+    }
+
+    .btn-red {
+        background: linear-gradient(150deg, #EB4C42, #CA4339);
+    }
+    .btn-red:hover,
+    .btn-red:focus,
+    .btn-red:active,
+    .btn-red:active:hover,
+    .btn-red:active:focus,
+    .btn-red:hover:focus {
+        background: linear-gradient(0deg, #EB4C42, #CA4339);
+        
+    }
+
+    button .button-submit {
+        margin-top: 30px;
+    }
+
+    .landing-wrap .btn-main {
+        margin: 15px 0 10px 0;
+    }
+
+
+    .btn-blue-qa {
+        min-width: 120px;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 10px 15px;
+        margin: 30px 25px;
+        font-size: 140%;
+        font-weight: 600;
+        transition: 0.5s;
+    }
+
+    .btn-blue-qa {
+        border: 5px solid #3498db;
+        color: #3498db;
+    }
+
+    .btn-blue-qa:hover {
+        background-color: #258cd1;
+        border: 5px solid #4aa3df;
+        color: #ecf0f1;
+        cursor: pointer;
+    }
+
+
+    .content {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+    }
+
+    .content__item {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .button {
+        pointer-events: auto;
+        cursor: pointer;
+        background: #e7e7e7;
+        border: none;
+        padding: 2.5rem 5rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        color: #ACB277;
+        font-size: 2.5em;
+        text-shadow: -0.5px 2px 1px rgba(0, 0, 0, .5);
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+    }
+
+    .button::before,
+    .button::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .button--hati {
+        border-radius: 50%;
+        overflow: hidden;
+        border-width: 1px 2px 3px 2px;
+        border-style: solid;
+        border-color: #4a5dff;
+        border-top-color: #047c34;
+        border-right-color: #e95929;
+        border-left-color: #e95929;
+        background: none;
+        font-family: aktiv-grotesk-extended, sans-serif;
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    .button--hati:hover {
+        background: none;
+        text-decoration: none;
+    }
+
+    .button--hati::before {
+        animation: rotateIt 10s linear infinite;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAUElEQVQoU3VPSQ4AMQiS/z/aBiMNNDNeXEBQoDL66dkG52/hzlmsSqMKrAVCoOXuxR3TFVSIIJmzsFvGOMlust3iivmQd/6+3/NlN4paIOEADPIUD/MQvy0AAAAASUVORK5CYII=);
+        content: '';
+        width: 300%;
+        height: 300%;
+        top: -100%;
+        left: -100%;
+        z-index: -1;
+        opacity: 0;
+        transform-origin: 50% 50%;
+        transition: opacity 0.3s;
+    }
+
+    @keyframes rotateIt {
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+
+    .button--hati::before {
+        opacity: 0.5;
+    }
+
+    .button--hati span {
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+    .over-descr article{max-width:680px;margin:0 auto;padding:15px;text-align:center;font-size:12px;font-weight:300;color:inherit;text-shadow:-.2px .2px .5px rgba(0,0,0,.2)}
+    </style>
+</head>
+
+<body>
+        <div class="wrapper">
+        <div class="main">
+            <div class="container">
+                <div class="main-title">EXPIRES <strong><span id="date"></span></strong></div><div class="sub-title"><ul><li>Cost: $0.00</li><li>Shipping: $0.00</li></ul></div>
+                
+                <a href="{offer_link}" class="main-action-button">
+                    <img src="img1.png" alt="You can chat with girls nearby" class="main__image">
+                </a>
+                <h1>
+                    WOULD YOU LIKE TO RECEIVE A FREE GIFT BOX?
+                </h1>
+                <div class="main__inner">
+                    <div class="wrapper">
+                        <div class="block-btn">
+                            <a href="{offer_link}" class="btn main-action-button btn-red">
+                               No
+                            </a>
+                            <a href="{offer_link}" class="btn main-action-button">
+                                Yes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="over-descr"><article>Our organization asks customers about product quality and product categories they prefer, as well as what improvements they would like to see. We choose the highest quality surveys among users and give them gifts at zero cost, so don’t miss your chance! Last week alone, almost a thousand people received gifts by spending $0.00 in total, and you can get that chance too.</article></div>
+        <footer>
+            <div class="field field--name-field-footer field--type-block-field field--label-hidden field--item">
+                <div class="container">
+                    <div class="footer-wrap">
+                        <div class="field field--name-field-paragraphs field--type-entity-reference-revisions field--label-hidden field--items">
+                            <div class="field--item">
+                                <div class="">
+                                    <div class="field field--name-field-content field--type-text-long field--label-hidden field--item">
+                                        <div class="footer-wrap">
+                                            <div class="footer-links">
+                                                <div class="main-footer-links">
+                                                    <ul>
+                                                        <li class=""><a href="privacy-policy/" target="_blank">Privacy Policy</a></li>
+                                                        <li class=""><a href="terms-of-use/" target="_blank">Terms &amp; Conditions</a></li>
+                                                    </ul>
+                                                    <!-- #changepoli --><p style="font-size:10px;text-align: center;">Our organization asks customers about product quality and product categories they prefer, as well as what improvements they would like to see. We choose the highest quality surveys among users and give them gifts at zero cost, so don’t miss your chance! Last week alone, almost a thousand people received gifts by spending $0.00 in total, and you can get that chance too.</p><!-- /#changepoli -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <style>
+                                        footer a,
+                                        footer p,
+                                        footer .footer-links ul li,
+                                        footer .footer-copy,
+                                        footer .footer-site {
+                                            font-size: 11px;
+                                            letter-spacing: 0.1px;
+                                        }
+
+                                        footer .footer-links ul li {
+                                            padding: 10px 0;
+                                            width: 100%;
+                                            text-align: center;
+                                        }
+
+                                        footer .footer-copy,
+                                        footer .footer-site {
+                                            font-size: 10px;
+                                        }
+                                        </style>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="date.js"></script>
+
+
+
+</body></html>
