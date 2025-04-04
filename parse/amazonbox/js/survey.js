@@ -1,14 +1,3 @@
-// $(document).ready(function(){
-//     console.log(1)
-//     $(".slidebox[data-index='1'] .optiongrp button").click(function(){
-//         console.log(2)
-//         $(".slidebox[data-index='1']").removeClass("active slide-next slide-in-right").addClass("slide-prev")
-//         $(".slidebox[data-index='2']").addClass("active slide-next slide-in-right")
-//     })
-// })
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const elClass = ["active", "slide-next", "slide-in-right"];
     const slidebox = document.querySelectorAll('.slidebox:not(.transition-screen)');
@@ -65,19 +54,63 @@ function clickProcess() {
     }
     , 0);
 }
-document.body.addEventListener('registerevents-started', data => {
-    console.log(data);
-    setTimeout( () => {
-        let allInput = document.querySelectorAll('input');
-        var hasError = Array.from(allInput).some(field => field.classList.contains('error'));
-        if (!hasError) {
-            setTimeout( () => {
-                clickProcess();
-            }
-            , 0);
+
+$(document).ready(function(){
+    let isEmailValid = () => {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test($("input[name=email]").val())) {
+            return true
+        } else {
+            return false
         }
     }
-    , 0);
-}
-);
-/*Cta processing text - end*/
+    let emailValidation = () => {
+        if (isEmailValid()) {
+            $("input[name=email]").removeClass("error")
+        } else {
+            $("input[name=email]").focus()
+            $("input[name=email]").addClass("error")
+        }
+    }
+    
+    $("input[name=email]").on("input change" , function(){
+        if (isEmailValid()) {
+            $("input[name=email]").removeClass("error")
+        }
+    })
+
+    let offer_start_link = `https://track.${window.location.host}/click`
+
+    const rtkClickID__ = window.getURLParameter(window.location.href, 'clickid');
+    const cachebuster__ = window.getURLParameter(window.location.href, 'rtkck');
+
+    let isDebounced = false;
+
+    $("#entersweep").click(function(){
+        emailValidation()
+        if (isEmailValid()) {
+
+            if (isDebounced) {
+                console.log("Wait before submitting again.");
+                return;
+            }
+            isDebounced = true;
+            setTimeout(() => {
+                isDebounced = false;
+            }, 5000);
+
+            if (rtkClickID__ && cachebuster__) {
+                if (rtkClickID__ !== "undefined" && cachebuster__ !== "undefined") {
+                    fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
+                    .then(r => {
+                        console.log("successfully registered: " + rtkClickID__);
+                        window.location.href = `${offer_start_link}${offer_start_link.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub15=${$("[name=email]").val()}`
+                    })
+                    .catch(e => console.log("error during registration lead: " + e));
+                }
+            }
+        }
+    })
+})
+
+
+
