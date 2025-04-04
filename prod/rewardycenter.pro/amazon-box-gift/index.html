@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>FREE GIFT!</title>
+    <link rel="shortcut icon" href="img/favicon.webp" type="image/x-icon"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+
+    <script type="text/javascript" src="https://track.rewardycenter.pro/track.js?rtkcmpid=67efb5246bdc5a8b750dc22e"></script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2053701028392417');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+    
+</head>
+<body>
+        <header style="z-index: 1000000;">
+		<h1 class="page__title">EXPIRES</h1>
+    </header>
+	<div class="wrapper">
+		<main class="page">
+			<div class="page__container _container">
+				<div class="page__subtitle-container">
+					<h2 class="page__subtitle">
+						$0.00 Cost | $0.00 Shipping
+					</h2>
+                    <img src="img/happy_smile.gif" alt="Happy Customer" class="page__subtitle-image">
+				</div>
+
+                <a href="survey/" class="main-action-button main__link">
+                    <img src="img/box.jpg" alt="Your gift" class="page__image">
+                </a>
+
+				<h2 class="page__offer">
+					WOULD YOU LIKE TO GET AMAZON BOX FOR FREE?
+				</h2>
+				<div class="page__btn-group">
+					<a href="survey/" class="main-action-button page__button button button_red" id="startBtn">NO</a>
+					<a href="survey/" class="main-action-button page__button button button_green" id="startBtn2">YES</a>
+				</div>
+				<p class="page__rules">
+					Our organization asks customers about product quality and product categories they
+                    prefer, as well as what improvements they would like to see. We choose the highest quality surveys among
+                    users and give them gifts at zero cost, so don't miss your chance! Last week alone, almost a thousand
+                    people received gifts by spending $0.00 in total, and you can get that chance too.
+				</p>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__container _container">
+				<div class="footer__links">
+					<div class="footer__main-links">
+						<a href="privacy-policy/" target="_blank" class="footer__link">Privacy Policy</a>
+						<a href="terms-of-use/" target="_blank" class="footer__link">Terms & Conditions</a>
+					</div>
+				</div>
+				<div class="footer__desc">
+					<p class="footer__text">
+						Completing optional offers or survey question does not guarantee you earning a Reward.
+                        Deals, coupons, freebies, samples, and other offers (collectively “Offers”) change often. We cannot
+                        guarantee that you will receive any of the Offers that you request, as Offers are subject to availability
+                        and are often made by other entities. Offers distributed by Adrocketry are limited in quantity, and
+                        Adrocketry reserves the right to substitute sample product based on availability. Offers that are not
+                        distributed by Adrocketry are monitored by other entities, and we are not responsible if such Offers are no
+                        longer available, change, if you do not receive the Offers, if you do not qualify for the Offers, or if any
+                        other issues arise. The third-party product names, logos, brands, and trademarks shown on this website are
+                        the property of their respective owners. These companies are not affiliated with Adrocketry. These third
+                        parties do not sponsor or endorse this website, its content or services.
+					</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+    <script>
+        $(document).ready(function(){
+            $('.main-action-button').on('click', function(e){
+                e.preventDefault();
+                window.location.href = `${$(this).attr("href")}${$(this).attr("href").includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}`
+            });
+
+
+            let title = document.querySelector('.page__title');
+            let titleText = title.innerHTML;
+
+            let monthArray = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+
+            var today = new Date();
+            var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
+            var dayTomorrow = tomorrow.getDate(); 
+            var monthTomorrow = tomorrow.getMonth();
+            var yearTomorrow = tomorrow.getFullYear(); 
+
+            title.innerHTML = `${titleText} ${monthArray[monthTomorrow]} ${dayTomorrow}, ${yearTomorrow}`;
+
+        })    
+    </script>
+</body>
+</html>
