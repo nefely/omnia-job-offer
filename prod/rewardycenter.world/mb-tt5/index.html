@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>RewardyCenter</title>
+
+    <link rel="icon" href="img/fav.png">
+
+    <script type="text/javascript">
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	</script>
+
+    <link href="https://fonts.cdnfonts.com/css/amazon-ember" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery.mask.js"></script>
+
+    <script src="js/general.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript" src="https://omniapostback.com/track.js?rtkcmpid=65efa334b2e18b000158470a"></script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '799738728826938');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+    
+    
+    <!-- Tiktop Pixel Code -->
+    <!-- <script>
+            !function (w, d, t) {
+              w.TikTokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
+    )ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.TikTok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+            
+              ttq.load('CJQU8RJC77U5TJETOUQ0');
+              ttq.page();
+            }(window, document, 'ttq');
+    </script> -->
+    <!-- End Tiktop Pixel Code -->
+    
+    
+    <!-- Pinterest  Pixel Code -->
+    <!-- <script>
+    !function(e){if(!window.pintrk){window.pintrk = function () {
+    window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+      n=window.pintrk;n.queue=[],n.version="3.0";var
+      t=document.createElement("script");t.async=!0,t.src=e;var
+      r=document.getElementsByTagName("script")[0];
+      r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+    pintrk('load', '2612906424300', {em: '<user_email_address>'});
+    pintrk('page');
+    </script> -->
+    <!-- End Pinterest Pixel Code -->
+    
+    
+    <!-- Snap  Pixel Code -->
+    <!-- <script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', 'bf0dccf7-b5ce-4654-b217-f09d298b1d45', { 'user_email': '__INSERT_USER_EMAIL__' }); snaptr('track', 'PAGE_VIEW'); </script> -->
+    <!-- End Snap Pixel Code -->
+
+</head>
+<body>
+
+    <div class="screen">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="inner">
+                        <img src="img/logo-white.png" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <div class="container">
+                <div class="row">
+                    <div class="form">
+                        <div class="hero-section-title">
+                            <h1>Review <strong class="brand-name primary">Amazon</strong><br> Products</h1>
+                            <p>Bonuse available for <strong class="secondary">writing review</strong></p>
+                        </div>
+
+                        <ul class="require-list">
+                            <li>
+                                <img src="img/list-check.svg" alt="list circle">
+                                <p>No experience required</p>
+                            </li>
+                            <li>
+                                <img src="img/list-check.svg" alt="list circle">
+                                <p>Complete in your spare time</p>
+                            </li>
+                            <li>
+                                <img src="img/list-check.svg" alt="list circle">
+                                <p>Get Paid out in as little as a week</p>
+                            </li>
+                        </ul>
+
+                        <div class="form-step form-step-1">
+                            <div class="form-group">
+                                <label for="zip">ZIP</label>
+                                <input type="text" name="zip" class="form-control" id="zip" placeholder="In what zipcode?" maxlength="5">
+                            </div>
+
+                            <div class="submit-form-step">
+                                <button class="btn btn-primary btn-next btn-arrow btn-lg-mobile">
+                                    <p>Start Now</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="49" height="28" viewBox="0 0 49 28" fill="none">
+                                        <rect x="1.71436" y="1" width="46.2857" height="26" rx="13" stroke="white" stroke-width="2"></rect>
+                                        <path d="M16.7144 14H33.0001M33.0001 14L27.1035 8M33.0001 14L27.1035 20" stroke="white" stroke-width="2"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step form-step-2">
+                            <div class="form-group">
+                                <label for="firstname">First Name</label>
+                                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname">Last Name</label>
+                                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" class="form-control" id="email" placeholder="example@gmail.com">
+                            </div>
+
+                            <div class="submit-form-step">
+                                <button class="btn btn-primary btn-next btn-arrow btn-lg-mobile">
+                                    <p>Continue</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="49" height="28" viewBox="0 0 49 28" fill="none">
+                                        <rect x="1.71436" y="1" width="46.2857" height="26" rx="13" stroke="white" stroke-width="2"></rect>
+                                        <path d="M16.7144 14H33.0001M33.0001 14L27.1035 8M33.0001 14L27.1035 20" stroke="white" stroke-width="2"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step form-step-3">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="phone" name="phone" class="form-control" id="phone" placeholder="(000) 000-0000" autocomplete="off" maxlength="14">
+                            </div>
+
+                            <div class="submit-form-step">
+                                <a class="btn btn-primary btn-next btn-arrow btn-lg-mobile" href="survey/">
+                                    <p>Continue</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="49" height="28" viewBox="0 0 49 28" fill="none">
+                                        <rect x="1.71436" y="1" width="46.2857" height="26" rx="13" stroke="white" stroke-width="2"></rect>
+                                        <path d="M16.7144 14H33.0001M33.0001 14L27.1035 8M33.0001 14L27.1035 20" stroke="white" stroke-width="2"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="mob-mb">
+                <img src="img/mb2.png" alt="">
+            </div>
+
+        </section>
+    </div>
+
+    <section class="about">
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                    <div class="title">
+                        <h2 class="h1">About the Platform</h2>
+                    </div>
+                    <p>Welcome to RewardyCenter — your go-to destination for discovering profitable earning opportunities. We are committed to helping individuals across the United States unlock their financial potential through valuable tools, expert resources, and comprehensive support tailored to maximize your income.</p>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary to-top">Start Now</button>
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="img/about-img.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="hiw-section">
+        <div class="container">
+            <div class="row">
+                <div class="inner">
+                    <div class="hiw-section-title">
+                        <h2>How It Works</h2>
+                    </div>
+    
+                    <div class="hiw-list">
+                        <div class="list-item">
+                            <figure>
+                                <img src="img/hiw-section--1.svg" alt="">
+                            </figure>
+                            <div class="content">
+                                <div class="title">
+                                    <h5>Sign Up for an Account</h5>
+                                </div>
+                                <div class="text">
+                                    <p>Get started by creating your free RewardyCenter account and set the foundation for your earnings journey.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <figure>
+                                <img src="img/hiw-section--2.svg" alt="">
+                            </figure>
+                            <div class="content">
+                                <div class="title">
+                                    <h5>Explore Income Streams</h5>
+                                </div>
+                                <div class="text">
+                                    <p>Browse a wide variety of opportunities customized to fit different skills and interests, ensuring there's something for everyone.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <figure>
+                                <img src="img/hiw-section--3.svg" alt="">
+                            </figure>
+                            <div class="content">
+                                <div class="title">
+                                    <h5>Start Earning</h5>
+                                </div>
+                                <div class="text">
+                                    <p>Begin working on flexible projects and watch your earning potential grow as you take advantage of diverse offers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq-section">
+        <div class="container">
+            <div class="row">
+                <div class="inner">
+                    <div class="faq-section-title">
+                        <h2>Frequently Asked Questions</h2>
+                    </div>
+    
+                    <div class="faq-section-blocks">
+                        <div class="faq-section-item">
+                            <div class="faq-section-item-title">
+                                <h6>What is RewardyCenter?</h6>
+                                <div class="figure"><img src="img/open.svg" alt="figure"><img src="img/close.svg" alt="figure"></div>
+                            </div>
+                            <div class="faq-section-item-drop">
+                                <p>RewardyCenter is a platform dedicated to helping people discover new ways to earn and thrive with various online income opportunities.</p>
+                            </div>
+                        </div>
+    
+                        <div class="faq-section-item">
+                            <div class="faq-section-item-title">
+                                <h6>Is there a cost to join RewardyCenter?</h6>
+                                <div class="figure"><img src="img/open.svg" alt="figure"><img src="img/close.svg" alt="figure"></div>
+                            </div>
+                            <div class="faq-section-item-drop">
+                                <p>No, joining RewardyCenter is completely free! You'll gain access to exclusive opportunities and a supportive community at no charge.</p>
+                            </div>
+                        </div>
+    
+                        <div class="faq-section-item">
+                            <div class="faq-section-item-title">
+                                <h6>Do I need experience to participate?</h6>
+                                <div class="figure"><img src="img/open.svg" alt="figure"><img src="img/close.svg" alt="figure"></div>
+                            </div>
+                            <div class="faq-section-item-drop">
+                                <p>Not at all. Whether you're just getting started or already have experience, our programs are designed to guide you every step of the way.</p>
+                            </div>
+                        </div>
+    
+                        <div class="faq-section-item">
+                            <div class="faq-section-item-title">
+                                <h6>How soon can I start making money?</h6>
+                                <div class="figure"><img src="img/open.svg" alt="figure"><img src="img/close.svg" alt="figure"></div>
+                            </div>
+                            <div class="faq-section-item-drop">
+                                <p>That depends on the opportunity you choose! Some options allow you to begin earning right away, while others might require more time.</p>
+                            </div>
+                        </div>
+    
+                        <div class="faq-section-item">
+                            <div class="faq-section-item-title">
+                                <h6>Are there any time restrictions?</h6>
+                                <div class="figure"><img src="img/open.svg" alt="figure"><img src="img/close.svg" alt="figure"></div>
+                            </div>
+                            <div class="faq-section-item-drop">
+                                <p>Nope! You can work at your own pace and fit tasks into your schedule whenever it's most convenient for you.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="row row-top">
+                <div class="inner">
+                    <div class="description">
+                        <p>By accessing samples, giveaways, coupons, sweepstakes, or other promotional offers ("Deals") through UplevelRewards, you may be required to submit personal details, complete surveys, or agree to receive communications from our marketing partners. UplevelRewards does not control or guarantee the availability or quality of third-party Deals and provides them strictly for your convenience.</p>
+                        <p>We are not liable if any Deal becomes unavailable due to changes in third-party policies, eligibility updates, service disruptions, or other unforeseen issues. Additionally, we may receive compensation (at no additional cost to you) when you interact with some of the offers featured on our platform. All third-party names, logos, and trademarks displayed on this site are property of their respective owners, and their presence here does not imply any official partnership or endorsement.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row row--middle">
+                <div class="inner">
+                    <div class="logo">
+                        <img src="img/logo-white.png" alt="">
+                    </div>
+                    <nav>
+                        <a href="privacy-policy/">Privacy Policy</a>
+                        <a href="terms-of-use/">Terms and Conditions</a>
+                        <a href="" class="mailto">Contact Us</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row row-copy">
+                    <p>Copyright © <script>var currentYear = new Date().getFullYear();document.write(currentYear);</script> <span class="domain"></span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+</body>
+</html>
