@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="210px" viewBox="0 0 1024 210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <polygon id="path-1" points="0 0 1024 0 1024 210 0 210"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-lander-copy-2">
+            <g id="sdcdc">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Rectangle" fill="#FF9933" xlink:href="#path-1"></use>
+                <path d="M-90,-37 C-90,-157.398075 7.60937137,-255 128,-255 L128,-255 C248.398075,-255 346,-157.390629 346,-37 L346,-37 C346,83.3980755 248.390629,181 128,181 L128,181 C7.60192454,181 -90,83.3906286 -90,-37 L-90,-37 Z" id="frame" fill="#FF6C00" opacity="0.7" mask="url(#mask-2)"></path>
+                <path d="M858,181 C858,114.173545 912.177679,60 979,60 L979,60 C1045.82645,60 1100,114.177679 1100,181 L1100,181 C1100,247.826455 1045.82232,302 979,302 L979,302 C912.173545,302 858,247.822321 858,181 L858,181 Z" id="frame-copy" fill="#FF6C00" opacity="0.5" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
