@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>RewardyCenter</title>
+
+    <link rel="icon" href="img/fav.png">
+
+    <script type="text/javascript">
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/jquery.mask.js"></script>
+
+    <script src="js/global.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript" src="https://track.rewardycenter.site/track.js?rtkcmpid=6800f97df86f8b29d2e5bdfa"></script>
+
+    <!-- Tiktop Pixel Code -->
+    <script>
+            !function (w, d, t) {
+              w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
+    )ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+            
+              ttq.load('CVV5RE3C77U4IK27B3I0');
+              ttq.page();
+            }(window, document, 'ttq');
+    </script>
+    <!-- End Tiktop Pixel Code -->
+</head>
+<body>
+
+    <div class="screen">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="" class="logo">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="inner">
+                        <h1>Get Paid for <strong class="brand-name secondary">Amazon</strong></h1>
+                        <div class="reviews">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>4.9 reviewers rate</p>
+                        </div>
+                        <div class="list">
+                            <div>
+                                <img src="img/list-check.svg" alt="">
+                                <p>No experience required</p>
+                            </div>
+                            <div>
+                                <img src="img/list-check.svg" alt="">
+                                <p>Complete in your spare time</p>
+                            </div>
+                            <div>
+                                <img src="img/list-check.svg" alt="">
+                                <p>Get Paid out in as little as a week</p>
+                            </div>
+                        </div>
+                        <div class="form">
+                            <div class="question" data-question="1">
+                                <div class="form-group">
+                                    <label for="zip">ZIP</label>
+                                    <input type="text" name="zip" class="form-control" id="zip" placeholder="In what zipcode?" maxlength="5">
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">
+                                        <p>Start Now</p>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="question" data-question="2">
+                                <div class="form-group">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Doe">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="example@gmail.com">
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary">Continue</button>
+                                </div>
+                            </div>
+                            <div class="question" data-question="3">
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="phone" name="phone" class="form-control" id="phone" placeholder="(000) 000-0000" autocomplete="off" maxlength="14">
+                                </div>
+                                <div class="rules">
+                                    <p>By clicking "Submit", I agree to email marketing, <a href="terms-of-use/" target="_blank">Terms &amp;  <br>Conditions</a> including mandatory arbitration, <a href="privacy-policy/" target="_blank">Privacy Policy</a></p>
+                                </div>
+                                <div class="btn-group">
+                                    <a type="button" class="btn btn-primary" href="survey/">Submit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="requirements">
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h2 class="h1">is for you,<span><br></span>if you are</h2>
+                </div>
+                <div class="list">
+                    <div>
+                        <h6>01</h6>
+                        <p>Full-time homemakers</p>
+                    </div>
+                    <div>
+                        <h6>02</h6>
+                        <p>Seeking an extra income stream</p>
+                    </div>
+                    <div>
+                        <h6>03</h6>
+                        <p>Passionate about Amazon deals</p>
+                    </div>
+                    <div>
+                        <h6>04</h6>
+                        <p>Interested in product reviewing</p>
+                    </div>
+                    <div>
+                        <h6>05</h6>
+                        <p>Have spare time for new opportunities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                    <div class="title">
+                        <h2 class="h1">Discover Our Platform</h2>
+                    </div>
+                    <p>Welcome to RewardyCenter – your go-to destination for exploring rewarding income opportunities. Our mission is to equip individuals across the United States with valuable tools, resources, and expert guidance to help them maximize their earning potential.</p>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary to-top">Get Started</button>
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="img/about-img.png" alt="Platform Overview">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="how-it-works">
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h2 class="h1">How It Works</h2>
+                </div>
+                <div class="content">
+                    <div class="item">
+                        <div class="number">
+                            <div class="inner">
+                                <h6>01</h6>
+                                <span class="circle"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h5>Create Your Account</h5>
+                            <p>Sign up for free on RewardyCenter and gain instant access to exclusive earning opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="number">
+                            <div class="inner">
+                                <h6>02</h6>
+                                <span class="circle"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h5>Discover & Earn</h5>
+                            <p>Browse a variety of income options, take action, and start growing your earnings effortlessly with RewardyCenter.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="number">
+                            <div class="inner">
+                                <h6>03</h6>
+                                <span class="circle"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <h5>Receive Your Rewards</h5>
+                            <p>Enjoy daily bonuses, earn rewards, and even keep Amazon products at no cost.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="faq">
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h2 class="h1">Common Questions & Answers</h2>
+                </div>
+                <div class="content">
+                    <div class="item active">
+                        <div class="visible">
+                            <span class="circle"></span>
+                            <h6>What is RewardyCenter?</h6>
+                            <div class="figure">
+                                <img src="img/pros.svg" alt="">
+                                <img src="img/cons.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="hidden">
+                            <p>RewardyCenter is an innovative platform designed to connect individuals with various income-generating opportunities. Our goal is to provide the necessary tools and guidance to help you grow financially.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="visible">
+                            <span class="circle"></span>
+                            <h6>Does joining RewardyCenter cost anything?</h6>
+                            <div class="figure">
+                                <img src="img/pros.svg" alt="">
+                                <img src="img/cons.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="hidden">
+                            <p>No, becoming a member of RewardyCenter is completely free. We offer unrestricted access to exclusive earning opportunities, along with a supportive community to assist you.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="visible">
+                            <span class="circle"></span>
+                            <h6>Do I need any experience to start?</h6>
+                            <div class="figure">
+                                <img src="img/pros.svg" alt="">
+                                <img src="img/cons.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="hidden">
+                            <p>Not at all! Whether you're a total beginner or a seasoned expert, RewardyCenter offers step-by-step guidance to help you start earning, no matter your background.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="visible">
+                            <span class="circle"></span>
+                            <h6>How quickly can I begin earning?</h6>
+                            <div class="figure">
+                                <img src="img/pros.svg" alt="">
+                                <img src="img/cons.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="hidden">
+                            <p>The speed at which you earn depends on the opportunity you choose. Some options allow you to start making money immediately, while others may take time to build momentum.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="visible">
+                            <span class="circle"></span>
+                            <h6>Are there any time commitments?</h6>
+                            <div class="figure">
+                                <img src="img/pros.svg" alt="">
+                                <img src="img/cons.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="hidden">
+                            <p>No, you have full flexibility. Whether you prefer part-time, full-time, or working at your own pace, RewardyCenter adapts to your schedule.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row row-top">
+                <div class="inner">
+                    <div class="description">
+                        <p>By accessing samples, discounts, giveaways, coupons, or sweepstakes ("Offers") via the links provided on RewardyCenter, you may be required to share personal details, complete survey questions, or consent to communication from our marketing partners. RewardyCenter does not guarantee the availability, reliability, or suitability of any Offers, as they are managed by third parties and provided solely for informational purposes.</p>
+                        <p>We are not responsible for the unavailability of any Offers due to third-party terms, changes in eligibility criteria, service disruptions, or other unforeseen circumstances. Additionally, we may earn compensation when you engage with third-party promotions featured on our website. Any third-party names, logos, or trademarks displayed here are the property of their respective owners, and their presence does not imply endorsement or affiliation.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row row--middle">
+                <div class="inner">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="RewardyCenter Logo">
+                    </div>
+                    <nav>
+                        <a href="privacy-policy/">Privacy Policy</a>
+                        <a href="terms-of-use/">Terms & Conditions</a>
+                        <a href="" class="mailto">Get in Touch</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row row-copy">
+                    <p>© <script>document.write(new Date().getFullYear());</script> <span class="domain"></span>. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+</body>
+</html>
