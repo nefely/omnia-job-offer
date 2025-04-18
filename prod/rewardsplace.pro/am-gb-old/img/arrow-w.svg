@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-12.5%" y="-12.5%" width="125.0%" height="125.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="1" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="FreeSamplesProUSA" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="lander-5" transform="translate(-274.000000, -573.000000)" fill-rule="nonzero">
+            <g id="CTA/1b" transform="translate(40.000000, 560.000000)">
+                <g id="Group">
+                    <g id="mm/arrow-w" filter="url(#filter-1)" transform="translate(230.000000, 8.500000)">
+                        <polygon id="base" fill-opacity="0" fill="#FFFFFF" points="-1.10438642e-12 32 32 32 32 -2.27373675e-13 -1.10438642e-12 -2.27373675e-13"></polygon>
+                        <path d="M17.256456,5.26498625 L28,16.0085302 L17.2649863,26.743544 C16.4839377,27.5245926 15.2176077,27.5245926 14.4365591,26.743544 C13.6555105,25.9624954 13.6555105,24.6961654 14.4365591,23.9151168 L20.4162394,17.9341998 L6.33823936,17.9343784 C5.23366986,17.9343784 4.33823936,17.0389479 4.33823936,15.9343784 C4.33823936,14.8298089 5.23366986,13.9343784 6.33823936,13.9343784 L20.2682394,13.9341998 L14.4280289,8.09341338 C13.6469803,7.3123648 13.6469803,6.04603484 14.4280289,5.26498625 C15.2090775,4.48393767 16.4754074,4.48393767 17.256456,5.26498625 Z" id="Combined-Shape" fill="#FAFAFA" transform="translate(16.169120, 16.004265) scale(-1, 1) rotate(-180.000000) translate(-16.169120, -16.004265) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

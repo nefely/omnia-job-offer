@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="../img/favicon.webp" type="image/x-icon"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"/>
+        <meta name="theme-color" content="#2E3633"/>
+        <title>FREE GIFT!</title>
+        <link rel="stylesheet" href="../css/loader.css">
+        <link rel="stylesheet" href="../css/index-personalized-v1.css?v=1.1">
+        <link rel="stylesheet" href="../css/fspubartkostprelander.css">
+
+        <script src="../js/jquery-3.6.4.min.js"></script>
+        <script src="../js/global.js"></script>
+        <script src="../js/survey.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <style>
+            sup {
+                vertical-align: top;
+                line-height: 1;
+            }
+
+            .main .email-checker {
+                cursor: default;
+            }
+
+            .main .email-checker > span {
+                cursor: pointer;
+            }
+
+            .prelander-screen2 {
+                background: #FFC836 url(/images/dynamic-flow/mcdonalds/bgshine-mcdonalds.png) top center no-repeat;
+                background-size: contain;
+            }
+
+            .theme-bgcolor {
+                background: #BD0017;
+                z-index: 1;
+            }
+
+            header {
+                background: unset;
+                z-index: 2;
+            }
+
+            .progress-box {
+                position: relative;
+                z-index: 1;
+            }
+
+            .prelander-screen2 span.brandnametxt {
+                color: #BD0017;
+            }
+
+            .prelanderproductimg img {
+                width: 100%;
+            }
+
+            .groceryimg.productimg img {
+                width: 100%;
+            }
+
+            /*Cta processing text - start*/
+            .ctaprocessing button#entersweep {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .ctaprocessing button#entersweep::after {
+                display: none
+            }
+
+            .ctaprocessing .cta-inner {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .ctaprocessing .ctaspinner {
+                display: grid;
+                place-items: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: 4px solid rgba(0,0,0,0);
+                background: conic-gradient(from 180deg at 50% 50%,rgba(82,0,255,0) 0deg,#fff 360deg) border-box;
+                -webkit-mask: linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+                -webkit-mask-composite: destination-out;
+                mask-composite: exclude;
+                animation: spin 2s infinite linear;
+                margin-right: 15px
+            }
+
+            @keyframes spin {
+                to {
+                    -webkit-transform: rotate(1turn);
+                    transform: rotate(1turn);
+                }
+            }
+
+            @-webkit-keyframes spin {
+                to {
+                    -webkit-transform: rotate(1turn);
+                    transform: rotate(1turn);
+                }
+            }
+
+            /*Cta processing text - end*/
+        </style>
+
+        <script type="text/javascript">
+            window.getURLParameter = (sUrl, sParam) => {
+                let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
+                let sURLVariables = sPageURL.split('&');
+                for (let i = 0; i < sURLVariables.length; i++) {
+                    let sParameterName = sURLVariables[i].split('=');
+                    if (sParameterName[0] == sParam) {
+                        return sParameterName[1];
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body class="questionprelander fspubartkostprelander Gift Box" style="">
+        <main>
+            <!-- prelander section -->
+            <div class="prelander-wrapper" id="prelanderSection">
+                <div class="prelander-screen2">
+                    <header>
+                        <div class=" logo-inner">
+                            <div class="logo">
+                                <img src="../img/logo-dark-domain.svg" alt="">
+                            </div>
+                        </div>
+                    </header>
+                    <div class="prelandertitle">
+                        <p>
+                            <span class="prelanderheadtitlestart brandnametxt">Free</span>
+                            <span class="brandnametxt brand">Gift Box</span>
+                            <span class="prelanderheadtitleend">Available Now! </span>
+                        </p>
+                    </div>
+                    <section class="quest-wrap">
+                        <div class="question-section" id="questionsection">
+                            <div class="prelanderproductimg">
+                                <img src="../img/giftbox_collage_5.webp">
+                            </div>
+                            <ul class="questionlisting">
+                                <li class="active-element" data-count=''>
+                                    <div class="questionwrap">
+                                        <div class="slidebox active slide-next slide-in-right" data-index='1'>
+                                            <h3 class="questiontitle">
+                                                Have you received <span class="singulartxt">a</span>
+                                                <span class="brandnametxt">Free Gift Box</span>
+                                                before?
+                                            </h3>
+                                            <div class="optionslist">
+                                                <div class="optiongrp">
+                                                    <button class="optionbtn" data-value="Yes">Yes</button>
+                                                </div>
+                                                <div class="optiongrp">
+                                                    <button class="optionbtn" data-value="No">No</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slidebox transition-screen" data-index='2'>
+                                            <h3 class="questiontitle"></h3>
+                                            <div class="optionslist">
+                                                Preparing your <span class="loadingtextstart freesamples">Free</span>
+                                                <span class="brandnametxt">Gift Box</span>
+                                                <span class="loadingtextend freesamples">Samples...</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!-- prelander ends -->
+            <!-- lander section -->
+            <div class="main" id="landerSection" style="display: none;">
+                <header>
+                    <div class=" logo-inner">
+                        <div class="logo">
+                            <img src="../img/logo-light.svg" alt="">
+                        </div>
+                        <div class="header-progress-bar">
+                            <div class="progressbar">
+                                <div class="progress-value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="bg theme-bgcolor"></div>
+                <div class="body-text padding-0">
+                    <div class="offer250">
+                        <div class="box-360">
+                            <div class="progress-box">
+                                <span style="width: 33.3%"></span>
+                            </div>
+                            <div class="personalize-text-box">
+                                <h1>
+                                    Get Your <span class="landerheadtitlestart">Free </span>
+                                    Gift Box<span class="landerheadtitleend"></span>
+                                    !
+                                </h1>
+                                <div class="groceryimg productimg">
+                                    <img src="../img/giftbox_collage_5.webp">
+                                </div>
+                                <img src="../img/personaliz-img-left-arrow.webp" alt="" class="box-left-arrow arrow-animation bounce"/>
+                                <img src="../img/personaliz-img-right-arrow.webp" alt="" class="box-right-arrow arrow-animation bounce"/>
+                                <span class="img-copy">*Images used are for representation purposes only.</span>
+                            </div>
+                            <div class="enter-sweep-box form-bg">
+                                <div class="offer-entry-form">
+                                        <h2 class="claimentry">Confirm your email address</h2>
+                                        <input 
+                                            autofocus="true" 
+                                            type="email" 
+                                            name="email" 
+                                            class="entersweeps xverify_email " 
+                                            id="entersweeps" 
+                                            placeholder="Enter Email Address" 
+                                        />
+                                        <button id="entersweep" name="next" class="playtowin cta" data-tname="email-submit">
+                                            <div class="cta-inner">Continue</div>
+                                        </button>
+                                        <div class="email-diclaimer" id="cta-disclaimer">By clicking 'Continue', I agree to receive relevant emails from <span class="domain"></span> and its partners. I also agree to the <a href="../privacy-policy/" target="_blank">Privacy Policy</a> which includes details on the collection and use of my personal data, and the <a href="../terms-of-use/" target="_blank">Terms of Use</a> which includes a mandatory arbitration provision, and this site's use of site visit recording technology provided by TrustedForm, Jornaya and Lucky Orange.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- lander ends -->
+        </main>
+        <footer>
+            <div class="footer-disclaimer-section">
+                <h6>
+                    To access samples, deals, giveaways, coupons, sweepstakes, or any other offers ("Deals") through the links available on <span class="domain"></span>
+                    you may be required to share your personal information, respond to survey questions, and agree to be contacted by our marketing partners. <span class="domain"></span>
+                    does not guarantee the availability of Deal(s) facilitated through our website or that they will meet your requirements since they are offered as well as monitored by third parties and are provided on the website for convenience purposes only.
+      
+                </h6>
+                <h6>We shall not be liable for the unavailability of any Deals, for any reasons, including but not limited to, third-party terms and conditions associated with such Deals, change in qualification criteria related to such Deals, denial of service, communication lapses, or any other reasons due to which the Deals become unavailable. We may receive compensation, at no cost to you, when you participate in the third-party offers available on our website.
+      </h6>
+                <h6>All third-party names (including company and service names), graphics, and logos used here are trademarks or registered trademarks of such third parties. Use of them here does not imply any affiliation with or endorsement by such third-parties.
+    
+    </h6>
+            </div>
+            <div class="footer-links">
+                <div class="f-links">
+                    <ul>
+                        <li>
+                            <a href="../terms-of-use/" target="_blank">Terms &amp;Conditions</a>
+                        </li>
+                        <li>
+                            <a href="../privacy-policy/" target="_blank">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="" class="mailto" target="_blank">Support</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        
+        
+    </body>
+</html>
