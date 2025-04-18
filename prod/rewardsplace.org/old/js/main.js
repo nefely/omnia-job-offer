@@ -51,7 +51,7 @@ $(document).ready(function(){
             $(".desk-figure-left , .desk-figure-right , .mobile-figure").fadeOut(300)
             $("html, body").animate({ scrollTop: 0 }, 300);
             $(".form [data-question='1']").fadeOut(300)
-            $('.hero .hero-bullets-list').fadeOut(300)
+            $('.hero .list').fadeOut(300)
             setTimeout(()=>{
                 $(".form [data-question='2']").fadeIn(300)
                 $("input[name=firstname]").focus()
