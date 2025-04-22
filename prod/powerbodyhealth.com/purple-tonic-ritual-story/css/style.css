@@ -360,3 +360,12 @@ footer a {
 .play-container .progress-bar .btn-42 .line { height: 16px; }
 .play-container .progress-bar .btn-43 .line { height: 24px; }
 .play-container .progress-bar .btn-44 .line { height: 32px; }
+
+
+
+.fb-comments {
+    width: 100% !important;
+}
+.fb-comments iframe {
+    width: 100% !important;
+}
