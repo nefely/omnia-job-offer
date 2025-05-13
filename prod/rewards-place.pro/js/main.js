@@ -1,20 +1,20 @@
 $(document).ready(function(){
-    $(".faq .item .visible").click(function(){
-        $(this).closest(".item").toggleClass("active")
+
+    $(".faq-section-item .faq-section-item-title").click(function(){
+        $(this).closest(".faq-section-item").toggleClass("active")
     })
+    
     $(".to-top").click(function () {
         $("html, body").animate({ scrollTop: 0 }, 300);
         return false;
     });
-
-
+    
     if ($("input[name=phone]").length > 0) {
         $("input[name=phone]").mask('(000) 000-0000');
     }
     if ($("input[name=zip]").length > 0) {
         $("input[name=zip]").mask('00000');
     }
-
     setTimeout(()=>{
         $("input[name=zip]").val("")
         $("input[name=firstname]").val("")
@@ -22,8 +22,7 @@ $(document).ready(function(){
         $("input[name=email]").val("")
         $("input[name=phone]").val("")
     },500)
-
-
+    
     // form question 1
     isZipValid = () => {
         if ($("input[name=zip]").val().length == 5) {
@@ -45,20 +44,21 @@ $(document).ready(function(){
             $("input[name=zip]").removeClass("is-invalid")
         }
     })
-    $(".form [data-question='1'] .btn").click(function(){
+    $(".form .form-step-1 .submit-form-step button").click(function(){
         zipValidation()
         if (isZipValid()) {
-            $(".desk-figure-left , .desk-figure-right , .mobile-figure").fadeOut(300)
             $("html, body").animate({ scrollTop: 0 }, 300);
-            $(".form [data-question='1']").fadeOut(300)
-            $('.hero .list').fadeOut(300)
+            $(".form .form-step-1").fadeOut(300)
+            $('.require-list').fadeOut(300)
+            $('.slug-block').fadeOut(300)
             setTimeout(()=>{
-                $(".form [data-question='2']").fadeIn(300)
+                $(".form .form-step-2").fadeIn(300)
                 $("input[name=firstname]").focus()
             },300)
         }
     });
-
+    
+    
     // form question 2
     isFirstNameValid = () => {
         if ($("input[name=firstname]").val().length >= 2) {
@@ -120,23 +120,24 @@ $(document).ready(function(){
             $("input[name=email]").removeClass("is-invalid")
         }
     })
-    $(".form [data-question='2'] .btn").click(function(){
+    $(".form .form-step-2 .submit-form-step button").click(function(){
         emailValidation()
         lastNameValidation()
         firstNameValidation()
-
-
+        
+    
         if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
             $("html, body").animate({ scrollTop: 0 }, 300);
-            $(".form [data-question='2']").fadeOut(300)
+            $(".form .form-step-2").fadeOut(300)
             setTimeout(()=>{
-                $(".form [data-question='3']").fadeIn(300)
+                $('.require-list').fadeIn(300)
+                $('.slug-block').fadeIn(300)
+                $(".form .form-step-3").fadeIn(300)
                 $("input[name=phone]").focus()
             },300)
         }
     });
-
-
+    
     // form question 3
     isPhoneValid = () => {
         if ($("input[name=phone]").val().replaceAll("(" , "").replaceAll(")" , "").replaceAll("-" , "").replaceAll(" " , "").length == 10) {
@@ -153,31 +154,23 @@ $(document).ready(function(){
             $("input[name=phone]").addClass("is-invalid")
         }
     }
-
+    
     $("input[name=phone]").on("input change" , function(){
         if (isPhoneValid()) {
             $("input[name=phone]").removeClass("is-invalid")
         }
     })
-
-    let lastClickTime = 0;
-
-    $(".form [data-question='3'] .btn").click(function(e){
-        const currentTime = new Date().getTime();
+    
+    $(".form .form-step-3 .submit-form-step .btn").click(function(e){
         e.preventDefault()
         phoneValidation()
-
-        if (currentTime - lastClickTime < 5000) {
-            return false;
-        } else {
-            if (isPhoneValid()) {
-                $("html, body").animate({ scrollTop: 0 }, 300);
-                $("input[name=phone]").blur()
-                window.location.href = `${$(this).attr("href")}${$(this).attr("href").includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}&offer_type=Product Reviewer`
-            }
+        if (isPhoneValid()) {
+            $("html, body").animate({ scrollTop: 0 }, 300);
+            $("input[name=phone]").blur()
+            window.location.href = `${$(this).attr("href")}${$(this).attr("href").includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}&offer_type=Product Reviewer`
         }
-        
     });
-
-
-})
+    
+    
+    
+    })
