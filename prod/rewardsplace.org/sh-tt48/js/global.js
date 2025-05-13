@@ -15,13 +15,5 @@ $(document).ready(function(){
             }
         }
     }
-
-    $("#tracklink a").click(function(e){
-        e.preventDefault();
-        ttq.track('CompleteRegistration');
-        setTimeout(()=>{
-            window.location.href = $(this).attr("href")
-        },500)
-    })
     
 })    
