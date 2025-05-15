@@ -27,7 +27,7 @@ const data = {
 };
 console.log(data)
 // uncommit on prod
-fetch(`https://track.rewardycenter.pro/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
+fetch(`https://track.earnoppcenter.com/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
 .then(r => {
     console.log("successfully registered: " + rtkClickID__);
 })
