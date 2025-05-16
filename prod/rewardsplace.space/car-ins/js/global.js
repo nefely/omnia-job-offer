@@ -16,9 +16,15 @@ $(document).ready(function(){
         }
     }
 
-    $(".offer").click(function(e){
+    $(".btn a").click(function(e){
         e.preventDefault();
         ttq.track('CompleteRegistration');
+        fetch(`https://track.rewardsplace.space/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
+        .then(r => {
+            console.log("successfully registered: " + rtkClickID);
+        })
+        .catch(e => console.log("error during registration lead: " + e));
+        
         setTimeout(()=>{
             window.location.href = $(this).attr("href")
         },500)

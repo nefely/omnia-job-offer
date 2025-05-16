@@ -15,13 +15,5 @@ $(document).ready(function(){
             }
         }
     }
-
-    $(".offer").click(function(e){
-        e.preventDefault();
-        ttq.track('CompleteRegistration');
-        setTimeout(()=>{
-            window.location.href = $(this).attr("href")
-        },500)
-    })
     
 })    
