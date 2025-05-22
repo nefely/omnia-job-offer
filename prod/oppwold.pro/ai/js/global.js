@@ -1,9 +1,10 @@
 $(document).ready(function(){
-
+	
     window.domain = window.location.hostname;
     $(".domain").text(domain)
+    
     $(".mailto").attr("href" , `mailto:contact@${domain}`)
-
+    
     window.getURLParameter = (sUrl, sParam) => {
         let sPageURL = decodeURI(sUrl.substring(sUrl.indexOf('?') + 1));
         let sURLVariables = sPageURL.split('&');
@@ -14,4 +15,13 @@ $(document).ready(function(){
             }
         }
     }
-})
+
+    $(".offer").click(function(e){
+        e.preventDefault();
+        ttq.track('CompleteRegistration');
+        setTimeout(()=>{
+            window.location.href = $(this).attr("href")
+        },500)
+    })
+    
+})    
