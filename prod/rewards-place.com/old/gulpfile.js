@@ -17,5 +17,4 @@ gulp.task('serve', function() {
   gulp.watch("./**/*.css").on("change", reload);
   gulp.watch("./**/*.js").on("change", reload);
 
-  /*http://localhost:3000/*/ 
 });
