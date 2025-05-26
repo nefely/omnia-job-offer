@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="icon" href="img/fav.png">
+        <title>Smarty Coverage</title>
+        <style>
+            img:is([sizes="auto" i], [sizes^="auto," i]) {
+                contain-intrinsic-size: 3000px 1500px
+            }
+        </style>
+
+        <script type="text/javascript" src="https://track.oppcenter.net/track.js?rtkcmpid=6826f810b2e0011ed505b47d"></script>
+
+        <script src="js/jquery-3.6.4.min.js"></script>
+        <script src="js/global.js"></script>
+        
+        <link rel='stylesheet' id='fusion-dynamic-css-css' href='css/c1d89308f8086bc01d831f8dbfa0e2bb.min.css' type='text/css' media='all'/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style type="text/css" id="css-fb-visibility">
+            @media screen and (max-width: 640px) {
+                .fusion-no-small-visibility {
+                    display:none !important;
+                }
+
+                body .sm-text-align-center {
+                    text-align: center !important;
+                }
+
+                body .sm-text-align-left {
+                    text-align: left !important;
+                }
+
+                body .sm-text-align-right {
+                    text-align: right !important;
+                }
+
+                body .sm-flex-align-center {
+                    justify-content: center !important;
+                }
+
+                body .sm-flex-align-flex-start {
+                    justify-content: flex-start !important;
+                }
+
+                body .sm-flex-align-flex-end {
+                    justify-content: flex-end !important;
+                }
+
+                body .sm-mx-auto {
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+
+                body .sm-ml-auto {
+                    margin-left: auto !important;
+                }
+
+                body .sm-mr-auto {
+                    margin-right: auto !important;
+                }
+
+                body .fusion-absolute-position-small {
+                    position: absolute;
+                    top: auto;
+                    width: 100%;
+                }
+
+                .awb-sticky.awb-sticky-small {
+                    position: sticky;
+                    top: var(--awb-sticky-offset,0);
+                }
+            }
+
+            @media screen and (min-width: 641px) and (max-width: 1024px) {
+                .fusion-no-medium-visibility {
+                    display:none !important;
+                }
+
+                body .md-text-align-center {
+                    text-align: center !important;
+                }
+
+                body .md-text-align-left {
+                    text-align: left !important;
+                }
+
+                body .md-text-align-right {
+                    text-align: right !important;
+                }
+
+                body .md-flex-align-center {
+                    justify-content: center !important;
+                }
+
+                body .md-flex-align-flex-start {
+                    justify-content: flex-start !important;
+                }
+
+                body .md-flex-align-flex-end {
+                    justify-content: flex-end !important;
+                }
+
+                body .md-mx-auto {
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+
+                body .md-ml-auto {
+                    margin-left: auto !important;
+                }
+
+                body .md-mr-auto {
+                    margin-right: auto !important;
+                }
+
+                body .fusion-absolute-position-medium {
+                    position: absolute;
+                    top: auto;
+                    width: 100%;
+                }
+
+                .awb-sticky.awb-sticky-medium {
+                    position: sticky;
+                    top: var(--awb-sticky-offset,0);
+                }
+            }
+
+            @media screen and (min-width: 1025px) {
+                .fusion-no-large-visibility {
+                    display:none !important;
+                }
+
+                body .lg-text-align-center {
+                    text-align: center !important;
+                }
+
+                body .lg-text-align-left {
+                    text-align: left !important;
+                }
+
+                body .lg-text-align-right {
+                    text-align: right !important;
+                }
+
+                body .lg-flex-align-center {
+                    justify-content: center !important;
+                }
+
+                body .lg-flex-align-flex-start {
+                    justify-content: flex-start !important;
+                }
+
+                body .lg-flex-align-flex-end {
+                    justify-content: flex-end !important;
+                }
+
+                body .lg-mx-auto {
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+
+                body .lg-ml-auto {
+                    margin-left: auto !important;
+                }
+
+                body .lg-mr-auto {
+                    margin-right: auto !important;
+                }
+
+                body .fusion-absolute-position-large {
+                    position: absolute;
+                    top: auto;
+                    width: 100%;
+                }
+
+                .awb-sticky.awb-sticky-large {
+                    position: sticky;
+                    top: var(--awb-sticky-offset,0);
+                }
+            }
+        </style>
+        <style type="text/css" id="wp-custom-css">
+            @media (max-width: 768px) {
+                .fusion-tb-header .fusion-flex-container.fusion-builder-row-5 {
+                    padding-top: 0px!important;
+                    padding-bottom: 0px!important;
+                }
+
+                body #new-global-header-container span.fusion-imageframe {
+                    max-width: 92% !important;
+                }
+
+                .fusion-builder-row {
+                    margin: unset!important;
+                }
+
+                body #main .fusion-fullwidth.fullwidth-box .fusion-layout-column {
+                    width: 100%!important;
+                }
+
+                div#home-four-col {
+                    background-image: unset!important;
+                }
+
+                .fusion-layout-column.fusion_builder_column.fusion-builder-column-21.fusion_builder_column_1_2.\31 _2.fusion-flex-column.fusion-animated .fusion-column-wrapper.fusion-flex-justify-content-flex-start.fusion-content-layout-column {
+                    padding: 0px 0px 35px 0px!important;
+                }
+
+                .fusion-fullwidth.fullwidth-box.fusion-builder-row-10.fusion-flex-container.nonhundred-percent-fullwidth.non-hundred-percent-height-scrolling .fusion-column-wrapper {
+                    margin: unset!important;
+                    padding: unset!important;
+                }
+
+                body #category-three-boxes {
+                    margin-top: 30px !important;
+                }
+
+                .fusion-builder-row.fusion-row.fusion-flex-align-items-flex-start > div {
+                    margin-bottom: 15px!important;
+                }
+
+                .category-h1 h1 {
+                    padding-top: 25px!important;
+                    padding-bottom: 10px!important;
+                    font-size: 27px!important;
+                }
+
+                .fusion-columns {
+                    margin: 0 7px!important;
+                }
+
+                main#main {
+                    padding-bottom: 0px!important;
+                }
+
+                .fusion-body .fusion-flex-container.fusion-builder-row-9 {
+                    padding-top: 25px!important;
+                }
+
+                .fusion-fullwidth.fullwidth-box.fusion-builder-row-10.fusion-flex-container.nonhundred-percent-fullwidth.non-hundred-percent-height-scrolling .fusion-title.title.fusion-title-11.fusion-no-medium-visibility.fusion-no-large-visibility.fusion-sep-none.fusion-title-center.fusion-title-text.fusion-title-size-two {
+                    margin-top: -40px!important;
+                }
+
+                .fusion-body .fusion-flex-container.fusion-builder-row-10-1 {
+                    padding-right: 0px!important;
+                    padding-left: 0px!important;
+                }
+
+                body #main {
+                    padding: 0px 20px 29px!important;
+                }
+
+                .fusion-text {
+                    margin: unset!important;
+                }
+            }
+
+            @media (min-width: 769px) {
+                body.single .fusion-carousel .fusion-carousel-item {
+                    width: auto!important;
+                    margin: unset!important;
+                    min-height: 230px!important;
+                }
+
+                .fusion-carousel-positioner {
+                    margin: unset!important;
+                }
+            }
+        </style>
+
+        <!-- Tiktop Pixel Code -->
+        <script>
+                !function (w, d, t) {
+                w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
+        )ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+                
+                ttq.load('D0I7HM3C77UCBH6CIJGG');
+                ttq.page();
+                }(window, document, 'ttq');
+        </script>
+        <!-- End Tiktop Pixel Code -->
+    
+
+    </head>
+    <body class="page-template page-template-100-width page-template-100-width-php page page-id-2477 fusion-image-hovers fusion-pagination-sizing fusion-button_type-flat fusion-button_span-no fusion-button_gradient-linear avada-image-rollover-circle-yes avada-image-rollover-no dont-animate fusion-body ltr fusion-sticky-header no-tablet-sticky-header no-mobile-sticky-header no-mobile-slidingbar no-mobile-totop fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow- layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-classic fusion-show-pagination-text fusion-header-layout-v6 avada-responsive avada-footer-fx-none avada-menu-highlight-style-arrow fusion-search-form-clean fusion-main-menu-search-overlay fusion-avatar-circle avada-dropdown-styles avada-blog-layout-medium avada-blog-archive-layout-grid avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-mobile-menu-search avada-has-main-nav-search-icon avada-has-breadcrumb-mobile-hidden avada-has-titlebar-hide avada-header-border-color-full-transparent avada-has-transparent-timeline_color avada-has-pagination-width_height avada-flyout-menu-direction-fade avada-ec-views-v1 aa-prefix-hello-" data-awb-post-id="2477">
+        <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+        <div id="boxed-wrapper">
+            <div id="wrapper" class="fusion-wrapper">
+                <div id="home" style="position:relative;top:-1px;"></div>
+                <div class="fusion-tb-header">
+                    <div class="fusion-fullwidth fullwidth-box fusion-builder-row-3 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth non-hundred-percent-height-scrolling" style="--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-padding-top:20px;--awb-padding-bottom:0px;--awb-margin-bottom:0px;--awb-background-color:var(--awb-color5);--awb-flex-wrap:wrap;">
+                        <div class="fusion-builder-row fusion-row fusion-flex-align-items-center fusion-flex-content-wrap" style="max-width:1248px;margin-left: auto;margin-right: auto; justify-content: space-between;">
+                            <div class="fusion-layout-column fusion_builder_column fusion-builder-column-8 fusion_builder_column_1_4 1_4 fusion-flex-column fusion-flex-align-self-center" style="--awb-bg-size:cover;--awb-width-large:25%;--awb-margin-top-large:0px;--awb-spacing-right-large:7.68%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:7.68%;--awb-width-medium:25%;--awb-order-medium:0;--awb-spacing-right-medium:7.68%;--awb-spacing-left-medium:7.68%;--awb-width-small:83.333333333333%;--awb-order-small:0;--awb-spacing-right-small:2.304%;--awb-spacing-left-small:2.304%;">
+                                <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                    <div class="fusion-image-element " style="--awb-max-width:120px;--awb-caption-title-font-family:var(--h2_typography-font-family);--awb-caption-title-font-weight:var(--h2_typography-font-weight);--awb-caption-title-font-style:var(--h2_typography-font-style);--awb-caption-title-size:var(--h2_typography-font-size);--awb-caption-title-transform:var(--h2_typography-text-transform);--awb-caption-title-line-height:var(--h2_typography-line-height);--awb-caption-title-letter-spacing:var(--h2_typography-letter-spacing);">
+                                        <span class=" fusion-imageframe imageframe-none imageframe-4 hover-type-none" >
+                                            <img decoding="async" src="img/logo-white.png" alt class="lazyload img-responsive wp-image-2075" data-sizes="auto" data-orig-sizes="(max-width: 640px) 100vw, 400px" style="height: 50px; margin-right: 10px;"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="sliders-container" class="fusion-slider-visibility"></div>
+                <section class="fusion-page-title-bar fusion-tb-page-title-bar">
+                    <div class="fusion-fullwidth fullwidth-box fusion-builder-row-4 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth non-hundred-percent-height-scrolling" style="--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-flex-wrap:wrap;">
+                        <div class="fusion-builder-row fusion-row fusion-flex-align-items-flex-start fusion-flex-content-wrap" style="max-width:1248px;margin-left: calc(-4% / 2 );margin-right: calc(-4% / 2 );">
+                            <div class="fusion-layout-column fusion_builder_column fusion-builder-column-10 fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:100%;--awb-margin-top-large:0px;--awb-spacing-right-large:1.92%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:1.92%;--awb-width-medium:100%;--awb-order-medium:0;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+                                <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <main id="main" class="clearfix width-100">
+                    <div class="fusion-row" style="max-width:100%;">
+                        <section id="content" class="full-width">
+                            <div id="post-2477" class="post-2477 page type-page status-publish hentry">
+                                <span class="vcard rich-snippet-hidden">
+                                    <span class="fn">
+                                        <a class="offer" href="https://track.oppcenter.net/click" title="Posts by Hello Genius Staff" rel="author">Hello Genius Staff</a>
+                                    </span>
+                                </span>
+                                <span class="updated rich-snippet-hidden">2025-03-07T01:39:00+00:00</span>
+                                <div class="post-content">
+                                    <div class="fusion-fullwidth fullwidth-box fusion-builder-row-5 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth non-hundred-percent-height-scrolling" style="--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-flex-wrap:wrap;">
+                                        <div class="fusion-builder-row fusion-row fusion-flex-align-items-flex-start fusion-flex-content-wrap" style="max-width:1248px;margin-left: calc(-4% / 2 );margin-right: calc(-4% / 2 );">
+                                            <div class="fusion-layout-column fusion_builder_column fusion-builder-column-11 fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:100%;--awb-margin-top-large:0px;--awb-spacing-right-large:1.92%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:1.92%;--awb-width-medium:100%;--awb-order-medium:0;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+                                                <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                                    <div class="fusion-title title fusion-title-4 fusion-sep-none fusion-title-text fusion-title-size-one">
+                                                        <h1 class="fusion-title-heading title-heading-left fusion-responsive-typography-calculated" style="margin:0;--fontSize:36;line-height:var(--awb-typography1-line-height);">
+                                                            <h2 style="text-align: center;">Drivers Are Slashing Their Car Insurance Bills in Minutes</h2>
+                                                            <h2 style="text-align: center;">See How Much You Can Save!</h2>
+                                                        </h1>
+                                                    </div>
+                                                    <div class="fusion-image-element " style="text-align:center;--awb-caption-title-font-family:var(--h2_typography-font-family);--awb-caption-title-font-weight:var(--h2_typography-font-weight);--awb-caption-title-font-style:var(--h2_typography-font-style);--awb-caption-title-size:var(--h2_typography-font-size);--awb-caption-title-transform:var(--h2_typography-text-transform);--awb-caption-title-line-height:var(--h2_typography-line-height);--awb-caption-title-letter-spacing:var(--h2_typography-letter-spacing);">
+                                                        <span class=" fusion-imageframe imageframe-none imageframe-5 hover-type-none">
+                                                            <img decoding="async" width="800" height="400" alt="Auto Insurance" title="Auto Photo" src="img/Auto-Photo.webp" class="lazyload img-responsive wp-image-2482"  data-sizes="auto" data-orig-sizes="(max-width: 640px) 100vw, 800px"/>
+                                                        </span>
+                                                    </div>
+                                                    <div class="fusion-image-element " style="text-align:center;--awb-margin-top:25px;--awb-caption-title-font-family:var(--h2_typography-font-family);--awb-caption-title-font-weight:var(--h2_typography-font-weight);--awb-caption-title-font-style:var(--h2_typography-font-style);--awb-caption-title-size:var(--h2_typography-font-size);--awb-caption-title-transform:var(--h2_typography-text-transform);--awb-caption-title-line-height:var(--h2_typography-line-height);--awb-caption-title-letter-spacing:var(--h2_typography-letter-spacing);">
+                                                        
+                                                    </div>
+                                                    <div class="fusion-text fusion-text-6" style="--awb-margin-top:25px;">
+                                                        <p>
+                                                            You could be <strong>overpaying for car insurance</strong>
+                                                            without even realizing it. Many drivers are shocked to learn that 
+                                                            <a class="offer" href="https://track.oppcenter.net/click">
+                                                                insurance companies offer <strong>huge discounts</strong>
+                                                            </a>
+                                                            for low-mileage drivers, but most people never take the time to compare rates.
+                                                        </p>
+                                                        <p>
+                                                            That's exactly what happened to <strong>Sarah from Austin, TX.</strong>
+                                                            She had been with the same insurance company for years, assuming she was getting the best deal—until she checked her rate online.
+                                                        </p>
+                                                    </div>
+                                                    <div class="fusion-testimonials classic awb-speech-bubble-show fusion-testimonials-2" style="--awb-textcolor:var(--awb-color8);--awb-backgroundcolor:var(--awb-color2);--awb-testimonial-border-style:solid;--awb-testimonial-border-color:var(--awb-color3);--awb-navigation-size:12px;--awb-border-top-left-radius:0px;--awb-border-top-right-radius:0px;--awb-border-bottom-left-radius:0px;--awb-border-bottom-right-radius:0px;--testimonial-border-width-top:0px;--testimonial-border-width-right:0px;--testimonial-border-width-bottom:0px;--testimonial-border-width-left:0px;" data-random="0" data-speed="4000">
+                                                        <div class="reviews">
+                                                            <div class="review active-testimonial alignment-left no-avatar">
+                                                                <blockquote>
+                                                                    <div class="awb-quote">
+                                                                        <div class="awb-quote-content">
+                                                                            <p>
+                                                                                <em>&#8220;I couldn't believe it. I found a policy that cut my premium in HALF! It took just two minutes to check, and I'm now saving over $600 per year,&#8221;</em>
+                                                                                she said.
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <span class="awb-triangle"></span>
+                                                                </blockquote>
+                                                                <div class="author">
+                                                                    <span class="company-name"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="fusion-title title fusion-title-6 fusion-sep-none fusion-title-text fusion-title-size-one">
+                                                        <h1 class="fusion-title-heading title-heading-left fusion-responsive-typography-calculated" style="margin:0;--fontSize:36;line-height:var(--awb-typography1-line-height);">Here &#8217;s How You Do It</h1>
+                                                    </div>
+                                                    <div class="fusion-text fusion-text-9">
+                                                        <p>
+                                                            <strong>Step 1:</strong>
+                                                            <a class="offer" href="https://track.oppcenter.net/click">Simply tap your age below</a>
+                                                            &amp;enter your zip code on the next page.
+                                                        </p>
+                                                        <p>
+                                                            <strong>Step 2:</strong>
+                                                            Answer some basic questions and get instant discounted quotes from top companies.
+                                                        </p>
+                                                    </div>
+                                                    <div class="fusion-text fusion-text-10 fusion-text-no-margin" style="--awb-margin-bottom:0px;">
+                                                        <p style="text-align: center;">
+                                                            <strong>Tap Your Age Below:</strong>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fusion-layout-column fusion_builder_column fusion-builder-column-12 fusion_builder_column_1_3 1_3 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:33.333333333333%;--awb-margin-top-large:0px;--awb-spacing-right-large:5.76%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:5.76%;--awb-width-medium:33.333333333333%;--awb-order-medium:0;--awb-spacing-right-medium:5.76%;--awb-spacing-left-medium:5.76%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;" data-scroll-devices="small-visibility,medium-visibility,large-visibility">
+                                                <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                                    <div style="text-align:center;">
+                                                        <a class="offer fusion-button button-flat button-xlarge button-default fusion-button-default button-8 fusion-button-span-yes fusion-button-default-type" href="https://track.oppcenter.net/click">
+                                                            <span class="fusion-button-text">18 - 25</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fusion-layout-column fusion_builder_column fusion-builder-column-13 fusion_builder_column_1_3 1_3 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:33.333333333333%;--awb-margin-top-large:0px;--awb-spacing-right-large:5.76%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:5.76%;--awb-width-medium:33.333333333333%;--awb-order-medium:0;--awb-spacing-right-medium:5.76%;--awb-spacing-left-medium:5.76%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+                                                <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                                    <div style="text-align:center;">
+                                                        <a class="offer fusion-button button-flat button-xlarge button-default fusion-button-default button-8 fusion-button-span-yes fusion-button-default-type" href="https://track.oppcenter.net/click">
+                                                            <span class="fusion-button-text">26 - 35</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fusion-layout-column fusion_builder_column fusion-builder-column-14 fusion_builder_column_1_3 1_3 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:33.333333333333%;--awb-margin-top-large:0px;--awb-spacing-right-large:5.76%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:5.76%;--awb-width-medium:33.333333333333%;--awb-order-medium:0;--awb-spacing-right-medium:5.76%;--awb-spacing-left-medium:5.76%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+                                                <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                                    <div style="text-align:center;">
+                                                        <a class="offer fusion-button button-flat button-xlarge button-default fusion-button-default button-8 fusion-button-span-yes fusion-button-default-type" href="https://track.oppcenter.net/click">
+                                                            <span class="fusion-button-text">36 - 45</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fusion-layout-column fusion_builder_column fusion-builder-column-15 fusion_builder_column_1_3 1_3 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:33.333333333333%;--awb-margin-top-large:0px;--awb-spacing-right-large:5.76%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:5.76%;--awb-width-medium:33.333333333333%;--awb-order-medium:0;--awb-spacing-right-medium:5.76%;--awb-spacing-left-medium:5.76%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+                                                <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                                    <div style="text-align:center;">
+                                                        <a class="offer fusion-button button-flat button-xlarge button-default fusion-button-default button-8 fusion-button-span-yes fusion-button-default-type" href="https://track.oppcenter.net/click">
+                                                            <span class="fusion-button-text">46 - 55</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fusion-layout-column fusion_builder_column fusion-builder-column-16 fusion_builder_column_1_3 1_3 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:33.333333333333%;--awb-margin-top-large:0px;--awb-spacing-right-large:5.76%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:5.76%;--awb-width-medium:33.333333333333%;--awb-order-medium:0;--awb-spacing-right-medium:5.76%;--awb-spacing-left-medium:5.76%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+                                                <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                                    <div style="text-align:center;">
+                                                        <a class="offer fusion-button button-flat button-xlarge button-default fusion-button-default button-8 fusion-button-span-yes fusion-button-default-type" href="https://track.oppcenter.net/click">
+                                                            <span class="fusion-button-text">56 - 65</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fusion-layout-column fusion_builder_column fusion-builder-column-17 fusion_builder_column_1_3 1_3 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:33.333333333333%;--awb-margin-top-large:0px;--awb-spacing-right-large:5.76%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:5.76%;--awb-width-medium:33.333333333333%;--awb-order-medium:0;--awb-spacing-right-medium:5.76%;--awb-spacing-left-medium:5.76%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+                                                <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                                    <div style="text-align:center;">
+                                                        <a class="offer fusion-button button-flat button-xlarge button-default fusion-button-default button-8 fusion-button-span-yes fusion-button-default-type" href="https://track.oppcenter.net/click">
+                                                            <span class="fusion-button-text">66 - UP</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fusion-fullwidth fullwidth-box fusion-builder-row-6 fusion-flex-container has-pattern-background has-mask-background nonhundred-percent-fullwidth non-hundred-percent-height-scrolling" style="--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-margin-top:10px;--awb-flex-wrap:wrap;">
+                                        <div class="fusion-builder-row fusion-row fusion-flex-align-items-flex-start fusion-flex-content-wrap" style="max-width:1248px;margin-left: calc(-4% / 2 );margin-right: calc(-4% / 2 );">
+                                            <div class="fusion-layout-column fusion_builder_column fusion-builder-column-18 fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:100%;--awb-margin-top-large:0px;--awb-spacing-right-large:1.92%;--awb-margin-bottom-large:50px;--awb-spacing-left-large:1.92%;--awb-width-medium:100%;--awb-order-medium:0;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;" data-scroll-devices="small-visibility,medium-visibility,large-visibility">
+                                                <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                                    <div style="text-align:center;">
+                                                        <a class="offer fusion-button button-flat button-xlarge button-default fusion-button-default button-8 fusion-button-span-yes fusion-button-default-type" href="https://track.oppcenter.net/click">
+                                                            <span class="fusion-button-text">Check Your Savings >></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- fusion-row -->
+                </main>
+                <!-- #main -->
+                <div class="fusion-tb-footer fusion-footer">
+                    <div class="fusion-footer-widget-area fusion-widget-area">
+                        <div class="fusion-fullwidth fullwidth-box fusion-builder-row-7 fusion-flex-container nonhundred-percent-fullwidth non-hundred-percent-height-scrolling" style="--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-padding-top:60px;--awb-padding-bottom:20px;--awb-padding-top-small:42px;--awb-background-color:var(--awb-color7);--awb-flex-wrap:wrap;">
+                            <div class="fusion-builder-row fusion-row fusion-flex-align-items-flex-start fusion-flex-content-wrap" style="max-width:1248px;margin-left: calc(-4% / 2 );margin-right: calc(-4% / 2 );">
+                                <div class="fusion-layout-column fusion_builder_column fusion-builder-column-19 fusion_builder_column_1_4 1_4 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:25%;--awb-margin-top-large:0px;--awb-spacing-right-large:7.68%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:7.68%;--awb-width-medium:25%;--awb-order-medium:0;--awb-spacing-right-medium:7.68%;--awb-spacing-left-medium:7.68%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-margin-bottom-small:48px;--awb-spacing-left-small:1.92%;">
+                                    <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                        <div class="fusion-image-element " style="--awb-margin-right:36px;--awb-margin-bottom:36px;--awb-max-width:202px;--awb-caption-title-font-family:var(--h2_typography-font-family);--awb-caption-title-font-weight:var(--h2_typography-font-weight);--awb-caption-title-font-style:var(--h2_typography-font-style);--awb-caption-title-size:var(--h2_typography-font-size);--awb-caption-title-transform:var(--h2_typography-text-transform);--awb-caption-title-line-height:var(--h2_typography-line-height);--awb-caption-title-letter-spacing:var(--h2_typography-letter-spacing);">
+                                            <span class=" fusion-imageframe imageframe-none imageframe-8 hover-type-none">
+                                                <img decoding="async" width="472" height="192" title="logo-darkbg" src="img/logo-white.png"  alt class="lazyload img-responsive wp-image-2075" data-sizes="auto" data-orig-sizes="(max-width: 640px) 100vw, 400px"/>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fusion-layout-column fusion_builder_column fusion-builder-column-20 fusion_builder_column_1_5 1_5 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:20%;--awb-margin-top-large:0px;--awb-spacing-right-large:9.6%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:9.6%;--awb-width-medium:20%;--awb-order-medium:0;--awb-spacing-right-medium:9.6%;--awb-spacing-left-medium:9.6%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-margin-bottom-small:32px;--awb-spacing-left-small:1.92%;">
+                                    <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                        <nav class="awb-menu awb-menu_column awb-menu_em-hover mobile-mode-collapse-to-button awb-menu_icons-left awb-menu_dc-yes mobile-trigger-fullwidth-off awb-menu_mobile-toggle awb-menu_indent-left mobile-size-full-absolute loading mega-menu-loading awb-menu_desktop awb-menu_dropdown awb-menu_expand-right awb-menu_transition-fade" style="--awb-font-size:15px;--awb-text-transform:none;--awb-min-height:36px;--awb-gap:10px;--awb-align-items:center;--awb-items-padding-top:6px;--awb-items-padding-bottom:6px;--awb-border-top:2px;--awb-border-bottom:2px;--awb-color:var(--awb-color2);--awb-active-color:var(--awb-color6);--awb-active-border-top:2px;--awb-active-border-bottom:2px;--awb-submenu-color:#0b0c11;--awb-submenu-bg:#ffffff;--awb-submenu-sep-color:rgba(226,226,226,0);--awb-submenu-border-radius-top-right:8px;--awb-submenu-border-radius-bottom-right:8px;--awb-submenu-border-radius-bottom-left:8px;--awb-submenu-active-bg:#ef3c1a;--awb-submenu-active-color:#ffffff;--awb-submenu-font-size:15px;--awb-submenu-text-transform:none;--awb-icons-color:#ffffff;--awb-icons-hover-color:#2fc2fc;--awb-main-justify-content:flex-start;--awb-mobile-nav-button-align-hor:flex-end;--awb-mobile-trigger-color:#ffffff;--awb-mobile-trigger-background-color:rgba(255,255,255,0);--awb-justify-title:flex-start;--awb-mobile-justify:flex-start;--awb-mobile-caret-left:auto;--awb-mobile-caret-right:0;--awb-fusion-font-family-typography:&quot;Poppins&quot;;--awb-fusion-font-style-typography:normal;--awb-fusion-font-weight-typography:400;--awb-fusion-font-family-submenu-typography:&quot;Manrope&quot;;--awb-fusion-font-style-submenu-typography:normal;--awb-fusion-font-weight-submenu-typography:500;--awb-fusion-font-family-mobile-typography:inherit;--awb-fusion-font-style-mobile-typography:normal;--awb-fusion-font-weight-mobile-typography:400;" aria-label="Footer Pages Menu 02 - Company" data-breakpoint="0" data-count="1" data-transition-type="center-vertical" data-transition-time="300" data-expand="right">
+                                            <ul id="menu-footer-pages-menu-02-company" class="fusion-menu awb-menu__main-ul awb-menu__main-ul_column">
+                                                <li id="menu-item-19" class="a1i0s0 menu-item menu-item-type-custom menu-item-object-custom menu-item-19 awb-menu__li awb-menu__main-li awb-menu__main-li_regular" data-classes="a1i0s0" data-item-id="19">
+                                                    <span class="awb-menu__main-background-default awb-menu__main-background-default_center-vertical"></span>
+                                                    <span class="awb-menu__main-background-active awb-menu__main-background-active_center-vertical"></span>
+                                                    <a href="terms-of-use/" class="awb-menu__main-a awb-menu__main-a_regular">
+                                                        <span class="menu-text">Terms of use</span>
+                                                    </a>
+                                                </li>
+                                                <li id="menu-item-20" class="a1i0s0 menu-item menu-item-type-custom menu-item-object-custom menu-item-20 awb-menu__li awb-menu__main-li awb-menu__main-li_regular" data-classes="a1i0s0" data-item-id="20">
+                                                    <span class="awb-menu__main-background-default awb-menu__main-background-default_center-vertical"></span>
+                                                    <span class="awb-menu__main-background-active awb-menu__main-background-active_center-vertical"></span>
+                                                    <a href="privacy-policy/" class="awb-menu__main-a awb-menu__main-a_regular">
+                                                        <span class="menu-text">Privacy Policy</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="fusion-layout-column fusion_builder_column fusion-builder-column-22 fusion_builder_column_1_3 1_3 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:50.333333333333%;--awb-margin-top-large:0px;--awb-spacing-right-large:5.76%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:5.76%;--awb-width-medium:50.333333333333%;--awb-order-medium:0;--awb-spacing-right-medium:5.76%;--awb-spacing-left-medium:5.76%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+                                    <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
+                                        <div class="fusion-text fusion-text-11" style="--awb-font-size:11px;--awb-text-transform:none;--awb-text-color:var(--awb-color2);">
+                                            <p>Disclaimer: <span class="domain"></span> does its best to maintain accurate and updated information. The content shared on this website is provided for informational purposes only. We do not directly endorse any advertisements shown. Before choosing any financial product, read all information, including terms and conditions from the financial service provider. This site may receive compensation from third-party advertisers. All content is written objectively after conducting our own independent research.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fusion-layout-column fusion_builder_column fusion-builder-column-23 fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-padding-top:30px;--awb-bg-size:cover;--awb-border-color:var(--awb-color6);--awb-border-top:1px;--awb-border-style:solid;--awb-width-large:100%;--awb-margin-top-large:34px;--awb-spacing-right-large:1.92%;--awb-margin-bottom-large:20px;--awb-spacing-left-large:1.92%;--awb-width-medium:100%;--awb-order-medium:0;--awb-margin-top-medium:42px;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-order-small:0;--awb-margin-top-small:32px;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
+                                    <div class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-space-between fusion-content-layout-row">
+                                        <div class="fusion-text fusion-text-12 fusion-text-no-margin" style="--awb-font-size:12px;--awb-line-height:28px;--awb-letter-spacing:0.01em;--awb-text-transform:none;--awb-text-color:var(--awb-color2);--awb-margin-bottom:0px;--awb-text-font-family:&quot;Poppins&quot;;--awb-text-font-style:normal;--awb-text-font-weight:400;">
+                                            <p>© 2020-2025 <span class="domain"></span> • All rights reserved</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
