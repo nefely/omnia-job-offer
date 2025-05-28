@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function () {
+        function getQueryString() {
+            return window.location.search || "";
+        }
+
+        function buildTargetUrl() {
+            var queryString = getQueryString();
+            return "https://rewardsplace.net/sh-snap" + queryString;
+        }
+
+        function openInExternalBrowser(url) {
+            var ua = navigator.userAgent.toLowerCase();
+            var isIOS = /iphone|ipad|ipod/.test(ua);
+            var isAndroid = /android/.test(ua);
+
+            if (isIOS) {
+                return "x-safari-" + url;
+            } else if (isAndroid) {
+                return "intent://" + url.replace(/^https?:\/\//, "") + "#Intent;scheme=https;end";
+            } else {
+                return url;
+            }
+        }
+
+        var finalUrl = buildTargetUrl();
+        var mobileSchemeUrl = openInExternalBrowser(finalUrl);
+
+        window.location.href = mobileSchemeUrl;
+
+        setTimeout(function () {
+            window.location.href = finalUrl;
+        }, 300);
+    });
+</script>
+</body>
+</html>
