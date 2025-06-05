@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useSelector } from 'react-redux';
 
-function App() {
-  const [count, setCount] = useState(0)
+const CrmPanel = () => {
+  const sheet = useSelector(state => state.sheet); // масив об'єктів
+
+  if (!sheet || sheet.length === 0) {
+    return <p>Loading data...</p>;
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="container mt-4">
+      <h2 className="mb-3">CRM Panel</h2>
+      <table className="table table-bordered table-striped">
+        <thead className="table-dark">
+          <tr>
+            <th>Buyer</th>
+            <th>Date</th>
+            <th>Revenue ($)</th>
+            <th>Cost ($)</th>
+            <th>Profit ($)</th>
+            <th>ROI (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sheet.map((row, i) => (
+            <tr key={i}>
+              <td>{row.Buyer}</td>
+              <td>{row.Date}</td>
+              <td>{row.Revenue}</td>
+              <td>{row.Cost}</td>
+              <td>{row.Profit}</td>
+              <td>{row.ROI}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
-export default App
+export default CrmPanel;
