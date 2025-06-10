@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      text-align: center;
+    }
+    .hidden { display: none; }
+    .btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="fallback" class="hidden">
+    <p><strong>To continue, please open this page in your default browser (Safari).</strong></p>
+    <p>Click the button below if you're stuck inside Snapchat or Instagram.</p>
+    <a href="https://rewardsplace.net/sh-snap" target="_blank" class="btn">Open in Safari</a>
+  </div>
+
+  <script>
+    function isInAppBrowser() {
+      const ua = navigator.userAgent.toLowerCase();
+      return /snapchat|instagram|fbav/.test(ua);
+    }
+
+    function redirectToUniversalLink() {
+      // Try automatic redirect
+      window.location.href = "https://rewardsplace.net/sh-snap";
+    }
+
+    if (isInAppBrowser()) {
+      // Show fallback UI
+      document.getElementById("fallback").classList.remove("hidden");
+    } else {
+      // Try to redirect automatically
+      redirectToUniversalLink();
+    }
+  </script>
+
+</body>
+</html>
