@@ -10,6 +10,6 @@
     padding: 1rem;
     border-radius: 0.35rem;
 }
-.cards-grp .card p {
+.cards-grp .card p:last-child {
     margin-bottom: 0;
 }

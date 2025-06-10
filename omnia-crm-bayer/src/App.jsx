@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import CrmPanel from './components/CrmPanel';
 
-import "./App.css"
+import "./App.css";
 
 
 const App = () => {
