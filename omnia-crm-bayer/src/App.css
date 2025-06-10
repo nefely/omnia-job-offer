@@ -1,0 +1,15 @@
+.cards-grp {
+
+} 
+.cards-grp--dashbosrd-stats {
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-gap: 1rem;
+}
+.cards-grp .card {
+    padding: 1rem;
+    border-radius: 0.35rem;
+}
+.cards-grp .card p {
+    margin-bottom: 0;
+}

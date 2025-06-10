@@ -1,15 +1,18 @@
-import {useDispatch, useSelector} from "react-redux"
+import TableStats from "./tabs/DataTab"
+import DashboardTab from "./tabs/DashboardTab"
+import BayersTab from "./tabs/BayersTab"
 
-export default function crnPanel() {
-
-    const dispatch = useDispatch()
-    const sheet = useSelector(state => state.sheet)
-
+const CrnPanel = () => {
     return (
-        <>
-            <div className="crm-panel">
-                <pre>This is CRM Panel: {JSON.stringify(sheet, null, 2)}</pre>
+        <>  
+            <div className="container mt-4">
+                <h1 className="title mb-3">CRM Panel</h1>
+                <DashboardTab />
+                <BayersTab />
+                <TableStats />
             </div>
         </>
     )
 }
+
+export default CrnPanel

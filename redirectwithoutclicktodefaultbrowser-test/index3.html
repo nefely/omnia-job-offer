@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Continue in Safari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 14px 26px;
+      background: #007bff;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>You're in Snapchat's browser</h2>
+  <p>To continue, open this page in Safari for full access.</p>
+
+  <p id="useragent"></p>
+  <a href="https://rewardsplace.net/sh-snap" class="btn" target="_blank" rel="noopener noreferrer">Open in Safari</a>
+
+  <script>
+    const ua = navigator.userAgent.toLowerCase();
+    document.getElementById("useragent").textContent = ua
+    const isSnapchat = ua.includes("snapchat");
+
+    if (!isSnapchat) {
+        // Якщо НЕ Snapchat — автоматично перенаправити
+        window.location.href = "https://rewardsplace.net/sh-snap";
+        document.getElementById("useragent").textContent = ua
+    }
+  </script>
+
+</body>
+</html>

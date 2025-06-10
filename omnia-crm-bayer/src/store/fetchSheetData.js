@@ -10,7 +10,7 @@ export const fetchSheetData = async () => {
 
   const headers = ["Buyer" , "Date" , "Revenue" , "Cost" , "Profit" , "ROI"];
 
-  const data = rows.slice(1).map(row => {
+  const data = rows.map(row => {
     return row.reduce((obj, val, i) => {
       obj[headers[i]] = val;
       return obj;
