@@ -147,6 +147,9 @@ if ($("input[name=zip]").length > 0) {
         phoneValidation()
     });
 
+    const rtkClickID = window.getURLParameter(window.location.href, 'clickid');
+    const cachebuster = window.getURLParameter(window.location.href, 'rtkck');
+
     $(".form-step--3 input").on("input" , function(){
         window.final_link = `${final_link__no_params}${final_link__no_params.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}&offer_type=${$("[name=offer_type]").val()}`
         $("#btf").attr("href" , final_link)
@@ -202,7 +205,7 @@ $(".form-step--3 .btn-next").click(function(e){
     e.preventDefault();
     $(this).css("display","none").css("visibility","hidden")
     setTimeout(()=>{
-        $(this).css("display","block").css("visibility","visible")
+        $(this).css("display","flex").css("visibility","visible")
         window.location.href = $(".form-step--3 .btn-next").attr('href');
     }, standart_time)
 });
