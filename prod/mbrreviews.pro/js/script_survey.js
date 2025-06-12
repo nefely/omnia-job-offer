@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-const clickid = window.getURLParameter(window.location.href, 'clickid');
-const uclick = window.getURLParameter(window.location.href, 'uclick');
 
 const sub12 = window.getURLParameter(window.location.href, 'sub12');
 const sub13 = window.getURLParameter(window.location.href, 'sub13');
@@ -11,8 +9,8 @@ const sub16 = window.getURLParameter(window.location.href, 'sub16');
 
 const offer_type = window.getURLParameter(window.location.href, 'offer_type');
 
-const rtkClickID__ = window.getURLParameter(window.location.href, 'clickid');
-const cachebuster__ = window.getURLParameter(window.location.href, 'rtkck');
+const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
+const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
 
 const data = {
@@ -23,13 +21,13 @@ const data = {
     "phone": sub16, 
     "offer_type": offer_type, 
     "offer_url": window.location.href.split('?')[0].replace("/survey/" , "").replace("/survey" , ""), 
-    "click_id": rtkClickID__
+    "click_id": rtkcid
 };
 console.log(data)
 // uncommit on prod
-fetch(`https://track.mbrreviews.pro/postback?type=CompleteRegistration&clickid=${rtkClickID__}`, { mode: 'no-cors'})
+fetch(`https://track.mbrreviews.pro/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
 .then(r => {
-    console.log("successfully registered: " + rtkClickID__);
+    console.log("successfully registered: " + rtkcid);
 })
 .catch(e => console.log("error during registration lead: " + e));
 
@@ -44,7 +42,8 @@ $('.quiz-dots .circle').removeClass("active")
 $('.quiz-dots .circle:eq(0)').addClass("active")
 
 form_final_link = () => {
-    $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}clickid=${rtkClickID__}&rtkck=${cachebuster__}&sub12=${sub12}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
+    // $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}rtkcid=${rtkcid}&rtkcmpid=${rtkcmpid}&sub12=${sub12}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
+    $(".quiz-block--4 a.yes").attr("href" ,`${window.offer_link_1}${window.offer_link_1.includes("?") ? "&" : "?"}sub12=${sub12}&sub13=${sub13}&sub14=${sub14}&sub15=${sub15}&sub16=${sub16}` )
 }
 	
 // quiz flow
