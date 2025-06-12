@@ -8,7 +8,7 @@ header .row {
     align-items: center;
 }
 header .logo img {
-	max-height: 45px;
+	max-height: 40px;
 	max-width: 100%;
 }
 header ul {
@@ -41,7 +41,7 @@ header .mob {
 		background: #fff;
 	}
 	header .logo img {
-		max-height: 35px;
+		max-height: 30px;
 		max-width: 100%;
 	}
 	header .row {
