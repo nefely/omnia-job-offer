@@ -45,8 +45,10 @@ $(document).ready(function(){
                                     $(".quiz").fadeOut(300)
                                     setTimeout(()=>{
                                         $(".progress").css("margin-bottom", "0")
-                                        $(".title[data-title=2]").fadeIn(300)
-                                        $(".question[data-question=5]").fadeIn(300)
+                                        $(".title[data-title=3]").fadeIn(300)
+                                        $(".program-description[data-description=2]").fadeIn(300)
+                                        $(".list[data-list=2]").fadeIn(300)
+                                        $(".question[data-question=6]").fadeIn(300)
                                     },300)
                                 },1500)
                             },300)
@@ -59,17 +61,17 @@ $(document).ready(function(){
 
     })
 
-    $('.question[data-question=5] .btn').click(function(){
-        $(this).closest(".question").fadeOut(300)
-        $(".title[data-title=2]").fadeOut(300)
+    // $('.question[data-question=5] .btn').click(function(){
+    //     $(this).closest(".question").fadeOut(300)
+    //     $(".title[data-title=2]").fadeOut(300)
 
-        setTimeout(()=>{
-            $(".title[data-title=3]").fadeIn(300)
-            $(".program-description[data-description=2]").fadeIn(300)
-            $(".list[data-list=2]").fadeIn(300)
-            $(this).closest(".question").next(".question").fadeIn(300)
-        },300)
-    })
+    //     setTimeout(()=>{
+    //         $(".title[data-title=3]").fadeIn(300)
+    //         $(".program-description[data-description=2]").fadeIn(300)
+    //         $(".list[data-list=2]").fadeIn(300)
+    //         $(this).closest(".question").next(".question").fadeIn(300)
+    //     },300)
+    // })
 
     $('.question[data-question=6] .btn').click(function(){
         $(this).closest(".question").fadeOut(300)
@@ -126,7 +128,9 @@ $(document).ready(function(){
         if (isZipValid()) {
             $("html, body").animate({ scrollTop: 0 }, 300);
             $(".question[data-question='7']").fadeOut(300)
+            $(".title[data-title=4]").fadeOut(300)
             setTimeout(()=>{
+                $(".title[data-title=5]").fadeIn(300)
                 $(".question[data-question='8']").fadeIn(300)
                 $("input[name=firstname]").focus()
             },300)
@@ -164,6 +168,38 @@ $(document).ready(function(){
             $("input[name=lastname]").addClass("is-invalid")
         }
     }
+    
+
+    $("input[name=firstname]").on("input change" , function(){
+        if (isFirstNameValid()) {
+            $("input[name=firstname]").removeClass("is-invalid")
+        }
+    })
+    $("input[name=lastname]").on("input change" , function(){
+        if (isLastNameValid()) {
+            $("input[name=lastname]").removeClass("is-invalid")
+        }
+    })
+    
+
+
+
+    $(".form [data-question='8'] .btn").click(function(e){
+        lastNameValidation()
+        firstNameValidation()
+
+        if (isFirstNameValid() && isLastNameValid()) {
+            $("html, body").animate({ scrollTop: 0 }, 300);
+            $(".question[data-question='8']").fadeOut(300)
+            setTimeout(() => {
+                $(".question[data-question='9']").fadeIn(300)
+                $("input[name=email]").focus()
+            }, 300);
+        }
+        
+    });
+
+    // 3
     isEmailValid = () => {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,10})+$/.test($("input[name=email]").val())) {
             return true
@@ -195,16 +231,6 @@ $(document).ready(function(){
         }
     }
 
-    $("input[name=firstname]").on("input change" , function(){
-        if (isFirstNameValid()) {
-            $("input[name=firstname]").removeClass("is-invalid")
-        }
-    })
-    $("input[name=lastname]").on("input change" , function(){
-        if (isLastNameValid()) {
-            $("input[name=lastname]").removeClass("is-invalid")
-        }
-    })
     $("input[name=email]").on("input change" , function(){
         if (isEmailValid()) {
             $("input[name=email]").removeClass("is-invalid")
@@ -218,17 +244,15 @@ $(document).ready(function(){
 
 
 
-    $(".form [data-question='8'] .btn").click(function(e){
+    $(".form [data-question='9'] .btn").click(function(e){
         e.preventDefault()
 
-        $(".form [data-question='8'] .btn").addClass("disabled")
+        $(".form [data-question='9'] .btn").addClass("disabled")
 
         phoneValidation()
         emailValidation()
-        lastNameValidation()
-        firstNameValidation()
 
-        if (isFirstNameValid() && isLastNameValid() && isEmailValid() && isPhoneValid()) {
+        if (isEmailValid() && isPhoneValid()) {
 
             let offer_start_link = `https://track.${window.location.host}/click`
             let offer_final_link = `${offer_start_link}${offer_start_link.includes("?") ? "&" : "?"}clickid=${rtkClickID}&rtkck=${cachebuster}&sub12=${$("[name=zip]").val()}&sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}&sub16=${$("[name=phone]").val().replaceAll("(", "").replaceAll(")", "").replaceAll(" ", "").replaceAll("-", "")}`
@@ -246,14 +270,14 @@ $(document).ready(function(){
                 console.log("successfully registered: " + rtkClickID);
 
                 setTimeout(()=>{
-                    $(".form [data-question='8'] .btn").removeClass("disabled")
-                    window.location;href = offer_final_link;
+                    $(".form [data-question='9'] .btn").removeClass("disabled")
+                    window.location.href = offer_final_link;
                 },500)
             })
-            .catch(e => console.log("error during registration lead: " + e) , $(".form [data-question='8'] .btn").removeClass("disabled"));
+            .catch(e => console.log("error during registration lead: " + e) , $(".form [data-question='9'] .btn").removeClass("disabled"));
 
         } else {
-            $(".form [data-question='8'] .btn").removeClass("disabled")
+            $(".form [data-question='9'] .btn").removeClass("disabled")
         }
         
     });

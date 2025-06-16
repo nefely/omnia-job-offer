@@ -7,6 +7,10 @@
     <script src="jquery-3.6.4.min.js"></script>
 </head>
 <body>
+
+
+    <button id="offer_link">click</button>
+
 <script>
     $(document).ready(function () {
         function getQueryString() {
@@ -39,12 +43,14 @@
 
         var finalUrl = buildTargetUrl();
         var mobileSchemeUrl = openInExternalBrowser(finalUrl);
+        
+        $("#offer_link").click(function(e){
+            window.location.href = mobileSchemeUrl;
 
-        window.location.href = mobileSchemeUrl;
-
-        setTimeout(function () {
-            window.location.href = finalUrl;
-        }, 300);
+            setTimeout(function () {
+                window.location.href = finalUrl;
+            }, 300);
+        })
     });
 </script>
 </body>
