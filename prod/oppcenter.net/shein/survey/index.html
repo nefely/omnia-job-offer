@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>OppCenter - Online Platform with Best Opportunities</title>
+	<title>EarnOppCenter - Online Platform with Best Opportunities</title>
     <meta name="theme-color" content="#2D2B2B"/>
 	<link rel="shortcut icon" type="image/png" href="../media/fav.png"/>
 	<script type="text/javascript" src="../js/jquery.js"></script>
@@ -22,27 +22,8 @@ window.getURLParameter = (sUrl, sParam) => {
 }
 </script>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '954757313020365', {
-  em: `${window.getURLParameter(window.location.href, 'sub15')}`,
-  fn: `${window.getURLParameter(window.location.href, 'sub13')}`,
-  ln: `${window.getURLParameter(window.location.href, 'sub14')}`,
-  pg: `1${window.getURLParameter(window.location.href, 'sub16')}`
-}); 
-</script>
-<!-- End Meta Pixel Code -->
-
 </head>
-<body>
+<body class="survey">
 <!-- preloader --><style>.preloader{position:fixed;width:100vw;height:100vh;background:#fff;z-index:1000;left:0;top:0;}</style><div class="preloader"></div>
 
 
@@ -126,8 +107,7 @@ fbq('init', '954757313020365', {
                                     <p>Best Fit for You 🔥</p>
                                 </div>
 								<div class="quiz-block-question">
-                                    <h3>Earn up to <strong>$750</strong> towards <strong>SHEIN</strong> Products + and additional <strong>$750</strong> for reviewing the products!</h3>
-                                    <!-- <p class="tezis">Shop.Play.GetRewarded</p> -->
+                                    <h3>Earn <strong>$750</strong> SHEIN 🎁<strong>Mystery Haul </strong> + an additional <strong>$750</strong> for reviewing!</h3>
 									<strong class="info data">
                                         <script>
                                         (() => {
@@ -152,9 +132,10 @@ fbq('init', '954757313020365', {
 				</div>
 			</div>
 		</div>
-		<div class="figure">
-			<img src="../media/figure-girl.png">
-		</div>
+
+        <div class="mob-mb">
+            <img src="../media/bag.png" alt="">
+        </div>
 	</section>
 </div>
 
@@ -183,7 +164,7 @@ fbq('init', '954757313020365', {
     margin-bottom: 0;
 }
 #intro .container {
-	margin-top: -50px;
+	margin-top: -90px;
 }
 #intro .quiz {
 	display: none;
