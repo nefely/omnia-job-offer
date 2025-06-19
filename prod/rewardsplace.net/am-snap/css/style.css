@@ -1052,3 +1052,12 @@ input {
         margin-bottom: 0;
     }
 }
+
+.form-step .rules {
+    font-size: calc(1rem - 6px);
+    text-align: center;
+    margin-top: 20px;
+    max-width: 339px;
+    margin-left: auto;
+    margin-right: auto;
+}
