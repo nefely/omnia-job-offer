@@ -22,22 +22,36 @@
             return "https://rewardsplace.net/sh-snap" + queryString;
         }
 
+        // function openInExternalBrowser(url) {
+        //     var ua = navigator.userAgent.toLowerCase();
+
+        //     var isIOS = /iphone|ipad|ipod/.test(ua);
+        //     var isAndroid = /android/.test(ua);
+        //     var isCriOS = /crios/.test(ua);
+        //     var isFxiOS = /fxios/.test(ua);
+        //     var isSafari = /safari/.test(ua) && !isCriOS && !isFxiOS;
+        //     var isWebView = isIOS && !isSafari && !isCriOS && !isFxiOS;
+
+        //     if (isIOS && isWebView) {
+        //         return "x-safari-" + url;
+        //     } else if (isAndroid) {
+        //         return "intent://" + url.replace(/^https?:\/\//, "") + "#Intent;scheme=https;end";
+        //     } else {
+        //         return url; 
+        //     }
+        // }
+
         function openInExternalBrowser(url) {
             var ua = navigator.userAgent.toLowerCase();
-
             var isIOS = /iphone|ipad|ipod/.test(ua);
             var isAndroid = /android/.test(ua);
-            var isCriOS = /crios/.test(ua);
-            var isFxiOS = /fxios/.test(ua);
-            var isSafari = /safari/.test(ua) && !isCriOS && !isFxiOS;
-            var isWebView = isIOS && !isSafari && !isCriOS && !isFxiOS;
 
-            if (isIOS && isWebView) {
+            if (isIOS) {
                 return "x-safari-" + url;
             } else if (isAndroid) {
                 return "intent://" + url.replace(/^https?:\/\//, "") + "#Intent;scheme=https;end";
             } else {
-                return url; 
+                return url;
             }
         }
 
