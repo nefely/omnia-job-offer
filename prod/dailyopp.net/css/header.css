@@ -8,7 +8,7 @@ header .row {
     align-items: center;
 }
 header .logo img {
-	max-height: 45px;
+	max-height: 55px;
 	max-width: 100%;
 }
 header ul {
@@ -29,7 +29,6 @@ header a:hover {
 	color: var(--theme-secondary) !important;
 }
 
-
 header.desk {
 	display: initial;
 }
@@ -41,7 +40,7 @@ header .mob {
 		background: #fff;
 	}
 	header .logo img {
-		max-height: 38px;
+		max-height: 45px;
 		max-width: 100%;
 	}
 	header .row {
