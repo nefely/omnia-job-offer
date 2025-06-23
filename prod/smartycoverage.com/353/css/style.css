@@ -245,11 +245,19 @@ li {list-style: none;}
     border: transparent !important;
 	background: #10b118 !important;
 	color: #fff !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 .banner__button__no {
-    border: transparent !important;
-	background: #f64c4c !important;
-	color: #fff !important;
+	border: 1px solid #f64c4c !important;
+	background: #fff !important;
+	color: #f64c4c !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 .banner__secure{
 	float:left;
