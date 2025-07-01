@@ -24,7 +24,8 @@ $(document).ready(function(){
     $("#btf").click(function(e){
         e.preventDefault()
         $(this).addClass("disabled")
-        fetch(`https://track.earnoppcenter.net/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
+        fbq('track', 'CompleteRegistration')
+        fetch(`https://track.earnoppcenter.pro/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
         .then(r => {
             console.log("successfully registered: " + rtkcid);
             setTimeout(()=>{
