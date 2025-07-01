@@ -205,27 +205,7 @@ $(".form-step--2 .btn-next").click(function(e){
 })
 $(".form-step--3 .btn-next").click(function(e){
     e.preventDefault();
-    $(this).css("display","none").css("visibility","hidden")
-	
-    const data = {
-        "zip": $("[name=zip]").val(), 
-        "firstname": $("[name=firstname]").val(), 
-        "lastname": $("[name=lastname]").val(), 
-        "email": $("[name=email]").val(), 
-        "phone": $("[name=phone]").val(), 
-        "offer_type": $("[name=offer_type]").val(), 
-        "offer_url": window.location.href.split('?')[0], 
-        "click_id": rtkcid
-    };
-
-    // uncommit on prod
-    fetch(`https://track.earnoppcenter.net/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
-    .then(r => {
-        console.log("successfully registered: " + rtkcid);
-        $(this).css("display","block").css("visibility","visible")
-        window.location.href = $(".form-step--3 .btn-next").attr('href');
-	})
-    .catch(e => console.log("error during registration lead: " + e));
+    window.location.href = $(".form-step--3 .btn-next").attr('href');
 });
 
 setTimeout(()=>{
