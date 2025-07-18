@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    function detectBrowser(ua) {
+        if (/FBAN|FBAV/.test(ua)) return "Facebook";
+        if (/Instagram/.test(ua)) return "Instagram";
+        if (/SamsungBrowser/.test(ua)) return "Samsung Browser";
+        if (/Silk\//.test(ua)) return "Kindle-Silk";
+        if (/Edg\//.test(ua)) return "Edge";
+        if (/Chrome/.test(ua) && !/Edg|OPR/.test(ua)) return "Chrome";
+        if (/Safari/.test(ua) && !/Chrome/.test(ua)) return "Safari";
+        if (/Firefox/.test(ua)) return "Firefox";
+        if (/Opera|OPR\//.test(ua)) return "Opera";
+        if (/GoogleMobile/.test(ua)) return "GoogleMobile";
+        if (/YandexBrowser/.test(ua)) return "Yandex.Browser";
+        if (/bot|crawler|spider/i.test(ua)) return "Unknown Crawler";
+        return "Unknown";
+    }
+
+    const ua = navigator.userAgent;
+    const browser = detectBrowser(ua);
+
+    document.write(browser)
+</script>
+
+
+</body>
+</html>

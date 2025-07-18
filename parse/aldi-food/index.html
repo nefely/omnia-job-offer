@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Aldi Smart Shopper Program!</title>
+    </head>
+
+    <body>
+
+        <div style="min-height: 100vh;">
+        <div class="pnweycepr">
+            <img src="img/logo.png" class="gpxkfzncb" width="100%" />
+        </div>
+        <div class="qpdtounai blzzbfgyw">
+            <h1 id="vzfbilqya">Exciting news! You have the chance to participate in our exclusive Aldi Smart Shopper Program!</h1>
+            <p class="qahftrxck" id="lbwfomdvc">Complete our brief survey with just 3 quick questions about your shopping habits to see if you can qualify for an exclusive $750 Aldi gift card. Save more on the groceries you love!</p>
+            <ul>
+                <li><img src="img/primary.png" class="yfsgkrhit" width="80%" /></li>
+            </ul>
+            <br />
+            <h4 id="bvalsnxqe">Please answer the following questions to see how well Aldi fits your shopping :</h4>
+            <hr />
+
+            <div class="aywvhbwyc">
+                <div class="rvufaigfy">
+                    <p>Question 1/3: Do you prefer budget-friendly grocery stores?</p>
+                    <button>Yes</button>
+                    <button>Sometimes</button>
+                    <button>No</button>
+                </div>
+
+                <div class="rvufaigfy">
+                    <p>Question 2/3: What do you usually buy most at Aldi?</p>
+                    <button>Fresh produce</button>
+                    <button>Snacks</button>
+                    <button>Meat & dairy</button>
+                    <button>Household items</button>
+                </div>
+
+                <div class="rvufaigfy">
+                    <p>Question 3/3: How do you usually hear about Aldi’s deals?</p>
+                    <button>Weekly ad</button>
+                    <button>Social media</button>
+                    <button>Friends or family</button>
+                    <button>In-store</button>
+                </div>
+
+                <div class="srzckiwge">
+                    <img src="img/ajax-loader.gif" class="yfsgkrhit" width="32" height="32" />
+                    <p class="zvzywemfk">We are reviewing the answers you provided...</p>
+                    <ul class="lfosfizql">
+                        <li><img src="img/check.png" width="24" height="24" />Validating your answers.</li>
+                        <li><img src="img/check.png" width="24" height="24" />No duplicate entries were found.</li>
+                        <li><img src="img/check.png" width="24" height="24" />Congratulations! You have qualified.</li>
+                    </ul>
+                </div>
+
+                <div class="lywgnexwh"></div>
+                <!-- Overlay for popup -->
+                <div class="cqukbjznz">
+                    <ul>
+                        <li><img src="img/primary.png" class="yfsgkrhit" width="100%" /></li>
+                    </ul>
+                    <br />
+                    <p class="wirkxlggo">Thank you for your feedback!</p>
+                    <p class="fxwbgrfdy">Click the button below to enter your delivery details and claim your $750 gift card!</p>
+                    <br />
+                    <a href="{offer_link}" class="offer_link bjzgulkyz" id="confirmGiftButton">CLAIM YOUR GIFT CARD</a>
+                </div>
+            </div>
+        </div>
+        <br />
+        </div>
+
+
+        <p class="gdxgpqkpn" style="color: white;">
+            &copy; 2021 - 2025. All rights reserved. This testing program is not affiliated with Facebook™ or any other brands. | <a style="color: white;" href="terms-of-use/"> Terms and Conditions </a> |
+            <a style="color: white;" href="privacy-policy/"> Privacy Policy </a>
+
+            <script src="js/jquery-3.6.4.min.js"></script>
+            <script src="js/slider.js"></script>
+            <script src="js/global.js"></script>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $(".slider").unslider({
+                        nav: false,
+                        arrows: false,
+                        autoplay: true,
+                        infinite: true,
+                    });
+
+                    $(document).on("click", ".rvufaigfy button", function () {
+                        var $this = $(this);
+
+                        // Hide the intro text when the first question's button is clicked
+                        if ($this.closest(".rvufaigfy").is(":first-child")) {
+                            $("#lbwfomdvc").fadeOut(300);
+                            $("#vzfbilqya").fadeOut(300);
+                            $("#bvalsnxqe").fadeOut(300);
+                        }
+
+                        $this.parent().fadeOut(300, function () {
+                            $this.parent().next().fadeIn(300);
+
+                            // If it's the loading section after answering the last question
+                            if ($this.parent().next().hasClass("srzckiwge")) {
+                                setTimeout(function () {
+                                    $(".lfosfizql li:first-child").fadeIn(300);
+                                    $(".zvzywemfk").html("Validating your answers..");
+                                }, 900);
+                                setTimeout(function () {
+                                    $(".lfosfizql li:nth-child(2)").fadeIn(300);
+                                    $(".zvzywemfk").html("Congratulations! You have qualified!");
+                                }, 2300);
+                                setTimeout(function () {
+                                    $(".lfosfizql li:last-child").fadeIn(300);
+                                    $(".zvzywemfk").html("Redirecting, please wait...");
+                                }, 3800);
+
+                                setTimeout(function () {
+                                    $(".srzckiwge").fadeOut(300, function () {
+                                        $(".cqukbjznz").fadeIn(300);
+                                        $(".lywgnexwh").fadeIn(300); // Show overlay
+                                        $("body").addClass("overlay-active"); // Disable scrolling
+
+                                        // Hide the questions heading when congrats text appears
+                                    });
+                                }, 4100);
+                            }
+                        });
+                    });
+                });
+            </script>
+        </p>
+    </body>
+</html>

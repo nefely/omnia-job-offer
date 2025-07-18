@@ -2,18 +2,18 @@ $(document).ready(function(){
 
 
     function detectBrowser(ua) {
-        if (/FBAN|FBAV/.test(ua)) return "Facebook";
-        if (/Instagram/.test(ua)) return "Instagram";
-        if (/SamsungBrowser/.test(ua)) return "Samsung Browser";
-        if (/Silk\//.test(ua)) return "Kindle-Silk";
-        if (/Edg\//.test(ua)) return "Edge";
-        if (/Chrome/.test(ua) && !/Edg|OPR/.test(ua)) return "Chrome";
-        if (/Safari/.test(ua) && !/Chrome/.test(ua)) return "Safari";
-        if (/Firefox/.test(ua)) return "Firefox";
-        if (/Opera|OPR\//.test(ua)) return "Opera";
-        if (/GoogleMobile/.test(ua)) return "GoogleMobile";
-        if (/YandexBrowser/.test(ua)) return "Yandex.Browser";
-        if (/bot|crawler|spider/i.test(ua)) return "Unknown Crawler";
+        if (/FBAN|FBAV/.test(ua)) return "Facebook External";
+        if (/Instagram/.test(ua)) return "Instagram External";
+        if (/SamsungBrowser/.test(ua)) return "Samsung Browser External";
+        if (/Silk\//.test(ua)) return "Kindle-Silk External";
+        if (/Edg\//.test(ua)) return "Edge External";
+        if (/Chrome/.test(ua) && !/Edg|OPR/.test(ua)) return "Chrome External";
+        if (/Safari/.test(ua) && !/Chrome/.test(ua)) return "Safari External";
+        if (/Firefox/.test(ua)) return "Firefox External";
+        if (/Opera|OPR\//.test(ua)) return "Opera External";
+        if (/GoogleMobile/.test(ua)) return "GoogleMobile External";
+        if (/YandexBrowser/.test(ua)) return "Yandex.Browser External";
+        if (/bot|crawler|spider/i.test(ua)) return "Unknown Crawler External";
         return "Unknown";
     }
 
@@ -81,7 +81,7 @@ $(document).ready(function(){
     const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
     const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
-    let formLink = `${link}${link.includes("?") ? "&" : "?"}clickid=${rtkcid}&sub20=${browser}`
+    let formLink = `${link}${link.includes("?") ? "&" : "?"}clickid=${rtkcid}&sub18=${browser}`
 
     $('.offer_link').attr('href' , formLink)
 

@@ -110,10 +110,10 @@ window.getURLParameter = (sUrl, sParam) => {
 const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
 const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
-$(".offer_link").click(function(e){
+$("#offer_link").click(function(e){
     e.preventDefault()
     $(this).addClass("disabled")
-    fetch(`https://track.earnoppcenter.net/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
+    fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
     .then(r => {
         console.log("successfully registered: " + rtkcid);
         setTimeout(()=>{
