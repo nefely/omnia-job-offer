@@ -113,12 +113,13 @@ const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 $("#offer_link").click(function(e){
     e.preventDefault()
     $(this).addClass("disabled")
-    fetch(`https://track.earnoppcenter.net/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
+    fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
     .then(r => {
+        fbq('track', 'CompleteRegistration')
         console.log("successfully registered: " + rtkcid);
         setTimeout(()=>{
             window.location.href = $(this).attr("href")
-        },300)
+        },500)
     })
     .catch(e => console.log("error during registration lead: " + e) , $(this).removeClass("disabled"));
 })
