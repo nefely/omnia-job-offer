@@ -1,0 +1,126 @@
+:root {
+	--theme-black: #151515;
+	--theme-black-light: #2B2B2D;
+
+	--theme-gray: #4A4A4A;
+	--theme-gray-light: #838690;
+	--theme-gray-lighter: #D9D9D9;
+	--theme-gray-lightest: #F5F5F7;
+
+	--theme-white: #ffffff;
+
+	--theme-blue: #007AFF;
+	--theme-primary: #FFAF04;
+
+	--b-rad-sm: 7px; 
+	--b-rad-md: 14px; 
+	--b-rad-lg: 21px; 
+}
+
+body , html {
+	/*overflow-x: hidden */
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("../fonts/sanfranciscodisplay-regular-webfont.woff");
+}
+
+p,h1,h2,h3,h4,h5,h6,button,a,strong,span,i,img {
+	-webkit-touch-callout: none; 
+	-webkit-user-select: none;   
+	-khtml-user-select: none;    
+	-moz-user-select: none;     
+	-ms-user-select: none;       
+	user-select: none;
+}
+img {
+	pointer-events: none;
+	user-select: none;
+}
+
+html {
+	font-size: 18px;
+}
+
+body {
+	font: inherit;
+	color: var(--theme-black);
+	font-family: "San Francisco", sans-serif;
+	font-weight: 400;
+	background: var(--theme-white);
+	line-height: 1.2;
+}
+h2 {
+	font-size: 1.9rem; 	
+}
+h3 {
+	font-size: 1.7rem; 	
+}
+h4 {
+	font-size: 1.35rem; 	
+}
+h5 {
+	font-size: 1.17rem; 	
+}
+
+button , strong{
+	font-weight: 700 !important;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , label , p {
+	margin-bottom: 0;
+}
+* {
+	outline: none !important;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+.screen {
+	min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+@media screen and (max-width: 1400px) {
+	html {
+		font-size: 17px;
+	}
+}
+@media screen and (max-width: 991px) {
+	html {
+		font-size: 15px;
+	}
+	h2 {
+		font-size: 1.7rem; 	
+	}
+	h3 {
+		font-size: 1.5rem; 	
+	}
+	h4 {
+		font-size: 1.2rem; 	
+	}
+	h5 {
+		font-size: 1rem; 	
+	}
+}
+@media screen and (max-width: 767px) {
+	html {
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.container {
+	    max-width: 1280px;
+	}
+}
+
+.btn.focus, .btn:focus {
+	box-shadow: 0 0 0 0 transparent
+}
