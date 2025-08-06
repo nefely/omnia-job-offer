@@ -2252,7 +2252,7 @@ video {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .radio-btn__item {
     min-height: 49px;
@@ -2266,7 +2266,7 @@ video {
 .radio-btn__item.yes:active,
 .radio-btn__item.yes:focus,
 .radio-btn__item.yes:hover {
-    background: #228B22;
+    background: #0c0 linear-gradient(180deg, #0c0 0, #090);
 }
 .radio-btn__item.skip {
     order: 2;
@@ -2278,15 +2278,15 @@ video {
 .radio-btn__item.skip:active,
 .radio-btn__item.skip:focus,
 .radio-btn__item.skip:hover {
-    background: #DC143C;
+    background: #c00 linear-gradient(180deg, #c00 0, #900);
 }
 .progress-bar_number {
     align-items: center;
     justify-content: center;
     padding: 5px 0;
     text-align: center;
-    background: #098b64;
-    background: linear-gradient(180deg, #098b64 0, #098b64);
+    background: #b60101;
+    background: linear-gradient(180deg, #b60101 0, #c00);
     font-family: Arial, sans-serif;
     font-size: 23px;
     line-height: 44px;
@@ -2313,16 +2313,15 @@ video {
     background: #fff;
 }
 .step__header {
-    padding: 15px 0;
+    padding: 5px 0;
     text-align: center;
-    background: #0c68b2;
+    background: #4800cb;
 }
 .step__title {
     color: #fff;
     font-family: Arial, sans-serif;
     font-size: 35px;
     line-height: 40px;
-    margin-bottom: 0;
 }
 .step__title_small {
     padding: 10px 0;
@@ -2360,7 +2359,7 @@ video {
     white-space: pre-line;
 }
 .step__attention {
-    margin-right: 0;
+    margin-right: 5px;
     color: #c73838;
     font-weight: 600;
 }
@@ -2650,12 +2649,11 @@ video {
 }
 .footer {
     z-index: 2;
-    /* margin-bottom: -48px; */
-    margin-top: 80px;
-    background-color: #211f1f;
+    margin-bottom: -48px;
+    background-color: #151515;
 }
 .footer__inner {
-    max-width: 200px;
+    max-width: 300px;
     height: 48px;
 }
 .footer__link {
@@ -2683,7 +2681,7 @@ video {
         margin: auto 15px;
     }
     .step:first-of-type .step__header {
-        padding: 10px 0;
+        padding: 25px 0;
     }
     .step__body {
         padding: 15px;
@@ -4893,7 +4891,6 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 26px;
-    width: 100%;
 }
 @media only screen and (max-width: 540px) {
     body {
@@ -4913,16 +4910,16 @@ body {
 }
 
 .background {
-    background-image: url(../img/img.jpg) !important;
+    background-image: url(../img/img.jpg);
 }
 @media (max-width: 768px) {
     .background {
-        background-image: url(../img/img.jpg) !important;
+        background-image: url(../img/img.jpg);
     }
 }
 @media (max-width: 540px) {
     .background {
-        background-image: url(../img/img.jpg) !important;
+        background-image: url(../img/img.jpg);
     }
 }
 
@@ -4947,6 +4944,6 @@ body {
     height: auto;
 }
 .step__title {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
