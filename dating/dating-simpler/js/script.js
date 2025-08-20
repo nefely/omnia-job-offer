@@ -17,21 +17,21 @@ $(function () {
 
   // ---- Card data
   const cardsData = [
-    { img: "1.webp",  name: "Anna, 29",   location: "Austin, TX" },
-    { img: "2.webp",  name: "Mei, 27",    location: "San Francisco, CA" },
-    { img: "3.webp",  name: "Lily, 35",   location: "Seattle, WA" },
-    { img: "4.webp",  name: "Hana, 32",   location: "New York, NY" },
-    { img: "5.webp",  name: "Yumi, 45",   location: "San Diego, CA" },
-    { img: "6.webp",  name: "Suki, 28",   location: "Houston, TX" },
-    { img: "7.webp",  name: "Emi, 31",    location: "Miami, FL" },
-    { img: "8.webp",  name: "Aya, 27",    location: "Boston, MA" },
-    { img: "9.webp",  name: "Naomi, 29",  location: "Portland, OR" },
-    { img: "10.webp", name: "Lin, 26",    location: "Las Vegas, NV" },
-    { img: "11.webp", name: "Keiko, 30",  location: "Austin, TX" },
-    { img: "12.webp", name: "Aria, 54",   location: "Denver, CO" },
-    { img: "13.webp", name: "Mika, 27",   location: "Honolulu, HI" },
+    { img: "15.webp", name: "Sakura, 28", location: "Sacramento, CA" },
     { img: "14.webp", name: "Hanae, 61",  location: "San Jose, CA" },
-    { img: "15.webp", name: "Sakura, 28", location: "Sacramento, CA" }
+    { img: "13.webp", name: "Mika, 27",   location: "Honolulu, HI" },
+    { img: "12.webp", name: "Aria, 54",   location: "Denver, CO" },
+    { img: "11.webp", name: "Keiko, 30",  location: "Austin, TX" },
+    { img: "10.webp", name: "Lin, 26",    location: "Las Vegas, NV" },
+    { img: "9.webp",  name: "Naomi, 29",  location: "Portland, OR" },
+    { img: "8.webp",  name: "Aya, 27",    location: "Boston, MA" },
+    { img: "7.webp",  name: "Emi, 31",    location: "Miami, FL" },
+    { img: "6.webp",  name: "Suki, 28",   location: "Houston, TX" },
+    { img: "5.webp",  name: "Yumi, 45",   location: "San Diego, CA" },
+    { img: "4.webp",  name: "Hana, 32",   location: "New York, NY" },
+    { img: "3.webp",  name: "Lily, 35",   location: "Seattle, WA" },
+    { img: "2.webp",  name: "Mei, 27",    location: "San Francisco, CA" },
+    { img: "1.webp",  name: "Anna, 29",   location: "Austin, TX" },
   ];
 
   // ---- Elements
@@ -54,7 +54,9 @@ $(function () {
 
   $finalBlock.hide();
 
-  let currentIndex = 0;   // index of the top card (data-wise)
+  // IMPORTANT: top card in the DOM is the LAST array element,
+  // so we start from the last index.
+  let currentIndex = cardsData.length - 1; // <-- start from top-most data item
   let likes = 0;
   let swipeEnabled = false;
 
@@ -94,6 +96,9 @@ $(function () {
       $imgWrap.append($card);
     });
 
+    // Ensure index points to the current top item after rebuilds
+    currentIndex = getCards().length - 1; // <-- sync with DOM count
+
     arrangeDepth();
     updateTopInfo();   // Will not reveal location text if geo not resolved
     updateProgress();
@@ -127,7 +132,7 @@ $(function () {
   }
 
   function updateTopInfo() {
-    if (currentIndex >= cardsData.length) return;
+    if (currentIndex < 0 || currentIndex >= cardsData.length) return; // <-- guard for empty stack
     const c = cardsData[currentIndex];
 
     // Always update name
@@ -140,17 +145,20 @@ $(function () {
   }
 
   function updateProgress() {
-    const value = Math.min(currentIndex + 1, cardsData.length);
-    $progressLine.css("width", (value / cardsData.length * 100) + "%");
+    // Progress = how many cards processed out of total
+    const processed = cardsData.length - (currentIndex + 1); // <-- from 0 to N
+    const pct = (processed / cardsData.length) * 100;
+    $progressLine.css("width", pct + "%"); // <--
   }
 
   // -------- Single transition point to next card --------
   function advance($card, liked) {
     if (liked) likes++;
     if ($card && $card.length) $card.remove(); // remove exactly one card
-    currentIndex++;
 
-    if (likes >= 3 || currentIndex >= cardsData.length) {
+    currentIndex--; // <-- move to the previous array item (next top)
+
+    if (likes >= 3 || currentIndex < 0) { // <-- finish when no cards left
       showFinal();
     } else {
       arrangeDepth();
