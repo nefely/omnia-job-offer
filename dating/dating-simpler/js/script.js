@@ -9,6 +9,13 @@ $(function () {
     final_under_button_text: "Real people. Real stories. Real love.",
   };
 
+  // Inject texts by data-text
+  $("[data-text]").each(function () {
+    const key = $(this).data("text");
+    if (textArray[key]) $(this).text(textArray[key]);
+  });
+
+  // ---- Card data
   const cardsData = [
     { img: "1.webp",  name: "Anna, 29",   location: "Austin, TX" },
     { img: "2.webp",  name: "Mei, 27",    location: "San Francisco, CA" },
@@ -27,13 +34,7 @@ $(function () {
     { img: "15.webp", name: "Sakura, 28", location: "Sacramento, CA" }
   ];
 
-  // Підставляємо тексти по data-text
-  $("[data-text]").each(function () {
-    const key = $(this).data("text");
-    if (textArray[key]) $(this).text(textArray[key]);
-  });
-
-  // Елементи
+  // ---- Elements
   const $colContent   = $(".col-content");
   const $finalBlock   = $(".col-content:last .final");
   const $finalBtns    = $(".col-content:last .final .buttons-container");
@@ -48,17 +49,35 @@ $(function () {
   const $nameEl       = $(".info .name[data-text='name'], .info .name").first();
   const $locEl        = $(".info .location-name[data-text='location'], .info .location-name").first();
 
+  // All geo-related display targets (add more selectors if needed)
+  const $geoTargets = $("#result_city, #city1, #city2, .info .location-name");
+
   $finalBlock.hide();
 
-  let currentIndex = 0;   // індекс верхньої картки (за даними)
+  let currentIndex = 0;   // index of the top card (data-wise)
   let likes = 0;
   let swipeEnabled = false;
 
-  // -------- ГЕНЕРАЦІЯ СТОПКИ КАРТОК --------
+  // Indicates if geo requests finished (either success or failure)
+  let geoResolved = false;
+
+  // Helper: show/hide all location visuals while geo is pending
+  function setLocationVisibility(show) {
+    if (show) {
+      $geoTargets.show();
+    } else {
+      $geoTargets.hide();
+    }
+  }
+
+  // Initially hide locations until geo completes
+  setLocationVisibility(false);
+
+  // -------- Stack generation --------
   function buildStack() {
     $imgWrap.empty().css({ position: "relative" });
 
-    // Знизу -> догори, останній DOM-елемент буде верхнім
+    // Bottom -> top, last DOM child becomes visually on top
     cardsData.forEach((c, i) => {
       const $card = $(`<img class="swipe-card" src="img/cards/${c.img}" alt="">`);
       $card.css({
@@ -76,7 +95,7 @@ $(function () {
     });
 
     arrangeDepth();
-    updateTopInfo();
+    updateTopInfo();   // Will not reveal location text if geo not resolved
     updateProgress();
 
     if (window.innerWidth < 991) enableSwipe();
@@ -90,19 +109,19 @@ $(function () {
     return getCards().last();
   }
 
-  // Стек-ефект: масштаб/прозорість/шари
+  // Stack effect: scale/opacity/zIndex
   function arrangeDepth() {
     const $cards = getCards();
     const n = $cards.length;
     $cards.each(function (i) {
       const $c = $(this);
-      const fromTop = n - 1 - i; // 0 — верхня
+      const fromTop = n - 1 - i; // 0 — topmost
       const s = 1 - fromTop * 0.02;
       const opacity = 1 - fromTop * 0.08;
       $c.css({
         transform: `scale(${s})`,
         zIndex: 100 + i,
-        opacity: opacity
+        opacity
       });
     });
   }
@@ -110,8 +129,14 @@ $(function () {
   function updateTopInfo() {
     if (currentIndex >= cardsData.length) return;
     const c = cardsData[currentIndex];
+
+    // Always update name
     $nameEl.text(c.name);
-    $locEl.text(c.location);
+
+    // Update location text only if geo has resolved (otherwise keep hidden)
+    if (geoResolved) {
+      $locEl.text(c.location || "");
+    }
   }
 
   function updateProgress() {
@@ -119,12 +144,10 @@ $(function () {
     $progressLine.css("width", (value / cardsData.length * 100) + "%");
   }
 
-  // -------- ЄДИНА ТОЧКА ПЕРЕХОДУ ДО НАСТУПНОЇ КАРТКИ --------
+  // -------- Single transition point to next card --------
   function advance($card, liked) {
     if (liked) likes++;
-
-    if ($card && $card.length) $card.remove(); // видаляємо РІВНО одну картку
-
+    if ($card && $card.length) $card.remove(); // remove exactly one card
     currentIndex++;
 
     if (likes >= 3 || currentIndex >= cardsData.length) {
@@ -163,7 +186,7 @@ $(function () {
     }
   }
 
-  // -------- КНОПКИ --------
+  // -------- Buttons --------
   $btnYes.on("click", () => flingTop(+1));
   $btnNo.on("click",  () => flingTop(-1));
 
@@ -179,13 +202,12 @@ $(function () {
       opacity: 0
     });
 
-    // Ніяких remove тут - лише після анімації
     setTimeout(() => {
       advance($top, dir > 0);
     }, 300);
   }
 
-  // -------- СВАЙП (моб) --------
+  // -------- Swipe (mobile) --------
   let touchBound = false;
 
   function enableSwipe() {
@@ -216,7 +238,7 @@ $(function () {
       dx = t.clientX - startX;
       dy = t.clientY - startY;
 
-      // Ігноруємо вертикальні жести
+      // Ignore vertical gestures
       if (Math.abs(dx) < MIN_DRAG || Math.abs(dx) < Math.abs(dy)) return;
 
       vx = (t.clientX - lastX) / Math.max(1, (now - lastT));
@@ -247,7 +269,6 @@ $(function () {
         setTimeout(() => $top.css("transition",""), 200);
       }
 
-      // скидаємо дельти
       dx = 0; dy = 0; vx = 0;
     });
   }
@@ -260,7 +281,68 @@ $(function () {
     }
   }
 
-  // Старт
+  // === GEO → cardsData.location ===
+
+  // Update all cards' location and optionally visible placeholders
+  function applyGeoToCards(locationStr) {
+    if (locationStr) {
+      for (let i = 0; i < cardsData.length; i++) {
+        cardsData[i].location = locationStr;
+      }
+      // Update standalone placeholders too
+      $("#result_city").text(locationStr);
+      $("#city1").text(locationStr);
+      $("#city2").text(locationStr);
+    }
+    // Mark geo resolved (even if empty) and reveal locations
+    geoResolved = true;
+    updateTopInfo();          // now writes location text for the current card
+    setLocationVisibility(true);
+  }
+
+  // Normalize API response to "City, Region" or "City"
+  function fmtLocation(city, region) {
+    const c = (city || "").trim();
+    const r = (region || "").trim();
+    if (c && r) return `${c}, ${r}`;
+    if (c) return c;
+    return ""; // empty means "no override"
+  }
+
+  // Resolve city: ipinfo → fallback ipapi.is
+  (function resolveCityAndApply() {
+    fetch("https://ipinfo.io/json?token=c99eab9ac96553")
+      .then((r) => {
+        if (!r.ok) throw new Error("ipinfo not ok");
+        return r.json();
+      })
+      .then((data) => {
+        const loc = fmtLocation(data.city, data.region); // ipinfo: city, region
+        applyGeoToCards(loc);
+      })
+      .catch(() => {
+        fetch("https://api.ipapi.is?key=ee1386e7141cfced")
+          .then((r) => {
+            if (!r.ok) throw new Error("ipapi not ok");
+            return r.json();
+          })
+          .then((data) => {
+            // ipapi.is: location.city, location.region/state
+            const loc = fmtLocation(
+              data?.location?.city,
+              data?.location?.region || data?.location?.state
+            );
+            applyGeoToCards(loc);
+          })
+          .catch((e) => {
+            console.error("Geo fetch failed:", e);
+            // Even on final failure we resolve and show default locations
+            applyGeoToCards(""); // keep original cardsData locations
+          });
+      });
+  })();
+
+  // Start
   buildStack();
   $(".preloader").fadeOut(300);
 });

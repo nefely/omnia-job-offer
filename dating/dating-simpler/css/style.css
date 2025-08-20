@@ -251,10 +251,14 @@ img {
 
 
 @media screen and (max-width: 991px) {
-
-    
     body {
         background: #fff;
+    }
+    .container {
+        width: 500px;
+        max-width: calc(100% - 2rem);
+        padding-left: 0;
+        padding-right: 0;
     }
     .col-content {
         /* flex-grow: 1; */
@@ -273,6 +277,7 @@ img {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
+        flex-wrap: nowrap;
     }
     .title {
         text-align: center;
@@ -282,7 +287,7 @@ img {
         background: transparent;
     }
     .col-content {
-        padding: 1rem 0;
+        padding: 0.75rem 0 1rem;
     }
     .col-content .title h2 {
         font-size: 32px;
@@ -295,11 +300,11 @@ img {
         height: auto;
     }
     .col-content .info {
-        margin-top: 0rem;
         margin-bottom: 0.75rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
     }
     .col-content .info h3 {
         font-size: 28px;
@@ -307,6 +312,8 @@ img {
     }
     .col-content .info p {
         font-size: 14px;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
     }
     .col-img {
         flex-grow: 1;
