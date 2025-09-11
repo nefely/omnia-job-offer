@@ -110,6 +110,20 @@ window.getURLParameter = (sUrl, sParam) => {
 const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
 const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
+
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16795799103/0aYUCOLP1fcaEL-c7sg-',
+      'event_callback': callback
+  });
+  return false;
+}
+
 $("#offer_link").on("click", function (e) {
     e.preventDefault();
 
@@ -117,18 +131,15 @@ $("#offer_link").on("click", function (e) {
     const href = $link.attr("href");
     $link.addClass("disabled");
 
-    gtag('event', 'conversion', {
-        'send_to': 'AW-16795799103/0aYUCOLP1fcaEL-c7sg-',
-        'event_callback': function() {
-            window.location.href = href;
-        }
-    });
+    gtag_report_conversion(href)
 
     setTimeout(()=>{
         $link.removeClass("disabled");
     },1000)
     
 });
+
+
 
 
 
