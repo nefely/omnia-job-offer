@@ -342,21 +342,3 @@
     render();
     const iv = setInterval(tick, stepMs);
 })();
-
-
-$(document).ready(function(){
-
-$("#offer_link").click(function(e){
-    e.preventDefault()
-    // redirect
-    fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
-    .then(r => {
-        console.log("successfully registered: " + rtkcid);
-        setTimeout(()=>{
-            window.location.href = $(this).attr("href")
-        },300)
-    })
-    .catch(e => console.log("error during registration lead: " + e));
-});
-
-})
