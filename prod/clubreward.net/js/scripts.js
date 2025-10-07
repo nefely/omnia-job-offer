@@ -11,15 +11,15 @@ window.getURLParameter = (sUrl, sParam) => {
     }
 }   
 
-const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
-const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
+// const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
+// const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
 $(".offer_link").click(function(e){
     e.preventDefault()
     $(this).addClass("disabled")
-    fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
+    fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
     .then(r => {
-        console.log("successfully registered: " + rtkcid);
+        console.log("successfully registered: " + rtkClickID);
         setTimeout(()=>{
             window.location.href = $(this).attr("href")
         },300)
