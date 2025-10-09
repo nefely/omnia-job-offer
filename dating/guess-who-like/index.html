@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match</title>
+
+    <script type="text/javascript">
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+	</script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');</style>
+
+   
+</head>
+<body>
+
+    <!-- preloader --><style>.preloader{position:fixed;width:100vw;height:100vh;background:linear-gradient(243.18deg, #181C3A 0%, #602995 100%);z-index:1000;left:0;top:0;}</style><div class="preloader"></div>
+
+    <div class="screen">
+    <div class="container">
+        <div class="header text-white ">
+            <h1 class="text-bold ">🏳️‍🌈 Which of these guys is into men 35+?</h1>
+            <p class="text-bold">Tap any photo to check 👇</p>
+            <p class="roll text-bold">Attempts: <span class="text-bold">3</span></p>
+        </div>
+
+        <div class="step step-1">
+            <div class="step-inner">
+                <div class="item">
+                    <img src="" alt="">
+                    <div class="overlay fail"></div>
+                </div>
+                <div class="item">
+                    <img src="" alt="">
+                    <div class="overlay success"></div>
+                </div>
+                <div class="item">
+                    <img src="" alt="">
+                    <div class="overlay"></div>
+                </div>
+                <div class="item">
+                    <img src="" alt="">
+                    <div class="overlay"></div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <a rel="noopener" href="terms-and-conditions/" target="_blank" data-testid="terms-of-use-link" class="footer__link">
+                Terms of use
+            </a>
+            <a rel="noopener" href="privacy-policy/" target="_blank" data-testid="privacy-policy-link" class="footer__link">
+                Privacy Policy
+            </a>
+        </div>
+    </footer>
+
+    <div class="popup popup-1">
+        <div class="popup-container">
+            <div class="img text-center">
+                <img src="img/cross.png" alt="">
+            </div>
+            <h4 class="title text-center text-bold">Opps... Not him!</h4>
+            <p class="text-center">2 tries left - choose carefuly</p>
+        </div>
+    </div>
+
+    <div class="popup popup-2">
+        <div class="popup-container">
+            <div class="img text-center">
+                <img src="" alt="" class="img-match">
+            </div>
+            <h4 class="title text-center text-bold">Great choice - that's him❤️</h4>
+            <p class="text-center">Take a 2-minute quiz and unlock his profile plus 100+ more matches just for you.</p>
+            <div class="btn-group text-center">
+                <a href="{offer_link}" class="btn btn-lg text-bold btn-success" id="offer_link">START NOW</a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
