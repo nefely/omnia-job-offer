@@ -2667,13 +2667,6 @@ button , #offer_link {
     justify-content: center;
 }
 
-button.bg-\[\#0071DC\], a.bg-\[\#0071DC\] {
-    display: flex
-;
-    justify-content: center;
-    width: 100%;
-}
-
 
 
 /* new */
