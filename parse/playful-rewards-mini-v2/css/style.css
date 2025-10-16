@@ -98,7 +98,7 @@ body {
 }
 
 /* pink border highlight */
-.pink-border {
+.purple-border {
     border-color: rgba(145, 91, 240, 1);
     box-shadow:
         0 0 0 1px rgba(145, 91, 240, 0.15) inset,
@@ -327,6 +327,8 @@ img {
     transform: rotate(45deg) scale(2);
     animation: 3s linear 0s infinite normal animation-blink;
 }
+
+
 @keyframes animation-blink {
     0% {
         left: -100%;
@@ -338,32 +340,40 @@ img {
     }
 }
 
-/* Heart-beat effect for the "$100+" text */
-.heartbeat{
-  display: inline-block;
-  transform-origin: center;
-  animation: heartbeat 1.25s ease-in-out infinite, glow 1.25s ease-in-out infinite;
+
+.pulse {
+    animation: 3s linear 0s infinite normal animation-pulse;
+}
+@keyframes animation-pulse {
+    0% {
+        transform: scale3d(1,1,1);
+    }
+    50%{
+        transform: scale3d(1.05,1.05,1.05);
+    }
+    100%{
+        transform: scale3d(1,1,1);
+    }
 }
 
-/* scale pulses */
-@keyframes heartbeat{
-  0%   { transform: scale(1); }
-  10%  { transform: scale(1.08); }
-  20%  { transform: scale(1); }
-  30%  { transform: scale(1.12); }
-  40%  { transform: scale(1); }
-  100% { transform: scale(1); }
+.border-pulse {
+    animation: 3s linear 0s infinite normal animation-border-pulse;
+}
+@keyframes animation-border-pulse {
+    0% {
+        border: 1px solid var(--line);
+        transform: scale3d(1,1,1);
+    }
+    50%{
+        border: 1px solid rgba(228, 74, 160, 1);
+        transform: scale3d(1.05,1.05,1.05);
+    }
+    100%{
+        border: 1px solid var(--line);
+        transform: scale3d(1,1,1);
+    }
 }
 
-@keyframes glow{
-  0%, 100% {
-    text-shadow:
-      0 0 0 rgba(230,73,158,0),
-      0 0 0 rgba(144,91,241,0);
-  }
-  15%, 35% {
-    text-shadow:
-      0 0 10px rgba(230,73,158,.55),
-      0 0 18px rgba(144,91,241,.35);
-  }
-}
+
+
+
