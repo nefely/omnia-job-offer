@@ -55,22 +55,9 @@ window.getURLParameter = (sUrl, sParam) => {
     }
 }
 
-// const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
-
-// $(".offer_link").click(function(e){
-//     e.preventDefault()
-//     fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
-//     .then(r => {
-//         console.log("successfully registered: " + rtkcid);
-//         window.location.href = $(this).attr("href")
-//     })
-//     .catch(e => console.log("error during registration lead: " + e));
-// });
-
-
+const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
 
 $(document).ready(function(){
-
 
     const swiper = new Swiper('.swiper', {
         loop: true,

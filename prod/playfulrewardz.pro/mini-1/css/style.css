@@ -957,3 +957,32 @@ section {
         padding-left: 20px;
     }
 }
+
+
+.pulse {
+    animation: 3s linear 0s infinite normal animation-pulse;
+}
+@keyframes animation-pulse {
+    0% {
+        transform: scale3d(1,1,1);
+    }
+    50%{
+        transform: scale3d(1.05,1.05,1.05);
+    }
+    100%{
+        transform: scale3d(1,1,1);
+    }
+}
+
+
+.limits {
+    max-width: 390px;
+    background: var(--white);
+    border-radius: 8px;
+    padding: 14px 6px;
+    margin: 0 auto 20px auto;
+    font-size: 13px;
+    color: var(--gray);
+    box-shadow: 0 4px 24px rgba(236, 72, 153,0.25);
+    border: 1px solid #EC4899;
+}
