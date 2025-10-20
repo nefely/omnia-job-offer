@@ -55,41 +55,69 @@ window.getURLParameter = (sUrl, sParam) => {
     }
 }
 
-const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
+// const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
+
+// $(".offer_link").click(function(e){
+//     e.preventDefault()
+//     fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkClickID}`, { mode: 'no-cors'})
+//     .then(r => {
+//         console.log("successfully registered: " + rtkClickID);
+//         window.location.href = $(this).attr("href")
+//     })
+//     .catch(e => console.log("error during registration lead: " + e));
+// });
+
+$(".offer_link").click(function(e){
+    e.preventDefault()
+    setTimeout(()=>{
+        window.location.href = $(this).attr("href")
+    },500)
+});
+
+
 
 $(document).ready(function(){
 
-    // const swiper = new Swiper('.swiper', {
-    //     loop: true,
-    //     slidesPerView: 4,
-    //     spaceBetween: 24,
-    //     breakpoints: {
-    //         0: {
-    //             slidesPerView: 2.2,
-    //             spaceBetween: 10
-    //         },
-    //         481: {
-    //             slidesPerView: 4,
-    //             spaceBetween: 24
-    //         }
-    //     }
-    // });
+
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        slidesPerView: 4,
+        spaceBetween: 24,
+        // pagination: {
+        //     el: '.swiper-pagination',
+        //     clickable: true
+        // },
+        // navigation: {
+        //     nextEl: '.swiper-button-next',
+        //     prevEl: '.swiper-button-prev'
+        // },
+        breakpoints: {
+        0: {
+            slidesPerView: 2.2,
+            spaceBetween: 10
+        },
+        481: {
+            slidesPerView: 4,
+            spaceBetween: 24
+        }
+  }
+    });
 
     // lightbox
-    // const lightbox = document.getElementById("lightbox");
-    // const lightboxImg = document.getElementById("lightbox-img");
-    // const closeBtn = document.querySelector(".lightbox .close");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox .close");
 
-    // document.querySelectorAll(".swiper-slide img").forEach(img => {
-    // img.addEventListener("click", () => {
-    //     lightbox.style.display = "flex";
-    //     lightboxImg.src = img.src;
-    // });
-    // });
+    document.querySelectorAll(".swiper-slide img").forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+    });
+    });
 
-    // closeBtn.onclick = () => (lightbox.style.display = "none");
-    // lightbox.onclick = e => {
-    // if (e.target === lightbox) lightbox.style.display = "none";
-    // };
+    closeBtn.onclick = () => (lightbox.style.display = "none");
+    lightbox.onclick = e => {
+    if (e.target === lightbox) lightbox.style.display = "none";
+    };
 
 })
