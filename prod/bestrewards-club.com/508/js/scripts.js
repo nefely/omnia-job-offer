@@ -111,6 +111,8 @@ window.getURLParameter = (sUrl, sParam) => {
 const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
 const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
+let isClicked = false;
+
 $(".offer_link").click(function(e){
     e.preventDefault();
 

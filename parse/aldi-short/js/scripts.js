@@ -112,17 +112,24 @@ const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
 const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
 $(".offer_link").click(function(e){
-    e.preventDefault()
-    $(this).addClass("disabled")
-    fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
-    .then(r => {
-        console.log("successfully registered: " + rtkcid);
-        setTimeout(()=>{
-            window.location.href = $(this).attr("href")
-        },300)
-    })
-    .catch(e => console.log("error during registration lead: " + e) , $(this).removeClass("disabled"));
-})
+    e.preventDefault();
+
+    if (isClicked) return;
+    isClicked = true;
+
+    fbq('track', 'PageView');
+
+    setTimeout(() => {
+        window.location.href = $(this).attr("href");
+    }, 500);
+
+    setTimeout(() => {
+        isClicked = false;
+    }, 5000);
+});
+
+
+
 
 
 // test
