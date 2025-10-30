@@ -111,18 +111,33 @@ window.getURLParameter = (sUrl, sParam) => {
 const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
 const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
-$("#offer_link").click(function(e){
-    e.preventDefault()
-    $(this).addClass("disabled")
-    fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
-    .then(r => {
-        console.log("successfully registered: " + rtkcid);
-        setTimeout(()=>{
-            window.location.href = $(this).attr("href")
-        },300)
-    })
-    .catch(e => console.log("error during registration lead: " + e) , $(this).removeClass("disabled"));
-})
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17688062786/xz5UCIyE37YbEMLWqfJB',
+      'event_callback': callback
+  });
+  return false;
+}
+
+$("#offer_link").on("click", function (e) {
+    e.preventDefault();
+
+    const $link = $(this);
+    const href = $link.attr("href");
+    $link.addClass("disabled");
+
+    gtag_report_conversion(href)
+
+    setTimeout(()=>{
+        $link.removeClass("disabled");
+    },1000)
+    
+});
 
 
 // test
