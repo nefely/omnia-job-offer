@@ -111,23 +111,32 @@ window.getURLParameter = (sUrl, sParam) => {
 const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
 const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
-isClicked = false;
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17688245839/tO9KCJnB0rYbEM_stPJB',
+      'event_callback': callback
+  });
+  return false;
+}
 
-$("#offer_link").click(function(e){
+$("#offer_link").on("click", function (e) {
     e.preventDefault();
 
-    if (isClicked) return;
-    isClicked = true;
+    const $link = $(this);
+    const href = $link.attr("href");
+    $link.addClass("disabled");
 
-    fbq('track', 'PageView');
+    gtag_report_conversion(href)
 
-    setTimeout(() => {
-        window.location.href = $(this).attr("href");
-    }, 500);
-
-    setTimeout(() => {
-        isClicked = false;
-    }, 5000);
+    setTimeout(()=>{
+        $link.removeClass("disabled");
+    },1000)
+    
 });
 
 
