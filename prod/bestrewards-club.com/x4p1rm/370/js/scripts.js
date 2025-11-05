@@ -2,11 +2,10 @@ $(document).ready(function(){
 
 
 
-$('.tosurvey').click(function(){
+$('[data-page="index"] #tosurvey').click(function(){
     $('[data-page="index"]').fadeOut(0)
     $('[data-page="survey"]').fadeIn(0)
     $('[data-el="survey-question-1"]').fadeIn(300)
-    $('html, body').animate({ scrollTop: 0 }, 300);
     startTimer()
 })
 
@@ -111,34 +110,24 @@ window.getURLParameter = (sUrl, sParam) => {
 const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
 const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-16677119565/gBtNCMHIwbobEM3MopA-',
-      'event_callback': callback
-  });
-  return false;
-}
+isClicked = false;
 
-$("#offer_link").on("click", function (e) {
+$("#offer_link").click(function(e){
     e.preventDefault();
 
-    const $link = $(this);
-    const href = $link.attr("href");
-    $link.addClass("disabled");
+    if (isClicked) return;
+    isClicked = true;
 
-    gtag_report_conversion(href)
+    fbq('track', 'PageView');
 
-    setTimeout(()=>{
-        $link.removeClass("disabled");
-    },1000)
-    
+    setTimeout(() => {
+        window.location.href = $(this).attr("href");
+    }, 500);
+
+    setTimeout(() => {
+        isClicked = false;
+    }, 5000);
 });
-
 
 
 // test

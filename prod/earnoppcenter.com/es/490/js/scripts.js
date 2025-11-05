@@ -118,7 +118,7 @@ function gtag_report_conversion(url) {
     }
   };
   gtag('event', 'conversion', {
-      'send_to': 'AW-16677119565/gBtNCMHIwbobEM3MopA-',
+      'send_to': 'AW-16795799103/0aYUCOLP1fcaEL-c7sg-',
       'event_callback': callback
   });
   return false;
@@ -138,7 +138,6 @@ $("#offer_link").on("click", function (e) {
     },1000)
     
 });
-
 
 
 // test
