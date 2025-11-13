@@ -1369,7 +1369,7 @@ body {
 
 .border-yellow-100 {
     --tw-border-opacity: 1;
-    border-color: rgb(254 249 195 / var(--tw-border-opacity, 1))
+    border-color: rgb(225 235 255 / var(--tw-border-opacity, 1))
 }
 
 .border-l-transparent {

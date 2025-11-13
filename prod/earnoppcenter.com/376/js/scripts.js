@@ -2,10 +2,11 @@ $(document).ready(function(){
 
 
 
-$('[data-page="index"] #tosurvey').click(function(){
+$('.tosurvey').click(function(){
     $('[data-page="index"]').fadeOut(0)
     $('[data-page="survey"]').fadeIn(0)
     $('[data-el="survey-question-1"]').fadeIn(300)
+    $('html, body').animate({ scrollTop: 0 }, 300);
     startTimer()
 })
 
@@ -110,7 +111,6 @@ window.getURLParameter = (sUrl, sParam) => {
 const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
 const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
-
 function gtag_report_conversion(url) {
   var callback = function () {
     if (typeof(url) != 'undefined') {
@@ -138,10 +138,6 @@ $("#offer_link").on("click", function (e) {
     },1000)
     
 });
-
-
-
-
 
 
 // test
