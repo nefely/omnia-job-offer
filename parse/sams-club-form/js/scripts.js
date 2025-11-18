@@ -178,39 +178,28 @@ $("#offer_link").click(function(e){
 
     const currentTime = new Date().getTime();
 
-    emailValidation();
-    lastNameValidation();
-    firstNameValidation();
+    emailValidation()
+    lastNameValidation()
+    firstNameValidation()
 
     if (currentTime - lastClickTime < 5000) {
         return false;
     } else {
         lastClickTime = currentTime;
-
         if (isFirstNameValid() && isLastNameValid() && isEmailValid()) {
-
-            const firstname = $("[name=firstname]").val();
-            const lastname  = $("[name=lastname]").val();
-            const email     = $("[name=email]").val();
-
-            pintrk('track', 'signup', {
-                fn: firstname,
-                ln: lastname,
-                em: email
-            });
-
             // redirect
-            setTimeout(()=>{
-                const base = $(this).attr("href");
-                const sep = base.includes("?") ? "&" : "?";
-                console.log(`${base}${sep}sub13=${firstname}&sub14=${lastname}&sub15=${email}`)
-                window.location.href = 
-                    `${base}${sep}sub13=${firstname}&sub14=${lastname}&sub15=${email}`;
-            },400)
+
+            if (rtkcid && rtkcid !== "undefined") {
+                fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
+                .then(r => {
+                    console.log("successfully registered: " + rtkcid);
+                    window.location.href = `${$(this).attr("href")}${$(this).attr("href").includes("?") ? "&" : "?"}sub13=${$("[name=firstname]").val()}&sub14=${$("[name=lastname]").val()}&sub15=${$("[name=email]").val()}`
+                })
+                .catch(e => console.log("error during registration lead: " + e));
+            }
         }
     }
 });
-
 
 
 
