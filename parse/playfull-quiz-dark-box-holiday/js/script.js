@@ -191,21 +191,25 @@ $(document).ready(function(){
 
     let boxOpened = false
     $(".box").click(function(){
-        console.log(1)
         if (!boxOpened) {
             boxOpened = true
             $(this).find(".cover").addClass("cover-open")
             $(this).addClass("opened")
+            $("#confettiCanvas").fadeIn(300);
+            runConfetti()
+            setTimeout(()=>{
+                $(".popup").addClass("opened")
+            },2000)
         }
     })
 
 
 // test
-$(".hero").fadeOut(0)
-$(".timer").fadeOut(0)
-$(".contact").fadeOut(0)
-$(".final").fadeIn(0)
-runConfetti()
+// $(".hero").fadeOut(0)
+// $(".timer").fadeOut(0)
+// $(".contact").fadeOut(0)
+// $(".final").fadeIn(0)
+// runConfetti()
 
 
 })
