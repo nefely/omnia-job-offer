@@ -337,16 +337,22 @@ h5 {
 
 
 /* timer */
+.timer-last,
 .timer {
     background: var(--purple-system);
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-size: 16px;
 }
+.timer-last {
+    border-radius: 0.5rem;
+}
+.timer-last img,
 .timer img {
     display: block;
     margin-right: 5px;
 }
+.timer-last .timer-clock-last,
 .timer .timer-clock {
     width: 78px;
     display: inline-flex;
@@ -358,6 +364,7 @@ h5 {
     min-height: 32;
     padding: 4px 16px;
 }
+.timer-last .wrapper-md-inner ,
 .timer .wrapper-md-inner {
     display: flex;
     justify-content: center;

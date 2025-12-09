@@ -193,6 +193,7 @@ $(document).ready(function(){
     $(".box").click(function(){
         if (!boxOpened) {
             boxOpened = true
+            startTimer_last()
             $(this).find(".cover").addClass("cover-open")
             $(this).addClass("opened")
             $("#confettiCanvas").fadeIn(300);
@@ -221,6 +222,36 @@ $(document).ready(function(){
             isClicked = false;
         }, 5000);
     });
+
+    const startTimer_last = () => {
+        const timerEl = $('.timer-clock-last');
+        if (!timerEl) return;
+
+        let remainingSeconds = 1 * 60;
+
+        const formatTime = (seconds) => {
+            const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const s = (seconds % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        };
+
+        timerEl.text(formatTime(remainingSeconds));
+
+        const interval = setInterval(() => {
+            remainingSeconds--;
+
+            if (remainingSeconds <= 0) {
+                timerEl.textContent = "00:00";
+                timerEl.text("00:00");
+
+                clearInterval(interval);
+                return;
+            }
+
+            timerEl.text(formatTime(remainingSeconds));
+
+        }, 1000);
+    };
 
 
 
