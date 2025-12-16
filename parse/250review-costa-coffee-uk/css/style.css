@@ -23,7 +23,7 @@
     --tw-ring-inset: ;
     --tw-ring-offset-width: 0px;
     --tw-ring-offset-color: #fff;
-    --tw-ring-color: rgb(233 115 39 / .5);
+    --tw-ring-color: rgb(94 22 43 / .5);
     --tw-ring-offset-shadow: 0 0 #0000;
     --tw-ring-shadow: 0 0 #0000;
     --tw-shadow: 0 0 #0000;
@@ -77,7 +77,7 @@
     --tw-ring-inset: ;
     --tw-ring-offset-width: 0px;
     --tw-ring-offset-color: #fff;
-    --tw-ring-color: rgb(233 115 39 / .5);
+    --tw-ring-color: rgb(94 22 43 / .5);
     --tw-ring-offset-shadow: 0 0 #0000;
     --tw-ring-shadow: 0 0 #0000;
     --tw-shadow: 0 0 #0000;
@@ -1369,7 +1369,7 @@ body {
 
 .border-yellow-100 {
     --tw-border-opacity: 1;
-    border-color: rgb(233 236 244 / var(--tw-border-opacity, 1))
+    border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
 }
 
 .border-l-transparent {
@@ -1382,20 +1382,16 @@ body {
 
 .bg-\[\#000352\] {
     --tw-bg-opacity: 1;
-    background-color: rgb(233 115 39 / var(--tw-bg-opacity, 1))
-}
-.bg-\[\#000353\] {
-    --tw-bg-opacity: 1;
-    background-color: rgba(29, 29, 29, 1)
+    background-color: rgb(94 22 43 / var(--tw-bg-opacity, 1))
 }
 
 .bg-\[\#000352\]\/10 {
-    background-color: rgba(255, 233, 219, 1)
+    background-color:rgba(255, 229, 236, 1)
 }
 
 .bg-\[\#F2F8FD\] {
     --tw-bg-opacity: 1;
-    background-color: rgb(245 248 255 / var(--tw-bg-opacity, 1))
+    background-color: rgba(247, 247, 247, 1)
 }
 
 .bg-\[\#F8F9FA\] {
@@ -1421,7 +1417,11 @@ body {
 
 .bg-blue-500 {
     --tw-bg-opacity: 1;
-    background-color: rgb(233 115 39 / var(--tw-bg-opacity, 1))
+    background-color: rgb(94 22 43 / var(--tw-bg-opacity, 1))
+}
+.bg-blue-400 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(54, 119, 239, 1)
 }
 
 .bg-border {
@@ -1501,12 +1501,12 @@ body {
 
 .bg-yellow-100 {
     --tw-bg-opacity: 1;
-    background-color:rgba(213, 218, 233, 1)
+    background-color:rgba(255, 204, 218, 1)
 }
 
 .bg-yellow-50 {
     --tw-bg-opacity: 1;
-    background-color: rgb(233 236 244 / var(--tw-bg-opacity, 1))
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
 }
 
 .bg-gradient-to-r {
@@ -1840,7 +1840,7 @@ body {
 
 .text-\[\#000352\] {
     --tw-text-opacity: 1;
-    color: rgb(233 115 39 / var(--tw-text-opacity, 1))
+    color: rgb(94 22 43 / var(--tw-text-opacity, 1))
 }
 
 .text-\[\#2A2A2A\] {
@@ -1850,7 +1850,7 @@ body {
 
 .text-\[\#365899\] {
     --tw-text-opacity: 1;
-    color: rgb(233 115 39 / var(--tw-text-opacity, 1))
+    color: rgb(94 22 43 / var(--tw-text-opacity, 1))
 }
 
 .text-accent-foreground {
@@ -1859,7 +1859,7 @@ body {
 
 .text-blue-500 {
     --tw-text-opacity: 1;
-    color: rgb(233 115 39 / var(--tw-text-opacity, 1))
+    color: rgb(94 22 43 / var(--tw-text-opacity, 1))
 }
 
 .text-blue-700 {
@@ -2286,7 +2286,7 @@ body {
 
 .hover\:bg-\[\#004F9A\]:hover {
     --tw-bg-opacity: 1;
-    background-color: rgb(248, 144, 75)
+    background-color: rgba(80, 12, 31, 1)
 }
 
 .hover\:bg-accent:hover {
@@ -2414,7 +2414,7 @@ body {
 
 .focus\:ring-blue-500:focus {
     --tw-ring-opacity: 1;
-    --tw-ring-color: rgb(233 115 39 / var(--tw-ring-opacity, 1))
+    --tw-ring-color: rgb(94 22 43 / var(--tw-ring-opacity, 1))
 }
 
 .focus\:ring-ring:focus {
