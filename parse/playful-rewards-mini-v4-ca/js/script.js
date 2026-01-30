@@ -18,7 +18,7 @@ window.getURLParameter = (sUrl, sParam) => {
 
 $('[data-over]').each(function () {
   const $el = $(this);
-  const target = parseInt($el.data('over'), 10);
+  const target = Math.floor(Math.random() * (75 - 70 + 1)) + 70;
 
   $({ count: 0 }).animate(
     { count: target },
