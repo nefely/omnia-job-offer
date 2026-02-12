@@ -2,10 +2,11 @@ $(document).ready(function(){
 
 
 
-$('[data-page="index"] #tosurvey').click(function(){
+$('.tosurvey').click(function(){
     $('[data-page="index"]').fadeOut(0)
     $('[data-page="survey"]').fadeIn(0)
     $('[data-el="survey-question-1"]').fadeIn(300)
+    $('html, body').animate({ scrollTop: 0 }, 300);
     startTimer()
 })
 
@@ -110,7 +111,7 @@ window.getURLParameter = (sUrl, sParam) => {
 const rtkcid = window.getURLParameter(window.location.href, 'rtkcid');
 const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 
-// $("#offer_link").click(function(e){
+// $(".offer_link").click(function(e){
 //     e.preventDefault()
 //     $(this).addClass("disabled")
 //     fetch(`https://track.${window.location.host}/postback?type=CompleteRegistration&clickid=${rtkcid}`, { mode: 'no-cors'})
@@ -123,9 +124,9 @@ const rtkcmpid = window.getURLParameter(window.location.href, 'rtkcmpid');
 //     .catch(e => console.log("error during registration lead: " + e) , $(this).removeClass("disabled"));
 // })
 
-isClicked = false;
+let isClicked = false;
 
-$("#offer_link").click(function(e){
+$(".offer_link").click(function(e){
     e.preventDefault();
 
     if (isClicked) return;
@@ -141,7 +142,6 @@ $("#offer_link").click(function(e){
         isClicked = false;
     }, 5000);
 });
-
 
 
 // test
