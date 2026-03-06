@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>앱 및 게임 테스트로 돈 벌기</title>
+
+        <!-- Meta Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '956916000237916');
+        </script>
+        <!-- End Meta Pixel Code -->
+
+        <link rel="icon" href="img/favicon.png" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="screen">
+            <div class="timer" style="display: block">
+                <div class="wrapper">
+                    <div class="wrapper-md-inner">
+                        <img src="img/clock.svg" alt="">
+                        한정 시간: <span class="timer-clock brad-10">05:00</span>남음
+                    </div>
+                </div>
+            </div>
+
+            <div class="landing">
+                <section class="hero center">
+                    <div class="wrapper">
+                        <div class="wrapper-md-inner mb-2 mob-mb-1_5">
+                            <h1 class="mb-1">앱과 게임을  <span class="primary">테스트</span><br />하고 수익을 얻으세요</h1>
+                            <p class="light">앱과 게임을 테스트하고 설문조사에 참여하여 하루 최대 ₩220,000 이상 수익. 빠른 출금 가능!</p>
+                        </div>
+
+                        <div class="blocks mb-2 mob-mb-1_5">
+                            <div class="block">
+                                <div class="icon"><img src="img/check-hero.svg" alt="" /></div>
+                                <h4 class="primary">147K+</h4>
+                                <p class="small light uppercase">활성 사용자</p>
+                            </div>
+                            <div class="block">
+                                <div class="icon"><img src="img/check-hero.svg" alt="" /></div>
+                                <h4 class="primary">₩740,000+</h4>
+                                <p class="small light uppercase">오퍼당</p>
+                            </div>
+                            <div class="block">
+                                <div class="icon"><img src="img/check-hero.svg" alt="" /></div>
+                                <h4 class="primary">빠른</h4>
+                                <p class="small light uppercase">출금</p>
+                            </div>
+                        </div>
+
+                        <div class="wrapper-sm-inner mb-2">
+                            <p class="mb-1_5 tag-lg border-primary small uppercase">₩7400 웰컴 보너스 받기</p>
+                            <div class="btn-container">
+                                <button class="btn btn-primary btn-blink uppercase">시작하기</button>
+                            </div>
+                        </div>
+
+                        <div class="rating">
+                            <div class="trusted mb-1">
+                                <img src="img/hero-trusted.png" alt="" />
+                            </div>
+                            <p class="line mb-1">
+                                <span class="semi-bold">254.255</span> 개 리뷰 기준 평점
+                                <span class="semi-bold">4.8</span> 
+                            </p>
+
+                            <div class="verified">
+                                <img src="img/check.svg" alt="" />
+                                <span>인증됨</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="final">
+                    <div class="wrapper">
+                        <div class="wrapper-md-inner">
+                            <div class="logo">
+                                <img src="img/logo.svg" alt="">
+                            </div>
+                            <div class="final-hero block-lg">
+                                <canvas id="confettiCanvas"></canvas>
+                                <h3 class="center mb-1">축하합니다! <br> 단 8.67%만 자격을 얻는데 — 당신은 통과했습니다.</h3>
+                                
+                                <div class="reward block mb-1_5">
+                                    <div class="mb-1">
+                                        <h4>보상을 받는 방법은?</h4>
+                                    </div>
+                                    <div class="ico-blocks">
+                                        <div class="ico-block">
+                                            <div class="number">1</div>
+                                            <div>
+                                                <p class="semi-bold">FreeCash 앱 다운로드</p>
+                                            </div>
+                                        </div>
+                                        <div class="ico-block">
+                                            <div class="number">2</div>
+                                            <div>
+                                                <p class="semi-bold">첫 게임 플레이 → ₩7,400 보너스 받기</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="ico-block">
+                                            <div class="number">3</div>
+                                            <div>
+                                                <p class="semi-bold">더 많이 플레이할수록 더 많은 수익 — 하루 최대 ₩220,000</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="ico-block">
+                                            <div class="number">4</div>
+                                            <div>
+                                                <p class="semi-bold">언제든지 출금 가능</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="center mb-1_5">
+                                    <p class="tag-lg border-primary small uppercase final-timer">
+                                        이 앱 접근이 곧 종료됩니다 <span class="tag brad-10"><img src="img/clock.svg" alt=""><span class="timer-clock">04:47</span></span>
+                                    </p>
+                                </div>
+
+                                <div class="btn-container mb-1_5">
+                                    <a class="btn btn-primary btn-blink uppercase offer_link" href="https://track.freecash.now/click">지금 바로 수익 시작</a>
+                                </div>
+                                
+                                
+                               
+
+                                <div class="tip border-primary center block">
+                                    <strong class="light mb-0_5">⚡ 꿀팁: 게임 내 업그레이드</strong>
+                                    <p class="light mb-0_5">게임 내 업그레이드를 구매하면 100% 환급 + 추가 보너스 보상!</p>
+                                    <strong class="primary">주당 ₩740,000–₩1,200,000 추가 수익 가능!</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="reviews">
+                    <div class="wrapper">
+                        <div class="swiper mySwiper mb-1">
+                            <div class="swiper-wrapper blocks">
+                                <div class="swiper-slide block border-main">
+                                    <div class="author mb-1_5">
+                                        <div class="ava brad-10">
+                                            <p class="initial">JB</p>
+                                        </div>
+                                        <div class="info">
+                                            <p class="name">Jena Bends</p>
+                                            <div class="stats">
+                                                <div class="starts">
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                </div>
+                                                <div class="verified">
+                                                    <img src="img/check.svg" alt="" />
+                                                    <span>인증됨</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <img src="img/quote.svg" alt="" class="mb-1" />
+                                        <div class="text mb-1">
+                                            <p>Freecash 앱에는 합법적이고 매우 쉬운 작업들이 있습니다. 저는 여가 시간에 몇 가지 오퍼를 완료하고, 보상은 거의 즉시 적립되며, 같은 날 PayPal로 출금도 받았습니다.</p>
+                                        </div>
+                                        <p class="small primary">4시간 전</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide block border-main">
+                                    <div class="author mb-1_5">
+                                        <div class="ava brad-10">
+                                            <p class="initial">MG</p>
+                                        </div>
+                                        <div class="info">
+                                            <p class="name">Mark Grand</p>
+                                            <div class="stats">
+                                                <div class="starts">
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/half-star.svg" alt="" />
+                                                </div>
+                                                <div class="verified">
+                                                    <img src="img/check.svg" alt="" />
+                                                    <span>인증됨</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <img src="img/quote.svg" alt="" class="mb-1" />
+                                        <div class="text mb-1">
+                                            <p>Freecash는 실제로 지급합니다. 여러 리워드 앱을 사용해봤지만 이 앱이 가장 눈에 띕니다. 첫 ₩74,000을 문제없이 교환했으며, 모든 과정이 원활하고 빠르게 진행되었습니다.</p>
+                                        </div>
+                                        <p class="small primary">7시간 전</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide block border-main">
+                                    <div class="author mb-1_5">
+                                        <div class="ava brad-10">
+                                            <p class="initial">OV</p>
+                                        </div>
+                                        <div class="info">
+                                            <p class="name">Oliver Venuche</p>
+                                            <div class="stats">
+                                                <div class="starts">
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                </div>
+                                                <div class="verified">
+                                                    <img src="img/check.svg" alt="" />
+                                                    <span>인증됨</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <img src="img/quote.svg" alt="" class="mb-1" />
+                                        <div class="text mb-1">
+                                            <p>Freecash 앱으로 ₩74,000을 문제없이 출금했습니다. 전체 과정은 간단했고, 계정에 어떤 부정적인 영향도 없었습니다. 추가 수익을 얻기 쉬운 방법입니다.</p>
+                                        </div>
+                                        <p class="small primary">1일 전</p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide block border-main">
+                                    <div class="author mb-1_5">
+                                        <div class="ava brad-10">
+                                            <p class="initial">HM</p>
+                                        </div>
+                                        <div class="info">
+                                            <p class="name">Haley Montan</p>
+                                            <div class="stats">
+                                                <div class="starts">
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/star.svg" alt="" />
+                                                    <img src="img/half-star.svg" alt="" />
+                                                </div>
+                                                <div class="verified">
+                                                    <img src="img/check.svg" alt="" />
+                                                    <span>인증됨</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <img src="img/quote.svg" alt="" class="mb-1" />
+                                        <div class="text mb-1">
+                                            <p>매우 신뢰할 수 있는 앱입니다. 지급은 항상 정상적으로 이루어지고, 도움이 필요할 때마다 고객 지원도 빠르게 응답합니다. 제가 사용해본 리워드 앱 중 가장 신뢰할 수 있는 앱 중 하나입니다.</p>
+                                        </div>
+                                        <p class="small primary">2일 전</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-nav">
+                            <button class="btn btn-primary reviews-prev brad-10">
+                                <img src="img/left.svg" alt="" />
+                            </button>
+                            <button class="btn btn-primary reviews-next brad-10">
+                                <img src="img/right.svg" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="contact center">
+                    <div class="wrapper">
+                        <div class="wrapper-md-inner">
+                            <div class="mb-2">
+                                <h2 class="mb-0_5"><span class="primary">도움이</span> 필요하신가요?</h2>
+                                <p class="light">도움이 필요하시거나 인사를 전하고 싶으시면 언제든지 연락하세요.</p>
+                            </div>
+                            <div class="blocks center mb-2">
+                                <div class="block">
+                                    <img src="img/contact-1.png" alt="" class="mb-0_5" />
+                                    <h4 class="mb-0_5">이메일 지원</h4>
+                                    <p class="light"><a href="mailto:support@freecash.com" target="_blank">support@freecash.com</a></p>
+                                </div>
+                                <div class="block">
+                                    <img src="img/contact-2.png" alt="" class="mb-0_5" />
+                                    <h4 class="mb-0_5">소셜 미디어</h4>
+                                    <p class="light">모든 플랫폼에서 @freecash</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="survey" style="display: none;">
+                <section class="quiz">
+                    <div class="wrapper">
+                        <div class="wrapper-md-inner">
+                            <div class="quiz-container block-lg">
+                                <div class="progress mb-2">
+                                    <div class="progress-legend mb-0_5">
+                                        <p>진행 상황</p>
+                                        <p class="progress-percentage light">0%</p>
+                                    </div>
+                                    <div class="progress-line-container">
+                                        <div class="progress-line"></div>
+                                    </div>
+                                </div>
+
+                                <div class="step tag-row mb-1">
+                                    <span class="tag border-primary small light">3단계 중 <span class="current-step">1</span>단계</span>
+                                </div>
+
+                                <div class="question question-1">
+                                    <h3 class="mb-1_5">사용 중인 운영체제는 무엇인가요?</h3>
+
+                                    <div class="btn-container">
+                                        <button class="btn btn-primary"><img src="img/ios.svg" alt=""> IOS</button>
+                                        <button class="btn btn-primary"><img src="img/android.svg" alt="">안드로이드</button>
+                                        <button class="btn btn-primary"><img src="img/other.svg" alt="">기타</button>
+                                    </div>
+                                </div>
+
+                                <div class="question question-2">
+                                    <h3 class="mb-1_5">평소 여가 시간을 어떻게 보내시나요?</h3>
+
+                                    <div class="btn-container">
+                                        <button class="btn btn-primary"><img src="img/games.svg" alt=""> 게임하기 </button>
+                                        <button class="btn btn-primary"><img src="img/phone.svg" alt=""> 휴대폰 사용하기</button>
+                                        <button class="btn btn-primary"><img src="img/relax.svg" alt=""> 그냥 휴식하기</button>
+                                    </div>
+                                </div>
+
+                                <div class="question question-3">
+                                    <h3 class="mb-1_5">새로운 앱이나 도구를 사용해보는 것을 좋아하시나요?</h3>
+
+                                    <div class="btn-container">
+                                        <button class="btn btn-primary"><img src="img/check-simple.svg" alt=""> 네, 좋아합니다</button>
+                                        <button class="btn btn-primary"><img src="img/stars.svg" alt=""> 가끔</button>
+                                        <button class="btn btn-primary"><img src="img/cross.svg" alt=""> 그다지 좋아하지 않습니다</button>
+                                    </div>
+                                </div>
+
+                                <div class="question question-5">
+                                    <div class="loader mb-1 center">
+                                        <img src="img/loading.svg" alt="" class="rotate-infinite" />
+                                    </div>
+                                    <div class="center">
+                                        <h4 class="mb-1">답변을 처리하는 중입니다...</h4>
+                                        <p class="mb-0_5">참여 자격을 확인하는 중입니다...</p>
+                                        <p>몇 초 정도 소요됩니다.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer class="center small mt-2">
+            <div class="wrapper">
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="privacy-policy/">개인정보 처리방침</a></li>
+                        <li><a href="terms-of-use/">이용 약관</a></li>
+                        <li><a href="" class="mailto">문의하기</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="footer-bottom">
+                    <p>© <span class="domain"></span>. 모든 권리 보유. Norton 보안 적용.</p>
+                </div>
+            </div>
+        </footer>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="js/jquery-3.6.4.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
