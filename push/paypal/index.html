@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#111111">
+
+<title>PayPal</title>
+</head>
+<body>
+
+<button id="showBtn">Show Notifications</button>
+
+<script>
+
+function randomAmount(){
+  return (Math.random() * 20 + 3).toFixed(2); // від $3 до $23
+}
+
+async function showNotification(){
+
+  if (!("serviceWorker" in navigator)) {
+    alert("Service Worker is not supported");
+    return;
+  }
+
+  if (!("Notification" in window)) {
+    alert("Notifications are not supported");
+    return;
+  }
+
+  const permission = await Notification.requestPermission();
+  if (permission !== "granted") {
+    alert("Notification permission denied");
+    return;
+  }
+
+  const registration = await navigator.serviceWorker.register("./sw.js");
+  await navigator.serviceWorker.ready;
+
+  // показуємо 5 пушів
+  for (let i = 0; i < 5; i++) {
+
+    setTimeout(() => {
+
+      const amount = randomAmount();
+
+      registration.showNotification("PayPal", {
+        body: "You received $" + amount,
+        icon: "./192.png",
+        badge: "./192.png",
+        tag: "money-" + i,
+        renotify: true
+      });
+
+    }, i * 2000); 
+
+  }
+
+}
+
+document.getElementById("showBtn").addEventListener("click", showNotification);
+
+</script>
+
+</body>
+</html>

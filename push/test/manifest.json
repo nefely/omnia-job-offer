@@ -1,0 +1,20 @@
+{
+  "name": "text 2",
+  "short_name": "text 2",
+  "start_url": "/nefely/omnia-job-offer/push/test/",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "./192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
