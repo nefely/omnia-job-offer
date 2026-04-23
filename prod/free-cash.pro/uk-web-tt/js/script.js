@@ -200,7 +200,6 @@ $(document).ready(function(){
 
         ttq.page();
 
-
         setTimeout(() => {
             window.location.href = $(this).attr("href");
         }, 500);
