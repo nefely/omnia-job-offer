@@ -529,3 +529,26 @@ h5 {
     align-items: center;
     gap: 1rem;
 }
+
+
+
+.push {
+    width: 400px;
+    padding: 1rem;
+    background: var(--theme);
+    position: fixed;
+    top: -200px;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 28px 0px #905BF166;
+    border-radius: 0.5rem;
+    border: 2px solid #331063;
+}
+.push.active {
+    top: 30px;
+    opacity: 1;
+}
