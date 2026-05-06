@@ -74,7 +74,7 @@ let comments_1 = [
     {
         ava: "ec.png",
         name: "Emily Carter",
-        text: "I’m a single mom, so I’m always looking for small ways to earn extra. I tried completing game offers on the Freecash website in the evenings after my kids went to bed and made about A$140 in a few days. It helped more than I expected.",
+        text: "I’m a single mom, so I’m always looking for small ways to earn extra. I tried completing game offers on the website in the evenings after my kids went to bed and made about A$140 in a few days. It helped more than I expected.",
         time: "now",
         likes: 2,
     },
