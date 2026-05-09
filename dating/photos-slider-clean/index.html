@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join us for free</title>
+    <link rel="icon" href="media/favicon.ico" type="image/x-icon">
+    <link rel="preload" as="image" href="media/background.webp">
+    <meta name="description" content="Meet single Asian women online. Verified profiles, live chat and real connections for men over 45. Join free and find your match today.">
+
+    <style>
+        .background  {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            -webkit-animation: animatedBackground 500s linear infinite !important;
+            animation: animatedBackground 500s linear infinite !important;
+            background-size: contain !important;
+            z-index: -1;
+        }
+        .background:after {
+            content: "";
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 2;
+        }
+        @-webkit-keyframes animatedBackground {
+            0% {
+                background-position: -14000px 0;
+            }
+            to {
+                background-position: 0 0;
+            }
+        }
+        @keyframes animatedBackground {
+            0% {
+                background-position: -14000px 0;
+            }
+            to {
+                background-position: 0 0;
+            }
+        }
+        .background {
+            background-image: url(media/background.webp);
+        }
+
+        :root {
+            --pink: #e0115f;
+            --pink-hover: #b30548;
+            --green: #239329;
+            --green-hover: #0f7214;
+            --black: #151515;
+            --light: #E0E0E0;
+            --light-hover: #bcbcbc;
+            --white: #fff;
+        }
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            color: var(--black);
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+        .uppercase {
+            text-transform: uppercase;
+        }
+        .screen {
+            min-height: 100vh;
+        }
+
+        .btn-real {
+            font-size: 30px;
+            line-height: 1.5;
+            font-weight: bold;
+            text-decoration: none;
+            background: var(--light);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            transition: all 0.3s linear;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0.35rem;
+        }
+        .btn-green {
+            background: var(--green);
+        }
+        .btn-green:hover {
+            background: var(--green-hover);
+        }
+        .btn-light {
+            background: var(--light);
+            color: var(--black);
+        }
+        .btn-light:hover {
+            background: var(--light-hover);
+        }
+        .btn-pink {
+            background: var(--pink);
+        }
+        .btn-pink:hover {
+            background: var(--pink-hover);
+        }
+
+        .btn-blink {
+            overflow: hidden;
+            position: relative;
+        }
+        .btn-blink:after {
+            content: "";
+            display: block;
+            width: 1rem;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0.5;
+            position: absolute;
+            left: -100%;
+            top: 0;
+            z-index: 1;
+            transform: rotate(45deg) scale(2);
+            animation: 3s linear 0s infinite normal animation-blink;
+        }
+        @keyframes animation-blink {
+            0% {
+                left: -100%;
+            }
+            100%,
+            20% {
+                left: 100%;
+                margin-left: 5rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+        .btn-real {
+            font-size: 24px;
+        }
+        }
+
+        /* header */
+        header {
+            background: var(--black);
+            padding: 0.75rem 1rem;
+            text-align: right;
+            color: var(--white);
+        }
+        header span {
+            display: inline-block;
+            padding-right: 1rem;
+        }
+        header a {
+            padding: 4px 1rem;
+            border: 1px solid var(--white);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            line-height: 1;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        header a:hover {
+            color: var(--black);
+            background: var(--white);
+            border: 1px solid #151515;
+        }
+        @media (max-width: 767px) {
+            header span {
+                display: none;
+            }
+        }
+
+        /* hero */
+        .hero {
+            margin: 1.5rem auto 5rem;
+            width: calc(100% - 1.5rem);
+            max-width: 700px;
+            background: #fff;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        .hero-banner {
+            padding: 0.5rem 0.5rem;
+            background: var(--pink);
+        }
+        .hero-banner h1 {
+            color: var(--white);
+            font-weight: bold;
+            text-align: center;
+            font-size: 35px;
+        }
+        .hero-content {
+            padding: 1rem;
+            text-align: center;
+        }
+        .hero-content .slider {
+            margin-bottom: 1rem;
+        }
+        .hero-content .cta-text {
+            margin-bottom: 1rem;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .hero-content .question {
+            margin-bottom: 1rem;
+            font-size: 21px;
+            font-weight: bold;
+            color: var(--pink);
+        }
+        .hero-content .btn-container {
+            margin: 0 auto;
+            max-width: 400px;
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .hero-content .swiper {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 1/1;
+        }
+        .hero-content .swiper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+        @media (max-width: 767px) {
+            .hero {
+                background: #fff;
+            }
+            .hero-banner {
+                padding: 0.5rem 5px;
+            }
+            .hero-banner h1 {
+                font-size: 18px;
+            }
+            .hero-content .swiper {
+                max-width: 270px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="background_image background_animated background"></div>
+
+    <header>
+        <span>Already have an account?</span>
+        <a href="{offer_link}" class="btn">Sign In</a>
+    </header> 
+
+    <section class="hero">
+        <div class="hero-banner">
+            <h1>Online Chat with Single Asian Women</h1>
+        </div>
+        <div class="hero-content">
+            <div class="slider">
+
+
+                <div class="swiper SwiperHero">
+                    <div class="swiper-wrapper">
+                        <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                const wrapper = document.querySelector(".SwiperHero .swiper-wrapper");
+                                const TOTAL_SLIDES = 21;
+
+                                const ids = Array.from({ length: TOTAL_SLIDES }, (_, i) => i + 1);
+
+                                for (let i = ids.length - 1; i > 0; i--) {
+                                    const j = Math.floor(Math.random() * (i + 1));
+                                    [ids[i], ids[j]] = [ids[j], ids[i]];
+                                }
+                                const makeSlideHTML = (n) => `
+                                <div class="swiper-slide">
+                                    <img data-src="media/slider-top/${n}.webp" src="" alt="${n}" fetchpriority="high">
+                                </div>`;
+
+                                wrapper.innerHTML = ids.map(makeSlideHTML).join("");
+
+                                const slidesCount = wrapper.children.length;
+                                const middle = Math.floor(slidesCount / 2);
+
+                                const swiperHero = new Swiper(".SwiperHero", {
+                                    loop: true,
+                                    autoplay: {
+                                        delay: 5000,
+                                        disableOnInteraction: false,
+                                    },
+                                    allowTouchMove: false, 
+                                    pagination: false,
+                                    navigation: false, 
+                                    speed: 750
+                                });
+
+                                function revealImg(img) {
+                                    const src = img.getAttribute("data-src");
+                                    if (!src) return;
+                                    img.src = src;
+                                    img.removeAttribute("data-src");
+                                }
+                                function lazyLoadAround(index, radius) {
+                                    const slides = swiperHero.slides;
+                                    const total = slides.length;
+                                    const idxs = new Set([index]);
+                                    for (let r = 1; r <= radius; r++) {
+                                        idxs.add((index + r) % total);
+                                        idxs.add((index - r + total) % total);
+                                    }
+                                    idxs.forEach((i) => {
+                                        const img = slides[i].querySelector("img[data-src]");
+                                        if (img) revealImg(img);
+                                    });
+                                }
+
+                                lazyLoadAround(swiperHero.activeIndex, 2);
+
+                                if ("IntersectionObserver" in window) {
+                                    const io = new IntersectionObserver(
+                                        (entries) => {
+                                            entries.forEach((e) => {
+                                                if (e.isIntersecting) {
+                                                    revealImg(e.target);
+                                                    io.unobserve(e.target);
+                                                }
+                                            });
+                                        },
+                                        { root: document.querySelector(".SwiperHero"), threshold: 0.1 }
+                                    );
+                                    document.querySelectorAll(".SwiperHero img[data-src]").forEach((img) => io.observe(img));
+                                }
+
+                                swiperHero.on("slideChange", () => {
+                                    lazyLoadAround(swiperHero.activeIndex, 2);
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <p class="cta-text">Thousands of Asian ladies online — waiting to meet you</p>
+                <p class="question">Are you 45 or older?</p>
+                <div class="btn-container">
+                    <a href="{offer_link}" class="btn btn-green btn-real uppercase">I AM 45 or older</a>
+                    <a href="{offer_link}" class="btn btn-light btn-real uppercase">I AM NOT 45 or older</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offer">
+        <div class="title">
+            <h2>Find Love after 45 with Verified Beauties! 85% find their match in the first month—join now!</h2>
+        </div>
+        <div class="offer-block">
+            <div class="offer-achivement">
+                <div class="offer-number">1</div>
+                <div class="offer-banner uppercase">POPULAR DATING SITE 2026</div>
+            </div>
+            <div class="offer-content">
+                <div class="offer-logo">
+                    <a class="offer-image" href="{offer_link}" class="btn">
+                        <img src="media/asiansouls.svg" width="150" height="23" alt="logo">
+                    </a>
+
+                    <div class="offer-score">
+                        <p>9.8</p>
+                        <div class="stars">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9518" xmlns="http://www.w3.org/2000/svg"><path d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z" stroke="#FF9518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9518" xmlns="http://www.w3.org/2000/svg"><path d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z" stroke="#FF9518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9518" xmlns="http://www.w3.org/2000/svg"><path d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z" stroke="#FF9518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9518" xmlns="http://www.w3.org/2000/svg"><path d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z" stroke="#FF9518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9518" xmlns="http://www.w3.org/2000/svg"><path d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z" stroke="#FF9518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="offer-info">
+                    <p class="cta-text">Why Men 45+ Choose Our Platform:</p> 
+                    <div class="cons">
+                        <p>Genuine Connections: Meet like-minded Single women seeking romance or lasting relationships.</p>
+                        <p>Safe & Smart Matching: Verified profiles with tailored matches for women your age or younger.</p>
+                        <p>Exclusive Features: Unlock private photos and videos to create deeper connections.</p>
+                    </div> 
+                    <p class="special-offer"><strong>🎁 24-Hour Special Offer:</strong> Get 20 Welcome Credits + up to 60% off premium features to find your match 3x faster!</p>
+                </div>
+                <div class="offer-rating">
+                    <div class="offer-score">
+                        <p>9.8</p>
+                        <div class="stars">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9518" xmlns="http://www.w3.org/2000/svg"><path d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z" stroke="#FF9518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9518" xmlns="http://www.w3.org/2000/svg"><path d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z" stroke="#FF9518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9518" xmlns="http://www.w3.org/2000/svg"><path d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z" stroke="#FF9518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9518" xmlns="http://www.w3.org/2000/svg"><path d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z" stroke="#FF9518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9518" xmlns="http://www.w3.org/2000/svg"><path d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z" stroke="#FF9518" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="btn-container">
+                        <a href="{offer_link}" class="btn btn-pink btn-real btn-blink uppercase">SIGN UP NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <div class="title">
+            <h2>1000+ active users every day!</h2>
+        </div>
+
+        <div class="review-container">
+            <div class="swiper SwiperReview">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="review">
+                            <div class="review-image">
+                                <img src="media/reviews/David, 58.webp" alt="">
+                                <div class="name">
+                                    <p>David, 58:</p>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <div class="name">
+                                    <p>David, 58:</p>
+                                </div>
+                                <div class="text">
+                                    <p>"After my divorce, I was skeptical about online dating, but Asiansouls changed my mind. I met Mei through live chats and caught her attention with virtual gifts. Now, we’re excitedly planning our future together."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review ">
+                            <div class="review-image">
+                                <img src="media/reviews/John, 46.webp" alt="">
+                                <div class="name">
+                                    <p>John, 46:</p>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <div class="name">
+                                    <p>John, 46:</p>
+                                </div>
+                                <div class="text">
+                                    <p>"With my hectic job and little time for dating, this site was a game-changer. I met Lily, and despite my busy schedule, we’ll be taking a 7-day trip to Great Canyon."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review">
+                            <div class="review-image">
+                                <img src="media/reviews/Robert, 65.webp" alt="">
+                                <div class="name">
+                                    <p>Robert, 65:</p>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <div class="name">
+                                    <p>Robert, 65:</p>
+                                </div>
+                                <div class="text">
+                                    <p>"I struggled with other dating apps, but Asiansouls made a real difference. Meeting Mia has been fantastic, and we’re both thrilled about the journey we’re embarking on."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review">
+                            <div class="review-image">
+                                <img src="media/reviews/Gary, 52.webp" alt="">
+                                <div class="name">
+                                    <p>Gary, 52:</p>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <div class="name">
+                                    <p>Gary, 52:</p>
+                                </div>
+                                <div class="text">
+                                    <p>"I connected with Hana on this site, and we hit it off right away thanks to our shared love for travel and culture. Our relationship keeps growing stronger, and we both want to have kids and start a family in the future."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review">
+                            <div class="review-image">
+                                <img src="media/reviews/Frank, 60.webp" alt="">
+                                <div class="name">
+                                    <p>Frank, 60:</p>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <div class="name">
+                                    <p>Frank, 60:</p>
+                                </div>
+                                <div class="text">
+                                    <p>"Meeting Li, a younger woman on this site, has revitalized my life. We're planning our first vacation together, and her energy has made me feel young again."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-controll">
+            <div class="square">
+                <button class="btn-square btn-next btn-pink btn-real" aria-label="Previous slide">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+            <div class="dots"></div>
+            <div class="square">
+                <button class="btn-square btn-prev btn-pink btn-real" aria-label="Next slide">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const swiperReview = new Swiper(".SwiperReview", {
+                    loop: true,
+                    slidesPerView: 1,
+                    speed: 750,
+                    effect: 'fade',
+                    fadeEffect: {
+                        crossFade: true
+                    },
+                    navigation: {
+                        nextEl: ".btn-prev",
+                        prevEl: ".btn-next",
+                    },
+                    pagination: {
+                        el: ".dots",
+                        clickable: true,
+                        bulletClass: "btn-circle",
+                        bulletActiveClass: "active",
+                        renderBullet: function (index, className) {
+                            return `<button class="${className}" aria-label="slide ${index + 1}"></button>`;
+                        },
+                    },
+                });
+            })
+        </script>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms-and-conditions/" target="_blank">Terms of use</a>
+            <a href="privacy-policy/" target="_blank">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <script src="swiper-bundle.min.js"></script>
+    
+</body>
+</html>
