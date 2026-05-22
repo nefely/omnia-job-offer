@@ -53,7 +53,7 @@ window.getURLParameter = (sUrl, sParam) => {
 
 $('.dynamic-number > span').each(function () {
     const $el = $(this);
-    const target = 14173628;
+    const target = 10555411;
 
     $({ count: 0 }).animate(
         { 
