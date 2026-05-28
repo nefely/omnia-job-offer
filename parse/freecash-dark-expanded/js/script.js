@@ -30,7 +30,6 @@ function initReviewsSwiper() {
 }
 
 document.addEventListener('DOMContentLoaded', initReviewsSwiper);
-window.addEventListener('resize', initReviewsSwiper);
 
 
 $(document).ready(function(){
