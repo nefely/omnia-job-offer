@@ -1,0 +1,22 @@
+$(document).ready(function() {
+    $(".slide-1 .btn").click(function() {
+        $(".slide-1").fadeOut(300);
+        $(".slide-2").delay(300).fadeIn(300);
+    });
+
+    $(".slide-2 .question-1 .btn").click(function() {
+        $(".slide-2 .question-1").fadeOut(300);
+        $(".slide-2 .question-2").delay(300).fadeIn(300);
+    });
+
+    $(".slide-2 .question-2 .btn").click(function() {
+        $(".slide-2 .question-2").fadeOut(300);
+        $(".slide-2 .question-3").delay(300).fadeIn(300);
+    });
+
+    $(".slide-2 .question-3 .btn").click(function() {
+        $(".slide-2 .quiz").fadeOut(300);
+        $(".slide-2 .result").delay(300).fadeIn(300);
+        $(".slide-2 .steps").delay(300).fadeIn(300);
+    });
+});
