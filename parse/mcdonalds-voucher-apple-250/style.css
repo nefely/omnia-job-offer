@@ -52,6 +52,12 @@ img , svg {
 .navy {
     color: var(--navy);
 }
+.red {
+    color: var(--red);
+}
+.alert {
+    color: var(--alert);
+}
 .green {
     color: var(--green);
 }
