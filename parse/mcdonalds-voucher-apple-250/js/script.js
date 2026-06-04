@@ -24,4 +24,23 @@ $(document).ready(function() {
             $(".slide-2 .steps").delay(300).fadeIn(300);
         }, 3600);
     });
+
+    let isClicked = false;
+
+    $(".offer_link").click(function(e){
+        e.preventDefault();
+
+        if (isClicked) return;
+        isClicked = true;
+
+        fbq('track', 'PageView');
+
+        setTimeout(() => {
+            window.location.href = $(this).attr("href");
+        }, 500);
+
+        setTimeout(() => {
+            isClicked = false;
+        }, 5000);
+    });
 });
