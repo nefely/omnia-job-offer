@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rewardory</title>
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '799738728826938');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <div class="preloader" style="width: 100%; height: 100%; position: fixed; background: #fff; z-index: 1000; top: 0; left: 0;"></div>
+
+    <main>
+        <div class="screen screen-1">
+            <div class="screen-inner">
+                <section class="hero">
+                    <div class="wrapper-md center">
+                        <div class="inner-top">
+                            <h2>Welcome to</h2>
+                            <h1 class="center mb-1 gradient-text">Rewardory</h1>
+                            <p class="muted-text small">Earn real cash by completing offers, games, and surveys. </p>
+
+                            <div class="blocks mt-2 mb-1_5">
+                                <div class="block">
+                                    <img src="img/icon.webp" alt="">
+                                    <div>
+                                        <h4 class="green-text">58,92M</h4>
+                                        <p class="muted-text small uppercase">worldwide users</p>
+                                    </div>
+                                </div>
+                                <div class="block">
+                                    <img src="img/icon.webp" alt="">
+                                    <div>
+                                        <h4 class="green-text">$297</h4>
+                                        <p class="muted-text small uppercase">average per offer</p>
+                                    </div>
+                                </div>
+                                <div class="block">
+                                    <img src="img/icon.webp" alt="">
+                                    <div>
+                                        <h4 class="green-text">27 min.</h4>
+                                        <p class="muted-text small uppercase">average payouts</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btn-container mt-1_5 mb-2">
+                                <button class="btn btn-grad btn-blink">Continue</button>
+                            </div>
+                        </div>
+
+                        <div class="trusted ">
+                            <img src="img/hero-trusted.webp" alt="">
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="screen screen-2" style="display: none;">
+            <div class="screen-inner">
+                <section class="intro">
+                    <div class="wrapper-md center">
+                        <div class="inner-top">
+                            <h2 class="center mb-1 mt-a">We have a welcome <br><span class="gradient-text">bonus for you</span></h2>
+                            <p>To celebrate your registration, we’re giving you <strong>3 free spins</strong> for a chance to unlock an extra reward.</p>
+                            <div class="btn-container mt-1_5 mb-2">
+                                <button class="btn btn-grad btn-blink uppercase">Try Your Luck</button>
+                            </div>
+                        </div>
+                        <div class="trusted" style="opacity: 0;">
+                            <img src="img/hero-trusted.webp" alt="">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="screen screen-3" style="display: none;">
+
+            <header>
+                <div class="wrapper center">
+                    <p>Spins: <span class="remainingChances">3</span> left</p>
+                </div>
+            </header>
+
+            <div class="screen-inner">
+                <div class="wrapper-md center">
+                    <div class="spinner-container">
+                        <div class="spinner-wheel">
+                            <img src="img/spinner-wheel.webp" alt="" />
+                        </div>
+                        <div class="spinner-pointer">
+                            <button class="spinner-button btn-glow">
+                                <img src="img/spinner-button.webp" alt="" />
+                            </button>
+                        </div>
+                        <div class="spinner-arrow">
+                            <img src="img/spinner-arrow.webp" alt="" />
+                        </div>
+                    </div>
+
+                    <div class="btn-container mt-1_5">
+                        <button id="spinNowBtn" class="btn btn-grad btn-blink spinner-button">Spin Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- <div class="popup-overlay" id="agePopup" style="display:none;">
+        <div class="popup block-lg center">
+            <p class="popup__label uppercase mb-1_5 small green-text">Before you go:</p>
+            <h2 class="popup__title mb-1">Age Verification</h2>
+            <p class="popup__desc mb-1_5 muted-text">Confirm your age to proceed with available rewards and offers.</p>
+            <button class="btn btn-grad popup__btn popup__over mb-1">I'm over 21</button>
+            <button class="btn btn-empty popup__btn popup__under mb-1">I'm under 21</button>
+        </div>
+    </div> -->
+
+    <div class="popup-overlay" id="losePopup" style="display:none;">
+        <div class="popup block-lg center">
+            <p class="popup__label uppercase mb-1 small green-text">ooooh no</p>
+            <div class="popup__icon mb-0_5">
+                <img src="img/lose.webp" alt="">
+            </div>
+            <h2 class="popup__title mb-1">Not This Time</h2>
+            <p class="popup__desc mb-1_5 muted-text">No luck this round, but you still have <strong><span class="remainingChances">2</span> more chances</strong> to win!</p>
+            <button class="btn btn-grad popup__btn popup__over">Try again!</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="winPopup" style="display:none;">
+        <div class="popup block-lg center">
+            <p class="popup__label uppercase mb-1 small green-text">hooray!</p>
+            <div class="popup__icon popup__icon-lg mb-0_5">
+                <img src="img/win.webp" alt="">
+            </div>
+            <h2 class="popup__title mb-1">You have won <br> <span class="green-text">$10 bonus!</span></h2>
+            <div class="block mb-1_5">
+                <h5 class="mb-1">How to claim your bonus:</h5>
+                <div class="mb-1"><div class="icon">1</div><p>Create your free account</p></div>
+                <div class="mb-1"><div class="icon">2</div><p>Complete your first task and receive your $10 bonus</p></div>
+                <div class="mb-1"><div class="icon">3</div><p>Keep completing easy tasks and earn up to $78/day</p></div>
+            </div>
+            <a href="https://track.domain/click" class="btn btn-grad popup__btn popup__over btn-blink offer_link">Claim Bonus!</a>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/script.js?ver=2.0.0"></script>
+    
+</body>
+</html>
