@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#f8f9fa;font-family:'Roboto',sans-serif}
+.pm-wrap{max-width:480px;margin:0 auto;background:#fff;min-height:100vh}
+.pm-header{display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid #e0e0e0;background:#fff;position:sticky;top:0;z-index:10}
+.pm-header svg{width:24px;height:24px;margin-right:16px;cursor:pointer}
+.pm-search{flex:1;background:#f1f3f4;border-radius:24px;padding:8px 16px;font-size:14px;color:#5f6368;display:flex;align-items:center;gap:8px}
+.pm-avatar{width:32px;height:32px;border-radius:50%;background:#4285f4;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:500;margin-left:12px}
+.pm-hero{padding:16px}
+.pm-app-row{display:flex;gap:16px;align-items:flex-start}
+.pm-icon{width:80px;height:80px;border-radius:20px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 40%,#0f3460 100%);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;overflow:hidden}
+.pm-icon-inner{font-size:36px}
+.pm-app-info{flex:1}
+.pm-app-name{font-size:20px;font-weight:400;color:#202124;line-height:1.2;margin-bottom:4px}
+.pm-dev{font-size:13px;color:#01875f;margin-bottom:6px}
+.pm-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.pm-badge{font-size:11px;color:#5f6368;background:#f1f3f4;padding:2px 8px;border-radius:12px}
+.pm-rating-row{display:flex;align-items:center;gap:6px}
+.pm-rating-num{font-size:13px;color:#5f6368;font-weight:500}
+.pm-stars{color:#f4a400;font-size:13px;letter-spacing:-1px}
+.pm-installs{font-size:12px;color:#5f6368}
+.pm-btn-row{display:flex;gap:8px;padding:12px 16px 0}
+.pm-btn-install{flex:1;background:#01875f;color:#fff;border:none;border-radius:24px;padding:12px;font-size:14px;font-weight:500;cursor:pointer;letter-spacing:.25px}
+.pm-btn-wishlist{width:48px;height:48px;border-radius:50%;border:1px solid #dadce0;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+.pm-screenshots{padding:16px 0 8px;overflow-x:auto;display:flex;gap:8px;padding-left:16px;scrollbar-width:none}
+.pm-screenshots::-webkit-scrollbar{display:none}
+.pm-shot{width:160px;height:284px;border-radius:12px;flex-shrink:0;overflow:hidden;position:relative}
+.pm-shot-1{background:linear-gradient(160deg,#0f0f23 0%,#1a1a3e 100%)}
+.pm-shot-2{background:linear-gradient(160deg,#0d1b2a 0%,#1b263b 100%)}
+.pm-shot-3{background:linear-gradient(160deg,#13111c 0%,#2d1b69 100%)}
+.pm-shot-4{background:linear-gradient(160deg,#0a0a1a 0%,#1f2041 100%)}
+.pm-shot-label{position:absolute;bottom:12px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.7);font-size:11px;padding:0 8px}
+.pm-shot-title{position:absolute;top:40px;left:0;right:0;text-align:center;color:#fff;font-size:13px;font-weight:500;padding:0 12px}
+.pm-shot-gfx{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:52px}
+.pm-divider{height:8px;background:#f1f3f4;margin:8px 0}
+.pm-section{padding:16px}
+.pm-section-title{font-size:16px;color:#202124;margin-bottom:12px;font-weight:400}
+.pm-about{font-size:14px;color:#3c4043;line-height:1.6}
+.pm-about-more{color:#01875f;font-size:13px;margin-top:8px;cursor:pointer}
+.pm-ratings-block{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+.pm-big-rating{font-size:48px;font-weight:300;color:#202124;line-height:1}
+.pm-rating-details{flex:1}
+.pm-bar-row{display:flex;align-items:center;gap:6px;margin-bottom:3px}
+.pm-bar-label{font-size:11px;color:#5f6368;width:8px}
+.pm-bar-bg{flex:1;height:8px;background:#e0e0e0;border-radius:4px;overflow:hidden}
+.pm-bar-fill{height:100%;background:#f4a400;border-radius:4px}
+.pm-review{padding:12px 0;border-top:1px solid #f1f3f4}
+.pm-review-header{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.pm-rev-avatar{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#fff;flex-shrink:0}
+.pm-rev-name{font-size:13px;color:#202124;font-weight:500}
+.pm-rev-date{font-size:12px;color:#9aa0a6}
+.pm-rev-stars{color:#f4a400;font-size:12px}
+.pm-rev-text{font-size:13px;color:#3c4043;line-height:1.5}
+.pm-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pm-info-item label{font-size:11px;color:#9aa0a6;display:block;margin-bottom:2px}
+.pm-info-item span{font-size:13px;color:#202124}
+.pm-nav{display:flex;background:#fff;border-top:1px solid #e0e0e0;padding:8px 0 4px;position:sticky;bottom:0}
+.pm-nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer}
+.pm-nav-icon{font-size:20px}
+.pm-nav-label{font-size:10px;color:#9aa0a6}
+.pm-nav-item.active .pm-nav-label{color:#01875f}
+.pm-progress-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:100;align-items:flex-end;justify-content:center}
+.pm-progress-sheet{background:#fff;border-radius:28px 28px 0 0;padding:24px;width:100%;max-width:480px}
+.pm-progress-header{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+.pm-progress-icon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#1a1a2e,#0f3460);display:flex;align-items:center;justify-content:center;font-size:26px}
+.pm-progress-info h3{font-size:16px;font-weight:400;color:#202124}
+.pm-progress-info p{font-size:13px;color:#5f6368}
+.pm-progress-bar-bg{height:4px;background:#e0e0e0;border-radius:2px;overflow:hidden;margin-bottom:16px}
+.pm-progress-bar-fill{height:100%;background:#01875f;border-radius:2px;width:0%;transition:width 0.3s}
+.pm-progress-status{font-size:13px;color:#5f6368;margin-bottom:20px}
+.pm-open-btn{display:none;width:100%;background:#01875f;color:#fff;border:none;border-radius:24px;padding:14px;font-size:14px;font-weight:500;cursor:pointer}
+.pm-cancel-btn{width:100%;background:transparent;color:#01875f;border:1px solid #dadce0;border-radius:24px;padding:14px;font-size:14px;cursor:pointer;margin-top:8px}
+.tag-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag-chip{font-size:12px;color:#01875f;border:1px solid #01875f;border-radius:16px;padding:4px 12px}
+</style>
+
+<div class="pm-wrap">
+  <div class="pm-header">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <div class="pm-search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      Search apps & games
+    </div>
+    <div class="pm-avatar">G</div>
+  </div>
+
+  <div class="pm-hero">
+    <div class="pm-app-row">
+      <div class="pm-icon">
+        <div class="pm-icon-inner">⚔️</div>
+      </div>
+      <div class="pm-app-info">
+        <div class="pm-app-name">Shadow Realm: Epic Quest</div>
+        <div class="pm-dev">NightForge Studios</div>
+        <div class="pm-badges">
+          <span class="pm-badge">Contains ads</span>
+          <span class="pm-badge">In-app purchases</span>
+        </div>
+        <div class="pm-rating-row">
+          <span class="pm-rating-num">4.7</span>
+          <span class="pm-stars">★★★★★</span>
+          <span class="pm-installs">· 5M+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pm-btn-row">
+    <button class="pm-btn-install" id="installBtn" onclick="startInstall()">Install</button>
+    <button class="pm-btn-wishlist">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    </button>
+  </div>
+
+  <div style="padding:12px 16px 0">
+    <div style="display:flex;gap:16px;border-top:1px solid #f1f3f4;padding-top:12px">
+      <div style="text-align:center;flex:1;border-right:1px solid #e0e0e0">
+        <div style="font-size:11px;color:#9aa0a6">Rating</div>
+        <div style="font-size:14px;color:#202124;font-weight:500">4.7 ★</div>
+        <div style="font-size:10px;color:#9aa0a6">126K reviews</div>
+      </div>
+      <div style="text-align:center;flex:1;border-right:1px solid #e0e0e0">
+        <div style="font-size:11px;color:#9aa0a6">Downloads</div>
+        <div style="font-size:14px;color:#202124;font-weight:500">5M+</div>
+        <div style="font-size:10px;color:#9aa0a6">installs</div>
+      </div>
+      <div style="text-align:center;flex:1">
+        <div style="font-size:11px;color:#9aa0a6">Age</div>
+        <div style="font-size:14px;color:#202124;font-weight:500">12+</div>
+        <div style="font-size:10px;color:#9aa0a6">Rated for 12+</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pm-divider" style="margin-top:16px"></div>
+
+  <div class="pm-screenshots">
+    <div class="pm-shot pm-shot-1">
+      <div class="pm-shot-gfx">🗡️</div>
+      <div class="pm-shot-title">Epic Battles</div>
+      <div class="pm-shot-label">Real-time combat</div>
+    </div>
+    <div class="pm-shot pm-shot-2">
+      <div class="pm-shot-gfx">🏰</div>
+      <div class="pm-shot-title">Build Your Kingdom</div>
+      <div class="pm-shot-label">100+ unique levels</div>
+    </div>
+    <div class="pm-shot pm-shot-3">
+      <div class="pm-shot-gfx">🧙</div>
+      <div class="pm-shot-title">Choose Your Hero</div>
+      <div class="pm-shot-label">50+ characters</div>
+    </div>
+    <div class="pm-shot pm-shot-4">
+      <div class="pm-shot-gfx">💎</div>
+      <div class="pm-shot-title">Collect Rewards</div>
+      <div class="pm-shot-label">Daily quests</div>
+    </div>
+  </div>
+
+  <div class="pm-divider"></div>
+
+  <div class="pm-section">
+    <div class="pm-section-title">About this game</div>
+    <div class="pm-about">
+      Enter the Shadow Realm — a dark fantasy world where ancient powers clash. Build your empire, forge legendary weapons, and lead armies of warriors in real-time battles against players worldwide. Join millions of heroes in the ultimate quest for glory!
+    </div>
+    <div class="tag-chips">
+      <span class="tag-chip">RPG</span>
+      <span class="tag-chip">Strategy</span>
+      <span class="tag-chip">Multiplayer</span>
+      <span class="tag-chip">Fantasy</span>
+    </div>
+    <div class="pm-about-more">See more</div>
+  </div>
+
+  <div class="pm-divider"></div>
+
+  <div class="pm-section">
+    <div class="pm-section-title">Ratings and reviews</div>
+    <div class="pm-ratings-block">
+      <div class="pm-big-rating">4.7</div>
+      <div class="pm-rating-details">
+        <div class="pm-bar-row"><span class="pm-bar-label" style="font-size:10px">5</span><div class="pm-bar-bg"><div class="pm-bar-fill" style="width:72%"></div></div></div>
+        <div class="pm-bar-row"><span class="pm-bar-label" style="font-size:10px">4</span><div class="pm-bar-bg"><div class="pm-bar-fill" style="width:18%"></div></div></div>
+        <div class="pm-bar-row"><span class="pm-bar-label" style="font-size:10px">3</span><div class="pm-bar-bg"><div class="pm-bar-fill" style="width:5%"></div></div></div>
+        <div class="pm-bar-row"><span class="pm-bar-label" style="font-size:10px">2</span><div class="pm-bar-bg"><div class="pm-bar-fill" style="width:2%"></div></div></div>
+        <div class="pm-bar-row"><span class="pm-bar-label" style="font-size:10px">1</span><div class="pm-bar-bg"><div class="pm-bar-fill" style="width:3%"></div></div></div>
+        <div style="font-size:11px;color:#9aa0a6;margin-top:4px">126,482 reviews</div>
+      </div>
+    </div>
+
+    <div class="pm-review">
+      <div class="pm-review-header">
+        <div class="pm-rev-avatar" style="background:#4285f4">A</div>
+        <div><div class="pm-rev-name">Alex M.</div><div class="pm-rev-date">November 12, 2024</div></div>
+      </div>
+      <div class="pm-rev-stars">★★★★★</div>
+      <div class="pm-rev-text" style="margin-top:4px">Absolutely addicted! The graphics are stunning and gameplay is smooth. Been playing for 3 months straight. Best mobile RPG I've ever played!</div>
+    </div>
+
+    <div class="pm-review">
+      <div class="pm-review-header">
+        <div class="pm-rev-avatar" style="background:#ea4335">S</div>
+        <div><div class="pm-rev-name">Sarah K.</div><div class="pm-rev-date">October 28, 2024</div></div>
+      </div>
+      <div class="pm-rev-stars">★★★★★</div>
+      <div class="pm-rev-text" style="margin-top:4px">My guild just hit top 10 global! The PvP system is incredibly well-balanced. Updates come regularly with fresh content. Highly recommend!</div>
+    </div>
+
+    <div class="pm-review">
+      <div class="pm-review-header">
+        <div class="pm-rev-avatar" style="background:#34a853">D</div>
+        <div><div class="pm-rev-name">DarkKnight99</div><div class="pm-rev-date">October 15, 2024</div></div>
+      </div>
+      <div class="pm-rev-stars" style="color:#f4a400">★★★★☆</div>
+      <div class="pm-rev-text" style="margin-top:4px">Great game overall. The new Shadow Dungeon update is amazing. A little grindy past level 50 but totally worth it for the endgame content.</div>
+    </div>
+  </div>
+
+  <div class="pm-divider"></div>
+
+  <div class="pm-section">
+    <div class="pm-section-title">App info</div>
+    <div class="pm-info-grid">
+      <div class="pm-info-item"><label>Version</label><span>3.14.2</span></div>
+      <div class="pm-info-item"><label>Updated</label><span>Dec 5, 2024</span></div>
+      <div class="pm-info-item"><label>Size</label><span>87 MB</span></div>
+      <div class="pm-info-item"><label>Requires Android</label><span>7.0 and up</span></div>
+      <div class="pm-info-item"><label>Developer</label><span>NightForge Studios</span></div>
+      <div class="pm-info-item"><label>Category</label><span>Role Playing</span></div>
+    </div>
+  </div>
+
+  <div style="height:60px"></div>
+
+  <div class="pm-nav">
+    <div class="pm-nav-item">
+      <span class="pm-nav-icon">🏠</span>
+      <span class="pm-nav-label">Home</span>
+    </div>
+    <div class="pm-nav-item active">
+      <span class="pm-nav-icon">🎮</span>
+      <span class="pm-nav-label" style="color:#01875f">Games</span>
+    </div>
+    <div class="pm-nav-item">
+      <span class="pm-nav-icon">🔍</span>
+      <span class="pm-nav-label">Search</span>
+    </div>
+    <div class="pm-nav-item">
+      <span class="pm-nav-icon">👤</span>
+      <span class="pm-nav-label">Account</span>
+    </div>
+  </div>
+</div>
+
+<div class="pm-progress-overlay" id="progressOverlay">
+  <div class="pm-progress-sheet">
+    <div class="pm-progress-header">
+      <div class="pm-progress-icon">⚔️</div>
+      <div class="pm-progress-info">
+        <h3>Shadow Realm: Epic Quest</h3>
+        <p id="progressSize">Downloading... 0 MB / 87 MB</p>
+      </div>
+    </div>
+    <div class="pm-progress-bar-bg">
+      <div class="pm-progress-bar-fill" id="progressBar"></div>
+    </div>
+    <div class="pm-progress-status" id="progressStatus">Downloading...</div>
+    <button class="pm-open-btn" id="openBtn" onclick="openPWA()">Open</button>
+    <button class="pm-cancel-btn" id="cancelBtn" onclick="cancelInstall()">Cancel</button>
+  </div>
+</div>
+
+<script>
+let deferredPrompt = null;
+let progressInterval = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+});
+
+function startInstall() {
+  document.getElementById('progressOverlay').style.display = 'flex';
+  document.getElementById('installBtn').textContent = 'Installing...';
+  document.getElementById('installBtn').style.background = '#9aa0a6';
+  
+  let progress = 0;
+  const bar = document.getElementById('progressBar');
+  const status = document.getElementById('progressStatus');
+  const size = document.getElementById('progressSize');
+  
+  progressInterval = setInterval(() => {
+    progress += Math.random() * 8 + 2;
+    if (progress >= 100) {
+      progress = 100;
+      clearInterval(progressInterval);
+      bar.style.width = '100%';
+      status.textContent = 'Installing app...';
+      size.textContent = '87 MB / 87 MB';
+      
+      setTimeout(() => {
+        status.textContent = 'Installed successfully!';
+        document.getElementById('openBtn').style.display = 'block';
+        document.getElementById('cancelBtn').style.display = 'none';
+        document.getElementById('installBtn').textContent = 'Open';
+        document.getElementById('installBtn').style.background = '#01875f';
+        triggerPWAInstall();
+      }, 800);
+      return;
+    }
+    bar.style.width = progress + '%';
+    const mb = Math.round(progress * 0.87);
+    size.textContent = 'Downloading... ' + mb + ' MB / 87 MB';
+    if (progress > 80) status.textContent = 'Almost done...';
+    else if (progress > 40) status.textContent = 'Downloading...';
+  }, 200);
+}
+
+function triggerPWAInstall() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((result) => {
+      if (result.outcome === 'accepted') {
+        console.log('PWA installed');
+      }
+      deferredPrompt = null;
+    });
+  }
+}
+
+function openPWA() {
+  document.getElementById('progressOverlay').style.display = 'none';
+  window.location.href = '/';
+}
+
+function cancelInstall() {
+  clearInterval(progressInterval);
+  document.getElementById('progressOverlay').style.display = 'none';
+  document.getElementById('progressBar').style.width = '0%';
+  document.getElementById('installBtn').textContent = 'Install';
+  document.getElementById('installBtn').style.background = '#01875f';
+  document.getElementById('openBtn').style.display = 'none';
+  document.getElementById('cancelBtn').style.display = 'block';
+}
+</script>
+
+
+</body>
+</html>

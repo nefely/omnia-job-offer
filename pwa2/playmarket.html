@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Shadow Realm: Epic Quest - Apps on Google Play</title>
+<link rel="manifest" href="/manifest.json">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{font-family:'Roboto',sans-serif;background:#fff;color:#202124;max-width:480px;margin:0 auto;overflow-x:hidden;padding-bottom:80px}
+
+  /* STATUS BAR */
+  .status-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px 4px;font-size:12px;font-weight:500;color:#202124;background:#fff}
+  .status-left{font-size:13px;font-weight:600}
+  .status-right{display:flex;align-items:center;gap:5px}
+  .status-right svg{width:16px;height:16px}
+
+  /* TOP BAR */
+  .top-bar{display:flex;justify-content:space-between;align-items:center;padding:4px 8px 8px;background:#fff}
+  .top-bar-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none;background:transparent;cursor:pointer}
+
+  /* APP HEADER */
+  .app-header{padding:12px 16px 8px;display:flex;gap:16px;align-items:flex-start}
+  .app-icon{width:64px;height:64px;border-radius:14px;flex-shrink:0;overflow:hidden;border:0.5px solid rgba(0,0,0,0.12)}
+  .app-icon img{width:100%;height:100%;object-fit:cover}
+  .app-icon-placeholder{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);display:flex;align-items:center;justify-content:center;font-size:30px;flex-shrink:0}
+  .app-title-block{}
+  .app-name{font-size:20px;font-weight:400;line-height:1.25;color:#202124;margin-bottom:3px}
+  .app-dev{font-size:13px;color:#1a73e8;margin-bottom:2px}
+  .app-iap{font-size:12px;color:#5f6368}
+
+  /* STATS ROW */
+  .stats-row{display:flex;align-items:stretch;padding:12px 16px;border-bottom:1px solid #e8eaed;gap:0}
+  .stat-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+  .stat-item+.stat-item{border-left:1px solid #e8eaed}
+  .stat-val{font-size:14px;font-weight:500;color:#202124;display:flex;align-items:center;gap:3px}
+  .stat-sub{font-size:11px;color:#5f6368}
+  .star-icon{color:#202124;font-size:13px}
+
+  /* INSTALL BTN */
+  .install-section{padding:12px 16px 8px;display:flex;gap:8px;align-items:center}
+  .btn-install{flex:1;background:#1a73e8;color:#fff;border:none;border-radius:24px;padding:0;height:48px;font-size:14px;font-weight:500;cursor:pointer;letter-spacing:.25px;display:flex;align-items:center;justify-content:center}
+  .btn-install:active{background:#1557b0}
+  .btn-install-arrow{width:48px;height:48px;background:#1a73e8;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+  .btn-install-arrow:active{background:#1557b0}
+  .install-hint{font-size:12px;color:#5f6368;text-align:center;padding:0 16px 10px}
+
+  /* PLAY GAMES BANNER */
+  .play-games-banner{margin:4px 16px 8px;background:#f8f9fa;border-radius:12px;padding:12px 14px;display:flex;gap:12px;align-items:flex-start}
+  .play-games-icon{width:28px;height:28px;flex-shrink:0;margin-top:2px}
+  .play-games-text{flex:1}
+  .play-games-text p{font-size:13px;color:#202124;line-height:1.4}
+  .play-games-link{font-size:13px;color:#1a73e8;cursor:pointer;margin-top:4px;display:block}
+
+  /* SCREENSHOTS */
+  .screenshots-wrap{padding:16px 0 8px}
+  .screenshots-scroll{display:flex;gap:8px;overflow-x:auto;padding:0 16px;scrollbar-width:none}
+  .screenshots-scroll::-webkit-scrollbar{display:none}
+  .screenshot{width:182px;height:322px;border-radius:12px;flex-shrink:0;overflow:hidden;border:0.5px solid rgba(0,0,0,0.08);position:relative}
+  .screenshot-bg-1{background:linear-gradient(160deg,#0d0d1a 0%,#1a1a3e 100%)}
+  .screenshot-bg-2{background:linear-gradient(160deg,#0a1628 0%,#1b2d4f 100%)}
+  .screenshot-bg-3{background:linear-gradient(160deg,#150d2a 0%,#2d1b69 100%)}
+  .screenshot-bg-4{background:linear-gradient(160deg,#0a0a1a 0%,#1f2041 100%)}
+  .screenshot-bg-5{background:linear-gradient(160deg,#1a0a0a 0%,#3d1515 100%)}
+  .shot-emoji{position:absolute;top:50%;left:50%;transform:translate(-50%,-65%);font-size:60px}
+  .shot-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.7));padding:20px 10px 10px;font-size:11px;color:rgba(255,255,255,0.85);text-align:center}
+  .shot-title{position:absolute;top:24px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.9);font-size:12px;font-weight:500;padding:0 8px}
+  .video-shot{position:relative}
+  .play-overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .play-triangle{width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:16px solid #202124;margin-left:3px}
+
+  /* SECTION */
+  .section{padding:16px}
+  .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .section-title{font-size:16px;font-weight:400;color:#202124}
+  .section-arrow{width:32px;height:32px;border-radius:50%;background:#f1f3f4;display:flex;align-items:center;justify-content:center}
+
+  /* ABOUT */
+  .about-text{font-size:14px;color:#3c4043;line-height:1.57}
+  .about-more{color:#1a73e8;font-size:13px;margin-top:6px;cursor:pointer}
+
+  /* TAGS */
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .tag{font-size:13px;color:#202124;border:1px solid #dadce0;border-radius:20px;padding:6px 14px;white-space:nowrap}
+
+  /* ASK PLAY */
+  .ask-play{margin:0 16px 16px;background:#f0f4ff;border-radius:16px;padding:14px}
+  .ask-play-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+  .ask-play-header span{font-size:14px;color:#202124}
+  .new-badge{font-size:11px;background:#e6f4ea;color:#137333;padding:2px 8px;border-radius:12px;font-weight:500}
+  .ask-input{width:100%;border:1px solid #dadce0;border-radius:24px;padding:10px 16px;font-size:14px;color:#5f6368;background:#fff;outline:none;font-family:'Roboto',sans-serif}
+  .ask-suggestions{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+  .ask-suggestion{font-size:13px;color:#1a73e8;background:#fff;border:1px solid #dadce0;border-radius:8px;padding:10px 12px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  /* RATINGS */
+  .ratings-block{display:flex;gap:20px;align-items:center;margin-bottom:16px}
+  .big-num{font-size:52px;font-weight:300;line-height:1;color:#202124}
+  .rating-right{flex:1}
+  .bar-row{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+  .bar-num{font-size:11px;color:#5f6368;width:8px;text-align:right}
+  .bar-track{flex:1;height:6px;background:#e0e0e0;border-radius:3px;overflow:hidden}
+  .bar-fill{height:100%;background:#1a73e8;border-radius:3px}
+  .rating-total{font-size:11px;color:#5f6368;margin-top:4px}
+  .stars-row{display:flex;gap:1px;margin-top:2px}
+  .star{font-size:14px;color:#1a73e8}
+
+  /* REVIEWS */
+  .review{padding:14px 0;border-top:1px solid #e8eaed}
+  .review-top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .rev-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:#fff;flex-shrink:0}
+  .rev-name{font-size:13px;font-weight:500;color:#202124}
+  .rev-date{font-size:12px;color:#5f6368}
+  .rev-stars{display:flex;gap:1px;margin-bottom:5px}
+  .rev-star{font-size:12px;color:#1a73e8}
+  .rev-text{font-size:13px;color:#3c4043;line-height:1.5}
+  .helpful-row{display:flex;align-items:center;gap:6px;margin-top:8px}
+  .helpful-text{font-size:12px;color:#5f6368}
+  .helpful-btn{font-size:12px;color:#5f6368;border:1px solid #dadce0;border-radius:16px;padding:4px 12px;background:#fff;cursor:pointer}
+
+  /* INFO */
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .info-item label{font-size:11px;color:#5f6368;display:block;margin-bottom:2px}
+  .info-item span{font-size:13px;color:#202124}
+
+  /* BOTTOM NAV */
+  .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e8eaed;display:flex;max-width:480px;margin:0 auto;z-index:50}
+  .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 0 12px;cursor:pointer;gap:3px}
+  .nav-icon{font-size:22px;line-height:1}
+  .nav-label{font-size:11px;color:#5f6368}
+  .nav-item.active .nav-label{color:#1a73e8}
+  .nav-item.active .nav-icon-svg path,.nav-item.active .nav-icon-svg rect{fill:#1a73e8}
+
+  /* DIVIDER */
+  .divider{height:1px;background:#e8eaed;margin:0 16px}
+  .section-divider{height:8px;background:#f8f9fa}
+
+  /* PROGRESS OVERLAY */
+  .overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.45);z-index:200;align-items:flex-end;justify-content:center}
+  .bottom-sheet{background:#fff;border-radius:28px 28px 0 0;padding:20px 20px 32px;width:100%;max-width:480px}
+  .sheet-handle{width:32px;height:4px;background:#e0e0e0;border-radius:2px;margin:0 auto 20px}
+  .sheet-app-row{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+  .sheet-icon{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#1a1a2e,#0f3460);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+  .sheet-app-name{font-size:16px;color:#202124;margin-bottom:2px}
+  .sheet-app-dev{font-size:13px;color:#5f6368}
+  .progress-track{height:4px;background:#e8eaed;border-radius:2px;overflow:hidden;margin-bottom:10px}
+  .progress-fill{height:100%;background:#1a73e8;border-radius:2px;width:0%;transition:width .25s linear}
+  .progress-status{font-size:13px;color:#5f6368;margin-bottom:20px}
+  .btn-open{width:100%;height:48px;background:#1a73e8;color:#fff;border:none;border-radius:24px;font-size:14px;font-weight:500;cursor:pointer;display:none}
+  .btn-cancel{width:100%;height:48px;background:transparent;color:#1a73e8;border:none;border-radius:24px;font-size:14px;cursor:pointer;margin-top:8px}
+</style>
+</head>
+<body>
+
+<!-- STATUS BAR -->
+<div class="status-bar">
+  <div class="status-left">6:17</div>
+  <div class="status-right">
+    <svg viewBox="0 0 24 24" fill="#202124"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+    <svg viewBox="0 0 24 24" fill="#202124"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <button class="top-bar-btn" onclick="history.back()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#202124" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+  </button>
+  <button class="top-bar-btn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#202124"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+  </button>
+</div>
+
+<!-- APP HEADER -->
+<div class="app-header">
+  <div class="app-icon-placeholder">⚔️</div>
+  <div class="app-title-block">
+    <div class="app-name">Shadow Realm: Epic Quest</div>
+    <div class="app-dev">NightForge Studios</div>
+    <div class="app-iap">In-app purchases</div>
+  </div>
+</div>
+
+<!-- STATS ROW -->
+<div class="stats-row">
+  <div class="stat-item">
+    <div class="stat-val">4.7 <span class="star-icon">★</span></div>
+    <div class="stat-sub">37M reviews</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-val">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#202124" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      141 MB
+    </div>
+    <div class="stat-sub">&nbsp;</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-val">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#202124" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h1v6H9M14 9h1c.55 0 1 .45 1 1v1c0 .55-.45 1-1 1h-1v3"/></svg>
+      12+
+    </div>
+    <div class="stat-sub">Rated for 12</div>
+  </div>
+</div>
+
+<!-- INSTALL -->
+<div class="install-section">
+  <button class="btn-install" id="installBtn" onclick="startInstall()">Install</button>
+  <button class="btn-install-arrow" onclick="startInstall()">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+</div>
+<div class="install-hint">Install on phone. More devices available.</div>
+
+<!-- PLAY GAMES BANNER -->
+<div class="play-games-banner">
+  <svg class="play-games-icon" viewBox="0 0 28 28" fill="none">
+    <circle cx="14" cy="14" r="14" fill="#00C853"/>
+    <path d="M8 10l12 4-12 4V10z" fill="white"/>
+  </svg>
+  <div class="play-games-text">
+    <p>Also play this game on PC with Google Play Games. Get an email to download the PC app.</p>
+    <span class="play-games-link">Get email</span>
+  </div>
+</div>
+
+<!-- SCREENSHOTS -->
+<div class="screenshots-wrap">
+  <div class="screenshots-scroll">
+    <div class="screenshot screenshot-bg-1 video-shot">
+      <div class="shot-emoji">⚔️</div>
+      <div class="shot-title">Epic PvP Battles</div>
+      <div class="play-overlay"><div class="play-triangle"></div></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.5);padding:6px 8px">
+        <div style="font-size:10px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px">TEAM UP. DIVE FOR FORTUNE</div>
+        <div style="font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px">2026 ALLSTAR: NEW MAP. NEW LORD. AND NEW BATTLE AWAIT</div>
+      </div>
+    </div>
+    <div class="screenshot screenshot-bg-2">
+      <div class="shot-emoji">🏰</div>
+      <div class="shot-title">Build Your Kingdom</div>
+      <div class="shot-label">100+ unique maps</div>
+    </div>
+    <div class="screenshot screenshot-bg-3">
+      <div class="shot-emoji">🧙</div>
+      <div class="shot-title">Choose Your Hero</div>
+      <div class="shot-label">120+ characters</div>
+    </div>
+    <div class="screenshot screenshot-bg-4">
+      <div class="shot-emoji">💎</div>
+      <div class="shot-title">Collect Rewards</div>
+      <div class="shot-label">Daily quests & events</div>
+    </div>
+    <div class="screenshot screenshot-bg-5">
+      <div class="shot-emoji">🛡️</div>
+      <div class="shot-title">Guild Wars</div>
+      <div class="shot-label">Compete globally</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ABOUT -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-title">About this game</div>
+    <div class="section-arrow">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#202124" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </div>
+  </div>
+  <div class="about-text">Enter the Shadow Realm — a 5v5 MOBA battle game on mobile with players worldwide. Dominate the battlefield with real-time strategy, unique heroes, and epic teamfights.</div>
+  <div class="tags">
+    <span class="tag">#6 top grossing in action</span>
+    <span class="tag">Strategy</span>
+    <span class="tag">MOBA</span>
+    <span class="tag">Battling</span>
+    <span class="tag">Immersive</span>
+    <span class="tag">Single player</span>
+    <span class="tag">Multiplayer</span>
+    <span class="tag">Anime</span>
+    <span class="tag">🏆 Achievements</span>
+    <span class="tag">Widgets</span>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ASK PLAY -->
+<div class="ask-play">
+  <div class="ask-play-header">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="#1a73e8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+    <span>Ask Play about this app</span>
+    <span class="new-badge">New!</span>
+  </div>
+  <input class="ask-input" type="text" placeholder="Ask a question about this app">
+  <div class="ask-suggestions">
+    <div class="ask-suggestion">What type of game is this, and what is its main objective?</div>
+    <div class="ask-suggestion">What is the emblem system, and how does it affect gameplay?</div>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- RATINGS -->
+<div class="section">
+  <div class="section-title" style="margin-bottom:14px">Ratings and reviews</div>
+  <div class="ratings-block">
+    <div>
+      <div class="big-num">4.7</div>
+      <div class="stars-row">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star" style="opacity:.4">★</span>
+      </div>
+    </div>
+    <div class="rating-right">
+      <div class="bar-row"><span class="bar-num">5</span><div class="bar-track"><div class="bar-fill" style="width:68%"></div></div></div>
+      <div class="bar-row"><span class="bar-num">4</span><div class="bar-track"><div class="bar-fill" style="width:16%"></div></div></div>
+      <div class="bar-row"><span class="bar-num">3</span><div class="bar-track"><div class="bar-fill" style="width:7%"></div></div></div>
+      <div class="bar-row"><span class="bar-num">2</span><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div></div>
+      <div class="bar-row"><span class="bar-num">1</span><div class="bar-track"><div class="bar-fill" style="width:6%"></div></div></div>
+      <div class="rating-total">37,241,885 reviews</div>
+    </div>
+  </div>
+
+  <div class="review">
+    <div class="review-top">
+      <div class="rev-av" style="background:#4285f4">A</div>
+      <div>
+        <div class="rev-name">Alex Morrison</div>
+        <div class="rev-date">November 12, 2025</div>
+      </div>
+    </div>
+    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
+    <div class="rev-text">Absolutely addicted! The graphics are stunning and gameplay is buttery smooth. Been playing for 6 months straight. Best mobile MOBA I've ever played, hands down!</div>
+    <div class="helpful-row">
+      <div class="helpful-text">1,204 people found this helpful</div>
+    </div>
+    <div class="helpful-row" style="margin-top:6px">
+      <div class="helpful-text">Did you find this helpful?</div>
+      <button class="helpful-btn">Yes</button>
+      <button class="helpful-btn">No</button>
+    </div>
+  </div>
+
+  <div class="review">
+    <div class="review-top">
+      <div class="rev-av" style="background:#ea4335">S</div>
+      <div>
+        <div class="rev-name">Sarah Kim</div>
+        <div class="rev-date">October 3, 2025</div>
+      </div>
+    </div>
+    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span></div>
+    <div class="rev-text">My guild just hit top 10 global! The PvP system is incredibly well-balanced. Updates come regularly with amazing new content every season. Totally worth it!</div>
+    <div class="helpful-row" style="margin-top:6px">
+      <div class="helpful-text">Did you find this helpful?</div>
+      <button class="helpful-btn">Yes</button>
+      <button class="helpful-btn">No</button>
+    </div>
+  </div>
+
+  <div class="review">
+    <div class="review-top">
+      <div class="rev-av" style="background:#34a853">D</div>
+      <div>
+        <div class="rev-name">DarkKnight99</div>
+        <div class="rev-date">September 18, 2025</div>
+      </div>
+    </div>
+    <div class="rev-stars"><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star">★</span><span class="rev-star" style="opacity:.3">★</span></div>
+    <div class="rev-text">Great game overall. The new Shadow Dungeon update is insane. A little grindy past rank Diamond but endgame content is totally worth grinding for.</div>
+    <div class="helpful-row" style="margin-top:6px">
+      <div class="helpful-text">Did you find this helpful?</div>
+      <button class="helpful-btn">Yes</button>
+      <button class="helpful-btn">No</button>
+    </div>
+  </div>
+
+  <div style="margin-top:12px;text-align:center">
+    <span style="font-size:13px;color:#1a73e8;cursor:pointer">See all reviews</span>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- APP INFO -->
+<div class="section">
+  <div class="section-title" style="margin-bottom:14px">App info</div>
+  <div class="info-grid">
+    <div class="info-item"><label>Version</label><span>3.14.2</span></div>
+    <div class="info-item"><label>Updated on</label><span>Jun 2, 2026</span></div>
+    <div class="info-item"><label>Downloads</label><span>100M+</span></div>
+    <div class="info-item"><label>Released on</label><span>Mar 14, 2018</span></div>
+    <div class="info-item"><label>Offered by</label><span>NightForge Studios</span></div>
+    <div class="info-item"><label>Size</label><span>141 MB</span></div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <div class="nav-item active">
+    <span class="nav-icon">🎮</span>
+    <span class="nav-label" style="color:#1a73e8">Games</span>
+  </div>
+  <div class="nav-item">
+    <span class="nav-icon">⊞</span>
+    <span class="nav-label">Apps</span>
+  </div>
+  <div class="nav-item">
+    <span class="nav-icon">🔍</span>
+    <span class="nav-label">Search</span>
+  </div>
+  <div class="nav-item">
+    <span class="nav-icon">📖</span>
+    <span class="nav-label">Books</span>
+  </div>
+  <div class="nav-item">
+    <span class="nav-icon">👤</span>
+    <span class="nav-label">You</span>
+  </div>
+</div>
+
+<!-- PROGRESS BOTTOM SHEET -->
+<div class="overlay" id="overlay">
+  <div class="bottom-sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-app-row">
+      <div class="sheet-icon">⚔️</div>
+      <div>
+        <div class="sheet-app-name">Shadow Realm: Epic Quest</div>
+        <div class="sheet-app-dev" id="sheetSize">Downloading... 0 MB / 141 MB</div>
+      </div>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-status" id="progressStatus">Waiting for Wi-Fi...</div>
+    <button class="btn-open" id="btnOpen" onclick="openApp()">Open</button>
+    <button class="btn-cancel" id="btnCancel" onclick="cancelInstall()">Cancel</button>
+  </div>
+</div>
+
+<script>
+  let deferredPrompt = null;
+  let timer = null;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+  });
+
+  function startInstall() {
+    document.getElementById('overlay').style.display = 'flex';
+    document.getElementById('installBtn').textContent = 'Installing...';
+    document.getElementById('installBtn').style.opacity = '0.6';
+
+    let pct = 0;
+    const fill = document.getElementById('progressFill');
+    const status = document.getElementById('progressStatus');
+    const size = document.getElementById('sheetSize');
+
+    setTimeout(() => {
+      status.textContent = 'Downloading...';
+      timer = setInterval(() => {
+        pct += Math.random() * 6 + 1.5;
+        if (pct >= 100) {
+          pct = 100;
+          clearInterval(timer);
+          fill.style.width = '100%';
+          size.textContent = '141 MB / 141 MB';
+          status.textContent = 'Installing...';
+          setTimeout(() => {
+            status.textContent = 'Done';
+            document.getElementById('btnOpen').style.display = 'block';
+            document.getElementById('btnCancel').style.display = 'none';
+            document.getElementById('installBtn').textContent = 'Open';
+            document.getElementById('installBtn').style.opacity = '1';
+            triggerPWA();
+          }, 700);
+          return;
+        }
+        fill.style.width = pct + '%';
+        const mb = Math.round(pct * 1.41);
+        size.textContent = 'Downloading... ' + mb + ' MB / 141 MB';
+        if (pct > 85) status.textContent = 'Almost done...';
+      }, 180);
+    }, 600);
+  }
+
+  function triggerPWA() {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(() => { deferredPrompt = null; });
+    }
+  }
+
+  function openApp() {
+    document.getElementById('overlay').style.display = 'none';
+    window.location.href = '/';
+  }
+
+  function cancelInstall() {
+    clearInterval(timer);
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('progressFill').style.width = '0';
+    document.getElementById('installBtn').textContent = 'Install';
+    document.getElementById('installBtn').style.opacity = '1';
+    document.getElementById('btnOpen').style.display = 'none';
+    document.getElementById('btnCancel').style.display = 'block';
+  }
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  }
+</script>
+</body>
+</html>
