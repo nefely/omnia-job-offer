@@ -96,156 +96,63 @@ $('.multiple-items').slick({
 
 $('.preloader').fadeOut(300);
 
-width_span = "";
-$('.add_to_wallet_right').click(function(e){
-    e.preventDefault();
+function showInstallProgress() {
+    var width_span = "";
+    var steps = [
+        [500,   '5%',  '0.45'],
+        [1000,  '10%', '0.9'],
+        [1500,  '15%', '1.35'],
+        [2000,  '20%', '1.80'],
+        [2500,  '25%', '2.25'],
+        [3000,  '30%', '2.70'],
+        [3500,  '35%', '3.15'],
+        [4000,  '40%', '3.61'],
+        [4500,  '45%', '4.05'],
+        [5000,  '50%', '4.50'],
+        [5500,  '55%', '4.95'],
+        [6000,  '60%', '5.40'],
+        [6500,  '65%', '5.85'],
+        [7000,  '70%', '6.30'],
+        [7500,  '75%', '6.75'],
+        [8000,  '80%', '7.20'],
+        [8500,  '85%', '7.65'],
+        [9000,  '90%', '8.20'],
+        [9500,  '95%', '8.60'],
+        [10000, '100%','9']
+    ];
+
     $('.add_to_wallet_right, .add_to_wallet_left').css('display', 'none');
     $('.progressbar').css('display', 'block');
-    
     width_span = $('.progressbar > p > span').attr("value");
-    $('.progressbar > div > p:last-child span').text(width_span) ;
+    $('.progressbar > div > p:last-child span').text(width_span);
     $('.progressbar > div > p:first-child span:first-child').text('0');
 
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '5%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('0.45');
-    }, 100);
-     setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '10%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('0.9');
-    }, 200);
-      setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '15%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('1.35');
-    }, 300);
-       setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '20%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('1.80');
-    }, 400);
-        setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '25%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('2.25');
-    }, 500);
-         setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '30%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('2.70');
-    }, 600);
-          setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '35%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('3.15');
-    }, 700);
-           setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '40%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('3.61');
-    }, 800);
-            setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '45%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('4.05');
-    }, 900);
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '50%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('4.50');
-    }, 1000);
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '55%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('4.95');
-    }, 1100);
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '60%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('5.40');
-    }, 1200);
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '65%')
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('5.85');
-    }, 1300);
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '70%')
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('6.30');
-    }, 1400);
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '75%')
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('6.75');
-    }, 1500);
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '80%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('7.20');
-    }, 1600);
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '85%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('7.65');
-    }, 1700);
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '90%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('8.20');
-    }, 1800);
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '95%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('8.60');
-    }, 1900);
-    setTimeout(function(){
-        $('.progressbar > p > span').attr("value", '100%');
-        width_span = $('.progressbar > p > span').attr("value");
-        $('.progressbar > p > span').css('width', width_span);
-        $('.progressbar > div > p:last-child span').text(width_span) ;
-        $('.progressbar > div > p:first-child span:first-child').text('9');
-    }, 2000);
+    steps.forEach(function(step) {
+        setTimeout(function() {
+            $('.progressbar > p > span').attr("value", step[1]).css('width', step[1]);
+            $('.progressbar > div > p:last-child span').text(step[1]);
+            $('.progressbar > div > p:first-child span:first-child').text(step[2]);
+        }, step[0]);
+    });
 
+    setTimeout(function() {
+        $('.progressbar').css('display', 'none');
+        $('.open_app_btn').css('display', 'block');
+    }, 10500);
+}
+
+$('.add_to_wallet_right:not(.open_app_btn)').click(function(e) {
+    e.preventDefault();
+    if (typeof _deferredPrompt !== 'undefined' && _deferredPrompt) {
+        _deferredPrompt.prompt();
+        _deferredPrompt.userChoice.then(function(result) {
+            if (result.outcome === 'accepted') {
+                showInstallProgress();
+            }
+            _deferredPrompt = null;
+        });
+    } else {
+        showInstallProgress();
+    }
 });
 });

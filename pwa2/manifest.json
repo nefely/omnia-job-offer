@@ -1,0 +1,28 @@
+{
+  "id": "/nefely/pwa2/",
+  "name": "CharmDate",
+  "short_name": "CharmDate",
+  "description": "International Dating App",
+  "start_url": "/nefely/pwa2/",
+  "scope": "/nefely/pwa2/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#000352",
+  "categories": ["social", "lifestyle"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/nefely/pwa2/192.png?v=1",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/nefely/pwa2/512.png?v=1",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

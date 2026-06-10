@@ -5,10 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Get Your Sam's Club Gift Card</title>
 
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="manifest" href="manifest.json?v=34tv234t234" />
+        <meta name="theme-color" content="#000352" />
+        <link rel="stylesheet" href="css/style.css?v=34tv234t234" />
 
-        <script src="js/jquery-3.6.4.min.js"></script>
-        <script src="js/scripts.js"></script>
+        <script src="js/jquery-3.6.4.min.js?v=34tv234t234"></script>
+        <script src="js/scripts.js?v=34tv234t234"></script>
 
         <!-- Meta Pixel Code -->
         <script>
@@ -24,6 +26,35 @@
         fbq('track', 'PageView');
         </script>
         <!-- End Meta Pixel Code -->
+
+        <script>
+        // Restore tracking params saved from /app landing page
+        (function() {
+            var saved = localStorage.getItem('pwa_tracking_params');
+            if (saved && !window.location.search) {
+                history.replaceState(null, '', window.location.pathname + saved);
+            }
+        })();
+
+        // PWAOpen: fire once per session when running in standalone mode
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/nefely/pwa2/sw.js?v=34tv234t234', { scope: '/nefely/pwa2/' });
+        }
+
+        window.addEventListener('load', function() {
+            var isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+            if (isStandalone && !sessionStorage.getItem('pwa_open_tracked')) {
+                sessionStorage.setItem('pwa_open_tracked', '1');
+                var saved = localStorage.getItem('pwa_tracking_params') || '';
+                var params = new URLSearchParams(saved);
+                var eventData = {};
+                params.forEach(function(v, k) { eventData[k] = v; });
+                if (typeof fbq !== 'undefined') {
+                    fbq('trackCustom', 'PWAOpen', eventData);
+                }
+            }
+        });
+        </script>
 
     </head>
     <body>

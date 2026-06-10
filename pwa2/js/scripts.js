@@ -1,5 +1,21 @@
 $(document).ready(function(){
 
+// Append tracking params to offer link
+(function() {
+    var params = window.location.search;
+    if (!params) {
+        var saved = localStorage.getItem('pwa_tracking_params');
+        if (saved) params = saved;
+    }
+    if (params) {
+        var link = document.getElementById('offer_link');
+        if (link) {
+            var href = link.getAttribute('href');
+            link.setAttribute('href', href + (href.indexOf('?') !== -1 ? '&' : '?') + params.slice(1));
+        }
+    }
+})();
+
 
 
 $('[data-page="index"] #tosurvey').click(function(){

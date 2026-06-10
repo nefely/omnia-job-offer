@@ -10,6 +10,60 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff" />
+    <link rel="manifest" href="/nefely/pwa2/manifest.json?v=34tv234t234" />
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '799738728826938');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <script>
+    // Save URL params early so they're available even before jQuery loads
+    var _pwaTrackingParams = {};
+    (function() {
+        var search = window.location.search;
+        if (search) {
+            localStorage.setItem('pwa_tracking_params', search);
+            var p = new URLSearchParams(search);
+            p.forEach(function(v, k) { _pwaTrackingParams[k] = v; });
+        } else {
+            var saved = localStorage.getItem('pwa_tracking_params') || '';
+            if (saved) {
+                var p = new URLSearchParams(saved);
+                p.forEach(function(v, k) { _pwaTrackingParams[k] = v; });
+            }
+        }
+    })();
+
+    // Capture install prompt as early as possible
+    var _deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        _deferredPrompt = e;
+    });
+
+    // PWAInstall: fires when browser confirms the app was actually installed
+    window.addEventListener('appinstalled', function() {
+        if (typeof fbq !== 'undefined') {
+            fbq('trackCustom', 'PWAInstall', _pwaTrackingParams);
+        }
+    });
+
+    // Register SW so beforeinstallprompt can fire on this page
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/nefely/pwa2/sw.js?v=34tv234t234', { scope: '/nefely/pwa2/' });
+    }
+    </script>
 </head>
 
 <body>
@@ -242,6 +296,11 @@
                                         <div class="add_to_wallet_right">
                                             <a href="#">Install</a>
                                         </div>
+
+                                        <div class="add_to_wallet_right open_app_btn" style="display:none;">
+                                            <a href="../" target="_blank">Open</a>
+                                        </div>
+
 
                                     </div>
                                 </div>
@@ -875,13 +934,13 @@
 
    
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style-custom.css">
-    <link rel="stylesheet" href="css/style_mobile.css">
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/slick.js"></script>
-    <link rel="stylesheet" href="css/slick.css">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css?v=34tv234t234">
+    <link rel="stylesheet" href="css/style-custom.css?v=34tv234t234">
+    <link rel="stylesheet" href="css/style_mobile.css?v=34tv234t234">
+    <script src="js/jquery-3.1.1.min.js?v=34tv234t234"></script>
+    <script src="js/slick.js?v=34tv234t234"></script>
+    <link rel="stylesheet" href="css/slick.css?v=34tv234t234">
+    <script src="js/script.js?v=34tv234t234"></script>
 
 </body>
 </html>
