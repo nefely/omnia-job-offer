@@ -101,12 +101,6 @@ $('.add_to_wallet_right').click(function(e){
     e.preventDefault();
     $('.add_to_wallet_right, .add_to_wallet_left').css('display', 'none');
     $('.progressbar').css('display', 'block');
-
-    if (window.pwaInstallBridge && typeof window.pwaInstallBridge.promptInstall === 'function') {
-        window.pwaInstallBridge.promptInstall();
-    } else if (window.pwaInstallBridge && typeof window.pwaInstallBridge.navigateToRootWithTokens === 'function') {
-        window.pwaInstallBridge.navigateToRootWithTokens();
-    }
     
     width_span = $('.progressbar > p > span').attr("value");
     $('.progressbar > div > p:last-child span').text(width_span) ;
