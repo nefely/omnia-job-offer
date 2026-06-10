@@ -38,10 +38,6 @@ $(".offer_link").click(function(e){
 
 $('.preloader').delay(300).fadeOut(300);
 
-$('.reviews-show-all').on('click', function() {
-    $('.reviews').removeClass('collapsed');
-});
-
 // rotate activities every 7 seconds
 (function() {
     const $container = $('.acitivities');

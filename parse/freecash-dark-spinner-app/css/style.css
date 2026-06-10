@@ -88,6 +88,9 @@ main > * {
 .green-text {
     color: var(--green);
 }
+.mb-a {
+    margin-bottom: auto !important;
+}
 .mb-0_5 {
     margin-bottom: 0.5rem;
 }
@@ -101,7 +104,7 @@ main > * {
     margin-bottom: 2rem;
 }
 .mt-a {
-    margin-top: auto;
+    margin-top: auto !important;
 }
 .mt-1_5 {
     margin-top: 1.5rem;
@@ -268,14 +271,26 @@ h5 {
     padding-top: 4rem;
     padding-bottom: 2rem;
 }
+.screen-3 {
+    padding-bottom: 2rem;
+}
+.hero .wrapper-md  ,
+.intro .wrapper-md ,
+.screen-3 .wrapper-md {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
 .hero .wrapper-md .inner-top ,
-.intro .wrapper-md .inner-top {
+.intro .wrapper-md .inner-top ,
+.screen-3 .wrapper-md .inner-top{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 .hero .wrapper-md .inner-top > * ,
-.intro .wrapper-md .inner-top > *{
+.intro .wrapper-md .inner-top > * ,
+.screen-3 .wrapper-md .inner-top > * {
     width: 100%;
 } 
 .hero .btn-container,
@@ -285,11 +300,6 @@ h5 {
 
 .hero {
     background: var(--dark);
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-.hero .wrapper-md {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -386,12 +396,6 @@ h5 {
     display: flex;
     flex-direction: column;
 }
-.intro .wrapper-md {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
 .intro .btn-container {
     margin-top: auto;
 }
