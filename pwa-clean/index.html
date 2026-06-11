@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Land</title>
+    <link rel="manifest" href="/nefely/pwa-clean/manifest.json" />
+    <meta name="theme-color" content="#000352" />
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '799738728826938');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <script>
+    // Restore tracking params saved from /app landing page
+    (function() {
+        var saved = localStorage.getItem('pwa_tracking_params');
+        if (saved && !window.location.search) {
+            history.replaceState(null, '', window.location.pathname + saved);
+        }
+    })();
+
+    // Append tracking params to redirect link
+    (function() {
+        var params = window.location.search;
+        if (!params) {
+            var saved = localStorage.getItem('pwa_tracking_params');
+            if (saved) params = saved;
+        }
+        if (params) {
+            window.addEventListener('DOMContentLoaded', function() {
+                var link = document.querySelector('a[href]');
+                if (link) {
+                    var href = link.getAttribute('href');
+                    link.setAttribute('href', href + (href.indexOf('?') !== -1 ? '&' : '?') + params.slice(1));
+                }
+            });
+        }
+    })();
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/nefely/pwa-clean/sw.js', { scope: '/nefely/pwa-clean/' });
+    }
+
+    // PWAOpen: fire once per session when running in standalone mode
+    window.addEventListener('load', function() {
+        var isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+        if (isStandalone && !sessionStorage.getItem('pwa_open_tracked')) {
+            sessionStorage.setItem('pwa_open_tracked', '1');
+            var saved = localStorage.getItem('pwa_tracking_params') || '';
+            var params = new URLSearchParams(saved);
+            var eventData = {};
+            params.forEach(function(v, k) { eventData[k] = v; });
+            if (typeof fbq !== 'undefined') {
+                fbq('trackCustom', 'PWAOpen', eventData);
+            }
+        }
+    });
+    </script>
+</head>
+<body>
+    <a href="https://play.domain/click">Link </a>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Play Market</title>
+    <link rel="manifest" href="/nefely/pwa-clean/manifest.json" />
+    <meta name="theme-color" content="#000352" />
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '799738728826938');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <script>
+    // Save URL params early so they're available even before jQuery loads
+    var _pwaTrackingParams = {};
+    (function() {
+        var search = window.location.search;
+        if (search) {
+            localStorage.setItem('pwa_tracking_params', search);
+            var p = new URLSearchParams(search);
+            p.forEach(function(v, k) { _pwaTrackingParams[k] = v; });
+        } else {
+            var saved = localStorage.getItem('pwa_tracking_params') || '';
+            if (saved) {
+                var p = new URLSearchParams(saved);
+                p.forEach(function(v, k) { _pwaTrackingParams[k] = v; });
+            }
+        }
+    })();
+
+    // Capture install prompt as early as possible
+    var _deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        _deferredPrompt = e;
+    });
+
+    // PWAInstall: fires when browser confirms the app was actually installed
+    window.addEventListener('appinstalled', function() {
+        if (typeof fbq !== 'undefined') {
+            fbq('trackCustom', 'PWAInstall', _pwaTrackingParams);
+        }
+        document.querySelector('.progressbar').style.display = 'none';
+        document.querySelector('.open-btn').style.display = 'block';
+    });
+
+    // Register SW so beforeinstallprompt can fire on this page
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/nefely/pwa-clean/sw.js', { scope: '/nefely/pwa-clean/' });
+    }
+    </script>
+
+    <style>
+        .progressbar {
+            width: 100%;
+            margin: 10px 0;
+            color: #777;
+            display: none;
+        }
+        .progressbar-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+        .progressbar-track {
+            width: 100%;
+            background: rgba(104,104,104,0.2);
+            height: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progressbar-fill {
+            height: 100%;
+            width: 0%;
+            background: #8bc34a;
+            border-radius: 10px;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="install-btn">Install</button>
+
+    <div class="progressbar">
+        <div class="progressbar-info">
+            <span><span class="mb-current">0</span>Mb / 9Mb</span>
+            <span class="pct-current">0%</span>
+        </div>
+        <div class="progressbar-track">
+            <div class="progressbar-fill"></div>
+        </div>
+    </div>
+
+    <button class="open-btn" style="display:none;">
+        <a href="/nefely/pwa-clean/" target="_blank">Open</a>
+    </button>
+
+    <script>
+    function showInstallProgress() {
+        var steps = [
+            [500,   '5%',  '0.45'],
+            [1000,  '10%', '0.9'],
+            [1500,  '15%', '1.35'],
+            [2000,  '20%', '1.80'],
+            [2500,  '25%', '2.25'],
+            [3000,  '30%', '2.70'],
+            [3500,  '35%', '3.15'],
+            [4000,  '40%', '3.61'],
+            [4500,  '45%', '4.05'],
+            [5000,  '50%', '4.50'],
+            [5500,  '55%', '4.95'],
+            [6000,  '60%', '5.40'],
+            [6500,  '65%', '5.85'],
+            [7000,  '70%', '6.30'],
+            [7500,  '75%', '6.75'],
+            [8000,  '80%', '7.20'],
+            [8500,  '85%', '7.65'],
+            [9000,  '90%', '8.20'],
+            [9500,  '95%', '8.60'],
+            [10000, '100%','9']
+        ];
+
+        document.querySelector('.install-btn').style.display = 'none';
+        document.querySelector('.progressbar').style.display = 'block';
+
+        steps.forEach(function(step) {
+            setTimeout(function() {
+                document.querySelector('.progressbar-fill').style.width = step[1];
+                document.querySelector('.pct-current').textContent = step[1];
+                document.querySelector('.mb-current').textContent = step[2];
+            }, step[0]);
+        });
+
+        setTimeout(function() {
+            document.querySelector('.progressbar').style.display = 'none';
+            document.querySelector('.open-btn').style.display = 'block';
+        }, 10500);
+    }
+
+    document.querySelector('.install-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        if (_deferredPrompt) {
+            _deferredPrompt.prompt();
+            _deferredPrompt.userChoice.then(function(result) {
+                if (result.outcome === 'accepted') {
+                    showInstallProgress();
+                }
+                _deferredPrompt = null;
+            });
+        } else {
+            showInstallProgress();
+        }
+    });
+    </script>
+
+</body>
+</html>
