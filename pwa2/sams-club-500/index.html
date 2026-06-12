@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sam’s Club Rewards</title>
-    <link rel="stylesheet" href="style.css?v=15">
-    <link rel="icon" href="192.png?v=15" type="image/png">
-    <link rel="manifest" href="manifest.json?v=15">
+    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="icon" href="192.png?v=8" type="image/png">
+    <link rel="manifest" href="manifest.json?v=8">
     <meta name="theme-color" content="#0247CB">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '799738728826938');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
 
     <script>
     // Restore tracking params saved from /app page
@@ -20,28 +35,33 @@
         }
     })();
 
-    // Append tracking params + clickid to offer link
-    window.addEventListener('DOMContentLoaded', function() {
-        var link = document.querySelector('.offer_link');
-        if (!link) return;
-        var params = window.location.search || localStorage.getItem('pwa_tracking_params') || '';
-        var qs = params.replace(/^\?/, '');
-        var clickid = localStorage.getItem('pwa_clickid') || '';
-        if (clickid && qs.indexOf('clickid=') === -1) {
-            qs += (qs ? '&' : '') + 'clickid=' + encodeURIComponent(clickid);
+    // Append tracking params to offer link
+    (function() {
+        var params = window.location.search;
+        if (!params) params = localStorage.getItem('pwa_tracking_params') || '';
+        if (params) {
+            window.addEventListener('DOMContentLoaded', function() {
+                var link = document.querySelector('.offer_link');
+                if (link) {
+                    var href = link.getAttribute('href');
+                    link.setAttribute('href', href + (href.indexOf('?') !== -1 ? '&' : '?') + params.replace(/^\?/, ''));
+                }
+            });
         }
-        if (qs) {
-            var href = link.getAttribute('href');
-            link.setAttribute('href', href + (href.indexOf('?') !== -1 ? '&' : '?') + qs);
-        }
-    });
+    })();
 
-    // Open postback: fires every time PWA is opened in standalone mode
+    // PWAOpen: fire once per session when running in standalone mode
     window.addEventListener('load', function() {
-        if (window.matchMedia('(display-mode: standalone)').matches) {
-            var clickid = localStorage.getItem('pwa_clickid') || '';
-            var url = 'https://omniapostback.com/postback?clickid=' + encodeURIComponent(clickid) + '&sum=0&type=FirstOpen';
-            new Image().src = url;
+        var isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+        if (isStandalone && !sessionStorage.getItem('pwa_open_tracked')) {
+            sessionStorage.setItem('pwa_open_tracked', '1');
+            var saved = localStorage.getItem('pwa_tracking_params') || '';
+            var params = new URLSearchParams(saved);
+            var eventData = {};
+            params.forEach(function(v, k) { eventData[k] = v; });
+            if (typeof fbq !== 'undefined') {
+                fbq('trackCustom', 'PWAOpen', eventData);
+            }
         }
     });
     </script>
@@ -56,7 +76,7 @@
     <div class="container">
         <div class="loader">
             <div class="icon mt-auto mb-auto">
-                <img src="192.png?v=15" alt="">
+                <img src="img/logo.svg?v=8" alt="">
                 <h1 class="center mt-24">Sam’s Club Rewards</h1>
             </div>
             <div class="progress-container">
@@ -107,7 +127,7 @@
 
         <div class="question" data-step="2" style="display: none;">
             <div class="top">
-                <img class="top-icon" src="img/box.webp?v=15" alt="">
+                <img class="top-icon" src="img/box.webp?v=8" alt="">
             </div>
             <div class="bottom bottom-icon">
                 <div class="icon">
@@ -128,15 +148,15 @@
 
             <div class="spinner-container mt-a mb-a">
                 <div class="spinner-wheel">
-                    <img src="img/wheel.webp?v=15" alt="" />
+                    <img src="img/wheel.webp?v=8" alt="" />
                 </div>
                 <div class="spinner-pointer">
                     <button class="spinner-button btn-glow">
-                        <img src="img/button.webp?v=15" alt="" />
+                        <img src="img/button.webp?v=8" alt="" />
                     </button>
                 </div>
                 <div class="spinner-arrow">
-                    <img src="img/arrow.webp?v=15" alt="" />
+                    <img src="img/arrow.webp?v=8" alt="" />
                 </div>
             </div>
 
@@ -155,7 +175,7 @@
 
         <div class="question" data-step="4" style="display: none;">
             <div class="top top-0">
-                <img class="top-icon" src="img/card.webp?v=15" alt="">
+                <img class="top-icon" src="img/card.webp?v=8" alt="">
             </div>
             <div class="bottom bottom-icon">
                 <div class="icon">
@@ -198,7 +218,7 @@
 
         <div class="question" data-step="5" style="display: none;">
             <div class="top">
-                <img class="top-icon" src="img/card.webp?v=15" alt="">
+                <img class="top-icon" src="img/card.webp?v=8" alt="">
             </div>
             <div class="bottom bottom-icon">
                 <div class="icon">
@@ -212,7 +232,7 @@
                     <p class="extrasmall muted center mt-24">By continuing, you agree to proceed with the reward activation process.</p>
                 </div>
                 <div class="bottom-button mt-auto">
-                    <a class="btn-primary inactive offer_link" href="https://track.rewardsclubapp.com/click">Continue</a>
+                    <a class="btn-primary inactive offer_link" href="https://track.domain/click">Continue</a>
                 </div>
             </div>
         </div>
@@ -221,12 +241,12 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js?v=15" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="script.js?v=15"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js?v=8" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script.js?v=8"></script>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sams-club-500/sw.js?v=15', {
-                scope: '/sams-club-500/'
+            navigator.serviceWorker.register('/nefely/omnia-job-offer/pwa-template/sams-club-500/sw.js?v=8', {
+                scope: '/nefely/omnia-job-offer/pwa-template/sams-club-500/'
             });
         }
     </script>

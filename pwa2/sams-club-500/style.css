@@ -313,10 +313,10 @@ input::placeholder  {
     margin-top: auto;
 }
 .loader .icon img {
-    width: 192px;
+    width: 92px;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 16px;
+    
 }
 @keyframes loading {
     0% {

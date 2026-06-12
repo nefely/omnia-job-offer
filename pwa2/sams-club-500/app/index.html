@@ -4,9 +4,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Rewards Club</title>
-        <link rel="manifest" href="../manifest.json?v=15" />
-        <link rel="stylesheet" href="style.css?v=15" />
-        <link rel="icon" href="../192.png?v=15" type="image/png" />
+        <link rel="manifest" href="../manifest.json?v=8" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="../192.png?v=8" type="image/png" />
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -25,28 +25,25 @@
         </script>
         <!-- End Meta Pixel Code -->
 
-        <script src="https://track.rewardsclubapp.com/unilpclick.js?attribution=lastpaid&cookiedomain=&cookieduration=90&defaultcampaignid=6a2bea68ebbea653b0b94c87&regviewonce=false"></script> 
-
         <script>
-        // Save raw URL params now (fallback)
+        // Save tracking params from URL to localStorage
+        var _pwaTrackingParams = {};
         (function() {
             var search = window.location.search;
-            if (search) localStorage.setItem('pwa_tracking_params', search);
+            if (search) {
+                localStorage.setItem('pwa_tracking_params', search);
+                new URLSearchParams(search).forEach(function(v, k) { _pwaTrackingParams[k] = v; });
+            } else {
+                var saved = localStorage.getItem('pwa_tracking_params') || '';
+                if (saved) new URLSearchParams(saved).forEach(function(v, k) { _pwaTrackingParams[k] = v; });
+            }
         })();
 
-        // After load: unilpclick.js is ready — grab clickid via official API
-        window.addEventListener('load', function() {
-            var clickid = (typeof getSessionClickID === 'function') ? getSessionClickID() : '';
-            if (clickid) localStorage.setItem('pwa_clickid', clickid);
-        });
-
-        // Install postback: fires when browser confirms the app was actually installed
+        // PWAInstall: fires when browser confirms the app was actually installed
         window.addEventListener('appinstalled', function() {
-            if (window._installSent) return;
-            window._installSent = true;
-            var clickid = localStorage.getItem('pwa_clickid') || '';
-            var url = 'https://omniapostback.com/postback?clickid=' + encodeURIComponent(clickid) + '&sum=0&type=Install';
-            new Image().src = url;
+            if (typeof fbq !== 'undefined') {
+                fbq('trackCustom', 'PWAInstall', _pwaTrackingParams);
+            }
         });
         </script>
     </head>
@@ -78,7 +75,7 @@
         <!-- APP HEADER -->
         <div class="app-header">
             <div class="app-icon-placeholder">
-                <img src="../192.png?v=15" alt="App Icon" class="app-icon" />
+                <img src="../192.png" alt="App Icon" class="app-icon" />
             </div>
             <div class="app-title-block">
                 <div class="app-name">Rewards Club</div>
@@ -174,16 +171,16 @@
         <div class="screenshots-wrap">
             <div class="screenshots-scroll">
                 <div class="screenshot screenshot-bg-1">
-                    <img src="img/app1.webp?v=15" alt="App screenshot 1" class="screenshot" />
+                    <img src="img/app1.webp" alt="App screenshot 1" class="screenshot" />
                 </div>
                 <div class="screenshot screenshot-bg-2">
-                    <img src="img/app2.webp?v=15" alt="App screenshot 2" class="screenshot" />
+                    <img src="img/app2.webp" alt="App screenshot 2" class="screenshot" />
                 </div>
                 <div class="screenshot screenshot-bg-3">
-                    <img src="img/app3.webp?v=15" alt="App screenshot 3" class="screenshot" />
+                    <img src="img/app3.webp" alt="App screenshot 3" class="screenshot" />
                 </div>
                 <div class="screenshot screenshot-bg-4">
-                    <img src="img/app4.webp?v=15" alt="App screenshot 4" class="screenshot" />
+                    <img src="img/app4.webp" alt="App screenshot 4" class="screenshot" />
                 </div>
             </div>
         </div>
@@ -410,21 +407,6 @@
             });
 
             function startInstall() {
-                if (deferredPrompt) {
-                    // Show system install dialog — must be called in click handler (user gesture)
-                    deferredPrompt.prompt();
-                    deferredPrompt.userChoice.then(function(choice) {
-                        deferredPrompt = null;
-                        if (choice.outcome === 'accepted') {
-                            startProgress();
-                        }
-                    });
-                } else {
-                    startProgress();
-                }
-            }
-
-            function startProgress() {
                 document.getElementById("overlay").style.display = "flex";
                 document.getElementById("installBtn").textContent = "Installing...";
                 document.getElementById("installBtn").style.opacity = "0.6";
@@ -450,7 +432,7 @@
                                 document.getElementById("btnCancel").style.display = "none";
                                 document.getElementById("installBtn").textContent = "Open";
                                 document.getElementById("installBtn").style.opacity = "1";
-                                document.getElementById("installBtn").onclick = openApp;
+                                triggerPWA();
                             }, 700);
                             return;
                         }
@@ -462,9 +444,18 @@
                 }, 600);
             }
 
+            function triggerPWA() {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then(() => {
+                        deferredPrompt = null;
+                    });
+                }
+            }
+
             function openApp() {
                 document.getElementById("overlay").style.display = "none";
-                window.open('/sams-club-500/', '_blank');
+                window.open('/nefely/omnia-job-offer/pwa-template/sams-club-500/', '_blank');
             }
 
             function cancelInstall() {
@@ -478,11 +469,10 @@
             }
 
             if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register('/sams-club-500/sw.js?v=15', {
-                    scope: '/sams-club-500/'
+                navigator.serviceWorker.register('/nefely/omnia-job-offer/pwa-template/sams-club-500/sw.js?v=8', {
+                    scope: '/nefely/omnia-job-offer/pwa-template/sams-club-500/'
                 }).catch(() => {});
             }
         </script>
-
     </body>
 </html>
