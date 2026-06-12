@@ -1,4 +1,4 @@
-const CACHE = 'pwa-v16';
+const CACHE = 'pwa-v17';
 const BASE = '/sams-club-500';
 const ASSETS = [
     `${BASE}/`,
