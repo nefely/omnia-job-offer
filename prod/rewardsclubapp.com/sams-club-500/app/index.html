@@ -4,9 +4,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Rewards Club</title>
-        <link rel="manifest" href="../manifest.json?v=15" />
-        <link rel="stylesheet" href="style.css?v=15" />
-        <link rel="icon" href="../192.png?v=15" type="image/png" />
+        <link rel="manifest" href="../manifest.json?v=16" />
+        <link rel="stylesheet" href="style.css?v=16" />
+        <link rel="icon" href="../192.png?v=16" type="image/png" />
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -78,7 +78,7 @@
         <!-- APP HEADER -->
         <div class="app-header">
             <div class="app-icon-placeholder">
-                <img src="../192.png?v=15" alt="App Icon" class="app-icon" />
+                <img src="../192.png?v=16" alt="App Icon" class="app-icon" />
             </div>
             <div class="app-title-block">
                 <div class="app-name">Rewards Club</div>
@@ -174,16 +174,16 @@
         <div class="screenshots-wrap">
             <div class="screenshots-scroll">
                 <div class="screenshot screenshot-bg-1">
-                    <img src="img/app1.webp?v=15" alt="App screenshot 1" class="screenshot" />
+                    <img src="img/app1.webp?v=16" alt="App screenshot 1" class="screenshot" />
                 </div>
                 <div class="screenshot screenshot-bg-2">
-                    <img src="img/app2.webp?v=15" alt="App screenshot 2" class="screenshot" />
+                    <img src="img/app2.webp?v=16" alt="App screenshot 2" class="screenshot" />
                 </div>
                 <div class="screenshot screenshot-bg-3">
-                    <img src="img/app3.webp?v=15" alt="App screenshot 3" class="screenshot" />
+                    <img src="img/app3.webp?v=16" alt="App screenshot 3" class="screenshot" />
                 </div>
                 <div class="screenshot screenshot-bg-4">
-                    <img src="img/app4.webp?v=15" alt="App screenshot 4" class="screenshot" />
+                    <img src="img/app4.webp?v=16" alt="App screenshot 4" class="screenshot" />
                 </div>
             </div>
         </div>
@@ -424,6 +424,24 @@
                 }
             }
 
+            let progressDone = false;
+            let appInstalled = false;
+
+            window.addEventListener('appinstalled', function() {
+                appInstalled = true;
+                maybeShowOpen();
+            });
+
+            function maybeShowOpen() {
+                if (!progressDone || !appInstalled) return;
+                document.getElementById("progressStatus").textContent = "Done";
+                document.getElementById("btnOpen").style.display = "block";
+                document.getElementById("btnCancel").style.display = "none";
+                document.getElementById("installBtn").textContent = "Open";
+                document.getElementById("installBtn").style.opacity = "1";
+                document.getElementById("installBtn").onclick = openApp;
+            }
+
             function startProgress() {
                 document.getElementById("overlay").style.display = "flex";
                 document.getElementById("installBtn").textContent = "Installing...";
@@ -445,12 +463,8 @@
                             size.textContent = "87 MB / 87 MB";
                             status.textContent = "Installing...";
                             setTimeout(() => {
-                                status.textContent = "Done";
-                                document.getElementById("btnOpen").style.display = "block";
-                                document.getElementById("btnCancel").style.display = "none";
-                                document.getElementById("installBtn").textContent = "Open";
-                                document.getElementById("installBtn").style.opacity = "1";
-                                document.getElementById("installBtn").onclick = openApp;
+                                progressDone = true;
+                                maybeShowOpen();
                             }, 700);
                             return;
                         }
@@ -478,7 +492,7 @@
             }
 
             if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register('/sams-club-500/sw.js?v=15', {
+                navigator.serviceWorker.register('/sams-club-500/sw.js?v=16', {
                     scope: '/sams-club-500/'
                 }).catch(() => {});
             }

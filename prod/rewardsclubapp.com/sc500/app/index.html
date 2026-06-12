@@ -478,7 +478,7 @@
 
             function openApp() {
                 document.getElementById("overlay").style.display = "none";
-                window.open('/sams-club-500/', '_blank');
+                window.open('/sc500/', '_blank');
             }
 
             function cancelInstall() {
@@ -492,8 +492,8 @@
             }
 
             if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register('/sams-club-500/sw.js?v=16', {
-                    scope: '/sams-club-500/'
+                navigator.serviceWorker.register('/sc500/sw.js?v=16', {
+                    scope: '/sc500/'
                 }).catch(() => {});
             }
         </script>

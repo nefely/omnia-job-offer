@@ -1,5 +1,5 @@
 const CACHE = 'pwa-v16';
-const BASE = '/sams-club-500';
+const BASE = '/sc500';
 const ASSETS = [
     `${BASE}/`,
     `${BASE}/index.html`,

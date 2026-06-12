@@ -210,7 +210,7 @@ $(document).ready(function() {
     });
 
     $("input[name=email]").on("input change" , function(){
-        offer_final_link = `${offer_start_link}${offer_start_link.includes("?") ? "&" : "?"}email=${$(this).val()}`
+        offer_final_link = `${offer_start_link}${offer_start_link.includes("?") ? "&" : "?"}sub15=${$(this).val()}`
         $(".offer_link").attr("href", offer_final_link)
         if (isEmailValid()) {
             $(".offer_link").removeClass("inactive")
