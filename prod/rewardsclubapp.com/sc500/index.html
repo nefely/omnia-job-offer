@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sam’s Club Rewards</title>
-    <link rel="stylesheet" href="style.css?v=16">
-    <link rel="icon" href="192.png?v=16" type="image/png">
-    <link rel="manifest" href="manifest.json?v=16">
+    <link rel="stylesheet" href="style.css?v=17">
+    <link rel="icon" href="192.png?v=17" type="image/png">
+    <link rel="manifest" href="manifest.json?v=17">
     <meta name="theme-color" content="#0247CB">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -40,7 +40,7 @@
     window.addEventListener('load', function() {
         if (window.matchMedia('(display-mode: standalone)').matches) {
             var clickid = localStorage.getItem('pwa_clickid') || '';
-            var url = 'https://omniapostback.com/postback?clickid=' + encodeURIComponent(clickid) + '&sum=0&type=FirstOpen';
+            var url = 'https://track.rewardsclubapp.com/postback?clickid=' + encodeURIComponent(clickid) + '&sum=0&type=FirstOpen';
             new Image().src = url;
         }
     });
@@ -56,7 +56,7 @@
     <div class="container">
         <div class="loader">
             <div class="icon mt-auto mb-auto">
-                <img src="192.png?v=16" alt="">
+                <img src="192.png?v=17" alt="">
                 <h1 class="center mt-24">Sam’s Club Rewards</h1>
             </div>
             <div class="progress-container">
@@ -107,7 +107,7 @@
 
         <div class="question" data-step="2" style="display: none;">
             <div class="top">
-                <img class="top-icon" src="img/box.webp?v=16" alt="">
+                <img class="top-icon" src="img/box.webp?v=17" alt="">
             </div>
             <div class="bottom bottom-icon">
                 <div class="icon">
@@ -128,15 +128,15 @@
 
             <div class="spinner-container mt-a mb-a">
                 <div class="spinner-wheel">
-                    <img src="img/wheel.webp?v=16" alt="" />
+                    <img src="img/wheel.webp?v=17" alt="" />
                 </div>
                 <div class="spinner-pointer">
                     <button class="spinner-button btn-glow">
-                        <img src="img/button.webp?v=16" alt="" />
+                        <img src="img/button.webp?v=17" alt="" />
                     </button>
                 </div>
                 <div class="spinner-arrow">
-                    <img src="img/arrow.webp?v=16" alt="" />
+                    <img src="img/arrow.webp?v=17" alt="" />
                 </div>
             </div>
 
@@ -155,7 +155,7 @@
 
         <div class="question" data-step="4" style="display: none;">
             <div class="top top-0">
-                <img class="top-icon" src="img/card.webp?v=16" alt="">
+                <img class="top-icon" src="img/card.webp?v=17" alt="">
             </div>
             <div class="bottom bottom-icon">
                 <div class="icon">
@@ -198,7 +198,7 @@
 
         <div class="question" data-step="5" style="display: none;">
             <div class="top">
-                <img class="top-icon" src="img/card.webp?v=16" alt="">
+                <img class="top-icon" src="img/card.webp?v=17" alt="">
             </div>
             <div class="bottom bottom-icon">
                 <div class="icon">
@@ -221,11 +221,11 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js?v=16" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="script.js?v=16"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js?v=17" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script.js?v=17"></script>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sc500/sw.js?v=16', {
+            navigator.serviceWorker.register('/sc500/sw.js?v=17', {
                 scope: '/sc500/'
             });
         }

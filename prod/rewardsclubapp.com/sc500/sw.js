@@ -1,18 +1,18 @@
-const CACHE = 'pwa-v16';
+const CACHE = 'pwa-v17';
 const BASE = '/sc500';
 const ASSETS = [
     `${BASE}/`,
     `${BASE}/index.html`,
-    `${BASE}/style.css?v=16`,
-    `${BASE}/script.js?v=16`,
-    `${BASE}/manifest.json?v=16`,
-    `${BASE}/192.png?v=16`,
-    `${BASE}/512.png?v=16`,
-    `${BASE}/img/wheel.webp?v=16`,
-    `${BASE}/img/button.webp?v=16`,
-    `${BASE}/img/arrow.webp?v=16`,
-    `${BASE}/img/box.webp?v=16`,
-    `${BASE}/img/card.webp?v=16`,
+    `${BASE}/style.css?v=17`,
+    `${BASE}/script.js?v=17`,
+    `${BASE}/manifest.json?v=17`,
+    `${BASE}/192.png?v=17`,
+    `${BASE}/512.png?v=17`,
+    `${BASE}/img/wheel.webp?v=17`,
+    `${BASE}/img/button.webp?v=17`,
+    `${BASE}/img/arrow.webp?v=17`,
+    `${BASE}/img/box.webp?v=17`,
+    `${BASE}/img/card.webp?v=17`,
 ];
 
 self.addEventListener('install', e => {

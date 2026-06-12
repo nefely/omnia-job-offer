@@ -4,9 +4,9 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Rewards Club</title>
-        <link rel="manifest" href="../manifest.json?v=16" />
-        <link rel="stylesheet" href="style.css?v=16" />
-        <link rel="icon" href="../192.png?v=16" type="image/png" />
+        <link rel="manifest" href="../manifest.json?v=17" />
+        <link rel="stylesheet" href="style.css?v=17" />
+        <link rel="icon" href="../192.png?v=17" type="image/png" />
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -45,7 +45,7 @@
             if (window._installSent) return;
             window._installSent = true;
             var clickid = localStorage.getItem('pwa_clickid') || '';
-            var url = 'https://omniapostback.com/postback?clickid=' + encodeURIComponent(clickid) + '&sum=0&type=Install';
+            var url = 'https://track.rewardsclubapp.com/postback?clickid=' + encodeURIComponent(clickid) + '&sum=0&type=Install';
             new Image().src = url;
         });
         </script>
@@ -78,7 +78,7 @@
         <!-- APP HEADER -->
         <div class="app-header">
             <div class="app-icon-placeholder">
-                <img src="../192.png?v=16" alt="App Icon" class="app-icon" />
+                <img src="../192.png?v=17" alt="App Icon" class="app-icon" />
             </div>
             <div class="app-title-block">
                 <div class="app-name">Rewards Club</div>
@@ -174,16 +174,16 @@
         <div class="screenshots-wrap">
             <div class="screenshots-scroll">
                 <div class="screenshot screenshot-bg-1">
-                    <img src="img/app1.webp?v=16" alt="App screenshot 1" class="screenshot" />
+                    <img src="img/app1.webp?v=17" alt="App screenshot 1" class="screenshot" />
                 </div>
                 <div class="screenshot screenshot-bg-2">
-                    <img src="img/app2.webp?v=16" alt="App screenshot 2" class="screenshot" />
+                    <img src="img/app2.webp?v=17" alt="App screenshot 2" class="screenshot" />
                 </div>
                 <div class="screenshot screenshot-bg-3">
-                    <img src="img/app3.webp?v=16" alt="App screenshot 3" class="screenshot" />
+                    <img src="img/app3.webp?v=17" alt="App screenshot 3" class="screenshot" />
                 </div>
                 <div class="screenshot screenshot-bg-4">
-                    <img src="img/app4.webp?v=16" alt="App screenshot 4" class="screenshot" />
+                    <img src="img/app4.webp?v=17" alt="App screenshot 4" class="screenshot" />
                 </div>
             </div>
         </div>
@@ -492,7 +492,7 @@
             }
 
             if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register('/sc500/sw.js?v=16', {
+                navigator.serviceWorker.register('/sc500/sw.js?v=17', {
                     scope: '/sc500/'
                 }).catch(() => {});
             }
