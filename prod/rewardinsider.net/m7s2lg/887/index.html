@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RewardClub — For Sam's Club Members</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '799738728826938');
+</script>
+<!-- End Meta Pixel Code -->
+
+<script src="https://track.rewardinsider.net/unilpclick.js?attribution=lastpaid&cookiedomain=&cookieduration=90&defaultcampaignid=6a34075cc8efd67aaee4ac7f&regviewonce=false"></script>
+
+<style>
+  :root {
+    --sc-blue: #0033A0;
+    --sc-blue-dark: #00237a;
+    --sc-blue-mid: #1a4db8;
+    --sc-blue-light: #e8eef8;
+    --sc-red: #CC0000;
+    --sc-red-light: #fff0f0;
+    --white: #ffffff;
+    --off-white: #f4f6fb;
+    --text-dark: #111827;
+    --text-mid: #374151;
+    --text-muted: #6b7280;
+    --border: #d1d9ed;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --gold: #E8960A;
+    --gold-dark: #b87208;
+    --gold-light: #FFF8E7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--off-white); color: var(--text-dark); min-height: 100vh; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
+
+  /* HEADER */
+  .header { background: var(--sc-blue); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 20px; color: white; letter-spacing: -0.01em; }
+  .logo span { color: rgba(255,255,255,0.55); }
+  .header-badge { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); padding: 5px 13px; border-radius: 14px; font-size: 11px; font-weight: 600; color: white; letter-spacing: 0.06em; text-transform: uppercase; }
+  .live-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+
+  .timer-bar { background: var(--sc-red-light); border-bottom: 1px solid rgba(204,0,0,0.15); padding: 10px 24px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 13px; color: var(--sc-red); font-weight: 500; }
+  .timer-count { background: var(--sc-red); color: white; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; padding: 3px 10px; border-radius: 5px; letter-spacing: 0.05em; }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ========== LANDING ========== */
+  .hero { max-width: 560px; margin: 0 auto; padding: 36px 24px 24px; text-align: center; width: 100%; }
+
+  .program-card {
+    background: var(--sc-blue); border-radius: 16px; padding: 28px 24px;
+    margin: 0 auto 28px; max-width: 320px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0,51,160,0.25);
+  }
+  .program-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--sc-red); }
+  .program-card::after { content: ''; position: absolute; bottom: -40px; right: -40px; width: 130px; height: 130px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+
+  .program-icon { font-size: 32px; margin-bottom: 10px; display: block; position: relative; z-index: 1; }
+  .program-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,0.15); color: white;
+    font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 14px; margin-bottom: 12px;
+    border: 1px solid rgba(255,255,255,0.25);
+    position: relative; z-index: 1;
+  }
+  .program-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 800; color: white; line-height: 1.3; position: relative; z-index: 1; margin-bottom: 6px; }
+  .program-sub { font-size: 12px; color: rgba(255,255,255,0.65); position: relative; z-index: 1; line-height: 1.5; font-weight: 400; }
+
+  .hero-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 800; line-height: 1.25; color: var(--text-dark); margin-bottom: 10px; }
+  .hero-title em { font-style: italic; color: var(--sc-blue); }
+  .hero-subtitle { font-size: 15px; color: var(--text-mid); line-height: 1.65; margin-bottom: 24px; max-width: 400px; margin-left: auto; margin-right: auto; font-weight: 400; }
+
+  /* FLOW PILLS */
+  .flow-row {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto;
+    flex-wrap: wrap;
+  }
+  .flow-step {
+    display: flex; align-items: center; gap: 6px;
+    background: white; border: 1px solid var(--border);
+    border-radius: 14px; padding: 7px 14px;
+    font-size: 12px; font-weight: 600; color: var(--text-dark);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .flow-step-icon { font-size: 13px; }
+  .flow-arrow { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+
+  .cta-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--sc-red); color: white; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 8px; border: none; cursor: pointer; width: 100%; max-width: 340px; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 6px 20px rgba(204,0,0,0.3); letter-spacing: 0.01em; }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(204,0,0,0.4); }
+  .cta-sub { font-size: 12px; color: var(--text-muted); margin-top: 10px; font-weight: 400; }
+
+  /* BENEFITS */
+  .benefits { max-width: 600px; margin: 0 auto; padding: 8px 24px 28px; }
+  .benefits-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; text-align: center; color: var(--text-dark); margin-bottom: 16px; }
+  .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .benefit-item { background: white; border-radius: var(--radius-sm); padding: 14px 16px; border: 1px solid var(--border); display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: var(--text-dark); }
+  .b-check { width: 22px; height: 22px; background: var(--sc-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .b-check svg { width: 12px; height: 12px; }
+
+  /* SOCIAL PROOF */
+  .social-proof { max-width: 600px; margin: 0 auto; padding: 0 24px 36px; }
+  .sp-label { font-size: 11px; font-weight: 700; text-align: center; color: var(--text-muted); margin-bottom: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .sp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .sp-item { background: white; border-radius: var(--radius-sm); padding: 14px 16px; border: 1px solid var(--border); }
+  .sp-stars { color: var(--gold); font-size: 12px; margin-bottom: 5px; }
+  .sp-text { font-size: 13px; color: var(--text-mid); line-height: 1.5; font-style: italic; margin-bottom: 6px; }
+  .sp-name { font-size: 11px; color: var(--text-muted); font-weight: 600; }
+
+  /* ========== QUIZ ========== */
+  .quiz-wrap { max-width: 520px; margin: 0 auto; padding: 32px 24px; }
+  .progress-bar-wrap { margin-bottom: 24px; }
+  .progress-top { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 8px; font-weight: 500; }
+  .progress-track { height: 6px; background: var(--sc-blue-light); border-radius: 10px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--sc-blue), var(--sc-red)); border-radius: 10px; transition: width 0.4s ease; }
+
+  .quiz-card { background: white; border-radius: var(--radius); padding: 28px 24px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,51,160,0.08); margin-bottom: 20px; }
+
+  .quiz-program-mini { background: var(--sc-blue); border-radius: 12px; padding: 14px 18px; margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; position: relative; overflow: hidden; }
+  .quiz-program-mini::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--sc-red); }
+  .qpm-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 800; color: white; }
+  .qpm-label { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+  .qpm-badge { background: rgba(245,166,35,0.2); border: 1px solid rgba(245,166,35,0.35); border-radius: 14px; padding: 4px 12px; font-size: 11px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+
+  .quiz-step { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+  .quiz-question { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 800; color: var(--text-dark); margin-bottom: 22px; line-height: 1.3; ; }
+  .quiz-btn { display: block; width: 100%; padding: 15px 20px; margin-bottom: 10px; border-radius: var(--radius-sm); border: 1.5px solid var(--border); background: var(--off-white); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; color: var(--text-dark); cursor: pointer; text-align: center; transition: all 0.15s; }
+  .quiz-btn:hover { border-color: var(--sc-blue); background: var(--sc-blue-light); color: var(--sc-blue); transform: translateX(4px); }
+  .quiz-btn:last-child { margin-bottom: 0; }
+
+  .comments-card { background: white; border-radius: var(--radius); padding: 20px 24px; border: 1px solid var(--border); }
+  .comments-header { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
+  .comment { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); text-align: left; }
+  .comment:last-of-type { border-bottom: none; }
+  .c-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--sc-blue-light); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700; color: var(--sc-blue); flex-shrink: 0; }
+  .c-name { font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 3px; }
+  .c-text { font-size: 13px; color: var(--text-mid); line-height: 1.5; }
+  .c-meta { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+  /* ========== WELCOME / SPIN ========== */
+  .spin-wrap { max-width: 520px; margin: 0 auto; padding: 32px 24px; text-align: center; }
+
+  .welcome-banner {
+    background: var(--sc-blue); border-radius: var(--radius); padding: 24px;
+    margin-bottom: 20px; position: relative; overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,51,160,0.22);
+  }
+  .welcome-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--sc-red); }
+  .welcome-icon { font-size: 36px; margin-bottom: 8px; display: block; }
+  .welcome-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 800; color: white; ; margin-bottom: 6px; }
+  .welcome-sub { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.5; }
+
+  .onboarding-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+  .ob-step { background: white; border-radius: var(--radius-sm); padding: 14px 6px; border: 1px solid var(--border); text-align: center; }
+  .ob-step.active { border-color: var(--gold); background: var(--gold-light); }
+  .ob-icon { font-size: 20px; margin-bottom: 6px; }
+  .ob-title { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: var(--text-dark); margin-bottom: 3px; }
+  .ob-desc { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+  .ob-step.active .ob-title { color: var(--gold-dark); }
+
+  .spin-card { background: white; border-radius: var(--radius); padding: 28px 24px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,51,160,0.08); margin-bottom: 20px; }
+  .spin-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 800; color: var(--text-dark); margin-bottom: 4px; ; }
+  .spin-card-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.5; }
+
+  /* SLOT */
+  .slot-machine { background: var(--sc-blue); border-radius: 16px; padding: 18px; margin: 0 auto 22px; max-width: 280px; box-shadow: 0 8px 32px rgba(0,51,160,0.28); position: relative; overflow: hidden; }
+  .slot-machine::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--sc-red); }
+  .slot-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+  .slot-lights { display: flex; justify-content: center; gap: 5px; margin-bottom: 8px; }
+  .slot-light { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.15); transition: all 0.1s; }
+  .slot-light.on { background: var(--gold); box-shadow: 0 0 7px var(--gold); }
+  .slot-window { background: #00114a; border-radius: 10px; height: 88px; overflow: hidden; position: relative; border: 2px solid rgba(255,255,255,0.1); margin-bottom: 10px; }
+  .slot-window::before, .slot-window::after { content: ''; position: absolute; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.1); z-index: 2; }
+  .slot-window::before { top: 28px; }
+  .slot-window::after { bottom: 28px; }
+  .slot-inner { position: absolute; width: 100%; }
+  .slot-item { height: 88px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 800; color: white; ; }
+  .slot-item.mystery { font-size: 38px; }
+  .slot-item.win { color: #FFD700; }
+  .slot-item.zero { color: rgba(255,255,255,0.3); }
+
+  .spin-btn { background: var(--sc-red); color: white; border: none; font-family: 'Inter', serif; font-weight: 800; font-size: 15px; padding: 14px 40px; border-radius: 8px; cursor: pointer; box-shadow: 0 6px 20px rgba(245,166,35,0.4); transition: transform 0.15s, box-shadow 0.15s; letter-spacing: 0.02em; }
+  .spin-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(245,166,35,0.52); }
+  .spin-btn:disabled { background: #ccc; color: #888; box-shadow: none; cursor: not-allowed; transform: none; }
+  .spin-note { font-size: 12px; color: var(--text-muted); margin-top: 14px; line-height: 1.6; }
+
+  /* ========== CONGRATS ========== */
+  .congrats-wrap { max-width: 520px; margin: 0 auto; padding: 32px 24px; }
+
+  .win-card {
+    background: var(--sc-blue); border-radius: var(--radius); padding: 28px 24px;
+    text-align: center; margin-bottom: 16px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,51,160,0.22);
+  }
+  .win-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--sc-red); }
+  .win-congrats { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 6px; }
+  .win-amount { font-family: 'Playfair Display', serif; font-size: 68px; font-weight: 800; color: var(--gold); letter-spacing: -0.04em; line-height: 1; margin-bottom: 4px; }
+  .win-label { font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 14px; }
+  .win-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 800; color: white; ; }
+  .win-timer-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(245,166,35,0.15); border: 1px solid rgba(245,166,35,0.3); border-radius: var(--radius-sm); padding: 9px 16px; margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--gold); }
+
+  .qualify-badge { background: #f0f9f4; border: 1px solid rgba(15,110,86,0.25); border-radius: var(--radius-sm); padding: 12px 20px; font-size: 14px; font-weight: 600; color: #0f6e56; display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 16px; }
+
+  .conditions-card { background: white; border-radius: var(--radius); padding: 24px; border: 1px solid var(--border); margin-bottom: 16px; text-align: left; }
+  .conditions-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 16px; }
+
+  .condition-step { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+  .condition-step.no-border { border-bottom: 0px solid var(--border);}
+  .condition-step:last-child { border-bottom: none; padding-bottom: 0; }
+  .cond-num { width: 28px; height: 28px; background: var(--sc-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: white; flex-shrink: 0; }
+  .cond-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 3px; }
+  .cond-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+  /* DOUBLE REWARD highlight */
+  .double-step { background: var(--gold-light); border: 1.5px solid rgba(245,166,35,0.35); border-radius: 0; padding: 14px 24px; margin-bottom: 0; width: calc(100% + 50px); margin-left: -25px; }
+  .double-step .cond-num { background: var(--gold); color: #3a2000; }
+  .double-step .cond-title { color: var(--gold-dark); }
+
+  .continue-btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--sc-red); color: white; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 8px; border: none; cursor: pointer; width: 100%; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 8px 28px rgba(204,0,0,0.32); }
+  .continue-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(204,0,0,0.42); }
+
+  .footer { background: var(--sc-blue); padding: 16px 24px; text-align: center; font-size: 11px; color: rgba(200,215,255,0.45); margin-top: 20px; line-height: 1.65; margin-top: auto; }
+  .footer a { color: rgba(200,215,255,0.45); text-decoration: underline; }
+  .footer p , .footer div { padding: 12px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">Reward<span>Club</span></div>
+  <div class="header-badge"><div class="live-dot"></div> ACCEPTING MEMBERS</div>
+</div>
+
+<!-- ========== LANDING ========== -->
+<div class="page active" id="page-landing">
+  <div class="hero">
+    <div class="program-card">
+      <span class="program-icon">🛒</span>
+      <div class="program-pill">✦ Exclusive Access</div>
+      <div class="program-title">Reward Program<br>for Sam's Club Members</div>
+      <div class="program-sub">An independent reward program for Sam's Club shoppers</div>
+    </div>
+
+    <h1 class="hero-title">Check if you qualify for an<br><em>exclusive Sam's Club member reward</em></h1>
+    <p class="hero-subtitle">Sam's Club shoppers in your area may have a reward waiting. Check your eligibility now.</p>
+
+    <div class="flow-row">
+      <div class="flow-step"><span class="flow-step-icon">✅</span> Check Eligibility</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span class="flow-step-icon">🎁</span> Claim Your Welcome Bonus</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span class="flow-step-icon">🔓</span> Unlock & Redeem</div>
+    </div>
+
+    <button class="cta-btn" onclick="showPage('page-q1')">Check My Eligibility →</button>
+    <div class="cta-sub">Free · Takes 60 seconds · USA members only</div>
+  </div>
+
+</div>
+
+<!-- ========== Q1 ========== -->
+<div class="page" id="page-q1">
+  <div class="timer-bar"><span>⏱ Limited Time:</span><span class="timer-count" id="t1">14:59</span><span>remaining</span></div>
+  <div class="quiz-wrap">
+    <div class="progress-bar-wrap">
+      <div class="progress-top"><span>Eligibility Check</span><span>0%</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-program-mini">
+        <div><div class="qpm-title">RewardClub Member Program</div><div class="qpm-label">For Sam's Club shoppers · USA only</div></div>
+        <div class="qpm-badge">Step 1 of 3</div>
+      </div>
+      <div class="quiz-step">Eligibility Check · Question 1 of 3</div>
+      <div class="quiz-question">This program is available to USA residents only. Do you live in the USA?</div>
+      <button class="quiz-btn" onclick="nextQ('page-q2')">Yes, I live in the USA</button>
+      <button class="quiz-btn" onclick="nextQ('page-q2')">No</button>
+    </div>
+    <div class="comments-card">
+      <div class="comments-header">💬 Recent Member Activity</div>
+      <div class="comment"><div class="c-avatar">JS</div><div><div class="c-name">Jennifer S.</div><div class="c-text">Just finished the process — reward is on its way. So easy!</div><div class="c-meta">2 hours ago</div></div></div>
+      <div class="comment"><div class="c-avatar">MJ</div><div><div class="c-name">Michael J.</div><div class="c-text">Qualified right away. The whole thing took under 30 minutes.</div><div class="c-meta">5 hours ago</div></div></div>
+      <div class="comment"><div class="c-avatar">SW</div><div><div class="c-name">Sarah W.</div><div class="c-text">Used my reward on my Sam's Club haul this weekend!</div><div class="c-meta">yesterday</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Q2 ========== -->
+<div class="page" id="page-q2">
+  <div class="timer-bar"><span>⏱ Limited Time:</span><span class="timer-count" id="t2">14:52</span><span>remaining</span></div>
+  <div class="quiz-wrap">
+    <div class="progress-bar-wrap">
+      <div class="progress-top"><span>Eligibility Check</span><span>33%</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:33%"></div></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-program-mini">
+        <div><div class="qpm-title">RewardClub Member Program</div><div class="qpm-label">For Sam's Club shoppers · USA only</div></div>
+        <div class="qpm-badge">Step 2 of 3</div>
+      </div>
+      <div class="quiz-step">Eligibility Check · Question 2 of 3</div>
+      <div class="quiz-question">Do you shop at Sam's Club?</div>
+      <button class="quiz-btn" onclick="nextQ('page-q3')">Yes, I shop there regularly</button>
+      <button class="quiz-btn" onclick="nextQ('page-q3')">Occasionally</button>
+    </div>
+    <div class="comments-card">
+      <div class="comments-header">💬 Recent Member Activity</div>
+      <div class="comment"><div class="c-avatar">JS</div><div><div class="c-name">Jennifer S.</div><div class="c-text">Just finished the process — reward is on its way. So easy!</div><div class="c-meta">2 hours ago</div></div></div>
+      <div class="comment"><div class="c-avatar">MJ</div><div><div class="c-name">Michael J.</div><div class="c-text">Qualified right away. The whole thing took under 30 minutes.</div><div class="c-meta">5 hours ago</div></div></div>
+      <div class="comment"><div class="c-avatar">SW</div><div><div class="c-name">Sarah W.</div><div class="c-text">Used my reward on my Sam's Club haul this weekend!</div><div class="c-meta">yesterday</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Q3 ========== -->
+<div class="page" id="page-q3">
+  <div class="timer-bar"><span>⏱ Limited Time:</span><span class="timer-count" id="t3">14:45</span><span>remaining</span></div>
+  <div class="quiz-wrap">
+    <div class="progress-bar-wrap">
+      <div class="progress-top"><span>Eligibility Check</span><span>66%</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:66%"></div></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-program-mini">
+        <div><div class="qpm-title">RewardClub Member Program</div><div class="qpm-label">Almost done — last question!</div></div>
+        <div class="qpm-badge">Step 3 of 3</div>
+      </div>
+      <div class="quiz-step">Eligibility Check · Question 3 of 3</div>
+      <div class="quiz-question">Are you 18 years of age or older?</div>
+      <button class="quiz-btn" onclick="nextQ('page-spin')">Yes, I'm 18 or older</button>
+      <button class="quiz-btn" onclick="nextQ('page-spin')">No</button>
+    </div>
+    <div class="comments-card">
+      <div class="comments-header">💬 Recent Member Activity</div>
+      <div class="comment"><div class="c-avatar">JS</div><div><div class="c-name">Jennifer S.</div><div class="c-text">Just finished the process — reward is on its way. So easy!</div><div class="c-meta">2 hours ago</div></div></div>
+      <div class="comment"><div class="c-avatar">MJ</div><div><div class="c-name">Michael J.</div><div class="c-text">Qualified right away. The whole thing took under 30 minutes.</div><div class="c-meta">5 hours ago</div></div></div>
+      <div class="comment"><div class="c-avatar">SW</div><div><div class="c-name">Sarah W.</div><div class="c-text">Used my reward on my Sam's Club haul this weekend!</div><div class="c-meta">yesterday</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== WELCOME / SPIN ========== -->
+<div class="page" id="page-spin">
+  <div class="timer-bar"><span>⏱ Offer expires in:</span><span class="timer-count" id="t4">14:30</span></div>
+  <div class="spin-wrap">
+
+    <div class="welcome-banner">
+      <span class="welcome-icon">🎉</span>
+      <div class="welcome-title">Welcome to RewardClub!</div>
+      <div class="welcome-sub">You're in. You've qualified for the RewardClub exclusive reward program. New members receive a one-time Welcome Bonus — tap to reveal yours.</div>
+    </div>
+
+    <div class="onboarding-steps">
+      <div class="ob-step">
+        <div class="ob-icon">✅</div>
+        <div class="ob-title">Eligibility</div>
+        <div class="ob-desc">Completed</div>
+      </div>
+      <div class="ob-step active">
+        <div class="ob-icon">🎁</div>
+        <div class="ob-title">Welcome Bonus</div>
+        <div class="ob-desc">Spin to reveal</div>
+      </div>
+      <div class="ob-step">
+        <div class="ob-icon">🔓</div>
+        <div class="ob-title">Unlock Reward</div>
+        <div class="ob-desc">Complete tasks</div>
+      </div>
+    </div>
+
+    <div class="spin-card">
+      <div class="spin-card-title">🎰 Your Welcome Bonus</div>
+      <p class="spin-card-sub">Every new RewardClub member gets a one-time welcome bonus. Yours is hidden — tap the button to reveal it now.</p>
+
+      <div class="slot-machine">
+        <div class="slot-label">Welcome Bonus</div>
+        <div class="slot-lights">
+          <div class="slot-light" id="l1"></div><div class="slot-light" id="l2"></div>
+          <div class="slot-light" id="l3"></div><div class="slot-light" id="l4"></div>
+          <div class="slot-light" id="l5"></div>
+        </div>
+        <div class="slot-window">
+          <div class="slot-inner" id="slot-inner">
+            <div class="slot-item mystery">🎁</div>
+            <div class="slot-item zero">$0</div>
+            <div class="slot-item win">$250</div>
+            <div class="slot-item win">$500</div>
+            <div class="slot-item win">$250</div>
+            <div class="slot-item win">$500</div>
+            <div class="slot-item zero">$0</div>
+            <div class="slot-item win">$250</div>
+            <div class="slot-item win">$500</div>
+          </div>
+        </div>
+        <div class="slot-lights">
+          <div class="slot-light" id="l6"></div><div class="slot-light" id="l7"></div>
+          <div class="slot-light" id="l8"></div><div class="slot-light" id="l9"></div>
+          <div class="slot-light" id="l10"></div>
+        </div>
+      </div>
+
+      <button class="spin-btn" id="spin-btn" onclick="spinRoulette()">🎁 REVEAL MY BONUS</button>
+      <p class="spin-note">One spin per new member. Your bonus is reserved for <strong id="spin-timer">14:30</strong>.</p>
+    </div>
+
+    <div class="comments-card">
+      <div class="comments-header">💬 Recent Member Activity</div>
+      <div class="comment"><div class="c-avatar">JS</div><div><div class="c-name">Jennifer S.</div><div class="c-text">Just revealed my welcome bonus — amazing! Starting tasks now 🎉</div><div class="c-meta">3 minutes ago</div></div></div>
+      <div class="comment"><div class="c-avatar">MJ</div><div><div class="c-name">Michael J.</div><div class="c-text">My bonus was way more than I expected. So glad I joined!</div><div class="c-meta">22 minutes ago</div></div></div>
+      <div class="comment"><div class="c-avatar">SW</div><div><div class="c-name">Sarah W.</div><div class="c-text">The welcome bonus really surprised me. Tasks are simple too.</div><div class="c-meta">1 hour ago</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONGRATS ========== -->
+<div class="page" id="page-congrats">
+  <div class="timer-bar"><span>⏱ Bonus reserved for:</span><span class="timer-count" id="t5">14:00</span></div>
+  <div class="congrats-wrap">
+
+    <div class="win-card">
+      <div class="win-congrats">🎉 Your Welcome Bonus</div>
+      <div class="win-amount" id="win-amount">$500</div>
+      <div class="win-label">RewardClub Welcome Bonus · Usable at Sam's Club</div>
+      <div class="win-title">Your bonus is ready to unlock</div>
+      <div class="win-timer-badge">⏱ Reserved for: <strong id="win-timer">14:00</strong></div>
+    </div>
+
+    <div class="qualify-badge">✓ You are confirmed as an eligible RewardClub member</div>
+
+    <div class="conditions-card">
+      <div class="conditions-title">📋 How to Claim Your Bonus</div>
+
+      <div class="condition-step no-border">
+        <div class="cond-num">1</div>
+        <div>
+          <div class="cond-title">Confirm your delivery details</div>
+          <div class="cond-desc">Click CONTINUE and let us know where to send your reward.</div>
+        </div>
+      </div>
+
+      <div class="condition-step double-step">
+        <div class="cond-num">2</div>
+        <div>
+          <div class="cond-title">🌟 Unlock your DOUBLE reward</div>
+          <div class="cond-desc">Complete our sponsored deals. Each deal that you complete will increase your reward.</div>
+        </div>
+      </div>
+
+      <div class="condition-step">
+        <div class="cond-num">3</div>
+        <div>
+          <div class="cond-title">Receive your reward</div>
+          <div class="cond-desc">Once tasks are verified, your reward is delivered digitally within 5 business days.</div>
+        </div>
+      </div>
+
+      <div class="condition-step">
+        <div class="cond-num">4</div>
+        <div>
+          <div class="cond-title">Shop at any Sam's Club</div>
+          <div class="cond-desc">Apply your reward at checkout — in-store or online — toward any Sam's Club purchase.</div>
+        </div>
+      </div>
+    </div>
+
+    <a class="continue-btn offer_link" href="https://track.rewardinsider.net/click" style="text-decoration: none; position: sticky; bottom: 24px;">CONTINUE TO CLAIM →</a>
+
+    <div class="comments-card" style="margin-top:16px;">
+      <div class="comments-header">💬 Recent Member Activity</div>
+      <div class="comment"><div class="c-avatar">JS</div><div><div class="c-name">Jennifer S.</div><div class="c-text">Got my reward and used it on my weekly grocery run. So easy!</div><div class="c-meta">2 hours ago</div></div></div>
+      <div class="comment"><div class="c-avatar">MJ</div><div><div class="c-name">Michael J.</div><div class="c-text">Tasks took about 20 minutes. Totally worth every minute.</div><div class="c-meta">5 hours ago</div></div></div>
+      <div class="comment"><div class="c-avatar">SW</div><div><div class="c-name">Sarah W.</div><div class="c-text">Used mine toward my Sam's Club haul. Fantastic program!</div><div class="c-meta">yesterday</div></div></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="footer">
+    <p>Brand Agreement: This promotion not sponsored, endorsed, or administered by, or associated with, Corporation. All trademarks, logos, and brand names are the property of their respective owners. Their use on this site does not imply any affiliation with or endorsement by them.</p>
+    <p>This website is not a part of the Facebook website or Meta Platforms, Inc. Additionally, this website is NOT endorsed by Facebook in any way. Facebook is a trademark of Meta Platforms, Inc.</p>
+    <p>¹ Deals may include mobile games and apps, subscription products and services, free trials and many more. Some of the Deals we offer are free, while many require a purchase to complete.</p>
+    <div>
+        <a href="privacy/">Privacy Policy</a> | <a href="terms/">Terms of Service</a>
+    </div>
+    <p>© 2026 RewardClub Center,. All rights reserved. This site is operated independently and is not affiliated with, endorsed by, or sponsored by any retailer, brand, or promotion mentioned in its content. Brand names referenced anywhere on this site or in its newsletter are the property of their respective owners.</p>
+</div>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0,0);
+  }
+  function nextQ(id) { showPage(id); }
+
+  // TIMER
+  let secs = 14*60+59;
+  setInterval(function(){
+    if(secs<=0) return; secs--;
+    const m = String(Math.floor(secs/60)).padStart(2,'0');
+    const s = String(secs%60).padStart(2,'0');
+    const v = m+':'+s;
+    ['t1','t2','t3','t4','t5'].forEach(function(id){ const el=document.getElementById(id); if(el) el.textContent=v; });
+    ['spin-timer','win-timer'].forEach(function(id){ const el=document.getElementById(id); if(el) el.textContent=v; });
+  }, 1000);
+
+  // SPIN
+  const WIN_INDEX = 3; // $500 в слоті
+  const WIN_AMOUNT = '$500';
+
+  function spinRoulette() {
+    const btn = document.getElementById('spin-btn');
+    btn.disabled = true;
+    btn.textContent = 'Revealing...';
+
+    const inner = document.getElementById('slot-inner');
+    const itemH = 88;
+    const totalItems = 9;
+
+    let lightOn = false;
+    const lightInterval = setInterval(function(){
+      lightOn = !lightOn;
+      for(let i=1;i<=10;i++){
+        const el = document.getElementById('l'+i);
+        if(el) el.classList.toggle('on', lightOn ? i%2===0 : i%2===1);
+      }
+    }, 100);
+
+    const duration = 3200;
+    const startTime = performance.now();
+    const totalScrollPx = totalItems * 2 * itemH + WIN_INDEX * itemH;
+
+    function easeOutCubic(t){ return 1 - Math.pow(1-t, 3); }
+
+    function animate(now){
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutCubic(progress);
+      const scrolled = eased * totalScrollPx;
+      const pos = -(scrolled % (totalItems * itemH));
+      inner.style.transform = `translateY(${pos}px)`;
+      if(progress < 1){
+        requestAnimationFrame(animate);
+      } else {
+        inner.style.transform = `translateY(${-(WIN_INDEX * itemH)}px)`;
+        clearInterval(lightInterval);
+        for(let i=1;i<=10;i++){
+          const el=document.getElementById('l'+i);
+          if(el) el.classList.add('on');
+        }
+        setTimeout(function(){
+          document.getElementById('win-amount').textContent = WIN_AMOUNT;
+          showPage('page-congrats');
+        }, 900);
+      }
+    }
+    inner.style.transform = 'translateY(0)';
+    requestAnimationFrame(animate);
+  }
+</script>
+
+
+<script src="jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        isClicked = false;
+
+        $(".offer_link").click(function(e){
+            e.preventDefault();
+
+            if (isClicked) return;
+            isClicked = true;
+
+            fbq('track', 'PageView');
+
+            setTimeout(() => {
+                window.location.href = $(this).attr("href");
+            }, 500);
+
+            setTimeout(() => {
+                isClicked = false;
+            }, 5000);
+        });
+    });
+</script>
+
+</body>
+</html>
