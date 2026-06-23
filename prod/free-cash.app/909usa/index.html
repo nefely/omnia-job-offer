@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get rewarded for testing apps, games & surveys</title>
+
+<!-- Snap  Pixel Code -->
+<script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', '53cee5ac-73a4-4be5-87d5-76a7143e506e', { 'user_email': '__INSERT_USER_EMAIL__' });  </script>
+<!-- End Snap Pixel Code -->
+
+<script src="https://track.free-cash.app/unilpclick.js?attribution=lastpaid&cookiedomain=&cookieduration=90&defaultcampaignid=6a0475736f97f55cc3f2b182&regviewonce=false"></script>
+
+
+<style>
+:root {
+    --bg: #0d1117;
+    --bg-card: #161b26;
+    --bg-card-hover: #1c2230;
+    --border: #232a38;
+    --text: #f2f5f9;
+    --text-muted: #93a0b4;
+    --green: #00d26a;
+    --green-dark: #00b85c;
+    --green-soft: rgba(0, 210, 106, 0.12);
+    --radius: 16px;
+    --maxw: 760px;
+    --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.pad {
+    padding: 0 20px;
+}
+.wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+}
+
+/* ---------- HERO ---------- */
+.hero-shell {
+    position: relative;
+    overflow: hidden;
+}
+
+/* decorative abstract app-tile field + glow (no real logos) */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.hero-bg .hero-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: url("img/hero-shadow-bg-2-sm.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    opacity: 0.16;
+}
+/* dark veil over the collage: keeps logos visible up top, fades to solid bg + lifts text contrast */
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(13, 17, 23, 0.35) 0%,
+        rgba(13, 17, 23, 0.62) 30%,
+        rgba(13, 17, 23, 0.9) 48%,
+        var(--bg) 60%);
+    pointer-events: none;
+}
+.hero-bg .glow {
+    position: absolute;
+    left: 50%;
+    top: -10%;
+    width: 620px;
+    height: 620px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(0, 210, 106, 0.22) 0%, rgba(0, 210, 106, 0) 62%);
+    filter: blur(8px);
+}
+.hero-bg .tiles {
+    display: none;
+    position: absolute;
+    inset: 0;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 14px;
+    opacity: 0.5;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 0%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 0%, transparent 75%);
+}
+.hero-bg .tiles span {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 24px 0 24px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 24px;
+}
+.brand-icon {
+    width: 32px;
+    height: 32px;
+}
+.brand-text {
+    font-size: 26px;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    line-height: 1;
+}
+.b-free {
+    color: var(--green);
+}
+.b-cash {
+    color: var(--text-muted);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: var(--green-soft);
+    border: 1px solid rgba(0, 210, 106, 0.22);
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+}
+.eyebrow svg {
+    width: 15px;
+    height: 15px;
+}
+
+h1 {
+    font-size: clamp(32px, 7vw, 54px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+}
+h1 .accent {
+    color: var(--green);
+}
+
+.sub {
+    font-size: clamp(16px, 2.6vw, 19px);
+    color: var(--text-muted);
+    max-width: 540px;
+    margin: 0 auto 20px;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 430px;
+    background: var(--green);
+    color: #07120b;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    text-align: center;
+    padding: 18px 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 210, 106, 0.25);
+    transition:
+        transform 0.12s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+.cta:hover {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 36px rgba(0, 210, 106, 0.32);
+}
+.cta:active {
+    transform: translateY(0);
+}
+.cta svg {
+    width: 20px;
+    height: 20px;
+}
+
+.cta-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 14px;
+}
+
+/* ---------- PAYOUT CHIPS ---------- */
+.payouts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 8px 13px;
+    border-radius: 999px;
+}
+.chip svg {
+    width: 15px;
+    height: 15px;
+    color: var(--green);
+}
+
+/* ---------- STATS STRIP (real Freecash data) ---------- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 24px 0 52px;
+}
+.stat {
+    background: var(--bg-card);
+    padding: 24px 14px;
+    text-align: center;
+}
+.stat .ic {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 12px;
+    display: grid;
+    place-items: center;
+    background: var(--green-soft);
+    border-radius: 10px;
+    color: var(--green);
+}
+.stat .ic svg {
+    width: 20px;
+    height: 20px;
+}
+.stat .num {
+    font-size: clamp(18px, 3vw, 23px);
+    font-weight: 800;
+    color: var(--text);
+}
+.stat .num.green {
+    color: var(--green);
+}
+.stat .lbl {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.35;
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+    padding: 8px 0 52px;
+}
+.section h2 {
+    font-size: clamp(24px, 4.5vw, 32px);
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+}
+
+/* ---------- HOW IT WORKS ---------- */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.step {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    position: relative;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+.step:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(0, 210, 106, 0.3);
+}
+.step .n {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: var(--green);
+    color: #07120b;
+    border-radius: 12px;
+}
+.step .n svg {
+    width: 22px;
+    height: 22px;
+}
+.step .body {
+    flex: 1;
+}
+.step .body .t {
+    font-weight: 700;
+    font-size: 17px;
+}
+.step .body .d {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+.step .idx {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+/* ---------- TRUST / REVIEWS ---------- */
+.trust {
+    text-align: center;
+    padding: 8px 0 52px;
+}
+.trust .placeholder {
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+    cursor: pointer;
+}
+.btn-empty {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1.5px solid var(--green);
+    color: var(--green);
+}
+.btn-empty:hover {
+    background: rgba(0, 210, 106, 0.12);
+    transform: translateY(-1px);
+}
+
+/* ---------- FINAL CTA ---------- */
+.final {
+    text-align: center;
+    padding: 44px 24px;
+    background: radial-gradient(ellipse 70% 120% at 50% 0%, rgba(0, 210, 106, 0.1), transparent 70%);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    margin-bottom: 44px;
+}
+.final h2 {
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+/* ---------- SLOT MACHINE ---------- */
+.slot-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.slot-card {
+  background: #161b26;
+  border: 1px solid #232a38;
+  border-radius: 20px;
+  padding: 24px 24px 20px;
+  width: 100%;
+  max-width: 430px;
+  text-align: center;
+}
+.slot-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 14px;
+}
+.slot-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+/* ---------- MYSTERY BOXES ---------- */
+.box-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 340px;
+  margin: 6px auto 12px;
+}
+.box {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d1117;
+  border: 2px solid #232a38;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 30px;
+  color: var(--text);
+  transition: transform .12s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.box .box-gift { transition: transform .12s ease; }
+.box:hover:not(.opened) {
+  border-color: var(--green);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 210, 106, 0.18);
+}
+.box:hover:not(.opened) .box-gift { transform: scale(1.12); }
+.box:active:not(.opened) { transform: translateY(0); }
+.box.opened {
+  cursor: default;
+  border-color: var(--green);
+  background: var(--green-soft);
+  box-shadow: 0 0 16px rgba(0, 210, 106, 0.18);
+  animation: boxPop .35s ease;
+}
+.box-amt {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--green);
+}
+.box-grid.done .box:not(.opened) {
+  opacity: .4;
+  cursor: not-allowed;
+}
+@keyframes boxPop {
+  0% { transform: scale(.85); }
+  60% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.box-progress {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.slot-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2a3245;
+}
+.dot.active {
+  background: var(--green);
+}
+.slot-body {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.slot-reel-wrap {
+  flex: none;
+  width: 240px;
+  height: 180px;
+  border-radius: 12px;
+  background: #0d1117;
+  overflow: hidden;
+  position: relative;
+}
+.slot-highlight {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 60px;
+  transform: translateY(-50%);
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  pointer-events: none;
+  box-shadow: 0 0 16px rgba(0,210,106,0.18);
+  z-index: 2;
+}
+.slot-reel {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.05s linear;
+  will-change: transform;
+}
+.slot-item {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.slot-item.active {
+  color: var(--text);
+}
+.slot-item.gift {
+  font-size: 44px;
+  line-height: 1;
+}
+
+/* Lever */
+.slot-lever-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  width: 48px;
+}
+.lever-track {
+  position: relative;
+  width: 48px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+.lever-ball {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #4fffaa, #00d26a);
+  box-shadow: 0 4px 12px rgba(0,210,106,0.4);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.35s cubic-bezier(.4,1.6,.6,1);
+  z-index: 2;
+}
+.lever-rod {
+  width: 4px;
+  background: linear-gradient(to bottom, #3a4558, #232a38);
+  border-radius: 2px;
+  position: absolute;
+  top: 13px;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lever-base {
+  width: 20px;
+  height: 14px;
+  background: #2a3245;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lever-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.lever-track.pulled .lever-ball {
+  top: calc(100% - 44px);
+}
+
+/* Slot button */
+.slot-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--green);
+  color: #07120b;
+  font-size: 17px;
+  font-weight: 800;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,210,106,0.28);
+  transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+  animation: slotPulse 2s ease-in-out infinite;
+}
+@keyframes slotPulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(0,210,106,0.28), 0 0 0 0 rgba(0,210,106,0.45);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(0,210,106,0.28), 0 0 0 10px rgba(0,210,106,0);
+  }
+}
+.slot-btn:hover,
+.slot-btn:disabled {
+  animation: none;
+}
+.slot-btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0,210,106,0.35);
+}
+.slot-btn:active {
+  transform: translateY(0);
+}
+.slot-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+.slot-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+/* ---------- WIN PANEL ---------- */
+.win-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: #0f1c16;
+  border-top: 1px solid rgba(0,210,106,0.4);
+  padding: 14px 20px;
+  box-shadow: 0 -8px 30px rgba(0,0,0,0.45);
+  opacity: 0;
+  transform: translateY(110%);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.win-panel.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+/* push page content up so the sticky bar never covers the footer */
+body.claim-sticky {
+  padding-bottom: 88px;
+}
+.win-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+.win-emoji {
+  font-size: 22px;
+  line-height: 1;
+}
+.win-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--green);
+}
+.win-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+.win-cta {
+  flex-shrink: 0;
+  background: var(--green);
+  color: #07120b;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.12s;
+  width: auto;
+  max-width: none;
+  display: inline-flex;
+  box-shadow: none;
+}
+.win-cta:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+/* ---------- AVAILABLE ON / STORE BADGES ---------- */
+.store-wrap {
+  margin: 0 0 22px;
+  text-align: center;
+}
+.store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #000;
+  border: 1px solid #2a3245;
+  border-radius: 12px;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.12s ease, border-color 0.15s ease;
+}
+.store-badge:hover {
+  transform: translateY(-2px);
+  border-color: var(--green);
+}
+.store-badge svg {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+.sb-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-align: left;
+}
+.sb-text small {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.sb-text strong {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ---------- DISCLAIMER ---------- */
+.disclaimer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0 56px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: center;
+}
+.disclaimer p + p {
+    margin-top: 10px;
+}
+.footer-links {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s ease;
+}
+.footer-links a:hover {
+    color: var(--green);
+}
+.footer-links .sep {
+    color: var(--border);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 560px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-bg .tiles {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* ---------- MOTION ---------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.reveal {
+    animation: fadeUp 0.5s ease both;
+}
+.reveal.d1 {
+    animation-delay: 0.06s;
+}
+.reveal.d2 {
+    animation-delay: 0.12s;
+}
+.reveal.d3 {
+    animation-delay: 0.18s;
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        animation: none;
+    }
+    .cta,
+    .step {
+        transition: none;
+    }
+    .slot-btn {
+        animation: none;
+    }
+}
+@media (max-width: 757px) {
+    .store-badges .store-badge:nth-child(n+3) {
+        display: none;
+    }
+}
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero-shell">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-photo"></div>
+      <div class="glow"></div>
+      <div class="tiles">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="wrap pad">
+      <header class="hero">
+        <div class="brand reveal" aria-label="Freecash">
+          <svg class="brand-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M26 5 L13 5 a9 9 0 0 0 0 18 h3 l-6 6 h6 l8-8 h-9 a4 4 0 0 1 0-8 h11 z" fill="#00d26a"/>
+            <path d="M14 35 L27 35 a9 9 0 0 0 0-18 h-3 l6-6 h-6 l-8 8 h9 a4 4 0 0 1 0 8 H14 z" fill="#00d26a"/>
+          </svg>
+          <span class="brand-text"><span class="b-free">FREE</span><span class="b-cash">CASH</span></span>
+        </div>
+        <h1 class="reveal d1"><span class="accent">Get rewarded</span> for testing apps, games &amp; surveys</h1>
+        <p class="sub reveal d2">Join Freecash App and earn rewards in your spare time. Cash out via 80+ methods — from PayPal to crypto and gift cards.</p>
+
+        <!-- AVAILABLE ON -->
+        <div class="store-wrap reveal d2">
+          <div class="store-badges">
+            <p class="store-badge" aria-label="Download on the App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.02-2.07 1.69-3.06 1.77-3.11-.96-1.41-2.46-1.6-2.99-1.62-1.27-.13-2.49.75-3.13.75-.65 0-1.64-.73-2.7-.71-1.39.02-2.67.81-3.38 2.05-1.44 2.5-.37 6.2 1.03 8.23.69.99 1.51 2.1 2.58 2.06 1.04-.04 1.43-.67 2.69-.67 1.25 0 1.6.67 2.7.65 1.11-.02 1.82-1.01 2.5-2.01.79-1.15 1.11-2.27 1.13-2.33-.02-.01-2.17-.83-2.19-3.29zM15.0 6.27c.57-.69.96-1.65.85-2.6-.82.03-1.82.55-2.41 1.23-.53.61-.99 1.58-.87 2.51.92.07 1.86-.46 2.43-1.14z"/></svg>
+              <span class="sb-text"><small>Download on the</small><strong>App Store</strong></span>
+            </p>
+            <p class="store-badge" aria-label="Get it on Google Play">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.2.2-.32.53-.32.95v17.5c0 .42.12.75.33.94l.06.06L13.5 12v-.02L3.66 2.24l-.06.06z" fill="#34d399"/><path d="M17 15.27 13.5 12v-.02l3.5-3.27 3.95 2.25c1.13.64 1.13 1.69 0 2.33L17 15.27z" fill="#fbbf24"/><path d="m17 15.27-3.5-3.28L3.6 21.7c.37.4.99.45 1.69.05L17 15.27z" fill="#f87171"/><path d="M17 8.71 5.29 2.24c-.7-.4-1.32-.35-1.69.05L13.5 11.99 17 8.71z" fill="#38bdf8"/></svg>
+              <span class="sb-text"><small>Get it on</small><strong>Google Play</strong></span>
+            </p>
+            <p class="store-badge" aria-label="Available on the Web">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9z"/></svg>
+              <span class="sb-text"><small>Available on</small><strong>Web</strong></span>
+            </p>
+          </div>
+        </div>
+
+        <!-- SLOT MACHINE -->
+        <div class="slot-wrap reveal d3">
+          <div class="slot-card">
+            <div class="slot-header">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              TRY YOUR LUCK
+            </div>
+            <p class="slot-sub">We have a welcome bonus for you. Open 3 boxes to reveal it</p>
+            <div class="box-grid" id="boxGrid" aria-label="Mystery boxes"></div>
+            <p class="box-progress" id="boxProgress"><span id="boxOpened">0</span> / 3 boxes opened</p>
+            <p class="slot-hint" id="slotHint">Tap any box to open it</p>
+          </div>
+
+        </div>
+
+        <div class="payouts reveal d3">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>PayPal</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Cards</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 8.5h4a2 2 0 0 1 0 4h-4v-4zm0 4h4.5a2 2 0 0 1 0 4H9.5v-4z"/><line x1="11" y1="6.5" x2="11" y2="17.5"/></svg>Crypto</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 8h18M12 8v13M12 8s-1.5-5-4-5-2 3 0 3 4 2 4 2zm0 0s1.5-5 4-5 2 3 0 3-4 2-4 2z"/></svg>Gift cards</span>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap pad">
+
+    <!-- STATS STRIP — Freecash's own published figures -->
+    <section class="stats reveal">
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
+        <div class="num green">$300M+</div><div class="lbl">Total paid to members on Freecash</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
+        <div class="num">~17 min</div><div class="lbl">Avg. time to your first reward</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="num">$23.30</div><div class="lbl">Avg. withdrawal sent yesterday</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <div class="num">9,499</div><div class="lbl">Offers available right now</div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
+          <div class="body">
+            <div class="t">Install Freecash App</div>
+            <div class="d">Create a free account.</div>
+          </div>
+          <span class="idx">01</span>
+        </div>
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg></div>
+          <div class="body">
+            <div class="t">Complete offers</div>
+            <div class="d">Test apps, play games, and take surveys. Each offer shows its reward upfront.</div>
+          </div>
+          <span class="idx">02</span>
+        </div>
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg></div>
+          <div class="body">
+            <div class="t">Withdraw your earnings</div>
+            <div class="d">Cash out via 80+ methods, including PayPal, crypto, and gift cards.</div>
+          </div>
+          <span class="idx">03</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST / REVIEWS -->
+    <section class="trust">
+      <div class="placeholder">
+        <div class="rating">
+            <div class="trusted mb-1">
+                <img src="img/hero-trusted.png" alt="">
+            </div>
+            <p class="line">
+                <span class="bold">4.7</span> rating based
+                <span class="bold">269.229</span> reviews on
+            </p>
+            <div class="btn-container mt-1_5">
+                <a href="https://www.trustpilot.com/review/freecash.com" target="_blank" class="btn btn-empty">See all review on Trustpilot</a>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <footer class="disclaimer">
+      <p>Earnings vary based on the offers you complete, your device, and your location. The figures above are Freecash's published platform statistics and do not represent typical individual earnings.</p>
+      <p>The welcome bonus is credited after you create an account and complete your first app-install offer. Freecash is an independent rewards platform. This page is operated by an independent partner and is not the official Freecash website.</p>
+      <nav class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span class="sep">·</span>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <span class="sep">·</span>
+        <a id="contactLink" href="mailto:contact@rewarshub.com">Contact us</a>
+      </nav>
+    </footer>
+
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+      (function () {
+        var BOX_COUNT = 9;   // boxes shown in the grid
+        var MAX_OPEN = 3;    // how many the user may open
+        var TOTAL = 10;      // the three opened boxes ALWAYS sum to this
+        var MIN = 2, MAX = 5; // per-box range that can always add up to TOTAL
+
+        var opened = 0;
+        var finished = false;
+
+        function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+        // Three dynamic amounts (each MIN..MAX) that always add up to TOTAL.
+        function genAmounts() {
+          while (true) {
+            var a = rand(MIN, MAX);
+            var b = rand(MIN, MAX);
+            var c = TOTAL - a - b;
+            if (c >= MIN && c <= MAX) return shuffle([a, b, c]);
+          }
+        }
+        function shuffle(arr) {
+          for (var i = arr.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+          }
+          return arr;
+        }
+
+        var amounts = genAmounts();
+
+        // --- Sound (synthesized, no external file) ---
+        var audioCtx = null;
+        function ensureAudio() {
+          try {
+            audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            return true;
+          } catch (e) { return false; }
+        }
+        function tone(time, freq, dur, gainVal, type) {
+          var osc = audioCtx.createOscillator();
+          var gain = audioCtx.createGain();
+          osc.type = type || 'triangle';
+          osc.frequency.value = freq;
+          gain.gain.setValueAtTime(0.0001, time);
+          gain.gain.linearRampToValueAtTime(gainVal, time + 0.01);
+          gain.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(time);
+          osc.stop(time + dur);
+        }
+        function playPop() {
+          if (!ensureAudio()) return;
+          var now = audioCtx.currentTime;
+          tone(now, 520, 0.12, 0.12, 'triangle');
+          tone(now + 0.03, 880, 0.16, 0.10, 'triangle');
+        }
+        function playWin() {
+          if (!ensureAudio()) return;
+          var now = audioCtx.currentTime;
+          [660, 880, 1320].forEach(function (f, i) { tone(now + i * 0.1, f, 0.32, 0.12, 'triangle'); });
+        }
+
+        // --- Build the 3x3 box grid ---
+        var grid = document.getElementById('boxGrid');
+        var openedEl = document.getElementById('boxOpened');
+        var hintEl = document.getElementById('slotHint');
+
+        for (var i = 0; i < BOX_COUNT; i++) {
+          var b = document.createElement('button');
+          b.className = 'box';
+          b.type = 'button';
+          b.setAttribute('aria-label', 'Mystery box');
+          b.innerHTML = '<span class="box-gift">🎁</span>';
+          b.addEventListener('click', onOpen);
+          grid.appendChild(b);
+        }
+
+        function onOpen(e) {
+          if (finished) return;
+          var box = e.currentTarget;
+          if (box.classList.contains('opened')) return;
+
+          var amt = amounts[opened];
+          opened++;
+          box.classList.add('opened');
+          box.innerHTML = '<span class="box-amt">$' + amt + '</span>';
+          playPop();
+          if (openedEl) openedEl.textContent = String(opened);
+
+          if (opened >= MAX_OPEN) {
+            finished = true;
+            grid.classList.add('done');
+            setTimeout(finish, 600);
+          }
+        }
+
+        function finish() {
+          if (hintEl) hintEl.style.display = 'none';
+          var prog = document.getElementById('boxProgress');
+          if (prog) prog.style.display = 'none';
+          document.getElementById('winPanel').classList.add('show');
+          document.body.classList.add('claim-sticky');
+
+          playWin();
+          launchConfetti();
+
+        }
+
+        // --- Confetti burst (lightweight canvas, no dependencies) ---
+        function launchConfetti() {
+          if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+          var canvas = document.createElement('canvas');
+          canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999';
+          document.body.appendChild(canvas);
+          var ctx = canvas.getContext('2d');
+          var dpr = window.devicePixelRatio || 1;
+          function resize() { canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+          resize();
+
+          var colors = ['#00d26a', '#4fffaa', '#ffffff', '#ffd24f', '#ff5a7a'];
+          var pieces = [];
+          var count = 140;
+          for (var i = 0; i < count; i++) {
+            pieces.push({
+              x: innerWidth / 2 + (Math.random() - 0.5) * 120,
+              y: innerHeight / 3,
+              vx: (Math.random() - 0.5) * 14,
+              vy: Math.random() * -16 - 4,
+              size: Math.random() * 7 + 4,
+              color: colors[(Math.random() * colors.length) | 0],
+              rot: Math.random() * Math.PI,
+              vr: (Math.random() - 0.5) * 0.3,
+              life: 0
+            });
+          }
+
+          var gravity = 0.42;
+          var start = performance.now();
+          function frame(now) {
+            var elapsed = now - start;
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            pieces.forEach(function (p) {
+              p.vy += gravity;
+              p.vx *= 0.99;
+              p.x += p.vx;
+              p.y += p.vy;
+              p.rot += p.vr;
+              p.life++;
+              ctx.save();
+              ctx.translate(p.x, p.y);
+              ctx.rotate(p.rot);
+              ctx.globalAlpha = Math.max(0, 1 - elapsed / 2600);
+              ctx.fillStyle = p.color;
+              ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+              ctx.restore();
+            });
+            if (elapsed < 2800) {
+              requestAnimationFrame(frame);
+            } else {
+              canvas.remove();
+            }
+          }
+          requestAnimationFrame(frame);
+        }
+
+        // --- Contact email auto-matched to the current domain ---
+        (function () {
+          var host = location.hostname.replace(/^www\./, '');
+          if (!host || host === 'localhost' || /^\d{1,3}(\.\d{1,3}){3}$/.test(host)) host = 'rewarshub.com';
+          var el = document.getElementById('contactLink');
+          if (el) el.href = 'mailto:contact@' + host;
+        })();
+      })();
+    </script>
+
+  </div>
+
+  <!-- STICKY WIN BAR (direct body child so position:fixed anchors to the viewport) -->
+  <div class="win-panel" id="winPanel">
+    <div class="win-left">
+      <span class="win-emoji">🎉</span>
+      <div>
+        <div class="win-title">You won!</div>
+        <div class="win-sub">Install the app and claim your $10 bonus</div>
+      </div>
+    </div>
+    <a class="win-cta offer_link" href="https://track.free-cash.app/click">Claim $10</a>
+  </div>
+
+
+    <script>
+        $(document).ready(function() {
+            isClicked = false;
+            $(".offer_link").click(function(e){
+                e.preventDefault();
+
+                if (isClicked) return;
+                isClicked = true;
+
+                snaptr('track', 'VIEW_CONTENT');
+
+                setTimeout(() => {
+                    window.location.href = $(this).attr("href");
+                }, 500);
+
+                setTimeout(() => {
+                    isClicked = false;
+                }, 5000);
+            });
+        });
+    </script>
+
+</body>
+</html>
