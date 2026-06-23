@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get rewarded for testing apps, games & surveys</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '799738728826938');
+</script>
+<!-- End Meta Pixel Code -->
+
+<style>
+:root {
+    --bg: #0d1117;
+    --bg-card: #161b26;
+    --bg-card-hover: #1c2230;
+    --border: #232a38;
+    --text: #f2f5f9;
+    --text-muted: #93a0b4;
+    --green: #00d26a;
+    --green-dark: #00b85c;
+    --green-soft: rgba(0, 210, 106, 0.12);
+    --radius: 16px;
+    --maxw: 760px;
+    --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.pad {
+    padding: 0 20px;
+}
+.wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+}
+
+/* ---------- HERO ---------- */
+.hero-shell {
+    position: relative;
+    overflow: hidden;
+}
+
+/* decorative abstract app-tile field + glow (no real logos) */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.hero-bg .hero-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: url("img/hero-shadow-bg-2-sm.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    opacity: 0.16;
+}
+/* dark veil over the collage: keeps logos visible up top, fades to solid bg + lifts text contrast */
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(13, 17, 23, 0.35) 0%,
+        rgba(13, 17, 23, 0.62) 30%,
+        rgba(13, 17, 23, 0.9) 48%,
+        var(--bg) 60%);
+    pointer-events: none;
+}
+.hero-bg .glow {
+    position: absolute;
+    left: 50%;
+    top: -10%;
+    width: 620px;
+    height: 620px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(0, 210, 106, 0.22) 0%, rgba(0, 210, 106, 0) 62%);
+    filter: blur(8px);
+}
+.hero-bg .tiles {
+    display: none;
+    position: absolute;
+    inset: 0;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 14px;
+    opacity: 0.5;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 0%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 0%, transparent 75%);
+}
+.hero-bg .tiles span {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 58px 0 20px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 24px;
+}
+.brand-icon {
+    width: 32px;
+    height: 32px;
+}
+.brand-text {
+    font-size: 26px;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    line-height: 1;
+}
+.b-free {
+    color: var(--green);
+}
+.b-cash {
+    color: var(--text-muted);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: var(--green-soft);
+    border: 1px solid rgba(0, 210, 106, 0.22);
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+}
+.eyebrow svg {
+    width: 15px;
+    height: 15px;
+}
+
+h1 {
+    font-size: clamp(32px, 7vw, 54px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+}
+h1 .accent {
+    color: var(--green);
+}
+
+.sub {
+    font-size: clamp(16px, 2.6vw, 19px);
+    color: var(--text-muted);
+    max-width: 540px;
+    margin: 0 auto 30px;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 430px;
+    background: var(--green);
+    color: #07120b;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    text-align: center;
+    padding: 18px 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 210, 106, 0.25);
+    transition:
+        transform 0.12s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+.cta:hover {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 36px rgba(0, 210, 106, 0.32);
+}
+.cta:active {
+    transform: translateY(0);
+}
+.cta svg {
+    width: 20px;
+    height: 20px;
+}
+
+.cta-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 14px;
+}
+
+/* ---------- PAYOUT CHIPS ---------- */
+.payouts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 8px 13px;
+    border-radius: 999px;
+}
+.chip svg {
+    width: 15px;
+    height: 15px;
+    color: var(--green);
+}
+
+/* ---------- STATS STRIP (real Freecash data) ---------- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 24px 0 52px;
+}
+.stat {
+    background: var(--bg-card);
+    padding: 24px 14px;
+    text-align: center;
+}
+.stat .ic {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 12px;
+    display: grid;
+    place-items: center;
+    background: var(--green-soft);
+    border-radius: 10px;
+    color: var(--green);
+}
+.stat .ic svg {
+    width: 20px;
+    height: 20px;
+}
+.stat .num {
+    font-size: clamp(18px, 3vw, 23px);
+    font-weight: 800;
+    color: var(--text);
+}
+.stat .num.green {
+    color: var(--green);
+}
+.stat .lbl {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.35;
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+    padding: 8px 0 52px;
+}
+.section h2 {
+    font-size: clamp(24px, 4.5vw, 32px);
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+}
+
+/* ---------- HOW IT WORKS ---------- */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.step {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    position: relative;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+.step:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(0, 210, 106, 0.3);
+}
+.step .n {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: var(--green);
+    color: #07120b;
+    border-radius: 12px;
+}
+.step .n svg {
+    width: 22px;
+    height: 22px;
+}
+.step .body {
+    flex: 1;
+}
+.step .body .t {
+    font-weight: 700;
+    font-size: 17px;
+}
+.step .body .d {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+.step .idx {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+/* ---------- TRUST / REVIEWS ---------- */
+.trust {
+    text-align: center;
+    padding: 8px 0 52px;
+}
+.trust .placeholder {
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+    cursor: pointer;
+}
+.btn-empty {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1.5px solid var(--green);
+    color: var(--green);
+}
+.btn-empty:hover {
+    background: rgba(0, 210, 106, 0.12);
+    transform: translateY(-1px);
+}
+
+/* ---------- FINAL CTA ---------- */
+.final {
+    text-align: center;
+    padding: 44px 24px;
+    background: radial-gradient(ellipse 70% 120% at 50% 0%, rgba(0, 210, 106, 0.1), transparent 70%);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    margin-bottom: 44px;
+}
+.final h2 {
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+/* ---------- SLOT MACHINE ---------- */
+.slot-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.slot-card {
+  background: #161b26;
+  border: 1px solid #232a38;
+  border-radius: 20px;
+  padding: 24px 24px 20px;
+  width: 100%;
+  max-width: 430px;
+  text-align: center;
+}
+.slot-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 14px;
+}
+.slot-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.slot-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2a3245;
+}
+.dot.active {
+  background: var(--green);
+}
+.slot-body {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.slot-reel-wrap {
+  flex: none;
+  width: 240px;
+  height: 180px;
+  border-radius: 12px;
+  background: #0d1117;
+  overflow: hidden;
+  position: relative;
+}
+.slot-highlight {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 60px;
+  transform: translateY(-50%);
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  pointer-events: none;
+  box-shadow: 0 0 16px rgba(0,210,106,0.18);
+  z-index: 2;
+}
+.slot-reel {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.05s linear;
+  will-change: transform;
+}
+.slot-item {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.slot-item.active {
+  color: var(--text);
+}
+.slot-item.gift {
+  font-size: 44px;
+  line-height: 1;
+}
+
+/* Lever */
+.slot-lever-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  width: 48px;
+}
+.lever-track {
+  position: relative;
+  width: 48px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+.lever-ball {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #4fffaa, #00d26a);
+  box-shadow: 0 4px 12px rgba(0,210,106,0.4);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.35s cubic-bezier(.4,1.6,.6,1);
+  z-index: 2;
+}
+.lever-rod {
+  width: 4px;
+  background: linear-gradient(to bottom, #3a4558, #232a38);
+  border-radius: 2px;
+  position: absolute;
+  top: 13px;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lever-base {
+  width: 20px;
+  height: 14px;
+  background: #2a3245;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lever-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.lever-track.pulled .lever-ball {
+  top: calc(100% - 44px);
+}
+
+/* Slot button */
+.slot-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--green);
+  color: #07120b;
+  font-size: 17px;
+  font-weight: 800;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,210,106,0.28);
+  transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+  animation: slotPulse 2s ease-in-out infinite;
+}
+@keyframes slotPulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(0,210,106,0.28), 0 0 0 0 rgba(0,210,106,0.45);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(0,210,106,0.28), 0 0 0 10px rgba(0,210,106,0);
+  }
+}
+.slot-btn:hover,
+.slot-btn:disabled {
+  animation: none;
+}
+.slot-btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(0,210,106,0.35);
+}
+.slot-btn:active {
+  transform: translateY(0);
+}
+.slot-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+.slot-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+/* ---------- WIN PANEL ---------- */
+.win-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--green-soft);
+  border: 1px solid rgba(0,210,106,0.35);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 14px;
+  width: 100%;
+  max-width: 430px;
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.win-panel.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.win-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+.win-emoji {
+  font-size: 22px;
+  line-height: 1;
+}
+.win-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--green);
+}
+.win-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+.win-cta {
+  flex-shrink: 0;
+  background: var(--green);
+  color: #07120b;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.12s;
+  width: auto;
+  max-width: none;
+  display: inline-flex;
+  box-shadow: none;
+}
+.win-cta:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+/* ---------- DISCLAIMER ---------- */
+.disclaimer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0 56px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: center;
+}
+.disclaimer p + p {
+    margin-top: 10px;
+}
+.footer-links {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s ease;
+}
+.footer-links a:hover {
+    color: var(--green);
+}
+.footer-links .sep {
+    color: var(--border);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 560px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-bg .tiles {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* ---------- MOTION ---------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.reveal {
+    animation: fadeUp 0.5s ease both;
+}
+.reveal.d1 {
+    animation-delay: 0.06s;
+}
+.reveal.d2 {
+    animation-delay: 0.12s;
+}
+.reveal.d3 {
+    animation-delay: 0.18s;
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        animation: none;
+    }
+    .cta,
+    .step {
+        transition: none;
+    }
+    .slot-btn {
+        animation: none;
+    }
+}
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero-shell">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-photo"></div>
+      <div class="glow"></div>
+      <div class="tiles">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="wrap pad">
+      <header class="hero">
+        <div class="brand reveal" aria-label="Freecash">
+          <svg class="brand-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M26 5 L13 5 a9 9 0 0 0 0 18 h3 l-6 6 h6 l8-8 h-9 a4 4 0 0 1 0-8 h11 z" fill="#00d26a"/>
+            <path d="M14 35 L27 35 a9 9 0 0 0 0-18 h-3 l6-6 h-6 l-8 8 h9 a4 4 0 0 1 0 8 H14 z" fill="#00d26a"/>
+          </svg>
+          <span class="brand-text"><span class="b-free">FREE</span><span class="b-cash">CASH</span></span>
+        </div>
+        <h1 class="reveal d1"><span class="accent">Get rewarded</span> for testing apps, games &amp; surveys</h1>
+        <p class="sub reveal d2">Join Freecash and earn rewards in your spare time. Cash out via 80+ methods — from PayPal to crypto and gift cards.</p>
+        <!-- SLOT MACHINE -->
+        <div class="slot-wrap reveal d3">
+          <div class="slot-card">
+            <div class="slot-header">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              TRY YOUR LUCK
+            </div>
+            <p class="slot-sub">We have a welcome bonus for you. Spin to reveal</p>
+            <div class="slot-body">
+              <div class="slot-reel-wrap">
+                <div class="slot-reel" id="slotReel" style="transform: translateY(60px)">
+                  <div class="slot-item gift">🎁</div>
+                </div>
+                <div class="slot-highlight"></div>
+              </div>
+              <div class="slot-lever-wrap" aria-hidden="true">
+                <div class="lever-track">
+                  <div class="lever-ball" id="leverBall"></div>
+                  <div class="lever-rod" id="leverRod"></div>
+                  <div class="lever-base"></div>
+                </div>
+                <span class="lever-label">PULL ↓</span>
+              </div>
+            </div>
+            <button class="slot-btn" id="slotBtn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+              Spin to reveal
+            </button>
+            <p class="slot-hint" id="slotHint">Tap the button to reveal your bonus</p>
+          </div>
+
+          <!-- WIN PANEL -->
+          <div class="win-panel" id="winPanel">
+            <div class="win-left">
+              <span class="win-emoji">🎉</span>
+              <div>
+                <div class="win-title">You won!</div>
+                <div class="win-sub">Install the app and claim your £8 bonus</div>
+              </div>
+            </div>
+            <a class="win-cta offer_link" href="https://track.domain/click">Claim £8</a>
+          </div>
+        </div>
+
+        <div class="payouts reveal d3">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>PayPal</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Cards</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 8.5h4a2 2 0 0 1 0 4h-4v-4zm0 4h4.5a2 2 0 0 1 0 4H9.5v-4z"/><line x1="11" y1="6.5" x2="11" y2="17.5"/></svg>Crypto</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 8h18M12 8v13M12 8s-1.5-5-4-5-2 3 0 3 4 2 4 2zm0 0s1.5-5 4-5 2 3 0 3-4 2-4 2z"/></svg>Gift cards</span>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap pad">
+
+    <!-- STATS STRIP — Freecash's own published figures -->
+    <section class="stats reveal">
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
+        <div class="num green">£300M+</div><div class="lbl">Total paid to members on Freecash</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
+        <div class="num">~17 min</div><div class="lbl">Avg. time to your first reward</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="num">£23.30</div><div class="lbl">Avg. withdrawal sent yesterday</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <div class="num">9,499</div><div class="lbl">Offers available right now</div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
+          <div class="body">
+            <div class="t">Install Freecash App</div>
+            <div class="d">Create a free account.</div>
+          </div>
+          <span class="idx">01</span>
+        </div>
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg></div>
+          <div class="body">
+            <div class="t">Complete offers</div>
+            <div class="d">Test apps, play games, and take surveys. Each offer shows its reward upfront.</div>
+          </div>
+          <span class="idx">02</span>
+        </div>
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg></div>
+          <div class="body">
+            <div class="t">Withdraw your earnings</div>
+            <div class="d">Cash out via 80+ methods, including PayPal, crypto, and gift cards.</div>
+          </div>
+          <span class="idx">03</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST / REVIEWS -->
+    <section class="trust">
+      <div class="placeholder">
+        <div class="rating">
+            <div class="trusted mb-1">
+                <img src="img/hero-trusted.png" alt="">
+            </div>
+            <p class="line">
+                <span class="bold">4.7</span> rating based
+                <span class="bold">269.229</span> reviews on
+            </p>
+            <div class="btn-container mt-1_5">
+                <a href="https://www.trustpilot.com/review/freecash.com" target="_blank" class="btn btn-empty">See all review on Trustpilot</a>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <footer class="disclaimer">
+      <p>Earnings vary based on the offers you complete, your device, and your location. The figures above are Freecash's published platform statistics and do not represent typical individual earnings.</p>
+      <p>The welcome bonus is credited after you create an account and complete your first app-install offer. Freecash is an independent rewards platform. This page is operated by an independent partner and is not the official Freecash website.</p>
+      <nav class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span class="sep">·</span>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <span class="sep">·</span>
+        <a id="contactLink" href="mailto:contact@rewarshub.com">Contact us</a>
+      </nav>
+    </footer>
+
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+      (function () {
+        var ITEM_H = 60;
+        var VALUES = ['£0', '£3', '£5', '£7', '£8'];
+        var WIN_VALUE = '£8';
+        var WIN_IDX = VALUES.indexOf(WIN_VALUE); // index in VALUES array = 4
+
+        var spinning = false;
+        var hasSpun = false;
+
+        function buildReel(extraCycles) {
+          // Build a long strip: extraCycles full loops + land on WIN_IDX
+          var items = [];
+          for (var c = 0; c < extraCycles; c++) {
+            for (var i = 0; i < VALUES.length; i++) items.push(VALUES[i]);
+          }
+          // add items up to and including WIN_IDX
+          for (var i = 0; i <= WIN_IDX; i++) items.push(VALUES[i]);
+          return items;
+        }
+
+        // --- Slot spin sound (synthesized, no external file) ---
+        var audioCtx = null;
+        var SPIN_DURATION = 3.6; // seconds — matches the reel scroll duration
+
+        function playTick(time, freq, dur, gainVal) {
+          var osc = audioCtx.createOscillator();
+          var gain = audioCtx.createGain();
+          osc.type = 'square';
+          osc.frequency.value = freq;
+          gain.gain.setValueAtTime(0.0001, time);
+          gain.gain.linearRampToValueAtTime(gainVal, time + 0.004);
+          gain.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(time);
+          osc.stop(time + dur);
+        }
+
+        function playSpinSound() {
+          try {
+            audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            var now = audioCtx.currentTime;
+            var t = 0;
+            // Mechanical reel ticks that space out (slow down) toward the end.
+            while (t < SPIN_DURATION) {
+              playTick(now + t, 1100, 0.035, 0.06);
+              var progress = t / SPIN_DURATION;
+              t += 0.045 + progress * progress * 0.3; // intervals grow as it decelerates
+            }
+            // Win chime once it settles.
+            var end = now + SPIN_DURATION + 0.06;
+            playTick(end, 1320, 0.18, 0.12);
+            playTick(end + 0.12, 1760, 0.24, 0.10);
+          } catch (e) { /* audio not supported — fail silently */ }
+        }
+
+        function spin() {
+          if (spinning) return;
+          spinning = true;
+
+          playSpinSound();
+
+          var reel = document.getElementById('slotReel');
+          var btn = document.getElementById('slotBtn');
+          var lever = document.querySelector('.lever-track');
+          btn.disabled = true;
+
+          // Lever pull animation
+          lever.classList.add('pulled');
+          setTimeout(function () { lever.classList.remove('pulled'); }, 400);
+
+          var CYCLES = 12;
+          var items = buildReel(CYCLES);
+
+          // The winning £8 is the last item buildReel produced.
+          var winIndex = items.length - 1;
+          // Append trailing amounts below the win so the reel doesn't look like it ends.
+          var TAIL = 3;
+          for (var t = 1; t <= TAIL; t++) {
+            items.push(VALUES[(WIN_IDX + t) % VALUES.length]);
+          }
+
+          // Rebuild reel DOM
+          reel.innerHTML = '';
+          reel.style.transition = 'none';
+          reel.style.transform = 'translateY(0)';
+
+          items.forEach(function (v) {
+            var el = document.createElement('div');
+            el.className = 'slot-item dim';
+            el.textContent = v;
+            reel.appendChild(el);
+          });
+
+          // Center the reel on first item (offset so middle of viewport = item[0])
+          var viewportH = 180;
+          var startOffset = (viewportH / 2) - (ITEM_H / 2); // 60px
+          reel.style.transform = 'translateY(' + startOffset + 'px)';
+
+          // Target: last item in strip is WIN_IDX, translate so it sits in center
+          var totalItems = items.length;
+          // Center the winning item (not the last item — there are now items below it).
+          var finalY = startOffset - winIndex * ITEM_H;
+
+          // Animate fast then slow (CSS transition)
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              reel.style.transition = 'transform 4s cubic-bezier(0.05, 0.9, 0.1, 1)';
+              reel.style.transform = 'translateY(' + finalY + 'px)';
+            });
+          });
+
+          setTimeout(function () {
+            var allItems = reel.querySelectorAll('.slot-item');
+            allItems.forEach(function (el) { el.classList.remove('active'); el.classList.add('dim'); });
+            allItems[winIndex].classList.add('active');
+            allItems[winIndex].classList.remove('dim');
+
+            spinning = false;
+            hasSpun = true;
+            btn.disabled = false;
+
+            // hide spin button, show hint change, reveal win panel
+            document.getElementById('slotHint').style.display = 'none';
+            btn.style.display = 'none';
+            document.getElementById('winPanel').classList.add('show');
+
+            // celebrate!
+            launchConfetti();
+          }, 4100);
+        }
+
+        // --- Confetti burst (lightweight canvas, no dependencies) ---
+        function launchConfetti() {
+          if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+          var canvas = document.createElement('canvas');
+          canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999';
+          document.body.appendChild(canvas);
+          var ctx = canvas.getContext('2d');
+          var dpr = window.devicePixelRatio || 1;
+          function resize() { canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+          resize();
+
+          var colors = ['#00d26a', '#4fffaa', '#ffffff', '#ffd24f', '#ff5a7a'];
+          var pieces = [];
+          var count = 140;
+          for (var i = 0; i < count; i++) {
+            pieces.push({
+              x: innerWidth / 2 + (Math.random() - 0.5) * 120,
+              y: innerHeight / 3,
+              vx: (Math.random() - 0.5) * 14,
+              vy: Math.random() * -16 - 4,
+              size: Math.random() * 7 + 4,
+              color: colors[(Math.random() * colors.length) | 0],
+              rot: Math.random() * Math.PI,
+              vr: (Math.random() - 0.5) * 0.3,
+              life: 0
+            });
+          }
+
+          var gravity = 0.42;
+          var start = performance.now();
+          function frame(now) {
+            var elapsed = now - start;
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            pieces.forEach(function (p) {
+              p.vy += gravity;
+              p.vx *= 0.99;
+              p.x += p.vx;
+              p.y += p.vy;
+              p.rot += p.vr;
+              p.life++;
+              ctx.save();
+              ctx.translate(p.x, p.y);
+              ctx.rotate(p.rot);
+              ctx.globalAlpha = Math.max(0, 1 - elapsed / 2600);
+              ctx.fillStyle = p.color;
+              ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+              ctx.restore();
+            });
+            if (elapsed < 2800) {
+              requestAnimationFrame(frame);
+            } else {
+              canvas.remove();
+            }
+          }
+          requestAnimationFrame(frame);
+        }
+
+        document.getElementById('slotBtn').addEventListener('click', function () {
+          if (!hasSpun) spin();
+        });
+
+        // Lever is visual-only — no click handler.
+
+        // --- Contact email auto-matched to the current domain ---
+        (function () {
+          var host = location.hostname.replace(/^www\./, '');
+          if (!host || host === 'localhost' || /^\d{1,3}(\.\d{1,3}){3}$/.test(host)) host = 'rewarshub.com';
+          var el = document.getElementById('contactLink');
+          if (el) el.href = 'mailto:contact@' + host;
+        })();
+      })();
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            isClicked = false;
+            $(".offer_link").click(function(e){
+                e.preventDefault();
+
+                if (isClicked) return;
+                isClicked = true;
+
+                fbq('track', 'PageView');
+
+                setTimeout(() => {
+                    window.location.href = $(this).attr("href");
+                }, 500);
+
+                setTimeout(() => {
+                    isClicked = false;
+                }, 5000);
+            });
+        });
+    </script>
+
+  </div>
+</body>
+</html>
