@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RewardClub — Voucher For Aldi</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '799738728826938');
+</script>
+<!-- End Meta Pixel Code -->
+
+<style>
+  :root {
+    --al-navy: #1C1F5A;
+    --al-navy-dark: #12143d;
+    --al-navy-mid: #2d3175;
+    --al-navy-light: #eeeef8;
+    --al-orange: #F4821F;
+    --al-orange-light: #fff5ee;
+    --white: #ffffff;
+    --off-white: #f9f8f5;
+    --text-dark: #111827;
+    --text-mid: #374151;
+    --text-muted: #6b7280;
+    --border: #d1d9ed;
+    --radius: 14px;
+    --radius-sm: 8px;
+    --gold: #E8960A;
+    --gold-dark: #b87208;
+    --gold-light: #FFF8E7;
+    --green: #0f6e56;
+    --green-light: #f0f9f4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--off-white); color: var(--text-dark); min-height: 100vh; overflow-x: hidden; display: flex; flex-direction: column; background-image: radial-gradient(circle at 1px 1px, rgba(28,31,90,0.04) 1px, transparent 0); background-size: 24px 24px; }
+
+  /* HEADER */
+  .header { background: var(--al-navy); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 20px; color: white; letter-spacing: -0.01em; }
+  .logo span { color: rgba(255,255,255,0.5); }
+  .header-badge { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); padding: 5px 13px; border-radius: 14px; font-size: 11px; font-weight: 600; color: white; letter-spacing: 0.06em; text-transform: uppercase; }
+  .live-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+
+  .timer-bar { background: var(--al-orange-light); border-bottom: 1px solid rgba(244,130,31,0.15); padding: 10px 24px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 13px; color: var(--al-orange); font-weight: 500; }
+  .timer-count { background: var(--al-orange); color: white; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 13px; padding: 3px 10px; border-radius: 5px; letter-spacing: 0.05em; }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ========== LANDING ========== */
+  .hero { max-width: 560px; margin: 0 auto; padding: 28px 24px 24px; text-align: center; width: 100%; }
+
+  .program-card {
+    background: var(--al-navy); border-radius: 16px; padding: 22px 24px 18px;
+    margin: 0 auto 24px; max-width: 320px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 16px 48px rgba(28,31,90,0.25);
+  }
+  .program-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--al-orange); }
+  .program-card::after { content: ''; position: absolute; bottom: -40px; right: -40px; width: 130px; height: 130px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+  .pc-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.04; background-image: repeating-linear-gradient(135deg, white 0px, white 1px, transparent 1px, transparent 12px); pointer-events: none; }
+  .pc-cart { position: absolute; bottom: 12px; right: 16px; font-size: 48px; opacity: 0.07; z-index: 0; }
+  .pc-top-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; position: relative; z-index: 1; }
+  .pc-chip { width: 32px; height: 24px; border-radius: 4px; background: linear-gradient(135deg, #c9a84c 0%, #f0d78c 40%, #c9a84c 60%, #a07c2e 100%); opacity: 0.85; }
+  .pc-type { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .program-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 800; color: white; line-height: 1.3; position: relative; z-index: 1; margin-bottom: 8px; }
+  .program-sub { font-size: 12px; color: rgba(255,255,255,0.55); position: relative; z-index: 1; line-height: 1.5; margin-bottom: 12px; }
+  .pc-bottom-row { display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
+  .pc-barcode { display: flex; gap: 1.5px; align-items: flex-end; }
+  .pc-bar { width: 2px; background: rgba(255,255,255,0.18); border-radius: 1px; }
+  .pc-id { font-size: 9px; font-weight: 600; letter-spacing: 0.15em; color: rgba(255,255,255,0.3); font-family: 'Inter', monospace; }
+
+  .hero-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 800; line-height: 1.25; color: var(--text-dark); margin-bottom: 10px; }
+  .hero-title em { font-style: italic; color: var(--al-navy); }
+  .hero-subtitle { font-size: 14px; color: var(--text-mid); line-height: 1.65; margin-bottom: 20px; max-width: 400px; margin-left: auto; margin-right: auto; }
+
+  /* SOCIAL PROOF COUNTER */
+  .proof-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 20px; }
+  .proof-avatars { display: flex; }
+  .proof-av { width: 26px; height: 26px; border-radius: 50%; border: 2px solid white; background: var(--al-navy-light); display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: var(--al-navy); margin-left: -7px; }
+  .proof-av:first-child { margin-left: 0; }
+  .proof-text { font-size: 13px; color: var(--text-mid); font-weight: 500; }
+  .proof-text strong { color: var(--al-navy); }
+
+  /* FLOW PILLS */
+  .flow-row {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    margin-bottom: 22px; max-width: 480px; margin-left: auto; margin-right: auto;
+  }
+  .flow-step {
+    background: white; border: 1px solid var(--border);
+    border-radius: 12px; padding: 7px 12px;
+    text-align: center;
+  }
+  .flow-step-icon { font-size: 13px; display: block; margin-bottom: 2px; }
+  .flow-step-label { font-size: 11px; font-weight: 600; color: var(--text-dark); white-space: nowrap; }
+  .flow-arrow { font-size: 13px; color: var(--text-muted); font-weight: 500; flex-shrink: 0; }
+
+  .cta-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--al-orange); color: white; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 8px; border: none; cursor: pointer; width: 100%; max-width: 340px; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 6px 20px rgba(244,130,31,0.3); letter-spacing: 0.01em; }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(244,130,31,0.4); }
+  .cta-sub { font-size: 12px; color: var(--text-muted); margin-top: 10px; }
+
+  /* ========== QUIZ ========== */
+  .quiz-wrap { max-width: 520px; margin: 0 auto; padding: 24px 24px; }
+  .progress-bar-wrap { margin-bottom: 20px; }
+  .progress-top { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 8px; font-weight: 500; }
+  .progress-track { height: 6px; background: var(--al-navy-light); border-radius: 10px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--al-navy), #F4821F); border-radius: 10px; transition: width 0.4s ease; }
+
+  .quiz-card { background: white; border-radius: var(--radius); padding: 24px 22px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(28,31,90,0.08); margin-bottom: 16px; }
+
+  .quiz-program-mini { background: var(--al-navy); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; position: relative; overflow: hidden; }
+  .quiz-program-mini::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--al-orange); }
+  .qpm-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 800; color: white; }
+  .qpm-label { font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+  .qpm-badge { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; padding: 4px 12px; font-size: 11px; font-weight: 700; color: white; white-space: nowrap; }
+
+  .quiz-step { font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+  .quiz-question { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 800; color: var(--text-dark); margin-bottom: 20px; line-height: 1.3; }
+  .quiz-btn { display: block; width: 100%; padding: 14px 20px; margin-bottom: 10px; border-radius: var(--radius-sm); border: 1.5px solid var(--border); background: var(--off-white); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500; color: var(--text-dark); cursor: pointer; text-align: center; transition: all 0.15s; }
+  .quiz-btn:hover { border-color: var(--al-navy); background: var(--al-navy-light); color: var(--al-navy); transform: translateX(4px); }
+  .quiz-btn:last-child { margin-bottom: 0; }
+
+  .comments-card { background: white; border-radius: var(--radius); padding: 18px 22px; border: 1px solid var(--border); }
+  .comments-header { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
+  .comment { display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border); text-align: left; }
+  .comment:last-of-type { border-bottom: none; }
+  .c-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--al-navy-light); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 700; color: var(--al-navy); flex-shrink: 0; }
+  .c-name { font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 3px; }
+  .c-text { font-size: 13px; color: var(--text-mid); line-height: 1.5; }
+  .c-meta { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+  /* ========== SPIN ========== */
+  .spin-wrap { max-width: 520px; margin: 0 auto; padding: 24px 24px; text-align: center; }
+
+  .result-banner {
+    background: var(--al-navy); border-radius: var(--radius); padding: 0;
+    margin-bottom: 18px; position: relative; overflow: hidden;
+    box-shadow: 0 8px 32px rgba(28,31,90,0.22);
+  }
+  .result-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--al-orange); }
+  .rb-top { padding: 16px 20px 12px; text-align: center; position: relative; z-index: 1; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .rb-icon-wrap { width: 40px; height: 40px; background: #22c55e; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin: 0 auto 10px; box-shadow: 0 4px 16px rgba(34,197,94,0.35); }
+  .result-icon { display: none; }
+  .result-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 800; color: white; line-height: 1.25; }
+  .result-sub { display: none; }
+  .rb-rows { padding: 10px 18px 14px; }
+  .rb-row { display: flex; gap: 8px; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.07); text-align: left; }
+  .rb-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .rb-dot { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+  .rb-row-text { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.4; }
+  .rb-row-text strong { color: white; font-weight: 600; }
+  .rb-dot { margin-top: 5px; }
+
+  .bonus-card { background: white; border-radius: var(--radius); padding: 24px 22px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(28,31,90,0.08); margin-bottom: 18px; }
+  .bonus-label { font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+
+  /* SLOT */
+  .slot-machine { background: var(--al-navy); border-radius: 14px; padding: 16px; margin: 0 auto 16px; max-width: 260px; box-shadow: 0 8px 32px rgba(28,31,90,0.28); position: relative; overflow: hidden; }
+  .slot-machine::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--al-orange); }
+  .slot-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 10px; }
+  .slot-lights { display: flex; justify-content: center; gap: 5px; margin-bottom: 8px; }
+  .slot-light { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.15); transition: all 0.1s; }
+  .slot-light.on { background: var(--gold); box-shadow: 0 0 7px var(--gold); }
+  .slot-window { background: #0a0c28; border-radius: 10px; height: 88px; overflow: hidden; position: relative; border: 2px solid rgba(255,255,255,0.1); margin-bottom: 10px; }
+  .slot-inner { position: absolute; width: 100%; }
+  .slot-item { height: 88px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 800; color: white; }
+  .slot-item.mystery { font-size: 38px; }
+  .slot-item.win { color: #FFD700; }
+  .slot-item.zero { color: rgba(255,255,255,0.3); }
+
+  .spin-btn { background: var(--al-orange); color: white; border: none; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 40px; border-radius: 8px; cursor: pointer; box-shadow: 0 6px 20px rgba(244,130,31,0.3); transition: transform 0.15s, box-shadow 0.15s; width: 100%; max-width: 260px; }
+  .spin-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(244,130,31,0.4); }
+  .spin-btn:disabled { background: #ccc; color: #888; box-shadow: none; cursor: not-allowed; transform: none; }
+  .bonus-note { font-size: 12px; color: var(--text-muted); margin-top: 12px; line-height: 1.6; }
+
+  /* ========== CONGRATS ========== */
+  .congrats-wrap { max-width: 520px; margin: 0 auto; padding: 24px 24px; }
+
+  .win-card {
+    background: var(--al-navy); border-radius: 16px; padding: 0;
+    text-align: center; margin-bottom: 14px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 8px 32px rgba(28,31,90,0.22);
+  }
+  .win-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--al-orange); }
+  .win-card-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.04; background-image: repeating-linear-gradient(135deg, white 0px, white 1px, transparent 1px, transparent 12px); pointer-events: none; }
+  .win-card-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 260px; height: 260px; background: radial-gradient(circle, rgba(203,162,88,0.12) 0%, transparent 70%); pointer-events: none; }
+  .win-card-top { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px 0; position: relative; z-index: 1; }
+  .win-card-chip { width: 28px; height: 20px; border-radius: 3px; background: linear-gradient(135deg, #c9a84c 0%, #f0d78c 40%, #c9a84c 60%, #a07c2e 100%); opacity: 0.8; }
+  .win-card-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .win-card-body { padding: 16px 20px 20px; position: relative; z-index: 1; }
+  .win-congrats { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .win-amount { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 900; color: var(--gold); letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; text-shadow: 0 2px 24px rgba(203,162,88,0.3); }
+  .win-label { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 0; line-height: 1.5; }
+  .win-card-bottom { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-top: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 1; }
+  .win-barcode { display: flex; gap: 1.5px; align-items: flex-end; }
+  .win-bar { width: 2px; background: rgba(255,255,255,0.15); border-radius: 1px; }
+  .win-card-id { font-size: 9px; font-weight: 600; letter-spacing: 0.15em; color: rgba(255,255,255,0.25); font-family: monospace; }
+  .win-title { display: none; }
+
+  .status-steps-box { background: #f0f9f4; border: 1px solid rgba(15,110,86,0.2); border-radius: var(--radius-sm); padding: 14px 20px; margin-bottom: 14px; }
+  .ss-item { font-size: 13px; font-weight: 600; color: var(--green); padding: 4px 0; display: flex; align-items: center; gap: 8px; }
+  .qualify-badge { background: var(--green-light); border: 1px solid rgba(15,110,86,0.2); border-radius: var(--radius-sm); padding: 11px 20px; font-size: 14px; font-weight: 600; color: var(--green); display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 14px; }
+
+  .continue-btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--al-orange); color: white; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px; padding: 16px 36px; border-radius: 8px; border: none; cursor: pointer; width: 100%; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 8px 28px rgba(244,130,31,0.32); text-decoration: none; position: sticky; bottom: 24px; }
+  .continue-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(244,130,31,0.42); }
+  .cta-timer-text { font-size: 12px; color: var(--al-orange); font-weight: 600; text-align: center; margin-bottom: 16px; margin-top: 6px; }
+
+  .conditions-card { background: white; border-radius: var(--radius); padding: 22px; border: 1px solid var(--border); margin-bottom: 16px; text-align: left; }
+  .conditions-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 14px; }
+  .condition-step { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+  .condition-step:last-child { border-bottom: none; padding-bottom: 0; }
+  .cond-num { width: 26px; height: 26px; background: var(--al-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: white; flex-shrink: 0; }
+  .cond-title { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 3px; }
+  .cond-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+  .cond-highlight { background: var(--gold-light); border: 1px solid rgba(232,150,10,0.2); border-radius: 6px; padding: 3px 9px; font-size: 11px; font-weight: 600; color: var(--gold-dark); display: inline-block; margin-top: 5px; }
+
+  .footer { background: var(--al-navy); padding: 16px 24px; text-align: center; font-size: 11px; color: rgba(200,215,255,0.45); margin-top: 20px; line-height: 1.65; margin-top: auto; }
+  .footer a { color: rgba(200,215,255,0.45); text-decoration: underline; }
+  .footer p, .footer div { padding: 12px 0; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">Reward<span>Club</span></div>
+  <div class="header-badge"><div class="live-dot"></div> OPEN TODAY</div>
+</div>
+
+<!-- ========== LANDING ========== -->
+<div class="page active" id="page-landing">
+  <div class="hero">
+    <div class="program-card">
+      <div class="pc-pattern"></div>
+      <div class="pc-cart">🛒</div>
+      <div class="pc-top-row">
+        <div class="pc-chip"></div>
+        <div class="pc-type">Voucher Card</div>
+      </div>
+      <div class="program-title">Voucher For Aldi</div>
+      <div class="program-sub">Shopping vouchers available daily in limited quantities</div>
+      <div class="pc-bottom-row">
+        <div class="pc-barcode" id="pc-barcode"></div>
+        <div class="pc-id">RC-2026</div>
+      </div>
+    </div>
+
+    <h1 class="hero-title">Check If You're Eligible To Unlock<br><em>A Aldi Shopping Voucher</em></h1>
+    <p class="hero-subtitle">Answer a few quick questions to see if you qualify for today's voucher opportunity.</p>
+
+    <div class="proof-row">
+      <div class="proof-avatars">
+        <div class="proof-av">JS</div>
+        <div class="proof-av">MR</div>
+        <div class="proof-av">SW</div>
+        <div class="proof-av">+</div>
+      </div>
+      <div class="proof-text"><strong id="proof-count">1,521</strong> members checked eligibility today</div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-step"><span class="flow-step-icon">🔍</span><div class="flow-step-label">Eligibility Check</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span class="flow-step-icon">🎁</span><div class="flow-step-label">Voucher Reveal</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><span class="flow-step-icon">🏷️</span><div class="flow-step-label">Claim Process</div></div>
+    </div>
+
+    <button class="cta-btn" onclick="showPage('page-q1')">Check Eligibility →</button>
+    <div class="cta-sub">Free • Takes less than 60 seconds • USA only</div>
+  </div>
+</div>
+
+<!-- ========== Q1 ========== -->
+<div class="page" id="page-q1">
+  <div class="timer-bar"><span>⏰ Today's Voucher Release Ends In:</span><span class="timer-count timer-el">14:59</span></div>
+  <div class="quiz-wrap">
+    <div class="progress-bar-wrap">
+      <div class="progress-top"><span>Eligibility check</span><span>0%</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-program-mini">
+        <div><div class="qpm-title">RewardClub</div><div class="qpm-label">Voucher For Aldi</div></div>
+        <div class="qpm-badge">Step 1 of 3</div>
+      </div>
+      <div class="quiz-step">Eligibility check · Question 1</div>
+      <div class="quiz-question">How often do you shop at Aldi?</div>
+      <button class="quiz-btn" onclick="nextQ('page-q2')">Every week</button>
+      <button class="quiz-btn" onclick="nextQ('page-q2')">A few times a month</button>
+      <button class="quiz-btn" onclick="nextQ('page-q2')">Occasionally</button>
+    </div>
+    <div class="comments-card">
+      <div class="comments-header">💬 Recent member activity</div>
+      <div class="comment"><div class="c-avatar">KD</div><div><div class="c-name">Karen D.</div><div class="c-text">Didn't think I'd qualify but I did. Starting on the deals now.</div><div class="c-meta">4 minutes ago</div></div></div>
+      <div class="comment"><div class="c-avatar">TM</div><div><div class="c-name">Tony M.</div><div class="c-text">Check came through. Easy process, no complaints.</div><div class="c-meta">18 minutes ago</div></div></div>
+      <div class="comment"><div class="c-avatar">RL</div><div><div class="c-name">Rachel L.</div><div class="c-text">My husband saw me do it and signed up too. Both qualified.</div><div class="c-meta">1 hour ago</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Q2 ========== -->
+<div class="page" id="page-q2">
+  <div class="timer-bar"><span>⏰ Voucher reservation expires in:</span><span class="timer-count timer-el">14:52</span></div>
+  <div class="quiz-wrap">
+    <div class="progress-bar-wrap">
+      <div class="progress-top"><span>Eligibility check</span><span>33%</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:33%"></div></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-program-mini">
+        <div><div class="qpm-title">RewardClub</div><div class="qpm-label">Voucher For Aldi</div></div>
+        <div class="qpm-badge">Step 2 of 3</div>
+      </div>
+      <div class="quiz-step">Eligibility check · Question 2</div>
+      <div class="quiz-question">Do you currently live in the United States?</div>
+      <div style="font-size:12px;color:#6b7280;margin-bottom:14px;margin-top:-10px;">This voucher program is currently available to U.S. residents only.</div>
+      <button class="quiz-btn" onclick="nextQ('page-q3')">Yes, I live in the USA</button>
+      <button class="quiz-btn" onclick="nextQ('page-q3')">No, I don't</button>
+    </div>
+    <div class="comments-card">
+      <div class="comments-header">💬 Recent member activity</div>
+      <div class="comment"><div class="c-avatar">BH</div><div><div class="c-name">Brian H.</div><div class="c-text">Took about 20 minutes total. Now just waiting for delivery.</div><div class="c-meta">11 minutes ago</div></div></div>
+      <div class="comment"><div class="c-avatar">LG</div><div><div class="c-name">Lisa G.</div><div class="c-text">Used mine on an Aldi run this week. So worth it.</div><div class="c-meta">45 minutes ago</div></div></div>
+      <div class="comment"><div class="c-avatar">JP</div><div><div class="c-name">James P.</div><div class="c-text">Honestly surprised this was legit. Happy I tried it.</div><div class="c-meta">2 hours ago</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Q3 ========== -->
+<div class="page" id="page-q3">
+  <div class="timer-bar"><span>⏰ Voucher reservation expires in:</span><span class="timer-count timer-el">14:45</span></div>
+  <div class="quiz-wrap">
+    <div class="progress-bar-wrap">
+      <div class="progress-top"><span>Eligibility check</span><span>66%</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:66%"></div></div>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-program-mini">
+        <div><div class="qpm-title">RewardClub</div><div class="qpm-label">Almost done — last question</div></div>
+        <div class="qpm-badge">Step 3 of 3</div>
+      </div>
+      <div class="quiz-step">Eligibility check · Question 3</div>
+      <div class="quiz-question">Are you at least 18 years old?</div>
+      <div style="font-size:12px;color:#6b7280;margin-bottom:14px;margin-top:-10px;">Participants must be 18 years of age or older.</div>
+      <button class="quiz-btn" onclick="nextQ('page-spin')">Yes, I'm 18 or older</button>
+      <button class="quiz-btn" onclick="nextQ('page-spin')">No</button>
+    </div>
+    <div class="comments-card">
+      <div class="comments-header">💬 Recent member activity</div>
+      <div class="comment"><div class="c-avatar">AW</div><div><div class="c-name">Amanda W.</div><div class="c-text">Three questions and done. Way faster than I expected.</div><div class="c-meta">6 minutes ago</div></div></div>
+      <div class="comment"><div class="c-avatar">DK</div><div><div class="c-name">David K.</div><div class="c-text">Already finished the deals. Voucher should arrive this week.</div><div class="c-meta">32 minutes ago</div></div></div>
+      <div class="comment"><div class="c-avatar">NF</div><div><div class="c-name">Nicole F.</div><div class="c-text">Told my sister about it. She qualified too, same day.</div><div class="c-meta">1 hour ago</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SPIN ========== -->
+<div class="page" id="page-spin">
+  <div class="timer-bar"><span>⏰ Voucher reservation expires in:</span><span class="timer-count timer-el">14:30</span></div>
+  <div class="spin-wrap">
+
+    <div class="progress-bar-wrap">
+      <div class="progress-top"><span>Eligibility check</span><span>100%</span></div>
+      <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+    </div>
+
+    <div class="result-banner">
+      <div class="rb-top">
+        <div class="rb-icon-wrap">✅</div>
+        <div class="result-title">Eligibility Confirmed —<br>Good News, You Qualify</div>
+      </div>
+      <div class="rb-rows">
+        <div class="rb-row"><div class="rb-dot"></div><div class="rb-row-text">Based on your answers, <strong>you're eligible</strong> for the Aldi Voucher Program.</div></div>
+        <div class="rb-row"><div class="rb-dot"></div><div class="rb-row-text"><strong>A voucher has been reserved for you.</strong> Claim before it expires.</div></div>
+        <div class="rb-row"><div class="rb-dot"></div><div class="rb-row-text">Tap below to <strong>reveal your voucher amount.</strong></div></div>
+      </div>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bonus-label">Reveal Your Voucher Amount</div>
+
+      <div class="slot-machine">
+        <div class="slot-label">Voucher amount</div>
+        <div class="slot-lights">
+          <div class="slot-light" id="l1"></div><div class="slot-light" id="l2"></div>
+          <div class="slot-light" id="l3"></div><div class="slot-light" id="l4"></div>
+          <div class="slot-light" id="l5"></div>
+        </div>
+        <div class="slot-window">
+          <div class="slot-inner" id="slot-inner">
+            <div class="slot-item mystery">🎁</div>
+            <div class="slot-item zero">$0</div>
+            <div class="slot-item win">$250</div>
+            <div class="slot-item win">$500</div>
+            <div class="slot-item win">$250</div>
+            <div class="slot-item win">$500</div>
+            <div class="slot-item zero">$0</div>
+            <div class="slot-item win">$250</div>
+            <div class="slot-item win">$500</div>
+          </div>
+        </div>
+        <div class="slot-lights">
+          <div class="slot-light" id="l6"></div><div class="slot-light" id="l7"></div>
+          <div class="slot-light" id="l8"></div><div class="slot-light" id="l9"></div>
+          <div class="slot-light" id="l10"></div>
+        </div>
+      </div>
+
+      <button class="spin-btn" id="spin-btn" onclick="spinRoulette()">Reveal My Voucher →</button>
+      <p class="bonus-note">One reveal attempt per participant.</p>
+    </div>
+
+    <div class="comments-card">
+      <div class="comments-header">💬 Recent member activity</div>
+      <div class="comment"><div class="c-avatar">PW</div><div><div class="c-name">Patricia W.</div><div class="c-text">Just got my bonus revealed — didn't expect that much!</div><div class="c-meta">5 minutes ago</div></div></div>
+      <div class="comment"><div class="c-avatar">CR</div><div><div class="c-name">Chris R.</div><div class="c-text">Whole thing took maybe 2 minutes so far. Smooth.</div><div class="c-meta">27 minutes ago</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CONGRATS ========== -->
+<div class="page" id="page-congrats">
+  <div class="timer-bar"><span>⏰ Voucher reservation expires in:</span><span class="timer-count timer-el">14:00</span></div>
+  <div class="congrats-wrap">
+
+    <div class="win-card">
+      <div class="win-card-pattern"></div>
+      <div class="win-card-glow"></div>
+      <div class="win-card-top">
+        <div class="win-card-chip"></div>
+        <div class="win-card-tag">Member Voucher</div>
+      </div>
+      <div class="win-card-body">
+        <div class="win-congrats">🎉 Your Voucher Amount</div>
+        <div class="win-amount" id="win-amount">$500</div>
+        <div class="win-label">Aldi Shopping Voucher unlocked.</div>
+      </div>
+      <div class="win-card-bottom">
+        <div class="win-barcode" id="win-barcode"></div>
+        <div class="win-card-id">RC-2026</div>
+      </div>
+    </div>
+
+    <div class="status-steps-box"><div class="ss-item">✅ Eligibility confirmed</div><div class="ss-item">✅ Voucher amount revealed</div><div class="ss-item" style="color:#92610a;">⏳ Final claim step remaining</div></div>
+
+    <a class="continue-btn offer_link" href="https://track.domain/click">Continue To Claim →</a>
+    <div class="cta-timer-text">⏱ Voucher reserved for <strong class="timer-el">14:00</strong> — claim before it expires</div>
+
+    <div class="conditions-card">
+      <div class="conditions-title">How it works</div>
+
+      <div class="condition-step">
+        <div class="cond-num">1</div>
+        <div>
+          <div class="cond-title">Finish your registration</div>
+          <div class="cond-desc">Confirm your details so we know where to send your Aldi Voucher.</div>
+        </div>
+      </div>
+
+      <div class="condition-step">
+        <div class="cond-num">2</div>
+        <div>
+          <div class="cond-title">Complete deals to grow your voucher value</div>
+          <div class="cond-desc">Pick from available deals — apps, free trials, quick tasks. Each deal you complete increases the value of your voucher.</div>
+          <div class="cond-highlight">⬆ More deals = bigger reward</div>
+        </div>
+      </div>
+
+      <div class="condition-step">
+        <div class="cond-num">3</div>
+        <div>
+          <div class="cond-title">Get your voucher</div>
+          <div class="cond-desc">Your Aldi Voucher is delivered digitally. Use in-store or online.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comments-card">
+      <div class="comments-header">💬 Recent member activity</div>
+      <div class="comment"><div class="c-avatar">MW</div><div><div class="c-name">Maria W.</div><div class="c-text">Finished everything last Tuesday. Voucher came Friday. Stocked up on everything for the kids.</div><div class="c-meta">3 hours ago</div></div></div>
+      <div class="comment"><div class="c-avatar">SB</div><div><div class="c-name">Steve B.</div><div class="c-text">Deals were easier than I thought. Most of them were just app downloads.</div><div class="c-meta">6 hours ago</div></div></div>
+      <div class="comment"><div class="c-avatar">ET</div><div><div class="c-name">Emily T.</div><div class="c-text">Used mine on an Aldi grocery run. Paid for almost everything.</div><div class="c-meta">yesterday</div></div></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="footer">
+    <p>Brand Agreement: This promotion is not sponsored, endorsed, or administered by, or associated with, Aldi Inc.. All trademarks, logos, and brand names are the property of their respective owners. Their use on this site does not imply any affiliation with or endorsement by them.</p>
+    <p>This website is not a part of the Facebook website or Meta Platforms, Inc. Additionally, this website is NOT endorsed by Facebook in any way. Facebook is a trademark of Meta Platforms, Inc.</p>
+    <p>¹ Deals may include mobile games and apps, subscription products and services, free trials and many more. Some of the Deals we offer are free, while many require a purchase to complete.</p>
+    <div>
+        <a href="privacy/">Privacy Policy</a> | <a href="terms/">Terms of Service</a>
+    </div>
+    <p>© 2026 RewardClub. All rights reserved. This site is operated independently and is not affiliated with, endorsed by, or sponsored by any retailer, brand, or promotion mentioned in its content. Brand names referenced anywhere on this site or in its newsletter are the property of their respective owners.</p>
+</div>
+
+<script>
+  // BARCODE — program card
+  (function() {
+    var bc = document.getElementById('pc-barcode');
+    if (bc) {
+      for (var i = 0; i < 28; i++) {
+        var bar = document.createElement('div');
+        bar.className = 'pc-bar';
+        bar.style.height = (Math.floor(Math.random() * 8) + 10) + 'px';
+        if (Math.random() > 0.7) bar.style.width = '3px';
+        bc.appendChild(bar);
+      }
+    }
+    // BARCODE — win card
+    var wbc = document.getElementById('win-barcode');
+    if (wbc) {
+      for (var i = 0; i < 28; i++) {
+        var bar = document.createElement('div');
+        bar.className = 'win-bar';
+        bar.style.height = (Math.floor(Math.random() * 8) + 10) + 'px';
+        if (Math.random() > 0.7) bar.style.width = '3px';
+        wbc.appendChild(bar);
+      }
+    }
+  })();
+
+  // PAGE NAVIGATION
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+  function nextQ(id) { showPage(id); }
+
+  // TIMER
+  var secs = 14 * 60 + 59;
+  setInterval(function() {
+    if (secs <= 0) return;
+    secs--;
+    var m = String(Math.floor(secs / 60)).padStart(2, '0');
+    var s = String(secs % 60).padStart(2, '0');
+    var v = m + ':' + s;
+    document.querySelectorAll('.timer-el').forEach(function(el) { el.textContent = v; });
+  }, 1000);
+
+  // SOCIAL PROOF COUNTER
+  (function() {
+    var el = document.getElementById('proof-count');
+    var current = 1521;
+    function fmt(n) { return n.toLocaleString('en-US'); }
+    setInterval(function() {
+      if (Math.random() < 0.5) {
+        current += Math.floor(Math.random() * 4) + 1;
+        if (current > 1500) current = 1487;
+        el.textContent = fmt(current);
+      }
+    }, 2000);
+  })();
+
+  // SLOT SPIN
+  var WIN_INDEX = 3;
+  var WIN_AMOUNT = '$500';
+
+  function spinRoulette() {
+    var btn = document.getElementById('spin-btn');
+    btn.disabled = true;
+    btn.textContent = 'Revealing...';
+
+    var inner = document.getElementById('slot-inner');
+    var itemH = 88;
+    var totalItems = 9;
+
+    var lightOn = false;
+    var lightInterval = setInterval(function() {
+      lightOn = !lightOn;
+      for (var i = 1; i <= 10; i++) {
+        var el = document.getElementById('l' + i);
+        if (el) el.classList.toggle('on', lightOn ? i % 2 === 0 : i % 2 === 1);
+      }
+    }, 100);
+
+    var duration = 3200;
+    var startTime = performance.now();
+    var totalScrollPx = totalItems * 2 * itemH + WIN_INDEX * itemH;
+
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function animate(now) {
+      var elapsed = now - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      var eased = easeOutCubic(progress);
+      var scrolled = eased * totalScrollPx;
+      var pos = -(scrolled % (totalItems * itemH));
+      inner.style.transform = 'translateY(' + pos + 'px)';
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        inner.style.transform = 'translateY(' + (-(WIN_INDEX * itemH)) + 'px)';
+        clearInterval(lightInterval);
+        for (var i = 1; i <= 10; i++) {
+          var el = document.getElementById('l' + i);
+          if (el) el.classList.add('on');
+        }
+        setTimeout(function() {
+          document.getElementById('win-amount').textContent = WIN_AMOUNT;
+          showPage('page-congrats');
+        }, 900);
+      }
+    }
+    inner.style.transform = 'translateY(0)';
+    requestAnimationFrame(animate);
+  }
+</script>
+
+<script src="jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        isClicked = false;
+
+        $(".offer_link").click(function(e){
+            e.preventDefault();
+
+            if (isClicked) return;
+            isClicked = true;
+
+            fbq('track', 'PageView');
+
+            setTimeout(function() {
+                window.location.href = $(".offer_link").attr("href");
+            }, 500);
+
+            setTimeout(function() {
+                isClicked = false;
+            }, 5000);
+        });
+    });
+</script>
+
+</body>
+</html>
