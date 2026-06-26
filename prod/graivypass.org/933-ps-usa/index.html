@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gravy Pass — Earn gift cards from your Wallet</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1640411010446003');
+</script>
+<!-- End Meta Pixel Code -->
+
+<style>
+:root {
+    --bg: #54d3f2;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1fbfb;
+    --border: #e2eef0;
+    --text: #0e3b2e;
+    --text-muted: #4a5a55;
+    --green: #0e3b2e;
+    --green-dark: #0a2c22;
+    --green-soft: rgba(14, 59, 46, 0.10);
+    --accent: #0e3b2e;
+    --accent-dark: #0a2c22;
+    --accent-soft: rgba(14, 59, 46, 0.10);
+    --radius: 16px;
+    --maxw: 760px;
+    --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.pad {
+    padding: 0 20px;
+}
+.wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+}
+
+/* ---------- HERO ---------- */
+.hero-shell {
+    position: relative;
+    overflow: hidden;
+}
+
+/* decorative abstract app-tile field + glow (no real logos) */
+.hero-bg {
+    display: none;
+}
+.hero-bg .hero-photo {
+    display: none; /* clean light theme — no dark collage */
+}
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 55%,
+        var(--bg) 75%);
+    pointer-events: none;
+}
+.hero-bg .glow {
+    position: absolute;
+    left: 50%;
+    top: -10%;
+    width: 620px;
+    height: 620px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(14, 59, 46, 0.22) 0%, rgba(14, 59, 46, 0) 62%);
+    filter: blur(8px);
+}
+.hero-bg .tiles {
+    display: none;
+    position: absolute;
+    inset: 0;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 14px;
+    opacity: 0.5;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 0%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 0%, transparent 75%);
+}
+.hero-bg .tiles span {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 58px 0 20px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 24px;
+}
+.brand-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: block;
+}
+.brand-text {
+    font-size: 23px;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    white-space: nowrap;
+}
+.b-free {
+    color: var(--green);
+}
+.b-cash {
+    color: var(--accent);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: var(--green-soft);
+    border: 1px solid rgba(14, 59, 46, 0.22);
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+}
+.eyebrow svg {
+    width: 15px;
+    height: 15px;
+}
+
+h1 {
+    font-size: clamp(32px, 7vw, 54px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+}
+h1 .accent {
+    color: var(--accent);
+}
+
+.sub {
+    font-size: clamp(16px, 2.6vw, 19px);
+    color: var(--text-muted);
+    max-width: 540px;
+    margin: 0 auto 20px;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 430px;
+    background: var(--green);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    text-align: center;
+    padding: 18px 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(14, 59, 46, 0.25);
+    transition:
+        transform 0.12s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+.cta:hover {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 36px rgba(14, 59, 46, 0.32);
+}
+.cta:active {
+    transform: translateY(0);
+}
+.cta svg {
+    width: 20px;
+    height: 20px;
+}
+
+.cta-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 14px;
+}
+
+/* ---------- PAYOUT CHIPS ---------- */
+.payouts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 8px 13px;
+    border-radius: 999px;
+}
+.chip svg {
+    width: 15px;
+    height: 15px;
+    color: var(--green);
+}
+
+/* ---------- STATS STRIP ---------- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 24px 0 52px;
+    box-shadow: 0 10px 30px rgba(14, 59, 46, 0.10);
+}
+.stat {
+    background: var(--bg-card);
+    padding: 24px 14px;
+    text-align: center;
+}
+.stat .ic {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 12px;
+    display: grid;
+    place-items: center;
+    background: var(--green-soft);
+    border-radius: 10px;
+    color: var(--green);
+}
+.stat .ic svg {
+    width: 20px;
+    height: 20px;
+}
+.stat .num {
+    font-size: clamp(18px, 3vw, 23px);
+    font-weight: 800;
+    color: var(--text);
+}
+.stat .num.green {
+    color: var(--green);
+}
+.stat .lbl {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.35;
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+    padding: 8px 0 52px;
+}
+.section h2 {
+    font-size: clamp(24px, 4.5vw, 32px);
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+}
+
+/* ---------- HOW IT WORKS ---------- */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.step {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    position: relative;
+    box-shadow: 0 6px 20px rgba(14, 59, 46, 0.08);
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+.step:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(14, 59, 46, 0.3);
+}
+.step .n {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: var(--green);
+    color: #ffffff;
+    border-radius: 12px;
+}
+.step .n svg {
+    width: 22px;
+    height: 22px;
+}
+.step .body {
+    flex: 1;
+}
+.step .body .t {
+    font-weight: 700;
+    font-size: 17px;
+}
+.step .body .d {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+.step .idx {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+/* ---------- TRUST / REVIEWS ---------- */
+.trust {
+    text-align: center;
+    padding: 8px 0 52px;
+}
+.trust .placeholder {
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+    cursor: pointer;
+}
+.btn-empty {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1.5px solid var(--green);
+    color: var(--green);
+}
+.btn-empty:hover {
+    background: rgba(14, 59, 46, 0.12);
+    transform: translateY(-1px);
+}
+
+/* ---------- TRUSTPILOT ---------- */
+.trust-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 26px;
+    box-shadow: 0 10px 30px rgba(14, 59, 46, 0.10);
+}
+.tp-head {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.tp-star {
+    width: 24px;
+    height: 24px;
+    color: #00b67a;
+}
+.tp-name {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text);
+}
+.tp-stars {
+    display: inline-flex;
+    gap: 3px;
+    margin-left: 4px;
+}
+.tp-stars i {
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #00b67a;
+    color: #fff;
+}
+.tp-stars i.half {
+    background: linear-gradient(to right, #00b67a 50%, #c8ccd4 50%);
+}
+.tp-stars i svg {
+    width: 17px;
+    height: 17px;
+}
+.tp-line {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-top: 14px;
+}
+.tp-line .bold {
+    font-weight: 800;
+    color: var(--text);
+}
+.tp-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 24px;
+    border: 1.5px solid #00b67a;
+    border-radius: 10px;
+    color: #00b67a;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+}
+.tp-btn:hover {
+    background: rgba(0, 182, 122, 0.1);
+    transform: translateY(-1px);
+}
+
+/* ---------- FINAL CTA ---------- */
+.final {
+    text-align: center;
+    padding: 44px 24px;
+    background: radial-gradient(ellipse 70% 120% at 50% 0%, rgba(14, 59, 46, 0.1), transparent 70%);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    margin-bottom: 44px;
+}
+.final h2 {
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+/* ---------- SLOT MACHINE ---------- */
+.slot-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.slot-card {
+  background: #ffffff;
+  border: 1px solid #e2eef0;
+  border-radius: 20px;
+  padding: 24px 24px 20px;
+  width: 100%;
+  max-width: 430px;
+  text-align: center;
+  box-shadow: 0 14px 40px rgba(14, 59, 46, 0.12);
+}
+.slot-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 14px;
+}
+.slot-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+/* ---------- MYSTERY BOXES ---------- */
+.box-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 340px;
+  margin: 6px auto 12px;
+}
+.box {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef6f7;
+  border: 2px solid #e2eef0;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 30px;
+  color: var(--text);
+  transition: transform .12s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.box .box-gift { transition: transform .12s ease; }
+.box:hover:not(.opened) {
+  border-color: var(--green);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(14, 59, 46, 0.18);
+}
+.box:hover:not(.opened) .box-gift { transform: scale(1.12); }
+.box:active:not(.opened) { transform: translateY(0); }
+.box.opened {
+  cursor: default;
+  border-color: var(--green);
+  background: var(--green-soft);
+  box-shadow: 0 0 16px rgba(14, 59, 46, 0.18);
+  animation: boxPop .35s ease;
+}
+.box-prize {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 4px;
+}
+.box-ico {
+  font-size: 24px;
+  line-height: 1;
+}
+.box-lbl {
+  font-size: 10.5px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--accent);
+  text-transform: none;
+}
+.box-grid.done .box:not(.opened) {
+  opacity: .4;
+  cursor: not-allowed;
+}
+@keyframes boxPop {
+  0% { transform: scale(.85); }
+  60% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.box-progress {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.slot-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e2eef0;
+}
+.dot.active {
+  background: var(--green);
+}
+.slot-body {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.slot-reel-wrap {
+  flex: none;
+  width: 240px;
+  height: 180px;
+  border-radius: 12px;
+  background: #eef6f7;
+  overflow: hidden;
+  position: relative;
+}
+.slot-highlight {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 60px;
+  transform: translateY(-50%);
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  pointer-events: none;
+  box-shadow: 0 0 16px rgba(14, 59, 46,0.18);
+  z-index: 2;
+}
+.slot-reel {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.05s linear;
+  will-change: transform;
+}
+.slot-item {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.slot-item.active {
+  color: var(--text);
+}
+.slot-item.gift {
+  font-size: 44px;
+  line-height: 1;
+}
+
+/* Lever */
+.slot-lever-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  width: 48px;
+}
+.lever-track {
+  position: relative;
+  width: 48px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+.lever-ball {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f7c873, #0e3b2e);
+  box-shadow: 0 4px 12px rgba(14, 59, 46,0.4);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.35s cubic-bezier(.4,1.6,.6,1);
+  z-index: 2;
+}
+.lever-rod {
+  width: 4px;
+  background: linear-gradient(to bottom, #d8dae0, #e2eef0);
+  border-radius: 2px;
+  position: absolute;
+  top: 13px;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lever-base {
+  width: 20px;
+  height: 14px;
+  background: #e2eef0;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lever-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.lever-track.pulled .lever-ball {
+  top: calc(100% - 44px);
+}
+
+/* Slot button */
+.slot-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: var(--green);
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(14, 59, 46,0.28);
+  transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+  animation: slotPulse 2s ease-in-out infinite;
+}
+@keyframes slotPulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(14, 59, 46,0.28), 0 0 0 0 rgba(14, 59, 46,0.45);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(14, 59, 46,0.28), 0 0 0 10px rgba(14, 59, 46,0);
+  }
+}
+.slot-btn:hover,
+.slot-btn:disabled {
+  animation: none;
+}
+.slot-btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(14, 59, 46,0.35);
+}
+.slot-btn:active {
+  transform: translateY(0);
+}
+.slot-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+.slot-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+/* ---------- WIN PANEL ---------- */
+.win-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: #ffffff;
+  border-top: 1px solid rgba(14, 59, 46,0.4);
+  padding: 14px 20px;
+  box-shadow: 0 -8px 30px rgba(0,0,0,0.45);
+  opacity: 0;
+  transform: translateY(110%);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@media screen and (max-width: 560px) {
+  .win-panel {
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+}
+.win-panel.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+/* push page content up so the sticky bar never covers the footer */
+body.claim-sticky {
+  padding-bottom: 88px;
+}
+.win-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+.win-emoji {
+  font-size: 22px;
+  line-height: 1;
+}
+.win-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--green);
+}
+.win-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+.win-timer {
+  font-weight: 800;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.win-cta {
+  flex-shrink: 0;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.12s;
+  width: auto;
+  max-width: none;
+  display: inline-flex;
+  box-shadow: none;
+}
+.win-cta:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+/* ---------- AVAILABLE ON / STORE BADGES ---------- */
+.store-wrap {
+  margin: 0 0 22px;
+  text-align: center;
+}
+.store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #000;
+  border: 1px solid #e2eef0;
+  border-radius: 12px;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: #fff;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}
+.store-badge svg {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+.sb-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-align: left;
+}
+.sb-text small {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.sb-text strong {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ---------- DISCLAIMER ---------- */
+.disclaimer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0 56px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: center;
+}
+.disclaimer p + p {
+    margin-top: 10px;
+}
+.footer-links {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s ease;
+}
+.footer-links a:hover {
+    color: var(--green);
+}
+.footer-links .sep {
+    color: var(--border);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 560px) {
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .hero-bg .tiles {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* ---------- MOTION ---------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.reveal {
+    animation: fadeUp 0.5s ease both;
+}
+.reveal.d1 {
+    animation-delay: 0.06s;
+}
+.reveal.d2 {
+    animation-delay: 0.12s;
+}
+.reveal.d3 {
+    animation-delay: 0.18s;
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        animation: none;
+    }
+    .cta,
+    .step {
+        transition: none;
+    }
+    .slot-btn {
+        animation: none;
+    }
+}
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero-shell">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-photo"></div>
+      <div class="glow"></div>
+      <div class="tiles">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="wrap pad">
+      <header class="hero">
+        <div class="brand reveal" aria-label="Gravy Pass">
+          <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="#0e3b2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2 2 2 0 0 0 0 4 2 2 0 0 1-2 2H5a2 2 0 0 1-2-2 2 2 0 0 0 0-4z"/><path d="M14 6v12" stroke-dasharray="1.5 2.5"/></svg>
+          <span class="brand-text"><span class="b-free">GRAVY</span>&nbsp;<span class="b-cash">PASS</span></span>
+        </div>
+        <h1 class="reveal d1"><span class="accent">Earn gift cards</span> for playing mobile games &amp; apps</h1>
+
+        <!-- ADD TO WALLET -->
+        <div class="store-wrap reveal d2">
+          <div class="store-badges">
+            <div class="store-badge" aria-label="Add to Apple Wallet">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.02-2.07 1.69-3.06 1.77-3.11-.96-1.41-2.46-1.6-2.99-1.62-1.27-.13-2.49.75-3.13.75-.65 0-1.64-.73-2.7-.71-1.39.02-2.67.81-3.38 2.05-1.44 2.5-.37 6.2 1.03 8.23.69.99 1.51 2.1 2.58 2.06 1.04-.04 1.43-.67 2.69-.67 1.25 0 1.6.67 2.7.65 1.11-.02 1.82-1.01 2.5-2.01.79-1.15 1.11-2.27 1.13-2.33-.02-.01-2.17-.83-2.19-3.29zM15.0 6.27c.57-.69.96-1.65.85-2.6-.82.03-1.82.55-2.41 1.23-.53.61-.99 1.58-.87 2.51.92.07 1.86-.46 2.43-1.14z"/></svg>
+              <span class="sb-text"><small>Add to</small><strong>Apple Wallet</strong></span>
+            </div>
+            <div class="store-badge" aria-label="Add to Android Wallet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M16.5 14.5h1.5"/></svg>
+              <span class="sb-text"><small>Add to</small><strong>Android Wallet</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLOT MACHINE -->
+        <div class="slot-wrap reveal d3">
+          <div class="slot-card">
+            <div class="slot-header">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              TRY YOUR LUCK
+            </div>
+            <p class="slot-sub">Open 3 boxes to reveal your welcome rewards</p>
+            <div class="box-grid" id="boxGrid" aria-label="Mystery boxes"></div>
+            <p class="box-progress" id="boxProgress"><span id="boxOpened">0</span> / 3 boxes opened</p>
+            <p class="slot-hint" id="slotHint">Tap any box to open it</p>
+          </div>
+
+        </div>
+
+        <div class="payouts reveal d3">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>PayPal</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Cards</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><line x1="6" y1="12" x2="6.01" y2="12"/><line x1="18" y1="12" x2="18.01" y2="12"/></svg>Cash</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 8h18M12 8v13M12 8s-1.5-5-4-5-2 3 0 3 4 2 4 2zm0 0s1.5-5 4-5 2 3 0 3-4 2-4 2z"/></svg>Gift cards</span>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap pad">
+
+    <!-- STATS STRIP — Gravy Pass published figures -->
+    <section class="stats reveal">
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
+        <div class="num green">$1M+</div><div class="lbl">Total paid to players</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
+        <div class="num">~5 min</div><div class="lbl">Avg. time to your first reward</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="num">4.6★</div><div class="lbl">Average member rating</div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
+          <div class="body">
+            <div class="t">Add Gravy Pass to your Wallet</div>
+            <div class="d">No app-store download — add the pass to Apple or Google Wallet in seconds.</div>
+          </div>
+          <span class="idx">01</span>
+        </div>
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg></div>
+          <div class="body">
+            <div class="t">Play games &amp; apps</div>
+            <div class="d">Earn points from popular mobile games and apps, right from your pass.</div>
+          </div>
+          <span class="idx">02</span>
+        </div>
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg></div>
+          <div class="body">
+            <div class="t">Redeem for gift cards</div>
+            <div class="d">Turn your points into your favorite gift cards.</div>
+          </div>
+          <span class="idx">03</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUSTPILOT -->
+    <section class="trust">
+      <div class="trust-card">
+        <div class="tp-head">
+          <svg class="tp-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <span class="tp-name">Trustpilot</span>
+          <span class="tp-stars">
+            <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></i>
+            <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></i>
+            <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></i>
+            <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></i>
+            <i class="half"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg></i>
+          </span>
+        </div>
+        <p class="tp-line"><span class="bold">4.4</span> rating based on <span class="bold">892</span> reviews on Trustpilot</p>
+        <a class="tp-btn" href="https://www.trustpilot.com/review/www.gravypass.com" target="_blank" rel="noopener">See all reviews on Trustpilot</a>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <footer class="disclaimer">
+      <p>Earnings vary based on the games and apps you use, your device, and your location. The figures above are Gravy Pass' published platform statistics and do not represent typical individual earnings.</p>
+      <p>The welcome bonus is credited after you add the pass and complete your first reward offer. Gravy Pass is an independent rewards platform. This page is operated by an independent partner and is not the official Gravy Pass website.</p>
+      <nav class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span class="sep">·</span>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <span class="sep">·</span>
+        <a id="contactLink" href="mailto:contact@gravypass.com">Contact us</a>
+      </nav>
+    </footer>
+
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+      (function () {
+        var BOX_COUNT = 9;   // boxes shown in the grid
+        var MAX_OPEN = 3;    // how many the user may open
+        var opened = 0;
+        var finished = false;
+
+        // The three welcome rewards. Order is randomized each load.
+        var PRIZES = [
+          { ico: '💵', label: '$1 welcome<br>bonus' },
+          { ico: '⚡', label: '2× earnings<br>for 24 hours' },
+          { ico: '🔓', label: 'Cashout<br>unlocked<br>from $1' }
+        ];
+        function shuffle(arr) {
+          for (var i = arr.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+          }
+          return arr;
+        }
+        var prizes = shuffle(PRIZES.slice());
+
+        // --- Sound (synthesized, no external file) ---
+        var audioCtx = null;
+        function ensureAudio() {
+          try {
+            audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            return true;
+          } catch (e) { return false; }
+        }
+        function tone(time, freq, dur, gainVal, type) {
+          var osc = audioCtx.createOscillator();
+          var gain = audioCtx.createGain();
+          osc.type = type || 'triangle';
+          osc.frequency.value = freq;
+          gain.gain.setValueAtTime(0.0001, time);
+          gain.gain.linearRampToValueAtTime(gainVal, time + 0.01);
+          gain.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(time);
+          osc.stop(time + dur);
+        }
+        function playPop() {
+          if (!ensureAudio()) return;
+          var now = audioCtx.currentTime;
+          tone(now, 520, 0.12, 0.12, 'triangle');
+          tone(now + 0.03, 880, 0.16, 0.10, 'triangle');
+        }
+        function playWin() {
+          if (!ensureAudio()) return;
+          var now = audioCtx.currentTime;
+          [660, 880, 1320].forEach(function (f, i) { tone(now + i * 0.1, f, 0.32, 0.12, 'triangle'); });
+        }
+
+        // --- Build the 3x3 box grid ---
+        var grid = document.getElementById('boxGrid');
+        var openedEl = document.getElementById('boxOpened');
+        var hintEl = document.getElementById('slotHint');
+
+        for (var i = 0; i < BOX_COUNT; i++) {
+          var b = document.createElement('button');
+          b.className = 'box';
+          b.type = 'button';
+          b.setAttribute('aria-label', 'Mystery box');
+          b.innerHTML = '<span class="box-gift">🎁</span>';
+          b.addEventListener('click', onOpen);
+          grid.appendChild(b);
+        }
+
+        function onOpen(e) {
+          if (finished) return;
+          var box = e.currentTarget;
+          if (box.classList.contains('opened')) return;
+
+          var prize = prizes[opened];
+          opened++;
+          box.classList.add('opened');
+          box.innerHTML = '<span class="box-prize"><span class="box-ico">' + prize.ico + '</span><span class="box-lbl">' + prize.label + '</span></span>';
+          playPop();
+          if (openedEl) openedEl.textContent = String(opened);
+
+          if (opened >= MAX_OPEN) {
+            finished = true;
+            grid.classList.add('done');
+            setTimeout(finish, 600);
+          }
+        }
+
+        function finish() {
+          if (hintEl) hintEl.style.display = 'none';
+          var prog = document.getElementById('boxProgress');
+          if (prog) prog.style.display = 'none';
+          document.getElementById('winPanel').classList.add('show');
+          document.body.classList.add('claim-sticky');
+
+          startReservationTimer();
+          playWin();
+          launchConfetti();
+        }
+
+        // --- 5-minute reservation countdown shown in the win bar ---
+        function startReservationTimer() {
+          var el = document.getElementById('winTimer');
+          if (!el) return;
+          var remaining = 5 * 60; // seconds
+          el.textContent = '5:00';
+          var iv = setInterval(function () {
+            remaining--;
+            if (remaining < 0) { clearInterval(iv); el.textContent = '0:00'; return; }
+            var m = Math.floor(remaining / 60);
+            var s = remaining % 60;
+            el.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+          }, 1000);
+        }
+
+        // --- Confetti burst (lightweight canvas, no dependencies) ---
+        function launchConfetti() {
+          if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+          var canvas = document.createElement('canvas');
+          canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999';
+          document.body.appendChild(canvas);
+          var ctx = canvas.getContext('2d');
+          var dpr = window.devicePixelRatio || 1;
+          function resize() { canvas.width = innerWidth * dpr; canvas.height = innerHeight * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+          resize();
+
+          var colors = ['#0e3b2e', '#f7c873', '#ffffff', '#ffd24f', '#ff5a7a'];
+          var pieces = [];
+          var count = 140;
+          for (var i = 0; i < count; i++) {
+            pieces.push({
+              x: innerWidth / 2 + (Math.random() - 0.5) * 120,
+              y: innerHeight / 3,
+              vx: (Math.random() - 0.5) * 14,
+              vy: Math.random() * -16 - 4,
+              size: Math.random() * 7 + 4,
+              color: colors[(Math.random() * colors.length) | 0],
+              rot: Math.random() * Math.PI,
+              vr: (Math.random() - 0.5) * 0.3,
+              life: 0
+            });
+          }
+
+          var gravity = 0.42;
+          var start = performance.now();
+          function frame(now) {
+            var elapsed = now - start;
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+            pieces.forEach(function (p) {
+              p.vy += gravity;
+              p.vx *= 0.99;
+              p.x += p.vx;
+              p.y += p.vy;
+              p.rot += p.vr;
+              p.life++;
+              ctx.save();
+              ctx.translate(p.x, p.y);
+              ctx.rotate(p.rot);
+              ctx.globalAlpha = Math.max(0, 1 - elapsed / 2600);
+              ctx.fillStyle = p.color;
+              ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+              ctx.restore();
+            });
+            if (elapsed < 2800) {
+              requestAnimationFrame(frame);
+            } else {
+              canvas.remove();
+            }
+          }
+          requestAnimationFrame(frame);
+        }
+
+        // --- Contact email auto-matched to the current domain ---
+        (function () {
+          var host = location.hostname.replace(/^www\./, '');
+          if (!host || host === 'localhost' || /^\d{1,3}(\.\d{1,3}){3}$/.test(host)) host = 'gravypass.com';
+          var el = document.getElementById('contactLink');
+          if (el) el.href = 'mailto:contact@' + host;
+        })();
+      })();
+    </script>
+
+  </div>
+
+  <!-- STICKY WIN BAR (direct body child so position:fixed anchors to the viewport) -->
+  <div class="win-panel" id="winPanel">
+    <div class="win-left">
+      <span class="win-emoji">🎉</span>
+      <div>
+        <div class="win-title">You won 3 rewards!</div>
+        <div class="win-sub">Reserved for <span class="win-timer" id="winTimer">5:00</span> — add the pass to claim</div>
+      </div>
+    </div>
+    <a class="win-cta offer_link" href="https://track.graivypass.org/click">Claim all your rewards</a>
+  </div>
+
+  <script>
+        $(document).ready(function() {
+            isClicked = false;
+            $(".offer_link").click(function(e){
+                e.preventDefault();
+
+                if (isClicked) return;
+                isClicked = true;
+
+                fbq('track', 'PageView');
+
+                setTimeout(() => {
+                    window.location.href = $(this).attr("href");
+                }, 500);
+
+                setTimeout(() => {
+                    isClicked = false;
+                }, 5000);
+            });
+        });
+    </script>
+
+</body>
+</html>
