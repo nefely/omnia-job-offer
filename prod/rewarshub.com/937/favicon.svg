@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Freecash">
+  <rect width="40" height="40" rx="9" fill="#00d26a"/>
+  <path d="M26 5 L13 5 a9 9 0 0 0 0 18 h3 l-6 6 h6 l8-8 h-9 a4 4 0 0 1 0-8 h11 z" fill="#ffffff"/>
+  <path d="M14 35 L27 35 a9 9 0 0 0 0-18 h-3 l6-6 h-6 l-8 8 h9 a4 4 0 0 1 0 8 H14 z" fill="#ffffff"/>
+</svg>
