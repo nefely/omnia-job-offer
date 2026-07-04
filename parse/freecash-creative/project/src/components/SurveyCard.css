@@ -1,0 +1,56 @@
+.survey-card {
+  width: 150px;
+  flex-shrink: 0;
+  text-align: left;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.survey-media {
+  position: relative;
+  height: 150px;
+  display: grid;
+  place-items: center;
+}
+
+.survey-rocket {
+  font-size: 60px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+}
+
+.survey-rating {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  font-size: 14px;
+  font-weight: 700;
+}
+.survey-star {
+  color: var(--amber);
+}
+
+.survey-body {
+  padding: 10px 12px 14px;
+}
+.survey-label {
+  font-size: 18px;
+  font-weight: 700;
+}
+.survey-mins {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+.survey-reward {
+  margin-top: 2px;
+  font-size: 19px;
+  font-weight: 800;
+}

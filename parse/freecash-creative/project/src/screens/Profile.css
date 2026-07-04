@@ -1,0 +1,299 @@
+.pf {
+  padding: 18px 18px 24px;
+}
+
+.pf-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+.pf-title {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.pf-gear {
+  color: var(--green);
+}
+.pf-gear svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* user summary */
+.pf-user {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.pf-avatar {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.pf-user-info {
+  flex: 1;
+  min-width: 0;
+}
+.pf-name {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.pf-stats {
+  display: flex;
+  gap: 26px;
+}
+.pf-stat-val {
+  font-size: 24px;
+  font-weight: 800;
+}
+.pf-stat-key {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* level */
+.pf-level-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 28px 0 12px;
+}
+.pf-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-size: 22px;
+  font-weight: 800;
+}
+.pf-level b {
+  color: var(--green);
+}
+.pf-level-hint {
+  color: var(--text-muted);
+  font-size: 17px;
+}
+.pf-level-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bg-elev-2);
+  overflow: hidden;
+}
+.pf-level-fill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 999px;
+  min-width: 8px;
+}
+
+/* generic link rows */
+.pf-link,
+.pf-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 2px;
+}
+.pf-link-l,
+.pf-row-l {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 24px;
+  font-weight: 800;
+}
+.pf-link-ico {
+  font-size: 24px;
+}
+.pf-link svg,
+.pf-row svg {
+  width: 26px;
+  height: 26px;
+}
+.pf-earnings {
+  margin-top: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.pf-row {
+  border-top: 1px solid var(--border);
+  font-weight: 800;
+}
+.pf-row-ico {
+  width: 28px;
+  height: 28px;
+}
+.pf-row-ico--chat {
+  font-size: 24px;
+}
+
+/* started offers */
+.pf-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 26px 0 16px;
+}
+.pf-section-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 26px;
+  font-weight: 800;
+}
+.pf-info svg {
+  width: 20px;
+  height: 20px;
+  color: var(--text-dim);
+}
+.pf-viewall {
+  color: var(--text-muted);
+  font-size: 17px;
+  font-weight: 700;
+}
+.pf-viewall-chev {
+  color: var(--text-muted);
+}
+
+.pf-offers {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+.pf-offer {
+  flex-shrink: 0;
+  width: 175px;
+  padding: 12px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+.pf-offer-thumb {
+  aspect-ratio: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  font-size: 46px;
+  margin-bottom: 12px;
+}
+.pf-offer-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pf-offer-title {
+  font-size: 20px;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pf-offer-cat {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin: 2px 0 8px;
+}
+.pf-offer-bal {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* ---------- footer ---------- */
+.pf-footer {
+  margin-top: 34px;
+}
+.pf-fc-logo {
+  height: 30px;
+  width: auto;
+  margin-bottom: 16px;
+}
+.pf-about {
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.pf-appstore {
+  height: 54px;
+  width: auto;
+  margin-bottom: 18px;
+}
+.pf-trust {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border);
+}
+.pf-trust-word {
+  font-weight: 800;
+  font-size: 17px;
+}
+.pf-trust img {
+  height: 22px;
+}
+.pf-trust-logo {
+  height: 20px;
+}
+
+.pf-foot-accordions {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+.pf-acc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--green);
+  font-size: 22px;
+  font-weight: 800;
+}
+.pf-acc svg {
+  width: 24px;
+  height: 24px;
+  color: var(--text-muted);
+}
+
+.pf-copyright {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 24px 0;
+}
+.pf-lang {
+  display: block;
+  margin: 0 auto 24px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  font-size: 18px;
+  font-weight: 700;
+}
+.pf-socials {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+.pf-social {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 18px;
+  font-weight: 700;
+}

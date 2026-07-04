@@ -1,0 +1,35 @@
+:root {
+  /* ---- Palette (FreeCash-style dark) ---- */
+  --bg: #0d1117;
+  --bg-elev: #161b26;
+  --bg-elev-2: #1c2230;
+  --border: #232a38;
+  --border-soft: #1b2130;
+
+  --text: #f2f5f9;
+  --text-muted: #93a0b4;
+  --text-dim: #5f6b7d;
+
+  --green: #00d26a;
+  --green-dark: #00b85c;
+  --green-soft: rgba(0, 210, 106, 0.12);
+
+  --amber: #f5a623;
+  --red: #e5484d;
+  --blue: #3b82f6;
+
+  /* ---- Shape ---- */
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
+
+  /* ---- Layout ---- */
+  --app-maxw: 480px;              /* WebView phone width cap */
+  --nav-h: 64px;                  /* bottom tab bar height */
+  --header-h: 56px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}

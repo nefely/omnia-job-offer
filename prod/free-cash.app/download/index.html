@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get Paid for Scroling, Testing Apps and Games. </title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="favicon.svg" />
+<meta name="theme-color" content="#00d26a" />
+
+<!-- Snap  Pixel Code -->
+<script type='text/javascript'> (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function() {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)}; a.queue=[];var s='script';r=t.createElement(s);r.async=!0; r.src=n;var u=t.getElementsByTagName(s)[0]; u.parentNode.insertBefore(r,u);})(window,document, 'https://sc-static.net/scevent.min.js'); snaptr('init', '53cee5ac-73a4-4be5-87d5-76a7143e506e', { 'user_email': '__INSERT_USER_EMAIL__' });  </script>
+<!-- End Snap Pixel Code -->
+
+<script src="https://track.free-cash.app/unilpclick.js?attribution=lastpaid&cookiedomain=&cookieduration=90&defaultcampaignid=6a0475736f97f55cc3f2b182&regviewonce=false"></script>
+
+<style>
+:root {
+    --bg: #0d1117;
+    --bg-card: #161b26;
+    --bg-card-hover: #1c2230;
+    --border: #232a38;
+    --text: #f2f5f9;
+    --text-muted: #93a0b4;
+    --green: #00d26a;
+    --green-dark: #00b85c;
+    --green-soft: rgba(0, 210, 106, 0.12);
+    --radius: 16px;
+    --maxw: 760px;
+    --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.pad {
+    padding: 0 16px;
+}
+.wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+}
+
+/* ---------- HERO ---------- */
+.hero-shell {
+    position: relative;
+    overflow: hidden;
+}
+
+/* decorative abstract app-tile field + glow (no real logos) */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.hero-bg .hero-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: url("img/hero-shadow-bg-2-sm.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    opacity: 0.16;
+}
+/* dark veil over the collage: keeps logos visible up top, fades to solid bg + lifts text contrast */
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(13, 17, 23, 0.35) 0%,
+        rgba(13, 17, 23, 0.62) 30%,
+        rgba(13, 17, 23, 0.9) 48%,
+        var(--bg) 60%);
+    pointer-events: none;
+}
+.hero-bg .glow {
+    position: absolute;
+    left: 50%;
+    top: -10%;
+    width: 620px;
+    height: 620px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(0, 210, 106, 0.22) 0%, rgba(0, 210, 106, 0) 62%);
+    filter: blur(8px);
+}
+.hero-bg .tiles {
+    display: none;
+    position: absolute;
+    inset: 0;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 14px;
+    opacity: 0.5;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 0%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 0%, transparent 75%);
+}
+.hero-bg .tiles span {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 58px 0 20px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 24px;
+}
+.brand-icon {
+    width: 32px;
+    height: 32px;
+}
+.brand-text {
+    font-size: 26px;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    line-height: 1;
+}
+.b-free {
+    color: var(--green);
+}
+.b-cash {
+    color: #ffffff;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: var(--green-soft);
+    border: 1px solid rgba(0, 210, 106, 0.22);
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+}
+.eyebrow svg {
+    width: 15px;
+    height: 15px;
+}
+
+h1 {
+    font-size: clamp(32px, 7vw, 54px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+}
+h1 .accent {
+    color: var(--green);
+}
+
+.sub {
+    font-size: clamp(16px, 2.6vw, 19px);
+    color: var(--text-muted);
+    max-width: 540px;
+    margin: 0 auto 20px;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 430px;
+    background: var(--green);
+    color: #07120b;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    text-align: center;
+    padding: 18px 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 210, 106, 0.25);
+    transition:
+        transform 0.12s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+.cta:hover {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 36px rgba(0, 210, 106, 0.32);
+}
+.cta:active {
+    transform: translateY(0);
+}
+.cta svg {
+    width: 20px;
+    height: 20px;
+}
+
+.cta-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 14px;
+}
+
+/* ---------- PAYOUT CHIPS ---------- */
+.payouts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 12px;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 4px 8px;
+    border-radius: 999px;
+}
+.chip svg {
+    width: 15px;
+    height: 15px;
+    color: var(--green);
+}
+
+/* ---------- STATS STRIP (real Freecash data) ---------- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 24px 0 52px;
+}
+.stat {
+    background: var(--bg-card);
+    padding: 24px 14px;
+    text-align: center;
+}
+.stat .ic {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 12px;
+    display: grid;
+    place-items: center;
+    background: var(--green-soft);
+    border-radius: 10px;
+    color: var(--green);
+}
+.stat .ic svg {
+    width: 20px;
+    height: 20px;
+}
+.stat .num {
+    font-size: clamp(18px, 3vw, 23px);
+    font-weight: 800;
+    color: var(--text);
+}
+.stat .num.green {
+    color: var(--green);
+}
+.stat .lbl {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.35;
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+    padding: 8px 0 52px;
+}
+.section h2 {
+    font-size: clamp(24px, 4.5vw, 32px);
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+}
+
+/* ---------- HOW IT WORKS ---------- */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.step {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    position: relative;
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+.step:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(0, 210, 106, 0.3);
+}
+.step .n {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    background: var(--green);
+    color: #07120b;
+    border-radius: 12px;
+}
+.step .n svg {
+    width: 22px;
+    height: 22px;
+}
+.step .body {
+    flex: 1;
+}
+.step .body .t {
+    font-weight: 700;
+    font-size: 17px;
+}
+.step .body .d {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+.step .idx {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+/* ---------- REVIEWS ---------- */
+.reviews-scroller {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 4px 4px 14px;
+    margin: 0 -4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+}
+.reviews-scroller::-webkit-scrollbar {
+    height: 7px;
+}
+.reviews-scroller::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 999px;
+}
+.review-summary,
+.review-card {
+    flex: 0 0 282px;
+    scroll-snap-align: start;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+}
+.review-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 12px;
+}
+.rs-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text);
+}
+.rs-stars {
+    display: block;
+    height: 28px;
+    width: auto;
+}
+.rs-count {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+.rs-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+    text-decoration: none;
+}
+.rs-logo svg {
+    height: 25px;
+    width: auto;
+}
+.review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+.review-card:hover {
+    border-color: rgba(0, 210, 106, 0.3);
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+}
+.tp-stars {
+    height: 21px;
+    width: auto;
+    display: block;
+}
+.rc-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.3;
+}
+.rc-body {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.rc-foot {
+    margin-top: auto;
+    padding-top: 4px;
+}
+.rc-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+}
+.rc-time {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+@media (max-width: 600px) {
+    .review-summary,
+    .review-card {
+        flex-basis: 80%;
+    }
+}
+.reviews-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+.reviews-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    background: var(--border);
+    cursor: pointer;
+    transition: background 0.2s ease, width 0.2s ease;
+}
+.reviews-dot:hover {
+    background: var(--text-muted);
+}
+.reviews-dot.is-active {
+    width: 24px;
+    background: var(--green);
+}
+.reviews-dot.is-active:hover {
+    background: var(--green);
+}
+
+/* ---------- FINAL CTA ---------- */
+.final {
+    text-align: center;
+    padding: 44px 24px;
+    background: radial-gradient(ellipse 70% 120% at 50% 0%, rgba(0, 210, 106, 0.1), transparent 70%);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    margin-bottom: 44px;
+}
+.final h2 {
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+/* ---------- DISCLAIMER ---------- */
+.disclaimer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0 56px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: center;
+}
+.disclaimer p + p {
+    margin-top: 10px;
+}
+.footer-links {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s ease;
+}
+.footer-links a:hover {
+    color: var(--green);
+}
+.footer-links .sep {
+    color: var(--border);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 560px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-bg .tiles {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+}
+
+/* ---------- MOTION ---------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.reveal {
+    animation: fadeUp 0.5s ease both;
+}
+.reveal.d1 {
+    animation-delay: 0.06s;
+}
+.reveal.d2 {
+    animation-delay: 0.12s;
+}
+.reveal.d3 {
+    animation-delay: 0.18s;
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        animation: none;
+    }
+    .cta,
+    .step {
+        transition: none;
+    }
+}
+
+/* ---------- STICKY DOWNLOAD BAR ---------- */
+body {
+    /* keep page content clear of the fixed bar (height + safe-area) */
+    padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+}
+.download-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: rgba(13, 17, 23, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.45);
+}
+.download-inner {
+    width: 100%;
+    max-width: var(--maxw);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.download-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+.download-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: var(--green);
+    background: var(--green-soft);
+    border: 1px solid rgba(0, 210, 106, 0.22);
+    padding: 7px 11px;
+    border-radius: 999px;
+}
+.download-timer svg {
+    width: 15px;
+    height: 15px;
+}
+.download-timer.is-up {
+    color: #ff7a90;
+    background: rgba(255, 90, 122, 0.12);
+    border-color: rgba(255, 90, 122, 0.28);
+}
+.download-textwrap {
+    min-width: 0;
+}
+.download-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+}
+.download-date {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+.download-date .dd-dot {
+    color: var(--green);
+}
+.download-cta {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+    background: var(--green);
+    color: #07120b;
+    font-size: 15.5px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 11px;
+    box-shadow: 0 8px 24px rgba(0, 210, 106, 0.28);
+    transition: transform 0.12s ease, background 0.15s ease, box-shadow 0.15s ease;
+    animation: cta-pulse 2s ease-in-out infinite;
+}
+/* attention-grabbing glossy sweep across the button */
+.download-cta::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: skewX(-20deg);
+    pointer-events: none;
+    animation: cta-shine 2.8s ease-in-out infinite;
+}
+.download-cta:hover {
+    background: var(--green-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px rgba(0, 210, 106, 0.34);
+}
+.download-cta:active {
+    transform: translateY(0);
+}
+.download-cta svg {
+    width: 18px;
+    height: 18px;
+}
+@keyframes cta-pulse {
+    0%, 100% { box-shadow: 0 8px 22px rgba(0, 210, 106, 0.28); }
+    50%      { box-shadow: 0 10px 30px rgba(0, 210, 106, 0.55); }
+}
+@keyframes cta-shine {
+    0%      { left: -130%; }
+    55%, 100% { left: 130%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .download-cta { animation: none; }
+    .download-cta::after { display: none; }
+}
+@media (max-width: 600px) {
+    body {
+        padding-bottom: calc(132px + env(safe-area-inset-bottom, 0px));
+    }
+    .download-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .download-info {
+        justify-content: center;
+    }
+    .download-text {
+        font-size: 13px;
+    }
+    .download-cta {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero-shell">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-photo"></div>
+      <div class="glow"></div>
+      <div class="tiles">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="wrap pad">
+      <header class="hero">
+        <div class="brand reveal" aria-label="Freecash">
+          <span class="brand-text"><span class="b-free">FREE</span><span class="b-cash">CASH</span></span>
+        </div>
+        <h1 class="reveal d1"><span class="accent">Get Paid</span> for Scrolling, Testing Apps and Games.</h1>
+        <p class="sub reveal d2">Cash out via 80+ methods — from PayPal to crypto and gift cards.</p>
+
+        <div class="payouts reveal d3">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>PayPal</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Cards</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 8.5h4a2 2 0 0 1 0 4h-4v-4zm0 4h4.5a2 2 0 0 1 0 4H9.5v-4z"/><line x1="11" y1="6.5" x2="11" y2="17.5"/></svg>Crypto</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 8h18M12 8v13M12 8s-1.5-5-4-5-2 3 0 3 4 2 4 2zm0 0s1.5-5 4-5 2 3 0 3-4 2-4 2z"/></svg>Gift cards</span>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap pad">
+
+    <!-- STATS STRIP — Freecash's own published figures -->
+    <section class="stats reveal">
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+        <div class="num">$74.43</div><div class="lbl">Avg. Daily Earnings</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6"/><path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg></div>
+        <div class="num green">$300M+</div><div class="lbl">Total USD earned on Freecash</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
+        <div class="num">~17 min</div><div class="lbl">Avg. time to your first reward</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <div class="num">9,499</div><div class="lbl">Offers available right now</div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
+          <div class="body">
+            <div class="t">Install Freecash App</div>
+            <div class="d">Create a free account.</div>
+          </div>
+          <span class="idx">01</span>
+        </div>
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg></div>
+          <div class="body">
+            <div class="t">Complete offers</div>
+            <div class="d">Test apps, play games, and take surveys. Each offer shows its reward upfront.</div>
+          </div>
+          <span class="idx">02</span>
+        </div>
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg></div>
+          <div class="body">
+            <div class="t">Withdraw your earnings</div>
+            <div class="d">Cash out via 80+ methods, including PayPal, crypto, and gift cards.</div>
+          </div>
+          <span class="idx">03</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section reviews-section">
+      <h2>Everyone&rsquo;s talking about Freecash</h2>
+      <div class="reviews-scroller" id="reviewsScroller">
+
+        <!-- Trustpilot summary -->
+        <div class="review-summary">
+          <div class="rs-title">Excellent</div>
+          <svg class="rs-stars" viewBox="0 0 118 22" role="img" aria-label="Rated 5 out of 5 on Trustpilot">
+            <g transform="translate(0,0)"><rect width="22" height="22" rx="1" fill="#00b67a"/><polygon points="11,4 13.09,8.26 17.8,8.94 14.4,12.25 15.2,16.9 11,14.7 6.8,16.9 7.6,12.25 4.2,8.94 8.91,8.26" fill="#fff"/></g>
+            <g transform="translate(24,0)"><rect width="22" height="22" rx="1" fill="#00b67a"/><polygon points="11,4 13.09,8.26 17.8,8.94 14.4,12.25 15.2,16.9 11,14.7 6.8,16.9 7.6,12.25 4.2,8.94 8.91,8.26" fill="#fff"/></g>
+            <g transform="translate(48,0)"><rect width="22" height="22" rx="1" fill="#00b67a"/><polygon points="11,4 13.09,8.26 17.8,8.94 14.4,12.25 15.2,16.9 11,14.7 6.8,16.9 7.6,12.25 4.2,8.94 8.91,8.26" fill="#fff"/></g>
+            <g transform="translate(72,0)"><rect width="22" height="22" rx="1" fill="#00b67a"/><polygon points="11,4 13.09,8.26 17.8,8.94 14.4,12.25 15.2,16.9 11,14.7 6.8,16.9 7.6,12.25 4.2,8.94 8.91,8.26" fill="#fff"/></g>
+            <g transform="translate(96,0)"><rect width="22" height="22" rx="1" fill="#00b67a"/><polygon points="11,4 13.09,8.26 17.8,8.94 14.4,12.25 15.2,16.9 11,14.7 6.8,16.9 7.6,12.25 4.2,8.94 8.91,8.26" fill="#fff"/></g>
+          </svg>
+          <div class="rs-count">Based on 294,420 reviews</div>
+          <a class="rs-logo" href="https://www.trustpilot.com/review/freecash.com" target="_blank" rel="noopener nofollow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 34" fill="none"><path d="M36.785 11.97h14.173v2.597h-5.572v14.602H42.32V14.567h-5.548v-2.598h.012zm13.568 4.745h2.62v2.404h.049c.087-.34.247-.668.482-.984a4.57 4.57 0 0 1 1.965-1.517 3.456 3.456 0 0 1 1.248-.243c.32 0 .556.012.68.025.123.012.246.036.382.048v2.646a9.09 9.09 0 0 0-.605-.085 5.198 5.198 0 0 0-.606-.036c-.47 0-.914.097-1.334.28-.42.181-.779.46-1.087.813a4.107 4.107 0 0 0-.742 1.335c-.185.534-.272 1.14-.272 1.833v5.923h-2.792V16.715h.012zM70.618 29.17h-2.743v-1.736h-.05c-.346.632-.852 1.13-1.532 1.506-.68.376-1.372.57-2.076.57-1.668 0-2.88-.4-3.62-1.214-.742-.813-1.113-2.039-1.113-3.678v-7.902h2.793v7.635c0 1.093.21 1.87.643 2.319.42.449 1.025.68 1.791.68.593 0 1.075-.085 1.47-.268.396-.182.717-.412.952-.716.247-.291.42-.655.532-1.068.11-.413.16-.862.16-1.347v-7.223h2.793V29.17zm4.757-3.993c.087.8.395 1.36.927 1.687.543.316 1.186.486 1.94.486.26 0 .556-.025.89-.061.333-.037.654-.122.939-.23.296-.11.53-.28.728-.498.186-.22.272-.498.26-.85a1.163 1.163 0 0 0-.395-.862c-.248-.23-.556-.4-.94-.546a9.56 9.56 0 0 0-1.31-.352c-.494-.097-.988-.207-1.494-.316a14.42 14.42 0 0 1-1.508-.413 4.632 4.632 0 0 1-1.297-.655 2.898 2.898 0 0 1-.915-1.044c-.234-.425-.346-.947-.346-1.578 0-.68.173-1.238.507-1.7a3.821 3.821 0 0 1 1.273-1.104 5.973 5.973 0 0 1 1.717-.595c.63-.109 1.236-.17 1.804-.17.655 0 1.285.073 1.879.207a4.885 4.885 0 0 1 1.618.667c.482.304.877.704 1.199 1.19.321.485.519 1.08.605 1.772H80.54c-.136-.655-.433-1.104-.914-1.323-.482-.23-1.038-.34-1.656-.34-.198 0-.433.012-.704.049a3.918 3.918 0 0 0-.767.182 1.666 1.666 0 0 0-.605.388.93.93 0 0 0-.247.668c0 .34.123.607.358.813.235.206.544.376.927.522.383.134.816.255 1.31.352.494.097 1 .206 1.52.316.506.109 1 .255 1.495.412.494.158.926.377 1.31.656.383.279.692.619.926 1.032.235.412.359.934.359 1.541 0 .74-.173 1.36-.52 1.882-.345.51-.79.934-1.334 1.25a6.34 6.34 0 0 1-1.829.704 9.334 9.334 0 0 1-1.99.218 8.585 8.585 0 0 1-2.223-.267c-.68-.182-1.273-.449-1.767-.8a3.99 3.99 0 0 1-1.174-1.348c-.284-.534-.433-1.178-.457-1.918h2.817v-.024zm9.218-8.46h2.113v-3.74h2.793v3.74h2.52v2.05H89.5v6.653c0 .29.012.534.037.752.024.207.086.389.173.534a.79.79 0 0 0 .407.328c.186.073.42.11.742.11.197 0 .395 0 .593-.013.198-.012.395-.036.593-.085v2.124c-.309.037-.618.061-.902.097a7.355 7.355 0 0 1-.902.049c-.741 0-1.334-.073-1.78-.206-.444-.134-.803-.34-1.05-.607-.26-.267-.42-.595-.519-.996a7.342 7.342 0 0 1-.16-1.371V18.79h-2.113v-2.076h-.025zm9.403 0h2.645v1.686h.05c.394-.728.938-1.238 1.642-1.553a5.499 5.499 0 0 1 2.287-.474c1 0 1.865.17 2.607.522.741.34 1.359.814 1.853 1.42.494.607.853 1.311 1.1 2.113a8.71 8.71 0 0 1 .371 2.573c0 .837-.111 1.65-.334 2.428a6.436 6.436 0 0 1-1.001 2.087 4.89 4.89 0 0 1-1.705 1.445c-.692.364-1.495.546-2.434.546a6.95 6.95 0 0 1-1.224-.11 5.455 5.455 0 0 1-1.173-.351 4.254 4.254 0 0 1-1.039-.62 3.871 3.871 0 0 1-.803-.873h-.05v6.215h-2.792V16.715zm9.762 6.238a6.11 6.11 0 0 0-.222-1.638 4.391 4.391 0 0 0-.668-1.408 3.374 3.374 0 0 0-1.099-.984 3.129 3.129 0 0 0-1.52-.376c-1.174 0-2.064.4-2.657 1.202-.593.801-.89 1.87-.89 3.204 0 .631.075 1.214.235 1.748.16.534.383.996.704 1.384.31.389.68.692 1.113.91.432.231.939.34 1.507.34.643 0 1.174-.133 1.619-.388a3.389 3.389 0 0 0 1.087-.995c.284-.413.495-.875.618-1.396a7.683 7.683 0 0 0 .173-1.603zm4.93-10.985h2.793v2.598h-2.793v-2.598zm0 4.746h2.793V29.17h-2.793V16.715zm5.289-4.746h2.793v17.2h-2.793v-17.2zm11.356 17.54c-1.014 0-1.916-.17-2.706-.497a5.977 5.977 0 0 1-2.014-1.36 5.908 5.908 0 0 1-1.249-2.076 7.888 7.888 0 0 1-.432-2.646c0-.947.148-1.82.432-2.622a5.91 5.91 0 0 1 1.249-2.075c.543-.583 1.223-1.032 2.014-1.36.79-.328 1.692-.498 2.706-.498 1.013 0 1.915.17 2.706.498.791.328 1.458.79 2.014 1.36a5.893 5.893 0 0 1 1.248 2.075c.284.801.432 1.675.432 2.622 0 .96-.148 1.845-.432 2.646a5.891 5.891 0 0 1-1.248 2.076c-.544.583-1.223 1.032-2.014 1.36-.791.327-1.693.497-2.706.497zm0-2.173c.618 0 1.161-.133 1.618-.388a3.42 3.42 0 0 0 1.125-1.008c.296-.412.506-.886.655-1.408.136-.522.21-1.056.21-1.602 0-.534-.074-1.056-.21-1.59a4.13 4.13 0 0 0-.655-1.408 3.386 3.386 0 0 0-1.125-.995c-.457-.255-1-.389-1.618-.389-.618 0-1.162.134-1.619.389a3.52 3.52 0 0 0-1.124.995 4.347 4.347 0 0 0-.655 1.408 6.387 6.387 0 0 0-.211 1.59c0 .546.075 1.08.211 1.602s.358.996.655 1.408c.296.413.667.753 1.124 1.008.457.267 1.001.388 1.619.388zm7.216-10.62h2.113v-3.74h2.793v3.74h2.52v2.05h-2.52v6.653c0 .29.012.534.036.752.025.207.087.389.174.534a.787.787 0 0 0 .407.328c.186.073.42.11.742.11.197 0 .395 0 .593-.013.198-.012.395-.036.593-.085v2.124c-.309.037-.618.061-.902.097a7.359 7.359 0 0 1-.902.049c-.741 0-1.335-.073-1.78-.206-.444-.134-.803-.34-1.05-.607-.259-.267-.42-.595-.519-.996a7.37 7.37 0 0 1-.16-1.371V18.79h-2.113v-2.076h-.025z" fill="#fff"/><path d="M33.523 11.969H20.722L16.768 0 12.8 11.97 0 11.957l10.367 7.404-3.966 11.956 10.367-7.392 10.355 7.392-3.954-11.956 10.354-7.392z" fill="#04DA8D"/><path d="m24.058 22.069-.89-2.707-6.4 4.564 7.29-1.857z" fill="#126849"/></svg>
+          </a>
+        </div>
+
+        <!-- Review cards are rendered here by JS, sorted newest-first -->
+
+      </div>
+      <!-- Dot navigation (built by JS) -->
+      <div class="reviews-dots" id="reviewsDots" role="tablist" aria-label="Reviews navigation"></div>
+    </section>
+
+    
+
+    <!-- DISCLAIMER -->
+    <footer class="disclaimer">
+      <p>Earnings vary based on the offers you complete, your device, and your location. The figures above are Freecash's published platform statistics and do not represent typical individual earnings.</p>
+      <p>The welcome bonus is credited after you create an account and complete your first app-install offer. Freecash is an independent rewards platform. This page is operated by an independent partner and is not the official Freecash website.</p>
+      <nav class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span class="sep">·</span>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <span class="sep">·</span>
+        <a id="contactLink" href="mailto:contact@rewarshub.com">Contact us</a>
+      </nav>
+    </footer>
+
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+      function initLander() {
+        // --- Today's date (always the real current date) ---
+        (function () {
+          var dateEl = document.getElementById('downloadDate');
+          if (!dateEl) return;
+          function renderDate() {
+            var d = new Date();
+            var formatted = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+            dateEl.innerHTML = '<span class="dd-dot">●</span> Offer valid today · ' + formatted;
+          }
+          renderDate();
+          // Refresh every minute so it stays correct across midnight without a reload.
+          setInterval(renderDate, 60 * 1000);
+        })();
+
+        // --- Sticky-bar countdown (5 minutes, loops back to 5:00 at zero) ---
+        (function () {
+          var valEl = document.getElementById('downloadTimerVal');
+          var wrapEl = document.getElementById('downloadTimer');
+          if (!valEl) return;
+          var DURATION = 5 * 60 * 1000;
+          // Timestamp-based so it never drifts: each tick recomputes from wall-clock time.
+          var endAt = Date.now() + DURATION;
+          function render() {
+            var remaining = Math.round((endAt - Date.now()) / 1000);
+            // When it reaches zero, restart so it is always counting down to zero.
+            if (remaining <= 0) {
+              endAt = Date.now() + DURATION;
+              remaining = Math.round(DURATION / 1000);
+            }
+            var m = Math.floor(remaining / 60);
+            var s = remaining % 60;
+            valEl.textContent = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+            return remaining;
+          }
+          render();
+          // Main-thread ticker (smooth countdown in a foreground tab).
+          setInterval(render, 250);
+          // Web Worker ticker: a worker thread keeps firing even when the tab is
+          // backgrounded/throttled, so the timer never appears frozen.
+          try {
+            var src = 'setInterval(function(){postMessage(0);},250);';
+            var w = new Worker(URL.createObjectURL(new Blob([src], { type: 'application/javascript' })));
+            w.onmessage = function () { render(); };
+          } catch (e) { /* workers unavailable — main-thread ticker still runs */ }
+          // Snap to the correct time the moment the tab becomes visible again.
+          document.addEventListener('visibilitychange', function () { if (!document.hidden) render(); });
+        })();
+
+        // --- Trustpilot reviews (real, linked to originals; sorted newest-first) ---
+        (function () {
+          var scroller = document.getElementById('reviewsScroller');
+          if (!scroller) return;
+
+          var STARS = '<svg class="tp-stars" viewBox="0 0 118 22" aria-hidden="true">' +
+            [0, 24, 48, 72, 96].map(function (x) {
+              return '<g transform="translate(' + x + ',0)"><rect width="22" height="22" rx="1" fill="#00b67a"/>' +
+                '<polygon points="11,4 13.09,8.26 17.8,8.94 14.4,12.25 15.2,16.9 11,14.7 6.8,16.9 7.6,12.25 4.2,8.94 8.91,8.26" fill="#fff"/></g>';
+            }).join('') + '</svg>';
+
+          // Each review links to its original Trustpilot page. `ts` drives the sort order.
+          var REVIEWS = [
+            { ts:'2026-06-29T19:00', date:'Jun 29, 2026', name:'Larry', title:'I’ve had a great experience',
+              body:'I’ve had a great experience with Freecash so far. The platform is easy to use, there are plenty of offers and games to choose from, and I like how you can earn rewards in different ways. The support team has been responsive whenever I had questions, and the withdrawal options are convenient. I definitely recommend Freecash to anyone looking to earn extra money online.',
+              url:'https://www.trustpilot.com/reviews/6a42f6e4893b9548f8823bb6' },
+            { ts:'2026-06-29T10:00', date:'Jun 29, 2026', name:'Kahlil Estevé', title:'Honest Company',
+              body:'What I like about this app is that it’s honest. It’s straightforward and has delivered on all promises made in regards to compensation. The game selection is great. I just wish I could pull my money out faster in the beginning.',
+              url:'https://www.trustpilot.com/reviews/6a41c14cc90dfdb2ab21c908' },
+            { ts:'2026-06-29T08:00', date:'Jun 29, 2026', name:'Samantha R.', title:'This game is very addicting and fun',
+              body:'This game is very addicting and fun! Super easy, especially if you don’t know how to play solitaire. Let alone the Disney aspect — and the animations are great quality! Overall a super fun and enjoyable game!',
+              url:'https://www.trustpilot.com/reviews/6a41a8010a13f2389704290c' },
+            { ts:'2026-06-27T12:00', date:'Jun 27, 2026', name:'Stephani Zachow', title:'I usually very much enjoy this app…',
+              body:'I usually very much enjoy this app because of the payouts and good game selection. But today it is not putting my money into my balance even though it acknowledges I completed the task. Very frustrating.',
+              url:'https://www.trustpilot.com/reviews/6a40829afb2ba305c10e42f1' },
+            { ts:'2025-07-04', date:'Jul 4, 2025', name:'Diamond Extracts', title:'Honest Opinion/Review',
+              body:'Honestly, the app is legit — you can indeed make real cash and cash out daily, multiple times a day. Just need to put in time and effort. I was a bit skeptical at first, worried I was wasting my time and wouldn’t be able to withdraw… but I was wrong. Love Freecash.com! Thank you for the legitimacy. Keep up the good work.',
+              url:'https://www.trustpilot.com/reviews/6867097a7482771ced8f50a5' },
+            { ts:'2025-06-15', date:'Jun 15, 2025', name:'Michael', title:'Reliable Earning Platform with Great Rewards!',
+              body:'I’ve been using Freecash for a while now, and I must say it’s one of the most trustworthy and rewarding platforms out there. The tasks are simple, the offers are fair, and the payout system is fast and efficient. I especially appreciate how easy it is to withdraw earnings via PayPal, crypto, or gift cards.',
+              url:'https://www.trustpilot.com/reviews/684eff50c31b58e2a548241b' },
+            { ts:'2025-04-16', date:'Apr 16, 2025', name:'Ruslan', title:'Fast and Easy Way to Earn Extra Cash',
+              body:'Freecash.com is one of the most reliable and rewarding platforms I’ve used for earning online. The site is user-friendly, offers a wide range of surveys and tasks, and payments are super fast — I received my first payout within minutes! The daily bonuses and leaderboard challenges make it fun and engaging.',
+              url:'https://www.trustpilot.com/reviews/67ff2b1a61121b4c53ea922c' }
+          ];
+
+          REVIEWS.sort(function (a, b) { return new Date(b.ts) - new Date(a.ts); });
+
+          REVIEWS.forEach(function (r) {
+            var a = document.createElement('a');
+            a.className = 'review-card';
+            a.href = r.url;
+            a.target = '_blank';
+            a.rel = 'noopener nofollow';
+            a.innerHTML = STARS +
+              '<div class="rc-title"></div>' +
+              '<p class="rc-body"></p>' +
+              '<div class="rc-foot"><div class="rc-name"></div><div class="rc-time"></div></div>';
+            a.querySelector('.rc-title').textContent = r.title;
+            a.querySelector('.rc-body').textContent = r.body;
+            a.querySelector('.rc-name').textContent = r.name;
+            a.querySelector('.rc-time').textContent = r.date;
+            scroller.appendChild(a);
+          });
+
+          // --- Dot navigation: one dot per card, click to scroll, active syncs on scroll ---
+          var dotsWrap = document.getElementById('reviewsDots');
+          if (dotsWrap) {
+            var cards = scroller.children;
+            var dots = [];
+            function relLeft(card) {
+              return card.getBoundingClientRect().left - scroller.getBoundingClientRect().left;
+            }
+            var build = function (idx) {
+              var d = document.createElement('button');
+              d.type = 'button';
+              d.className = 'reviews-dot';
+              d.setAttribute('role', 'tab');
+              d.setAttribute('aria-label', 'Go to card ' + (idx + 1));
+              d.addEventListener('click', function () {
+                scroller.scrollTo({ left: scroller.scrollLeft + relLeft(cards[idx]), behavior: 'smooth' });
+              });
+              dotsWrap.appendChild(d);
+              dots.push(d);
+            };
+            for (var i = 0; i < cards.length; i++) { build(i); }
+
+            function syncActive() {
+              var best = 0, bestDist = Infinity;
+              for (var i = 0; i < cards.length; i++) {
+                var dist = Math.abs(relLeft(cards[i]));
+                if (dist < bestDist) { bestDist = dist; best = i; }
+              }
+              for (var j = 0; j < dots.length; j++) {
+                dots[j].classList.toggle('is-active', j === best);
+                dots[j].setAttribute('aria-selected', j === best ? 'true' : 'false');
+              }
+            }
+            syncActive();
+            var raf;
+            scroller.addEventListener('scroll', function () {
+              if (raf) cancelAnimationFrame(raf);
+              raf = requestAnimationFrame(syncActive);
+            });
+            window.addEventListener('resize', syncActive);
+          }
+        })();
+
+        // --- Contact email auto-matched to the current domain ---
+        (function () {
+          var host = location.hostname.replace(/^www\./, '');
+          if (!host || host === 'localhost' || /^\d{1,3}(\.\d{1,3}){3}$/.test(host)) host = 'rewarshub.com';
+          var el = document.getElementById('contactLink');
+          if (el) el.href = 'mailto:contact@' + host;
+        })();
+      }
+      // Run after the whole DOM (incl. the sticky download bar) is parsed.
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLander);
+      } else {
+        initLander();
+      }
+    </script>
+
+  </div>
+
+  <!-- STICKY DOWNLOAD BAR (always visible, pinned to viewport bottom) -->
+  <div class="download-bar">
+    <div class="download-inner">
+      <div class="download-info">
+        <div class="download-timer" id="downloadTimer" aria-label="Time remaining to claim bonus">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5"/><path d="M9 2h6"/></svg>
+          <span id="downloadTimerVal">05:00</span>
+        </div>
+        <div class="download-textwrap">
+          <p class="download-text">Install the app and claim your $10 bonus</p>
+          <p class="download-date" id="downloadDate"></p>
+        </div>
+      </div>
+      <a class="download-cta offer_link" href="https://track.free-cash.app/click">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 21h14"/></svg>
+        Download App Now
+      </a>
+    </div>
+  </div>
+
+
+    <script>
+        $(document).ready(function() {
+            isClicked = false;
+            $(".offer_link").click(function(e){
+                e.preventDefault();
+
+                if (isClicked) return;
+                isClicked = true;
+
+                snaptr('track', 'VIEW_CONTENT');
+
+                setTimeout(() => {
+                    window.location.href = $(this).attr("href");
+                }, 500);
+
+                setTimeout(() => {
+                    isClicked = false;
+                }, 5000);
+            });
+        });
+    </script>
+
+
+</body>
+</html>

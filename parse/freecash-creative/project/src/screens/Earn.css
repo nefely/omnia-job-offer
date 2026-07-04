@@ -1,0 +1,64 @@
+.earn {
+  padding-bottom: 20px;
+}
+
+/* ---------- Next cashout ---------- */
+.cashout-block {
+  padding: 18px 18px 4px;
+}
+.cashout-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.cashout-bar {
+  position: relative;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.cashout-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+}
+.cashout-text {
+  position: relative;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+}
+
+/* ---------- Horizontal scrollers ---------- */
+.hscroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 0 18px 4px;
+  scroll-snap-type: x mandatory;
+}
+.hscroll--featured {
+  gap: 16px;
+}
+
+/* ---------- Grids ---------- */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0 18px;
+}
+.offer-grid > * {
+  min-width: 0;
+}
+.offer-grid--partners {
+  row-gap: 18px;
+}

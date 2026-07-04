@@ -1,0 +1,133 @@
+.ss-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  background: rgba(3, 5, 9, 0.55);
+  backdrop-filter: blur(3px);
+  animation: ss-fade 0.15s ease;
+}
+@keyframes ss-fade {
+  from { opacity: 0; }
+}
+
+/* anchored just under the fixed top bar */
+.ss-panel {
+  position: absolute;
+  top: calc(var(--header-h) + var(--safe-top));
+  left: 0;
+  right: 0;
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--border);
+  border-radius: 0 0 22px 22px;
+  padding: 22px 20px 26px;
+  animation: ss-down 0.22s ease;
+}
+@keyframes ss-down {
+  from { transform: translateY(-16px); opacity: 0.5; }
+}
+
+.ss-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.ss-head h3 {
+  font-size: 26px;
+  font-weight: 800;
+}
+.ss-count {
+  color: var(--text-muted);
+  font-size: 22px;
+  font-weight: 700;
+}
+.ss-desc {
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.5;
+}
+.ss-amber {
+  color: var(--amber);
+}
+.ss-claimrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 22px 0 16px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.ss-info {
+  color: var(--text-dim);
+}
+.ss-info svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ss-track {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 22px 14px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.ss-node {
+  flex: 1;
+  aspect-ratio: 1;
+  max-width: 46px;
+  border-radius: 50%;
+  background: var(--bg-elev-2);
+  color: var(--text-dim);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.ss-node:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  width: 6px;
+  height: 2px;
+  background: var(--border);
+}
+.ss-node svg {
+  width: 20px;
+  height: 20px;
+}
+.ss-node--current {
+  background: transparent;
+  border: 2px dashed var(--green);
+  color: var(--green);
+}
+.ss-node--done {
+  background: var(--green);
+  color: #04120a;
+  font-size: 14px;
+  font-weight: 800;
+}
+.ss-node--gem {
+  max-width: 56px;
+  background: radial-gradient(circle at 40% 35%, #4a5170, #2a3050);
+  border: 1px solid #4a5170;
+  clip-path: polygon(50% 0, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  border-radius: 0;
+}
+
+.ss-claim {
+  width: 100%;
+  height: 62px;
+  margin-top: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 19px;
+  font-weight: 800;
+}
+.ss-claim--ready {
+  border: none;
+  background: linear-gradient(180deg, var(--green), var(--green-dark));
+  color: #04120a;
+}

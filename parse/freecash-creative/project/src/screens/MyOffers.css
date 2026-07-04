@@ -1,0 +1,504 @@
+.my-offers {
+  padding: 18px 18px 24px;
+}
+
+/* ---------- Started / Completed toggle ---------- */
+.mo-toggle {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.mo-toggle-btn {
+  flex: 1;
+  height: 52px;
+  border-radius: 999px;
+  background: var(--bg-elev);
+  color: var(--text-muted);
+  font-size: 18px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+}
+.mo-toggle-btn.is-active {
+  background: var(--green-soft);
+  color: var(--green);
+  border-color: rgba(0, 210, 106, 0.4);
+}
+
+/* ---------- Completed info line ---------- */
+.mo-info-line {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.4;
+  margin-bottom: 22px;
+}
+.mo-info-ico {
+  flex-shrink: 0;
+  color: var(--text-dim);
+}
+.mo-info-ico svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Offer thumbnail strip ---------- */
+.mo-strip {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  margin-bottom: 22px;
+}
+.mo-strip-item {
+  flex-shrink: 0;
+  width: 92px;
+  text-align: center;
+}
+.mo-strip-name {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mo-strip-item.is-selected .mo-strip-name {
+  color: var(--text);
+}
+
+.mo-thumb {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+}
+.mo-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mo-thumb-emoji {
+  font-size: 40px;
+}
+.mo-strip-item.is-selected .mo-thumb {
+  border: 2.5px solid var(--green);
+  box-shadow: 0 0 0 2px rgba(0, 210, 106, 0.2);
+}
+
+/* ---------- Promo banner ---------- */
+.mo-promo {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: linear-gradient(120deg, #10241c, #101722);
+  padding: 20px;
+  margin-bottom: 22px;
+}
+.mo-promo-text h3 {
+  font-size: 22px;
+  font-weight: 800;
+}
+.mo-promo-text p {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin: 6px 0 14px;
+}
+.mo-promo-link {
+  color: var(--green);
+  font-weight: 700;
+  font-size: 17px;
+}
+.mo-promo-coins {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 34px;
+  opacity: 0.9;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* ---------- Selected offer header ---------- */
+.mo-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+}
+.mo-header-info {
+  flex: 1;
+  min-width: 0;
+}
+.mo-header-title {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+.mo-header-balance {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--green);
+  line-height: 1.1;
+}
+.mo-play {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #04120a;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 20px rgba(0, 210, 106, 0.3);
+}
+.mo-play svg {
+  width: 30px;
+  height: 30px;
+  margin-left: 3px;
+}
+
+/* ---------- Rewards / Details subtabs ---------- */
+.mo-subtabs {
+  display: flex;
+  gap: 28px;
+  border-bottom: 1px solid var(--border);
+  margin: 8px 0 20px;
+}
+.mo-subtab {
+  position: relative;
+  padding: 10px 2px;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.mo-subtab.is-active {
+  color: var(--text);
+}
+.mo-subtab.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--green);
+}
+
+/* ---------- Details tab ---------- */
+.mo-details-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.mo-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.mo-detail-ico {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.14);
+  color: #a78bfa;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.mo-detail-ico svg {
+  width: 22px;
+  height: 22px;
+}
+.mo-detail-text {
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* ---------- Description card ---------- */
+.mo-desc-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  margin-top: 16px;
+}
+.mo-desc-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.mo-desc-text {
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+.mo-moreinfo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 600;
+}
+.mo-moreinfo-chev svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+/* status / category / provider row */
+.mo-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 22px 0 8px;
+}
+.mo-meta-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+.mo-meta-col--mid {
+  background: var(--bg-elev-2);
+  border-radius: 12px;
+  padding: 8px 4px;
+}
+.mo-meta-val {
+  font-size: 17px;
+  font-weight: 800;
+}
+.mo-meta-val--status,
+.mo-meta-val--cat {
+  color: var(--green);
+}
+.mo-meta-key {
+  color: var(--text-dim);
+  font-size: 15px;
+  font-weight: 600;
+}
+.mo-meta-provider {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text);
+}
+.mo-provider-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.mo-provider-badge {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  background: var(--green);
+  color: #04120a;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.mo-steps-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 18px 0 8px;
+}
+.mo-steps-text {
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+/* ---------- FAQs ---------- */
+.mo-faqs-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 26px 0 14px;
+}
+.mo-faqs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.mo-faq {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 18px;
+}
+.mo-faq-text {
+  flex: 1;
+  min-width: 0;
+}
+.mo-faq-q {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.mo-faq-a {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+.mo-faq-chev {
+  flex-shrink: 0;
+  color: var(--green);
+}
+.mo-faq-chev svg {
+  width: 22px;
+  height: 22px;
+  transform: rotate(-90deg);
+}
+
+/* multiplier hexagons */
+.mo-pips {
+  display: flex;
+  gap: 10px;
+  padding-left: 2px;
+}
+.mo-pip {
+  width: 34px;
+  height: 36px;
+}
+.mo-pip-bg {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 2;
+}
+.mo-pip-fill {
+  fill: var(--green);
+  stroke: var(--green);
+  stroke-width: 2;
+}
+
+/* ---------- Sections ---------- */
+.mo-section {
+  margin-bottom: 26px;
+}
+.mo-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.mo-section-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 800;
+}
+.mo-sec-ico {
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+.mo-sec-ico--lottery {
+  color: var(--amber);
+}
+.mo-sec-ico--lottery svg {
+  width: 26px;
+  height: 26px;
+}
+.mo-sec-ico--main {
+  filter: hue-rotate(0);
+}
+.mo-sec-info {
+  color: var(--text-dim);
+}
+.mo-sec-info svg {
+  width: 22px;
+  height: 22px;
+}
+
+.mo-plain-head {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.mo-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ---------- Lottery card ---------- */
+.mo-lottery {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+}
+.mo-lottery-amount {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(245, 166, 35, 0.14);
+  color: var(--amber);
+  font-weight: 800;
+  font-size: 16px;
+}
+.mo-lottery-label {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 700;
+}
+.mo-lottery-tickets {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.mo-lottery-tickets svg {
+  width: 18px;
+  height: 18px;
+}
+.mo-lottery-view {
+  color: var(--green);
+  font-weight: 800;
+  font-size: 17px;
+}
+
+/* ---------- More / Hide rewards ---------- */
+.mo-toggle-rewards {
+  display: block;
+  margin: 20px auto 0;
+  color: var(--text);
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: underline;
+}

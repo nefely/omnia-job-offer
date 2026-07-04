@@ -1,0 +1,183 @@
+.mw {
+  padding: 18px;
+}
+
+/* header */
+.mw-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.mw-back {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.mw-back svg {
+  width: 24px;
+  height: 24px;
+}
+.mw-title {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+/* table */
+.mw-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 6px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.mw-list {
+  display: flex;
+  flex-direction: column;
+}
+.mw-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 6px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.mw-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(150deg, #009cde, #012169);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.mw-logo img {
+  width: 55%;
+  height: auto;
+}
+/* per-brand backgrounds */
+.mw-logo--visa { background: linear-gradient(150deg, #2557d6, #1a1f71); }
+.mw-logo--visa img { width: 70%; }
+.mw-logo--bitcoin { background: linear-gradient(150deg, #f9aa4b, #f7931a); }
+.mw-logo--litecoin { background: linear-gradient(150deg, #b9bcc7, #8a8d99); }
+.mw-logo--solana { background: #0a0a0a; }
+.mw-logo--dogecoin { background: linear-gradient(150deg, #f2c94c, #d9a520); }
+.mw-logo--stake { background: linear-gradient(150deg, #1a2c38, #0f212e); }
+.mw-type {
+  font-size: 22px;
+  font-weight: 700;
+}
+.mw-reward {
+  color: var(--text-muted);
+  font-size: 20px;
+  font-weight: 700;
+}
+.mw-chev {
+  color: var(--text-dim);
+}
+.mw-chev svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* pager */
+.mw-pager {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.mw-page {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 800;
+}
+.mw-page.is-active {
+  background: var(--green);
+  color: #04120a;
+}
+
+/* detail sheet */
+.mw-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.mw-sheet {
+  width: 100%;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 22px 20px 8px;
+}
+.mw-sheet-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.mw-sheet-head h2 {
+  flex: 1;
+  font-size: 24px;
+  font-weight: 800;
+}
+.mw-logo--lg {
+  width: 56px;
+  height: 56px;
+}
+.mw-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  display: grid;
+  place-items: center;
+}
+.mw-close svg {
+  width: 22px;
+  height: 22px;
+}
+
+.mw-drow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mw-drow:last-child {
+  border-bottom: none;
+}
+.mw-dk {
+  font-size: 20px;
+  font-weight: 800;
+}
+.mw-dv {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.mw-status--rejected {
+  color: var(--red);
+}
+.mw-status--completed {
+  color: var(--green);
+}
+.mw-status--pending {
+  color: var(--amber);
+}

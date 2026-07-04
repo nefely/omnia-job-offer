@@ -1,0 +1,323 @@
+.ws-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: flex-end;
+  animation: ws-fade 0.15s ease;
+}
+@keyframes ws-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.ws-sheet {
+  position: relative;
+  width: 100%;
+  max-height: 92%;
+  overflow-y: auto;
+  background: var(--bg);
+  border-radius: 22px 22px 0 0;
+  border-top: 1px solid var(--border);
+  padding: 26px 20px calc(24px + var(--safe-bottom));
+  animation: ws-up 0.22s ease;
+}
+@keyframes ws-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0.6;
+  }
+}
+
+.ws-close {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  display: grid;
+  place-items: center;
+}
+.ws-close svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* header */
+.ws-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.ws-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.ws-badge img {
+  width: 55%;
+  height: auto;
+  object-fit: contain;
+}
+.ws-badge--bitcoin { background: linear-gradient(150deg, #f9aa4b, #f7931a); }
+.ws-badge--litecoin { background: linear-gradient(150deg, #b9bcc7, #8a8d99); }
+.ws-badge--solana { background: #0a0a0a; }
+.ws-badge--dogecoin { background: linear-gradient(150deg, #f2c94c, #d9a520); }
+.ws-badge--paypal { background: linear-gradient(150deg, #009cde, #012169); }
+.ws-badge--visa { background: linear-gradient(150deg, #2557d6, #1a1f71); }
+.ws-badge--visa img { width: 70%; }
+.ws-badge--stake { background: linear-gradient(150deg, #1a2c38, #0f212e); }
+.ws-badge--stake img { width: 70%; }
+.ws-badge--solana img { width: 62%; }
+
+.ws-title {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+/* radios (crypto destination) */
+.ws-radios {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+.ws-radio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+}
+.ws-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--text-dim);
+  flex-shrink: 0;
+}
+.ws-radio.is-checked .ws-dot {
+  border-color: var(--green);
+  background:
+    radial-gradient(circle, var(--green) 0 42%, transparent 46%);
+}
+.ws-flag {
+  font-size: 20px;
+}
+.ws-bonus-text {
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* labels / inputs */
+.ws-label {
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.ws-label--mt {
+  margin-top: 30px;
+}
+.ws-input {
+  width: 100%;
+  height: 58px;
+  border-radius: 12px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  padding: 0 18px;
+  font-size: 18px;
+  color: var(--text);
+}
+.ws-input::placeholder {
+  color: var(--text-dim);
+}
+.ws-hint {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-top: 12px;
+}
+.ws-link {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* amount */
+.ws-amount {
+  display: flex;
+  align-items: center;
+  height: 62px;
+  border-radius: 12px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  padding: 0 18px;
+}
+.ws-amount-dollar {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-right: 12px;
+}
+.ws-amount-val {
+  flex: 1;
+  font-size: 20px;
+  color: var(--text-dim);
+}
+.ws-max {
+  color: var(--green);
+  font-size: 19px;
+  font-weight: 800;
+}
+.ws-min {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-top: 12px;
+}
+.ws-min-ico svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* summary rows */
+.ws-summary {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.ws-summary--mt {
+  margin-top: 26px;
+}
+.ws-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ws-row-k {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 19px;
+}
+.ws-row-k--bold {
+  color: var(--text);
+  font-weight: 800;
+}
+.ws-row-info svg {
+  width: 18px;
+  height: 18px;
+  color: var(--text-dim);
+}
+.ws-row-v {
+  font-size: 19px;
+  font-weight: 700;
+}
+.ws-row-v--green {
+  color: var(--green);
+}
+.ws-row-v--bold {
+  font-weight: 800;
+}
+.ws-bonus-pill {
+  padding: 3px 9px;
+  border-radius: 8px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* receive */
+.ws-receive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  font-size: 22px;
+  font-weight: 800;
+}
+.ws-receive-crypto {
+  color: var(--amber);
+}
+.ws-receive-stake {
+  color: #b6e02a;
+}
+
+/* callouts / notes */
+.ws-note {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 19px;
+  margin-bottom: 26px;
+}
+.ws-note strong {
+  color: var(--text);
+}
+.ws-callout {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--blue);
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.45;
+}
+.ws-callout--top {
+  margin: 0 0 28px;
+}
+
+/* checkbox */
+.ws-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+  font-size: 18px;
+  color: var(--text-muted);
+}
+.ws-checkbox {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  border: 2px solid var(--text-dim);
+  flex-shrink: 0;
+}
+
+/* submit */
+.ws-submit {
+  width: 100%;
+  height: 64px;
+  border-radius: 14px;
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+.ws-submit--disabled {
+  background: var(--bg-elev-2);
+  color: var(--text-dim);
+}
+.ws-submit--go {
+  background: var(--green);
+  color: #04120a;
+}

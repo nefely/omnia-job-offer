@@ -1,0 +1,94 @@
+.payment-card {
+  flex-shrink: 0;
+  width: 260px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  scroll-snap-align: start;
+}
+
+.pc-amount {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.pc-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.pc-logo {
+  width: 46%;
+  height: auto;
+  object-fit: contain;
+}
+/* full-color logos (e.g. Solana) render larger and un-tinted */
+.pc-logo--solid {
+  width: 40%;
+}
+
+/* ---- brand backgrounds ---- */
+.pc-media--paypal {
+  background: linear-gradient(150deg, #009cde, #012169);
+}
+.pc-media--visa {
+  background: linear-gradient(150deg, #2557d6, #1a1f71);
+}
+.pc-media--visa .pc-logo {
+  width: 58%;
+}
+.pc-media--bitcoin {
+  background: linear-gradient(150deg, #f9aa4b, #f7931a);
+}
+.pc-media--litecoin {
+  background: linear-gradient(150deg, #b9bcc7, #8a8d99);
+}
+.pc-media--solana {
+  background: #0a0a0a;
+}
+.pc-media--dogecoin {
+  background: linear-gradient(150deg, #f2c94c, #d9a520);
+}
+.pc-media--stake {
+  background: linear-gradient(150deg, #1a2c38, #0f212e);
+}
+.pc-media--stake .pc-logo {
+  width: 52%;
+}
+
+.pc-lowerfees {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #d7f5e3;
+  color: var(--green-dark);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---- footer ---- */
+.pc-footer {
+  margin-top: 14px;
+  text-align: center;
+}
+.pc-withdraw {
+  color: var(--green);
+  font-size: 17px;
+  font-weight: 800;
+}
+.pc-progress {
+  color: var(--text-muted);
+  font-size: 16px;
+  font-weight: 700;
+}

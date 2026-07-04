@@ -1,0 +1,30 @@
+.app-shell {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  background: #05070b;
+}
+
+/* Phone-sized column, capped so it feels native inside a WebView
+   but stays centered on wider debug screens. Fixed to the viewport
+   height so the TopBar/BottomNav stay pinned and only .app-content
+   scrolls inside. */
+.app-viewport {
+  position: relative;
+  width: 100%;
+  max-width: var(--app-maxw);
+  height: 100dvh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: calc(var(--header-h) + var(--safe-top));
+  padding-bottom: calc(var(--nav-h) + var(--safe-bottom) + 8px);
+  -webkit-overflow-scrolling: touch;
+}

@@ -1,0 +1,25 @@
+.placeholder {
+  min-height: 60dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.placeholder-badge {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.placeholder-hint {
+  color: var(--text-muted);
+  font-size: 14px;
+  max-width: 260px;
+}

@@ -1,0 +1,208 @@
+.ps-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: flex-end;
+  animation: ps-fade 0.15s ease;
+}
+@keyframes ps-fade {
+  from { opacity: 0; }
+}
+
+.ps-sheet {
+  position: relative;
+  width: 100%;
+  max-height: 92%;
+  overflow-y: auto;
+  background: var(--bg);
+  border-radius: 22px 22px 0 0;
+  border-top: 1px solid var(--border);
+  padding: 26px 20px calc(24px + var(--safe-bottom));
+  animation: ps-up 0.22s ease;
+}
+@keyframes ps-up {
+  from { transform: translateY(20px); opacity: 0.6; }
+}
+
+.ps-close {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  display: grid;
+  place-items: center;
+}
+.ps-close svg {
+  width: 24px;
+  height: 24px;
+}
+
+.ps-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+.ps-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.ps-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 30px;
+  font-weight: 800;
+}
+.ps-edit {
+  color: var(--green);
+}
+.ps-edit svg {
+  width: 24px;
+  height: 24px;
+}
+.ps-flag {
+  font-size: 28px;
+  margin-top: 8px;
+}
+
+/* cards */
+.ps-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 22px;
+}
+.ps-card-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.ps-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.ps-row--last {
+  border-bottom: none;
+}
+.ps-k {
+  font-size: 21px;
+  font-weight: 800;
+}
+.ps-v {
+  color: var(--text-muted);
+  font-size: 20px;
+  font-weight: 600;
+}
+.ps-v--id {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.ps-copy {
+  color: var(--green);
+}
+.ps-copy svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* language pill */
+.ps-lang {
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 19px;
+  font-weight: 600;
+}
+
+/* toggle */
+.ps-toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 20px;
+  font-weight: 700;
+}
+.ps-toggle-active {
+  color: var(--text);
+}
+.ps-toggle {
+  width: 62px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: background 0.15s ease;
+}
+.ps-toggle.is-on {
+  background: var(--green);
+  border-color: var(--green);
+}
+.ps-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fff;
+  transition: left 0.15s ease;
+}
+.ps-toggle.is-on .ps-knob {
+  left: 31px;
+}
+
+.ps-emailblock {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+.ps-email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 20px;
+}
+.ps-verified {
+  color: var(--green);
+}
+.ps-verified svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ps-logout {
+  display: block;
+  margin: 8px auto 4px;
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 800;
+  padding: 12px;
+}
+.ps-delete {
+  display: block;
+  margin: 0 auto;
+  color: var(--red);
+  font-size: 22px;
+  font-weight: 800;
+  padding: 12px;
+}

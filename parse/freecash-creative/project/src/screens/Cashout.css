@@ -1,0 +1,113 @@
+.cashout {
+  padding: 18px 0 24px;
+}
+
+/* ---------- Header ---------- */
+.co-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+}
+.co-title {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+.co-withdrawals {
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 210, 106, 0.5);
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.co-desc {
+  padding: 0 18px;
+  margin: 16px 0;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* ---------- Balance card ---------- */
+.co-balance {
+  margin: 0 18px;
+  padding: 22px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.co-balance-ico {
+  color: var(--green);
+}
+.co-balance-ico svg {
+  width: 42px;
+  height: 42px;
+}
+.co-balance-label {
+  color: var(--text-muted);
+  font-size: 20px;
+  font-weight: 600;
+}
+.co-balance-amount {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+/* ---------- Sections ---------- */
+.co-section {
+  margin-top: 30px;
+}
+.co-section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px;
+  margin-bottom: 16px;
+}
+.co-section-head h2 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+.co-bonus {
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.co-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 0 18px 4px;
+  scroll-snap-type: x mandatory;
+}
+/* Stake: single full-width card */
+.co-row--wide .payment-card {
+  width: 100%;
+}
+.co-row--wide .pc-art {
+  aspect-ratio: 16 / 9;
+}
+
+/* ---------- Disclaimer ---------- */
+.co-disclaimer {
+  padding: 30px 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.co-disclaimer p {
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.5;
+}
