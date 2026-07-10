@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USA Financial Relief Eligibility Check</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+        }
+
+        body {
+            /* Світло-сірий фон, щоб білий блок квізу виділявся */
+            background-color: #f0f2f5; 
+            color: #222;
+            line-height: 1.5;
+            padding-bottom: 40px;
+        }
+
+        /* Американський стиль хедера: Navy Blue та Crimson Red */
+        header {
+            background-color: #0A3161; 
+            color: #ffffff;
+            padding: 16px 20px;
+            text-align: center;
+            border-bottom: 5px solid #B31942;
+            font-weight: 800;
+            letter-spacing: 1px;
+            font-size: 15px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 35px 25px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            border-top: 4px solid #0A3161;
+        }
+
+        .headline {
+            font-size: 26px;
+            font-weight: 900;
+            color: #0A3161;
+            text-align: center;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+        }
+
+        .subheadline {
+            font-size: 16px;
+            color: #444;
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .state-badge {
+            background-color: #fce8ec;
+            color: #B31942;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 900;
+            display: inline-block;
+        }
+
+        .trust-badge {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Quiz Steps */
+        .quiz-step {
+            display: none;
+        }
+
+        .quiz-step.active {
+            display: block;
+            animation: fadeInRight 0.4s ease;
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #B31942; /* Червоний прогрес-бар для акценту */
+            width: 25%;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .question-text {
+            font-size: 20px;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .btn-container {
+            display: block;
+        }
+
+        .quiz-btn {
+            display: block;
+            width: 100%;
+            background-color: #ffffff;
+            border: 2px solid #0A3161;
+            color: #0A3161;
+            padding: 18px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 14px;
+            text-align: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(10, 49, 97, 0.05);
+        }
+
+        .quiz-btn:hover, .quiz-btn:active {
+            background-color: #0A3161;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Loading Animation */
+        .loader-container {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #0A3161;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-status {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0A3161;
+        }
+
+        /* Results Screen */
+        .results-container {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
+        }
+
+        .success-icon {
+            color: #28a745;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .congrats-title {
+            color: #28a745;
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .timer-notice {
+            background-color: #fff3cd;
+            border: 2px solid #ffeeba;
+            color: #856404;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 800;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            width: 100%;
+            background-color: #28a745; /* Зелена кнопка для фінансів - конвертить найкраще */
+            color: white;
+            border: none;
+            padding: 20px;
+            font-size: 22px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
+            cursor: pointer;
+            margin-top: 15px;
+            text-align: center;
+            transition: background 0.2s;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .cta-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Comments / Social Proof */
+        .comments-section {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid #B31942;
+        }
+
+        .comments-title {
+            font-size: 16px;
+            font-weight: 900;
+            color: #0A3161;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .comment {
+            border-bottom: 1px solid #f0f2f5;
+            padding: 15px 0;
+            font-size: 14px;
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+        }
+
+        .comment-author {
+            font-weight: 800;
+            color: #0A3161;
+        }
+
+        .comment-text {
+            margin-top: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .comment-time {
+            font-size: 12px;
+            color: #888;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        footer {
+            max-width: 600px;
+            margin: 30px auto 0;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            padding: 0 15px;
+        }
+
+        footer a {
+            color: #666;
+            text-decoration: underline;
+        }
+    </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '799738728826938');
+</script>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+    <header>
+        🇺🇸 OFFICIAL USA CONSUMER ALERT 🇺🇸
+    </header>
+
+    <div class="container" id="main-card">
+        <div id="quiz-flow">
+            <h1 class="headline">Americans Can Now Claim Up To $1,800 In Economic Impact Relief</h1>
+            <p class="subheadline">Check your eligibility in less than 60 seconds. Active spots available for <span class="state-badge" id="user-state">United States</span></p>
+            
+            <div class="trust-badge">🔒 Secure 256-bit Encrypted Connection</div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <div class="quiz-step active" id="step-1">
+                <div class="question-text">Question 1: Are you a US Citizen or Permanent Resident?</div>
+                <div class="btn-container">
+                    <button class="quiz-btn" onclick="nextStep(2, 50)">Yes, I am</button>
+                    <button class="quiz-btn" onclick="nextStep(2, 50)">No, I am not</button>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step-2">
+                <div class="question-text">Question 2: Did you struggle to pay for groceries, rent, or utilities last month?</div>
+                <div class="btn-container">
+                    <button class="quiz-btn" onclick="nextStep(3, 75)">Yes, I struggled</button>
+                    <button class="quiz-btn" onclick="nextStep(3, 75)">No, I did not</button>
+                </div>
+            </div>
+
+            <div class="quiz-step" id="step-3">
+                <div class="question-text">Question 3: Do you have a valid bank account for direct deposit?</div>
+                <div class="btn-container">
+                    <button class="quiz-btn" onclick="startLoading()">Yes, I do</button>
+                    <button class="quiz-btn" onclick="startLoading()">No, I don't</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="loader-container" id="loader-container">
+            <div class="spinner"></div>
+            <div class="loader-status" id="loader-status">Searching National Database...</div>
+        </div>
+
+        <div class="results-container" id="results-container">
+            <div class="success-icon">✅</div>
+            <h2 class="congrats-title">Eligibility Confirmed!</h2>
+            <p style="font-size: 18px;">You pre-qualify for up to <strong>$1,800+</strong> in Economic Relief.</p>
+            
+            <div class="timer-notice">
+                ⚠️ URGENT: Your spot is reserved for <span id="countdown">04:59</span> minutes.
+            </div>
+
+            <p style="font-size: 15px; color: #444; margin-bottom: 20px; font-weight: 600;">
+                Follow the final step: Tap the button below to complete the official registration form and secure your funding.
+            </p>
+
+            <a href="https://track.domain/click" class="offer_link cta-btn">Claim My $1,800 Now</a>
+        </div>
+    </div>
+
+    <div class="comments-section">
+        <div class="comments-title">🇺🇸 Verified American Residents</div>
+        
+        <div class="comment">
+            <div class="comment-author">James W. • Texas</div>
+            <div class="comment-text">I thought this was another scam but my sister told me to try it. Filled out the form and got my confirmation. Going straight to my credit card bill!</div>
+            <div class="comment-time">14 minutes ago • Verified User</div>
+        </div>
+
+        <div class="comment">
+            <div class="comment-author">Linda M. • Florida</div>
+            <div class="comment-text">Thank God for this relief program. The process was super easy, took me exactly 2 minutes on my phone.</div>
+            <div class="comment-time">32 minutes ago • Verified User</div>
+        </div>
+
+        <div class="comment">
+            <div class="comment-author">Robert T. • Ohio</div>
+            <div class="comment-text">Got my approval notice today! If you're struggling right now, definitely take the 60 seconds to answer the questions.</div>
+            <div class="comment-time">1 hour ago • Verified User</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>This website is an independent consumer news and informational portal. It is not affiliated with, endorsed by, or connected to the IRS, Medicare, or any local, state, or federal government agency.</p>
+        <p style="margin-top: 10px;">
+            <a href="privacy/" target="_blank">Privacy Policy</a> | <a href="terms/" target="_blank">Terms of Service</a> | <a href="#" id="contact-link">Contact Us</a>
+        </p>
+    </footer>
+
+    <script>
+        (function() {
+            var contactLink = document.getElementById('contact-link');
+            if (contactLink) {
+                contactLink.href = 'mailto:support@' + window.location.hostname.replace(/^www\./, '');
+            }
+        })();
+
+        function nextStep(stepNumber, progressPercentage) {
+            var steps = document.querySelectorAll('.quiz-step');
+            for (var i = 0; i < steps.length; i++) {
+                steps[i].classList.remove('active');
+            }
+            
+            var nextStepEl = document.getElementById('step-' + stepNumber);
+            if (nextStepEl) {
+                nextStepEl.classList.add('active');
+            }
+            
+            var progressFill = document.getElementById('progress-fill');
+            if (progressFill) {
+                progressFill.style.width = progressPercentage + '%';
+            }
+        }
+
+        function startLoading() {
+            var quizFlow = document.getElementById('quiz-flow');
+            var loaderContainer = document.getElementById('loader-container');
+            
+            if (quizFlow) quizFlow.style.display = 'none';
+            if (loaderContainer) loaderContainer.style.display = 'block';
+
+            var statuses = [
+                "Connecting to secure server...",
+                "Checking available funding in your state...",
+                "Reviewing your answers...",
+                "Confirming your $1,800 eligibility..."
+            ];
+
+            var currentStatus = 0;
+            var statusEl = document.getElementById('loader-status');
+            
+            var interval = setInterval(function() {
+                currentStatus++;
+                if (currentStatus < statuses.length) {
+                    if (statusEl) statusEl.innerText = statuses[currentStatus];
+                } else {
+                    clearInterval(interval);
+                    showResults();
+                }
+            }, 1200); 
+        }
+
+        function showResults() {
+            var loaderContainer = document.getElementById('loader-container');
+            var resultsContainer = document.getElementById('results-container');
+            
+            if (loaderContainer) loaderContainer.style.display = 'none';
+            if (resultsContainer) resultsContainer.style.display = 'block';
+            
+            var countdownEl = document.getElementById('countdown');
+            if (countdownEl) {
+                startTimer(299, countdownEl); 
+            }
+        }
+
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            var timerInterval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(timerInterval);
+                }
+            }, 1000);
+        }
+
+        window.onload = function() {
+            try {
+                var states = ["California", "Texas", "Florida", "New York", "Ohio", "Georgia", "Illinois", "Pennsylvania", "Michigan"];
+                var randomState = states[Math.floor(Math.random() * states.length)];
+                var stateEl = document.getElementById('user-state');
+                if (stateEl) {
+                    stateEl.innerText = randomState + " Residents";
+                }
+            } catch(e) {
+                console.log(e);
+            }
+        };
+    </script>
+
+<script src="jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        isClicked = false;
+
+        $(".offer_link").click(function(e){
+            e.preventDefault();
+
+            if (isClicked) return;
+            isClicked = true;
+
+            fbq('track', 'PageView');
+
+            setTimeout(function() {
+                window.location.href = $(".offer_link").attr("href");
+            }, 500);
+
+            setTimeout(function() {
+                isClicked = false;
+            }, 5000);
+        });
+    });
+</script>
+
+
+</body>
+</html>
