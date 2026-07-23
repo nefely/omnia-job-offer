@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get paid to test mobile games and complete surveys</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="favicon.svg" />
+<meta name="theme-color" content="#f97316" />
+<meta name="description" content="Sign up free, choose from 2,000+ tasks, and get paid to PayPal. Available in the US, Canada and the UK." />
+<meta name="robots" content="noindex, nofollow" />
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '26730930499913028');
+</script>
+<!-- End Meta Pixel Code -->
+
+<script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++
+)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=i+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        
+            ttq.load('D9GVHVRC77UBLLNU7EQ0');
+        }(window, document, 'ttq');
+</script>
+
+<script src="https://track.tester-up-app.com/unilpclick.js?attribution=lastpaid&cookiedomain=&cookieduration=90&defaultcampaignid=693af085047fced75994d966&regviewonce=false&script_id=6a621456561305001c9f611e"></script>
+
+<style>
+  /* ==========================================================================
+     Design tokens — mirrored from testerup.com's own CSS custom properties.
+     Palette is Tailwind slate + testerup's orange primary gradient.
+     ========================================================================== */
+  :root {
+    --bg: #020617;              /* testerup --bg-dark   (slate-950) */
+    --bg-card: #0f172a;         /* slate-900 */
+    --bg-card-hover: #1e293b;   /* slate-800 */
+    --border: #1e293b;          /* slate-800 */
+    --text: #f8fafc;            /* testerup --text-primary */
+    --text-muted: #94a3b8;      /* testerup --text-quinary */
+
+    /* testerup brand: the accent is a gradient, never a flat fill */
+    --brand: #f97316;           /* --gradient-primary-top    (orange-500) */
+    --brand-dark: #c2410c;      /* --brand-primary           (orange-700) */
+    --brand-cta-top: #fdba74;   /* orange-300 */
+    --brand-soft: rgba(249, 115, 22, 0.12);
+    --brand-gradient: linear-gradient(180deg, #f97316 0%, #c2410c 100%);
+    --cta-gradient: linear-gradient(180deg, #fdba74 0%, #f97316 100%);
+    --button-highlight: rgba(255, 255, 255, 0.25);
+
+    --radius: 16px;
+    --radius-btn: 12px;         /* testerup buttons are 12px */
+    --maxw: 760px;
+    --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    /* room for the fixed CTA bar */
+    padding-bottom: 150px;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; }
+  .pad { padding: 0 16px; }
+
+  h2 {
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 22px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero-shell { position: relative; overflow: hidden; }
+
+  /* Decorative abstract tile field + brand glow.
+     Deliberately abstract: no third-party game or platform logos. */
+  .hero-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+
+  .hero-bg .glow {
+    position: absolute;
+    left: 50%; top: -18%;
+    width: 620px; height: 620px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.28) 0%, rgba(249, 115, 22, 0) 62%);
+    filter: blur(8px);
+  }
+
+  .hero-bg .tiles {
+    position: absolute; inset: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    padding: 12px;
+    opacity: 0.55;
+    -webkit-mask-image: radial-gradient(ellipse 85% 55% at 50% 22%, #000 0%, transparent 72%);
+    mask-image: radial-gradient(ellipse 85% 55% at 50% 22%, #000 0%, transparent 72%);
+  }
+  .hero-bg .tiles span {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    background: linear-gradient(160deg, rgba(249, 115, 22, 0.10), rgba(255, 255, 255, 0.015));
+    border: 1px solid rgba(255, 255, 255, 0.045);
+  }
+
+  /* Veil: fades the tile field into the solid page bg and lifts text contrast */
+  .hero-bg::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom,
+      rgba(2, 6, 23, 0.30) 0%,
+      rgba(2, 6, 23, 0.62) 32%,
+      rgba(2, 6, 23, 0.92) 52%,
+      var(--bg) 66%);
+  }
+
+  .hero { position: relative; z-index: 1; text-align: center; padding: 34px 0 8px; }
+
+  .brand { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 26px; }
+  .brand-mark {
+    width: 30px; height: 30px;
+    flex: none;
+    display: grid; place-items: center;
+    background: var(--brand-gradient);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+  }
+  .brand-mark svg { width: 17px; height: 17px; color: #fff; }
+  .brand-text { font-size: 27px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+  .b-tester { color: var(--text); }
+  .b-up { color: var(--brand); }
+
+  h1 {
+    font-size: clamp(28px, 6.2vw, 42px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  h1 .accent {
+    background: linear-gradient(180deg, #fdba74 0%, #f97316 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--brand);
+  }
+
+  .sub {
+    font-size: clamp(15px, 2.6vw, 18px);
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto 20px;
+  }
+
+  .facts { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 12px;
+    color: var(--text-muted);
+    background: rgba(15, 23, 42, 0.72);
+    border: 1px solid var(--border);
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+  .chip svg { width: 14px; height: 14px; color: var(--brand); flex: none; }
+
+  /* ---------- STATS STRIP ----------
+     Every figure here is published by testerup on testerup.com. */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 26px 0 52px;
+  }
+  .stat { background: var(--bg-card); padding: 24px 14px; text-align: center; }
+  .stat .ic {
+    width: 38px; height: 38px;
+    margin: 0 auto 12px;
+    display: grid; place-items: center;
+    background: var(--brand-soft);
+    border-radius: 10px;
+    color: var(--brand);
+  }
+  .stat .ic svg { width: 20px; height: 20px; }
+  .stat .num { font-size: clamp(18px, 3vw, 23px); font-weight: 800; color: var(--text); }
+  .stat .num.is-brand { color: var(--brand); }
+  .stat .lbl { font-size: 12px; color: var(--text-muted); margin-top: 6px; line-height: 1.35; }
+
+  .section { margin-bottom: 52px; }
+
+  /* ---------- HOW IT WORKS ---------- */
+  .steps { display: flex; flex-direction: column; gap: 14px; }
+  .step {
+    display: flex; align-items: center; gap: 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    position: relative;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .step:hover { background: var(--bg-card-hover); border-color: rgba(249, 115, 22, 0.35); }
+  .step .n {
+    flex: none;
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    background: var(--brand-gradient);
+    border: 1px solid rgba(237, 228, 200, 0.2);
+    color: #fff;
+    border-radius: var(--radius-btn);
+  }
+  .step .n svg { width: 22px; height: 22px; }
+  .step .body { flex: 1; }
+  .step .body .t { font-weight: 700; font-size: 17px; }
+  .step .body .d { font-size: 14px; color: var(--text-muted); margin-top: 2px; }
+  .step .idx { font-size: 13px; font-weight: 700; color: var(--text-muted); opacity: 0.6; }
+
+  /* ---------- WAYS TO EARN ---------- */
+  .lead {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14.5px;
+    max-width: 560px;
+    margin: -8px auto 22px;
+  }
+  .ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .way {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 18px;
+    text-align: center;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .way:hover { background: var(--bg-card-hover); border-color: rgba(249, 115, 22, 0.35); }
+  .way .ic {
+    width: 42px; height: 42px;
+    margin: 0 auto 12px;
+    display: grid; place-items: center;
+    background: var(--brand-soft);
+    border-radius: 11px;
+    color: var(--brand);
+  }
+  .way .ic svg { width: 21px; height: 21px; }
+  .way .t { font-weight: 700; font-size: 16px; margin-bottom: 5px; }
+  .way .d { font-size: 13.5px; color: var(--text-muted); line-height: 1.45; }
+
+  /* ---------- DISCLAIMER ---------- */
+  .disclaimer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0 40px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: center;
+  }
+  .disclaimer p + p { margin-top: 10px; }
+  .footer-links { margin-top: 16px; font-size: 12.5px; }
+  .footer-links a { color: var(--text-muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--brand); text-decoration: underline; }
+  .footer-links .sep { margin: 0 8px; opacity: 0.5; }
+
+  /* ---------- STICKY CTA BAR ---------- */
+  .cta-bar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: rgba(2, 6, 23, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.5);
+  }
+  .cta-inner {
+    width: 100%;
+    max-width: var(--maxw);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  .cta-left { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
+  .cta-info { display: flex; align-items: center; justify-content: flex-start; gap: 10px; min-width: 0; text-align: left; }
+  .cta-text { font-size: 14px; font-weight: 600; line-height: 1.3; }
+  .cta-meta { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .cta-meta .dot { color: var(--brand); font-size: 9px; vertical-align: 1px; }
+
+  /* countdown pill */
+  .cta-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex: none;
+    background: var(--brand-soft);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    border-radius: 999px;
+    padding: 7px 12px;
+    color: var(--brand-cta-top);
+  }
+  .cta-timer svg { width: 15px; height: 15px; flex: none; }
+  .cta-timer-time { font-variant-numeric: tabular-nums; font-weight: 800; font-size: 14px; letter-spacing: 0.02em; }
+
+  .cta-btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    gap: 8px;
+    flex: none;
+    /* testerup's own button recipe: light-to-dark orange, black label, 12px radius */
+    background: var(--cta-gradient);
+    border: 1px solid rgba(237, 228, 200, 0.2);
+    color: #000;
+    font-size: 15.5px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: var(--radius-btn);
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+    transition: transform 0.12s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    animation: cta-pulse 2s ease-in-out infinite;
+  }
+  .cta-btn::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -130%;
+    width: 55%; height: 100%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transform: skewX(-20deg);
+    pointer-events: none;
+    animation: cta-shine 2.8s ease-in-out infinite;
+  }
+  .cta-btn:hover { filter: brightness(1.05); transform: translateY(-1px); box-shadow: 0 12px 30px rgba(249, 115, 22, 0.38); }
+  .cta-btn:active { transform: translateY(0); }
+  .cta-btn svg { width: 18px; height: 18px; }
+
+  @keyframes cta-pulse {
+    0%, 100% { box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3); }
+    50%      { box-shadow: 0 8px 30px rgba(249, 115, 22, 0.52); }
+  }
+  @keyframes cta-shine {
+    0%   { left: -130%; }
+    55%  { left: 130%; }
+    100% { left: 130%; }
+  }
+
+  /* ---------- REVEAL ---------- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+  }
+  .reveal { animation: fadeUp 0.5s ease both; }
+  .reveal.d1 { animation-delay: 0.06s; }
+  .reveal.d2 { animation-delay: 0.12s; }
+  .reveal.d3 { animation-delay: 0.18s; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 640px) {
+    /* Keep all 3 tiles on one row — tighten padding/type so they fit at 375px */
+    .stat { padding: 18px 7px; }
+    .stat .ic { width: 32px; height: 32px; margin-bottom: 9px; border-radius: 9px; }
+    .stat .ic svg { width: 17px; height: 17px; }
+    .stat .num { font-size: 15px; }
+    .stat .lbl { font-size: 10.5px; margin-top: 5px; }
+    .ways { grid-template-columns: 1fr; }
+    .cta-inner { flex-direction: column; align-items: stretch; gap: 10px; }
+    .cta-left { justify-content: flex-start; }
+    .cta-btn { width: 100%; }
+    .step { padding: 16px 16px; gap: 14px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { animation: none; }
+    .cta-btn { animation: none; }
+    .cta-btn::after { display: none; }
+    .step, .way { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero-shell">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="tiles">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="glow"></div>
+    </div>
+
+    <div class="wrap pad">
+      <header class="hero">
+        <div class="brand reveal" aria-label="testerup">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9 17 20 6"/></svg>
+          </span>
+          <span class="brand-text"><span class="b-tester">tester</span><span class="b-up">up</span></span>
+        </div>
+
+        <h1 class="reveal d1">Get paid to <span class="accent">test mobile games</span> and complete surveys</h1>
+
+        <p class="sub reveal d2">Sign up free, pick from 2,000+ tasks, and get paid to PayPal.</p>
+
+        <div class="facts reveal d3">
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            Paid via PayPal
+          </span>
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Free to join
+          </span>
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            18+
+          </span>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap pad">
+
+    <!-- STATS — testerup's own published figures -->
+    <section class="stats reveal">
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="num is-brand">Up to $129</div>
+        <div class="lbl">Top published reward per offer</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
+        <div class="num">15&ndash;20 min</div>
+        <div class="lbl">Typical time to complete a task</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <div class="num">2,000+</div>
+        <div class="lbl">Tasks available to choose from</div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <h2>Start earning in minutes</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg></div>
+          <div class="body">
+            <div class="t">Sign up</div>
+            <div class="d">Create your free account in a few minutes.</div>
+          </div>
+          <span class="idx">01</span>
+        </div>
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></div>
+          <div class="body">
+            <div class="t">Choose an offer</div>
+            <div class="d">Browse the offers that let you earn by testing mobile games or taking surveys.</div>
+          </div>
+          <span class="idx">02</span>
+        </div>
+        <div class="step">
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div class="body">
+            <div class="t">Complete tasks</div>
+            <div class="d">Each task usually takes 15&ndash;20 minutes. The more you complete, the more you earn.</div>
+          </div>
+          <span class="idx">03</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAYS TO EARN -->
+    <section class="section">
+      <h2>3 ways to earn real money</h2>
+      <p class="lead">Getting started is simple and completely free. After signing up you get access to over 20 exclusive offers worth more than $800 &mdash; on your phone, tablet or computer.</p>
+      <div class="ways">
+        <div class="way">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg></div>
+          <div class="t">Play mobile games for cash</div>
+          <div class="d">Choose from a wide range of mobile games and earn money while helping games gain more users.</div>
+        </div>
+        <div class="way">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
+          <div class="t">Paid survey tasks</div>
+          <div class="d">Help companies improve their products and services. Earn money by sharing your feedback through surveys.</div>
+        </div>
+        <div class="way">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div class="t">Complete tasks to earn cash</div>
+          <div class="d">Choose from more than 2,000+ tasks and earn from each of them &mdash; your earnings are added to your wallet.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <footer class="disclaimer">
+      <p>Earnings vary based on the offers you complete, your device and your location. The figures above are testerup&rsquo;s published platform statistics and do not represent typical individual earnings. There is no guaranteed or fixed income, and earning rewards requires completing offers.</p>
+      <p>The $5 welcome bonus is credited to new users after they register on testerup. It is added to your testerup balance &mdash; it is not a cash payment, and it does not on its own reach the minimum needed to withdraw.</p>
+      <p>Eligibility: you must be at least 18 years old and live in the USA, Canada (excluding Quebec) or the UK, and own a PayPal account registered in one of those countries. A minimum balance of $55 and face verification are required before a payout can be initiated.</p>
+      <p>This page is operated by an independent partner of testerup and is not the official testerup website. We are not a representative of testerup. This is a paid promotion.</p>
+      <nav class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span class="sep">&middot;</span>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <span class="sep">&middot;</span>
+        <a class="mailto" href="mailto:contact@yourdomain.com">Contact us</a>
+      </nav>
+    </footer>
+  </div>
+
+  <!-- STICKY CTA BAR -->
+  <div class="cta-bar">
+    <div class="cta-inner">
+      <div class="cta-left">
+        <div class="cta-timer" role="timer" aria-live="off" aria-label="Offer time remaining">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg>
+          <span class="cta-timer-time" id="ctaTimer">05:00</span>
+        </div>
+        <div class="cta-info">
+          <div>
+            <p class="cta-text">Install the app and claim your $5 bonus</p>
+            <p class="cta-meta"><span class="dot">&#9679;</span> <span id="ctaMetaDate">Offer valid today</span></p>
+          </div>
+        </div>
+      </div>
+      <a class="cta-btn offer_link" href="https://track.tester-up-app.com/click">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 21h14"/></svg>
+        Download App Now
+      </a>
+    </div>
+  </div>
+
+  <script src="jquery-3.6.4.min.js"></script>
+  <script>
+    // Debounced offer click: fire the pixel, then hand off to the tracking link.
+    $(function () {
+      window.domain = window.location.hostname;
+      $(".mailto").attr("href", "mailto:contact@" + domain);
+
+      var isClicked = false;
+
+      $(".offer_link").click(function (e) {
+        e.preventDefault();
+        if (isClicked) return;
+        isClicked = true;
+
+        fbq('track', 'PageView');
+        ttq.page();
+
+        var href = $(this).attr("href");
+        setTimeout(function () { window.location.href = href; }, 500);
+        setTimeout(function () { isClicked = false; }, 5000);
+      });
+    });
+
+    // Sticky-bar countdown: survives reloads within the tab (sessionStorage),
+    // loops back to the full duration once it hits zero so the bar never goes stale.
+    (function () {
+      var DURATION = 5 * 60; // seconds
+      var STORAGE_KEY = "ctaTimerEnd";
+      var timeEl = document.getElementById("ctaTimer");
+      if (!timeEl) return;
+
+      var end = parseInt(sessionStorage.getItem(STORAGE_KEY), 10);
+      if (!end || end <= Date.now()) {
+        end = Date.now() + DURATION * 1000;
+        sessionStorage.setItem(STORAGE_KEY, end);
+      }
+
+      function render() {
+        var remaining = Math.round((end - Date.now()) / 1000);
+        if (remaining <= 0) {
+          end = Date.now() + DURATION * 1000;
+          sessionStorage.setItem(STORAGE_KEY, end);
+          remaining = DURATION;
+        }
+        var m = Math.floor(remaining / 60);
+        var s = remaining % 60;
+        timeEl.textContent = (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s;
+      }
+
+      render();
+      setInterval(render, 1000);
+
+      var dateEl = document.getElementById("ctaMetaDate");
+      if (dateEl) {
+        var today = new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+        dateEl.textContent = "Offer valid today · " + today;
+      }
+    })();
+  </script>
+</body>
+</html>
