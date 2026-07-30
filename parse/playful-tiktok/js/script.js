@@ -16,7 +16,7 @@ $(document).ready(function() {
         if (isClicked) return;
         isClicked = true;
 
-        fbq('track', 'PageView');
+        ttq.page();
 
         setTimeout(() => {
             window.location.href = $(this).attr("href");
