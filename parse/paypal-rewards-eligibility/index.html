@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+        <meta name="theme-color" content="#f7f9ff" />
+        <title>Check Your PayPal Reward Eligibility</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="jquery-3.6.4.min.js"></script>
+
+        <!-- Meta Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '799738728826938');
+        </script>
+        <!-- End Meta Pixel Code -->
+
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="wrap nav">
+                <div class="brand">
+                    <span class="brand-mark" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                            <path d="M5 12.5 10 17l9-10" />
+                        </svg>
+                    </span>
+                    RewardPath
+                </div>
+                <div class="nav-note">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+                        <path d="m9 12 2 2 4-4" /></svg
+                    ><span>Secure eligibility check</span>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="hero">
+                <div class="wrap hero-grid">
+                    <div class="hero-copy">
+                        <div class="hero-intro">
+                            <h1>Get <span class="green">$1,000</span><br />to PayPal</h1>
+                            <p class="lead">Take the quick eligibility check and continue to the claim steps.</p>
+                        </div>
+                        <section class="quiz" aria-live="polite">
+                            <div id="quizHeader">
+                                <div class="progress-row">
+                                    <strong>Eligibility check</strong><span id="stepLabel">Question 1 of 3</span>
+                                </div>
+                                <div class="progress"><span id="progressBar"></span></div>
+                            </div>
+                            <div class="step active" data-step="1">
+                                <h2>Do you currently live in the United States?</h2>
+                                <p class="hint">Program availability varies by location.</p>
+                                <div class="answers">
+                                    <button class="answer">Yes</button><button class="answer">No</button>
+                                </div>
+                            </div>
+                            <div class="step" data-step="2">
+                                <h2>Are you at least 18 years old?</h2>
+                                <p class="hint">You must be a legal adult to participate.</p>
+                                <div class="answers">
+                                    <button class="answer">Yes, I am 18+</button><button class="answer">No</button>
+                                </div>
+                            </div>
+                            <div class="step" data-step="3">
+                                <h2>How often do you use PayPal?</h2>
+                                <p class="hint">Choose the answer that fits you best.</p>
+                                <div class="answers">
+                                    <button class="answer">Daily</button
+                                    ><button class="answer">A few times a week</button
+                                    ><button class="answer">I don't use PayPal</button>
+                                </div>
+                            </div>
+                            <div class="step" id="processing">
+                                <div class="processing">
+                                    <div class="spinner"></div>
+                                    <h2>Checking for a potential match...</h2>
+                                    <p class="hint">Reviewing your answers against general participation criteria.</p>
+                                    <div class="checks">
+                                        <div class="check">Basic eligibility reviewed</div>
+                                        <div class="check">Reward preference recorded</div>
+                                        <div class="check">Preparing program details</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step" id="result">
+                                <div class="result">
+                                    <div class="result-icon">✓</div>
+                                    <h2>Congratulations! You Qualify!</h2>
+                                    <div class="result-reward"><span>$1,000</span> to PayPal</div>
+                                    <div class="claim-steps">
+                                        <div class="claim-step"><i>1</i><span>Complete your registration</span></div>
+                                        <div class="claim-step">
+                                            <i>2</i
+                                            ><span
+                                                ><strong>Unlock your DOUBLE reward.</strong> Each deal that you complete
+                                                will increase your reward.</span
+                                            >
+                                        </div>
+                                        <div class="claim-step"><i>3</i><span>Claim $1,000 to PayPal</span></div>
+                                    </div>
+                                    <a class="cta offer_link" id="offerLink" href="https://track.domain/click">Claim my $1,000</a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="reward-visual">
+                        <div class="reward-card" aria-label="$1,000 PayPal reward card illustration">
+                            <div class="card-top">$1,000</div>
+                            <div class="card-copy"><strong>PayPal</strong></div>
+                            <div class="chip"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="reviews">
+                <div class="wrap">
+                    <div class="section-head"><h2>What participants say</h2></div>
+                    <div class="reviews-viewport" id="reviewsViewport">
+                        <div class="reviews-track" id="reviewsTrack">
+                            <article class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p>“Woke up to $1000 in my PP account! Best morning ever lol”</p>
+                                <div class="review-meta">
+                                    <strong>Sarah J. · Texas</strong>
+                                </div>
+                            </article>
+                            <article class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p>“Just got the $1k! Literally shaking rn, rent is PAID”</p>
+                                <div class="review-meta">
+                                    <strong>Allan A. · Ohio</strong>
+                                </div>
+                            </article>
+                            <article class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p>“Can confirm this works. $1k deposited to my PayPal with zero issues.”</p>
+                                <div class="review-meta">
+                                    <strong>Robert F. · New York</strong>
+                                </div>
+                            </article>
+                            <article class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p>“That $1000 PayPal drop was clutch. Tysm!”</p>
+                                <div class="review-meta">
+                                    <strong>Jessica D. · Florida</strong>
+                                </div>
+                            </article>
+                            <article class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p>“$1k actually hit my PayPal. Legit.”</p>
+                                <div class="review-meta">
+                                    <strong>Aaron F. · New York</strong>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="review-dots" id="reviewDots" aria-label="Review carousel navigation"></div>
+                </div>
+            </section>
+            <section class="trust-strip">
+                <div class="wrap trust-grid">
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 7 10 17l-5-5" />
+                        </svg>
+                        <div>
+                            <strong>No guaranteed reward claims</strong
+                            ><span>The quiz does not approve, reserve, or award money.</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 7 10 17l-5-5" />
+                        </svg>
+                        <div>
+                            <strong>Requirements disclosed</strong
+                            ><span>Qualifying sponsor deals and verification may be required.</span>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 7 10 17l-5-5" />
+                        </svg>
+                        <div>
+                            <strong>Independent program</strong
+                            ><span>RewardPath is not affiliated with or endorsed by PayPal.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="wrap disclosure">
+                <strong>Important disclosure:</strong> RewardPath is an independent service and is not affiliated with
+                PayPal, Inc. PayPal is a registered trademark of PayPal, Inc. References to PayPal describe a possible
+                payout method only. No reward has been approved, earned, reserved, or guaranteed by completing this
+                quiz. Eligibility, availability, reward value, and payout method are determined by the third-party
+                program provider. Participants may need to register, verify their identity, and complete a specified
+                number and level of sponsored deals, including offers that may require payment, subscriptions, or
+                trials. Additional terms, deadlines, and restrictions apply.
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="wrap">
+                © <span id="year"></span> RewardPath · <a href="privacy/" target="_blank" rel="noopener">Privacy</a
+                ><a href="terms/" target="_blank" rel="noopener">Terms</a><a href="#" id="contactLink">Contact</a>
+            </div>
+        </footer>
+        <script>
+            (() => {
+                const steps = [...document.querySelectorAll(".step[data-step]")],
+                    bar = document.getElementById("progressBar"),
+                    label = document.getElementById("stepLabel"),
+                    header = document.getElementById("quizHeader"),
+                    micro = document.getElementById("micro"),
+                    processing = document.getElementById("processing"),
+                    result = document.getElementById("result");
+                let current = 0;
+                function show(i) {
+                    document.querySelectorAll(".step").forEach((s) => s.classList.remove("active"));
+                    steps[i].classList.add("active");
+                    current = i;
+                    bar.style.width = ((i + 1) / steps.length) * 100 + "%";
+                    label.textContent = `Question ${i + 1} of ${steps.length}`;
+                }
+                document.querySelectorAll(".answer").forEach((btn) =>
+                    btn.addEventListener("click", () => {
+                        if (current < steps.length - 1) {
+                            show(current + 1);
+                        } else {
+                            steps[current].classList.remove("active");
+                            processing.classList.add("active");
+                            bar.style.width = "100%";
+                            label.textContent = "Reviewing answers";
+                            setTimeout(() => {
+                                processing.classList.remove("active");
+                                result.classList.add("active");
+                                header.hidden = true;
+                                document.body.classList.add("result-view");
+                            }, 1700);
+                        }
+                    })
+                );
+                document.getElementById("year").textContent = new Date().getFullYear();
+                $("#contactLink").attr("href", `mailto:support@${location.hostname}`);
+            })();
+            (() => {
+                const viewport = document.getElementById("reviewsViewport"),
+                    track = document.getElementById("reviewsTrack"),
+                    dots = document.getElementById("reviewDots"),
+                    cards = [...track.children],
+                    reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+                let index = 0,
+                    timer;
+                const visible = () => (innerWidth <= 520 ? 1 : innerWidth <= 850 ? 2 : 3);
+                function render() {
+                    const shown = visible(),
+                        max = Math.max(0, cards.length - shown);
+                    index = Math.min(index, max);
+                    const gap = 14,
+                        cardWidth = (viewport.clientWidth - gap * (shown - 1)) / shown;
+                    track.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
+                    dots.innerHTML = "";
+                    for (let i = 0; i <= max; i++) {
+                        const b = document.createElement("button");
+                        b.className = "review-dot" + (i === index ? " active" : "");
+                        b.type = "button";
+                        b.setAttribute("aria-label", `Show review group ${i + 1}`);
+                        b.onclick = () => {
+                            index = i;
+                            render();
+                            restart();
+                        };
+                        dots.appendChild(b);
+                    }
+                }
+                function next() {
+                    const max = Math.max(0, cards.length - visible());
+                    index = index >= max ? 0 : index + 1;
+                    render();
+                }
+                function restart() {
+                    clearInterval(timer);
+                    if (!reduced) timer = setInterval(next, 3800);
+                }
+                addEventListener("resize", render);
+                viewport.addEventListener("mouseenter", () => clearInterval(timer));
+                viewport.addEventListener("mouseleave", restart);
+                render();
+                restart();
+            })();
+
+
+            $(document).ready(function(){
+                isClicked = false;
+
+                $(".offer_link").click(function(e){
+                    e.preventDefault();
+
+                    if (isClicked) return;
+                    isClicked = true;
+
+                    fbq('track', 'PageView');
+
+                    setTimeout(function() {
+                        window.location.href = $(".offer_link").attr("href");
+                    }, 500);
+
+                    setTimeout(function() {
+                        isClicked = false;
+                    }, 5000);
+                });
+            });
+        </script>
+    </body>
+</html>
