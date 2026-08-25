@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+        <meta name="theme-color" content="#f5f5f7" />
+        <title>Mobile Payment Research Reward Survey</title>
+
+         <!-- Meta Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '799738728826938');
+        </script>
+        <!-- End Meta Pixel Code -->
+
+        <meta
+            name="description"
+            content="Complete a brief mobile payment survey to check whether you may qualify to continue to a $1,000 Apple Pay reward program."
+        />
+        <style>
+            :root {
+                --blue: #0071e3;
+                --blue-dark: #0062c4;
+                --ink: #1d1d1f;
+                --muted: #6e6e73;
+                --soft: #f5f5f7;
+                --white: #fff;
+                --line: #d2d2d7;
+                --green: #24a148;
+                --shadow: 0 24px 60px rgba(0, 0, 0, 0.1);
+                --radius: 20px;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                margin: 0;
+                background: var(--soft);
+                color: var(--ink);
+                font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial,
+                    sans-serif;
+                line-height: 1.45;
+                -webkit-font-smoothing: antialiased;
+            }
+            button,
+            a {
+                font: inherit;
+            }
+            .wrap {
+                width: min(calc(100% - 32px), 1080px);
+                margin-inline: auto;
+            }
+            .topbar {
+                height: 64px;
+                background: rgba(255, 255, 255, 0.84);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+                backdrop-filter: saturate(180%) blur(18px);
+                display: flex;
+                align-items: center;
+                position: relative;
+                z-index: 5;
+            }
+            .nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+            }
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 14px;
+                font-weight: 650;
+                letter-spacing: -0.01em;
+            }
+            .brand-mark {
+                width: 32px;
+                height: 32px;
+                border-radius: 10px;
+                background: var(--ink);
+                color: #fff;
+                display: grid;
+                place-items: center;
+                font-size: 17px;
+            }
+            .secure {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                color: var(--muted);
+                font-size: 11px;
+            }
+            .secure i {
+                font-style: normal;
+                color: var(--green);
+            }
+            .reward-stage {
+                padding: 24px 0 0;
+                background: var(--soft);
+            }
+            .reward-card-top {
+                width: min(100%, 400px);
+                margin: auto;
+                border-radius: 30px;
+                overflow: hidden;
+                line-height: 0;
+                box-shadow: 0 24px 50px rgba(0, 0, 0, 0.22);
+            }
+            .reward-card-top img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+            .hero {
+                padding: 36px 0 70px;
+                position: relative;
+                overflow: hidden;
+            }
+            .hero:before {
+                content: "";
+                position: absolute;
+                width: 560px;
+                height: 560px;
+                border-radius: 50%;
+                background: radial-gradient(circle, rgba(0, 113, 227, 0.12), transparent 67%);
+                right: -170px;
+                top: -190px;
+                pointer-events: none;
+            }
+            .hero-grid {
+                position: relative;
+                max-width: 760px;
+                margin: auto;
+            }
+            .eyebrow {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                padding: 7px 11px;
+                border-radius: 999px;
+                background: #e8f3ff;
+                color: #005ebd;
+                font-size: 11px;
+                font-weight: 650;
+                margin-bottom: 17px;
+            }
+            .eyebrow:before {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--blue);
+            }
+            h1 {
+                font-size: clamp(38px, 5.7vw, 64px);
+                line-height: 1.03;
+                letter-spacing: -0.055em;
+                margin: 0 0 18px;
+                font-weight: 750;
+            }
+            .blue {
+                color: var(--blue);
+            }
+            .lead {
+                font-size: clamp(16px, 2vw, 19px);
+                line-height: 1.52;
+                color: var(--muted);
+                max-width: 650px;
+                margin: 0 0 27px;
+            }
+            .survey-card {
+                background: rgba(255, 255, 255, 0.94);
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                border-radius: var(--radius);
+                padding: clamp(20px, 3.2vw, 32px);
+                box-shadow: var(--shadow);
+                min-height: 325px;
+            }
+            .progress-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 11px;
+                margin-bottom: 9px;
+                color: var(--muted);
+            }
+            .progress-row strong {
+                color: var(--ink);
+                font-weight: 650;
+            }
+            .progress {
+                height: 6px;
+                background: #e8e8ed;
+                border-radius: 99px;
+                overflow: hidden;
+                margin-bottom: 27px;
+            }
+            .progress span {
+                display: block;
+                width: 33.333%;
+                height: 100%;
+                background: var(--blue);
+                border-radius: inherit;
+                transition: width 0.32s ease;
+            }
+            .step {
+                display: none;
+            }
+            .step.active {
+                display: block;
+                animation: enter 0.26s ease;
+            }
+            .step h2 {
+                font-size: clamp(22px, 3vw, 29px);
+                line-height: 1.18;
+                letter-spacing: -0.035em;
+                margin: 0 0 7px;
+            }
+            .hint {
+                font-size: 13px;
+                color: var(--muted);
+                margin: 0 0 19px;
+            }
+            .answers {
+                display: grid;
+                gap: 10px;
+            }
+            .answer {
+                width: 100%;
+                min-height: 53px;
+                padding: 12px 15px;
+                border: 1px solid var(--line);
+                border-radius: 14px;
+                background: #fff;
+                color: var(--ink);
+                text-align: left;
+                font-weight: 560;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                transition: 0.16s ease;
+            }
+            .answer:after {
+                content: "›";
+                font-size: 22px;
+                color: #a1a1a6;
+                font-weight: 300;
+            }
+            .answer:hover,
+            .answer:focus-visible {
+                outline: 0;
+                border-color: var(--blue);
+                background: #f2f8ff;
+                color: #0064c8;
+                transform: translateY(-1px);
+            }
+            .legal-micro {
+                margin: 15px 0 0;
+                text-align: center;
+                color: #a1a1a6;
+                font-size: 9px;
+            }
+            .processing {
+                text-align: center;
+                padding: 4px 0;
+            }
+            .loader-ring {
+                width: 50px;
+                height: 50px;
+                margin: 0 auto 19px;
+                border: 4px solid #e6f1fc;
+                border-top-color: var(--blue);
+                border-radius: 50%;
+                animation: spin 0.85s linear infinite;
+            }
+            .status-list {
+                display: grid;
+                gap: 9px;
+                max-width: 420px;
+                margin: 20px auto 0;
+                text-align: left;
+            }
+            .status {
+                display: flex;
+                align-items: center;
+                gap: 9px;
+                color: var(--muted);
+                font-size: 12px;
+                opacity: 0.4;
+                transition: 0.25s ease;
+            }
+            .status.active {
+                opacity: 1;
+                color: var(--ink);
+            }
+            .status.done:before {
+                content: "✓";
+                background: #e8f7ed;
+                color: var(--green);
+            }
+            .status:before {
+                content: "";
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: #ececf0;
+                display: grid;
+                place-items: center;
+                font-weight: 700;
+                font-size: 11px;
+                flex: 0 0 20px;
+            }
+            .result {
+                text-align: center;
+            }
+            .success-icon {
+                width: 54px;
+                height: 54px;
+                border-radius: 50%;
+                margin: 0 auto 14px;
+                background: #e8f7ed;
+                color: var(--green);
+                display: grid;
+                place-items: center;
+                font-size: 26px;
+                font-weight: 700;
+            }
+            .result h2 {
+                font-size: clamp(25px, 4vw, 34px);
+            }
+            .reward-banner {
+                margin: 16px 0 20px;
+                padding: 16px;
+                border-radius: 14px;
+                background: linear-gradient(135deg, #e8f3ff, #f1f9ff);
+                border: 1px solid #b7d8f8;
+                color: var(--blue);
+                font-size: clamp(25px, 5vw, 34px);
+                font-weight: 750;
+                letter-spacing: -0.045em;
+            }
+            .claim-steps {
+                display: grid;
+                gap: 11px;
+                text-align: left;
+                margin-bottom: 21px;
+            }
+            .claim-step {
+                display: grid;
+                grid-template-columns: 27px 1fr;
+                gap: 10px;
+                align-items: start;
+            }
+            .claim-step i {
+                width: 27px;
+                height: 27px;
+                border-radius: 50%;
+                background: #e8f3ff;
+                color: var(--blue);
+                display: grid;
+                place-items: center;
+                font-style: normal;
+                font-size: 12px;
+                font-weight: 700;
+            }
+            .claim-step strong {
+                display: block;
+                font-size: 13px;
+                margin: 1px 0 2px;
+            }
+            .claim-step span {
+                display: block;
+                color: var(--muted);
+                font-size: 11px;
+            }
+            .cta {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 55px;
+                border-radius: 14px;
+                background: var(--blue);
+                color: #fff;
+                text-decoration: none;
+                font-weight: 650;
+                box-shadow: 0 10px 23px rgba(0, 113, 227, 0.24);
+                transition: 0.16s ease;
+            }
+            .cta:hover {
+                background: var(--blue-dark);
+                transform: translateY(-1px);
+            }
+            .result-note {
+                color: #a1a1a6;
+                font-size: 8px;
+                margin: 11px 0 0;
+            }
+            .trust {
+                padding: 0 0 56px;
+            }
+            .trust-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 14px;
+            }
+            .trust-card {
+                background: #fff;
+                border: 1px solid #e3e3e7;
+                border-radius: 14px;
+                padding: 17px;
+            }
+            .trust-card b {
+                display: block;
+                font-size: 12px;
+                margin-bottom: 3px;
+            }
+            .trust-card span {
+                display: block;
+                color: var(--muted);
+                font-size: 10px;
+            }
+            .disclosure {
+                border-top: 1px solid #dedee2;
+                padding: 23px 0 15px;
+                color: #8a8a8f;
+                font-size: 9px;
+                line-height: 1.6;
+            }
+            .footer {
+                text-align: center;
+                padding: 0 0 26px;
+                color: #a1a1a6;
+                font-size: 9px;
+            }
+            .footer a {
+                color: #7c7c80;
+                text-decoration: none;
+                margin: 0 6px;
+            }
+            @keyframes enter {
+                from {
+                    opacity: 0;
+                    transform: translateY(5px);
+                }
+                to {
+                    opacity: 1;
+                    transform: none;
+                }
+            }
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+            @media (max-width: 820px) {
+                .hero-copy {
+                    text-align: center;
+                }
+                .lead {
+                    margin-inline: auto;
+                }
+                .survey-card {
+                    text-align: left;
+                }
+                .trust-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+            @media (max-width: 520px) {
+                .wrap {
+                    width: min(calc(100% - 22px), 1080px);
+                }
+                .topbar {
+                    height: 58px;
+                }
+                .secure span {
+                    display: none;
+                }
+                .reward-stage {
+                    padding-top: 16px;
+                }
+                .hero {
+                    padding: 28px 0 48px;
+                }
+                h1 {
+                    font-size: 37px;
+                }
+                .lead {
+                    font-size: 15px;
+                    margin-bottom: 20px;
+                }
+                .survey-card {
+                    padding: 20px 16px;
+                    min-height: 322px;
+                }
+                .trust {
+                    padding-bottom: 40px;
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                *,
+                *:before,
+                *:after {
+                    animation-duration: 0.01ms !important;
+                    transition-duration: 0.01ms !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="wrap nav">
+                <div class="brand"><span class="brand-mark" aria-hidden="true">▣</span>Apple Survey</div>
+            </div>
+        </header>
+        <main>
+            <section class="reward-stage">
+                <div class="wrap">
+                    <div class="reward-card-top">
+                        <img src="182937918.png" alt="$1,000 Apple Pay reward card" />
+                    </div>
+                </div>
+            </section>
+            <section class="hero">
+                <div class="wrap hero-grid">
+                    <div class="hero-copy">
+                        <div id="intro">
+                            <h1>Get a <span class="blue">$1,000 to Apple Pay</span></h1>
+                            <p class="lead">
+                                Answer 3 quick questions below to check your eligibility and unlock your $1,000 payout spot.
+                            </p>
+                        </div>
+                        <section class="survey-card" aria-live="polite">
+                            <div id="surveyHeader">
+                                <div class="progress-row">
+                                    <strong>Reward eligibility survey</strong
+                                    ><span id="stepLabel">Question 1 of 3</span>
+                                </div>
+                                <div class="progress"><span id="progressBar"></span></div>
+                            </div>
+                            <div class="step active" data-step="1">
+                                <h2>Where do you use contactless payments the most?</h2>
+                                <p class="hint">Select one answer.</p>
+                                <div class="answers">
+                                    <button class="answer">Grocery stores &amp; cafes</button
+                                    ><button class="answer">Online shopping &amp; apps</button
+                                    ><button class="answer">Sending money to friends</button>
+                                </div>
+                            </div>
+                            <div class="step" data-step="2">
+                                <h2>What is your favorite benefit of using a digital wallet?</h2>
+                                <p class="hint">Select one answer.</p>
+                                <div class="answers">
+                                    <button class="answer">Fast checkout speed</button
+                                    ><button class="answer">Enhanced privacy &amp; security</button
+                                    ><button class="answer">Cashback &amp; rewards</button>
+                                </div>
+                            </div>
+                            <div class="step" data-step="3">
+                                <h2>Is your Apple Cash or Apple Pay currently active and ready to receive funds?</h2>
+                                <p class="hint">Select one answer.</p>
+                                <div class="answers">
+                                    <button class="answer">✅ Yes, it's active</button
+                                    ><button class="answer">⏳ No, but I can set it up now</button>
+                                </div>
+                            </div>
+                            <div class="step" id="processing">
+                                <div class="processing">
+                                    <div class="loader-ring"></div>
+                                    <h2>Reviewing your responses...</h2>
+                                    <div class="status-list">
+                                        <div class="status" id="status1">Submitting partner feedback...</div>
+                                        <div class="status" id="status2">Validating program availability...</div>
+                                        <div class="status" id="status3">
+                                            Preparing $1,000 Apple Pay reward steps...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step" id="result">
+                                <div class="result">
+                                    <div class="success-icon">✓</div>
+                                    <h2>SUCCESS! You are qualified to continue.</h2>
+                                    <div class="reward-banner">$1,000 to Apple Pay</div>
+                                    <div class="claim-steps">
+                                        <div class="claim-step">
+                                            <i>1</i>
+                                            <div>
+                                                <strong>Complete Registration</strong
+                                                ><span>Enter basic details to secure your reward status.</span>
+                                            </div>
+                                        </div>
+                                        <div class="claim-step">
+                                            <i>2</i>
+                                            <div>
+                                                <strong>Unlock your DOUBLE reward</strong
+                                                ><span>Try out sponsored deals to increase your reward.</span>
+                                            </div>
+                                        </div>
+                                        <div class="claim-step">
+                                            <i>3</i>
+                                            <div>
+                                                <strong>Claim Your $1,000</strong><span >Receive the payout to Apple Pay.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="cta offer_link" href="https://track.domain/click" rel="nofollow sponsored"
+                                        >Claim my $1,000 to Apple Pay</a>
+                                        <br>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+            <section class="trust">
+                <div class="wrap trust-grid">
+                    <div class="trust-card">
+                        <b>Three quick questions</b><span>Your answers help determine whether you may continue.</span>
+                    </div>
+                    <div class="trust-card">
+                        <b>Requirements apply</b
+                        ><span>Registration, verification, and sponsored deals may be required.</span>
+                    </div>
+                    <div class="trust-card">
+                        <b>Independent program</b><span>Apple Survey is not affiliated with or endorsed by Apple.</span>
+                    </div>
+                </div>
+            </section>
+            <div class="wrap disclosure">
+                <strong>Important disclosure:</strong> Apple Survey is an independent survey and marketing service and
+                is not affiliated with, sponsored by, or endorsed by Apple Inc. Apple Pay and Apple Cash are trademarks
+                of Apple Inc. No funds are reserved or guaranteed by completing this survey. Eligibility, reward
+                availability, reward amount, and payout method are determined by the third-party program provider.
+                Participants may need to register, verify their identity, and complete a specified number and level of
+                sponsored deals, including deals that may require payment, subscriptions, or trials. Review all terms,
+                costs, deadlines, and cancellation requirements before participating.
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="wrap">
+                © <span id="year"></span> Apple Survey · <a href="privacy/index.html">Privacy</a
+                ><a href="terms/index.html">Terms</a
+                ><a id="contactLink" href="mailto:support@applesurvey.com">Contact</a>
+            </div>
+        </footer>
+        <script>
+            (() => {
+                const questions = [...document.querySelectorAll(".step[data-step]")],
+                    all = [...document.querySelectorAll(".step")],
+                    bar = document.getElementById("progressBar"),
+                    label = document.getElementById("stepLabel"),
+                    header = document.getElementById("surveyHeader"),
+                    micro = document.getElementById("micro"),
+                    processing = document.getElementById("processing"),
+                    result = document.getElementById("result"),
+                    intro = document.getElementById("intro");
+                let current = 0;
+                function show(i) {
+                    all.forEach((s) => s.classList.remove("active"));
+                    questions[i].classList.add("active");
+                    current = i;
+                    bar.style.width = ((i + 1) / questions.length) * 100 + "%";
+                    label.textContent = `Question ${i + 1} of ${questions.length}`;
+                }
+                document.querySelectorAll(".answer").forEach((button) =>
+                    button.addEventListener("click", () => {
+                        if (current < questions.length - 1) {
+                            show(current + 1);
+                            return;
+                        }
+                        questions[current].classList.remove("active");
+                        processing.classList.add("active");
+                        bar.style.width = "100%";
+                        label.textContent = "Reviewing answers";
+                        // micro.hidden = true;
+                        ["status1", "status2", "status3"].forEach((id, i) =>
+                            setTimeout(() => {
+                                const el = document.getElementById(id);
+                                el.classList.add("active");
+                                if (i) document.getElementById(`status${i}`).classList.add("done");
+                            }, i * 600)
+                        );
+                        setTimeout(() => {
+                            document.getElementById("status3").classList.add("done");
+                            processing.classList.remove("active");
+                            result.classList.add("active");
+                            header.hidden = true;
+                            intro.hidden = true;
+                            document.querySelector(".hero-copy").style.maxWidth = "650px";
+                            document.querySelector(".hero-copy").style.margin = "auto";
+                        }, 2100);
+                    })
+                );
+                document.getElementById("year").textContent = new Date().getFullYear();
+
+                const domain = location.hostname.replace(/^www\./, "");
+                document.getElementById("contactLink").href = `mailto:support@${domain}`;
+            })();
+        </script>
+        <script src="jquery-3.6.4.min.js"></script>
+        <script>
+          $(document).ready(function(){
+              isClicked = false;
+
+              $(".offer_link").click(function(e){
+                  e.preventDefault();
+
+                  if (isClicked) return;
+                  isClicked = true;
+
+                  fbq('track', 'PageView');
+
+                  setTimeout(function() {
+                      window.location.href = $(".offer_link").attr("href");
+                  }, 500);
+
+                  setTimeout(function() {
+                      isClicked = false;
+                  }, 5000);
+              });
+          });
+        </script>
+    </body>
+</html>
