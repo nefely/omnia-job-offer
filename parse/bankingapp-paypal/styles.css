@@ -1,11 +1,15 @@
+/* світла тема: кольори зняті з кадрів запису екрана світлої апки PayPal (YouTube Ornp8WaGbXA):
+   тло #eff0f7, білі картки, тепла картка офера #f7f5f1, сині дії #0551b5, яскравий синій #0b6dd2;
+   muted/hairline — з токенів сайту PayPal (#686A6D / #CFD3D8); pill-кнопки чорні як у новій версії */
 :root{
-  --bg:#f2f5f8; --surf:#fff; --card:#fff; --card2:#f2f5f8; --btn:#e8ecf1; --line:#e3e8ef; --text:#0a0a0a; --muted:#5f6b7a;
-  --acc:#0a66ff; --hl:#0a66ff; --pill:#0a0a0a; --piltx:#fff; --pos:#00843d; --neg:#0a0a0a; --chev:#8b97aa;
-  --navbg:rgba(255,255,255,.9); --navon:#e8ecf1; --shadow:0 2px 10px rgba(0,20,53,.06);
+  --bg:#f0f1f7; --surf:#fff; --card:#fff; --card2:#f7f5f1; --btn:#e4e6ee; --line:#e2e4ec; --text:#000; --muted:#686a6d;
+  --acc:#0551b5; --hl:#0b6dd2; --pill:#000; --piltx:#fff; --pos:#00843d; --neg:#000; --chev:#8e9196;
+  --navbg:rgba(255,255,255,.92); --navon:#e4e6ee; --shadow:0 2px 12px rgba(20,24,60,.05);
   --chk:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%230a0a0a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 :root[data-theme=dark]{
-  --bg:#000; --surf:#1c1c1e; --card:#1c1c1e; --card2:#2a2a2d; --btn:#2c2c2e; --line:#2c2c2e; --text:#fff; --muted:#8e8e93;
+  /* звірено з кадрами нової апки (YouTube fENbaoIM704): картки/клавіші #191919, пошук #1d1d1d–#202020, нейтральний сірий без синяви */
+  --bg:#000; --surf:#191919; --card:#191919; --card2:#000; --btn:#202020; --line:#2a2a2a; --text:#fff; --muted:#8e8e93;
   --acc:#5cb8ff; --hl:#5cb8ff; --pill:#fff; --piltx:#000; --pos:#3ddc84; --neg:#fff; --chev:#6e6e73;
   --navbg:rgba(44,44,46,.82); --navon:rgba(255,255,255,.16); --shadow:none;
   --chk:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -46,6 +50,9 @@ h2.sec{font-size:19px;font-weight:700;margin:24px 2px 12px;letter-spacing:-.025e
 .btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .pill{border:0;border-radius:99px;padding:15px;background:var(--pill);color:var(--piltx);font-weight:700;font-size:16px;cursor:pointer;text-align:center;width:100%}
 .pill.o{background:none;color:var(--text);box-shadow:inset 0 0 0 1.5px var(--line)}
+:root:not([data-theme=dark]) .pill.o{box-shadow:inset 0 0 0 2px #cfd3d8}
+:root:not([data-theme=dark]) .pill:active{background:#333}
+:root:not([data-theme=dark]) .pill.o:active,:root:not([data-theme=dark]) .pill.g:active{background:var(--btn)}
 .pill.g{background:var(--btn);color:var(--text)}
 .pill:active,.cb:active,.tile:active,.acts button:active{transform:scale(.97)}
 .pill.off{opacity:.4;pointer-events:none}
@@ -82,6 +89,10 @@ h2.sec{font-size:19px;font-weight:700;margin:24px 2px 12px;letter-spacing:-.025e
 .tico{width:34px;height:26px;border-radius:6px;display:grid;place-items:center;flex-shrink:0;cursor:pointer}
 .tico svg{width:17px;height:17px}
 .tico.w{background:var(--text);color:var(--bg)}
+/* темна тема: значок у плитці — чорний квадрат з білою іконкою, клавіатура в колір карток */
+:root[data-theme=dark] .tico.w,:root[data-theme=dark] .tico.g{background:#000;color:#fff}
+:root[data-theme=dark] .pad.pp button{background:#191919}
+:root[data-theme=dark] .acts button>span,:root[data-theme=dark] .c .chip.on{background:#2a2a2a}
 .tico.b{background:#1f5eff;color:#fff}
 .tico.g{background:var(--btn);color:var(--text)}
 .tico.gr{background:#1d6b43;color:#d7ffe9}
@@ -101,6 +112,8 @@ h2.sec{font-size:19px;font-weight:700;margin:24px 2px 12px;letter-spacing:-.025e
 .of{flex:0 0 66px;text-align:center;font-size:11.5px;line-height:1.3;cursor:pointer}
 .of i{display:block;width:56px;height:56px;border-radius:50%;background:#fff;margin:0 auto 6px;overflow:hidden}
 .of i img{width:100%;height:100%;object-fit:contain;padding:6px;display:block}
+.of i.full img{padding:0;object-fit:cover}
+:root:not([data-theme=dark]) .of i{box-shadow:inset 0 0 0 1px var(--line),var(--shadow)}
 .of b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .of span{display:block;color:var(--muted)}
 
@@ -239,6 +252,10 @@ nav>*{pointer-events:auto}
 .sheet-bg.on{opacity:1;pointer-events:auto}
 .sheet{position:absolute;left:0;right:0;bottom:0;background:var(--surf);color:var(--text);border-radius:24px 24px 0 0;padding:12px 18px calc(env(safe-area-inset-bottom) + 22px);transform:translateY(100%);transition:.3s cubic-bezier(.2,.8,.2,1);z-index:70;max-height:90dvh;overflow-y:auto}
 .sheet.on{transform:none}
+.sheet{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.sheet h3.shd{margin:22px 0 14px}
+.olg{width:32px;height:32px;border-radius:50%;background:#fff;overflow:hidden;flex-shrink:0;box-shadow:inset 0 0 0 1px var(--line)}
+.olg img{width:100%;height:100%;object-fit:contain;display:block}
 .sheet.tall{height:88dvh}
 .sheet .lst{background:var(--bg)}
 .grab{width:40px;height:5px;border-radius:99px;background:var(--line);margin:0 auto 18px}

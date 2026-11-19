@@ -1,16 +1,16 @@
-﻿<!doctype html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#f0f1f7">
 <title>PayPal</title>
 <link rel="icon" type="image/png" href="img/logo-white.png?v=20261119-1">
 <link rel="apple-touch-icon" href="img/logo-white.png?v=20261119-1">
 <link rel="manifest" href="manifest.json?v=20261119-2">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="PayPal">
 <script>
 /* Встановлений додаток стартує з чистого "./" — тому запам'ятовуємо ?offer=/?currency=
@@ -20,10 +20,17 @@
   if(q) localStorage.setItem("pp-q",q);
   else if(standalone){var s=localStorage.getItem("pp-q"); if(s) location.replace(location.pathname+s+location.hash);}
 }catch(e){}})();
+/* тема: збережений вибір (light | dark | system) застосовується до відмалювання, щоб не блимало */
+(function(){try{
+  var p=localStorage.getItem("pp-theme")||"system";
+  var t=p==="system"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):p;
+  document.documentElement.setAttribute("data-theme",t);
+  document.querySelector("meta[name=theme-color]").content=t==="dark"?"#000000":"#f0f1f7";
+}catch(e){}})();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261118-6">
+<link rel="stylesheet" href="styles.css?v=20261119-7">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -78,11 +85,8 @@
     <section class="screen on" id="home">
       <div class="tb"><div class="search sbar" data-go="search" data-push><i class="i" data-i="search"></i><span>Stores, help, and more</span></div><button class="cb bell"><i class="i" data-i="bell"></i><em>1</em></button></div>
 
+      <!-- порядок плиток як у новій апці: Rewards → Pay Later → баланс → ... -->
       <div class="strip">
-        <div class="tile wide" data-go="balance" data-push>
-          <div class="th"><span><span class="brandname"></span> balance</span><span class="tico g" id="hideBal"><i class="i" data-i="eyeoff"></i></span></div>
-          <div class="tv" id="mBal">$0.00</div><div class="ts">Available</div>
-        </div>
         <div class="tile" data-go="rewards" data-push>
           <div class="th"><span>Rewards</span><span class="tico w"><i class="i" data-i="trophy"></i></span></div>
           <div class="tv">1,284 points</div><div class="ts">Available to redeem</div>
@@ -90,6 +94,10 @@
         <div class="tile" data-go="me" data-p="accounts">
           <div class="th"><span>Pay Later</span><span class="tico b"><i class="i" data-i="cal"></i></span></div>
           <div class="tv" data-m="429.59"></div><div class="ts">Current balance<br><span data-m="143.20"></span> due <span class="plDue"></span></div>
+        </div>
+        <div class="tile wide" data-go="balance" data-push>
+          <div class="th"><span><span class="brandname"></span> balance</span><span class="tico g" id="hideBal"><i class="i" data-i="eyeoff"></i></span></div>
+          <div class="tv" id="mBal">$0.00</div><div class="ts">Available</div>
         </div>
         <div class="tile" data-go="savings" data-push>
           <div class="th"><span>Savings</span><span class="tico gr"><i class="i" data-i="piggy"></i></span></div>
@@ -112,13 +120,14 @@
       <h2 class="hl">Offers, <span>ready to shop</span></h2>
       <div class="offs" id="hOffers"></div>
 
-      <div class="flex"><h2 class="sec">Recent activity</h2><span class="lnk" data-go="me" data-p="activity">See all</span></div>
-      <div class="lst" id="recent"></div>
-
+      <!-- промо-банер одразу під оферами, як у новій апці -->
       <div class="bnr" data-go="balance" data-push>
         <h3>Your paycheck, up to 2 days early</h3>
         <div class="in"><div><b>Set up direct deposit</b><span>Get paid straight to your balance.</span><em>Takes 2 minutes</em></div><div class="minic big"></div></div>
       </div>
+
+      <div class="flex"><h2 class="sec">Recent activity</h2><span class="lnk" data-go="me" data-p="activity">See all</span></div>
+      <div class="lst" id="recent"></div>
     </section>
 
     <!-- BALANCE -->
@@ -172,7 +181,7 @@
 
     <!-- ME -->
     <section class="screen" id="me">
-      <div class="tb"><h1 class="pt">Alex Morgan</h1><button class="cb bell"><i class="i" data-i="bell"></i><em>1</em></button></div>
+      <div class="tb"><h1 class="pt" data-pf="full">Alex Morgan</h1><button class="cb bell"><i class="i" data-i="bell"></i><em>1</em></button></div>
       <div class="chips" id="mchips"><span class="chip on" data-p="accounts">Accounts</span><span class="chip" data-p="activity">Activity</span><span class="chip" data-p="subs">Subscriptions</span><span class="chip" data-p="settings">Settings</span></div>
 
       <!-- Accounts -->
@@ -200,7 +209,7 @@
         <div class="vcard" id="vcard">
           <div class="top"><span class="brandname"></span><span class="eye" id="eye"><i class="i" data-i="eye"></i></span></div>
           <div class="num" id="cnum" style="visibility:hidden">5412 7700 1934 4821</div>
-          <div class="cbot"><div><div class="nm">Alex Morgan</div><div class="nm" id="cstat">Debit •••• 4821</div></div><div class="lg">DEBIT</div></div>
+          <div class="cbot"><div><div class="nm" data-pf="full">Alex Morgan</div><div class="nm" id="cstat">Debit •••• 4821</div></div><div class="lg">DEBIT</div></div>
         </div>
         <div class="btns" style="margin-bottom:12px"><button class="pill g" id="lockBtn">Lock card</button><button class="pill g" id="copyBtn">Copy number</button></div>
         <h2 class="sec">Banks and cards</h2>
@@ -232,7 +241,11 @@
       <!-- Settings -->
       <div class="mp" id="p-settings">
         <div class="lst">
-          <div class="lrow"><div class="av">AM</div><div class="m"><b>Alex Morgan</b><span>@alexmorgan · Personal info</span></div><i class="i cv" data-i="chev"></i></div>
+          <div class="lrow"><div class="av" data-pf="ini">AM</div><div class="m"><b data-pf="full">Alex Morgan</b><span>@<span data-pf="user" style="display:inline;margin:0">alexmorgan</span> · Personal info</span></div><i class="i cv" data-i="chev"></i></div>
+        </div>
+        <h2 class="sec">Display</h2>
+        <div class="lst st">
+          <div class="lrow" id="themesRow2"><div class="m"><b>Appearance</b><span>Light, dark or match your phone</span></div><span class="r" id="themeLbl2">System</span><i class="i cv" data-i="chev"></i></div>
         </div>
         <h2 class="sec">Payment preferences</h2>
         <div class="lst st">
@@ -254,7 +267,7 @@
           <label class="lrow"><div class="m"><b>Push notifications</b></div><input type="checkbox" class="tg" checked></label>
           <label class="lrow"><div class="m"><b>Account SMS and email</b></div><input type="checkbox" class="tg" checked></label>
           <label class="lrow"><div class="m"><b>Marketing SMS and email</b></div><input type="checkbox" class="tg"></label>
-          <div class="lrow" id="themesRow"><div class="m"><b>Appearance</b></div><span class="r" id="themeLbl">Dark</span><i class="i cv" data-i="chev"></i></div>
+          <div class="lrow" id="themesRow"><div class="m"><b>Appearance</b></div><span class="r" id="themeLbl">System</span><i class="i cv" data-i="chev"></i></div>
         </div>
         <h2 class="sec">Support</h2>
         <div class="lst st">
@@ -349,8 +362,9 @@
   <div class="sheet" id="sheet"></div>
   <div class="toast" id="toast"></div>
 </div>
-<script src="offers.js?v=20261118-5"></script>
-<script src="app.js?v=20261119-2"></script>
+<script src="offers.js?v=20261119-4"></script>
+<script src="profile.js?v=20261119-4"></script>
+<script src="app.js?v=20261119-8"></script>
 <script>if("serviceWorker" in navigator) addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
 </body>
 </html>

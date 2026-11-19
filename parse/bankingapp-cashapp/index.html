@@ -23,7 +23,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261118-2">
+<link rel="stylesheet" href="styles.css?v=20261119-3">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -91,7 +91,7 @@
     <!-- MONEY -->
     <section class="screen on" id="money">
       <div class="tb"><div class="l"><button class="cb"><i class="i" data-i="smile"></i></button></div>
-        <div class="r"><button class="cb" data-go="search" data-push><i class="i" data-i="search"></i></button><div class="av" data-go="profile" data-push>AM</div></div></div>
+        <div class="r"><button class="cb" data-go="search" data-push><i class="i" data-i="search"></i></button><div class="av" data-go="profile" data-push data-pf="ini">AM</div></div></div>
       <div class="peek" data-go="card" data-push>cash app</div>
       <div class="cashblock">
         <div class="flex"><div class="lbl" data-go="cash" data-push>Cash balance ••1567 <i class="i cv" data-i="chev"></i></div><i class="i" data-i="eyeoff" id="hideBal" style="cursor:pointer"></i></div>
@@ -156,11 +156,11 @@
 
     <!-- CARD -->
     <section class="screen" id="card">
-      <div class="tb"><button class="cb" data-back><i class="i" data-i="back"></i></button><div class="ttl">Card</div><div class="av" data-go="profile" data-push>AM</div></div>
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="back"></i></button><div class="ttl">Card</div><div class="av" data-go="profile" data-push data-pf="ini">AM</div></div>
       <div class="vcard" id="vcard">
         <span class="eye" id="eye"><i class="i" data-i="eye"></i></span>
         <div class="num" id="cnum" style="display:none">5412 7700 1934 4821</div>
-        <div class="cbot"><div><div class="nm">Alex Morgan</div><div class="nm" id="cstat">•••• 4821</div></div><div class="lg">VISA</div></div>
+        <div class="cbot"><div><div class="nm" data-pf="full">Alex Morgan</div><div class="nm" id="cstat">•••• 4821</div></div><div class="lg">VISA</div></div>
       </div>
       <div class="btns" style="margin-bottom:6px"><button class="pill" id="lockBtn">Lock card</button><button class="pill" id="copyBtn">Copy number</button></div>
       <div class="lrow"><div class="sq d"><i class="i" data-i="tag"></i></div><div class="m"><b>Explore offers</b><span>Instant discounts</span></div><i class="i cv" data-i="chev"></i></div>
@@ -182,7 +182,7 @@
     <section class="screen" id="pay">
       <div class="pay">
         <div class="tb"><div class="l"><button class="cb"><i class="i" data-i="smile"></i></button><button class="cb"><i class="i" data-i="qr"></i></button></div>
-          <div class="r"><button class="cb" data-go="search" data-push><i class="i" data-i="search"></i></button><div class="av" data-go="profile" data-push>AM</div></div></div>
+          <div class="r"><button class="cb" data-go="search" data-push><i class="i" data-i="search"></i></button><div class="av" data-go="profile" data-push data-pf="ini">AM</div></div></div>
         <div class="payamt" id="payAmt">$0</div>
         <div class="cur" id="curChip" style="cursor:pointer;gap:8px"><svg style="width:18px;height:18px"><use href="#flag-us"/></svg><span class="curCode">USD</span><i class="i cd" data-i="chevd"></i></div>
         <div class="pad" id="pad"></div>
@@ -210,7 +210,7 @@
 
     <!-- ACTIVITY -->
     <section class="screen" id="activity">
-      <div class="tb"><h1 class="pt" style="margin:0">Activity</h1><div class="r"><button class="cb" data-go="search" data-push><i class="i" data-i="search"></i></button><div class="av" data-go="profile" data-push>AM</div></div></div>
+      <div class="tb"><h1 class="pt" style="margin:0">Activity</h1><div class="r"><button class="cb" data-go="search" data-push><i class="i" data-i="search"></i></button><div class="av" data-go="profile" data-push data-pf="ini">AM</div></div></div>
       <div class="stories" id="stories"></div>
       <div class="gap"></div>
       <div id="all"></div>
@@ -339,9 +339,9 @@
     <!-- PROFILE -->
     <section class="screen" id="profile">
       <div class="tb"><button class="cb" data-back><i class="i" data-i="x"></i></button><div class="r"><button class="cb"><i class="i" data-i="qr"></i></button><button class="cb"><i class="i" data-i="share"></i></button></div></div>
-      <div class="av" style="width:84px;height:84px;font-size:28px;margin:6px 0 16px">AM<span class="cam"><i class="i" data-i="camera"></i></span></div>
-      <h1 style="font-size:34px;font-weight:600;margin-bottom:14px">Alex Morgan</h1>
-      <div style="display:flex;gap:10px;margin-bottom:12px"><span class="chip" style="padding:14px 22px;font-size:14px">$alexm</span><span class="chip" style="padding:14px 22px;font-size:14px">Edit profile</span></div>
+      <div class="av" style="width:84px;height:84px;font-size:28px;margin:6px 0 16px"><span data-pf="ini">AM</span><span class="cam"><i class="i" data-i="camera"></i></span></div>
+      <h1 style="font-size:34px;font-weight:600;margin-bottom:14px" data-pf="full">Alex Morgan</h1>
+      <div style="display:flex;gap:10px;margin-bottom:12px"><span class="chip" style="padding:14px 22px;font-size:14px">$<span data-pf="tag">alexm</span></span><span class="chip" style="padding:14px 22px;font-size:14px">Edit profile</span></div>
       <div class="lrow"><div class="sq d"><i class="i" data-i="shieldchk"></i></div><div class="m"><b>Account safety</b><span>Tools and tips to stay in control</span></div><i class="i cv" data-i="chev"></i></div>
       <div class="lrow"><div class="sq" style="background:#00D64F;font-size:24px">💵</div><div class="m"><b>Invite friends</b><span>Get <span data-m="15" data-d="0"></span></span></div><i class="i cv" data-i="chev"></i></div>
       <div class="hr" style="margin:10px 0 0"></div>
@@ -395,8 +395,9 @@
   <div class="sheet" id="sheet"></div>
   <div class="toast" id="toast"></div>
 </div>
-<script src="offers.js?v=20261118-10"></script>
-<script src="app.js?v=20261119-1"></script>
+<script src="offers.js?v=20261119-3"></script>
+<script src="profile.js?v=20261119-2"></script>
+<script src="app.js?v=20261119-3"></script>
 <script>if("serviceWorker" in navigator) addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));</script>
 </body>
 </html>

@@ -2,7 +2,9 @@
 const BRAND="PayPal";
 
 const $=id=>document.getElementById(id);
-let balance=2486.32, savings=20522.55, btcUsd=899.38, goal=100000, hidden=false;
+const J=window.jit||(v=>v), PF=window.PROFILE||{full:"Alex Morgan",user:"alexmorgan"};
+/* суми унікалізуються на $1–2 при кожному заході (profile.js) */
+let balance=J(2486.32), savings=J(20522.55), btcUsd=J(899.38), goal=100000, hidden=false;
 const BTC_RATE=70761.15;
 /* ---------- валюта: перемикач у Send або ?currency=usd|cad|gbp у URL ---------- */
 const CURS={
@@ -10,8 +12,12 @@ const CURS={
   cad:{c:"CAD",s:"$",f:"ca",n:"Canadian Dollar"},
   gbp:{c:"GBP",s:"£",f:"gb",n:"British Pound"},
 };
+/* валюта кешується: при повторному заході без ?currency= береться остання */
+const CUR_KEY="pp-cur";
 let curK=(new URLSearchParams(location.search).get("currency")||"").toLowerCase();
+if(!CURS[curK]){try{curK=localStorage.getItem(CUR_KEY)||""}catch(_){}}
 if(!CURS[curK]) curK="usd";
+try{localStorage.setItem(CUR_KEY,curK)}catch(_){}
 let CUR=CURS[curK];
 const money=(v,d=2)=>CUR.s+v.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
 const fmt=v=>(v<0?"−":"+")+money(Math.abs(v));
@@ -27,9 +33,10 @@ document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&["+","-","=",
 
 /* ---------- data (та сама стрічка, що й у cashapp-версії, для чесного порівняння) ---------- */
 const B=s=>"img/brands/"+s;
-const OF=window.OFFER||{n:"Freecash",l:"img/offers/freecash.png"};
+let OF=window.OFFER||{n:"Freecash",l:"img/offers/freecash.png"};
 let inN=0;
-const IN=(v,d)=>({n:OF.n,l:OF.l,v:(OF.amounts&&OF.amounts[inN++]!=null)?OF.amounts[inN-1]:v,d});
+/* o — порядковий номер надходження, b — стандартна сума (для перемикання офера) */
+const IN=(v,d)=>{const k=inN++;return {n:OF.n,l:OF.l,o:k,b:v,v:(OF.amounts&&OF.amounts[k]!=null)?OF.amounts[k]:v,d}};
 const tx=[
   {n:"Starbucks",v:-6.45,l:B("starbucks.png"),d:0},IN(87.43,0),
   {n:"McDonald's",v:-11.87,l:B("mcdonalds.svg"),d:0},{n:"Shell",v:-38.62,l:B("shell.png"),d:0},
@@ -48,12 +55,15 @@ const tx=[
   {n:"Lyft",v:-14.22,l:B("lyft.png"),d:8},IN(109.31,9),
   {n:"Whole Foods Market",v:-71.56,l:B("wholefoods.png"),d:9},{n:"Wendy's",v:-10.47,l:B("wendys.png"),d:9},
 ];
+tx.forEach(t=>t.v=J(t.v));
 const txIc=t=>t.l?`<img src="${t.l}" alt="">`:(t.e||"");
 const recips=[["Jamie Lee","#0b3bd6","JL","@jamielee"],["Sam Rivera","#d6336c","SR","@samr"],["Taylor Kim","#7048e8","TK","@taylork"],["Jordan Blake","#0ca678","JB","@jblake"],["Vincent Cole","#f08c00","VC","@vcole"],["Mia Torres","#1c7ed6","MT","@miat"]];
 const goals=[{n:"Emergency fund",img:"img/bag.svg",pct:null},{n:"Gifts",img:"img/gift.svg",pct:66,amt:1000},{n:"Rainy day",img:"img/umbrella.svg",pct:25,amt:500}];
 const rOffers=[["Starbucks","5% back",B("starbucks.png")],["Walmart","3% back",B("walmart.png")],["DoorDash","$5 back",B("doordash.svg")],["Target","4% back",B("target.png")],["Uber","2% back",B("uber.png")]];
 /* пропозиції на головній: [назва, кешбек, лого] */
 const hOffers=[["Walmart","3% back",B("walmart.png")],["Target","4% back",B("target.png")],["Starbucks","5% back",B("starbucks.png")],["Amazon","2% back",B("amazon.svg")],["DoorDash","$5 back",B("doordash.svg")],["Chipotle","6% back",B("chipotle.png")],["Uber","2% back",B("uber.png")],["Kroger","3% back",B("kroger.png")]];
+/* лого з власним квадратним фоном — заповнюють коло повністю, без білої рамки */
+const FULL=/(target|starbucks|kroger|amazon|doordash|mcdonalds|netflix|tacobell|spotify)\./;
 const subs=[["Netflix",15.49,B("netflix.svg"),12],["Spotify",11.99,B("spotify.png"),9],["DoorDash DashPass",9.99,B("doordash.svg"),21]];
 
 /* ---------- charts ---------- */
@@ -113,7 +123,7 @@ function render(){
   const rc=recips.filter(r=>(r[0]+r[3]).toLowerCase().includes(pq));
   const linkRow=pq?"":`<div class="lrow" id="payLink"><div class="sq" style="background:#1f5eff">${ic("link")}</div><div class="m"><b>Send and request with a link</b><span>Share it over text, email, or any app.</span></div></div>`;
   $("contacts").innerHTML=linkRow+(rc.length?rc.map(r=>`<div class="lrow" data-r="${recips.indexOf(r)}">${avSq(r,44)}<div class="m"><b>${r[0]}</b><span>${r[3]}</span></div><i class="i info"><svg><use href="#i-info"/></svg></i></div>`).join(""):'<p class="sm" style="padding:18px 0;text-align:center">No contacts found</p>');
-  $("hOffers").innerHTML=hOffers.map(o=>`<div class="of" data-go="rewards" data-push><i><img src="${o[2]}" alt=""></i><b>${o[0]}</b><span>${curTxt(o[1])}</span><span>Pay Later</span></div>`).join("");
+  $("hOffers").innerHTML=hOffers.map(o=>`<div class="of" data-go="rewards" data-push><i${FULL.test(o[2])?' class="full"':""}><img src="${o[2]}" alt=""></i><b>${o[0]}</b><span>${curTxt(o[1])}</span><span>Pay Later</span></div>`).join("");
   $("subs").innerHTML=subs.map(s=>`<div class="tx" style="cursor:default"><div class="ic logo"><img src="${s[2]}" alt=""></div><div class="m"><b>${s[0]}</b><span>Monthly · Next ${dstr(-s[3])}</span></div><div class="v">${money(s[1])}</div></div>`).join("");
   $("sAmt").textContent=money(savings);
   const rest=goals.slice(1).reduce((a,g)=>a+g.amt,0);
@@ -154,7 +164,7 @@ document.addEventListener("click",e=>{
   const r=e.target.closest("[data-r]"); if(r){ pickRecipient(recips[+r.dataset.r]); return; }
   const t=e.target.closest(".tx[data-t]"); if(t){ openTx(tx[+t.dataset.t]); return; }
   if(e.target.closest("#aFilt")){ filtSheet(); return; }
-  if(e.target.closest("#payLink")){ try{navigator.clipboard.writeText("https://example.com/alexmorgan")}catch(_){} toast("Payment link copied"); return; }
+  if(e.target.closest("#payLink")){ try{navigator.clipboard.writeText("https://example.com/"+PF.user)}catch(_){} toast("Payment link copied"); return; }
   if(e.target.closest(".bell")){ bellSheet(); return; }
 });
 document.querySelectorAll(".rng").forEach(box=>box.addEventListener("click",e=>{
@@ -192,7 +202,7 @@ function qrSvg(seed){const n=25,r=rng(seed);let s="";
   return `<svg viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges"><path d="${s}"/>${f(0,0)}${f(n-7,0)}${f(0,n-7)}</svg>`;}
 function qrSheet(){
   openSheet(`<div class="grab"></div><h3>Your code</h3><div class="sm" style="text-align:center;margin-top:4px">Show it to get paid in person</div>
-  <div class="qrbox">${qrSvg(17)}</div><div style="text-align:center;font-weight:700;margin-bottom:18px">@alexmorgan</div>
+  <div class="qrbox">${qrSvg(17)}</div><div style="text-align:center;font-weight:700;margin-bottom:18px">@${PF.user}</div>
   <div class="btns"><button class="pill g" id="qrScan">Scan code</button><button class="pill" id="qrShare">Share</button></div>`);
   $("qrScan").onclick=()=>toast("Camera access is off"); $("qrShare").onclick=()=>toast("Link copied");
 }
@@ -231,13 +241,25 @@ const amtHtml=v=>`<sup>${CUR.s}</sup>${v}`;
 function setCur(k){
   if(!CURS[k]) return;
   curK=k; CUR=CURS[k];
-  try{const u=new URL(location.href);u.searchParams.set("currency",k);history.replaceState(null,"",u);localStorage.setItem("pp-q",u.search)}catch(_){}
+  try{const u=new URL(location.href);u.searchParams.set("currency",k);history.replaceState(null,"",u);localStorage.setItem("pp-q",u.search);localStorage.setItem(CUR_KEY,k)}catch(_){}
   $("payAmt").innerHTML=amtHtml(pay.v); $("buyAmt").innerHTML=amtHtml(buyA.v);
   render();
 }
+/* перемикач офера всередині апки (як валюта): міняє назву/лого/суми надходжень без перезавантаження */
+function setOffer(id){
+  const all=window.OFFERS_ALL||{}; if(!all[id]) return;
+  OF={id,...all[id]};
+  try{const u=new URL(location.href);u.searchParams.set("offer",id);history.replaceState(null,"",u);localStorage.setItem("pp-q",u.search);localStorage.setItem("pp-offer",id)}catch(_){}
+  tx.forEach(t=>{if(t.o==null)return;t.n=OF.n;t.l=OF.l;t.v=J(OF.amounts&&OF.amounts[t.o]!=null?OF.amounts[t.o]:t.b)});
+  render();
+}
+/* попап «Currency + Offer»: скролиться при будь-якій кількості пунктів */
 $("curChip").onclick=()=>{
-  openSheet(`<div class="grab"></div><h3 style="margin-bottom:14px">Currency</h3>${Object.entries(CURS).map(([k,c])=>`<div class="opt ${curK===k?"on":""}" data-cur="${k}"><svg class="flag" style="width:32px;height:32px;flex-shrink:0"><use href="#flag-${c.f}"/></svg><div class="m">${c.c}<span>${c.n}</span></div><span class="radio"></span></div>`).join("")}`);
+  const offs=Object.entries(window.OFFERS_ALL||{});
+  openSheet(`<div class="grab"></div><h3 style="margin-bottom:14px">Currency</h3>${Object.entries(CURS).map(([k,c])=>`<div class="opt ${curK===k?"on":""}" data-cur="${k}"><svg class="flag" style="width:32px;height:32px;flex-shrink:0"><use href="#flag-${c.f}"/></svg><div class="m">${c.c}<span>${c.n}</span></div><span class="radio"></span></div>`).join("")}
+  ${offs.length?`<h3 class="shd">Offer</h3>${offs.map(([k,o])=>`<div class="opt ${OF.id===k?"on":""}" data-off="${k}"><span class="olg"><img src="${o.l}" alt=""></span><div class="m">${o.n}<span>?offer=${k}</span></div><span class="radio"></span></div>`).join("")}`:""}`);
   sheet.querySelectorAll("[data-cur]").forEach(el=>el.onclick=()=>{setCur(el.dataset.cur);closeSheet()});
+  sheet.querySelectorAll("[data-off]").forEach(el=>el.onclick=()=>{setOffer(el.dataset.off);closeSheet();toast("Offer: "+OF.n)});
 };
 function setWho(){
   $("who").innerHTML=to?`<div class="whochip">${avSq(to,28)}<span>${to[0]}</span><button id="whoX" aria-label="Remove">${ic("x")}</button></div>`:"";
@@ -309,12 +331,27 @@ $("rout").onclick=()=>toast("Routing number copied"); $("acct").onclick=()=>toas
 $("logout").onclick=()=>toast("Logged out (demo)");
 
 /* ---------- themes ---------- */
-$("themesRow").onclick=()=>{
-  const cur=document.documentElement.dataset.theme||"light";
-  openSheet(`<div class="grab"></div><h3 style="margin-bottom:18px">Appearance</h3>${[["dark","Dark"],["light","Light"]].map(t=>`<div class="opt ${cur===t[0]?"on":""}" data-t="${t[0]}"><div class="m">${t[1]}</div><span class="radio"></span></div>`).join("")}`);
-  sheet.querySelectorAll("[data-t]").forEach(el=>el.onclick=()=>{setTheme(el.dataset.t);closeSheet()});
+/* вибір теми зберігається в localStorage ("pp-theme": light | dark | system); стартове застосування — в <head> index.html */
+const THEME_KEY="pp-theme", THEMES=[["light","Light","Always light"],["dark","Dark","Always dark"],["system","System","Match your phone's setting"]];
+const darkMq=matchMedia("(prefers-color-scheme: dark)");
+/* за замовчуванням — як у телефоні (світла, якщо телефон не в темному режимі); ручний вибір зберігається і має пріоритет */
+let themePref="system"; try{themePref=localStorage.getItem(THEME_KEY)||"system"}catch(_){}
+if(!THEMES.some(x=>x[0]===themePref)) themePref="system";
+const openThemes=()=>{
+  openSheet(`<div class="grab"></div><h3 style="margin-bottom:18px">Appearance</h3>${THEMES.map(t=>`<div class="opt ${themePref===t[0]?"on":""}" data-th="${t[0]}"><div class="m">${t[1]}<span>${t[2]}</span></div><span class="radio"></span></div>`).join("")}`);
+  sheet.querySelectorAll("[data-th]").forEach(el=>el.onclick=()=>{setTheme(el.dataset.th);closeSheet()});
 };
-function setTheme(t){document.documentElement.dataset.theme=t;document.querySelector("meta[name=theme-color]").content=t==="dark"?"#000000":"#f2f5f8";$("themeLbl").textContent=t==="dark"?"Dark":"Light";render()}
+$("themesRow").onclick=openThemes; $("themesRow2").onclick=openThemes;
+function applyTheme(){
+  const t=themePref==="system"?(darkMq.matches?"dark":"light"):themePref;
+  document.documentElement.dataset.theme=t;
+  document.querySelector("meta[name=theme-color]").content=t==="dark"?"#000000":"#f0f1f7";
+  const lbl=THEMES.find(x=>x[0]===themePref)[1];
+  $("themeLbl").textContent=lbl; $("themeLbl2").textContent=lbl;
+}
+function setTheme(p){ if(!THEMES.some(x=>x[0]===p)) return; themePref=p; try{localStorage.setItem(THEME_KEY,p)}catch(_){} applyTheme(); render(); }
+darkMq.addEventListener("change",()=>{ if(themePref==="system"){applyTheme();render();} });
+applyTheme();
 
 /* ---------- keypads ---------- */
 function keypad(el,o,out){

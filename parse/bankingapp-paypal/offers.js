@@ -35,12 +35,17 @@ const OFFERS = {
 };
 
 /* --- не чіпати: визначення активного оффера --- */
+window.OFFERS_ALL = OFFERS; // для перемикача офферів всередині апки
 window.OFFER = (() => {
   // id для URL: тільки малі латинські літери та цифри, без пробілів/дефісів (gravypass, playfulrewards)
   const slug = s => String(s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
   Object.keys(OFFERS).forEach(k => { if (k !== slug(k)) console.warn(`Offer id "${k}" має бути "${slug(k)}" (тільки a-z, 0-9)`); });
   const fromUrl = slug(new URLSearchParams(location.search).get("offer"));
-  const id = fromUrl && OFFERS[fromUrl] ? fromUrl : ACTIVE_OFFER;
+  // кеш: при повторному заході без ?offer= береться той самий оффер, що й минулого разу
+  const KEY = "pp-offer";
+  let saved = ""; try { saved = localStorage.getItem(KEY) || ""; } catch (e) {}
+  const id = fromUrl && OFFERS[fromUrl] ? fromUrl : (OFFERS[saved] ? saved : ACTIVE_OFFER);
+  try { if (OFFERS[id]) localStorage.setItem(KEY, id); } catch (e) {}
   if (!OFFERS[id]) { console.warn(`Offer "${id}" not found, fallback to first`); return Object.values(OFFERS)[0]; }
   return { id, ...OFFERS[id] };
 })();

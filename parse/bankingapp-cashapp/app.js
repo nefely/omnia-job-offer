@@ -1,5 +1,7 @@
 const $=id=>document.getElementById(id);
-let balance=2486.32, savings=20522.55, btcUsd=899.38, goal=100000, hidden=false;
+const J=window.jit||(v=>v);
+/* суми унікалізуються на $1–2 при кожному заході (profile.js) */
+let balance=J(2486.32), savings=J(20522.55), btcUsd=J(899.38), goal=100000, hidden=false;
 const BTC_RATE=70761.15;
 /* ---------- валюта: перемикач у Pay або ?currency=usd|cad|gbp у URL ---------- */
 const CURS={
@@ -7,8 +9,12 @@ const CURS={
   cad:{c:"CAD",s:"$",f:"ca",n:"Canadian Dollar"},
   gbp:{c:"GBP",s:"£",f:"gb",n:"British Pound"},
 };
+/* валюта кешується: при повторному заході без ?currency= береться остання */
+const CUR_KEY="ca-cur";
 let curK=(new URLSearchParams(location.search).get("currency")||"").toLowerCase();
+if(!CURS[curK]){try{curK=localStorage.getItem(CUR_KEY)||""}catch(_){}}
 if(!CURS[curK]) curK="usd";
+try{localStorage.setItem(CUR_KEY,curK)}catch(_){}
 let CUR=CURS[curK];
 const curTxt=s=>s.replace("$",CUR.s);
 const money=(v,d=2)=>CUR.s+v.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
@@ -25,9 +31,10 @@ document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&["+","-","=",
 /* ---------- data ---------- */
 /* надходження: від активного оффера (offers.js), $50–150, не більше 2 на день; витрати: реальні бренди з лого, суми з центами */
 const B=s=>"img/brands/"+s;
-const OF=window.OFFER||{n:"Freecash",l:"img/offers/freecash.png"};
+let OF=window.OFFER||{n:"Freecash",l:"img/offers/freecash.png"};
 let inN=0;
-const IN=(v,d)=>({n:OF.n,l:OF.l,v:(OF.amounts&&OF.amounts[inN++]!=null)?OF.amounts[inN-1]:v,d});
+/* o — порядковий номер надходження, b — стандартна сума (для перемикання офера) */
+const IN=(v,d)=>{const k=inN++;return {n:OF.n,l:OF.l,o:k,b:v,v:(OF.amounts&&OF.amounts[k]!=null)?OF.amounts[k]:v,d}};
 const tx=[
   {n:"Starbucks",v:-6.45,l:B("starbucks.png"),d:0},IN(87.43,0),
   {n:"McDonald's",v:-11.87,l:B("mcdonalds.svg"),d:0},{n:"Shell",v:-38.62,l:B("shell.png"),d:0},
@@ -46,6 +53,7 @@ const tx=[
   {n:"Lyft",v:-14.22,l:B("lyft.png"),d:8},IN(109.31,9),
   {n:"Whole Foods Market",v:-71.56,l:B("wholefoods.png"),d:9},{n:"Wendy's",v:-10.47,l:B("wendys.png"),d:9},
 ];
+tx.forEach(t=>t.v=J(t.v));
 const txIc=t=>t.l?`<img src="${t.l}" alt="">`:(t.e||"");
 const stocks=[
   {n:"Roblox",pct:20.05,val:2.04,ret:1.11,l:"R",bg:"#e0262d"},
@@ -302,13 +310,27 @@ keypad("pad",pay,"payAmt"); keypad("bpad",buyA,"buyAmt");
 function setCur(k){
   if(!CURS[k]) return;
   curK=k; CUR=CURS[k];
-  try{const u=new URL(location.href);u.searchParams.set("currency",k);history.replaceState(null,"",u);localStorage.setItem("ca-q",u.search)}catch(_){}
+  try{const u=new URL(location.href);u.searchParams.set("currency",k);history.replaceState(null,"",u);localStorage.setItem("ca-q",u.search);localStorage.setItem(CUR_KEY,k)}catch(_){}
   $("payAmt").textContent=CUR.s+pay.v; $("buyAmt").textContent=CUR.s+buyA.v;
   render();
 }
+/* перемикач офера всередині апки (як валюта): міняє назву/лого/суми надходжень без перезавантаження */
+function setOffer(id){
+  const all=window.OFFERS_ALL||{}; if(!all[id]) return;
+  OF={id,...all[id]};
+  try{const u=new URL(location.href);u.searchParams.set("offer",id);history.replaceState(null,"",u);localStorage.setItem("ca-q",u.search);localStorage.setItem("ca-offer",id)}catch(_){}
+  tx.forEach(t=>{if(t.o==null)return;t.n=OF.n;t.l=OF.l;t.v=J(OF.amounts&&OF.amounts[t.o]!=null?OF.amounts[t.o]:t.b)});
+  stories[1].n=OF.n; stories[1].l=OF.l;
+  render();
+}
+/* попап «Currency + Offer»: скролиться при будь-якій кількості пунктів */
 $("curChip").onclick=()=>{
-  openSheet(`<div class="grab"></div><h3 style="margin-bottom:20px">Currency</h3>${Object.entries(CURS).map(([k,c])=>`<div class="opt ${curK===k?"on":""}" data-cur="${k}"><span style="display:flex;align-items:center;gap:14px"><svg style="width:32px;height:32px;flex-shrink:0"><use href="#flag-${c.f}"/></svg><span>${c.c}<span class="sm" style="display:block;font-weight:400;color:var(--muted)">${c.n}</span></span></span><span class="radio"></span></div>`).join("")}`);
+  const offs=Object.entries(window.OFFERS_ALL||{});
+  const item=(attr,k,on,icon,t,s)=>`<div class="opt ${on?"on":""}" ${attr}="${k}"><span style="display:flex;align-items:center;gap:14px;min-width:0">${icon}<span>${t}<span class="sm" style="display:block;font-weight:400;color:var(--muted)">${s}</span></span></span><span class="radio"></span></div>`;
+  openSheet(`<div class="grab"></div><h3 style="margin-bottom:20px">Currency</h3>${Object.entries(CURS).map(([k,c])=>item("data-cur",k,curK===k,`<svg style="width:32px;height:32px;flex-shrink:0"><use href="#flag-${c.f}"/></svg>`,c.c,c.n)).join("")}
+  ${offs.length?`<h3 class="shd">Offer</h3>${offs.map(([k,o])=>item("data-off",k,OF.id===k,`<span class="olg"><img src="${o.l}" alt=""></span>`,o.n,"?offer="+k)).join("")}`:""}`);
   sheet.querySelectorAll("[data-cur]").forEach(el=>el.onclick=()=>{setCur(el.dataset.cur);closeSheet()});
+  sheet.querySelectorAll("[data-off]").forEach(el=>el.onclick=()=>{setOffer(el.dataset.off);closeSheet();toast("Offer: "+OF.n)});
 };
 function doSend(kind,name){
   const v=parseFloat(pay.v);
