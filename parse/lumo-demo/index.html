@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Lumo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4M9 9h2v2H9zM13 13h2v2h-2z"/></symbol>
+  <symbol id="i-smile" viewBox="0 0 24 24"><path d="M8 13.5c1 1.5 2.300 2.200 4 2.200s3-.7 4-2.200M9 9.500h.01M15 9.500h.01"/></symbol>
+  <symbol id="i-eyeoff" viewBox="0 0 24 24"><path d="M3 12s4-7 9-7c2 0 3.700.7 5 1.700M21 12s-4 7-9 7c-2 0-3.700-.7-5-1.700"/><circle cx="12" cy="12" r="2.500"/><path d="M4 4l16 16"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h9"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V4M8 8l4-4 4 4M5 13v7h14v-7"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.500-2h7L17 8h3v11H4z"/><circle cx="12" cy="13.500" r="3"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6M5 10v9M19 10v9M9 19v-6M15 19v-6M3 20h18"/></symbol>
+  <symbol id="i-deposit" viewBox="0 0 24 24"><path d="M12 3v10M8 9l4 4 4-4M5 14v5h14v-5"/></symbol>
+  <symbol id="i-wire" viewBox="0 0 24 24"><path d="M4 8h11a4 4 0 010 8H8M11 13l-3 3 3 3"/></symbol>
+  <symbol id="i-paper" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.500"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5h3M17 5h3v3M20 16v3h-3M7 19H4v-3M8 10h8v4H8z"/></symbol>
+  <symbol id="i-reload" viewBox="0 0 24 24"><path d="M4 11a8 8 0 0114-4l2 2M20 5v4h-4M20 13a8 8 0 01-14 4l-2-2M4 19v-4h4"/></symbol>
+  <symbol id="i-usdc" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h3v3M20 14v6h-3"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6z"/></symbol>
+  <symbol id="i-shieldchk" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6zM9 12l2 2 4-4"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.600 5.600 6 .7-4.500 4.100 1.200 6L12 16.500 6.700 19.400l1.200-6L3.400 9.300l6-.7z"/></symbol>
+  <symbol id="i-family" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M16 5.500a3 3 0 010 5.500M17 14c2.500.5 4 2.200 4 5"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/></symbol>
+  <symbol id="i-shop" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7a3 3 0 016 0"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><ellipse cx="9" cy="10" rx="6" ry="4"/><ellipse cx="15" cy="14" rx="6" ry="4"/></symbol>
+  <symbol id="i-limits" viewBox="0 0 24 24"><path d="M5 5h14M12 8l6 9H6z"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M16 7l2 2"/></symbol>
+  <symbol id="i-device" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M9 20h6M12 16v4"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 17v-6a6 6 0 0112 0v6l2 2H4zM10 21h4"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18c1.500 0 2-1 1.500-2s0-2 1.500-2h2a4 4 0 004-4c0-5-4.500-10-9-10zM8 11h.01M12 8h.01M16 10h.01"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><path d="M9.500 9.500a2.500 2.500 0 115 0c0 1.500-2.500 2-2.500 3.500M12 17h.01"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M4 4h8l8 8-8 8-8-8zM8.500 8.500h.01"/></symbol>
+  <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.500" fill="currentColor"/><circle cx="12" cy="12" r="1.500" fill="currentColor"/><circle cx="19" cy="12" r="1.500" fill="currentColor"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 4v16M3 8l4-4 4 4M17 20V4M13 16l4 4 4-4"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L5 14h6l-1 8 8-12h-6z" fill="currentColor"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-dollar" viewBox="0 0 24 24"><path d="M12 3v18M16 7.500C15 6.500 13.500 6 12 6c-2 0-3.500 1-3.500 2.500S10 11 12 11.500s3.500 1 3.500 2.500S14 17 12 17c-1.500 0-3-.5-4-1.500"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M3 10h18"/></symbol>
+  <symbol id="i-roundups" viewBox="0 0 24 24"><path d="M8 20V8a4 4 0 118 0M5 11l3-3 3 3"/></symbol>
+  <symbol id="i-atm" viewBox="0 0 24 24"><path d="M6 4h12v16H6zM9 8h6"/></symbol>
+  <symbol id="i-design" viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="12" rx="3"/><path d="M20 3v6M17 6h6"/></symbol>
+  <symbol id="i-block" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 4v16M5 8l14 8M19 8L5 16"/></symbol>
+  <symbol id="i-support" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M12 10v2"/></symbol>
+  <symbol id="i-pool" viewBox="0 0 24 24"><circle cx="9" cy="10" r="3.500"/><circle cx="15" cy="14" r="3.500"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M4 12h16M12 8v12M8 8c-2-3 1-4 4 0 3-4 6-3 4 0"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="M4 17l5-6 4 3 7-8M15 6h5v5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 10 16"><path d="M2 2l6 6-6 6"/></symbol>
+  <symbol id="i-chevd" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></symbol>
+</svg>
+
+<div class="app">
+  <main>
+
+    <!-- MONEY -->
+    <section class="screen on" id="money">
+      <div class="tb"><div class="l"><button class="cb"><i class="i" data-i="smile"></i></button></div>
+        <div class="r"><button class="cb" data-go="search" data-push><i class="i" data-i="search"></i></button><div class="av" data-go="profile" data-push>AM</div></div></div>
+      <div class="peek" data-go="card" data-push>lumo</div>
+      <div class="cashblock">
+        <div class="flex"><div class="lbl" data-go="cash" data-push>Cash balance ••1567 <i class="i cv" data-i="chev"></i></div><i class="i" data-i="eyeoff" id="hideBal" style="cursor:pointer"></i></div>
+        <div class="bigamt" id="mBal">$0.00</div>
+        <div class="btns" style="margin:36px -22px 14px"><button class="pill" id="addBtn">Add money</button><button class="pill" id="wdBtn">Withdraw</button></div>
+      </div>
+      <div class="c flex" data-go="green" data-push style="padding:22px 20px"><div style="display:flex;align-items:center;gap:12px;font-weight:600"><span class="gicon"></span>Lumo Green</div><span style="font-weight:500;font-size:14px">Earn status</span></div>
+      <div class="c flex" data-go="savings" data-push>
+        <div><div class="t">Savings</div><div class="big" id="mSav">$0</div><div class="sm">4.5% interest</div></div>
+        <div class="circs"><div class="circ"><img src="img/bag.svg" width="30" height="30" alt=""></div><div class="circ">+2</div></div>
+      </div>
+      <div class="c flex" data-go="btc" data-push>
+        <div><div class="t">Bitcoin</div><div class="big" id="mBtc">$0</div><div class="sm"><span class="dn">↓ 2.36%</span> today</div></div>
+        <div class="spark" id="spB"></div>
+      </div>
+      <div class="c flex" data-go="stocks" data-push>
+        <div><div class="t">Stocks</div><div class="big">$37.84</div><div class="sm"><span class="dn">↓ 2.32%</span> today</div></div>
+        <div class="spark" id="spS"></div>
+      </div>
+      <div class="c flex"><div><div class="t">Pools</div><div style="font-size:24px;font-weight:600;margin:6px 0 4px">No active pools</div><div class="sm">1 closed</div></div><div class="circ" style="width:50px;height:50px;color:var(--text)"><i class="i" data-i="pool"></i></div></div>
+      <h2 class="sec">More for you</h2>
+      <div class="c"><div class="t">Tags</div><div style="font-size:24px;font-weight:600;margin-top:6px;line-height:1.25">A magical new way to pay</div></div>
+      <div style="margin-top:10px">
+        <div class="prod"><div class="pi"><i class="i" data-i="device"></i></div><div class="m"><b>Lumo Mobile</b><span>$40/month for unlimited 5G data</span></div><span class="go">Start</span></div>
+        <div class="prod"><div class="pi"><i class="i" data-i="paper"></i></div><div class="m"><b>Borrow</b><span>Check access</span></div><span class="go">Learn more</span></div>
+        <div class="prod"><div class="pi"><i class="i" data-i="shop"></i></div><div class="m"><b>Pay later</b><span>$1,000 available</span></div><span class="go">Start</span></div>
+        <div class="prod"><div class="pi"><i class="i" data-i="family"></i></div><div class="m"><b>Family</b><span>Safe spending for kids and teens</span></div><span class="go">Start</span></div>
+        <div class="prod"><div class="pi"><i class="i" data-i="bank"></i></div><div class="m"><b>Earnings</b><span>$0.00 this month</span></div><span class="go">Start</span></div>
+        <div class="prod"><div class="pi"><i class="i" data-i="doc"></i></div><div class="m"><b>Taxes</b><span>Estimate refund</span></div><span class="go">Start</span></div>
+      </div>
+      <div class="hr" style="margin:18px 0 0"></div>
+      <h2 class="sec">Add money</h2>
+      <div class="lrow"><i class="i" data-i="deposit"></i><div class="m"><b style="font-size:16px">Direct deposit</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="wire"></i><div class="m"><b style="font-size:16px">Get bank or wire transfer</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="paper"></i><div class="m"><b style="font-size:16px">Deposit paper money</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="scan"></i><div class="m"><b style="font-size:16px">Deposit check</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="reload"></i><div class="m"><b style="font-size:16px">Auto reload</b></div><i class="i cv" data-i="chev"></i></div>
+    </section>
+
+    <!-- CASH BALANCE -->
+    <section class="screen" id="cash">
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="back"></i></button><div class="ttl">Cash balance</div><span style="width:44px"></span></div>
+      <div style="text-align:center;margin-top:20px"><div class="bigamt" id="cBal" style="font-size:60px">$0.00</div>
+        <div class="chip" style="border:1px solid var(--line);background:none;margin-top:16px;font-weight:500">Overdraft coverage&nbsp;<span style="color:var(--muted)">Off</span>&nbsp;<i class="i cv" data-i="chev"></i></div></div>
+      <h2 class="sec" style="margin-top:46px">Account details</h2>
+      <div class="flex" style="padding:14px 0" id="rout"><div><div style="font-weight:500">Routing number</div><div class="sm" style="margin-top:2px">•••••1234</div></div><i class="i" data-i="copy" style="cursor:pointer"></i></div>
+      <div class="flex" style="padding:14px 0" id="acct"><div><div style="font-weight:500">Account number</div><div class="sm" style="margin-top:2px">•••••1567</div></div><i class="i" data-i="copy" style="cursor:pointer"></i></div>
+      <span class="ul">How to use these numbers</span>
+      <div class="hr"></div>
+      <h2 class="sec">Add money to your balance</h2>
+      <div class="lrow top"><i class="i" data-i="bank"></i><div class="m"><b>Add instantly</b><span>Transfer from linked bank</span></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow top"><i class="i" data-i="deposit"></i><div class="m"><b>Direct deposit</b><span>Get paid up to 2 days faster</span></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow top"><i class="i" data-i="wire"></i><div class="m"><b>Get bank or wire transfer</b><span>Send from another account</span></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow top"><i class="i" data-i="paper"></i><div class="m"><b>Deposit paper money</b><span>Find a nearby retailer</span></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow top"><i class="i" data-i="scan"></i><div class="m"><b>Deposit check</b><span>Scan with your phone</span></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow top"><i class="i" data-i="reload"></i><div class="m"><b>Auto reload</b><span>Add money automatically</span></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow top"><i class="i" data-i="usdc"></i><div class="m"><b>Deposit USDC</b><span>Add stablecoins, fast and free</span></div><i class="i cv" data-i="chev"></i></div>
+      <div class="hr"></div>
+      <h2 class="sec">Withdraw from your balance</h2>
+      <div class="lrow top" id="wdRow"><i class="i" data-i="deposit" style="transform:rotate(180deg)"></i><div class="m"><b>Cash out to bank</b><span>Standard or instant</span></div><i class="i cv" data-i="chev"></i></div>
+    </section>
+
+    <!-- CARD -->
+    <section class="screen" id="card">
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="back"></i></button><div class="ttl">Card</div><div class="av" data-go="profile" data-push>AM</div></div>
+      <div class="vcard" id="vcard">
+        <span class="eye" id="eye"><i class="i" data-i="eye"></i></span>
+        <div class="num" id="cnum" style="display:none">5412 7700 1934 4821</div>
+        <div class="cbot"><div><div class="nm">Alex Morgan</div><div class="nm" id="cstat">•••• 4821</div></div><div class="lg">VISA</div></div>
+      </div>
+      <div class="btns" style="margin-bottom:6px"><button class="pill" id="lockBtn">Lock card</button><button class="pill" id="copyBtn">Copy number</button></div>
+      <div class="lrow"><div class="sq d"><i class="i" data-i="tag"></i></div><div class="m"><b>Explore offers</b><span>Instant discounts</span></div><i class="i cv" data-i="chev"></i></div>
+      <div class="hr"></div>
+      <h2 class="sec">My spend</h2>
+      <div class="lrow" data-go="activity"><i class="i" data-i="card"></i><div class="m"><b>Insights &amp; activity</b></div><span class="r" id="spend">$0 this month</span><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="roundups"></i><div class="m"><b>Round Ups</b></div><span class="r">Bitcoin</span><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="shieldchk"></i><div class="m"><b>Free overdraft coverage</b></div><span class="r">Off</span><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="atm"></i><div class="m"><b>Find an ATM</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="hr"></div>
+      <h2 class="sec">Manage card</h2>
+      <div class="lrow"><i class="i" data-i="design"></i><div class="m"><b>Design a new card</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="block"></i><div class="m"><b>Blocked businesses</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="pin"></i><div class="m"><b>Change PIN</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="support"></i><div class="m"><b>Get card support</b></div><i class="i cv" data-i="chev"></i></div>
+    </section>
+
+    <!-- PAY -->
+    <section class="screen" id="pay">
+      <div class="pay">
+        <div class="tb"><div class="l"><button class="cb"><i class="i" data-i="smile"></i></button><button class="cb"><i class="i" data-i="qr"></i></button></div>
+          <div class="r"><button class="cb" data-go="search" data-push><i class="i" data-i="search"></i></button><div class="av" data-go="profile" data-push>AM</div></div></div>
+        <div class="payamt" id="payAmt">$0</div>
+        <div class="cur">USD<i class="i cd" data-i="chevd"></i></div>
+        <div class="pad" id="pad"></div>
+        <div class="btns"><button class="pill" id="poolBtn">Pool</button><button class="pill" id="reqBtn">Request</button></div>
+        <button class="pill w" id="payBtn">Pay</button>
+      </div>
+    </section>
+
+    <!-- SEARCH -->
+    <section class="screen" id="search">
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="back"></i></button><input class="search" id="q" placeholder="Search people or businesses"></div>
+      <div id="disc">
+        <div class="stories" id="people"></div>
+        <h2 class="sec" style="margin-top:12px">Send a gift</h2>
+        <div class="lst">
+          <div class="lrow"><div class="sq" style="background:#00C244;width:54px;height:54px"><i class="i" data-i="gift"></i></div><div class="m"><b>Gift card</b><span>Send a gift card instantly</span></div></div>
+          <div class="lrow" data-go="btc" data-push><div class="sq" style="background:#00D1FF;width:54px;height:54px">₿</div><div class="m"><b>Bitcoin</b><span>Give the gift of bitcoin</span></div></div>
+          <div class="lrow" data-go="stocks" data-push><div class="sq" style="background:#9b30ff;width:54px;height:54px"><i class="i" data-i="trend"></i></div><div class="m"><b>Stock</b><span>Pick and send a stock</span></div></div>
+        </div>
+        <h2 class="sec">Recommended offers</h2>
+        <div class="lst" id="offers"></div>
+      </div>
+      <div id="sres"></div>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section class="screen" id="activity">
+      <div class="tb"><h1 class="pt" style="margin:0">Activity</h1><div class="r"><button class="cb" data-go="search" data-push><i class="i" data-i="search"></i></button><div class="av" data-go="profile" data-push>AM</div></div></div>
+      <div class="stories" id="stories"></div>
+      <div class="gap"></div>
+      <div id="all"></div>
+    </section>
+
+    <!-- SAVINGS -->
+    <section class="screen" id="savings">
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="back"></i></button><div class="ttl">Savings</div><span style="width:44px"></span></div>
+      <div style="text-align:center;margin:26px 0 24px"><div class="bigamt" id="sAmt" style="font-size:60px">$0</div><div style="margin-top:6px;font-size:15px">Total saved · 4.5% interest <i class="i cv" data-i="chev" style="vertical-align:-3px;margin-left:4px"></i></div></div>
+      <div class="btns"><button class="pill w" id="tin">Add money</button><button class="pill" id="tout">Withdraw</button></div>
+      <div id="goals" style="margin-top:20px"></div>
+      <button class="pill" style="margin-top:8px">Set another goal</button>
+      <h2 class="sec" style="margin-top:44px">Grow your savings</h2>
+      <div class="lrow"><div class="sq d"><i class="i" data-i="roundups"></i></div><div class="m"><b>Round Ups</b><span>Save your spare change</span></div><span class="r">Off</span><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><div class="sq d"><i class="i" data-i="doc"></i></div><div class="m"><b>Paychecks</b><span>Save part of each paycheck</span></div><span class="r">Off</span><i class="i cv" data-i="chev"></i></div>
+      <div class="promo"><b>With Lumo Green, you earn 3.5% savings interest</b><span class="pg">3.5%</span></div>
+      <div class="c oc" style="margin-top:14px"><b class="t">Activity</b><div id="sAct" style="margin-top:6px"></div></div>
+    </section>
+
+    <!-- BITCOIN -->
+    <section class="screen" id="btc">
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="back"></i></button><div class="r"><button class="cb"><i class="i" data-i="map"></i></button><button class="cb"><i class="i" data-i="qr"></i></button></div></div>
+      <div style="font-size:20px;font-weight:600">Bitcoin</div>
+      <div id="bSats" style="font-size:52px;font-weight:600;letter-spacing:-.03em;margin:2px 0 4px">₿0</div>
+      <div class="sm" style="color:var(--text)" id="bUsd">$0 USD <i class="i" data-i="swap" style="vertical-align:-5px"></i></div>
+      <div style="margin-top:14px;font-size:14px;font-weight:500">↓ 1.34% today</div>
+      <div style="font-size:14px;font-weight:500;margin-top:2px">$77,073.15 USD</div>
+      <div class="chart" id="chB"></div>
+      <div class="rng" data-chart="chB" data-kind="btc"><button class="on">1D</button><button>1W</button><button>1M</button><button>1Y</button><button>ALL</button></div>
+      <div class="btns3"><button class="pill w" id="bBuy">Buy</button><button class="pill w">Sell</button><button class="pill w"><i class="i" data-i="swap" style="vertical-align:-6px"></i></button></div>
+      <div class="hr" style="margin:28px 0 10px"></div>
+      <div class="flex"><h2 class="sec" style="margin:8px 2px">My performance</h2><span style="display:flex;align-items:center;gap:8px;font-size:14px">Details <i class="i cv" data-i="chev"></i></span></div>
+      <div class="flex" style="margin:8px 0 6px"><b style="font-size:28px;font-weight:600">−$12.40</b><b style="font-size:28px;font-weight:600">1.35%</b></div>
+      <div class="flex"><span class="sm">Total return</span><span class="sm">Return rate</span></div>
+    </section>
+
+    <!-- STOCKS -->
+    <section class="screen" id="stocks">
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="back"></i></button><div class="ttl"></div><div class="r"><button class="cb"><i class="i" data-i="search"></i></button><button class="cb"><i class="i" data-i="dots"></i></button></div></div>
+      <div style="font-size:26px;font-weight:600;margin-top:4px">Stocks</div>
+      <div style="font-size:52px;font-weight:600;letter-spacing:-.03em;margin:2px 0 4px">$37.84</div>
+      <div style="font-size:14px;font-weight:500;margin-top:10px">↓ 0.17% today</div><div style="font-size:14px;font-weight:500;margin-top:2px">− $0.01</div>
+      <div class="chart" id="chS"></div>
+      <div class="rng" data-chart="chS" data-kind="down"><button class="on">1D</button><button>1W</button><button>1M</button><button>1Y</button><button>ALL</button></div>
+      <div class="flex"><h2 class="sec" style="margin:6px 2px 12px">News</h2><span style="display:flex;align-items:center;gap:8px;font-size:14px">Show more <i class="i cv" data-i="chev"></i></span></div>
+      <div class="news">
+        <div class="nc"><div class="h"><div class="sq" style="background:#2f7d3a;width:44px;height:44px">M</div><div><b style="font-size:15px">Markets Daily</b><span class="sm">1h ago</span></div></div><b>Tech stocks slip as investors weigh earnings outlook</b></div>
+        <div class="nc"><div class="h"><div class="sq" style="background:#d9803f;width:44px;height:44px">C</div><div><b style="font-size:15px">Chip Report</b><span class="sm">3h ago</span></div></div><b>Chipmakers rally on strong demand forecasts</b></div>
+      </div>
+      <div class="c oc" style="padding:22px">
+        <div class="flex"><b style="font-size:22px">My Investments</b><span style="display:flex;align-items:center;gap:8px;font-size:14px">Details <i class="i cv" data-i="chev"></i></span></div>
+        <div class="flex" style="margin:22px 0 4px"><b style="font-size:28px;font-weight:600">$34.00</b><b style="font-size:28px;font-weight:600">+$3.84</b></div>
+        <div class="flex"><span class="sm" style="color:var(--text)">Invested</span><span class="sm" style="color:var(--text)">Gain</span></div>
+        <div class="kv" style="margin-top:14px"><span style="color:var(--text)">Total Value $</span><b>$37.84</b></div>
+        <div class="kv"><span style="color:var(--text)">Total Gain %</span><b>↑ 11.29%</b></div>
+        <div class="hr" style="margin:12px 0 20px"></div>
+        <div class="flex"><b style="font-size:24px">Stocks you own</b><span class="chip" style="padding:7px 14px;font-size:12px">Sort by</span></div>
+        <div class="sm" style="margin:8px 0 6px">My Total Return</div>
+        <div id="sOwned"></div>
+      </div>
+    </section>
+
+    <!-- STOCK DETAIL -->
+    <section class="screen" id="stock">
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="back"></i></button><div class="r"><button class="cb"><i class="i" data-i="search"></i></button><button class="cb"><i class="i" data-i="dots"></i></button></div></div>
+      <div class="flex"><div class="sq" id="dIc" style="width:56px;height:56px"></div><div class="pillv" id="dPrice" style="font-size:17px"></div></div>
+      <div style="font-size:24px;font-weight:600;margin:14px 0 4px" id="dName"></div>
+      <div style="font-size:17px;font-weight:600" id="dPct"></div>
+      <div class="chart" id="chD"></div>
+      <div class="rng" data-chart="chD" data-kind="down"><button class="on">1D</button><button>1W</button><button>1M</button><button>1Y</button><button>ALL</button></div>
+      <div class="btns3"><button class="pill w" id="dBuy">Buy</button><button class="pill w">Sell</button><button class="pill w"><i class="i" data-i="gift" style="vertical-align:-6px"></i></button></div>
+      <div class="c oc" style="margin-top:22px;padding:22px">
+        <div class="flex"><b style="font-size:20px">My Investment</b><span class="chip" style="padding:7px 14px;font-size:12px">Details</span></div>
+        <div class="flex" style="margin:20px 0 4px"><b style="font-size:26px;font-weight:600">$10</b><b style="font-size:26px;font-weight:600" id="dGain">$0.18</b></div>
+        <div class="flex"><span class="sm">Total Invested</span><span class="sm">Total Gain</span></div>
+        <div class="hr" style="margin:16px 0"></div><div class="kv"><span style="color:var(--text)">Total Value $</span><b id="dVal"></b></div>
+      </div>
+    </section>
+
+    <!-- BUY -->
+    <section class="screen" id="buy">
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="x"></i></button><span></span></div>
+      <div style="text-align:center"><b style="font-size:18px">Buy bitcoin</b><div class="sm" style="margin:6px 0 14px;font-size:14px">One-time order</div>
+        <span class="chip">Change order type<i class="i cd" data-i="chevd"></i></span></div>
+      <div class="payamt" id="buyAmt" style="margin:50px 0 36px">$0</div>
+      <div class="pad" id="bpad"></div>
+      <button class="pill w" style="padding:18px" id="buyNext">Next</button>
+    </section>
+
+    <!-- CONFIRM -->
+    <section class="screen" id="confirm">
+      <div class="tb"><span></span><button class="cb" data-back><i class="i" data-i="x"></i></button></div>
+      <h1 style="font-size:26px;font-weight:600;margin:30px 0 30px;line-height:1.3" id="cTitle"></h1>
+      <div id="cKv"></div>
+      <p class="sm" style="text-align:center;margin:60px 0 18px;font-size:12px">Exchange rate may include a spread.</p>
+      <button class="pill w" style="padding:18px" id="cGo">Confirm</button>
+    </section>
+
+    <!-- DONE -->
+    <section class="screen" id="done">
+      <div class="tb"><span></span><button class="cb" data-go="money"><i class="i" data-i="x"></i></button></div>
+      <div class="done-ic"><i class="i" data-i="check"></i></div>
+      <h1 style="font-size:26px;font-weight:600;line-height:1.3" id="dTitle"></h1>
+      <div class="c oc" style="margin-top:230px;text-align:center;padding:26px"><b>Get Paid in Bitcoin</b><p class="sm" style="margin:8px 0 22px">Invest part of your paycheck into bitcoin without fees</p><b>Learn More</b></div>
+      <button class="pill w" style="padding:18px" data-go="money">Done</button>
+    </section>
+
+    <!-- LUMO GREEN -->
+    <section class="screen" id="green">
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="x"></i></button><span></span></div>
+      <div class="lrow" style="padding:10px 0"><i class="i" data-i="card"></i><b style="font-weight:500;font-size:15px">Spend $500 a month on your Lumo Card</b></div>
+      <div class="lrow" style="padding:10px 0"><i class="i" data-i="family"></i><b style="font-weight:500;font-size:15px">Get 5 custom cash back offers every Friday</b></div>
+      <div class="lrow" style="padding:10px 0"><i class="i" data-i="trend"></i><b style="font-weight:500;font-size:15px">Earn free overdrafts, 3.5% interest, and more</b></div>
+      <div class="c" style="margin-top:22px;cursor:default;padding:26px 22px">
+        <div style="font-size:34px;font-weight:500;line-height:1.15;margin-bottom:30px">Spend $500 each month, get way more</div>
+        <table class="tbl"><tr><th>Benefits</th><th>Current</th><th>Green</th></tr>
+          <tr><td>Custom weekly offers</td><td>0</td><td>5</td></tr>
+          <tr><td>Free overdrafts</td><td>$0</td><td>$200*</td></tr>
+          <tr><td>Savings interest</td><td>1.5%</td><td>3.5%</td></tr>
+          <tr><td>In-network ATM fees</td><td>$2.50+</td><td>$0</td></tr>
+          <tr><td>Priority support</td><td><i class="i" data-i="x"></i></td><td><i class="i" data-i="check"></i></td></tr></table></div>
+      <img src="img/offers.svg" alt="" style="width:100%;border-radius:22px;margin-top:6px">
+      <button class="pill w" style="padding:18px;margin-top:12px" data-back>Earn Green status</button>
+    </section>
+
+    <!-- PROFILE -->
+    <section class="screen" id="profile">
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="x"></i></button><div class="r"><button class="cb"><i class="i" data-i="qr"></i></button><button class="cb"><i class="i" data-i="share"></i></button></div></div>
+      <div class="av" style="width:84px;height:84px;font-size:28px;margin:6px 0 16px">AM<span class="cam"><i class="i" data-i="camera"></i></span></div>
+      <h1 style="font-size:34px;font-weight:600;margin-bottom:14px">Alex Morgan</h1>
+      <div style="display:flex;gap:10px;margin-bottom:12px"><span class="chip" style="padding:14px 22px;font-size:14px">$alexm</span><span class="chip" style="padding:14px 22px;font-size:14px">Edit profile</span></div>
+      <div class="lrow"><div class="sq d"><i class="i" data-i="shieldchk"></i></div><div class="m"><b>Account safety</b><span>Tools and tips to stay in control</span></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><div class="sq" style="background:#00D64F;font-size:24px">💵</div><div class="m"><b>Invite friends</b><span>Get $15</span></div><i class="i cv" data-i="chev"></i></div>
+      <div class="hr" style="margin:10px 0 0"></div>
+      <h2 class="sec">Account &amp; settings</h2>
+      <div class="lrow"><i class="i" data-i="user"></i><div class="m"><b>Personal information</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow" data-go="banks" data-push><i class="i" data-i="bank"></i><div class="m"><b>Linked banks</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="shield"></i><div class="m"><b>Security</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="eyeoff"></i><div class="m"><b>Privacy</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="star"></i><div class="m"><b>Favorites</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="family"></i><div class="m"><b>Families</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="spark"></i><div class="m"><b>Promos &amp; invites</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="shop"></i><div class="m"><b>Shopping</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="link"></i><div class="m"><b>Linked apps &amp; businesses</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="limits"></i><div class="m"><b>Limits</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="key"></i><div class="m"><b>Passkeys</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="device"></i><div class="m"><b>Your devices</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="bell"></i><div class="m"><b>Notifications</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow" id="themesRow"><i class="i" data-i="palette"></i><div class="m"><b>Themes</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="doc"></i><div class="m"><b>Documents &amp; statements</b></div><i class="i cv" data-i="chev"></i></div>
+      <div class="lrow"><i class="i" data-i="help"></i><div class="m"><b>Support</b></div><i class="i cv" data-i="chev"></i></div>
+      <button class="pill" style="margin-top:18px">Create a business account</button>
+    </section>
+
+    <!-- LINKED BANKS -->
+    <section class="screen" id="banks">
+      <div class="tb"><button class="cb" data-back><i class="i" data-i="back"></i></button><div class="ttl">Linked banks</div><span style="width:44px"></span></div>
+      <h2 class="sec" style="margin-top:26px">Debit cards</h2>
+      <div class="lrow"><img class="thumb" src="img/card-thumb.svg" alt=""><div class="m"><b style="font-size:16px">Lumo debit ••4821</b><span style="display:block;font-size:12px">Lumo Bank, National Association</span><span style="display:block;font-size:12px">Default payment method</span></div><i class="i cv" data-i="chev"></i></div>
+      <h2 class="sec" style="margin-top:34px">Bank accounts</h2>
+      <div class="lrow"><div class="sq" style="background:#e5384f"><i class="i" data-i="bank"></i></div><div class="m"><b style="font-size:16px">Checking ••1567</b><span style="display:block;font-size:12px">Northwind Bank</span></div><i class="i cv" data-i="chev"></i></div>
+      <div style="margin-top:420px"><button class="pill" id="linkNew">Link new card or bank account</button></div>
+    </section>
+
+    <!-- CONFIRM PIN -->
+    <section class="screen" id="pin">
+      <div class="tb"><button class="cb" data-go="pay"><i class="i" data-i="x"></i></button><button class="cb" style="background:none"><i class="i" data-i="help"></i></button></div>
+      <h1 style="font-size:30px;font-weight:600;margin-top:18px">Confirm your Lumo PIN</h1>
+      <div class="dots" id="pdots"><i></i><i></i><i></i><i></i></div>
+      <div class="pad" id="ppad" style="margin-top:60px"></div>
+      <button class="pill w off" style="padding:18px" id="pinNext">Next</button>
+    </section>
+
+  </main>
+  <nav id="nav">
+    <button class="on" data-go="money" aria-label="Money"><span class="bal" id="navBal">$0</span></button>
+    <button data-go="pay" aria-label="Pay"><i class="i" data-i="dollar"></i></button>
+    <button data-go="activity" aria-label="Activity"><i class="i" data-i="clock"></i></button>
+  </nav>
+
+  <div class="sheet-bg" id="bg"></div>
+  <div class="sheet" id="sheet"></div>
+  <div class="toast" id="toast"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

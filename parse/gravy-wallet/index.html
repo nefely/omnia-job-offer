@@ -1,0 +1,149 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Gravy Wallet</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/wallet-app-icon.png?v=2">
+  <link rel="apple-touch-icon" sizes="512x512" href="assets/wallet-app-icon.png?v=2">
+  <meta name="apple-mobile-web-app-title" content="Wallet">
+  <link rel="stylesheet" href="wallet.css?v=20261117-1">
+</head>
+<body>
+  <!-- SVG icon sprites -->
+  <svg class="defs" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <symbol id="plus" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12h14"/>
+      </symbol>
+      <symbol id="more" viewBox="0 0 24 24">
+        <circle cx="5" cy="12" r="1"/>
+        <circle cx="12" cy="12" r="1"/>
+        <circle cx="19" cy="12" r="1"/>
+      </symbol>
+      <symbol id="close" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M18 6 6 18"/>
+      </symbol>
+      <symbol id="search" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="6.5"/>
+        <path d="m16 16 5 5"/>
+      </symbol>
+      <symbol id="box" viewBox="0 0 24 24">
+        <path d="m12 3 9 5v9l-9 5-9-5V8zM3 8l9 5 9-5M12 13v9M7.5 5.5l9 5v5"/>
+      </symbol>
+      <symbol id="number" viewBox="0 0 24 24">
+        <rect x="2" y="4" width="20" height="16" rx="3"/>
+        <path d="M2 9h20M6 14h3m3 0h2m3 0h1"/>
+      </symbol>
+      <symbol id="share" viewBox="0 0 24 24">
+        <path d="M8 8H5v13h14V8h-3M12 15V2m-4 4 4-4 4 4"/>
+      </symbol>
+      <symbol id="info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 11v6m0-10v.1"/>
+      </symbol>
+      <symbol id="bell" viewBox="0 0 24 24">
+        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/>
+      </symbol>
+      <symbol id="trash" viewBox="0 0 24 24">
+        <path d="M4 6h16M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7m4-7v7"/>
+      </symbol>
+      <symbol id="chevron" viewBox="0 0 24 24">
+        <path d="m9 5 7 7-7 7"/>
+      </symbol>
+      <symbol id="apple" viewBox="0 0 24 28">
+        <path fill="currentColor" stroke="none" d="M17.2 4.3c1.1-1.3 1.2-2.7 1.2-3.2-1.5.1-3 .9-4 2-.8.9-1.4 2.2-1.3 3.5 1.6.1 3-.9 4.1-2.3ZM21 15c0-3.4 2.8-5 2.9-5.1-1.6-2.4-4-2.7-4.9-2.7-2.1-.2-4.1 1.3-5.2 1.3-1.1 0-2.7-1.3-4.5-1.2-2.3 0-4.4 1.3-5.6 3.3-2.3 4-.6 10 1.6 13.2 1.1 1.6 2.3 3.3 4.1 3.2 1.6-.1 2.3-1.1 4.4-1.1 2 0 2.6 1.1 4.4 1 1.8 0 2.9-1.6 3.9-3.2 1.2-1.8 1.7-3.6 1.8-3.7-.1 0-3-1.2-3-5Z"/>
+      </symbol>
+      <symbol id="flag" viewBox="0 0 78 42">
+        <g fill="currentColor" stroke="none">
+          <path d="m1 22 17-10 8 4L9 26zM13 28l17-10 8 4-17 10zM25 34l17-10 8 4-17 10zM29 6l17 8 8-4-17-8zM41 12l17 8 8-4-17-8zM53 18l17 8 8-4-17-8z"/>
+        </g>
+      </symbol>
+      <symbol id="coin" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="19" fill="#f4bc39" stroke="#b97a14" stroke-width="2"/>
+        <circle cx="24" cy="24" r="14" stroke="#ffe79b" stroke-width="2" fill="none"/>
+        <path d="M29 17c-8-5-14 5-5 7s4 11-5 6M24 12v24" stroke="#8c5a12" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Main wallet screen -->
+  <main id="wallet">
+    <header>
+      <h1>Wallet</h1>
+      <nav>
+        <button class="glass round" aria-label="Add card" data-action="settings">
+          <svg><use href="#plus"/></svg>
+        </button>
+        <div class="glass pill">
+          <button aria-label="Show passes" data-action="passes">
+            <svg><use href="#box"/></svg>
+          </button>
+          <button aria-label="Wallet settings" data-action="settings">
+            <svg><use href="#more"/></svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div id="cards"></div>
+  </main>
+
+  <!-- Card detail view -->
+  <section id="detail" aria-label="Card details" inert>
+    <div class="detail-inner">
+      <div class="toolbar">
+        <button class="glass round" aria-label="Close card" data-action="close">
+          <svg><use href="#close"/></svg>
+        </button>
+        <div class="glass pill">
+          <button aria-label="Card number" data-action="number">
+            <svg><use href="#number"/></svg>
+          </button>
+          <button aria-label="Card options" data-action="menu">
+            <svg><use href="#more"/></svg>
+          </button>
+        </div>
+        <div id="menu" hidden>
+          <button data-action="passdetails">Pass Details<svg><use href="#info"/></svg></button>
+          <button data-action="passdetails">Notifications<svg><use href="#bell"/></svg></button>
+          <button data-action="settings">Edit demo balance<svg><use href="#number"/></svg></button>
+        </div>
+      </div>
+      <div id="cardDestination"></div>
+      <div id="detailContent"></div>
+    </div>
+  </section>
+
+  <!-- Floating search button -->
+  <button class="glass search" aria-label="Search wallet" data-action="search">
+    <svg><use href="#search"/></svg>
+  </button>
+
+  <!-- Modal dialog -->
+  <div id="modal" hidden>
+    <section role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h2 id="modalTitle"></h2>
+        <button class="glass round" aria-label="Close dialog" data-action="dismiss">
+          <svg><use href="#close"/></svg>
+        </button>
+      </div>
+      <div id="modalBody"></div>
+    </section>
+  </div>
+
+  <!-- Toast notification -->
+  <div id="toast" role="status">
+    <svg class="coin"><use href="#coin"/></svg>
+    <div>
+      <b>Gravy Pass</b>
+      <span id="toastMessage"></span>
+    </div>
+  </div>
+
+  <script src="wallet.js?v=20261117-1"></script>
+</body>
+</html>

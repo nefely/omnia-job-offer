@@ -1,0 +1,104 @@
+/* Visual refresh only: original copy, selectors, quiz and click routing preserved. */
+:root{--bg:#0a1011;--surface:#131e20;--surface-2:#19282a;--border:rgba(166,215,209,.12);--green:#26df8d;--green-dim:rgba(38,223,141,.09);--green-glow:rgba(38,223,141,.25);--text-primary:#f5f9f8;--text-muted:#9baeb0;--radius-card:20px;--radius-btn:14px;--max-w:650px;--timer-bar-h:3rem}
+body::before{background:radial-gradient(ellipse 90% 55% at 50% 0%,#26df8d0d,transparent 75%)}
+.timer-bar{background:#102123ed;backdrop-filter:blur(16px);border-bottom:1px solid #26df8d24;gap:12px}.timer-bar .timer-clock{border-radius:8px;padding:5px 15px;box-shadow:0 0 22px #26df8d20}.timer-label{font-size:12px!important}
+.hero-section{padding-top:25px;padding-bottom:24px}.brand-row{display:flex;align-items:center;justify-content:space-between;margin:0 0 26px}.refresh-logo{font:800 25px var(--font-head);letter-spacing:-1.3px}.refresh-logo>span{color:var(--green)}.region-chip{font-size:9px;color:#91aaa6;letter-spacing:1.3px;border:1px solid var(--border);border-radius:99px;padding:6px 10px}
+.region-chip{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}.region-live-dot{position:relative;display:inline-block;flex:0 0 6px;width:6px;height:6px;border-radius:50%;background:#ff4b55;box-shadow:0 0 5px #ff4b5570}.region-live-dot::after{content:"";position:absolute;inset:-4px;border:1px solid #ff4b55;border-radius:50%;animation:region-live-wave 2.3s ease-out infinite}@keyframes region-live-wave{0%{opacity:.65;transform:scale(.45)}70%,100%{opacity:0;transform:scale(1.45)}}
+.hero-headline{font-size:clamp(27px,5.5vw,36px);line-height:1.15;letter-spacing:-1.3px;margin-bottom:15px}.anim-h1-line1{display:block}.hero-headline>br{display:none}.headline-highlight{display:block;font-size:clamp(40px,8.7vw,58px);letter-spacing:-2.2px;line-height:1.16;margin:6px 0 13px;text-shadow:0 0 45px #26df8d20}.anim-h1-line2{display:block;font-size:clamp(17px,3.4vw,22px);line-height:1.5;letter-spacing:-.4px;font-weight:500;max-width:480px;color:#d6e3e1}.hero-sub{font-size:13px;line-height:1.65;color:var(--text-muted);margin-bottom:19px}
+.stats-row{display:grid;grid-template-columns:1.04fr 1fr 1fr 1fr;gap:9px;overflow:visible;margin:18px 0}.stats-row:after{display:none}.stat-card{width:auto;min-width:0;aspect-ratio:auto;min-height:116px;padding:12px 6px;background:linear-gradient(145deg,#1a2a2b,#111b1e);border:1px solid #26413e;box-shadow:inset 0 1px 0 #ffffff04}.stat-card--app-shot{padding:0}.stat-app-shot{height:100%;min-height:116px;object-fit:cover;border-radius:19px}.stat-card .stat-icon{width:23px;height:23px;margin-bottom:8px}.stat-card .stat-num{font-size:19px;margin-bottom:5px}.stat-card .stat-label{font-size:9px;max-width:100px;line-height:1.5}
+.upside-banner{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:17px 0}.pill{width:100%;font-size:11px;padding:9px 8px;border-radius:10px;color:#b5edce;background:#182823;border-color:#294235}.pill:last-child{grid-column:1/-1;justify-self:center;width:auto;padding-left:22px;padding-right:22px}
+.bonus-tag{position:relative;background:linear-gradient(120deg,#372d15,#242719);border:1px solid #a88b3a60;border-radius:14px;padding:15px 18px;margin:18px 0 16px;color:#f5d579;font-size:14px;box-shadow:inset 0 1px 0 #fff1}.bonus-tag .muted{color:#d1c5a4}.btn-primary{background:linear-gradient(110deg,#26df8d,#16c980);border:1px solid #64efb155;box-shadow:0 8px 25px #26df8d24;color:#061f15;min-height:57px;font-size:15px;border-radius:14px;transition:transform .22s,box-shadow .22s,filter .22s}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px #26df8d38;filter:brightness(1.06)}.btn-primary:active{transform:translateY(1px)}
+.activity-strip{max-width:610px;width:calc(100% - 40px);border-radius:12px;background:#132123;border:1px solid #26433b;border-left:3px solid var(--green);padding:12px 14px;margin:0 auto 22px;font-size:11px}.activity-label{font-size:9px}.activity-text{font-size:11px}
+.how-it-works,.trust-section,.reviews,.quiz-invite{padding:26px 0}h2{font-size:clamp(23px,4.3vw,29px);letter-spacing:-.9px;line-height:1.25}.how-intro{font-size:13px;line-height:1.8;color:var(--text-muted)}.mechanism-block{background:linear-gradient(120deg,#182526,#121c1d);border:1px solid var(--border);padding:18px;border-radius:16px;transition:border-color .2s,transform .2s}.mechanism-block:hover{border-color:#26df8d50;transform:translateY(-2px)}.mechanism-block h4{font-size:14px}.mechanism-block p{font-size:12px;line-height:1.75}.mechanism-blocks{gap:10px}.trust-card,.review-card{background:linear-gradient(140deg,#19282a,#131c20);border-color:#2b4142;border-radius:18px;box-shadow:0 10px 30px #0001}.trust-big{color:var(--green);letter-spacing:-1.5px}.trust-lines{border-top:1px solid var(--border);padding-top:13px}.review-card{padding:20px}.review-text{font-size:13px;line-height:1.85}.reviews-head{max-width:440px}.reviews-nav button{border-radius:10px;background:#18292a;border:1px solid #2f4545}.avatar{border:1px solid #ffffff18}.quiz-card-outer{background:radial-gradient(ellipse at 10% 0%,#26df8d18,transparent 75%),#152122;border:1px solid #26df8d35;border-radius:22px;padding:25px}.quiz-card-outer h3{font-size:24px;letter-spacing:-.7px}.contact{padding:26px 0}.footer{border-top:1px solid var(--border)}
+.quiz-overlay{background:radial-gradient(ellipse at 50% 0%,#17302b,transparent 65%),#0a1011}.quiz-inner{max-width:600px}.opt-btn{background:linear-gradient(120deg,#1b2b2b,#142022);border:1px solid #33504a;border-radius:16px;transition:transform .2s,border-color .2s,background .2s}.opt-btn:hover{transform:translateX(3px);border-color:var(--green)}.opt-btn.is-selected,.opt-btn.selected{background:#1e4231;border-color:var(--green)}.quiz-game-item{background:#152426;border:1px solid #2c4540;border-radius:15px;overflow:hidden}.quiz-game-thumb{border-radius:12px}.quiz-panel.is-active{animation:refresh-panel .35s both}.progress-track{border-radius:99px}.progress-fill{box-shadow:0 0 15px #26df8d55}.final-inner{background:linear-gradient(140deg,#162726,#121c1e);border-color:#2c4b40;border-radius:22px}.final-banner{border-radius:12px}.bonus-visual{border-radius:15px}.earnings-box{border-radius:15px}.offer-link{font-size:14px}.timer-final-wrap{border-radius:12px}.modal-box{border-radius:22px;background:#152123}.anim-stat-card{animation-delay:.15s!important}.anim-h1-line1{animation-delay:.05s}.anim-h1-line2{animation-delay:.1s}.anim-hero-sub{animation-delay:.1s}.anim-upside,.anim-bonus-tag,.anim-hero-cta{animation-delay:.2s;animation-duration:.4s}
+button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offset:4px}@keyframes refresh-panel{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:480px){.container{padding-left:20px;padding-right:20px}.hero-section{padding-top:19px}.brand-row{margin-bottom:22px}.refresh-logo{font-size:23px}.region-chip{font-size:8px}.hero-headline{font-size:27px}.headline-highlight{font-size:44px}.anim-h1-line2{font-size:18px;max-width:340px}.hero-sub{font-size:12px}.stats-row{grid-template-columns:repeat(3,1fr);gap:7px}.stat-card--app-shot{display:none}.stat-card{min-height:100px;padding:10px 6px}.stat-card .stat-num{font-size:20px}.stat-card .stat-label{font-size:9px}.stat-card .stat-icon{width:21px;height:21px;margin-bottom:6px}.pill{font-size:10px;padding:8px 6px}.bonus-tag{font-size:12px;padding:13px 14px;margin:15px 0}.bonus-tag .muted{font-size:11px}.btn-primary{min-height:54px;font-size:14px}.activity-strip{padding:10px;gap:7px}.activity-label{font-size:8px}.activity-text{font-size:10px}.how-it-works{padding-top:17px}.quiz-inner{padding-left:20px;padding-right:20px}.quiz-intro.container{padding-left:0;padding-right:0}.offer-link{font-size:12px}.trust-big{font-size:34px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+/* Review portraits and attention animation. */
+.avatar{overflow:hidden;flex-shrink:0}.avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+#hero-earnings{display:inline-block;min-width:2ch;text-align:right;font-variant-numeric:tabular-nums}
+.hero .btn-primary{animation:cta-breathe 2.4s ease-in-out .6s infinite;transform-origin:center}
+.hero .btn-primary:hover,.hero .btn-primary:focus-visible{animation-play-state:paused}
+@keyframes cta-breathe{0%,100%{scale:1;box-shadow:0 8px 25px #26df8d24}50%{scale:1.025;box-shadow:0 10px 34px #26df8d45}}
+@media(prefers-reduced-motion:reduce){.hero .btn-primary{animation:none!important}}
+/* Keep the breathing CTA visible: its original entrance animation set opacity:0. */
+.hero .btn-primary{opacity:1!important}
+.quiz-games-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;overflow:visible}
+.quiz-game-item{min-width:0;padding-bottom:8px}.quiz-game-title{font-size:10px;min-height:25px;display:flex;align-items:center;justify-content:center}.quiz-game-amt{font-size:10px}
+#final-screen{padding-bottom:32px}
+#final-screen .offer-link{width:100%;min-height:58px;box-shadow:0 14px 34px #0007,0 0 30px #26df8d25;opacity:1}
+#final-screen .final-cta--first{margin:0 0 22px}
+#final-screen .final-cta--middle{margin:0 0 22px}
+#final-screen .final-cta--last{margin:0}
+@media(max-width:520px){.quiz-games-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.quiz-game-title{min-height:18px}.quiz-game-thumb{max-height:100px}.quiz-game-item{padding:6px}.quiz-game-amt{font-size:11px}#final-screen .offer-link{font-size:11px;padding:12px;min-height:56px}}
+
+/* Shared rows keep all three proof cards aligned. */
+.stats-row .stat-card:not(.stat-card--app-shot){display:grid;grid-template-rows:30px 31px 34px;align-content:center;justify-items:center;row-gap:3px;padding:12px 8px;text-align:center}
+.stats-row .stat-card:not(.stat-card--app-shot) .stat-icon{width:25px;height:25px;margin:0;align-self:center;justify-self:center}
+.stats-row .stat-currency-icon{display:grid;place-items:center;font-family:var(--font-head);font-size:26px;font-weight:800;line-height:1;color:var(--green)}
+.stats-row .stat-card .stat-num{display:flex;align-items:center;justify-content:center;margin:0;font-size:20px;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.stats-row .stat-card .stat-label{display:flex;align-items:flex-start;justify-content:center;margin:0;max-width:112px;font-size:9px;line-height:1.35}
+@media(max-width:480px){.stats-row .stat-card:not(.stat-card--app-shot){grid-template-rows:24px 25px 30px;row-gap:2px;padding:10px 4px}.stats-row .stat-card:not(.stat-card--app-shot) .stat-icon{width:21px;height:21px}.stats-row .stat-currency-icon{font-size:22px}.stats-row .stat-card .stat-num{font-size:19px}.stats-row .stat-card .stat-label{font-size:8px}}
+/* Keep the fixed offer CTA above the footer's own stacking layer. */
+#landing{position:relative;z-index:2}
+#final-screen .offer-link{background:#1bd88a;isolation:isolate}
+
+/* Cleaner first screen: proof and bonus stay visible, extra earning claims open on demand. */
+.hero .stats-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px 0 14px}
+.hero .stat-card--app-shot{display:none}
+.hero .stat-card{min-height:104px}
+.hero .bonus-tag{margin:0 0 14px;padding:12px 15px;font-size:13px}
+.earning-details{margin-top:11px;text-align:center;color:var(--text-muted)}
+.earning-details summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;padding:8px 12px;font-size:11px;list-style:none;border-radius:8px}
+.earning-details summary::-webkit-details-marker{display:none}
+.earning-details summary span{color:var(--green);font-size:17px;line-height:1;transition:transform .2s}
+.earning-details[open] summary span{transform:rotate(180deg)}
+.earning-details .upside-banner{margin:9px 0 0}
+.earning-details .upside-banner{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:8px}
+.earning-details .pill,.earning-details .pill:last-child{grid-column:auto;width:100%;min-height:40px;padding:9px 10px;justify-self:stretch}
+@media(max-width:520px){.earning-details .upside-banner{grid-template-columns:1fr;max-width:310px;margin:10px auto 0}.earning-details .pill,.earning-details .pill:last-child{min-height:38px}}
+@media(max-width:480px){.hero .stats-row{margin:16px 0 14px}.hero .stat-card{min-height:96px}.hero .bonus-tag{font-size:12px}#activity-strip{display:none}}
+
+/* One source-linked Trustpilot section replaces the repeated testimonial carousels. */
+.tp-heading{text-align:center;margin-bottom:20px}
+.tp-heading .trustpilot-lockup{display:flex;justify-content:center;margin:0 0 12px}
+.tp-heading .tp-logo{height:27px;width:auto}
+.tp-heading .reviews-head{margin:0 0 10px;max-width:none}
+.tp-overview{display:flex;align-items:center;justify-content:center;gap:10px;margin:0;color:var(--text-muted);font-size:12px}
+.tp-overview strong{color:var(--text-primary);font:800 21px var(--font-head)}
+.tp-stars{color:var(--green);font-size:20px;letter-spacing:1px}
+.tp-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tp-review{min-height:215px;display:flex;flex-direction:column;padding:20px;background:#142222;border:1px solid #304842}
+.tp-review .review-top{margin-bottom:16px}
+.tp-avatar{width:39px;height:39px;flex:0 0 39px;border-radius:50%;display:grid;place-items:center;background:#234338;color:var(--green);font-weight:800}
+.tp-review .name{font-size:13px}
+.tp-star-blocks{display:flex;gap:2px;margin-top:5px}
+.tp-star-blocks span{display:grid;place-items:center;width:18px;height:18px;background:#00b67a;color:#fff;font-size:13px;line-height:1}
+.tp-review .review-text{font-size:14px;line-height:1.65;color:var(--text-primary);margin:0 0 20px}
+.tp-review-source{margin-top:auto;font-size:11px;font-weight:700;color:var(--green)}
+.tp-note{text-align:center;color:var(--text-muted);font-size:11px;margin:13px 0 0}
+.tp-note a{font-weight:700}
+@media(max-width:480px){.tp-review-grid{grid-template-columns:1fr}.tp-review{min-height:178px}.tp-overview{gap:7px;font-size:10px}.tp-overview strong{font-size:19px}}
+.tp-review{min-height:154px}
+.tp-review .review-text{margin-bottom:12px}
+@media(max-width:480px){.tp-review{min-height:148px}}
+
+/* ===== UX fixes (2026-10-07) ===== */
+/* 1) CTA hover: прибираємо "змивання" тексту — глушимо shine-розмітку і
+      фіксуємо темний текст на трохи темнішому зеленому */
+.btn-primary:hover{filter:none!important;color:#04130c!important;background:linear-gradient(110deg,#2ce89a,#12b974)!important}
+.btn-primary:hover::after,.btn-primary:focus-visible::after{opacity:0!important;animation:none!important}
+.btn-primary:focus-visible{outline:2px solid #baf5dd;outline-offset:2px}
+
+/* 2) "QUALIFIED" — статусний бейдж, а не кнопка: напівпрозорий фон, тонка
+      рамка, зелений текст, компактний pill по центру */
+.final-banner{
+  display:block;width:fit-content;max-width:100%;
+  margin:0 auto 1.25rem;padding:8px 16px;
+  background:rgba(38,223,141,.10);
+  border:1px solid rgba(38,223,141,.38);
+  border-radius:999px;
+  color:var(--green,#26df8d);
+  font-size:12px;font-weight:700;letter-spacing:.45px;text-transform:uppercase;
+  text-align:center;box-shadow:none;
+}

@@ -1,0 +1,537 @@
+/* ---------- base (minimal subset of Bootstrap 4 reboot/grid/btn) ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { line-height: 1.15; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+body { margin: 0; line-height: 1.5; text-align: left; background-color: #fff; }
+h1, h3, h5 { margin-top: 0; margin-bottom: .5rem; font-weight: 500; line-height: 1.2; }
+h3 { font-size: 1.75rem; }
+h5 { font-size: 1.25rem; }
+p, ul { margin-top: 0; margin-bottom: 0; }
+strong { font-weight: bolder; }
+a { color: #007bff; text-decoration: none; background-color: transparent; }
+a:hover { text-decoration: underline; }
+img { vertical-align: middle; border-style: none; }
+button { margin: 0; font-family: inherit; font-size: inherit; line-height: inherit; border-radius: 0; overflow: visible; text-transform: none; -webkit-appearance: button; }
+
+.container { width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; }
+@media (min-width: 576px)  { .container { max-width: 540px; } }
+@media (min-width: 768px)  { .container { max-width: 720px; } }
+@media (min-width: 992px)  { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+.row { display: flex; flex-wrap: wrap; }
+
+/* ---------- buttons (one style for every state & screen) ---------- */
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-family: inherit;
+	font-weight: 500;
+	text-align: center;
+	white-space: nowrap;
+	user-select: none;
+	cursor: pointer;
+	border: 0;
+	border-radius: 1000px;
+	text-decoration: none !important;
+	-webkit-tap-highlight-color: transparent;
+	transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease;
+}
+.btn:focus { outline: none; }
+
+/* main orange button: Start Now, quiz answers, offer */
+.btn-primary {
+	width: 100%;
+	min-width: 260px;
+	max-width: 320px;
+	min-height: 58px;
+	padding: 14px 28px;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: .2px;
+	line-height: 1.2;
+	color: #2B1A00;
+	background: linear-gradient(180deg, #FFAA2B 0%, #FF9900 100%);
+	box-shadow: 0 6px 16px -6px rgba(255,140,0,.65), inset 0 -2px 0 rgba(0,0,0,.08);
+}
+@media (hover: hover) {
+	.btn-primary:hover {
+		color: #2B1A00;
+		background: linear-gradient(180deg, #FFB443 0%, #FF9100 100%);
+		transform: translateY(-2px);
+		box-shadow: 0 12px 24px -8px rgba(255,140,0,.75), inset 0 -2px 0 rgba(0,0,0,.08);
+	}
+}
+.btn-primary:active {
+	transform: translateY(1px) scale(.98);
+	box-shadow: 0 3px 8px -4px rgba(255,140,0,.7), inset 0 2px 4px rgba(0,0,0,.12);
+}
+.btn-primary:focus-visible {
+	box-shadow: 0 0 0 4px #fff, 0 0 0 7px rgba(255,153,0,.55);
+}
+
+/* secondary text button: Back */
+.btn-transparent {
+	min-width: 120px;
+	min-height: 44px;
+	padding: 10px 22px;
+	font-size: 16px;
+	font-weight: 500;
+	color: #6B6B6B;
+	background: transparent;
+}
+@media (hover: hover) {
+	.btn-transparent:hover {
+		color: var(--theme-black);
+		background: #F2F2F2;
+	}
+}
+.btn-transparent:active {
+	background: #E8E8E8;
+	transform: scale(.97);
+}
+.btn-transparent:focus-visible {
+	box-shadow: 0 0 0 3px rgba(255,153,0,.5);
+}
+
+@media screen and (max-width: 991px) {
+	.btn-primary {
+		min-height: 54px;
+		font-size: 17px;
+	}
+}
+
+/* ---------- header ---------- */
+header {
+	padding: 10px 0;
+	background: var(--theme-white);
+	text-align: center;
+}
+header .row {
+	justify-content: center;
+	align-items: center;
+}
+header .logo img {
+	max-height: 45px;
+	max-width: 100%;
+}
+header .mob {
+	display: none;
+}
+@media screen and (max-width: 991px) {
+	header {
+		background: #2D2B2B;
+	}
+	header .logo img {
+		max-height: 38px;
+	}
+	header .desk {
+		display: none;
+	}
+	header .mob {
+		display: initial;
+	}
+}
+
+/* ---------- intro ---------- */
+#intro {
+	flex-grow: 1;
+	padding: 15vh 0;
+	position: relative;
+	overflow-x: hidden;
+	z-index: 2;
+}
+#intro .row {
+	justify-content: center;
+	align-items: center;
+}
+#intro .figure {
+	position: absolute;
+	bottom: 0;
+	right: -5%;
+	width: 45%;
+	height: 70%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	z-index: -1;
+}
+.figure-mob {
+	display: none;
+}
+.figure-desk {
+	display: flex;
+}
+#intro .figure img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+
+#intro .form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	max-width: 100%;
+	width: 735px;
+}
+#intro .form .main-title {
+	text-align: center;
+	margin-bottom: 40px;
+}
+#intro .form .main-title h1 {
+	font-weight: 500;
+	line-height: 1.4;
+}
+#intro .form .main-title h1 span {
+	font-weight: bold;
+	position: relative;
+}
+#intro .form .main-title h1 span:after {
+	content: "";
+	position: absolute;
+	bottom: 4px;
+	left: 0;
+	width: 52px;
+	height: 4px;
+	background: var(--theme-primary);
+}
+#intro .form .main-title h1 strong {
+	color: var(--theme-primary);
+}
+#intro .form .main-title h1 ~ p {
+	margin-top: 20px;
+	font-weight: 500;
+	font-style: italic;
+}
+
+#intro .form .bullets {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#intro .form .bullets ul li {
+	width: auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-bottom: 10px;
+}
+#intro .form .bullets ul img {
+	margin-right: 10px;
+	aspect-ratio: 1/1;
+	height: 1rem;
+	margin-top: 2px;
+	display: inline-block;
+}
+
+/* bullets appear one by one */
+@keyframes bulletIn {
+	from { opacity: 0; transform: translateX(-16px); }
+	to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes bulletIconPop {
+	0%   { transform: scale(0); }
+	70%  { transform: scale(1.25); }
+	100% { transform: scale(1); }
+}
+#intro .form .bullets ul li {
+	opacity: 0;
+	animation: bulletIn .5s cubic-bezier(.22,.61,.36,1) forwards;
+}
+#intro .form .bullets ul li img {
+	transform: scale(0);
+	animation: bulletIconPop .4s ease-out forwards;
+}
+#intro .form .bullets ul li:nth-child(1)     { animation-delay: .35s; }
+#intro .form .bullets ul li:nth-child(1) img { animation-delay: .5s; }
+#intro .form .bullets ul li:nth-child(2)     { animation-delay: .55s; }
+#intro .form .bullets ul li:nth-child(2) img { animation-delay: .7s; }
+#intro .form .bullets ul li:nth-child(3)     { animation-delay: .75s; }
+#intro .form .bullets ul li:nth-child(3) img { animation-delay: .9s; }
+@media (prefers-reduced-motion: reduce) {
+	#intro .form .bullets ul li,
+	#intro .form .bullets ul li img {
+		opacity: 1;
+		transform: none;
+		animation: none;
+	}
+}
+
+#intro .form .form-step {
+	width: 100%;
+	max-width: 320px;
+	margin-top: 30px;
+}
+#intro .form .submit-question {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+/* quiz */
+#intro .quiz {
+	display: none;
+}
+#intro .quiz .quiz-container {
+	width: 100%;
+	max-width: 645px;
+	text-align: center;
+}
+#intro .quiz-dots {
+	margin-bottom: 30px;
+}
+#intro .quiz-dots ul {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#intro .quiz-dots ul li {
+	width: 95px;
+	height: 5px;
+	background: #D0D0D0;
+	border-radius: 1000px;
+	margin: 0 4px;
+	transition: 0.3s;
+}
+#intro .quiz-dots ul li.active {
+	background: var(--theme-primary);
+}
+#intro .quiz-dots ul li.green {
+	background: #40B756;
+}
+#intro .quiz-blocks {
+	position: relative;
+}
+
+/* ---- quiz transitions ----
+   --dx = 1 forward (out to the left, in from the right), -1 when going back */
+#intro .quiz { --dx: 1; }
+#intro .quiz.dir-back { --dx: -1; }
+
+@keyframes quizOut {
+	to { opacity: 0; transform: translateX(calc(var(--dx) * -40px)); }
+}
+@keyframes quizIn {
+	from { opacity: 0; transform: translateX(calc(var(--dx) * 40px)); }
+	to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes quizUp {
+	from { opacity: 0; transform: translateY(14px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+#intro .quiz-block.is-leaving {
+	animation: quizOut .25s ease-in forwards;
+	pointer-events: none;
+}
+#intro .quiz-block.is-entering .tags,
+#intro .quiz-block.is-entering .quiz-block-question > *,
+#intro .quiz-block.is-entering .quiz-block-answers > *,
+#intro .quiz-block.is-entering .quiz-block-back {
+	animation: quizIn .45s cubic-bezier(.22,.61,.36,1) both;
+	animation-delay: calc(var(--i, 0) * 80ms);
+}
+/* progress dots slide up when the quiz first appears */
+#intro .quiz.is-shown .quiz-dots {
+	animation: quizUp .45s cubic-bezier(.22,.61,.36,1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+	#intro .quiz-block.is-leaving,
+	#intro .quiz-block.is-entering *,
+	#intro .quiz.is-shown .quiz-dots {
+		animation-duration: .01s !important;
+		animation-delay: 0s !important;
+	}
+}
+#intro .quiz-block {
+	display: none;
+}
+#intro .quiz-block--1 {
+	display: block;
+}
+#intro .quiz-block-question {
+	margin-bottom: 30px;
+}
+#intro .quiz-block-question h5,
+#intro .quiz-block-question h3 {
+	font-weight: 400;
+}
+#intro .quiz-block-question strong {
+	font-weight: 700;
+}
+#intro .quiz-block-question .info {
+	margin-top: 30px;
+	display: block;
+}
+#intro .quiz-block-answers {
+	max-width: 320px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+#intro .quiz-block-back {
+	margin-top: 25px;
+}
+.tags {
+	text-align: center;
+}
+.tags p {
+	display: inline-block;
+	margin-bottom: 20px;
+	padding: 9px 15px;
+	background: #CFDDFB;
+	border-radius: 50px;
+	font-size: 15px;
+	line-height: 1;
+}
+.tezis {
+	margin-top: 35px;
+	font-style: italic;
+}
+
+/* quiz mode (after Start Now) */
+#intro.quiz-mode {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 32px 0;
+	margin-bottom: 0;
+}
+/* optical centering: lift content a bit above the geometric middle */
+#intro.quiz-mode .container {
+	margin-top: -6vh;
+}
+#intro.quiz-mode .figure {
+	display: none !important;
+}
+
+@media screen and (max-width: 991px) {
+	#intro {
+		padding: calc(2.25 * var(--gap)) 0;
+		margin-bottom: -35px;
+	}
+	/* first screen: center content vertically, keep room for the boxes image at the bottom */
+	#intro:not(.quiz-mode) {
+		display: flex;
+		align-items: center;
+		padding-bottom: 20vh;
+	}
+	#intro .figure {
+		right: auto;
+		width: 100%;
+		height: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		justify-content: center;
+	}
+	#intro .figure .figure-mob {
+		display: flex;
+		max-width: 100%;
+		max-height: 20vh;
+	}
+	.figure-desk {
+		display: none;
+	}
+	#intro .form .main-title {
+		margin-bottom: 20px;
+	}
+	#intro .form .main-title h1 {
+		font-size: 1.75rem;
+		line-height: 1.416;
+	}
+	#intro .form .main-title h1 span:after {
+		bottom: 2px;
+		width: 35px;
+		height: 2px;
+	}
+	#intro .form .main-title h1 ~ p {
+		font-size: 15px;
+	}
+	#intro .form .bullets ul {
+		flex-direction: column;
+		margin: 0 auto;
+	}
+	#intro .form .bullets ul li {
+		width: 100%;
+		margin-bottom: 8px;
+	}
+	#intro .form .bullets ul li:last-child {
+		margin-bottom: 0;
+	}
+	#intro .form .form-step {
+		margin-top: 28px;
+	}
+	#intro .quiz-block-question h5 {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+	#intro .quiz-block-question h3 {
+		font-size: 20px;
+		line-height: 1.5;
+	}
+}
+
+@media screen and (max-height: 620px) {
+	#intro .figure {
+		display: none !important;
+	}
+}
+
+/* ---------- footer ---------- */
+footer {
+	background: var(--theme-primary);
+	padding-top: 40vh;
+	color: var(--theme-white);
+	text-align: center;
+}
+footer a {
+	color: var(--theme-white);
+	text-decoration: none !important;
+}
+footer a:hover {
+	color: var(--theme-black);
+}
+.footer-top {
+	padding: 30px 0;
+}
+.footer-top .row {
+	justify-content: space-between;
+	align-items: center;
+}
+.footer-top ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 30px;
+}
+.footer-top ul > li:not(:last-child) {
+	margin-right: 40px;
+}
+.footer-bottom {
+	background: #C67A08;
+	padding: 10px 0;
+}
+.footer-bottom .row {
+	justify-content: center;
+	align-items: center;
+}
+@media screen and (max-width: 991px) {
+	.footer-top .row {
+		justify-content: center;
+		flex-direction: column;
+	}
+	.footer-top ul {
+		margin-left: 0;
+		margin-top: 20px;
+		flex-direction: column;
+	}
+	.footer-top ul > li:not(:last-child) {
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+}

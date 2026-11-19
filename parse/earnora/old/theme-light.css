@@ -1,0 +1,144 @@
+/* Light palette only. The original dark stylesheets remain untouched. */
+:root {
+  color-scheme: light;
+  --bg: #f6faf7;
+  --surface: #ffffff;
+  --surface-2: #edf5ef;
+  --border: #d2e2d7;
+  --green: #078d57;
+  --green-dim: #e1f5e9;
+  --green-glow: #16b77630;
+  --green-border: #a9d9b9;
+  --gold: #785514;
+  --gold-dim: #fff4da;
+  --red: #cf354d;
+  --text-primary: #14271d;
+  --text-muted: #536b5d;
+  --text-ghost: #647c6e;
+}
+
+html { color-scheme: light; }
+body { background: var(--bg); color: var(--text-primary); }
+body::before { background: radial-gradient(ellipse 85% 52% at 50% 0%, #a8eac02e, transparent 72%); }
+a:hover { color: #006f43; }
+
+/* Fixed timer and first screen */
+.timer-bar { background: #eff8f2f2; border-bottom-color: #c6e3d0; box-shadow: 0 3px 15px #164f2d0b; }
+.timer-bar .timer-label { color: #496556; }
+.timer-bar .timer-clock, .timer-final-wrap .timer-clock { color: #073b24; background: #30d38b; }
+.timer-bar.urgent { background: #fff1f0; border-bottom-color: #e9bdc3; }
+.timer-bar.urgent .timer-clock, .timer-final-wrap.urgent .timer-clock { color: #fff; }
+.region-chip { color: #506b5b; background: #eef7f0; border-color: #c9e3d1; }
+.headline-highlight { color: #078f58; text-shadow: 0 0 35px #22b67119; }
+.anim-h1-line2 { color: #2b4336; }
+.hero-sub { color: var(--text-muted); }
+.stat-card, .stats-row .stat-card { background: linear-gradient(145deg, #fff, #edf7f0); border-color: #cbded0; box-shadow: 0 8px 26px #184d270d; }
+.stat-card .stat-num { color: #14271d; }
+.stat-card .stat-label { color: #526d5d; }
+.pill, .earning-details .pill { color: #17613e; background: #eaf6ed; border-color: #c8e1ce; }
+.earning-details summary { color: #486656; }
+.earning-details summary:hover { background: #e8f4eb; }
+.bonus-tag, .hero .bonus-tag { color: #705015; background: linear-gradient(120deg, #fff8e8, #f7ecd0); border-color: #e6d29f; box-shadow: 0 6px 20px #6c4b110a; }
+.bonus-tag .muted { color: #755b2b; }
+.btn-primary, #final-screen .offer-link { color: #082516; background: linear-gradient(110deg, #42dc97, #1cc681); border-color: #12b777; box-shadow: 0 9px 27px #0eaa6730; }
+.btn-primary:hover { background: linear-gradient(110deg, #39df93, #12b974) !important; color: #04130c !important; }
+.btn-primary:focus-visible { outline-color: #076c43; }
+.activity-strip { color: #365c47; background: #fff; border-color: #c9e2d0; border-left-color: #16a76b; box-shadow: 0 5px 18px #164b290d; }
+.activity-label { color: #607b68; }
+.activity-text { color: #4d6958; }
+.activity-text strong { color: #193b29; }
+
+/* Explanation, proof and reviews */
+.mechanism-block { background: linear-gradient(120deg, #fff, #f0f8f2); border-color: #d3e5d8; }
+.mechanism-block:hover { border-color: #7bc69c; }
+.mechanism-block p, .how-intro { color: #526b5a; }
+.trust-card, .review-card, .tp-review { background: linear-gradient(140deg, #fff, #f0f8f2); border-color: #d1e3d7; box-shadow: 0 8px 25px #173e250d; }
+.review-text, .tp-review .review-text { color: #233d2d; }
+.review-time, .review-meta .verified { color: #5a7664; }
+.tp-avatar { background: #dff0e4; color: #12643e; }
+.tp-review-source { color: #0a8451; }
+.tp-heading .tp-logo { background: #11221a; padding: 5px 8px; border-radius: 6px; box-sizing: content-box; }
+.reviews-nav button { background: #fff; border-color: #c8dfcf; color: #284b35; }
+.quiz-card-outer, .quiz-invite .quiz-card-outer { background: radial-gradient(ellipse at 10% 0%, #8fe6b42d, transparent 75%), #fff; border-color: #a9d8ba; box-shadow: 0 12px 32px #17462910; }
+.quiz-invite p { color: #526d5e; }
+
+/* Quiz and game previews */
+.quiz-overlay { background: radial-gradient(ellipse at 50% 0%, #dff4e6, transparent 62%), var(--bg); }
+.quiz-intro-sub, .quiz-preview-label, .quiz-progress-top { color: #526d5e; }
+.quiz-game-item { background: #fff; border-color: #c8dfd0; box-shadow: 0 6px 18px #1745270c; }
+.quiz-game-title { color: #1f3829; }
+.quiz-game-earn-label { color: #4f6657; }
+.quiz-game-amt { color: #078d57; }
+.quiz-game-thumb { box-shadow: 0 3px 12px #1c3c2a24; }
+.opt-btn { color: #183424; background: linear-gradient(120deg, #fff, #f0f8f2); border-color: #c6ddd0; }
+.opt-btn:hover { border-color: #2bac71; }
+.opt-btn.is-selected, .opt-btn.selected { background: #e2f5e9; border-color: #0c9a5d; }
+.opt-btn .opt-title { color: #1b3726; }
+.opt-btn .opt-sub { color: #5a7162; }
+img.opt-ico { filter: brightness(0) saturate(100%) invert(31%) sepia(43%) saturate(939%) hue-rotate(101deg) brightness(87%) contrast(91%); }
+.progress-track { background: #d6e9dc; }
+.proc-ring-track { stroke: #d4e7db; }
+.processing-line .step-text { color: #536c5d; }
+.processing-line.is-done .step-text { color: #1c3b29; }
+.processing-line .step-icon { color: #688374; }
+.game-modal-overlay { background: #0d241791; }
+.game-modal-sheet, .modal-content { color: #183424; background: #fff; border-color: #c8dfd0; }
+.game-modal-close, .modal-close { background: #eaf3ec; color: #31513d; }
+.game-modal-body, .modal-body p, .modal-body li { color: #526b5a; }
+.game-modal-earn-label { color: #244a32; }
+.game-modal-earn-pill { background: #e8f7ed; border-color: #abdabb; }
+
+/* Result and legal content */
+.final-inner { background: linear-gradient(140deg, #fff, #eef7f1); border-color: #b9dcc5; box-shadow: 0 12px 35px #17462912; }
+.final-inner .lead, .steps-list li, .earnings-box, .timer-final-wrap, .pro-tip { color: #526b5a; }
+.steps-list li::before { color: #082a19; }
+.steps-list li.step-warning { color: #b92740; }
+.steps-list li.step-warning::before { color: #fff; background: #df425b; }
+.earnings-box { background: #e9f7ee; border-color: #b8ddc5; }
+.earnings-box strong { color: #1d3b28; }
+.earnings-box .fine { color: #637c6b; }
+.pro-tip { background: #eff7f1; border-color: #d1e3d6; }
+.final-banner { color: #08794b; background: #e9f8ef; border-color: #a8dbba; }
+.trust-micro span { color: #086f46; background: #e5f5ea; border-color: #b8dec6; }
+.contact .sub { color: #526b5a; }
+.footer { background: #edf6ef; border-color: #d3e5d8; }
+footer { color: #607667; }
+.disclosure { color: #607667; }
+
+@media (prefers-contrast: more) {
+  :root { --text-muted: #385040; --text-ghost: #465e4b; --border: #92b29d; }
+}
+/* Earnora components and brand accents in the device's light theme. */
+:root{--bg:#f8faf6;--surface:#fff;--surface-2:#eef5e9;--border:#d4dfcc;--green:#168000;--green-dim:#edf8e5;--green-glow:#25b50025;--green-border:#a8d994;--text-primary:#14210d;--text-muted:#52634a;--text-ghost:#66765e}
+body::before{background:radial-gradient(ellipse 85% 55% at 50% 0%,#dff4cf55,transparent 75%)}
+.refresh-logo,.quiz-brand{color:#14210d}.region-chip{color:#4e6541;background:#fff;border-color:#cbdcc0}.region-live-dot{background:#25c500}
+.timer-bar{background:#f2f8eded;border-color:#d2e4c4}.timer-bar .timer-clock{background:#25f400;color:#14210d}.timer-label{color:#53654a}.timer-bar.urgent{background:#fff1ed}.timer-bar.urgent .timer-clock{background:#cf354d;color:white}
+.anim-h1-line2{color:#34472b}.headline-highlight,.reveal-green{color:#188000;text-shadow:none}.stat-card{background:linear-gradient(145deg,#fff,#edf5e6);border-color:#d0e0c5;box-shadow:inset 0 1px #fff}.stat-card .stat-num{color:#172610}.stat-card .stat-icon{color:#178000}.stat-card .stat-label{color:#5e6c55}
+.bonus-tag{background:linear-gradient(120deg,#effbdc,#e6f4d9);color:#335b15;border-color:#bddb9c}.bonus-tag .muted{color:#516b38}.pill{background:#edf7e5;color:#3b5d2b;border-color:#cbdfbd}.activity-strip{background:#eff7e8;border-color:#cddfc0}.activity-text{color:#465a3b}.activity-label{color:#667b59}
+.btn-primary,#final-screen .offer-link{background:#25f400;color:#13200b;border-color:#81d959;box-shadow:0 5px 17px #478a1620}.btn-primary:hover,.btn-primary:focus-visible{background:#39ed15;color:#13200b;outline-color:#3c8a18;border-color:#458f22;box-shadow:0 0 0 1px #478a1630,0 0 20px #25b50030,0 6px 18px #21350f15}
+.mechanism-block,.review-card{background:#fff;border-color:#d4e0ca}.review-card .review-text{color:#52634a}.quiz-card-outer{background:linear-gradient(135deg,#f1fae9,#fff);border-color:#c5dcb5}.tp-overview{color:#52634a}
+.quiz-overlay{background:radial-gradient(ellipse at 50% 0%,#e4f1dc,transparent 65%),#f8faf6}.opt-btn{background:linear-gradient(120deg,#fff,#f0f6eb);border-color:#cfddc5;color:#14210d}.opt-btn:hover,.opt-btn.is-selected{background:#e5f4d8;border-color:#419c22}.opt-ico{filter:brightness(.35) sepia(1) hue-rotate(38deg) saturate(4)}.quiz-game-item{background:#fff;border-color:#d4e0ca}.quiz-game-amt{color:#536b45!important}.processing-line .step-text{color:#53634a}.processing-line.is-done .step-text{color:#204812}.proc-check{background:#25f400;color:#13200b}
+.final-inner{background:#fff;border-color:#ccdcc1;box-shadow:0 10px 30px #1a3b1010}.final-banner{background:#eaf8df;color:#356c1c;border-color:#c3dfaf}.final-inner .lead{color:#52634a}.result-profile span{background:#f0f8e9;color:#496c35;border-color:#c9ddbb}
+.reward-card{background:#f8fcf4;border-color:#c8dbb8}.reward-card:first-child{border-color:#65b83a}.reward-ribbon{background:#e6f1dc;color:#4b7332}.reward-card:first-child .reward-ribbon{background:#25f400;color:#13200b}.reward-head h3{color:#172610}.reward-head small{color:#617853}.reward-description{color:#4e6441}.reward-benefits li{color:#2b4320}.reward-benefits li:before{color:#168000}.reward-start{background:#edf7e5;border-left-color:#269109;color:#466637}.reward-start b{color:#244918}.reward-terms{color:#697f5b}
+.earn-more{background:#eaf7df;border-color:#bbd9a4}.earn-more h3{color:#254617}.earn-more p{color:#49653a}.earn-more strong{color:#224515}.earn-more small{color:#658052}.result-note{color:#75856b}
+.invite-panel{background:#f2f8ec;border-color:#ccdfbd}.invite-panel h4{color:#1c3312}.invite-panel h4 span{color:#168000}.invite-gift{background:#e2f1d5}.invite-how ol{border-color:#d3e2c7}.invite-how li{color:#405a32}.invite-how li span{background:#e0f1d3;color:#247e0c}.invite-controls{border-color:#cedec0}.invite-controls label{color:#49613c}.invite-input-wrap input{background:#fff;color:#3d5630;border-color:#c2d5b0}.invite-input-wrap button{color:#3d6428}.invite-status{color:#267b0e}
+.modal-content{background:#fff;color:#172610;border-color:#d1dfc7}.modal-close{color:#4d6640}.contact .sub,footer .disclosure{color:#647658}
+.scan-stage{background:#f0f8e9;border-color:#c4d9b4}.scan-grid{background-image:linear-gradient(#438b1820 1px,transparent 1px),linear-gradient(90deg,#438b1820 1px,transparent 1px)}.scan-offer{background:#fff;border-color:#ccdcbc}.scan-offer b{color:#335022}.scan-offer span{color:#839b74}.scan-lens{border-color:#3b9914;background:#84db5920;box-shadow:0 0 0 7px #5dbb1c0c,0 0 26px #4ea31625,inset 0 0 20px #75bb4120}.scan-lens:after{background:linear-gradient(#40961e,#a1d582)}.scan-lens span{color:#3d8a20}.scan-stage-label{background:#f8fcf4ed;border-color:#bdd4ac;color:#476f30}
+.earn-more.earn-tip{background:#edf7e5;border-color:#d6e6ca}.earn-tip p{color:#49653a}
+.support-card{background:linear-gradient(140deg,#fff,#f0f7e9);border-color:#ccdcbc}.support-icon{background:#e8f5df;border-color:#c5ddb2;color:#438b25}.support-kicker{color:#758a66}.contact .support-heading h3{color:#234218}.support-copy{color:#617754}.support-cta{background:#e6f3dc;border-color:#c0d9ac;color:#305b1e}.support-cta:hover,.support-cta:focus-visible{background:#d8edc9;border-color:#86b368;color:#1c4210}.support-cta>span:last-child{color:#4f8e30}.support-note{color:#7a8e6d}.footer-brand{color:#526c43}.footer-tagline{color:#8a9c7c}.earnora-footer .footer-links{border-color:#d6e2cd}.earnora-footer .footer-links a{color:#647e55}.earnora-footer .footer-links a:hover{color:#2b7711}.footer-fineprint p{color:#899a7b}.footer-copyright{color:#a1af96}
+.banner-snow i{background:#698b74}.banner-snow i:nth-child(3n){box-shadow:0 0 3px #91b8a160}
+.reward-card[data-product="freecash"]{--product-bg:#f5fced;--product-border:#96c879;--product-check:#2b8413;--product-ring:#498d28}
+.reward-card[data-product="playful"]{--product-bg:#faf5ff;--product-border:#c8afe6;--product-ribbon:#ebdefb;--product-ribbon-text:#6b3f93;--product-check:#8146b6;--product-ring:#8246ba}
+.reward-card[data-product="gravypass"]{--product-bg:#f1fbfe;--product-border:#a6d5e3;--product-ribbon:#d9f1f8;--product-ribbon-text:#28677d;--product-check:#1c809b;--product-ring:#25819c}.reward-card[data-product="playful"] .reward-head small{color:#9476b2}.reward-card[data-product="gravypass"] .reward-head small{color:#638f9d}
+
+@media(prefers-color-scheme:light){#final-screen .reward-card.is-winner{background:radial-gradient(ellipse at 50% 0%,#f9e8ac88,transparent 65%),#f8fceb;border-color:#ba9437;box-shadow:0 0 0 4px #dcb95615,0 10px 30px #788d2118}.winner-title{color:#3f330d}.winner-spotlight{color:#80621a;border-color:#b99a4845}.winner-crown,.winner-stars{color:#a47c18}}
+
+.more-apps{background:#f4f9ee;border-color:#c7d9b8}.more-apps summary small{color:#587044}.reward-card[data-product="testerup"]{--product-bg:#fff7f0;--product-border:#d9ad91;--product-ribbon:#fce4d3;--product-ribbon-text:#7c4225;--product-check:#ad592a}.reward-card[data-product="recosocial"]{--product-bg:#fff5fc;--product-border:#dab2d2;--product-ribbon:#f6dded;--product-ribbon-text:#823867;--product-check:#a23e80}
+
+.quiz-panel .opt-btn span.opt-ico{filter:none;color:initial;opacity:1}
+
+.quiz-panel .opt-btn .quiz-choice-icon{color:#315f35;filter:none;opacity:1}
+
+.quiz-panel .opt-btn .quiz-brand-icon{color:#315f35;filter:none}
+
+#top-timer{background:#030403;border-bottom-color:#79ff3340}#top-timer .timer-label{color:#f6fff1}#top-timer .bf-tag{color:#75ff42}
