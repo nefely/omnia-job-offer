@@ -1,7 +1,7 @@
 const $=id=>document.getElementById(id);
 const J=window.jit||(v=>v);
-/* суми унікалізуються на $1–2 при кожному заході (profile.js) */
-let balance=J(2486.32), savings=J(20522.55), btcUsd=J(899.38), goal=100000, hidden=false;
+/* суми унікалізуються на $1–2 при кожному заході (profile.js); баланс — випадковий $2 000–50 000 */
+let balance=Math.round((2000+Math.random()*48000)*100)/100, savings=J(20522.55), btcUsd=J(899.38), goal=100000, hidden=false;
 const BTC_RATE=70761.15;
 /* ---------- валюта: перемикач у Pay або ?currency=usd|cad|gbp у URL ---------- */
 const CURS={

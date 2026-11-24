@@ -4,8 +4,8 @@ const BRAND="Chime";
 
 const $=id=>document.getElementById(id);
 const J=window.jit||(v=>v), PF=window.PROFILE||{first:"Alex",last:"Morgan",full:"Alex Morgan",user:"alexmorgan"};
-/* суми унікалізуються на $1–2 при кожному заході (profile.js) */
-let balance=J(2486.32), savings=J(6842.17), hidden=false;
+/* суми унікалізуються на $1–2 при кожному заході (profile.js); баланс — випадковий $2 000–50 000 */
+let balance=Math.round((2000+Math.random()*48000)*100)/100, savings=J(6842.17), hidden=false;
 const SCORE=720, SCORE_UP=14;
 /* ---------- валюта: Profile → Currency або ?currency=usd|cad|gbp ---------- */
 const CURS={
