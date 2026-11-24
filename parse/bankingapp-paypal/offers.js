@@ -25,7 +25,8 @@ const ACTIVE_OFFER = "freecash";
 
 const OFFERS = {
   // ?offer=freecash
-  freecash: { n: "Freecash", l: "img/offers/freecash.png" },
+  // суми $40–50: база 42–48, бо при кожному заході додається зсув ±$1–2
+  freecash: { n: "Freecash", l: "img/offers/freecash.png", amounts: [44.37, 47.62, 42.85, 45.19, 46.73, 43.58, 47.14] },
 
   // ?offer=gravypass — https://www.gravypass.com/
   gravypass: { n: "Gravy Pass", l: "img/offers/gravypass.png", amounts: [92.36, 57.81, 113.49, 68.27, 131.74, 54.92, 97.15] },

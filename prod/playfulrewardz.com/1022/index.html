@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playful Rewards — Get Paid for Testing Apps &amp; Games</title>
+  <meta name="description" content="Get paid for testing mobile apps and games. Instant cashouts, £15 install bonus, and daily rewards.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '3279912958830206');
+  </script>
+  <!-- End Meta Pixel Code -->
+
+  <script src="https://track.playfulrewardz.com/unilpclick.js?attribution=lastpaid&cookiedomain=&cookieduration=90&defaultcampaignid=6afc23d3cbe33f49af3e095f&regviewonce=false&script_id=6afc245182792c35847cd759"></script>
+
+</head>
+<body>
+  <main class="container">
+    <!-- Top Brand Header -->
+    <header class="topbar">
+      <a href="index.html" class="brand">
+        <img src="img/logo.png" alt="Playful Rewards Logo" class="brand__logo">
+        <div class="brand__text">
+          <span class="brand__name">Playful Rewards</span>
+          <span class="brand__tag" id="brandTag">Official Testing Programme</span>
+        </div>
+      </a>
+      <div class="live-pill" id="livePill">
+        <span class="live-dot"></span>
+        <span>Spots Open</span>
+      </div>
+      <a href="#" class="back-btn" id="backBtn" hidden>← Back</a>
+    </header>
+
+    <!-- ===== STEP 1 ===== -->
+    <div id="step1" class="step-view">
+
+    <!-- Hero Offer Card -->
+    <section class="card card--hero">
+      <h1 class="hero-title">Get Paid for <span>Testing</span><br>Apps &amp; Games</h1>
+
+      <!-- Live Earnings Box -->
+      <div class="earnings-box" id="earningsBox">
+        <div class="earnings-value-row">
+          <div id="earningsAmount" class="skeleton skeleton--lg" aria-live="polite"></div>
+          <span id="earningsDelta" class="delta-badge"></span>
+        </div>
+        <div class="earnings-sub">
+          <span class="earnings-sub-badge">LIVE</span>
+          <span>avg. daily earnings</span>
+        </div>
+      </div>
+
+      <!-- 2 Animated Metrics (±10 randomized on visit + live green/red updates) -->
+      <div class="metrics-grid">
+        <div class="metric-card" id="usersCard">
+          <div class="metric-top">
+            <div class="metric-left">
+              <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <span id="usersVal" class="skeleton skeleton--md"></span>
+            </div>
+            <span class="live-dot"></span>
+          </div>
+          <div class="metric-bottom">
+            <span class="metric-label">users online</span>
+            <span id="usersDelta" class="metric-delta"></span>
+          </div>
+        </div>
+
+        <div class="metric-card" id="offerCard">
+          <div class="metric-top">
+            <div class="metric-left">
+              <svg class="metric-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M15 8.5a2.5 2.5 0 0 0-5 0V17"/>
+                <path d="M8 17h8"/>
+                <path d="M8 12.5h5"/>
+              </svg>
+              <span id="offerVal" class="skeleton skeleton--md"></span>
+            </div>
+          </div>
+          <div class="metric-bottom">
+            <span class="metric-label">per offer</span>
+            <span id="offerDelta" class="metric-delta"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bonus + Synced Timer Bar -->
+      <div class="bonus-timer-bar">
+        <span class="bonus-timer-text">GET £15 FOR THE APP INSTALL</span>
+        <span class="timer-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span class="js-countdown">05:00</span>
+        </span>
+      </div>
+
+      <!-- Primary CTA -> Triggers 2.5s Loader & Shows Step 2 -->
+      <button type="button" id="startPage1Btn" class="cta-btn">
+        <span>START EARNING NOW</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </button>
+
+      <!-- Trust Rating Strip -->
+      <div class="trust-strip">
+        <div class="stars" aria-label="4.6 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <span><strong>4.6</strong> rating based on <strong>28,651</strong> reviews</span>
+      </div>
+    </section>
+
+    <!-- App Store & Google Play Ratings -->
+    <section class="card">
+      <div class="stores-grid">
+        <div class="store-tile">
+          <div class="store-head">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.493-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+            <span>Google Play</span>
+          </div>
+          <div class="store-score">4.6 / 5</div>
+          <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="store-meta">81K Ratings</div>
+        </div>
+
+        <div class="store-tile">
+          <div class="store-head">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.32c.67-.81 1.12-1.94 1-3.07-.96.04-2.13.64-2.82 1.45-.61.7-.115 1.85-1 2.96 1.07.08 2.16-.54 2.82-1.34z"/></svg>
+            <span>App Store</span>
+          </div>
+          <div class="store-score">4.6 / 5</div>
+          <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div class="store-meta">81K Ratings</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Comments -->
+    <section class="card">
+      <div class="section-head">
+        <h2 class="section-title">Recent Comments</h2>
+        <span id="commentCount" class="section-count">3 verified</span>
+      </div>
+
+      <div id="commentsList" class="comments-list">
+        <div class="comment-item">
+          <div class="comment-avatar">MK</div>
+          <div class="comment-body">
+            <div class="comment-top">
+              <span class="comment-author">Megan K.</span>
+              <span class="comment-payout">+£74.50 cashed out</span>
+            </div>
+            <p class="comment-text">Installed two puzzle games yesterday evening and already withdrew £74.50 straight to PayPal. The £15 sign-up bonus showed up right after install.</p>
+            <div class="comment-footer">
+              <span>12 mins ago</span>
+              <button type="button" class="helpful-btn">👍 Helpful (<span class="helpful-num">19</span>)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment-item">
+          <div class="comment-avatar">DR</div>
+          <div class="comment-body">
+            <div class="comment-top">
+              <span class="comment-author">Daniel R.</span>
+              <span class="comment-payout">+£118.00 this week</span>
+            </div>
+            <p class="comment-text">Honestly didn't expect instant payouts to actually be instant. Did the in-game upgrade tip on a strategy app and got reimbursed + bonus within minutes.</p>
+            <div class="comment-footer">
+              <span>47 mins ago</span>
+              <button type="button" class="helpful-btn">👍 Helpful (<span class="helpful-num">14</span>)</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment-item">
+          <div class="comment-avatar">SL</div>
+          <div class="comment-body">
+            <div class="comment-top">
+              <span class="comment-author">Sophia L.</span>
+              <span class="comment-payout">+£42.20 today</span>
+            </div>
+            <p class="comment-text">Dead easy while watching Netflix. Tested 3 apps and cashed out an Amazon voucher + PayPal transfer.</p>
+            <div class="comment-footer">
+              <span>2 hours ago</span>
+              <button type="button" class="helpful-btn">👍 Helpful (<span class="helpful-num">8</span>)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form id="commentForm" class="comment-form">
+        <input type="text" id="commentName" class="form-input" placeholder="Your name" maxlength="40" required>
+        <textarea id="commentText" class="form-input" rows="2" placeholder="Share your experience with Playful Rewards..." maxlength="280" required></textarea>
+        <button type="submit" class="form-submit">Post Comment</button>
+      </form>
+    </section>
+
+    <!-- Support Section -->
+    <section class="card">
+      <h2 class="section-title">Need a Hand?</h2>
+      <p style="font-size:13px; color:var(--text-secondary); margin-top:4px;">We're here if you need help or just wanna say hi.</p>
+      <div class="support-grid">
+        <div class="support-tile">
+          <h4>Email Support</h4>
+          <p><a href="mailto:support@playfulrewards.com">support@playfulrewards.com</a></p>
+        </div>
+        <div class="support-tile">
+          <h4>Social Media</h4>
+          <p>@playfulrewards</p>
+        </div>
+      </div>
+    </section>
+
+    </div>
+    <!-- ===== /STEP 1 ===== -->
+
+    <!-- ===== STEP 2 (hidden until loader finishes) ===== -->
+    <div id="step2" class="step-view" hidden>
+
+    <!-- Step Progress -->
+    <div class="step-progress">
+      <div class="step-progress-meta">
+        <span>Step 2 of 2 — Claim Your £15 Bonus</span>
+        <span>100% Ready</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" style="width: 100%;"></div>
+      </div>
+    </div>
+
+    <!-- Main How to Get Rewards Card -->
+    <section class="card card--hero">
+      <h1 class="hero-title" style="margin-bottom: 6px;">How to get <span>rewards?</span></h1>
+      <p style="text-align:center; font-size:13px; color:var(--text-secondary);">Follow these 4 quick steps to unlock instant payouts</p>
+
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <p class="step-text">Download Playful Rewards</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <p class="step-text">Sign Up &amp; Unlock Limited Offers</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <p class="step-text">Play Game &amp; Test Apps — Earn up to £27–£94 per Day</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <p class="step-text">Withdraw via 100+ methods</p>
+        </div>
+      </div>
+
+      <!-- Synced Bonus + Timer Bar -->
+      <div class="bonus-timer-bar">
+        <span class="bonus-timer-text">GET £15 FOR THE APP INSTALL</span>
+        <span class="timer-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span class="js-countdown">05:00</span>
+        </span>
+      </div>
+
+      <!-- Final Offer Click CTA — put your tracker / offer URL in href (e.g. Keitaro {offer}).
+           JS on click: preventDefault -> Pixel PageView -> redirect to this href after 500ms -->
+      <a id="offerCtaBtn" href="https://track.playfulrewardz.com/click" class="cta-btn">
+        <span>START EARNING NOW</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+
+      <!-- Pro Tip Box -->
+      <div class="protip-box">
+        <p class="protip-title">⚡ PRO TIP: In-Game Upgrades</p>
+        <p class="protip-desc">Buy in-game upgrades and get 100% reimbursed + bonus rewards!</p>
+        <p class="protip-boost">Boost Payouts by £450–£720/week!</p>
+      </div>
+
+      <!-- Compact Trust Strip -->
+      <div class="trust-strip">
+        <div class="stars" aria-label="4.6 out of 5 stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <span><strong>4.6/5</strong> &bull; 81K+ App Store &amp; Google Play Ratings</span>
+      </div>
+    </section>
+
+    </div>
+    <!-- ===== /STEP 2 ===== -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <ul class="footer-links">
+        <li><a href="privacy-policy/">Privacy Policy</a></li>
+        <li><a href="terms-of-use/">Terms of Service</a></li>
+        <li><a href="mailto:support@playfulrewards.com">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© <span class="js-year">2026</span> Playful Rewards. All rights reserved. Secured by Norton.</p>
+    </footer>
+  </main>
+
+  <!-- 2.5s Verification Loader Overlay -->
+  <div id="loaderOverlay" class="loader-overlay" aria-hidden="true">
+    <div class="loader-card">
+      <div class="loader-ring-wrap">
+        <svg class="loader-ring" viewBox="0 0 104 104">
+          <circle class="loader-ring-bg" cx="52" cy="52" r="46"></circle>
+          <circle id="loaderRingFg" class="loader-ring-fg" cx="52" cy="52" r="46"></circle>
+        </svg>
+        <img src="img/logo.png" alt="Playful Rewards" class="loader-logo">
+      </div>
+      <h2 class="loader-title">Unlocking Your Rewards...</h2>
+      <div class="loader-sub">
+        <span id="loaderPercent">0%</span> &bull; <span id="loaderEstimate">Est. £68.40/day</span>
+      </div>
+      <div class="progress-track">
+        <div id="loaderBar" class="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div class="loader-steps">
+        <div id="lStep1" class="loader-step">
+          <span class="loader-icon"></span>
+          <span>Checking available tester spots...</span>
+        </div>
+        <div id="lStep2" class="loader-step">
+          <span class="loader-icon"></span>
+          <span>Reserving £15.00 install bonus...</span>
+        </div>
+        <div id="lStep3" class="loader-step">
+          <span class="loader-icon"></span>
+          <span>Preparing high-paying app offers...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js?v=3"></script>
+</body>
+</html>
